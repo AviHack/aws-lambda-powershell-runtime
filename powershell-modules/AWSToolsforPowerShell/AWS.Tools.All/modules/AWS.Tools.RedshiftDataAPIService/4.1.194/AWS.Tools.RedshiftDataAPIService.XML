@@ -1,0 +1,829 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.RedshiftDataAPIService</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSD.GetRSDDatabasisListCmdlet">
+            <summary>
+            List the databases in a cluster. A token is returned to page through the database
+            list. Depending on the authorization method, use one of the following combinations
+            of request parameters: 
+            
+             <ul><li><para>
+            Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
+            of the secret, the database name, and the cluster identifier that matches the cluster
+            in the secret. When connecting to a serverless workgroup, specify the Amazon Resource
+            Name (ARN) of the secret and the database name. 
+            </para></li><li><para>
+            Temporary credentials - when connecting to a cluster, specify the cluster identifier,
+            the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
+            operation is required. When connecting to a serverless workgroup, specify the workgroup
+            name and database name. Also, permission to call the <code>redshift-serverless:GetCredentials</code>
+            operation is required. 
+            </para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDDatabasisListCmdlet.ClusterIdentifier">
+            <summary>
+            <para>
+            <para>The cluster identifier. This parameter is required when connecting to a cluster and
+            authenticating using either Secrets Manager or temporary credentials. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDDatabasisListCmdlet.Database">
+            <summary>
+            <para>
+            <para>The name of the database. This parameter is required when authenticating using either
+            Secrets Manager or temporary credentials. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDDatabasisListCmdlet.DbUser">
+            <summary>
+            <para>
+            <para>The database user name. This parameter is required when connecting to a cluster and
+            authenticating using temporary credentials. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDDatabasisListCmdlet.SecretArn">
+            <summary>
+            <para>
+            <para>The name or ARN of the secret that enables access to the database. This parameter
+            is required when authenticating using Secrets Manager. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDDatabasisListCmdlet.WorkgroupName">
+            <summary>
+            <para>
+            <para>The serverless workgroup name. This parameter is required when connecting to a serverless
+            workgroup and authenticating using either Secrets Manager or temporary credentials.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDDatabasisListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of databases to return in the response. If more databases exist
+            than fit in one response, then <code>NextToken</code> is returned to page through
+            the results. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDDatabasisListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>A value that indicates the starting point for the next set of response records in
+            a subsequent request. If a value is returned in a response, you can retrieve the next
+            set of records by providing this returned NextToken value in the next NextToken parameter
+            and retrying the command. If the NextToken field is empty, all response records have
+            been retrieved for the request. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDDatabasisListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Databases'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftDataAPIService.Model.ListDatabasesResponse).
+            Specifying the name of a property of type Amazon.RedshiftDataAPIService.Model.ListDatabasesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSD.GetRSDSchemaListCmdlet">
+            <summary>
+            Lists the schemas in a database. A token is returned to page through the schema list.
+            Depending on the authorization method, use one of the following combinations of request
+            parameters: 
+            
+             <ul><li><para>
+            Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
+            of the secret, the database name, and the cluster identifier that matches the cluster
+            in the secret. When connecting to a serverless workgroup, specify the Amazon Resource
+            Name (ARN) of the secret and the database name. 
+            </para></li><li><para>
+            Temporary credentials - when connecting to a cluster, specify the cluster identifier,
+            the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
+            operation is required. When connecting to a serverless workgroup, specify the workgroup
+            name and database name. Also, permission to call the <code>redshift-serverless:GetCredentials</code>
+            operation is required. 
+            </para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDSchemaListCmdlet.ClusterIdentifier">
+            <summary>
+            <para>
+            <para>The cluster identifier. This parameter is required when connecting to a cluster and
+            authenticating using either Secrets Manager or temporary credentials. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDSchemaListCmdlet.ConnectedDatabase">
+            <summary>
+            <para>
+            <para>A database name. The connected database is specified when you connect with your authentication
+            credentials. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDSchemaListCmdlet.Database">
+            <summary>
+            <para>
+            <para>The name of the database that contains the schemas to list. If <code>ConnectedDatabase</code>
+            is not specified, this is also the database to connect to with your authentication
+            credentials.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDSchemaListCmdlet.DbUser">
+            <summary>
+            <para>
+            <para>The database user name. This parameter is required when connecting to a cluster and
+            authenticating using temporary credentials. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDSchemaListCmdlet.SchemaPattern">
+            <summary>
+            <para>
+            <para>A pattern to filter results by schema name. Within a schema pattern, "%" means match
+            any substring of 0 or more characters and "_" means match any one character. Only
+            schema name entries matching the search pattern are returned. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDSchemaListCmdlet.SecretArn">
+            <summary>
+            <para>
+            <para>The name or ARN of the secret that enables access to the database. This parameter
+            is required when authenticating using Secrets Manager. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDSchemaListCmdlet.WorkgroupName">
+            <summary>
+            <para>
+            <para>The serverless workgroup name. This parameter is required when connecting to a serverless
+            workgroup and authenticating using either Secrets Manager or temporary credentials.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDSchemaListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of schemas to return in the response. If more schemas exist than
+            fit in one response, then <code>NextToken</code> is returned to page through the results.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDSchemaListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>A value that indicates the starting point for the next set of response records in
+            a subsequent request. If a value is returned in a response, you can retrieve the next
+            set of records by providing this returned NextToken value in the next NextToken parameter
+            and retrying the command. If the NextToken field is empty, all response records have
+            been retrieved for the request. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDSchemaListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Schemas'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftDataAPIService.Model.ListSchemasResponse).
+            Specifying the name of a property of type Amazon.RedshiftDataAPIService.Model.ListSchemasResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSD.GetRSDStatementCmdlet">
+            <summary>
+            Describes the details about a specific instance when a query was run by the Amazon
+            Redshift Data API. The information includes when the query started, when it finished,
+            the query status, the number of rows returned, and the SQL statement.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDStatementCmdlet.Id">
+            <summary>
+            <para>
+            <para>The identifier of the SQL statement to describe. This value is a universally unique
+            identifier (UUID) generated by Amazon Redshift Data API. A suffix indicates the number
+            of the SQL statement. For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code>
+            has a suffix of <code>:2</code> that indicates the second SQL statement of a batch
+            query. This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatement</code>,
+            and <code>ListStatements</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDStatementCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftDataAPIService.Model.DescribeStatementResponse).
+            Specifying the name of a property of type Amazon.RedshiftDataAPIService.Model.DescribeStatementResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDStatementCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Id parameter.
+            The -PassThru parameter is deprecated, use -Select '^Id' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSD.GetRSDStatementListCmdlet">
+            <summary>
+            List of SQL statements. By default, only finished statements are shown. A token is
+            returned to page through the statement list.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDStatementListCmdlet.RoleLevel">
+            <summary>
+            <para>
+            <para>A value that filters which statements to return in the response. If true, all statements
+            run by the caller's IAM role are returned. If false, only statements run by the caller's
+            IAM role in the current IAM session are returned. The default is true. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDStatementListCmdlet.StatementName">
+            <summary>
+            <para>
+            <para>The name of the SQL statement specified as input to <code>BatchExecuteStatement</code>
+            or <code>ExecuteStatement</code> to identify the query. You can list multiple statements
+            by providing a prefix that matches the beginning of the statement name. For example,
+            to list myStatement1, myStatement2, myStatement3, and so on, then provide the a value
+            of <code>myStatement</code>. Data API does a case-sensitive match of SQL statement
+            names to the prefix value you provide. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDStatementListCmdlet.Status">
+            <summary>
+            <para>
+            <para>The status of the SQL statement to list. Status values are defined as follows: </para><ul><li><para>ABORTED - The query run was stopped by the user. </para></li><li><para>ALL - A status value that includes all query statuses. This value can be used to filter
+            results. </para></li><li><para>FAILED - The query run failed. </para></li><li><para>FINISHED - The query has finished running. </para></li><li><para>PICKED - The query has been chosen to be run. </para></li><li><para>STARTED - The query run has started. </para></li><li><para>SUBMITTED - The query was submitted, but not yet processed. </para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDStatementListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of SQL statements to return in the response. If more SQL statements
+            exist than fit in one response, then <code>NextToken</code> is returned to page through
+            the results. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDStatementListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>A value that indicates the starting point for the next set of response records in
+            a subsequent request. If a value is returned in a response, you can retrieve the next
+            set of records by providing this returned NextToken value in the next NextToken parameter
+            and retrying the command. If the NextToken field is empty, all response records have
+            been retrieved for the request. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDStatementListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Statements'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftDataAPIService.Model.ListStatementsResponse).
+            Specifying the name of a property of type Amazon.RedshiftDataAPIService.Model.ListStatementsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSD.GetRSDStatementResultCmdlet">
+            <summary>
+            Fetches the temporarily cached result of an SQL statement. A token is returned to
+            page through the statement results.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDStatementResultCmdlet.Id">
+            <summary>
+            <para>
+            <para>The identifier of the SQL statement whose results are to be fetched. This value is
+            a universally unique identifier (UUID) generated by Amazon Redshift Data API. A suffix
+            indicates then number of the SQL statement. For example, <code>d9b6c0c9-0747-4bf4-b142-e8883122f766:2</code>
+            has a suffix of <code>:2</code> that indicates the second SQL statement of a batch
+            query. This identifier is returned by <code>BatchExecuteStatment</code>, <code>ExecuteStatment</code>,
+            and <code>ListStatements</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDStatementResultCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>A value that indicates the starting point for the next set of response records in
+            a subsequent request. If a value is returned in a response, you can retrieve the next
+            set of records by providing this returned NextToken value in the next NextToken parameter
+            and retrying the command. If the NextToken field is empty, all response records have
+            been retrieved for the request. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDStatementResultCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftDataAPIService.Model.GetStatementResultResponse).
+            Specifying the name of a property of type Amazon.RedshiftDataAPIService.Model.GetStatementResultResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDStatementResultCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Id parameter.
+            The -PassThru parameter is deprecated, use -Select '^Id' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSD.GetRSDTableCmdlet">
+            <summary>
+            Describes the detailed information about a table from metadata in the cluster. The
+            information includes its columns. A token is returned to page through the column list.
+            Depending on the authorization method, use one of the following combinations of request
+            parameters: 
+            
+             <ul><li><para>
+            Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
+            of the secret, the database name, and the cluster identifier that matches the cluster
+            in the secret. When connecting to a serverless workgroup, specify the Amazon Resource
+            Name (ARN) of the secret and the database name. 
+            </para></li><li><para>
+            Temporary credentials - when connecting to a cluster, specify the cluster identifier,
+            the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
+            operation is required. When connecting to a serverless workgroup, specify the workgroup
+            name and database name. Also, permission to call the <code>redshift-serverless:GetCredentials</code>
+            operation is required. 
+            </para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDTableCmdlet.ClusterIdentifier">
+            <summary>
+            <para>
+            <para>The cluster identifier. This parameter is required when connecting to a cluster and
+            authenticating using either Secrets Manager or temporary credentials. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDTableCmdlet.ConnectedDatabase">
+            <summary>
+            <para>
+            <para>A database name. The connected database is specified when you connect with your authentication
+            credentials. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDTableCmdlet.Database">
+            <summary>
+            <para>
+            <para>The name of the database that contains the tables to be described. If <code>ConnectedDatabase</code>
+            is not specified, this is also the database to connect to with your authentication
+            credentials.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDTableCmdlet.DbUser">
+            <summary>
+            <para>
+            <para>The database user name. This parameter is required when connecting to a cluster and
+            authenticating using temporary credentials. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDTableCmdlet.Schema">
+            <summary>
+            <para>
+            <para>The schema that contains the table. If no schema is specified, then matching tables
+            for all schemas are returned. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDTableCmdlet.SecretArn">
+            <summary>
+            <para>
+            <para>The name or ARN of the secret that enables access to the database. This parameter
+            is required when authenticating using Secrets Manager. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDTableCmdlet.Table">
+            <summary>
+            <para>
+            <para>The table name. If no table is specified, then all tables for all matching schemas
+            are returned. If no table and no schema is specified, then all tables for all schemas
+            in the database are returned</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDTableCmdlet.WorkgroupName">
+            <summary>
+            <para>
+            <para>The serverless workgroup name. This parameter is required when connecting to a serverless
+            workgroup and authenticating using either Secrets Manager or temporary credentials.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDTableCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of tables to return in the response. If more tables exist than
+            fit in one response, then <code>NextToken</code> is returned to page through the results.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDTableCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>A value that indicates the starting point for the next set of response records in
+            a subsequent request. If a value is returned in a response, you can retrieve the next
+            set of records by providing this returned NextToken value in the next NextToken parameter
+            and retrying the command. If the NextToken field is empty, all response records have
+            been retrieved for the request. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDTableCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftDataAPIService.Model.DescribeTableResponse).
+            Specifying the name of a property of type Amazon.RedshiftDataAPIService.Model.DescribeTableResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDTableCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterIdentifier parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterIdentifier' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSD.GetRSDTableListCmdlet">
+            <summary>
+            List the tables in a database. If neither <code>SchemaPattern</code> nor <code>TablePattern</code>
+            are specified, then all tables in the database are returned. A token is returned to
+            page through the table list. Depending on the authorization method, use one of the
+            following combinations of request parameters: 
+            
+             <ul><li><para>
+            Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
+            of the secret, the database name, and the cluster identifier that matches the cluster
+            in the secret. When connecting to a serverless workgroup, specify the Amazon Resource
+            Name (ARN) of the secret and the database name. 
+            </para></li><li><para>
+            Temporary credentials - when connecting to a cluster, specify the cluster identifier,
+            the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
+            operation is required. When connecting to a serverless workgroup, specify the workgroup
+            name and database name. Also, permission to call the <code>redshift-serverless:GetCredentials</code>
+            operation is required. 
+            </para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDTableListCmdlet.ClusterIdentifier">
+            <summary>
+            <para>
+            <para>The cluster identifier. This parameter is required when connecting to a cluster and
+            authenticating using either Secrets Manager or temporary credentials. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDTableListCmdlet.ConnectedDatabase">
+            <summary>
+            <para>
+            <para>A database name. The connected database is specified when you connect with your authentication
+            credentials. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDTableListCmdlet.Database">
+            <summary>
+            <para>
+            <para>The name of the database that contains the tables to list. If <code>ConnectedDatabase</code>
+            is not specified, this is also the database to connect to with your authentication
+            credentials.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDTableListCmdlet.DbUser">
+            <summary>
+            <para>
+            <para>The database user name. This parameter is required when connecting to a cluster and
+            authenticating using temporary credentials. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDTableListCmdlet.SchemaPattern">
+            <summary>
+            <para>
+            <para>A pattern to filter results by schema name. Within a schema pattern, "%" means match
+            any substring of 0 or more characters and "_" means match any one character. Only
+            schema name entries matching the search pattern are returned. If <code>SchemaPattern</code>
+            is not specified, then all tables that match <code>TablePattern</code> are returned.
+            If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified,
+            then all tables are returned. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDTableListCmdlet.SecretArn">
+            <summary>
+            <para>
+            <para>The name or ARN of the secret that enables access to the database. This parameter
+            is required when authenticating using Secrets Manager. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDTableListCmdlet.TablePattern">
+            <summary>
+            <para>
+            <para>A pattern to filter results by table name. Within a table pattern, "%" means match
+            any substring of 0 or more characters and "_" means match any one character. Only
+            table name entries matching the search pattern are returned. If <code>TablePattern</code>
+            is not specified, then all tables that match <code>SchemaPattern</code>are returned.
+            If neither <code>SchemaPattern</code> or <code>TablePattern</code> are specified,
+            then all tables are returned. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDTableListCmdlet.WorkgroupName">
+            <summary>
+            <para>
+            <para>The serverless workgroup name. This parameter is required when connecting to a serverless
+            workgroup and authenticating using either Secrets Manager or temporary credentials.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDTableListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of tables to return in the response. If more tables exist than
+            fit in one response, then <code>NextToken</code> is returned to page through the results.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDTableListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>A value that indicates the starting point for the next set of response records in
+            a subsequent request. If a value is returned in a response, you can retrieve the next
+            set of records by providing this returned NextToken value in the next NextToken parameter
+            and retrying the command. If the NextToken field is empty, all response records have
+            been retrieved for the request. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.GetRSDTableListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tables'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftDataAPIService.Model.ListTablesResponse).
+            Specifying the name of a property of type Amazon.RedshiftDataAPIService.Model.ListTablesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSD.PushRSDBatchStatementCmdlet">
+            <summary>
+            Runs one or more SQL statements, which can be data manipulation language (DML) or
+            data definition language (DDL). Depending on the authorization method, use one of
+            the following combinations of request parameters: 
+            
+             <ul><li><para>
+            Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
+            of the secret, the database name, and the cluster identifier that matches the cluster
+            in the secret. When connecting to a serverless workgroup, specify the Amazon Resource
+            Name (ARN) of the secret and the database name. 
+            </para></li><li><para>
+            Temporary credentials - when connecting to a cluster, specify the cluster identifier,
+            the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
+            operation is required. When connecting to a serverless workgroup, specify the workgroup
+            name and database name. Also, permission to call the <code>redshift-serverless:GetCredentials</code>
+            operation is required. 
+            </para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.PushRSDBatchStatementCmdlet.ClusterIdentifier">
+            <summary>
+            <para>
+            <para>The cluster identifier. This parameter is required when connecting to a cluster and
+            authenticating using either Secrets Manager or temporary credentials. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.PushRSDBatchStatementCmdlet.Database">
+            <summary>
+            <para>
+            <para>The name of the database. This parameter is required when authenticating using either
+            Secrets Manager or temporary credentials. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.PushRSDBatchStatementCmdlet.DbUser">
+            <summary>
+            <para>
+            <para>The database user name. This parameter is required when connecting to a cluster and
+            authenticating using temporary credentials. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.PushRSDBatchStatementCmdlet.SecretArn">
+            <summary>
+            <para>
+            <para>The name or ARN of the secret that enables access to the database. This parameter
+            is required when authenticating using Secrets Manager. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.PushRSDBatchStatementCmdlet.Sql">
+            <summary>
+            <para>
+            <para>One or more SQL statements to run. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.PushRSDBatchStatementCmdlet.StatementName">
+            <summary>
+            <para>
+            <para>The name of the SQL statements. You can name the SQL statements when you create them
+            to identify the query. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.PushRSDBatchStatementCmdlet.WithEvent">
+            <summary>
+            <para>
+            <para>A value that indicates whether to send an event to the Amazon EventBridge event bus
+            after the SQL statements run. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.PushRSDBatchStatementCmdlet.WorkgroupName">
+            <summary>
+            <para>
+            <para>The serverless workgroup name. This parameter is required when connecting to a serverless
+            workgroup and authenticating using either Secrets Manager or temporary credentials.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.PushRSDBatchStatementCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftDataAPIService.Model.BatchExecuteStatementResponse).
+            Specifying the name of a property of type Amazon.RedshiftDataAPIService.Model.BatchExecuteStatementResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.PushRSDBatchStatementCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterIdentifier parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterIdentifier' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.PushRSDBatchStatementCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSD.SendRSDStatementCmdlet">
+            <summary>
+            Runs an SQL statement, which can be data manipulation language (DML) or data definition
+            language (DDL). This statement must be a single SQL statement. Depending on the authorization
+            method, use one of the following combinations of request parameters: 
+            
+             <ul><li><para>
+            Secrets Manager - when connecting to a cluster, specify the Amazon Resource Name (ARN)
+            of the secret, the database name, and the cluster identifier that matches the cluster
+            in the secret. When connecting to a serverless workgroup, specify the Amazon Resource
+            Name (ARN) of the secret and the database name. 
+            </para></li><li><para>
+            Temporary credentials - when connecting to a cluster, specify the cluster identifier,
+            the database name, and the database user name. Also, permission to call the <code>redshift:GetClusterCredentials</code>
+            operation is required. When connecting to a serverless workgroup, specify the workgroup
+            name and database name. Also, permission to call the <code>redshift-serverless:GetCredentials</code>
+            operation is required. 
+            </para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.SendRSDStatementCmdlet.ClusterIdentifier">
+            <summary>
+            <para>
+            <para>The cluster identifier. This parameter is required when connecting to a cluster and
+            authenticating using either Secrets Manager or temporary credentials. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.SendRSDStatementCmdlet.Database">
+            <summary>
+            <para>
+            <para>The name of the database. This parameter is required when authenticating using either
+            Secrets Manager or temporary credentials. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.SendRSDStatementCmdlet.DbUser">
+            <summary>
+            <para>
+            <para>The database user name. This parameter is required when connecting to a cluster and
+            authenticating using temporary credentials. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.SendRSDStatementCmdlet.Parameter">
+            <summary>
+            <para>
+            <para>The parameters for the SQL statement.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.SendRSDStatementCmdlet.SecretArn">
+            <summary>
+            <para>
+            <para>The name or ARN of the secret that enables access to the database. This parameter
+            is required when authenticating using Secrets Manager. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.SendRSDStatementCmdlet.Sql">
+            <summary>
+            <para>
+            <para>The SQL statement text to run. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.SendRSDStatementCmdlet.StatementName">
+            <summary>
+            <para>
+            <para>The name of the SQL statement. You can name the SQL statement when you create it to
+            identify the query. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.SendRSDStatementCmdlet.WithEvent">
+            <summary>
+            <para>
+            <para>A value that indicates whether to send an event to the Amazon EventBridge event bus
+            after the SQL statement runs. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.SendRSDStatementCmdlet.WorkgroupName">
+            <summary>
+            <para>
+            <para>The serverless workgroup name. This parameter is required when connecting to a serverless
+            workgroup and authenticating using either Secrets Manager or temporary credentials.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.SendRSDStatementCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Id'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftDataAPIService.Model.ExecuteStatementResponse).
+            Specifying the name of a property of type Amazon.RedshiftDataAPIService.Model.ExecuteStatementResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.SendRSDStatementCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSD.StopRSDStatementCmdlet">
+            <summary>
+            Cancels a running query. To be canceled, a query must be running.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.StopRSDStatementCmdlet.Id">
+            <summary>
+            <para>
+            <para>The identifier of the SQL statement to cancel. This value is a universally unique
+            identifier (UUID) generated by Amazon Redshift Data API. This identifier is returned
+            by <code>BatchExecuteStatment</code>, <code>ExecuteStatment</code>, and <code>ListStatements</code>.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.StopRSDStatementCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Status'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftDataAPIService.Model.CancelStatementResponse).
+            Specifying the name of a property of type Amazon.RedshiftDataAPIService.Model.CancelStatementResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.StopRSDStatementCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Id parameter.
+            The -PassThru parameter is deprecated, use -Select '^Id' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSD.StopRSDStatementCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

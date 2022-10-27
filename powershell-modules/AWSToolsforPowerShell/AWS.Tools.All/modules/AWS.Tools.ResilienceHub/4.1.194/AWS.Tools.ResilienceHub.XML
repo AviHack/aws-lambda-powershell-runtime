@@ -1,0 +1,2091 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.ResilienceHub</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.AddRESHDraftAppVersionResourceMappingCmdlet">
+            <summary>
+            Adds the resource mapping for the draft application version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.AddRESHDraftAppVersionResourceMappingCmdlet.AppArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.AddRESHDraftAppVersionResourceMappingCmdlet.ResourceMapping">
+            <summary>
+            <para>
+            <para> Mappings used to map logical resources from the template to physical resources. You
+            can use the mapping type <code>CFN_STACK</code> if the application template uses a
+            logical stack name. Or you can map individual resources by using the mapping type
+            <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code>
+            if the application is backed by a CloudFormation stack.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.AddRESHDraftAppVersionResourceMappingCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.AddDraftAppVersionResourceMappingsResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.AddDraftAppVersionResourceMappingsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.AddRESHDraftAppVersionResourceMappingCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AppArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AppArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.AddRESHDraftAppVersionResourceMappingCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.AddRESHResourceTagCmdlet">
+            <summary>
+            Applies one or more tags to a resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.AddRESHResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.AddRESHResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags to assign to the resource. Each tag consists of a key/value pair.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.AddRESHResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.AddRESHResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.AddRESHResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.GetRESHAlarmRecommendationListCmdlet">
+            <summary>
+            Lists the alarm recommendations for a AWS Resilience Hub application.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAlarmRecommendationListCmdlet.AssessmentArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAlarmRecommendationListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response. If more results exist than
+            the specified <code>MaxResults</code> value, a token is included in the response so
+            that the remaining results can be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAlarmRecommendationListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Null, or the token from a previous call to get the next set of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAlarmRecommendationListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AlarmRecommendations'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.ListAlarmRecommendationsResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.ListAlarmRecommendationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAlarmRecommendationListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAlarmRecommendationListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppCmdlet">
+            <summary>
+            Describes an AWS Resilience Hub application.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppCmdlet.AppArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'App'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.DescribeAppResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.DescribeAppResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AppArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AppArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppAssessmentCmdlet">
+            <summary>
+            Describes an assessment for an AWS Resilience Hub application.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppAssessmentCmdlet.AssessmentArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppAssessmentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Assessment'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.DescribeAppAssessmentResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.DescribeAppAssessmentResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppAssessmentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppAssessmentListCmdlet">
+            <summary>
+            Lists the assessments for an AWS Resilience Hub application. You can use request parameters
+            to refine the results for the response object.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppAssessmentListCmdlet.AppArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppAssessmentListCmdlet.AssessmentName">
+            <summary>
+            <para>
+            <para>The name for the assessment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppAssessmentListCmdlet.AssessmentStatus">
+            <summary>
+            <para>
+            <para>The current status of the assessment for the resiliency policy.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppAssessmentListCmdlet.ComplianceStatus">
+            <summary>
+            <para>
+            <para>The current status of compliance for the resiliency policy.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppAssessmentListCmdlet.Invoker">
+            <summary>
+            <para>
+            <para>Specifies the entity that invoked a specific assessment, either a <code>User</code>
+            or the <code>System</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppAssessmentListCmdlet.ReverseOrder">
+            <summary>
+            <para>
+            <para>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>,
+            set reverseOrder to <code>true</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppAssessmentListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response. If more results exist than
+            the specified <code>MaxResults</code> value, a token is included in the response so
+            that the remaining results can be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppAssessmentListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Null, or the token from a previous call to get the next set of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppAssessmentListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AssessmentSummaries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.ListAppAssessmentsResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.ListAppAssessmentsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppAssessmentListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppComponentComplianceListCmdlet">
+            <summary>
+            Lists the compliances for an AWS Resilience Hub component.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppComponentComplianceListCmdlet.AssessmentArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppComponentComplianceListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response. If more results exist than
+            the specified <code>MaxResults</code> value, a token is included in the response so
+            that the remaining results can be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppComponentComplianceListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Null, or the token from a previous call to get the next set of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppComponentComplianceListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ComponentCompliances'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.ListAppComponentCompliancesResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.ListAppComponentCompliancesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppComponentComplianceListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppComponentComplianceListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppComponentRecommendationListCmdlet">
+            <summary>
+            Lists the recommendations for an AWS Resilience Hub component.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppComponentRecommendationListCmdlet.AssessmentArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppComponentRecommendationListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response. If more results exist than
+            the specified <code>MaxResults</code> value, a token is included in the response so
+            that the remaining results can be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppComponentRecommendationListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Null, or the token from a previous call to get the next set of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppComponentRecommendationListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ComponentRecommendations'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.ListAppComponentRecommendationsResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.ListAppComponentRecommendationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppComponentRecommendationListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppComponentRecommendationListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppListCmdlet">
+            <summary>
+            Lists your Resilience Hub applications.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppListCmdlet.AppArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppListCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name for the one of the listed applications.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response. If more results exist than
+            the specified <code>MaxResults</code> value, a token is included in the response so
+            that the remaining results can be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Null, or the token from a previous call to get the next set of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AppSummaries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.ListAppsResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.ListAppsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionListCmdlet">
+            <summary>
+            Lists the different versions for the Resilience Hub applications.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionListCmdlet.AppArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response. If more results exist than
+            the specified <code>MaxResults</code> value, a token is included in the response so
+            that the remaining results can be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Null, or the token from a previous call to get the next set of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AppVersions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.ListAppVersionsResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.ListAppVersionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AppArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AppArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionResourceListCmdlet">
+            <summary>
+            Lists all the resources in an application version.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionResourceListCmdlet.AppArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionResourceListCmdlet.AppVersion">
+            <summary>
+            <para>
+            <para>The version of the application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionResourceListCmdlet.ResolutionId">
+            <summary>
+            <para>
+            <para>The identifier for a specific resolution.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionResourceListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response. If more results exist than
+            the specified <code>MaxResults</code> value, a token is included in the response so
+            that the remaining results can be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionResourceListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Null, or the token from a previous call to get the next set of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionResourceListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.ListAppVersionResourcesResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.ListAppVersionResourcesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionResourceListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AppArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AppArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionResourceListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionResourceMappingListCmdlet">
+            <summary>
+            Lists how the resources in an application version are mapped/sourced from. Mappings
+            can be physical resource identifiers, CloudFormation stacks, resource-groups, or an
+            application registry app.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionResourceMappingListCmdlet.AppArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionResourceMappingListCmdlet.AppVersion">
+            <summary>
+            <para>
+            <para>The version of the application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionResourceMappingListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response. If more results exist than
+            the specified <code>MaxResults</code> value, a token is included in the response so
+            that the remaining results can be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionResourceMappingListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Null, or the token from a previous call to get the next set of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionResourceMappingListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ResourceMappings'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.ListAppVersionResourceMappingsResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.ListAppVersionResourceMappingsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionResourceMappingListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AppArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AppArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionResourceMappingListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionResourcesResolutionStatusCmdlet">
+            <summary>
+            Returns the resolution status for the specified resolution identifier for an application
+            version. If <code>resolutionId</code> is not specified, the current resolution status
+            is returned.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionResourcesResolutionStatusCmdlet.AppArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionResourcesResolutionStatusCmdlet.AppVersion">
+            <summary>
+            <para>
+            <para>The version of the application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionResourcesResolutionStatusCmdlet.ResolutionId">
+            <summary>
+            <para>
+            <para>The identifier for a specific resolution.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionResourcesResolutionStatusCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.DescribeAppVersionResourcesResolutionStatusResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.DescribeAppVersionResourcesResolutionStatusResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionResourcesResolutionStatusCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AppArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AppArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionTemplateCmdlet">
+            <summary>
+            Describes details about an AWS Resilience Hub
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionTemplateCmdlet.AppArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionTemplateCmdlet.AppVersion">
+            <summary>
+            <para>
+            <para>The version of the application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.DescribeAppVersionTemplateResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.DescribeAppVersionTemplateResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHAppVersionTemplateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AppArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AppArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.GetRESHDraftAppVersionResourcesImportStatusCmdlet">
+            <summary>
+            Describes the status of importing resources to an application version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHDraftAppVersionResourcesImportStatusCmdlet.AppArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHDraftAppVersionResourcesImportStatusCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.DescribeDraftAppVersionResourcesImportStatusResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.DescribeDraftAppVersionResourcesImportStatusResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHDraftAppVersionResourcesImportStatusCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AppArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AppArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.GetRESHRecommendationTemplateListCmdlet">
+            <summary>
+            Lists the recommendation templates for the Resilience Hub applications.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHRecommendationTemplateListCmdlet.AssessmentArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHRecommendationTemplateListCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name for one of the listed recommendation templates.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHRecommendationTemplateListCmdlet.RecommendationTemplateArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) for a recommendation template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHRecommendationTemplateListCmdlet.ReverseOrder">
+            <summary>
+            <para>
+            <para>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>,
+            set reverseOrder to <code>true</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHRecommendationTemplateListCmdlet.Status">
+            <summary>
+            <para>
+            <para>The status of the action.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHRecommendationTemplateListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response. If more results exist than
+            the specified <code>MaxResults</code> value, a token is included in the response so
+            that the remaining results can be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHRecommendationTemplateListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Null, or the token from a previous call to get the next set of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHRecommendationTemplateListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'RecommendationTemplates'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.ListRecommendationTemplatesResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.ListRecommendationTemplatesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHRecommendationTemplateListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHRecommendationTemplateListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.GetRESHResiliencyPolicyCmdlet">
+            <summary>
+            Describes a specified resiliency policy for an AWS Resilience Hub application. The
+            returned policy object includes creation time, data location constraints, the Amazon
+            Resource Name (ARN) for the policy, tags, tier, and more.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHResiliencyPolicyCmdlet.PolicyArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
+            arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHResiliencyPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Policy'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.DescribeResiliencyPolicyResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.DescribeResiliencyPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHResiliencyPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PolicyArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^PolicyArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.GetRESHResiliencyPolicyListCmdlet">
+            <summary>
+            Lists the resiliency policies for the Resilience Hub applications.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHResiliencyPolicyListCmdlet.PolicyName">
+            <summary>
+            <para>
+            <para>The name of the policy</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHResiliencyPolicyListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response. If more results exist than
+            the specified <code>MaxResults</code> value, a token is included in the response so
+            that the remaining results can be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHResiliencyPolicyListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Null, or the token from a previous call to get the next set of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHResiliencyPolicyListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ResiliencyPolicies'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.ListResiliencyPoliciesResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.ListResiliencyPoliciesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHResiliencyPolicyListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PolicyName parameter.
+            The -PassThru parameter is deprecated, use -Select '^PolicyName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHResiliencyPolicyListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.GetRESHResourceTagCmdlet">
+            <summary>
+            Lists the tags for your resources in your Resilience Hub applications.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) for a specific resource in your Resilience Hub application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.GetRESHSopRecommendationListCmdlet">
+            <summary>
+            Lists the standard operating procedure (SOP) recommendations for the Resilience Hub
+            applications.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHSopRecommendationListCmdlet.AssessmentArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHSopRecommendationListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response. If more results exist than
+            the specified <code>MaxResults</code> value, a token is included in the response so
+            that the remaining results can be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHSopRecommendationListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Null, or the token from a previous call to get the next set of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHSopRecommendationListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SopRecommendations'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.ListSopRecommendationsResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.ListSopRecommendationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHSopRecommendationListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHSopRecommendationListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.GetRESHSuggestedResiliencyPolicyListCmdlet">
+            <summary>
+            Lists the suggested resiliency policies for the Resilience Hub applications.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHSuggestedResiliencyPolicyListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response. If more results exist than
+            the specified <code>MaxResults</code> value, a token is included in the response so
+            that the remaining results can be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHSuggestedResiliencyPolicyListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Null, or the token from a previous call to get the next set of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHSuggestedResiliencyPolicyListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ResiliencyPolicies'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.ListSuggestedResiliencyPoliciesResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.ListSuggestedResiliencyPoliciesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHSuggestedResiliencyPolicyListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.GetRESHTestRecommendationListCmdlet">
+            <summary>
+            Lists the test recommendations for the Resilience Hub application.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHTestRecommendationListCmdlet.AssessmentArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHTestRecommendationListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response. If more results exist than
+            the specified <code>MaxResults</code> value, a token is included in the response so
+            that the remaining results can be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHTestRecommendationListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Null, or the token from a previous call to get the next set of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHTestRecommendationListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TestRecommendations'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.ListTestRecommendationsResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.ListTestRecommendationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHTestRecommendationListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHTestRecommendationListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.GetRESHUnsupportedAppVersionResourceListCmdlet">
+            <summary>
+            Lists the resources that are not currently supported in AWS Resilience Hub. An unsupported
+            resource is a resource that exists in the object that was used to create an app, but
+            is not supported by Resilience Hub.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHUnsupportedAppVersionResourceListCmdlet.AppArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHUnsupportedAppVersionResourceListCmdlet.AppVersion">
+            <summary>
+            <para>
+            <para>The version of the application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHUnsupportedAppVersionResourceListCmdlet.ResolutionId">
+            <summary>
+            <para>
+            <para>The identifier for a specific resolution.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHUnsupportedAppVersionResourceListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response. If more results exist than
+            the specified <code>MaxResults</code> value, a token is included in the response so
+            that the remaining results can be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHUnsupportedAppVersionResourceListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Null, or the token from a previous call to get the next set of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHUnsupportedAppVersionResourceListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.ListUnsupportedAppVersionResourcesResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.ListUnsupportedAppVersionResourcesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHUnsupportedAppVersionResourceListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AppArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AppArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.GetRESHUnsupportedAppVersionResourceListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.ImportRESHResourcesToDraftAppVersionCmdlet">
+            <summary>
+            Imports resources from sources such as a CloudFormation stack, resource-groups, or
+            application registry app to a draft application version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.ImportRESHResourcesToDraftAppVersionCmdlet.AppArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.ImportRESHResourcesToDraftAppVersionCmdlet.SourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Names (ARNs) for the resources that you want to import.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.ImportRESHResourcesToDraftAppVersionCmdlet.TerraformSource">
+            <summary>
+            <para>
+            <para> A list of terraform file s3 URLs you need to import. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.ImportRESHResourcesToDraftAppVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.ImportResourcesToDraftAppVersionResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.ImportResourcesToDraftAppVersionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.ImportRESHResourcesToDraftAppVersionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AppArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AppArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.ImportRESHResourcesToDraftAppVersionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.NewRESHAppCmdlet">
+            <summary>
+            Creates a Resilience Hub application. A Resilience Hub application is a collection
+            of Amazon Web Services resources structured to prevent and recover Amazon Web Services
+            application disruptions. To describe a Resilience Hub application, you provide an
+            application name, resources from one or more–up to five–CloudFormation stacks, and
+            an appropriate resiliency policy.
+            
+             
+            <para>
+            After you create a Resilience Hub application, you publish it so that you can run
+            a resiliency assessment on it. You can then use recommendations from the assessment
+            to improve resiliency by running another assessment, comparing results, and then iterating
+            the process until you achieve your goals for recovery time objective (RTO) and recovery
+            point objective (RPO).
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHAppCmdlet.AssessmentSchedule">
+            <summary>
+            <para>
+            <para> Assessment execution schedule with 'Daily' or 'Disabled' values. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHAppCmdlet.Description">
+            <summary>
+            <para>
+            <para>The optional description for an app.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHAppCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name for the application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHAppCmdlet.PolicyArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
+            arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHAppCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web
+            Services resource. Each tag consists of a key/value pair.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHAppCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>Used for an idempotency token. A client token is a unique, case-sensitive string of
+            up to 64 ASCII characters. You should not reuse the same client token for other API
+            requests.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHAppCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'App'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.CreateAppResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.CreateAppResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHAppCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHAppCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.NewRESHRecommendationTemplateCmdlet">
+            <summary>
+            Creates a new recommendation template.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHRecommendationTemplateCmdlet.AssessmentArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHRecommendationTemplateCmdlet.BucketName">
+            <summary>
+            <para>
+            <para>The name of the Amazon S3 bucket that will contain the recommendation template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHRecommendationTemplateCmdlet.Format">
+            <summary>
+            <para>
+            <para>The format for the recommendation template.</para><dl><dt>CfnJson</dt><dd><para>The template is CloudFormation JSON.</para></dd><dt>CfnYaml</dt><dd><para>The template is CloudFormation YAML.</para></dd></dl>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHRecommendationTemplateCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name for the recommendation template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHRecommendationTemplateCmdlet.RecommendationId">
+            <summary>
+            <para>
+            <para>Identifiers for the recommendations used to create a recommendation template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHRecommendationTemplateCmdlet.RecommendationType">
+            <summary>
+            <para>
+            <para>An array of strings that specify the recommendation template type or types.</para><dl><dt>Alarm</dt><dd><para>The template is an <a>AlarmRecommendation</a> template.</para></dd><dt>Sop</dt><dd><para>The template is a <a>SopRecommendation</a> template.</para></dd><dt>Test</dt><dd><para>The template is a <a>TestRecommendation</a> template.</para></dd></dl>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHRecommendationTemplateCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web
+            Services resource. Each tag consists of a key/value pair.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHRecommendationTemplateCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>Used for an idempotency token. A client token is a unique, case-sensitive string of
+            up to 64 ASCII characters. You should not reuse the same client token for other API
+            requests.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHRecommendationTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'RecommendationTemplate'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.CreateRecommendationTemplateResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.CreateRecommendationTemplateResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHRecommendationTemplateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHRecommendationTemplateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.NewRESHResiliencyPolicyCmdlet">
+            <summary>
+            Creates a resiliency policy for an application.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHResiliencyPolicyCmdlet.DataLocationConstraint">
+            <summary>
+            <para>
+            <para>Specifies a high-level geographical location constraint for where your resilience
+            policy data can be stored.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHResiliencyPolicyCmdlet.Policy">
+            <summary>
+            <para>
+            <para>The type of resiliency policy to be created, including the recovery time objective
+            (RTO) and recovery point objective (RPO) in seconds.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHResiliencyPolicyCmdlet.PolicyDescription">
+            <summary>
+            <para>
+            <para>The description for the policy.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHResiliencyPolicyCmdlet.PolicyName">
+            <summary>
+            <para>
+            <para>The name of the policy</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHResiliencyPolicyCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web
+            Services resource. Each tag consists of a key/value pair.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHResiliencyPolicyCmdlet.Tier">
+            <summary>
+            <para>
+            <para>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>)
+            to lowest (<code>NonCritical</code>).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHResiliencyPolicyCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>Used for an idempotency token. A client token is a unique, case-sensitive string of
+            up to 64 ASCII characters. You should not reuse the same client token for other API
+            requests.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHResiliencyPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Policy'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.CreateResiliencyPolicyResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.CreateResiliencyPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHResiliencyPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PolicyName parameter.
+            The -PassThru parameter is deprecated, use -Select '^PolicyName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.NewRESHResiliencyPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.PublishRESHAppVersionCmdlet">
+            <summary>
+            Publishes a new version of a specific Resilience Hub application.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.PublishRESHAppVersionCmdlet.AppArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.PublishRESHAppVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.PublishAppVersionResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.PublishAppVersionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.PublishRESHAppVersionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AppArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AppArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.PublishRESHAppVersionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHAppCmdlet">
+            <summary>
+            Deletes an AWS Resilience Hub application. This is a destructive action that can't
+            be undone.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHAppCmdlet.AppArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHAppCmdlet.ForceDelete">
+            <summary>
+            <para>
+            <para>A boolean option to force the deletion of a Resilience Hub application. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHAppCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>Used for an idempotency token. A client token is a unique, case-sensitive string of
+            up to 64 ASCII characters. You should not reuse the same client token for other API
+            requests.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHAppCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AppArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.DeleteAppResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.DeleteAppResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHAppCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AppArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AppArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHAppCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHAppAssessmentCmdlet">
+            <summary>
+            Deletes an AWS Resilience Hub application assessment. This is a destructive action
+            that can't be undone.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHAppAssessmentCmdlet.AssessmentArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHAppAssessmentCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>Used for an idempotency token. A client token is a unique, case-sensitive string of
+            up to 64 ASCII characters. You should not reuse the same client token for other API
+            requests.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHAppAssessmentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.DeleteAppAssessmentResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.DeleteAppAssessmentResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHAppAssessmentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHAppAssessmentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHDraftAppVersionResourceMappingCmdlet">
+            <summary>
+            Removes resource mappings from a draft application version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHDraftAppVersionResourceMappingCmdlet.AppArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHDraftAppVersionResourceMappingCmdlet.AppRegistryAppName">
+            <summary>
+            <para>
+            <para>The names of the registered applications to remove from the resource mappings.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHDraftAppVersionResourceMappingCmdlet.LogicalStackName">
+            <summary>
+            <para>
+            <para>The names of the CloudFormation stacks to remove from the resource mappings.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHDraftAppVersionResourceMappingCmdlet.ResourceGroupName">
+            <summary>
+            <para>
+            <para>The names of the resource groups to remove from the resource mappings.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHDraftAppVersionResourceMappingCmdlet.ResourceName">
+            <summary>
+            <para>
+            <para>The names of the resources to remove from the resource mappings.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHDraftAppVersionResourceMappingCmdlet.TerraformSourceName">
+            <summary>
+            <para>
+            Amazon.ResilienceHub.Model.RemoveDraftAppVersionResourceMappingsRequest.TerraformSourceNames
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHDraftAppVersionResourceMappingCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.RemoveDraftAppVersionResourceMappingsResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.RemoveDraftAppVersionResourceMappingsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHDraftAppVersionResourceMappingCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AppArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AppArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHDraftAppVersionResourceMappingCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHRecommendationTemplateCmdlet">
+            <summary>
+            Deletes a recommendation template. This is a destructive action that can't be undone.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHRecommendationTemplateCmdlet.RecommendationTemplateArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) for a recommendation template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHRecommendationTemplateCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>Used for an idempotency token. A client token is a unique, case-sensitive string of
+            up to 64 ASCII characters. You should not reuse the same client token for other API
+            requests.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHRecommendationTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.DeleteRecommendationTemplateResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.DeleteRecommendationTemplateResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHRecommendationTemplateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RecommendationTemplateArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^RecommendationTemplateArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHRecommendationTemplateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHResiliencyPolicyCmdlet">
+            <summary>
+            Deletes a resiliency policy. This is a destructive action that can't be undone.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHResiliencyPolicyCmdlet.PolicyArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
+            arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHResiliencyPolicyCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>Used for an idempotency token. A client token is a unique, case-sensitive string of
+            up to 64 ASCII characters. You should not reuse the same client token for other API
+            requests.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHResiliencyPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'PolicyArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.DeleteResiliencyPolicyResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.DeleteResiliencyPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHResiliencyPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PolicyArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^PolicyArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHResiliencyPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHResourceTagCmdlet">
+            <summary>
+            Removes one or more tags from a resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>The keys of the tags to remove.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.RemoveRESHResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.ResolveRESHAppVersionResourceCmdlet">
+            <summary>
+            Resolves the resources for an application version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.ResolveRESHAppVersionResourceCmdlet.AppArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.ResolveRESHAppVersionResourceCmdlet.AppVersion">
+            <summary>
+            <para>
+            <para>The version of the application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.ResolveRESHAppVersionResourceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.ResolveAppVersionResourcesResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.ResolveAppVersionResourcesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.ResolveRESHAppVersionResourceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AppArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AppArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.ResolveRESHAppVersionResourceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.StartRESHAppAssessmentCmdlet">
+            <summary>
+            Creates a new application assessment for an application.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.StartRESHAppAssessmentCmdlet.AppArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.StartRESHAppAssessmentCmdlet.AppVersion">
+            <summary>
+            <para>
+            <para>The version of the application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.StartRESHAppAssessmentCmdlet.AssessmentName">
+            <summary>
+            <para>
+            <para>The name for the assessment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.StartRESHAppAssessmentCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags assigned to the resource. A tag is a label that you assign to an Amazon Web
+            Services resource. Each tag consists of a key/value pair.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.StartRESHAppAssessmentCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>Used for an idempotency token. A client token is a unique, case-sensitive string of
+            up to 64 ASCII characters. You should not reuse the same client token for other API
+            requests.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.StartRESHAppAssessmentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Assessment'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.StartAppAssessmentResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.StartAppAssessmentResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.StartRESHAppAssessmentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AppArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AppArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.StartRESHAppAssessmentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.UpdateRESHAppCmdlet">
+            <summary>
+            Updates an application.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.UpdateRESHAppCmdlet.AppArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.UpdateRESHAppCmdlet.AssessmentSchedule">
+            <summary>
+            <para>
+            <para> Assessment execution schedule with 'Daily' or 'Disabled' values. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.UpdateRESHAppCmdlet.ClearResiliencyPolicyArn">
+            <summary>
+            <para>
+            <para>Specifies if the resiliency policy ARN should be cleared.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.UpdateRESHAppCmdlet.Description">
+            <summary>
+            <para>
+            <para>The optional description for an app.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.UpdateRESHAppCmdlet.PolicyArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
+            arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.UpdateRESHAppCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'App'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.UpdateAppResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.UpdateAppResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.UpdateRESHAppCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AppArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AppArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.UpdateRESHAppCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.UpdateRESHResiliencyPolicyCmdlet">
+            <summary>
+            Updates a resiliency policy.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.UpdateRESHResiliencyPolicyCmdlet.DataLocationConstraint">
+            <summary>
+            <para>
+            <para>Specifies a high-level geographical location constraint for where your resilience
+            policy data can be stored.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.UpdateRESHResiliencyPolicyCmdlet.Policy">
+            <summary>
+            <para>
+            <para>The type of resiliency policy to be created, including the recovery time objective
+            (RTO) and recovery point objective (RPO) in seconds.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.UpdateRESHResiliencyPolicyCmdlet.PolicyArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
+            arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.UpdateRESHResiliencyPolicyCmdlet.PolicyDescription">
+            <summary>
+            <para>
+            <para>The description for the policy.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.UpdateRESHResiliencyPolicyCmdlet.PolicyName">
+            <summary>
+            <para>
+            <para>The name of the policy</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.UpdateRESHResiliencyPolicyCmdlet.Tier">
+            <summary>
+            <para>
+            <para>The tier for this resiliency policy, ranging from the highest severity (<code>MissionCritical</code>)
+            to lowest (<code>NonCritical</code>).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.UpdateRESHResiliencyPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Policy'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.UpdateResiliencyPolicyResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.UpdateResiliencyPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.UpdateRESHResiliencyPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PolicyArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^PolicyArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.UpdateRESHResiliencyPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RESH.WriteRESHDraftAppVersionTemplateCmdlet">
+            <summary>
+            Adds or updates the app template for a draft version of a Resilience Hub app.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.WriteRESHDraftAppVersionTemplateCmdlet.AppArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+            For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+            Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.WriteRESHDraftAppVersionTemplateCmdlet.AppTemplateBody">
+            <summary>
+            <para>
+            <para>A JSON string that contains the body of the app template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.WriteRESHDraftAppVersionTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ResilienceHub.Model.PutDraftAppVersionTemplateResponse).
+            Specifying the name of a property of type Amazon.ResilienceHub.Model.PutDraftAppVersionTemplateResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.WriteRESHDraftAppVersionTemplateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AppArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AppArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RESH.WriteRESHDraftAppVersionTemplateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

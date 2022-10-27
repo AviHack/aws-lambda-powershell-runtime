@@ -1,0 +1,456 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.SupportApp</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.SUP.GetSUPAccountAliasCmdlet">
+            <summary>
+            Retrieves the alias from an Amazon Web Services account ID. The alias appears in the
+            Amazon Web Services Support App page of the Amazon Web Services Support Center. The
+            alias also appears in Slack messages from the Amazon Web Services Support App.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.GetSUPAccountAliasCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AccountAlias'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SupportApp.Model.GetAccountAliasResponse).
+            Specifying the name of a property of type Amazon.SupportApp.Model.GetAccountAliasResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SUP.GetSUPSlackChannelConfigurationListCmdlet">
+            <summary>
+            Lists the Slack channel configurations for an Amazon Web Services account.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.GetSUPSlackChannelConfigurationListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If the results of a search are large, the API only returns a portion of the results
+            and includes a <code>nextToken</code> pagination token in the response. To retrieve
+            the next batch of results, reissue the search request and include the returned token.
+            When the API returns the last set of results, the response doesn't include a pagination
+            token value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.GetSUPSlackChannelConfigurationListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SlackChannelConfigurations'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SupportApp.Model.ListSlackChannelConfigurationsResponse).
+            Specifying the name of a property of type Amazon.SupportApp.Model.ListSlackChannelConfigurationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SUP.GetSUPSlackWorkspaceConfigurationListCmdlet">
+            <summary>
+            Lists the Slack workspace configurations for an Amazon Web Services account.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.GetSUPSlackWorkspaceConfigurationListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If the results of a search are large, the API only returns a portion of the results
+            and includes a <code>nextToken</code> pagination token in the response. To retrieve
+            the next batch of results, reissue the search request and include the returned token.
+            When the API returns the last set of results, the response doesn't include a pagination
+            token value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.GetSUPSlackWorkspaceConfigurationListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SlackWorkspaceConfigurations'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SupportApp.Model.ListSlackWorkspaceConfigurationsResponse).
+            Specifying the name of a property of type Amazon.SupportApp.Model.ListSlackWorkspaceConfigurationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SUP.NewSUPSlackChannelConfigurationCmdlet">
+            <summary>
+            Creates a Slack channel configuration for your Amazon Web Services account.
+            
+             <note><ul><li><para>
+            You can add up to 5 Slack workspaces for your account.
+            </para></li><li><para>
+            You can add up to 20 Slack channels for your account.
+            </para></li></ul></note><para>
+            A Slack channel can have up to 100 Amazon Web Services accounts. This means that only
+            100 accounts can add the same Slack channel to the Amazon Web Services Support App.
+            We recommend that you only add the accounts that you need to manage support cases
+            for your organization. This can reduce the notifications about case updates that you
+            receive in the Slack channel.
+            </para><note><para>
+            We recommend that you choose a private Slack channel so that only members in that
+            channel have read and write access to your support cases. Anyone in your Slack channel
+            can create, update, or resolve support cases for your account. Users require an invitation
+            to join private channels. 
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.NewSUPSlackChannelConfigurationCmdlet.ChannelId">
+            <summary>
+            <para>
+            <para>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.NewSUPSlackChannelConfigurationCmdlet.ChannelName">
+            <summary>
+            <para>
+            <para>The name of the Slack channel that you configure for the Amazon Web Services Support
+            App.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.NewSUPSlackChannelConfigurationCmdlet.ChannelRoleArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations
+            on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing
+            access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support
+            User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.NewSUPSlackChannelConfigurationCmdlet.NotifyOnAddCorrespondenceToCase">
+            <summary>
+            <para>
+            <para>Whether you want to get notified when a support case has a new correspondence.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.NewSUPSlackChannelConfigurationCmdlet.NotifyOnCaseSeverity">
+            <summary>
+            <para>
+            <para>The case severity for a support case that you want to receive notifications.</para><para>If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code>
+            for at least one of the following parameters:</para><ul><li><para><code>notifyOnAddCorrespondenceToCase</code></para></li><li><para><code>notifyOnCreateOrReopenCase</code></para></li><li><para><code>notifyOnResolveCase</code></para></li></ul><para>If you specify <code>none</code>, the following parameters must be null or <code>false</code>:</para><ul><li><para><code>notifyOnAddCorrespondenceToCase</code></para></li><li><para><code>notifyOnCreateOrReopenCase</code></para></li><li><para><code>notifyOnResolveCase</code></para></li></ul><note><para>If you don't specify these parameters in your request, they default to <code>false</code>.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.NewSUPSlackChannelConfigurationCmdlet.NotifyOnCreateOrReopenCase">
+            <summary>
+            <para>
+            <para>Whether you want to get notified when a support case is created or reopened.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.NewSUPSlackChannelConfigurationCmdlet.NotifyOnResolveCase">
+            <summary>
+            <para>
+            <para>Whether you want to get notified when a support case is resolved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.NewSUPSlackChannelConfigurationCmdlet.TeamId">
+            <summary>
+            <para>
+            <para>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.NewSUPSlackChannelConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SupportApp.Model.CreateSlackChannelConfigurationResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.NewSUPSlackChannelConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ChannelId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ChannelId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.NewSUPSlackChannelConfigurationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SUP.RegisterSUPSlackWorkspaceForOrganizationCmdlet">
+            <summary>
+            Registers a Slack workspace for your Amazon Web Services account. To call this API,
+            your account must be part of an organization in Organizations.
+            
+             
+            <para>
+            If you're the <i>management account</i> and you want to register Slack workspaces
+            for your organization, you must complete the following tasks:
+            </para><ol><li><para>
+            Sign in to the <a href="https://console.aws.amazon.com/support/app">Amazon Web Services
+            Support Center</a> and authorize the Slack workspaces where you want your organization
+            to have access to. See <a href="https://docs.aws.amazon.com/awssupport/latest/user/authorize-slack-workspace.html">Authorize
+            a Slack workspace</a> in the <i>Amazon Web Services Support User Guide</i>.
+            </para></li><li><para>
+            Call the <code>RegisterSlackWorkspaceForOrganization</code> API to authorize each
+            Slack workspace for the organization.
+            </para></li></ol><para>
+            After the management account authorizes the Slack workspace, member accounts can call
+            this API to authorize the same Slack workspace for their individual accounts. Member
+            accounts don't need to authorize the Slack workspace manually through the <a href="https://console.aws.amazon.com/support/app">Amazon
+            Web Services Support Center</a>.
+            </para><para>
+            To use the Amazon Web Services Support App, each account must then complete the following
+            tasks:
+            </para><ul><li><para>
+            Create an Identity and Access Management (IAM) role with the required permission.
+            For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing
+            access to the Amazon Web Services Support App</a>.
+            </para></li><li><para>
+            Configure a Slack channel to use the Amazon Web Services Support App for support cases
+            for that account. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/add-your-slack-channel.html">Configuring
+            a Slack channel</a>.
+            </para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.RegisterSUPSlackWorkspaceForOrganizationCmdlet.TeamId">
+            <summary>
+            <para>
+            <para>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
+            Specify the Slack workspace that you want to use for your organization.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.RegisterSUPSlackWorkspaceForOrganizationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SupportApp.Model.RegisterSlackWorkspaceForOrganizationResponse).
+            Specifying the name of a property of type Amazon.SupportApp.Model.RegisterSlackWorkspaceForOrganizationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.RegisterSUPSlackWorkspaceForOrganizationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TeamId parameter.
+            The -PassThru parameter is deprecated, use -Select '^TeamId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.RegisterSUPSlackWorkspaceForOrganizationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SUP.RemoveSUPAccountAliasCmdlet">
+            <summary>
+            Deletes an alias for an Amazon Web Services account ID. The alias appears in the Amazon
+            Web Services Support App page of the Amazon Web Services Support Center. The alias
+            also appears in Slack messages from the Amazon Web Services Support App.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.RemoveSUPAccountAliasCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SupportApp.Model.DeleteAccountAliasResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.RemoveSUPAccountAliasCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SUP.RemoveSUPSlackChannelConfigurationCmdlet">
+            <summary>
+            Deletes a Slack channel configuration from your Amazon Web Services account. This
+            operation doesn't delete your Slack channel.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.RemoveSUPSlackChannelConfigurationCmdlet.ChannelId">
+            <summary>
+            <para>
+            <para>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.RemoveSUPSlackChannelConfigurationCmdlet.TeamId">
+            <summary>
+            <para>
+            <para>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.RemoveSUPSlackChannelConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SupportApp.Model.DeleteSlackChannelConfigurationResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.RemoveSUPSlackChannelConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ChannelId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ChannelId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.RemoveSUPSlackChannelConfigurationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SUP.RemoveSUPSlackWorkspaceConfigurationCmdlet">
+            <summary>
+            Deletes a Slack workspace configuration from your Amazon Web Services account. This
+            operation doesn't delete your Slack workspace.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.RemoveSUPSlackWorkspaceConfigurationCmdlet.TeamId">
+            <summary>
+            <para>
+            <para>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.RemoveSUPSlackWorkspaceConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SupportApp.Model.DeleteSlackWorkspaceConfigurationResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.RemoveSUPSlackWorkspaceConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TeamId parameter.
+            The -PassThru parameter is deprecated, use -Select '^TeamId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.RemoveSUPSlackWorkspaceConfigurationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SUP.SetSUPAccountAliasCmdlet">
+            <summary>
+            Creates or updates an individual alias for each Amazon Web Services account ID. The
+            alias appears in the Amazon Web Services Support App page of the Amazon Web Services
+            Support Center. The alias also appears in Slack messages from the Amazon Web Services
+            Support App.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.SetSUPAccountAliasCmdlet.AccountAlias">
+            <summary>
+            <para>
+            <para>An alias or short name for an Amazon Web Services account.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.SetSUPAccountAliasCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SupportApp.Model.PutAccountAliasResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.SetSUPAccountAliasCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AccountAlias parameter.
+            The -PassThru parameter is deprecated, use -Select '^AccountAlias' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.SetSUPAccountAliasCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SUP.UpdateSUPSlackChannelConfigurationCmdlet">
+            <summary>
+            Updates the configuration for a Slack channel, such as case update notifications.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.UpdateSUPSlackChannelConfigurationCmdlet.ChannelId">
+            <summary>
+            <para>
+            <para>The channel ID in Slack. This ID identifies a channel within a Slack workspace.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.UpdateSUPSlackChannelConfigurationCmdlet.ChannelName">
+            <summary>
+            <para>
+            <para>The Slack channel name that you want to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.UpdateSUPSlackChannelConfigurationCmdlet.ChannelRoleArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations
+            on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing
+            access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support
+            User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.UpdateSUPSlackChannelConfigurationCmdlet.NotifyOnAddCorrespondenceToCase">
+            <summary>
+            <para>
+            <para>Whether you want to get notified when a support case has a new correspondence.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.UpdateSUPSlackChannelConfigurationCmdlet.NotifyOnCaseSeverity">
+            <summary>
+            <para>
+            <para>The case severity for a support case that you want to receive notifications.</para><para>If you specify <code>high</code> or <code>all</code>, at least one of the following
+            parameters must be <code>true</code>:</para><ul><li><para><code>notifyOnAddCorrespondenceToCase</code></para></li><li><para><code>notifyOnCreateOrReopenCase</code></para></li><li><para><code>notifyOnResolveCase</code></para></li></ul><para>If you specify <code>none</code>, any of the following parameters that you specify
+            in your request must be <code>false</code>:</para><ul><li><para><code>notifyOnAddCorrespondenceToCase</code></para></li><li><para><code>notifyOnCreateOrReopenCase</code></para></li><li><para><code>notifyOnResolveCase</code></para></li></ul><note><para>If you don't specify these parameters in your request, the Amazon Web Services Support
+            App uses the current values by default.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.UpdateSUPSlackChannelConfigurationCmdlet.NotifyOnCreateOrReopenCase">
+            <summary>
+            <para>
+            <para>Whether you want to get notified when a support case is created or reopened.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.UpdateSUPSlackChannelConfigurationCmdlet.NotifyOnResolveCase">
+            <summary>
+            <para>
+            <para>Whether you want to get notified when a support case is resolved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.UpdateSUPSlackChannelConfigurationCmdlet.TeamId">
+            <summary>
+            <para>
+            <para>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.UpdateSUPSlackChannelConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SupportApp.Model.UpdateSlackChannelConfigurationResponse).
+            Specifying the name of a property of type Amazon.SupportApp.Model.UpdateSlackChannelConfigurationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.UpdateSUPSlackChannelConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ChannelId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ChannelId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SUP.UpdateSUPSlackChannelConfigurationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

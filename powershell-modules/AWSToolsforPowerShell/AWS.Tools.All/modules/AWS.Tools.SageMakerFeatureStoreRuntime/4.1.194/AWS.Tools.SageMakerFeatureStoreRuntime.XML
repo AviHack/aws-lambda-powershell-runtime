@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.SageMakerFeatureStoreRuntime</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.SMFS.GetSMFSRecordCmdlet">
+            <summary>
+            Use for <code>OnlineStore</code> serving from a <code>FeatureStore</code>. Only the
+            latest records stored in the <code>OnlineStore</code> can be retrieved. If no Record
+            with <code>RecordIdentifierValue</code> is found, then an empty result is returned.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SMFS.GetSMFSRecordCmdlet.FeatureGroupName">
+            <summary>
+            <para>
+            <para>The name of the feature group in which you want to put the records.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SMFS.GetSMFSRecordCmdlet.FeatureName">
+            <summary>
+            <para>
+            <para>List of names of Features to be retrieved. If not specified, the latest value for
+            all the Features are returned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SMFS.GetSMFSRecordCmdlet.RecordIdentifierValueAsString">
+            <summary>
+            <para>
+            <para>The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies
+            the record in the <code>FeatureGroup</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SMFS.GetSMFSRecordCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Record'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SageMakerFeatureStoreRuntime.Model.GetRecordResponse).
+            Specifying the name of a property of type Amazon.SageMakerFeatureStoreRuntime.Model.GetRecordResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SMFS.GetSMFSRecordBatchCmdlet">
+            <summary>
+            Retrieves a batch of <code>Records</code> from a <code>FeatureGroup</code>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SMFS.GetSMFSRecordBatchCmdlet.Identifier">
+            <summary>
+            <para>
+            <para>A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code>
+            value, and Feature name that have been requested to be retrieved in batch.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SMFS.GetSMFSRecordBatchCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SageMakerFeatureStoreRuntime.Model.BatchGetRecordResponse).
+            Specifying the name of a property of type Amazon.SageMakerFeatureStoreRuntime.Model.BatchGetRecordResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SMFS.RemoveSMFSRecordCmdlet">
+            <summary>
+            Deletes a <code>Record</code> from a <code>FeatureGroup</code>. A new record will
+            show up in the <code>OfflineStore</code> when the <code>DeleteRecord</code> API is
+            called. This record will have a value of <code>True</code> in the <code>is_deleted</code>
+            column.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SMFS.RemoveSMFSRecordCmdlet.EventTime">
+            <summary>
+            <para>
+            <para>Timestamp indicating when the deletion event occurred. <code>EventTime</code> can
+            be used to query data at a certain point in time.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SMFS.RemoveSMFSRecordCmdlet.FeatureGroupName">
+            <summary>
+            <para>
+            <para>The name of the feature group to delete the record from. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SMFS.RemoveSMFSRecordCmdlet.RecordIdentifierValueAsString">
+            <summary>
+            <para>
+            <para>The value for the <code>RecordIdentifier</code> that uniquely identifies the record,
+            in string format. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SMFS.RemoveSMFSRecordCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SageMakerFeatureStoreRuntime.Model.DeleteRecordResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SMFS.RemoveSMFSRecordCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SMFS.WriteSMFSRecordCmdlet">
+            <summary>
+            Used for data ingestion into the <code>FeatureStore</code>. The <code>PutRecord</code>
+            API writes to both the <code>OnlineStore</code> and <code>OfflineStore</code>. If
+            the record is the latest record for the <code>recordIdentifier</code>, the record
+            is written to both the <code>OnlineStore</code> and <code>OfflineStore</code>. If
+            the record is a historic record, it is written only to the <code>OfflineStore</code>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SMFS.WriteSMFSRecordCmdlet.FeatureGroupName">
+            <summary>
+            <para>
+            <para>The name of the feature group that you want to insert the record into.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SMFS.WriteSMFSRecordCmdlet.Record">
+            <summary>
+            <para>
+            <para>List of FeatureValues to be inserted. This will be a full over-write. If you only
+            want to update few of the feature values, do the following:</para><ul><li><para>Use <code>GetRecord</code> to retrieve the latest record.</para></li><li><para>Update the record returned from <code>GetRecord</code>. </para></li><li><para>Use <code>PutRecord</code> to update feature values.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SMFS.WriteSMFSRecordCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SageMakerFeatureStoreRuntime.Model.PutRecordResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SMFS.WriteSMFSRecordCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,957 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.ManagedGrafana</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGRF.AddMGRFLicenseCmdlet">
+            <summary>
+            Assigns a Grafana Enterprise license to a workspace. Upgrading to Grafana Enterprise
+            incurs additional fees. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html">Upgrade
+            a workspace to Grafana Enterprise</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.AddMGRFLicenseCmdlet.LicenseType">
+            <summary>
+            <para>
+            <para>The type of license to associate with the workspace.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.AddMGRFLicenseCmdlet.WorkspaceId">
+            <summary>
+            <para>
+            <para>The ID of the workspace to associate the license with.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.AddMGRFLicenseCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Workspace'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ManagedGrafana.Model.AssociateLicenseResponse).
+            Specifying the name of a property of type Amazon.ManagedGrafana.Model.AssociateLicenseResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.AddMGRFLicenseCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the WorkspaceId parameter.
+            The -PassThru parameter is deprecated, use -Select '^WorkspaceId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.AddMGRFLicenseCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGRF.AddMGRFResourceTagCmdlet">
+            <summary>
+            The <code>TagResource</code> operation associates tags with an Amazon Managed Grafana
+            resource. Currently, the only resource that can be tagged is workspaces. 
+            
+             
+            <para>
+            If you specify a new tag key for the resource, this tag is appended to the list of
+            tags associated with the resource. If you specify a tag key that is already associated
+            with the resource, the new tag value that you specify replaces the previous value
+            for that tag.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.AddMGRFResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The ARN of the resource the tag is associated with.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.AddMGRFResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The list of tag keys and values to associate with the resource. You can associate
+            tag keys only, tags (key and values) only or a combination of tag keys and tags.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.AddMGRFResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ManagedGrafana.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.AddMGRFResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.AddMGRFResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGRF.GetMGRFPermissionListCmdlet">
+            <summary>
+            Lists the users and groups who have the Grafana <code>Admin</code> and <code>Editor</code>
+            roles in this workspace. If you use this operation without specifying <code>userId</code>
+            or <code>groupId</code>, the operation returns the roles of all users and groups.
+            If you specify a <code>userId</code> or a <code>groupId</code>, only the roles for
+            that user or group are returned. If you do this, you can specify only one <code>userId</code>
+            or one <code>groupId</code>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.GetMGRFPermissionListCmdlet.GroupId">
+            <summary>
+            <para>
+            <para>(Optional) Limits the results to only the group that matches this ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.GetMGRFPermissionListCmdlet.UserId">
+            <summary>
+            <para>
+            <para>(Optional) Limits the results to only the user that matches this ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.GetMGRFPermissionListCmdlet.UserType">
+            <summary>
+            <para>
+            <para>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of Amazon
+            Web Services SSO users are returned. If you specify <code>SSO_GROUP</code>, only the
+            permissions of Amazon Web Services SSO groups are returned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.GetMGRFPermissionListCmdlet.WorkspaceId">
+            <summary>
+            <para>
+            <para>The ID of the workspace to list permissions for. This parameter is required.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.GetMGRFPermissionListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.GetMGRFPermissionListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to use when requesting the next set of results. You received this token
+            from a previous <code>ListPermissions</code> operation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.GetMGRFPermissionListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ManagedGrafana.Model.ListPermissionsResponse).
+            Specifying the name of a property of type Amazon.ManagedGrafana.Model.ListPermissionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.GetMGRFPermissionListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the WorkspaceId parameter.
+            The -PassThru parameter is deprecated, use -Select '^WorkspaceId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGRF.GetMGRFResourceTagCmdlet">
+            <summary>
+            The <code>ListTagsForResource</code> operation returns the tags that are associated
+            with the Amazon Managed Service for Grafana resource specified by the <code>resourceArn</code>.
+            Currently, the only resource that can be tagged is a workspace.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.GetMGRFResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The ARN of the resource the list of tags are associated with.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.GetMGRFResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ManagedGrafana.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.ManagedGrafana.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.GetMGRFResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGRF.GetMGRFWorkspaceCmdlet">
+            <summary>
+            Displays information about one Amazon Managed Grafana workspace.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.GetMGRFWorkspaceCmdlet.WorkspaceId">
+            <summary>
+            <para>
+            <para>The ID of the workspace to display information about.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.GetMGRFWorkspaceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Workspace'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ManagedGrafana.Model.DescribeWorkspaceResponse).
+            Specifying the name of a property of type Amazon.ManagedGrafana.Model.DescribeWorkspaceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.GetMGRFWorkspaceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the WorkspaceId parameter.
+            The -PassThru parameter is deprecated, use -Select '^WorkspaceId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGRF.GetMGRFWorkspaceAuthenticationCmdlet">
+            <summary>
+            Displays information about the authentication methods used in one Amazon Managed Grafana
+            workspace.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.GetMGRFWorkspaceAuthenticationCmdlet.WorkspaceId">
+            <summary>
+            <para>
+            <para>The ID of the workspace to return authentication information about.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.GetMGRFWorkspaceAuthenticationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Authentication'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ManagedGrafana.Model.DescribeWorkspaceAuthenticationResponse).
+            Specifying the name of a property of type Amazon.ManagedGrafana.Model.DescribeWorkspaceAuthenticationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.GetMGRFWorkspaceAuthenticationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the WorkspaceId parameter.
+            The -PassThru parameter is deprecated, use -Select '^WorkspaceId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGRF.GetMGRFWorkspaceListCmdlet">
+            <summary>
+            Returns a list of Amazon Managed Grafana workspaces in the account, with some information
+            about each workspace. For more complete information about one workspace, use <a href="https://docs.aws.amazon.com/AAMG/latest/APIReference/API_DescribeWorkspace.html">DescribeWorkspace</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.GetMGRFWorkspaceListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of workspaces to include in the results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.GetMGRFWorkspaceListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token for the next set of workspaces to return. (You receive this token from a
+            previous <code>ListWorkspaces</code> operation.)</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.GetMGRFWorkspaceListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Workspaces'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ManagedGrafana.Model.ListWorkspacesResponse).
+            Specifying the name of a property of type Amazon.ManagedGrafana.Model.ListWorkspacesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGRF.NewMGRFWorkspaceCmdlet">
+            <summary>
+            Creates a <i>workspace</i>. In a workspace, you can create Grafana dashboards and
+            visualizations to analyze your metrics, logs, and traces. You don't have to build,
+            package, or deploy any hardware to run the Grafana server.
+            
+             
+            <para>
+            Don't use <code>CreateWorkspace</code> to modify an existing workspace. Instead, use
+            <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspace.html">UpdateWorkspace</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.NewMGRFWorkspaceCmdlet.AccountAccessType">
+            <summary>
+            <para>
+            <para>Specifies whether the workspace can access Amazon Web Services resources in this Amazon
+            Web Services account only, or whether it can also access Amazon Web Services resources
+            in other accounts in the same organization. If you specify <code>ORGANIZATION</code>,
+            you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code>
+            parameter.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.NewMGRFWorkspaceCmdlet.AuthenticationProvider">
+            <summary>
+            <para>
+            <para>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On,
+            or both to authenticate users for using the Grafana console within a workspace. For
+            more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
+            authentication in Amazon Managed Grafana</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.NewMGRFWorkspaceCmdlet.OrganizationRoleName">
+            <summary>
+            <para>
+            <para>The name of an IAM role that already exists to use with Organizations to access Amazon
+            Web Services data sources and notification channels in other accounts in an organization.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.NewMGRFWorkspaceCmdlet.PermissionType">
+            <summary>
+            <para>
+            <para>If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed
+            Grafana automatically creates the IAM roles and provisions the permissions that the
+            workspace needs to use Amazon Web Services data sources and notification channels.
+            In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM
+            role for you.</para><para>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions
+            yourself. If you are creating this workspace in a member account of an organization
+            that is not a delegated administrator account, and you want the workspace to access
+            data sources in other Amazon Web Services accounts in the organization, you must choose
+            <code>CUSTOMER_MANAGED</code>.</para><para>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
+            Managed Grafana permissions and policies for Amazon Web Services data sources and
+            notification channels</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.NewMGRFWorkspaceCmdlet.StackSetName">
+            <summary>
+            <para>
+            <para>The name of the CloudFormation stack set to use to generate IAM roles to be used for
+            this workspace.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.NewMGRFWorkspaceCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The list of tags associated with the workspace.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.NewMGRFWorkspaceCmdlet.WorkspaceDataSource">
+            <summary>
+            <para>
+            <para>Specify the Amazon Web Services data sources that you want to be queried in this workspace.
+            Specifying these data sources here enables Amazon Managed Grafana to create IAM roles
+            and permissions that allow Amazon Managed Grafana to read data from these sources.
+            You must still add them as data sources in the Grafana console in the workspace.</para><para>If you don't specify a data source here, you can still add it as a data source in
+            the workspace console later. However, you will then have to manually configure permissions
+            for it.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.NewMGRFWorkspaceCmdlet.WorkspaceDescription">
+            <summary>
+            <para>
+            <para>A description for the workspace. This is used only to help you identify this workspace.</para><para>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.NewMGRFWorkspaceCmdlet.WorkspaceName">
+            <summary>
+            <para>
+            <para>The name for the workspace. It does not have to be unique.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.NewMGRFWorkspaceCmdlet.WorkspaceNotificationDestination">
+            <summary>
+            <para>
+            <para>Specify the Amazon Web Services notification channels that you plan to use in this
+            workspace. Specifying these data sources here enables Amazon Managed Grafana to create
+            IAM roles and permissions that allow Amazon Managed Grafana to use these channels.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.NewMGRFWorkspaceCmdlet.WorkspaceOrganizationalUnit">
+            <summary>
+            <para>
+            <para>Specifies the organizational units that this workspace is allowed to use data sources
+            from, if this workspace is in an account that is part of an organization.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.NewMGRFWorkspaceCmdlet.WorkspaceRoleArn">
+            <summary>
+            <para>
+            <para>The workspace needs an IAM role that grants permissions to the Amazon Web Services
+            resources that the workspace will view data from. If you already have a role that
+            you want to use, specify it here. The permission type should be set to <code>CUSTOMER_MANAGED</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.NewMGRFWorkspaceCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>A unique, case-sensitive, user-provided identifier to ensure the idempotency of the
+            request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.NewMGRFWorkspaceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Workspace'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ManagedGrafana.Model.CreateWorkspaceResponse).
+            Specifying the name of a property of type Amazon.ManagedGrafana.Model.CreateWorkspaceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.NewMGRFWorkspaceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGRF.NewMGRFWorkspaceApiKeyCmdlet">
+            <summary>
+            Creates an API key for the workspace. This key can be used to authenticate requests
+            sent to the workspace's HTTP API. See <a href=" https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">
+            https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for
+            available APIs and example requests.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.NewMGRFWorkspaceApiKeyCmdlet.KeyName">
+            <summary>
+            <para>
+            <para>Specifies the name of the key to create. Key names must be unique to the workspace.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.NewMGRFWorkspaceApiKeyCmdlet.KeyRole">
+            <summary>
+            <para>
+            <para>Specifies the permission level of the key.</para><para>Valid Values: <code>VIEWER</code> | <code>EDITOR</code> | <code>ADMIN</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.NewMGRFWorkspaceApiKeyCmdlet.SecondsToLive">
+            <summary>
+            <para>
+            <para>Specifies the time in seconds until the key expires. Keys can be valid for up to 30
+            days.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.NewMGRFWorkspaceApiKeyCmdlet.WorkspaceId">
+            <summary>
+            <para>
+            <para>The ID of the workspace in which to create an API key.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.NewMGRFWorkspaceApiKeyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ManagedGrafana.Model.CreateWorkspaceApiKeyResponse).
+            Specifying the name of a property of type Amazon.ManagedGrafana.Model.CreateWorkspaceApiKeyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.NewMGRFWorkspaceApiKeyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the KeyName parameter.
+            The -PassThru parameter is deprecated, use -Select '^KeyName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.NewMGRFWorkspaceApiKeyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGRF.RemoveMGRFLicenseCmdlet">
+            <summary>
+            Removes the Grafana Enterprise license from a workspace.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.RemoveMGRFLicenseCmdlet.LicenseType">
+            <summary>
+            <para>
+            <para>The type of license to remove from the workspace.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.RemoveMGRFLicenseCmdlet.WorkspaceId">
+            <summary>
+            <para>
+            <para>The ID of the workspace to remove the Grafana Enterprise license from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.RemoveMGRFLicenseCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Workspace'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ManagedGrafana.Model.DisassociateLicenseResponse).
+            Specifying the name of a property of type Amazon.ManagedGrafana.Model.DisassociateLicenseResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.RemoveMGRFLicenseCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the WorkspaceId parameter.
+            The -PassThru parameter is deprecated, use -Select '^WorkspaceId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.RemoveMGRFLicenseCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGRF.RemoveMGRFResourceTagCmdlet">
+            <summary>
+            The <code>UntagResource</code> operation removes the association of the tag with the
+            Amazon Managed Grafana resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.RemoveMGRFResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The ARN of the resource the tag association is removed from. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.RemoveMGRFResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>The key values of the tag to be removed from the resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.RemoveMGRFResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ManagedGrafana.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.RemoveMGRFResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.RemoveMGRFResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGRF.RemoveMGRFWorkspaceCmdlet">
+            <summary>
+            Deletes an Amazon Managed Grafana workspace.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.RemoveMGRFWorkspaceCmdlet.WorkspaceId">
+            <summary>
+            <para>
+            <para>The ID of the workspace to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.RemoveMGRFWorkspaceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Workspace'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ManagedGrafana.Model.DeleteWorkspaceResponse).
+            Specifying the name of a property of type Amazon.ManagedGrafana.Model.DeleteWorkspaceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.RemoveMGRFWorkspaceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the WorkspaceId parameter.
+            The -PassThru parameter is deprecated, use -Select '^WorkspaceId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.RemoveMGRFWorkspaceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGRF.RemoveMGRFWorkspaceApiKeyCmdlet">
+            <summary>
+            Deletes an API key for a workspace.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.RemoveMGRFWorkspaceApiKeyCmdlet.KeyName">
+            <summary>
+            <para>
+            <para>The name of the API key to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.RemoveMGRFWorkspaceApiKeyCmdlet.WorkspaceId">
+            <summary>
+            <para>
+            <para>The ID of the workspace to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.RemoveMGRFWorkspaceApiKeyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ManagedGrafana.Model.DeleteWorkspaceApiKeyResponse).
+            Specifying the name of a property of type Amazon.ManagedGrafana.Model.DeleteWorkspaceApiKeyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.RemoveMGRFWorkspaceApiKeyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the KeyName parameter.
+            The -PassThru parameter is deprecated, use -Select '^KeyName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.RemoveMGRFWorkspaceApiKeyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFPermissionCmdlet">
+            <summary>
+            Updates which users in a workspace have the Grafana <code>Admin</code> or <code>Editor</code>
+            roles.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFPermissionCmdlet.UpdateInstructionBatch">
+            <summary>
+            <para>
+            <para>An array of structures that contain the permission updates to make.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFPermissionCmdlet.WorkspaceId">
+            <summary>
+            <para>
+            <para>The ID of the workspace to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFPermissionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Errors'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ManagedGrafana.Model.UpdatePermissionsResponse).
+            Specifying the name of a property of type Amazon.ManagedGrafana.Model.UpdatePermissionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFPermissionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the WorkspaceId parameter.
+            The -PassThru parameter is deprecated, use -Select '^WorkspaceId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFPermissionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceCmdlet">
+            <summary>
+            Modifies an existing Amazon Managed Grafana workspace. If you use this operation and
+            omit any optional parameters, the existing values of those parameters are not changed.
+            
+             
+            <para>
+            To modify the user authentication methods that the workspace uses, such as SAML or
+            Amazon Web Services SSO, use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">UpdateWorkspaceAuthentication</a>.
+            </para><para>
+            To modify which users in the workspace have the <code>Admin</code> and <code>Editor</code>
+            Grafana roles, use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdatePermissions.html">UpdatePermissions</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceCmdlet.AccountAccessType">
+            <summary>
+            <para>
+            <para>Specifies whether the workspace can access Amazon Web Services resources in this Amazon
+            Web Services account only, or whether it can also access Amazon Web Services resources
+            in other accounts in the same organization. If you specify <code>ORGANIZATION</code>,
+            you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code>
+            parameter.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceCmdlet.OrganizationRoleName">
+            <summary>
+            <para>
+            <para>The name of an IAM role that already exists to use to access resources through Organizations.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceCmdlet.PermissionType">
+            <summary>
+            <para>
+            <para>If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically
+            creates the IAM roles and provisions the permissions that the workspace needs to use
+            Amazon Web Services data sources and notification channels.</para><para>If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions
+            yourself. If you are creating this workspace in a member account of an organization
+            and that account is not a delegated administrator account, and you want the workspace
+            to access data sources in other Amazon Web Services accounts in the organization,
+            you must choose <code>CUSTOMER_MANAGED</code>.</para><para>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
+            Managed Grafana permissions and policies for Amazon Web Services data sources and
+            notification channels</a></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceCmdlet.StackSetName">
+            <summary>
+            <para>
+            <para>The name of the CloudFormation stack set to use to generate IAM roles to be used for
+            this workspace.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceCmdlet.WorkspaceDataSource">
+            <summary>
+            <para>
+            <para>Specify the Amazon Web Services data sources that you want to be queried in this workspace.
+            Specifying these data sources here enables Amazon Managed Grafana to create IAM roles
+            and permissions that allow Amazon Managed Grafana to read data from these sources.
+            You must still add them as data sources in the Grafana console in the workspace.</para><para>If you don't specify a data source here, you can still add it as a data source later
+            in the workspace console. However, you will then have to manually configure permissions
+            for it.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceCmdlet.WorkspaceDescription">
+            <summary>
+            <para>
+            <para>A description for the workspace. This is used only to help you identify this workspace.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceCmdlet.WorkspaceId">
+            <summary>
+            <para>
+            <para>The ID of the workspace to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceCmdlet.WorkspaceName">
+            <summary>
+            <para>
+            <para>A new name for the workspace to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceCmdlet.WorkspaceNotificationDestination">
+            <summary>
+            <para>
+            <para>Specify the Amazon Web Services notification channels that you plan to use in this
+            workspace. Specifying these data sources here enables Amazon Managed Grafana to create
+            IAM roles and permissions that allow Amazon Managed Grafana to use these channels.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceCmdlet.WorkspaceOrganizationalUnit">
+            <summary>
+            <para>
+            <para>Specifies the organizational units that this workspace is allowed to use data sources
+            from, if this workspace is in an account that is part of an organization.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceCmdlet.WorkspaceRoleArn">
+            <summary>
+            <para>
+            <para>The workspace needs an IAM role that grants permissions to the Amazon Web Services
+            resources that the workspace will view data from. If you already have a role that
+            you want to use, specify it here. If you omit this field and you specify some Amazon
+            Web Services resources in <code>workspaceDataSources</code> or <code>workspaceNotificationDestinations</code>,
+            a new IAM role with the necessary permissions is automatically created.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Workspace'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ManagedGrafana.Model.UpdateWorkspaceResponse).
+            Specifying the name of a property of type Amazon.ManagedGrafana.Model.UpdateWorkspaceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the WorkspaceId parameter.
+            The -PassThru parameter is deprecated, use -Select '^WorkspaceId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceAuthenticationCmdlet">
+            <summary>
+            Use this operation to define the identity provider (IdP) that this workspace authenticates
+            users from, using SAML. You can also map SAML assertion attributes to workspace user
+            information and define which groups in the assertion attribute are to have the <code>Admin</code>
+            and <code>Editor</code> roles in the workspace.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceAuthenticationCmdlet.RoleValues_Admin">
+            <summary>
+            <para>
+            <para>A list of groups from the SAML assertion attribute to grant the Grafana <code>Admin</code>
+            role to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceAuthenticationCmdlet.SamlConfiguration_AllowedOrganization">
+            <summary>
+            <para>
+            <para>Lists which organizations defined in the SAML assertion are allowed to use the Amazon
+            Managed Grafana workspace. If this is empty, all organizations in the assertion attribute
+            have access.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceAuthenticationCmdlet.AuthenticationProvider">
+            <summary>
+            <para>
+            <para>Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On,
+            or both to authenticate users for using the Grafana console within a workspace. For
+            more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
+            authentication in Amazon Managed Grafana</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceAuthenticationCmdlet.RoleValues_Editor">
+            <summary>
+            <para>
+            <para>A list of groups from the SAML assertion attribute to grant the Grafana <code>Editor</code>
+            role to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceAuthenticationCmdlet.AssertionAttributes_Email">
+            <summary>
+            <para>
+            <para>The name of the attribute within the SAML assertion to use as the email names for
+            SAML users.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceAuthenticationCmdlet.AssertionAttributes_Group">
+            <summary>
+            <para>
+            <para>The name of the attribute within the SAML assertion to use as the user full "friendly"
+            names for user groups.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceAuthenticationCmdlet.AssertionAttributes_Login">
+            <summary>
+            <para>
+            <para>The name of the attribute within the SAML assertion to use as the login names for
+            SAML users.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceAuthenticationCmdlet.SamlConfiguration_LoginValidityDuration">
+            <summary>
+            <para>
+            <para>How long a sign-on session by a SAML user is valid, before the user has to sign on
+            again.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceAuthenticationCmdlet.AssertionAttributes_Name">
+            <summary>
+            <para>
+            <para>The name of the attribute within the SAML assertion to use as the user full "friendly"
+            names for SAML users.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceAuthenticationCmdlet.AssertionAttributes_Org">
+            <summary>
+            <para>
+            <para>The name of the attribute within the SAML assertion to use as the user full "friendly"
+            names for the users' organizations.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceAuthenticationCmdlet.AssertionAttributes_Role">
+            <summary>
+            <para>
+            <para>The name of the attribute within the SAML assertion to use as the user roles.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceAuthenticationCmdlet.IdpMetadata_Url">
+            <summary>
+            <para>
+            <para>The URL of the location containing the metadata.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceAuthenticationCmdlet.WorkspaceId">
+            <summary>
+            <para>
+            <para>The ID of the workspace to update the authentication for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceAuthenticationCmdlet.IdpMetadata_Xml">
+            <summary>
+            <para>
+            <para>The actual full metadata file, in XML format.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceAuthenticationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Authentication'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ManagedGrafana.Model.UpdateWorkspaceAuthenticationResponse).
+            Specifying the name of a property of type Amazon.ManagedGrafana.Model.UpdateWorkspaceAuthenticationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceAuthenticationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the WorkspaceId parameter.
+            The -PassThru parameter is deprecated, use -Select '^WorkspaceId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGRF.UpdateMGRFWorkspaceAuthenticationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

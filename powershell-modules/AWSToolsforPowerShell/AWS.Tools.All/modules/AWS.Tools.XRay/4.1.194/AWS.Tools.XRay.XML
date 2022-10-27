@@ -1,0 +1,1459 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.XRay</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.AddXRResourceTagCmdlet">
+            <summary>
+            Applies tags to an existing Amazon Web Services X-Ray group or sampling rule.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.AddXRResourceTagCmdlet.ResourceARN">
+            <summary>
+            <para>
+            <para>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.AddXRResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A map that contains one or more tag keys and tag values to attach to an X-Ray group
+            or sampling rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+            Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</para><para>The following restrictions apply to tags:</para><ul><li><para>Maximum number of user-applied tags per resource: 50</para></li><li><para>Maximum tag key length: 128 Unicode characters</para></li><li><para>Maximum tag value length: 256 Unicode characters</para></li><li><para>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters:
+            _ . : / = + - and @</para></li><li><para>Tag keys and values are case sensitive.</para></li><li><para>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services
+            use. You cannot edit or delete system tags.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.AddXRResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.AddXRResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceARN parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceARN' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.AddXRResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.GetXREncryptionConfigCmdlet">
+            <summary>
+            Retrieves the current encryption configuration for X-Ray data.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXREncryptionConfigCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EncryptionConfig'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.GetEncryptionConfigResponse).
+            Specifying the name of a property of type Amazon.XRay.Model.GetEncryptionConfigResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.GetXRGroupCmdlet">
+            <summary>
+            Retrieves group resource details.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRGroupCmdlet.GroupARN">
+            <summary>
+            <para>
+            <para>The ARN of the group that was generated on creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRGroupCmdlet.GroupName">
+            <summary>
+            <para>
+            <para>The case-sensitive name of the group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Group'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.GetGroupResponse).
+            Specifying the name of a property of type Amazon.XRay.Model.GetGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the GroupARN parameter.
+            The -PassThru parameter is deprecated, use -Select '^GroupARN' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.GetXRGroupSummaryCmdlet">
+            <summary>
+            Retrieves all active group details.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRGroupSummaryCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Pagination token.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRGroupSummaryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Groups'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.GetGroupsResponse).
+            Specifying the name of a property of type Amazon.XRay.Model.GetGroupsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRGroupSummaryCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the NextToken parameter.
+            The -PassThru parameter is deprecated, use -Select '^NextToken' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRGroupSummaryCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.GetXRInsightCmdlet">
+            <summary>
+            Retrieves the summary information of an insight. This includes impact to clients and
+            root cause services, the top anomalous services, the category, the state of the insight,
+            and the start and end time of the insight.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightCmdlet.InsightId">
+            <summary>
+            <para>
+            <para>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an
+            InsightId.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Insight'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.GetInsightResponse).
+            Specifying the name of a property of type Amazon.XRay.Model.GetInsightResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the InsightId parameter.
+            The -PassThru parameter is deprecated, use -Select '^InsightId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.GetXRInsightEventCmdlet">
+            <summary>
+            X-Ray reevaluates insights periodically until they're resolved, and records each intermediate
+            state as an event. You can review an insight's events in the Impact Timeline on the
+            Inspect page in the X-Ray console.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightEventCmdlet.InsightId">
+            <summary>
+            <para>
+            <para>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an
+            InsightId.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightEventCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Used to retrieve at most the specified value of events.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightEventCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Specify the pagination token returned by a previous request to retrieve the next page
+            of events. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightEventCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'InsightEvents'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.GetInsightEventsResponse).
+            Specifying the name of a property of type Amazon.XRay.Model.GetInsightEventsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightEventCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the InsightId parameter.
+            The -PassThru parameter is deprecated, use -Select '^InsightId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightEventCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.GetXRInsightImpactGraphCmdlet">
+            <summary>
+            Retrieves a service graph structure filtered by the specified insight. The service
+            graph is limited to only structural information. For a complete service graph, use
+            this API with the GetServiceGraph API.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightImpactGraphCmdlet.EndTime">
+            <summary>
+            <para>
+            <para>The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive
+            of the value provided. The time range between the start time and end time can't be
+            more than six hours. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightImpactGraphCmdlet.InsightId">
+            <summary>
+            <para>
+            <para>The insight's unique identifier. Use the GetInsightSummaries action to retrieve an
+            InsightId.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightImpactGraphCmdlet.StartTime">
+            <summary>
+            <para>
+            <para>The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive
+            of the value provided and can't be more than 30 days old.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightImpactGraphCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Specify the pagination token returned by a previous request to retrieve the next page
+            of results. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightImpactGraphCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.GetInsightImpactGraphResponse).
+            Specifying the name of a property of type Amazon.XRay.Model.GetInsightImpactGraphResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightImpactGraphCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the InsightId parameter.
+            The -PassThru parameter is deprecated, use -Select '^InsightId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightImpactGraphCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.GetXRInsightSummaryCmdlet">
+            <summary>
+            Retrieves the summaries of all insights in the specified group matching the provided
+            filter values.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightSummaryCmdlet.EndTime">
+            <summary>
+            <para>
+            <para>The end of the time frame in which the insights ended. The end time can't be more
+            than 30 days old.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightSummaryCmdlet.GroupARN">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the group. Required if the GroupName isn't provided.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightSummaryCmdlet.GroupName">
+            <summary>
+            <para>
+            <para>The name of the group. Required if the GroupARN isn't provided.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightSummaryCmdlet.StartTime">
+            <summary>
+            <para>
+            <para>The beginning of the time frame in which the insights started. The start time can't
+            be more than 30 days old.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightSummaryCmdlet.State">
+            <summary>
+            <para>
+            <para>The list of insight states. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightSummaryCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to display.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightSummaryCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Pagination token.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightSummaryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'InsightSummaries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.GetInsightSummariesResponse).
+            Specifying the name of a property of type Amazon.XRay.Model.GetInsightSummariesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightSummaryCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the StartTime parameter.
+            The -PassThru parameter is deprecated, use -Select '^StartTime' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRInsightSummaryCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.GetXRResourceTagCmdlet">
+            <summary>
+            Returns a list of tags that are applied to the specified Amazon Web Services X-Ray
+            group or sampling rule.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRResourceTagCmdlet.ResourceARN">
+            <summary>
+            <para>
+            <para>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRResourceTagCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>A pagination token. If multiple pages of results are returned, use the <code>NextToken</code>
+            value returned with the current page of results as the value of this parameter to
+            get the next page of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.XRay.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceARN parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceARN' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRResourceTagCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.GetXRSamplingRuleCmdlet">
+            <summary>
+            Retrieves all sampling rules.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRSamplingRuleCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Pagination token.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRSamplingRuleCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SamplingRuleRecords'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.GetSamplingRulesResponse).
+            Specifying the name of a property of type Amazon.XRay.Model.GetSamplingRulesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRSamplingRuleCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the NextToken parameter.
+            The -PassThru parameter is deprecated, use -Select '^NextToken' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRSamplingRuleCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.GetXRSamplingStatisticSummaryCmdlet">
+            <summary>
+            Retrieves information about recent sampling results for all sampling rules.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRSamplingStatisticSummaryCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Pagination token.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRSamplingStatisticSummaryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SamplingStatisticSummaries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.GetSamplingStatisticSummariesResponse).
+            Specifying the name of a property of type Amazon.XRay.Model.GetSamplingStatisticSummariesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRSamplingStatisticSummaryCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the NextToken parameter.
+            The -PassThru parameter is deprecated, use -Select '^NextToken' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRSamplingStatisticSummaryCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.GetXRSamplingTargetCmdlet">
+            <summary>
+            Requests a sampling quota for rules that the service is using to sample requests.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRSamplingTargetCmdlet.SamplingStatisticsDocument">
+            <summary>
+            <para>
+            <para>Information about rules that the service is using to sample requests.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRSamplingTargetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.GetSamplingTargetsResponse).
+            Specifying the name of a property of type Amazon.XRay.Model.GetSamplingTargetsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRSamplingTargetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SamplingStatisticsDocument parameter.
+            The -PassThru parameter is deprecated, use -Select '^SamplingStatisticsDocument' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.GetXRServiceGraphCmdlet">
+            <summary>
+            Retrieves a document that describes services that process incoming requests, and downstream
+            services that they call as a result. Root services process incoming requests and make
+            calls to downstream services. Root services are applications that use the <a href="https://docs.aws.amazon.com/xray/index.html">Amazon
+            Web Services X-Ray SDK</a>. Downstream services can be other applications, Amazon
+            Web Services resources, HTTP web APIs, or SQL databases.<br/><br/>In the AWS.Tools.XRay module, this cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRServiceGraphCmdlet.EndTime">
+            <summary>
+            <para>
+            <para>The end of the timeframe for which to generate a graph.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRServiceGraphCmdlet.GroupARN">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of a group based on which you want to generate a graph.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRServiceGraphCmdlet.GroupName">
+            <summary>
+            <para>
+            <para>The name of a group based on which you want to generate a graph.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRServiceGraphCmdlet.StartTime">
+            <summary>
+            <para>
+            <para>The start of the time frame for which to generate a graph.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRServiceGraphCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Pagination token.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In the AWS.Tools.XRay module, this parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRServiceGraphCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.GetServiceGraphResponse).
+            Specifying the name of a property of type Amazon.XRay.Model.GetServiceGraphResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRServiceGraphCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the StartTime parameter.
+            The -PassThru parameter is deprecated, use -Select '^StartTime' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRServiceGraphCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.GetXRTimeSeriesServiceStatisticCmdlet">
+            <summary>
+            Get an aggregation of service statistics defined by a specific time range.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTimeSeriesServiceStatisticCmdlet.EndTime">
+            <summary>
+            <para>
+            <para>The end of the time frame for which to aggregate statistics.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTimeSeriesServiceStatisticCmdlet.EntitySelectorExpression">
+            <summary>
+            <para>
+            <para>A filter expression defining entities that will be aggregated for statistics. Supports
+            ID, service, and edge functions. If no selector expression is specified, edge statistics
+            are returned. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTimeSeriesServiceStatisticCmdlet.ForecastStatistic">
+            <summary>
+            <para>
+            <para>The forecasted high and low fault count values. Forecast enabled requests require
+            the EntitySelectorExpression ID be provided.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTimeSeriesServiceStatisticCmdlet.GroupARN">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the group for which to pull statistics from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTimeSeriesServiceStatisticCmdlet.GroupName">
+            <summary>
+            <para>
+            <para>The case-sensitive name of the group for which to pull statistics from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTimeSeriesServiceStatisticCmdlet.Period">
+            <summary>
+            <para>
+            <para>Aggregation period in seconds.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTimeSeriesServiceStatisticCmdlet.StartTime">
+            <summary>
+            <para>
+            <para>The start of the time frame for which to aggregate statistics.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTimeSeriesServiceStatisticCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Pagination token.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTimeSeriesServiceStatisticCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TimeSeriesServiceStatistics'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.GetTimeSeriesServiceStatisticsResponse).
+            Specifying the name of a property of type Amazon.XRay.Model.GetTimeSeriesServiceStatisticsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTimeSeriesServiceStatisticCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.GetXRTraceBatchCmdlet">
+            <summary>
+            Retrieves a list of traces specified by ID. Each trace is a collection of segment
+            documents that originates from a single request. Use <code>GetTraceSummaries</code>
+            to get a list of trace IDs.<br/><br/>In the AWS.Tools.XRay module, this cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTraceBatchCmdlet.TraceId">
+            <summary>
+            <para>
+            <para>Specify the trace IDs of requests for which to retrieve segments.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTraceBatchCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Pagination token.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In the AWS.Tools.XRay module, this parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTraceBatchCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.BatchGetTracesResponse).
+            Specifying the name of a property of type Amazon.XRay.Model.BatchGetTracesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTraceBatchCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.GetXRTraceGraphCmdlet">
+            <summary>
+            Retrieves a service graph for one or more specific trace IDs.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTraceGraphCmdlet.TraceId">
+            <summary>
+            <para>
+            <para>Trace IDs of requests for which to generate a service graph.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTraceGraphCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Pagination token.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTraceGraphCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Services'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.GetTraceGraphResponse).
+            Specifying the name of a property of type Amazon.XRay.Model.GetTraceGraphResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTraceGraphCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.GetXRTraceSummaryCmdlet">
+            <summary>
+            Retrieves IDs and annotations for traces available for a specified time frame using
+            an optional filter. To get the full traces, pass the trace IDs to <code>BatchGetTraces</code>.
+            
+             
+            <para>
+            A filter expression can target traced requests that hit specific service nodes or
+            edges, have errors, or come from a known user. For example, the following filter expression
+            targets traces that pass through <code>api.example.com</code>:
+            </para><para><code>service("api.example.com")</code></para><para>
+            This filter expression finds traces that have an annotation named <code>account</code>
+            with the value <code>12345</code>:
+            </para><para><code>annotation.account = "12345"</code></para><para>
+            For a full list of indexed fields and keywords that you can use in filter expressions,
+            see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using
+            Filter Expressions</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.
+            </para><br/><br/>In the AWS.Tools.XRay module, this cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTraceSummaryCmdlet.EndTime">
+            <summary>
+            <para>
+            <para>The end of the time frame for which to retrieve traces.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTraceSummaryCmdlet.FilterExpression">
+            <summary>
+            <para>
+            <para>Specify a filter expression to retrieve trace summaries for services or requests that
+            meet certain requirements.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTraceSummaryCmdlet.SamplingStrategy_Name">
+            <summary>
+            <para>
+            <para>The name of a sampling rule.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTraceSummaryCmdlet.Sampling">
+            <summary>
+            <para>
+            <para>Set to <code>true</code> to get summaries for only a subset of available traces.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTraceSummaryCmdlet.StartTime">
+            <summary>
+            <para>
+            <para>The start of the time frame for which to retrieve traces.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTraceSummaryCmdlet.TimeRangeType">
+            <summary>
+            <para>
+            <para>A parameter to indicate whether to query trace summaries by TraceId or Event time.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTraceSummaryCmdlet.SamplingStrategy_Value">
+            <summary>
+            <para>
+            <para>The value of a sampling rule.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTraceSummaryCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Specify the pagination token returned by a previous request to retrieve the next page
+            of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In the AWS.Tools.XRay module, this parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTraceSummaryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.GetTraceSummariesResponse).
+            Specifying the name of a property of type Amazon.XRay.Model.GetTraceSummariesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTraceSummaryCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the StartTime parameter.
+            The -PassThru parameter is deprecated, use -Select '^StartTime' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.GetXRTraceSummaryCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.NewXRGroupCmdlet">
+            <summary>
+            Creates a group resource with a name and a filter expression.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.NewXRGroupCmdlet.FilterExpression">
+            <summary>
+            <para>
+            <para>The filter expression defining criteria by which to group traces.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.NewXRGroupCmdlet.GroupName">
+            <summary>
+            <para>
+            <para>The case-sensitive name of the new group. Default is a reserved name and names must
+            be unique.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.NewXRGroupCmdlet.InsightsConfiguration_InsightsEnabled">
+            <summary>
+            <para>
+            <para>Set the InsightsEnabled value to true to enable insights or false to disable insights.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.NewXRGroupCmdlet.InsightsConfiguration_NotificationsEnabled">
+            <summary>
+            <para>
+            <para>Set the NotificationsEnabled value to true to enable insights notifications. Notifications
+            can only be enabled on a group with InsightsEnabled set to true.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.NewXRGroupCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A map that contains one or more tag keys and tag values to attach to an X-Ray group.
+            For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+            Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</para><para>The following restrictions apply to tags:</para><ul><li><para>Maximum number of user-applied tags per resource: 50</para></li><li><para>Maximum tag key length: 128 Unicode characters</para></li><li><para>Maximum tag value length: 256 Unicode characters</para></li><li><para>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters:
+            _ . : / = + - and @</para></li><li><para>Tag keys and values are case sensitive.</para></li><li><para>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services
+            use.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.NewXRGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Group'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.CreateGroupResponse).
+            Specifying the name of a property of type Amazon.XRay.Model.CreateGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.NewXRGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the GroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^GroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.NewXRGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.NewXRSamplingRuleCmdlet">
+            <summary>
+            Creates a rule to control sampling behavior for instrumented applications. Services
+            retrieve rules with <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a>,
+            and evaluate each rule in ascending order of <i>priority</i> for each request. If
+            a rule matches, the service records a trace, borrowing it from the reservoir size.
+            After 10 seconds, the service reports back to X-Ray with <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>
+            to get updated versions of each in-use rule. The updated rule contains a trace quota
+            that the service can use instead of borrowing from the reservoir.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.NewXRSamplingRuleCmdlet.SamplingRule_Attribute">
+            <summary>
+            <para>
+            <para>Matches attributes derived from the request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.NewXRSamplingRuleCmdlet.SamplingRule_FixedRate">
+            <summary>
+            <para>
+            <para>The percentage of matching requests to instrument, after the reservoir is exhausted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.NewXRSamplingRuleCmdlet.SamplingRule_Host">
+            <summary>
+            <para>
+            <para>Matches the hostname from a request URL.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.NewXRSamplingRuleCmdlet.SamplingRule_HTTPMethod">
+            <summary>
+            <para>
+            <para>Matches the HTTP method of a request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.NewXRSamplingRuleCmdlet.SamplingRule_Priority">
+            <summary>
+            <para>
+            <para>The priority of the sampling rule.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.NewXRSamplingRuleCmdlet.SamplingRule_ReservoirSize">
+            <summary>
+            <para>
+            <para>A fixed number of matching requests to instrument per second, prior to applying the
+            fixed rate. The reservoir is not used directly by services, but applies to all services
+            using the rule collectively.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.NewXRSamplingRuleCmdlet.SamplingRule_ResourceARN">
+            <summary>
+            <para>
+            <para>Matches the ARN of the Amazon Web Services resource on which the service runs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.NewXRSamplingRuleCmdlet.SamplingRule_RuleARN">
+            <summary>
+            <para>
+            <para>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.NewXRSamplingRuleCmdlet.SamplingRule_RuleName">
+            <summary>
+            <para>
+            <para>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.NewXRSamplingRuleCmdlet.SamplingRule_ServiceName">
+            <summary>
+            <para>
+            <para>Matches the <code>name</code> that the service uses to identify itself in segments.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.NewXRSamplingRuleCmdlet.SamplingRule_ServiceType">
+            <summary>
+            <para>
+            <para>Matches the <code>origin</code> that the service uses to identify its type in segments.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.NewXRSamplingRuleCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A map that contains one or more tag keys and tag values to attach to an X-Ray sampling
+            rule. For more information about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+            Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</para><para>The following restrictions apply to tags:</para><ul><li><para>Maximum number of user-applied tags per resource: 50</para></li><li><para>Maximum tag key length: 128 Unicode characters</para></li><li><para>Maximum tag value length: 256 Unicode characters</para></li><li><para>Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters:
+            _ . : / = + - and @</para></li><li><para>Tag keys and values are case sensitive.</para></li><li><para>Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services
+            use.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.NewXRSamplingRuleCmdlet.SamplingRule_URLPath">
+            <summary>
+            <para>
+            <para>Matches the path from a request URL.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.NewXRSamplingRuleCmdlet.SamplingRule_Version">
+            <summary>
+            <para>
+            <para>The version of the sampling rule format (<code>1</code>).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.NewXRSamplingRuleCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SamplingRuleRecord'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.CreateSamplingRuleResponse).
+            Specifying the name of a property of type Amazon.XRay.Model.CreateSamplingRuleResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.NewXRSamplingRuleCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.RemoveXRGroupCmdlet">
+            <summary>
+            Deletes a group resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.RemoveXRGroupCmdlet.GroupARN">
+            <summary>
+            <para>
+            <para>The ARN of the group that was generated on creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.RemoveXRGroupCmdlet.GroupName">
+            <summary>
+            <para>
+            <para>The case-sensitive name of the group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.RemoveXRGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.DeleteGroupResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.RemoveXRGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the GroupARN parameter.
+            The -PassThru parameter is deprecated, use -Select '^GroupARN' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.RemoveXRGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.RemoveXRResourceTagCmdlet">
+            <summary>
+            Removes tags from an Amazon Web Services X-Ray group or sampling rule. You cannot
+            edit or delete system tags (those with an <code>aws:</code> prefix).
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.RemoveXRResourceTagCmdlet.ResourceARN">
+            <summary>
+            <para>
+            <para>The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.RemoveXRResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>Keys for one or more tags that you want to remove from an X-Ray group or sampling
+            rule.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.RemoveXRResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.RemoveXRResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceARN parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceARN' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.RemoveXRResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.RemoveXRSamplingRuleCmdlet">
+            <summary>
+            Deletes a sampling rule.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.RemoveXRSamplingRuleCmdlet.RuleARN">
+            <summary>
+            <para>
+            <para>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.RemoveXRSamplingRuleCmdlet.RuleName">
+            <summary>
+            <para>
+            <para>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.RemoveXRSamplingRuleCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SamplingRuleRecord'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.DeleteSamplingRuleResponse).
+            Specifying the name of a property of type Amazon.XRay.Model.DeleteSamplingRuleResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.RemoveXRSamplingRuleCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RuleName parameter.
+            The -PassThru parameter is deprecated, use -Select '^RuleName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.RemoveXRSamplingRuleCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.UpdateXRGroupCmdlet">
+            <summary>
+            Updates a group resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.UpdateXRGroupCmdlet.FilterExpression">
+            <summary>
+            <para>
+            <para>The updated filter expression defining criteria by which to group traces.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.UpdateXRGroupCmdlet.GroupARN">
+            <summary>
+            <para>
+            <para>The ARN that was generated upon creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.UpdateXRGroupCmdlet.GroupName">
+            <summary>
+            <para>
+            <para>The case-sensitive name of the group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.UpdateXRGroupCmdlet.InsightsConfiguration_InsightsEnabled">
+            <summary>
+            <para>
+            <para>Set the InsightsEnabled value to true to enable insights or false to disable insights.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.UpdateXRGroupCmdlet.InsightsConfiguration_NotificationsEnabled">
+            <summary>
+            <para>
+            <para>Set the NotificationsEnabled value to true to enable insights notifications. Notifications
+            can only be enabled on a group with InsightsEnabled set to true.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.UpdateXRGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Group'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.UpdateGroupResponse).
+            Specifying the name of a property of type Amazon.XRay.Model.UpdateGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.UpdateXRGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the GroupARN parameter.
+            The -PassThru parameter is deprecated, use -Select '^GroupARN' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.UpdateXRGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.UpdateXRSamplingRuleCmdlet">
+            <summary>
+            Modifies a sampling rule's configuration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.UpdateXRSamplingRuleCmdlet.SamplingRuleUpdate_Attribute">
+            <summary>
+            <para>
+            <para>Matches attributes derived from the request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.UpdateXRSamplingRuleCmdlet.SamplingRuleUpdate_FixedRate">
+            <summary>
+            <para>
+            <para>The percentage of matching requests to instrument, after the reservoir is exhausted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.UpdateXRSamplingRuleCmdlet.SamplingRuleUpdate_Host">
+            <summary>
+            <para>
+            <para>Matches the hostname from a request URL.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.UpdateXRSamplingRuleCmdlet.SamplingRuleUpdate_HTTPMethod">
+            <summary>
+            <para>
+            <para>Matches the HTTP method of a request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.UpdateXRSamplingRuleCmdlet.SamplingRuleUpdate_Priority">
+            <summary>
+            <para>
+            <para>The priority of the sampling rule.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.UpdateXRSamplingRuleCmdlet.SamplingRuleUpdate_ReservoirSize">
+            <summary>
+            <para>
+            <para>A fixed number of matching requests to instrument per second, prior to applying the
+            fixed rate. The reservoir is not used directly by services, but applies to all services
+            using the rule collectively.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.UpdateXRSamplingRuleCmdlet.SamplingRuleUpdate_ResourceARN">
+            <summary>
+            <para>
+            <para>Matches the ARN of the Amazon Web Services resource on which the service runs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.UpdateXRSamplingRuleCmdlet.SamplingRuleUpdate_RuleARN">
+            <summary>
+            <para>
+            <para>The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.UpdateXRSamplingRuleCmdlet.SamplingRuleUpdate_RuleName">
+            <summary>
+            <para>
+            <para>The name of the sampling rule. Specify a rule by either name or ARN, but not both.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.UpdateXRSamplingRuleCmdlet.SamplingRuleUpdate_ServiceName">
+            <summary>
+            <para>
+            <para>Matches the <code>name</code> that the service uses to identify itself in segments.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.UpdateXRSamplingRuleCmdlet.SamplingRuleUpdate_ServiceType">
+            <summary>
+            <para>
+            <para>Matches the <code>origin</code> that the service uses to identify its type in segments.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.UpdateXRSamplingRuleCmdlet.SamplingRuleUpdate_URLPath">
+            <summary>
+            <para>
+            <para>Matches the path from a request URL.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.UpdateXRSamplingRuleCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SamplingRuleRecord'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.UpdateSamplingRuleResponse).
+            Specifying the name of a property of type Amazon.XRay.Model.UpdateSamplingRuleResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.UpdateXRSamplingRuleCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.WriteXREncryptionConfigCmdlet">
+            <summary>
+            Updates the encryption configuration for X-Ray data.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.WriteXREncryptionConfigCmdlet.KeyId">
+            <summary>
+            <para>
+            <para>An Amazon Web Services KMS key in one of the following formats:</para><ul><li><para><b>Alias</b> - The name of the key. For example, <code>alias/MyKey</code>.</para></li><li><para><b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.
+            Amazon Web Services X-Ray does not support asymmetric KMS keys.</para></li><li><para><b>ARN</b> - The full Amazon Resource Name of the key ID or alias. For example, <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.
+            Use this format to specify a key in a different account.</para></li></ul><para>Omit this key if you set <code>Type</code> to <code>NONE</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.WriteXREncryptionConfigCmdlet.Type">
+            <summary>
+            <para>
+            <para>The type of encryption. Set to <code>KMS</code> to use your own key for encryption.
+            Set to <code>NONE</code> for default encryption.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.WriteXREncryptionConfigCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EncryptionConfig'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.PutEncryptionConfigResponse).
+            Specifying the name of a property of type Amazon.XRay.Model.PutEncryptionConfigResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.WriteXREncryptionConfigCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the KeyId parameter.
+            The -PassThru parameter is deprecated, use -Select '^KeyId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.WriteXREncryptionConfigCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.WriteXRTelemetryRecordCmdlet">
+            <summary>
+            Used by the Amazon Web Services X-Ray daemon to upload telemetry.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.WriteXRTelemetryRecordCmdlet.EC2InstanceId">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.WriteXRTelemetryRecordCmdlet.Hostname">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.WriteXRTelemetryRecordCmdlet.ResourceARN">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.WriteXRTelemetryRecordCmdlet.TelemetryRecord">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.WriteXRTelemetryRecordCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.PutTelemetryRecordsResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.WriteXRTelemetryRecordCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EC2InstanceId parameter.
+            The -PassThru parameter is deprecated, use -Select '^EC2InstanceId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.WriteXRTelemetryRecordCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.XR.WriteXRTraceSegmentCmdlet">
+            <summary>
+            Amazon.XRay.IAmazonXRay.PutTraceSegments
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.WriteXRTraceSegmentCmdlet.TraceSegmentDocument">
+            <summary>
+            <para>
+            <para>A string containing a JSON document defining one or more segments or subsegments.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.WriteXRTraceSegmentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'UnprocessedTraceSegments'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.XRay.Model.PutTraceSegmentsResponse).
+            Specifying the name of a property of type Amazon.XRay.Model.PutTraceSegmentsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.WriteXRTraceSegmentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TraceSegmentDocument parameter.
+            The -PassThru parameter is deprecated, use -Select '^TraceSegmentDocument' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.XR.WriteXRTraceSegmentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

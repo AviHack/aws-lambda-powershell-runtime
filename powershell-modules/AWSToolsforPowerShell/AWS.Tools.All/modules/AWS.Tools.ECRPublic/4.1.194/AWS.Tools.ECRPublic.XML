@@ -1,0 +1,1241 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.ECRPublic</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.ECRP.AddECRPResourceTagCmdlet">
+            <summary>
+            Associates the specified tags to a resource with the specified <code>resourceArn</code>.
+            If existing tags on a resource are not specified in the request parameters, they are
+            not changed. When a resource is deleted, the tags associated with that resource are
+            deleted as well.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.AddECRPResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the
+            supported resource is an Amazon ECR Public repository.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.AddECRPResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can
+            have a maximum character length of 128 characters, and tag values can have a maximum
+            length of 256 characters.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.AddECRPResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ECRPublic.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.AddECRPResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.AddECRPResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ECRP.CompleteECRPLayerUploadCmdlet">
+            <summary>
+            Informs Amazon ECR that the image layer upload has completed for a specified public
+            registry, repository name, and upload ID. You can optionally provide a <code>sha256</code>
+            digest of the image layer for data validation purposes.
+            
+             
+            <para>
+            When an image is pushed, the CompleteLayerUpload API is called once per each new image
+            layer to verify that the upload has completed.
+            </para><note><para>
+            This operation is used by the Amazon ECR proxy and is not generally used by customers
+            for pulling and pushing images. In most cases, you should use the <code>docker</code>
+            CLI to pull, tag, and push images.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.CompleteECRPLayerUploadCmdlet.LayerDigest">
+            <summary>
+            <para>
+            <para>The <code>sha256</code> digest of the image layer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.CompleteECRPLayerUploadCmdlet.RegistryId">
+            <summary>
+            <para>
+            <para>The AWS account ID associated with the registry to which to upload layers. If you
+            do not specify a registry, the default public registry is assumed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.CompleteECRPLayerUploadCmdlet.RepositoryName">
+            <summary>
+            <para>
+            <para>The name of the repository in a public registry to associate with the image layer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.CompleteECRPLayerUploadCmdlet.UploadId">
+            <summary>
+            <para>
+            <para>The upload ID from a previous <a>InitiateLayerUpload</a> operation to associate with
+            the image layer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.CompleteECRPLayerUploadCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ECRPublic.Model.CompleteLayerUploadResponse).
+            Specifying the name of a property of type Amazon.ECRPublic.Model.CompleteLayerUploadResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.CompleteECRPLayerUploadCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LayerDigest parameter.
+            The -PassThru parameter is deprecated, use -Select '^LayerDigest' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.CompleteECRPLayerUploadCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ECRP.GetECRPAuthorizationTokenCmdlet">
+            <summary>
+            Retrieves an authorization token. An authorization token represents your IAM authentication
+            credentials and can be used to access any Amazon ECR registry that your IAM principal
+            has access to. The authorization token is valid for 12 hours. This API requires the
+            <code>ecr-public:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code>
+            permissions.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPAuthorizationTokenCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AuthorizationData'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ECRPublic.Model.GetAuthorizationTokenResponse).
+            Specifying the name of a property of type Amazon.ECRPublic.Model.GetAuthorizationTokenResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ECRP.GetECRPImageCmdlet">
+            <summary>
+            Returns metadata about the images in a repository in a public registry.
+            
+             <note><para>
+            Beginning with Docker version 1.9, the Docker client compresses image layers before
+            pushing them to a V2 Docker registry. The output of the <code>docker images</code>
+            command shows the uncompressed image size, so it may return a larger image size than
+            the image sizes returned by <a>DescribeImages</a>.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPImageCmdlet.ImageId">
+            <summary>
+            <para>
+            <para>The list of image IDs for the requested repository.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPImageCmdlet.RegistryId">
+            <summary>
+            <para>
+            <para>The AWS account ID associated with the public registry that contains the repository
+            in which to describe images. If you do not specify a registry, the default public
+            registry is assumed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPImageCmdlet.RepositoryName">
+            <summary>
+            <para>
+            <para>The repository that contains the images to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPImageCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of repository results returned by <code>DescribeImages</code> in
+            paginated output. When this parameter is used, <code>DescribeImages</code> only returns
+            <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+            response element. The remaining results of the initial request can be seen by sending
+            another <code>DescribeImages</code> request with the returned <code>nextToken</code>
+            value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImages</code>
+            returns up to 100 results and a <code>nextToken</code> value, if applicable. This
+            option cannot be used when you specify images with <code>imageIds</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPImageCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImages</code>
+            request where <code>maxResults</code> was used and the results exceeded the value
+            of that parameter. Pagination continues from the end of the previous results that
+            returned the <code>nextToken</code> value. This value is <code>null</code> when there
+            are no more results to return. This option cannot be used when you specify images
+            with <code>imageIds</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPImageCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ImageDetails'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ECRPublic.Model.DescribeImagesResponse).
+            Specifying the name of a property of type Amazon.ECRPublic.Model.DescribeImagesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPImageCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RepositoryName parameter.
+            The -PassThru parameter is deprecated, use -Select '^RepositoryName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ECRP.GetECRPImageTagCmdlet">
+            <summary>
+            Returns the image tag details for a repository in a public registry.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPImageTagCmdlet.RegistryId">
+            <summary>
+            <para>
+            <para>The AWS account ID associated with the public registry that contains the repository
+            in which to describe images. If you do not specify a registry, the default public
+            registry is assumed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPImageTagCmdlet.RepositoryName">
+            <summary>
+            <para>
+            <para>The name of the repository that contains the image tag details to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPImageTagCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of repository results returned by <code>DescribeImageTags</code>
+            in paginated output. When this parameter is used, <code>DescribeImageTags</code> only
+            returns <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+            response element. The remaining results of the initial request can be seen by sending
+            another <code>DescribeImageTags</code> request with the returned <code>nextToken</code>
+            value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImageTags</code>
+            returns up to 100 results and a <code>nextToken</code> value, if applicable. This
+            option cannot be used when you specify images with <code>imageIds</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPImageTagCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The <code>nextToken</code> value returned from a previous paginated <code>DescribeImageTags</code>
+            request where <code>maxResults</code> was used and the results exceeded the value
+            of that parameter. Pagination continues from the end of the previous results that
+            returned the <code>nextToken</code> value. This value is <code>null</code> when there
+            are no more results to return. This option cannot be used when you specify images
+            with <code>imageIds</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPImageTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ImageTagDetails'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ECRPublic.Model.DescribeImageTagsResponse).
+            Specifying the name of a property of type Amazon.ECRPublic.Model.DescribeImageTagsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPImageTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RepositoryName parameter.
+            The -PassThru parameter is deprecated, use -Select '^RepositoryName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ECRP.GetECRPLayerAvailabilityBatchCmdlet">
+            <summary>
+            Checks the availability of one or more image layers within a repository in a public
+            registry. When an image is pushed to a repository, each image layer is checked to
+            verify if it has been uploaded before. If it has been uploaded, then the image layer
+            is skipped.
+            
+             <note><para>
+            This operation is used by the Amazon ECR proxy and is not generally used by customers
+            for pulling and pushing images. In most cases, you should use the <code>docker</code>
+            CLI to pull, tag, and push images.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPLayerAvailabilityBatchCmdlet.LayerDigest">
+            <summary>
+            <para>
+            <para>The digests of the image layers to check.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPLayerAvailabilityBatchCmdlet.RegistryId">
+            <summary>
+            <para>
+            <para>The AWS account ID associated with the public registry that contains the image layers
+            to check. If you do not specify a registry, the default public registry is assumed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPLayerAvailabilityBatchCmdlet.RepositoryName">
+            <summary>
+            <para>
+            <para>The name of the repository that is associated with the image layers to check.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPLayerAvailabilityBatchCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ECRPublic.Model.BatchCheckLayerAvailabilityResponse).
+            Specifying the name of a property of type Amazon.ECRPublic.Model.BatchCheckLayerAvailabilityResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPLayerAvailabilityBatchCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RepositoryName parameter.
+            The -PassThru parameter is deprecated, use -Select '^RepositoryName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ECRP.GetECRPRegistryCmdlet">
+            <summary>
+            Returns details for a public registry.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPRegistryCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of repository results returned by <code>DescribeRegistries</code>
+            in paginated output. When this parameter is used, <code>DescribeRegistries</code>
+            only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+            response element. The remaining results of the initial request can be seen by sending
+            another <code>DescribeRegistries</code> request with the returned <code>nextToken</code>
+            value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRegistries</code>
+            returns up to 100 results and a <code>nextToken</code> value, if applicable.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPRegistryCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The <code>nextToken</code> value returned from a previous paginated <code>DescribeRegistries</code>
+            request where <code>maxResults</code> was used and the results exceeded the value
+            of that parameter. Pagination continues from the end of the previous results that
+            returned the <code>nextToken</code> value. This value is <code>null</code> when there
+            are no more results to return.</para><note><para>This token should be treated as an opaque identifier that is only used to retrieve
+            the next items in a list and not for other programmatic purposes.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPRegistryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Registries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ECRPublic.Model.DescribeRegistriesResponse).
+            Specifying the name of a property of type Amazon.ECRPublic.Model.DescribeRegistriesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ECRP.GetECRPRegistryCatalogDataCmdlet">
+            <summary>
+            Retrieves catalog metadata for a public registry.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPRegistryCatalogDataCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'RegistryCatalogData'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ECRPublic.Model.GetRegistryCatalogDataResponse).
+            Specifying the name of a property of type Amazon.ECRPublic.Model.GetRegistryCatalogDataResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ECRP.GetECRPRepositoryCmdlet">
+            <summary>
+            Describes repositories in a public registry.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPRepositoryCmdlet.RegistryId">
+            <summary>
+            <para>
+            <para>The AWS account ID associated with the registry that contains the repositories to
+            be described. If you do not specify a registry, the default public registry is assumed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPRepositoryCmdlet.RepositoryName">
+            <summary>
+            <para>
+            <para>A list of repositories to describe. If this parameter is omitted, then all repositories
+            in a registry are described.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPRepositoryCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of repository results returned by <code>DescribeRepositories</code>
+            in paginated output. When this parameter is used, <code>DescribeRepositories</code>
+            only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+            response element. The remaining results of the initial request can be seen by sending
+            another <code>DescribeRepositories</code> request with the returned <code>nextToken</code>
+            value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRepositories</code>
+            returns up to 100 results and a <code>nextToken</code> value, if applicable. This
+            option cannot be used when you specify repositories with <code>repositoryNames</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPRepositoryCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The <code>nextToken</code> value returned from a previous paginated <code>DescribeRepositories</code>
+            request where <code>maxResults</code> was used and the results exceeded the value
+            of that parameter. Pagination continues from the end of the previous results that
+            returned the <code>nextToken</code> value. This value is <code>null</code> when there
+            are no more results to return. This option cannot be used when you specify repositories
+            with <code>repositoryNames</code>.</para><note><para>This token should be treated as an opaque identifier that is only used to retrieve
+            the next items in a list and not for other programmatic purposes.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPRepositoryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Repositories'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ECRPublic.Model.DescribeRepositoriesResponse).
+            Specifying the name of a property of type Amazon.ECRPublic.Model.DescribeRepositoriesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPRepositoryCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RegistryId parameter.
+            The -PassThru parameter is deprecated, use -Select '^RegistryId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ECRP.GetECRPRepositoryCatalogDataCmdlet">
+            <summary>
+            Retrieve catalog metadata for a repository in a public registry. This metadata is
+            displayed publicly in the Amazon ECR Public Gallery.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPRepositoryCatalogDataCmdlet.RegistryId">
+            <summary>
+            <para>
+            <para>The AWS account ID associated with the registry that contains the repositories to
+            be described. If you do not specify a registry, the default public registry is assumed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPRepositoryCatalogDataCmdlet.RepositoryName">
+            <summary>
+            <para>
+            <para>The name of the repository to retrieve the catalog metadata for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPRepositoryCatalogDataCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'CatalogData'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ECRPublic.Model.GetRepositoryCatalogDataResponse).
+            Specifying the name of a property of type Amazon.ECRPublic.Model.GetRepositoryCatalogDataResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPRepositoryCatalogDataCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RepositoryName parameter.
+            The -PassThru parameter is deprecated, use -Select '^RepositoryName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ECRP.GetECRPRepositoryPolicyCmdlet">
+            <summary>
+            Retrieves the repository policy for the specified repository.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPRepositoryPolicyCmdlet.RegistryId">
+            <summary>
+            <para>
+            <para>The AWS account ID associated with the public registry that contains the repository.
+            If you do not specify a registry, the default public registry is assumed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPRepositoryPolicyCmdlet.RepositoryName">
+            <summary>
+            <para>
+            <para>The name of the repository with the policy to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPRepositoryPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ECRPublic.Model.GetRepositoryPolicyResponse).
+            Specifying the name of a property of type Amazon.ECRPublic.Model.GetRepositoryPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPRepositoryPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RepositoryName parameter.
+            The -PassThru parameter is deprecated, use -Select '^RepositoryName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ECRP.GetECRPResourceTagCmdlet">
+            <summary>
+            List the tags for an Amazon ECR Public resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) that identifies the resource for which to list the
+            tags. Currently, the supported resource is an Amazon ECR Public repository.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ECRPublic.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.ECRPublic.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.GetECRPResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ECRP.NewECRPRepositoryCmdlet">
+            <summary>
+            Creates a repository in a public registry. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html">Amazon
+            ECR repositories</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.NewECRPRepositoryCmdlet.CatalogData_AboutText">
+            <summary>
+            <para>
+            <para>A detailed description of the contents of the repository. It is publicly visible in
+            the Amazon ECR Public Gallery. The text must be in markdown format.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.NewECRPRepositoryCmdlet.CatalogData_Architecture">
+            <summary>
+            <para>
+            <para>The system architecture that the images in the repository are compatible with. On
+            the Amazon ECR Public Gallery, the following supported architectures will appear as
+            badges on the repository and are used as search filters.</para><ul><li><para><code>Linux</code></para></li><li><para><code>Windows</code></para></li></ul><note><para>If an unsupported tag is added to your repository catalog data, it will be associated
+            with the repository and can be retrieved using the API but will not be discoverable
+            in the Amazon ECR Public Gallery.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.NewECRPRepositoryCmdlet.CatalogData_Description">
+            <summary>
+            <para>
+            <para>A short description of the contents of the repository. This text appears in both the
+            image details and also when searching for repositories on the Amazon ECR Public Gallery.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.NewECRPRepositoryCmdlet.CatalogData_LogoImageBlob">
+            <summary>
+            <para>
+            <para>The base64-encoded repository logo payload.</para><note><para>The repository logo is only publicly visible in the Amazon ECR Public Gallery for
+            verified accounts.</para></note>
+            </para>
+            <para>The cmdlet will automatically convert the supplied parameter of type string, string[], System.IO.FileInfo or System.IO.Stream to byte[] before supplying it to the service.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.NewECRPRepositoryCmdlet.CatalogData_OperatingSystem">
+            <summary>
+            <para>
+            <para>The operating systems that the images in the repository are compatible with. On the
+            Amazon ECR Public Gallery, the following supported operating systems will appear as
+            badges on the repository and are used as search filters.</para><ul><li><para><code>ARM</code></para></li><li><para><code>ARM 64</code></para></li><li><para><code>x86</code></para></li><li><para><code>x86-64</code></para></li></ul><note><para>If an unsupported tag is added to your repository catalog data, it will be associated
+            with the repository and can be retrieved using the API but will not be discoverable
+            in the Amazon ECR Public Gallery.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.NewECRPRepositoryCmdlet.RepositoryName">
+            <summary>
+            <para>
+            <para>The name to use for the repository. This appears publicly in the Amazon ECR Public
+            Gallery. The repository name may be specified on its own (such as <code>nginx-web-app</code>)
+            or it can be prepended with a namespace to group the repository into a category (such
+            as <code>project-a/nginx-web-app</code>).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.NewECRPRepositoryCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The metadata that you apply to the repository to help you categorize and organize
+            them. Each tag consists of a key and an optional value, both of which you define.
+            Tag keys can have a maximum character length of 128 characters, and tag values can
+            have a maximum length of 256 characters.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.NewECRPRepositoryCmdlet.CatalogData_UsageText">
+            <summary>
+            <para>
+            <para>Detailed information on how to use the contents of the repository. It is publicly
+            visible in the Amazon ECR Public Gallery. The usage text provides context, support
+            information, and additional usage details for users of the repository. The text must
+            be in markdown format.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.NewECRPRepositoryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ECRPublic.Model.CreateRepositoryResponse).
+            Specifying the name of a property of type Amazon.ECRPublic.Model.CreateRepositoryResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.NewECRPRepositoryCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RepositoryName parameter.
+            The -PassThru parameter is deprecated, use -Select '^RepositoryName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.NewECRPRepositoryCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPImageBatchCmdlet">
+            <summary>
+            Deletes a list of specified images within a repository in a public registry. Images
+            are specified with either an <code>imageTag</code> or <code>imageDigest</code>.
+            
+             
+            <para>
+            You can remove a tag from an image by specifying the image's tag in your request.
+            When you remove the last tag from an image, the image is deleted from your repository.
+            </para><para>
+            You can completely delete an image (and all of its tags) by specifying the image's
+            digest in your request.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPImageBatchCmdlet.ImageId">
+            <summary>
+            <para>
+            <para>A list of image ID references that correspond to images to delete. The format of the
+            <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPImageBatchCmdlet.RegistryId">
+            <summary>
+            <para>
+            <para>The AWS account ID associated with the registry that contains the image to delete.
+            If you do not specify a registry, the default public registry is assumed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPImageBatchCmdlet.RepositoryName">
+            <summary>
+            <para>
+            <para>The repository in a public registry that contains the image to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPImageBatchCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ECRPublic.Model.BatchDeleteImageResponse).
+            Specifying the name of a property of type Amazon.ECRPublic.Model.BatchDeleteImageResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPImageBatchCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RepositoryName parameter.
+            The -PassThru parameter is deprecated, use -Select '^RepositoryName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPImageBatchCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPRepositoryCmdlet">
+            <summary>
+            Deletes a repository in a public registry. If the repository contains images, you
+            must either delete all images in the repository or use the <code>force</code> option
+            which deletes all images on your behalf before deleting the repository.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPRepositoryCmdlet.IgnoreExistingImages">
+            <summary>
+            <para>
+            <para> If a repository contains images, forces the deletion.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPRepositoryCmdlet.RegistryId">
+            <summary>
+            <para>
+            <para>The AWS account ID associated with the public registry that contains the repository
+            to delete. If you do not specify a registry, the default public registry is assumed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPRepositoryCmdlet.RepositoryName">
+            <summary>
+            <para>
+            <para>The name of the repository to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPRepositoryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Repository'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ECRPublic.Model.DeleteRepositoryResponse).
+            Specifying the name of a property of type Amazon.ECRPublic.Model.DeleteRepositoryResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPRepositoryCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RepositoryName parameter.
+            The -PassThru parameter is deprecated, use -Select '^RepositoryName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPRepositoryCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPRepositoryPolicyCmdlet">
+            <summary>
+            Deletes the repository policy associated with the specified repository.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPRepositoryPolicyCmdlet.RegistryId">
+            <summary>
+            <para>
+            <para>The AWS account ID associated with the public registry that contains the repository
+            policy to delete. If you do not specify a registry, the default public registry is
+            assumed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPRepositoryPolicyCmdlet.RepositoryName">
+            <summary>
+            <para>
+            <para>The name of the repository that is associated with the repository policy to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPRepositoryPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ECRPublic.Model.DeleteRepositoryPolicyResponse).
+            Specifying the name of a property of type Amazon.ECRPublic.Model.DeleteRepositoryPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPRepositoryPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RepositoryName parameter.
+            The -PassThru parameter is deprecated, use -Select '^RepositoryName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPRepositoryPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPResourceTagCmdlet">
+            <summary>
+            Deletes specified tags from a resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently,
+            the supported resource is an Amazon ECR Public repository.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>The keys of the tags to be removed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ECRPublic.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.RemoveECRPResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ECRP.SendECRPLayerPartCmdlet">
+            <summary>
+            Uploads an image layer part to Amazon ECR.
+            
+             
+            <para>
+            When an image is pushed, each new image layer is uploaded in parts. The maximum size
+            of each image layer part can be 20971520 bytes (or about 20MB). The UploadLayerPart
+            API is called once per each new image layer part.
+            </para><note><para>
+            This operation is used by the Amazon ECR proxy and is not generally used by customers
+            for pulling and pushing images. In most cases, you should use the <code>docker</code>
+            CLI to pull, tag, and push images.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.SendECRPLayerPartCmdlet.LayerPartBlob">
+            <summary>
+            <para>
+            <para>The base64-encoded layer part payload.</para>
+            </para>
+            <para>The cmdlet will automatically convert the supplied parameter to Base64 before supplying to the service.</para>
+            <para>The cmdlet will automatically convert the supplied parameter of type string, string[], System.IO.FileInfo or System.IO.Stream to byte[] before supplying it to the service.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.SendECRPLayerPartCmdlet.PartFirstByte">
+            <summary>
+            <para>
+            <para>The position of the first byte of the layer part witin the overall image layer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.SendECRPLayerPartCmdlet.PartLastByte">
+            <summary>
+            <para>
+            <para>The position of the last byte of the layer part within the overall image layer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.SendECRPLayerPartCmdlet.RegistryId">
+            <summary>
+            <para>
+            <para>The AWS account ID associated with the registry to which you are uploading layer parts.
+            If you do not specify a registry, the default public registry is assumed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.SendECRPLayerPartCmdlet.RepositoryName">
+            <summary>
+            <para>
+            <para>The name of the repository to which you are uploading layer parts.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.SendECRPLayerPartCmdlet.UploadId">
+            <summary>
+            <para>
+            <para>The upload ID from a previous <a>InitiateLayerUpload</a> operation to associate with
+            the layer part upload.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.SendECRPLayerPartCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ECRPublic.Model.UploadLayerPartResponse).
+            Specifying the name of a property of type Amazon.ECRPublic.Model.UploadLayerPartResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.SendECRPLayerPartCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LayerPartBlob parameter.
+            The -PassThru parameter is deprecated, use -Select '^LayerPartBlob' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.SendECRPLayerPartCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ECRP.SetECRPRepositoryPolicyCmdlet">
+            <summary>
+            Applies a repository policy to the specified public repository to control access permissions.
+            For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policies.html">Amazon
+            ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.SetECRPRepositoryPolicyCmdlet.OverridePolicy">
+            <summary>
+            <para>
+            <para>If the policy you are attempting to set on a repository policy would prevent you from
+            setting another policy in the future, you must force the <a>SetRepositoryPolicy</a>
+            operation. This is intended to prevent accidental repository lock outs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.SetECRPRepositoryPolicyCmdlet.PolicyText">
+            <summary>
+            <para>
+            <para>The JSON repository policy text to apply to the repository. For more information,
+            see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Amazon
+            ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.SetECRPRepositoryPolicyCmdlet.RegistryId">
+            <summary>
+            <para>
+            <para>The AWS account ID associated with the registry that contains the repository. If you
+            do not specify a registry, the default public registry is assumed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.SetECRPRepositoryPolicyCmdlet.RepositoryName">
+            <summary>
+            <para>
+            <para>The name of the repository to receive the policy.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.SetECRPRepositoryPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ECRPublic.Model.SetRepositoryPolicyResponse).
+            Specifying the name of a property of type Amazon.ECRPublic.Model.SetRepositoryPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.SetECRPRepositoryPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PolicyText parameter.
+            The -PassThru parameter is deprecated, use -Select '^PolicyText' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.SetECRPRepositoryPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ECRP.StartECRPLayerUploadCmdlet">
+            <summary>
+            Notifies Amazon ECR that you intend to upload an image layer.
+            
+             
+            <para>
+            When an image is pushed, the InitiateLayerUpload API is called once per image layer
+            that has not already been uploaded. Whether or not an image layer has been uploaded
+            is determined by the BatchCheckLayerAvailability API action.
+            </para><note><para>
+            This operation is used by the Amazon ECR proxy and is not generally used by customers
+            for pulling and pushing images. In most cases, you should use the <code>docker</code>
+            CLI to pull, tag, and push images.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.StartECRPLayerUploadCmdlet.RegistryId">
+            <summary>
+            <para>
+            <para>The AWS account ID associated with the registry to which you intend to upload layers.
+            If you do not specify a registry, the default public registry is assumed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.StartECRPLayerUploadCmdlet.RepositoryName">
+            <summary>
+            <para>
+            <para>The name of the repository to which you intend to upload layers.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.StartECRPLayerUploadCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ECRPublic.Model.InitiateLayerUploadResponse).
+            Specifying the name of a property of type Amazon.ECRPublic.Model.InitiateLayerUploadResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.StartECRPLayerUploadCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RepositoryName parameter.
+            The -PassThru parameter is deprecated, use -Select '^RepositoryName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.StartECRPLayerUploadCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPImageCmdlet">
+            <summary>
+            Creates or updates the image manifest and tags associated with an image.
+            
+             
+            <para>
+            When an image is pushed and all new image layers have been uploaded, the PutImage
+            API is called once to create or update the image manifest and the tags associated
+            with the image.
+            </para><note><para>
+            This operation is used by the Amazon ECR proxy and is not generally used by customers
+            for pulling and pushing images. In most cases, you should use the <code>docker</code>
+            CLI to pull, tag, and push images.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPImageCmdlet.ImageDigest">
+            <summary>
+            <para>
+            <para>The image digest of the image manifest corresponding to the image.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPImageCmdlet.ImageManifest">
+            <summary>
+            <para>
+            <para>The image manifest corresponding to the image to be uploaded.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPImageCmdlet.ImageManifestMediaType">
+            <summary>
+            <para>
+            <para>The media type of the image manifest. If you push an image manifest that does not
+            contain the <code>mediaType</code> field, you must specify the <code>imageManifestMediaType</code>
+            in the request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPImageCmdlet.ImageTag">
+            <summary>
+            <para>
+            <para>The tag to associate with the image. This parameter is required for images that use
+            the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPImageCmdlet.RegistryId">
+            <summary>
+            <para>
+            <para>The AWS account ID associated with the public registry that contains the repository
+            in which to put the image. If you do not specify a registry, the default public registry
+            is assumed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPImageCmdlet.RepositoryName">
+            <summary>
+            <para>
+            <para>The name of the repository in which to put the image.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPImageCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Image'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ECRPublic.Model.PutImageResponse).
+            Specifying the name of a property of type Amazon.ECRPublic.Model.PutImageResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPImageCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ImageManifest parameter.
+            The -PassThru parameter is deprecated, use -Select '^ImageManifest' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPImageCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPRegistryCatalogDataCmdlet">
+            <summary>
+            Create or updates the catalog data for a public registry.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPRegistryCatalogDataCmdlet.DisplayName">
+            <summary>
+            <para>
+            <para>The display name for a public registry. The display name is shown as the repository
+            author in the Amazon ECR Public Gallery.</para><note><para>The registry display name is only publicly visible in the Amazon ECR Public Gallery
+            for verified accounts.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPRegistryCatalogDataCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'RegistryCatalogData'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ECRPublic.Model.PutRegistryCatalogDataResponse).
+            Specifying the name of a property of type Amazon.ECRPublic.Model.PutRegistryCatalogDataResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPRegistryCatalogDataCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DisplayName parameter.
+            The -PassThru parameter is deprecated, use -Select '^DisplayName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPRegistryCatalogDataCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPRepositoryCatalogDataCmdlet">
+            <summary>
+            Creates or updates the catalog data for a repository in a public registry.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPRepositoryCatalogDataCmdlet.CatalogData_AboutText">
+            <summary>
+            <para>
+            <para>A detailed description of the contents of the repository. It is publicly visible in
+            the Amazon ECR Public Gallery. The text must be in markdown format.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPRepositoryCatalogDataCmdlet.CatalogData_Architecture">
+            <summary>
+            <para>
+            <para>The system architecture that the images in the repository are compatible with. On
+            the Amazon ECR Public Gallery, the following supported architectures will appear as
+            badges on the repository and are used as search filters.</para><ul><li><para><code>Linux</code></para></li><li><para><code>Windows</code></para></li></ul><note><para>If an unsupported tag is added to your repository catalog data, it will be associated
+            with the repository and can be retrieved using the API but will not be discoverable
+            in the Amazon ECR Public Gallery.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPRepositoryCatalogDataCmdlet.CatalogData_Description">
+            <summary>
+            <para>
+            <para>A short description of the contents of the repository. This text appears in both the
+            image details and also when searching for repositories on the Amazon ECR Public Gallery.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPRepositoryCatalogDataCmdlet.CatalogData_LogoImageBlob">
+            <summary>
+            <para>
+            <para>The base64-encoded repository logo payload.</para><note><para>The repository logo is only publicly visible in the Amazon ECR Public Gallery for
+            verified accounts.</para></note>
+            </para>
+            <para>The cmdlet will automatically convert the supplied parameter of type string, string[], System.IO.FileInfo or System.IO.Stream to byte[] before supplying it to the service.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPRepositoryCatalogDataCmdlet.CatalogData_OperatingSystem">
+            <summary>
+            <para>
+            <para>The operating systems that the images in the repository are compatible with. On the
+            Amazon ECR Public Gallery, the following supported operating systems will appear as
+            badges on the repository and are used as search filters.</para><ul><li><para><code>ARM</code></para></li><li><para><code>ARM 64</code></para></li><li><para><code>x86</code></para></li><li><para><code>x86-64</code></para></li></ul><note><para>If an unsupported tag is added to your repository catalog data, it will be associated
+            with the repository and can be retrieved using the API but will not be discoverable
+            in the Amazon ECR Public Gallery.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPRepositoryCatalogDataCmdlet.RegistryId">
+            <summary>
+            <para>
+            <para>The AWS account ID associated with the public registry the repository is in. If you
+            do not specify a registry, the default public registry is assumed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPRepositoryCatalogDataCmdlet.RepositoryName">
+            <summary>
+            <para>
+            <para>The name of the repository to create or update the catalog data for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPRepositoryCatalogDataCmdlet.CatalogData_UsageText">
+            <summary>
+            <para>
+            <para>Detailed information on how to use the contents of the repository. It is publicly
+            visible in the Amazon ECR Public Gallery. The usage text provides context, support
+            information, and additional usage details for users of the repository. The text must
+            be in markdown format.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPRepositoryCatalogDataCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'CatalogData'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ECRPublic.Model.PutRepositoryCatalogDataResponse).
+            Specifying the name of a property of type Amazon.ECRPublic.Model.PutRepositoryCatalogDataResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPRepositoryCatalogDataCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RepositoryName parameter.
+            The -PassThru parameter is deprecated, use -Select '^RepositoryName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ECRP.WriteECRPRepositoryCatalogDataCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

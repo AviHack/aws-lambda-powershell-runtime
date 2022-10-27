@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.AppConfigData</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.ACD.GetACDLatestConfigurationCmdlet">
+            <summary>
+            Retrieves the latest deployed configuration. This API may return empty configuration
+            data if the client already has the latest version. For more information about this
+            API action and to view example CLI commands that show how to use it with the <a>StartConfigurationSession</a>
+            API action, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving
+            the configuration</a> in the <i>AppConfig User Guide</i>. 
+            
+             <important><para>
+            Note the following important information.
+            </para><ul><li><para>
+            Each configuration token is only valid for one call to <code>GetLatestConfiguration</code>.
+            The <code>GetLatestConfiguration</code> response includes a <code>NextPollConfigurationToken</code>
+            that should always replace the token used for the just-completed call in preparation
+            for the next one. 
+            </para></li><li><para><code>GetLatestConfiguration</code> is a priced call. For more information, see <a href="https://aws.amazon.com/systems-manager/pricing/">Pricing</a>.
+            </para></li></ul></important>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACD.GetACDLatestConfigurationCmdlet.ConfigurationToken">
+            <summary>
+            <para>
+            <para>Token describing the current state of the configuration session. To obtain a token,
+            first call the <a>StartConfigurationSession</a> API. Note that every call to <code>GetLatestConfiguration</code>
+            will return a new <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code>
+            in the response) and MUST be provided to subsequent <code>GetLatestConfiguration</code>
+            API calls.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACD.GetACDLatestConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AppConfigData.Model.GetLatestConfigurationResponse).
+            Specifying the name of a property of type Amazon.AppConfigData.Model.GetLatestConfigurationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACD.GetACDLatestConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ConfigurationToken parameter.
+            The -PassThru parameter is deprecated, use -Select '^ConfigurationToken' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ACD.StartACDConfigurationSessionCmdlet">
+            <summary>
+            Starts a configuration session used to retrieve a deployed configuration. For more
+            information about this API action and to view example CLI commands that show how to
+            use it with the <a>GetLatestConfiguration</a> API action, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving
+            the configuration</a> in the <i>AppConfig User Guide</i>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACD.StartACDConfigurationSessionCmdlet.ApplicationIdentifier">
+            <summary>
+            <para>
+            <para>The application ID or the application name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACD.StartACDConfigurationSessionCmdlet.ConfigurationProfileIdentifier">
+            <summary>
+            <para>
+            <para>The configuration profile ID or the configuration profile name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACD.StartACDConfigurationSessionCmdlet.EnvironmentIdentifier">
+            <summary>
+            <para>
+            <para>The environment ID or the environment name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACD.StartACDConfigurationSessionCmdlet.RequiredMinimumPollIntervalInSecond">
+            <summary>
+            <para>
+            <para>Sets a constraint on a session. If you specify a value of, for example, 60 seconds,
+            then the client that established the session can't call <a>GetLatestConfiguration</a>
+            more frequently then every 60 seconds.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACD.StartACDConfigurationSessionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'InitialConfigurationToken'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AppConfigData.Model.StartConfigurationSessionResponse).
+            Specifying the name of a property of type Amazon.AppConfigData.Model.StartConfigurationSessionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACD.StartACDConfigurationSessionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

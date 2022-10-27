@@ -1,0 +1,1633 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.DevOpsGuru</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.AddDGURUNotificationChannelCmdlet">
+            <summary>
+            Adds a notification channel to DevOps Guru. A notification channel is used to notify
+            you about important DevOps Guru events, such as when an insight is generated. 
+            
+             
+            <para>
+            If you use an Amazon SNS topic in another account, you must attach a policy to it
+            that grants DevOps Guru permission to it notifications. DevOps Guru adds the required
+            policy on your behalf to send notifications using Amazon SNS in your account. DevOps
+            Guru only supports standard SNS topics. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
+            for cross account Amazon SNS topics</a>.
+            </para><para>
+            If you use an Amazon SNS topic in another account, you must attach a policy to it
+            that grants DevOps Guru permission to it notifications. DevOps Guru adds the required
+            policy on your behalf to send notifications using Amazon SNS in your account. For
+            more information, see Permissions for cross account Amazon SNS topics.
+            </para><para>
+            If you use an Amazon SNS topic that is encrypted by an Amazon Web Services Key Management
+            Service customer-managed key (CMK), then you must add permissions to the CMK. For
+            more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions
+            for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.AddDGURUNotificationChannelCmdlet.Filters_MessageType">
+            <summary>
+            <para>
+            <para> The events that you want to receive notifications for. For example, you can choose
+            to receive notifications only when the severity level is upgraded or a new insight
+            is created. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.AddDGURUNotificationChannelCmdlet.Filters_Severity">
+            <summary>
+            <para>
+            <para> The severity levels that you want to receive notifications for. For example, you
+            can choose to receive notifications only for insights with <code>HIGH</code> and <code>MEDIUM</code>
+            severity levels. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-insights.html#understanding-insights-severities">Understanding
+            insight severities</a>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.AddDGURUNotificationChannelCmdlet.Config_Sn">
+            <summary>
+            <para>
+            <para> Information about a notification channel configured in DevOps Guru to send notifications
+            when insights are created. </para><para>If you use an Amazon SNS topic in another account, you must attach a policy to it
+            that grants DevOps Guru permission to it notifications. DevOps Guru adds the required
+            policy on your behalf to send notifications using Amazon SNS in your account. DevOps
+            Guru only supports standard SNS topics. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
+            for cross account Amazon SNS topics</a>.</para><para>If you use an Amazon SNS topic in another account, you must attach a policy to it
+            that grants DevOps Guru permission to it notifications. DevOps Guru adds the required
+            policy on your behalf to send notifications using Amazon SNS in your account. For
+            more information, see Permissions for cross account Amazon SNS topics.</para><para>If you use an Amazon SNS topic that is encrypted by an Amazon Web Services Key Management
+            Service customer-managed key (CMK), then you must add permissions to the CMK. For
+            more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions
+            for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.AddDGURUNotificationChannelCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Id'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.AddNotificationChannelResponse).
+            Specifying the name of a property of type Amazon.DevOpsGuru.Model.AddNotificationChannelResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.AddDGURUNotificationChannelCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Config_Sn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Config_Sn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.AddDGURUNotificationChannelCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAccountHealthCmdlet">
+            <summary>
+            Returns the number of open reactive insights, the number of open proactive insights,
+            and the number of metrics analyzed in your Amazon Web Services account. Use these
+            numbers to gauge the health of operations in your Amazon Web Services account.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAccountHealthCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.DescribeAccountHealthResponse).
+            Specifying the name of a property of type Amazon.DevOpsGuru.Model.DescribeAccountHealthResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAccountOverviewCmdlet">
+            <summary>
+            For the time range passed in, returns the number of open reactive insight that were
+            created, the number of open proactive insights that were created, and the Mean Time
+            to Recover (MTTR) for all closed reactive insights.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAccountOverviewCmdlet.FromTime">
+            <summary>
+            <para>
+            <para> The start of the time range passed in. The start time granularity is at the day level.
+            The floor of the start time is used. Returned information occurred after this day.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAccountOverviewCmdlet.ToTime">
+            <summary>
+            <para>
+            <para> The end of the time range passed in. The start time granularity is at the day level.
+            The floor of the start time is used. Returned information occurred before this day.
+            If this is not specified, then the current day is used. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAccountOverviewCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.DescribeAccountOverviewResponse).
+            Specifying the name of a property of type Amazon.DevOpsGuru.Model.DescribeAccountOverviewResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAccountOverviewCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FromTime parameter.
+            The -PassThru parameter is deprecated, use -Select '^FromTime' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAnomaliesForInsightListCmdlet">
+            <summary>
+            Returns a list of the anomalies that belong to an insight that you specify using
+            its ID.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAnomaliesForInsightListCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Web Services account. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAnomaliesForInsightListCmdlet.InsightId">
+            <summary>
+            <para>
+            <para> The ID of the insight. The returned anomalies belong to this insight. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAnomaliesForInsightListCmdlet.StartTimeRange">
+            <summary>
+            <para>
+            <para> A time range used to specify when the requested anomalies started. All returned anomalies
+            started during this time range. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAnomaliesForInsightListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return with a single call. To retrieve the remaining
+            results, make another call with the returned <code>nextToken</code> value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAnomaliesForInsightListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token to use to retrieve the next page of results for this operation.
+            If this value is null, it retrieves the first page.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAnomaliesForInsightListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.ListAnomaliesForInsightResponse).
+            Specifying the name of a property of type Amazon.DevOpsGuru.Model.ListAnomaliesForInsightResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAnomaliesForInsightListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the InsightId parameter.
+            The -PassThru parameter is deprecated, use -Select '^InsightId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAnomaliesForInsightListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAnomalousLogGroupListCmdlet">
+            <summary>
+            Returns the list of log groups that contain log anomalies.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAnomalousLogGroupListCmdlet.InsightId">
+            <summary>
+            <para>
+            <para> The ID of the insight containing the log groups. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAnomalousLogGroupListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return with a single call. To retrieve the remaining
+            results, make another call with the returned <code>nextToken</code> value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAnomalousLogGroupListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token to use to retrieve the next page of results for this operation.
+            If this value is null, it retrieves the first page.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAnomalousLogGroupListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.ListAnomalousLogGroupsResponse).
+            Specifying the name of a property of type Amazon.DevOpsGuru.Model.ListAnomalousLogGroupsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAnomalousLogGroupListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the InsightId parameter.
+            The -PassThru parameter is deprecated, use -Select '^InsightId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAnomalousLogGroupListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAnomalyCmdlet">
+            <summary>
+            Returns details about an anomaly that you specify using its ID.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAnomalyCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The ID of the member account.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAnomalyCmdlet.Id">
+            <summary>
+            <para>
+            <para> The ID of the anomaly. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAnomalyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.DescribeAnomalyResponse).
+            Specifying the name of a property of type Amazon.DevOpsGuru.Model.DescribeAnomalyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUAnomalyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Id parameter.
+            The -PassThru parameter is deprecated, use -Select '^Id' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUCostEstimationCmdlet">
+            <summary>
+            Returns an estimate of the monthly cost for DevOps Guru to analyze your Amazon Web
+            Services resources. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate
+            your Amazon DevOps Guru costs</a> and <a href="http://aws.amazon.com/devops-guru/pricing/">Amazon
+            DevOps Guru pricing</a>.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUCostEstimationCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token to use to retrieve the next page of results for this operation.
+            If this value is null, it retrieves the first page.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUCostEstimationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.GetCostEstimationResponse).
+            Specifying the name of a property of type Amazon.DevOpsGuru.Model.GetCostEstimationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUCostEstimationCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUEventListCmdlet">
+            <summary>
+            Returns a list of the events emitted by the resources that are evaluated by DevOps
+            Guru. You can use filters to specify which events are returned.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUEventListCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Web Services account. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUEventListCmdlet.Filters_DataSource">
+            <summary>
+            <para>
+            <para> The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, of the
+            events you want returned. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUEventListCmdlet.Filters_EventClass">
+            <summary>
+            <para>
+            <para> The class of the events you want to filter for, such as an infrastructure change,
+            a deployment, or a schema change. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUEventListCmdlet.Filters_EventSource">
+            <summary>
+            <para>
+            <para> The Amazon Web Services source that emitted the events you want to filter for. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUEventListCmdlet.Filters_EventTimeRange">
+            <summary>
+            <para>
+            <para> A time range during which you want the filtered events to have occurred. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUEventListCmdlet.Filters_InsightId">
+            <summary>
+            <para>
+            <para> An ID of an insight that is related to the events you want to filter for. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUEventListCmdlet.Filters_ResourceCollection">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUEventListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return with a single call. To retrieve the remaining
+            results, make another call with the returned <code>nextToken</code> value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUEventListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token to use to retrieve the next page of results for this operation.
+            If this value is null, it retrieves the first page.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUEventListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Events'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.ListEventsResponse).
+            Specifying the name of a property of type Amazon.DevOpsGuru.Model.ListEventsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUEventListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Filters_InsightId parameter.
+            The -PassThru parameter is deprecated, use -Select '^Filters_InsightId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUEventListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUEventSourcesConfigCmdlet">
+            <summary>
+            Returns the integration status of services that are integrated with DevOps Guru as
+            Consumer via EventBridge. The one service that can be integrated with DevOps Guru
+            is Amazon CodeGuru Profiler, which can produce proactive recommendations which can
+            be stored and viewed in DevOps Guru.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUEventSourcesConfigCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EventSources'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.DescribeEventSourcesConfigResponse).
+            Specifying the name of a property of type Amazon.DevOpsGuru.Model.DescribeEventSourcesConfigResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUFeedbackCmdlet">
+            <summary>
+            Returns the most recent feedback submitted in the current Amazon Web Services account
+            and Region.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUFeedbackCmdlet.InsightId">
+            <summary>
+            <para>
+            <para> The ID of the insight for which the feedback was provided. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUFeedbackCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'InsightFeedback'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.DescribeFeedbackResponse).
+            Specifying the name of a property of type Amazon.DevOpsGuru.Model.DescribeFeedbackResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUFeedbackCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the InsightId parameter.
+            The -PassThru parameter is deprecated, use -Select '^InsightId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUInsightCmdlet">
+            <summary>
+            Returns details about an insight that you specify using its ID.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUInsightCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The ID of the member account in the organization.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUInsightCmdlet.Id">
+            <summary>
+            <para>
+            <para> The ID of the insight. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUInsightCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.DescribeInsightResponse).
+            Specifying the name of a property of type Amazon.DevOpsGuru.Model.DescribeInsightResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUInsightCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Id parameter.
+            The -PassThru parameter is deprecated, use -Select '^Id' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUInsightListCmdlet">
+            <summary>
+            Returns a list of insights in your Amazon Web Services account. You can specify which
+            insights are returned by their start time and status (<code>ONGOING</code>, <code>CLOSED</code>,
+            or <code>ANY</code>).<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUInsightListCmdlet.StatusFilter">
+            <summary>
+            <para>
+            <para> A filter used to filter the returned insights by their status. You can specify one
+            status filter. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUInsightListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return with a single call. To retrieve the remaining
+            results, make another call with the returned <code>nextToken</code> value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUInsightListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token to use to retrieve the next page of results for this operation.
+            If this value is null, it retrieves the first page.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUInsightListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.ListInsightsResponse).
+            Specifying the name of a property of type Amazon.DevOpsGuru.Model.ListInsightsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUInsightListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the StatusFilter parameter.
+            The -PassThru parameter is deprecated, use -Select '^StatusFilter' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUInsightListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUMonitoredResourceListCmdlet">
+            <summary>
+            Returns the list of all log groups that are being monitored and tagged by DevOps
+            Guru.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUMonitoredResourceListCmdlet.Filters_ResourcePermission">
+            <summary>
+            <para>
+            <para> The permission status of a resource. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUMonitoredResourceListCmdlet.Filters_ResourceTypeFilter">
+            <summary>
+            <para>
+            <para> The type of resource that you wish to retrieve, such as log groups. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUMonitoredResourceListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return with a single call. To retrieve the remaining
+            results, make another call with the returned <code>nextToken</code> value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUMonitoredResourceListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token to use to retrieve the next page of results for this operation.
+            If this value is null, it retrieves the first page.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUMonitoredResourceListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'MonitoredResourceIdentifiers'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.ListMonitoredResourcesResponse).
+            Specifying the name of a property of type Amazon.DevOpsGuru.Model.ListMonitoredResourcesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUMonitoredResourceListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Filters_ResourcePermission parameter.
+            The -PassThru parameter is deprecated, use -Select '^Filters_ResourcePermission' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUMonitoredResourceListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUNotificationChannelListCmdlet">
+            <summary>
+            Returns a list of notification channels configured for DevOps Guru. Each notification
+            channel is used to notify you when DevOps Guru generates an insight that contains
+            information about how to improve your operations. The one supported notification channel
+            is Amazon Simple Notification Service (Amazon SNS).<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUNotificationChannelListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token to use to retrieve the next page of results for this operation.
+            If this value is null, it retrieves the first page.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUNotificationChannelListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Channels'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.ListNotificationChannelsResponse).
+            Specifying the name of a property of type Amazon.DevOpsGuru.Model.ListNotificationChannelsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUNotificationChannelListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationHealthCmdlet">
+            <summary>
+            Returns active insights, predictive insights, and resource hours analyzed in last
+            hour.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationHealthCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Web Services account.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationHealthCmdlet.OrganizationalUnitId">
+            <summary>
+            <para>
+            <para>The ID of the organizational unit.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationHealthCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.DescribeOrganizationHealthResponse).
+            Specifying the name of a property of type Amazon.DevOpsGuru.Model.DescribeOrganizationHealthResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationInsightListCmdlet">
+            <summary>
+            Returns a list of insights associated with the account or OU Id.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationInsightListCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Web Services account. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationInsightListCmdlet.StartTimeRange_FromTime">
+            <summary>
+            <para>
+            <para> The start time of the time range. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationInsightListCmdlet.EndTimeRange_FromTime">
+            <summary>
+            <para>
+            <para> The earliest end time in the time range. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationInsightListCmdlet.OrganizationalUnitId">
+            <summary>
+            <para>
+            <para>The ID of the organizational unit.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationInsightListCmdlet.StartTimeRange_ToTime">
+            <summary>
+            <para>
+            <para> The end time of the time range. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationInsightListCmdlet.EndTimeRange_ToTime">
+            <summary>
+            <para>
+            <para> The latest end time in the time range. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationInsightListCmdlet.Any_Type">
+            <summary>
+            <para>
+            <para> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationInsightListCmdlet.Closed_Type">
+            <summary>
+            <para>
+            <para> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationInsightListCmdlet.Ongoing_Type">
+            <summary>
+            <para>
+            <para> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationInsightListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return with a single call. To retrieve the remaining
+            results, make another call with the returned <code>nextToken</code> value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationInsightListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token to use to retrieve the next page of results for this operation.
+            If this value is null, it retrieves the first page.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationInsightListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.ListOrganizationInsightsResponse).
+            Specifying the name of a property of type Amazon.DevOpsGuru.Model.ListOrganizationInsightsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationInsightListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationOverviewCmdlet">
+            <summary>
+            Returns an overview of your organization's history based on the specified time range.
+            The overview includes the total reactive and proactive insights.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationOverviewCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Web Services account.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationOverviewCmdlet.FromTime">
+            <summary>
+            <para>
+            <para> The start of the time range passed in. The start time granularity is at the day level.
+            The floor of the start time is used. Returned information occurred after this day.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationOverviewCmdlet.OrganizationalUnitId">
+            <summary>
+            <para>
+            <para>The ID of the organizational unit.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationOverviewCmdlet.ToTime">
+            <summary>
+            <para>
+            <para> The end of the time range passed in. The start time granularity is at the day level.
+            The floor of the start time is used. Returned information occurred before this day.
+            If this is not specified, then the current day is used. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationOverviewCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.DescribeOrganizationOverviewResponse).
+            Specifying the name of a property of type Amazon.DevOpsGuru.Model.DescribeOrganizationOverviewResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationOverviewCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FromTime parameter.
+            The -PassThru parameter is deprecated, use -Select '^FromTime' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationResourceCollectionHealthCmdlet">
+            <summary>
+            Provides an overview of your system's health. If additional member accounts are part
+            of your organization, you can filter those accounts using the <code>AccountIds</code>
+            field.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationResourceCollectionHealthCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Web Services account.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationResourceCollectionHealthCmdlet.OrganizationalUnitId">
+            <summary>
+            <para>
+            <para>The ID of the organizational unit.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationResourceCollectionHealthCmdlet.OrganizationResourceCollectionType">
+            <summary>
+            <para>
+            <para> An Amazon Web Services resource collection type. This type specifies how analyzed
+            Amazon Web Services resources are defined. The two types of Amazon Web Services resource
+            collections supported are Amazon Web Services CloudFormation stacks and Amazon Web
+            Services resources that contain the same Amazon Web Services tag. DevOps Guru can
+            be configured to analyze the Amazon Web Services resources that are defined in the
+            stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500
+            Amazon Web Services CloudFormation stacks. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationResourceCollectionHealthCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return with a single call. To retrieve the remaining
+            results, make another call with the returned <code>nextToken</code> value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationResourceCollectionHealthCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token to use to retrieve the next page of results for this operation.
+            If this value is null, it retrieves the first page.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationResourceCollectionHealthCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.DescribeOrganizationResourceCollectionHealthResponse).
+            Specifying the name of a property of type Amazon.DevOpsGuru.Model.DescribeOrganizationResourceCollectionHealthResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationResourceCollectionHealthCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the OrganizationResourceCollectionType parameter.
+            The -PassThru parameter is deprecated, use -Select '^OrganizationResourceCollectionType' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUOrganizationResourceCollectionHealthCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.GetDGURURecommendationListCmdlet">
+            <summary>
+            Returns a list of a specified insight's recommendations. Each recommendation includes
+            a list of related metrics and a list of related events.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURURecommendationListCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Web Services account. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURURecommendationListCmdlet.InsightId">
+            <summary>
+            <para>
+            <para> The ID of the requested insight. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURURecommendationListCmdlet.Locale">
+            <summary>
+            <para>
+            <para>A locale that specifies the language to use for recommendations.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURURecommendationListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token to use to retrieve the next page of results for this operation.
+            If this value is null, it retrieves the first page.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURURecommendationListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Recommendations'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.ListRecommendationsResponse).
+            Specifying the name of a property of type Amazon.DevOpsGuru.Model.ListRecommendationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURURecommendationListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the InsightId parameter.
+            The -PassThru parameter is deprecated, use -Select '^InsightId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURURecommendationListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUResourceCollectionCmdlet">
+            <summary>
+            Returns lists Amazon Web Services resources that are of the specified resource collection
+            type. The two types of Amazon Web Services resource collections supported are Amazon
+            Web Services CloudFormation stacks and Amazon Web Services resources that contain
+            the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon
+            Web Services resources that are defined in the stacks or that are tagged using the
+            same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation
+            stacks.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUResourceCollectionCmdlet.ResourceCollectionType">
+            <summary>
+            <para>
+            <para> The type of Amazon Web Services resource collections to return. The one valid value
+            is <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUResourceCollectionCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token to use to retrieve the next page of results for this operation.
+            If this value is null, it retrieves the first page.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUResourceCollectionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ResourceCollection'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.GetResourceCollectionResponse).
+            Specifying the name of a property of type Amazon.DevOpsGuru.Model.GetResourceCollectionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUResourceCollectionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceCollectionType parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceCollectionType' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUResourceCollectionCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUResourceCollectionHealthCmdlet">
+            <summary>
+            Returns the number of open proactive insights, open reactive insights, and the Mean
+            Time to Recover (MTTR) for all closed insights in resource collections in your account.
+            You specify the type of Amazon Web Services resources collection. The two types of
+            Amazon Web Services resource collections supported are Amazon Web Services CloudFormation
+            stacks and Amazon Web Services resources that contain the same Amazon Web Services
+            tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that
+            are defined in the stacks or that are tagged using the same tag <i>key</i>. You can
+            specify up to 500 Amazon Web Services CloudFormation stacks.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUResourceCollectionHealthCmdlet.ResourceCollectionType">
+            <summary>
+            <para>
+            <para> An Amazon Web Services resource collection type. This type specifies how analyzed
+            Amazon Web Services resources are defined. The two types of Amazon Web Services resource
+            collections supported are Amazon Web Services CloudFormation stacks and Amazon Web
+            Services resources that contain the same Amazon Web Services tag. DevOps Guru can
+            be configured to analyze the Amazon Web Services resources that are defined in the
+            stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500
+            Amazon Web Services CloudFormation stacks. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUResourceCollectionHealthCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token to use to retrieve the next page of results for this operation.
+            If this value is null, it retrieves the first page.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUResourceCollectionHealthCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'CloudFormation'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.DescribeResourceCollectionHealthResponse).
+            Specifying the name of a property of type Amazon.DevOpsGuru.Model.DescribeResourceCollectionHealthResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUResourceCollectionHealthCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceCollectionType parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceCollectionType' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUResourceCollectionHealthCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUServiceIntegrationCmdlet">
+            <summary>
+            Returns the integration status of services that are integrated with DevOps Guru.
+            The one service that can be integrated with DevOps Guru is Amazon Web Services Systems
+            Manager, which can be used to create an OpsItem for each generated insight.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.GetDGURUServiceIntegrationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ServiceIntegration'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.DescribeServiceIntegrationResponse).
+            Specifying the name of a property of type Amazon.DevOpsGuru.Model.DescribeServiceIntegrationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.RemoveDGURUInsightCmdlet">
+            <summary>
+            Deletes the insight along with the associated anomalies, events and recommendations.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.RemoveDGURUInsightCmdlet.Id">
+            <summary>
+            <para>
+            <para>The ID of the insight.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.RemoveDGURUInsightCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.DeleteInsightResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.RemoveDGURUInsightCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Id parameter.
+            The -PassThru parameter is deprecated, use -Select '^Id' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.RemoveDGURUInsightCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.RemoveDGURUNotificationChannelCmdlet">
+            <summary>
+            Removes a notification channel from DevOps Guru. A notification channel is used to
+            notify you when DevOps Guru generates an insight that contains information about how
+            to improve your operations.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.RemoveDGURUNotificationChannelCmdlet.Id">
+            <summary>
+            <para>
+            <para> The ID of the notification channel to be removed. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.RemoveDGURUNotificationChannelCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.RemoveNotificationChannelResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.RemoveDGURUNotificationChannelCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Id parameter.
+            The -PassThru parameter is deprecated, use -Select '^Id' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.RemoveDGURUNotificationChannelCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUInsightCmdlet">
+            <summary>
+            Returns a list of insights in your Amazon Web Services account. You can specify which
+            insights are returned by their start time, one or more statuses (<code>ONGOING</code>
+            or <code>CLOSED</code>), one or more severities (<code>LOW</code>, <code>MEDIUM</code>,
+            and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>).
+            
+            
+             
+            <para>
+             Use the <code>Filters</code> parameter to specify status and severity search parameters.
+            Use the <code>Type</code> parameter to specify <code>REACTIVE</code> or <code>PROACTIVE</code>
+            in your search. 
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUInsightCmdlet.Filters_ResourceCollection">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUInsightCmdlet.ServiceCollection_ServiceName">
+            <summary>
+            <para>
+            <para>An array of strings that each specifies the name of an Amazon Web Services service.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUInsightCmdlet.Filters_Severity">
+            <summary>
+            <para>
+            <para> An array of severity values used to search for insights. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUInsightCmdlet.StartTimeRange">
+            <summary>
+            <para>
+            <para> The start of the time range passed in. Returned insights occurred after this time.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUInsightCmdlet.Filters_Status">
+            <summary>
+            <para>
+            <para> An array of status values used to search for insights. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUInsightCmdlet.Type">
+            <summary>
+            <para>
+            <para> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUInsightCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return with a single call. To retrieve the remaining
+            results, make another call with the returned <code>nextToken</code> value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUInsightCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token to use to retrieve the next page of results for this operation.
+            If this value is null, it retrieves the first page.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUInsightCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.SearchInsightsResponse).
+            Specifying the name of a property of type Amazon.DevOpsGuru.Model.SearchInsightsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUInsightCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Type parameter.
+            The -PassThru parameter is deprecated, use -Select '^Type' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUInsightCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUInsightCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUOrganizationInsightCmdlet">
+            <summary>
+            Returns a list of insights in your organization. You can specify which insights are
+            returned by their start time, one or more statuses (<code>ONGOING</code>, <code>CLOSED</code>,
+            and <code>CLOSED</code>), one or more severities (<code>LOW</code>, <code>MEDIUM</code>,
+            and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>).
+            
+            
+             
+            <para>
+             Use the <code>Filters</code> parameter to specify status and severity search parameters.
+            Use the <code>Type</code> parameter to specify <code>REACTIVE</code> or <code>PROACTIVE</code>
+            in your search. 
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUOrganizationInsightCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Web Services account. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUOrganizationInsightCmdlet.StartTimeRange_FromTime">
+            <summary>
+            <para>
+            <para> The start time of the time range. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUOrganizationInsightCmdlet.ServiceCollection_ServiceName">
+            <summary>
+            <para>
+            <para>An array of strings that each specifies the name of an Amazon Web Services service.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUOrganizationInsightCmdlet.Filters_Severity">
+            <summary>
+            <para>
+            <para> An array of severity values used to search for insights. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUOrganizationInsightCmdlet.CloudFormation_StackName">
+            <summary>
+            <para>
+            <para> An array of CloudFormation stack names. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUOrganizationInsightCmdlet.Filters_Status">
+            <summary>
+            <para>
+            <para> An array of status values used to search for insights. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUOrganizationInsightCmdlet.ResourceCollection_Tag">
+            <summary>
+            <para>
+            <para>The Amazon Web Services tags that are used by resources in the resource collection.</para><para>Tags help you identify and organize your Amazon Web Services resources. Many Amazon
+            Web Services services support tagging, so you can assign the same tag to resources
+            from different services to indicate that the resources are related. For example, you
+            can assign the same tag to an Amazon DynamoDB table resource that you assign to an
+            Lambda function. For more information about using tags, see the <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
+            best practices</a> whitepaper. </para><para>Each Amazon Web Services tag has two parts. </para><ul><li><para>A tag <i>key</i> (for example, <code>CostCenter</code>, <code>Environment</code>,
+            <code>Project</code>, or <code>Secret</code>). Tag <i>keys</i> are case-sensitive.</para></li><li><para>An optional field known as a tag <i>value</i> (for example, <code>111122223333</code>,
+            <code>Production</code>, or a team name). Omitting the tag <i>value</i> is the same
+            as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are case-sensitive.</para></li></ul><para>Together these are known as <i>key</i>-<i>value</i> pairs.</para><important><para>The string used for a <i>key</i> in a tag that you use to define your resource coverage
+            must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
+            <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>.
+            When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever
+            you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps
+            Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
+            <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible
+            <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code>
+            or <code>Devops-Guru-production-application/containers</code>.</para></important>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUOrganizationInsightCmdlet.StartTimeRange_ToTime">
+            <summary>
+            <para>
+            <para> The end time of the time range. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUOrganizationInsightCmdlet.Type">
+            <summary>
+            <para>
+            <para> The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUOrganizationInsightCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return with a single call. To retrieve the remaining
+            results, make another call with the returned <code>nextToken</code> value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUOrganizationInsightCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token to use to retrieve the next page of results for this operation.
+            If this value is null, it retrieves the first page.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUOrganizationInsightCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.SearchOrganizationInsightsResponse).
+            Specifying the name of a property of type Amazon.DevOpsGuru.Model.SearchOrganizationInsightsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUOrganizationInsightCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Type parameter.
+            The -PassThru parameter is deprecated, use -Select '^Type' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUOrganizationInsightCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.SearchDGURUOrganizationInsightCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.StartDGURUCostEstimationCmdlet">
+            <summary>
+            Starts the creation of an estimate of the monthly cost to analyze your Amazon Web
+            Services resources.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.StartDGURUCostEstimationCmdlet.CloudFormation_StackName">
+            <summary>
+            <para>
+            <para>An array of CloudFormation stack names. Its size is fixed at 1 item.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.StartDGURUCostEstimationCmdlet.ResourceCollection_Tag">
+            <summary>
+            <para>
+            <para>The Amazon Web Services tags used to filter the resource collection that is used for
+            a cost estimate.</para><para>Tags help you identify and organize your Amazon Web Services resources. Many Amazon
+            Web Services services support tagging, so you can assign the same tag to resources
+            from different services to indicate that the resources are related. For example, you
+            can assign the same tag to an Amazon DynamoDB table resource that you assign to an
+            Lambda function. For more information about using tags, see the <a href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging
+            best practices</a> whitepaper. </para><para>Each Amazon Web Services tag has two parts. </para><ul><li><para>A tag <i>key</i> (for example, <code>CostCenter</code>, <code>Environment</code>,
+            <code>Project</code>, or <code>Secret</code>). Tag <i>keys</i> are case-sensitive.</para></li><li><para>An optional field known as a tag <i>value</i> (for example, <code>111122223333</code>,
+            <code>Production</code>, or a team name). Omitting the tag <i>value</i> is the same
+            as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are case-sensitive.</para></li></ul><para>Together these are known as <i>key</i>-<i>value</i> pairs.</para><important><para>The string used for a <i>key</i> in a tag that you use to define your resource coverage
+            must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
+            <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>.
+            When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever
+            you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps
+            Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
+            <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible
+            <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code>
+            or <code>Devops-Guru-production-application/containers</code>.</para></important>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.StartDGURUCostEstimationCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>The idempotency token used to identify each cost estimate request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.StartDGURUCostEstimationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.StartCostEstimationResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.StartDGURUCostEstimationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.UpdateDGURUEventSourcesConfigCmdlet">
+            <summary>
+            Enables or disables integration with a service that can be integrated with DevOps
+            Guru. The one service that can be integrated with DevOps Guru is Amazon CodeGuru Profiler,
+            which can produce proactive recommendations which can be stored and viewed in DevOps
+            Guru.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.UpdateDGURUEventSourcesConfigCmdlet.AmazonCodeGuruProfiler_Status">
+            <summary>
+            <para>
+            <para>The status of the CodeGuru Profiler integration. Specifies if DevOps Guru is enabled
+            to consume recommendations that are generated from Amazon CodeGuru Profiler.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.UpdateDGURUEventSourcesConfigCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.UpdateEventSourcesConfigResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.UpdateDGURUEventSourcesConfigCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.UpdateDGURUResourceCollectionCmdlet">
+            <summary>
+            Updates the collection of resources that DevOps Guru analyzes. The two types of Amazon
+            Web Services resource collections supported are Amazon Web Services CloudFormation
+            stacks and Amazon Web Services resources that contain the same Amazon Web Services
+            tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that
+            are defined in the stacks or that are tagged using the same tag <i>key</i>. You can
+            specify up to 500 Amazon Web Services CloudFormation stacks. This method also creates
+            the IAM role required for you to use DevOps Guru.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.UpdateDGURUResourceCollectionCmdlet.Action">
+            <summary>
+            <para>
+            <para> Specifies if the resource collection in the request is added or deleted to the resource
+            collection. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.UpdateDGURUResourceCollectionCmdlet.ResourceCollection">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.UpdateDGURUResourceCollectionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.UpdateResourceCollectionResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.UpdateDGURUResourceCollectionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceCollection parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceCollection' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.UpdateDGURUResourceCollectionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.UpdateDGURUServiceIntegrationCmdlet">
+            <summary>
+            Enables or disables integration with a service that can be integrated with DevOps
+            Guru. The one service that can be integrated with DevOps Guru is Amazon Web Services
+            Systems Manager, which can be used to create an OpsItem for each generated insight.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.UpdateDGURUServiceIntegrationCmdlet.ServiceIntegration_OpsCenter">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.UpdateDGURUServiceIntegrationCmdlet.LogsAnomalyDetection_OptInStatus">
+            <summary>
+            <para>
+            <para>Specifies if DevOps Guru is configured to perform log anomaly detection on CloudWatch
+            log groups.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.UpdateDGURUServiceIntegrationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.UpdateServiceIntegrationResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.UpdateDGURUServiceIntegrationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ServiceIntegration_OpsCenter parameter.
+            The -PassThru parameter is deprecated, use -Select '^ServiceIntegration_OpsCenter' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.UpdateDGURUServiceIntegrationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DGURU.WriteDGURUFeedbackCmdlet">
+            <summary>
+            Collects customer feedback about the specified insight.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.WriteDGURUFeedbackCmdlet.InsightFeedback">
+            <summary>
+            <para>
+            <para> The feedback from customers is about the recommendations in this insight. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.WriteDGURUFeedbackCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DevOpsGuru.Model.PutFeedbackResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.WriteDGURUFeedbackCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the InsightFeedback parameter.
+            The -PassThru parameter is deprecated, use -Select '^InsightFeedback' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DGURU.WriteDGURUFeedbackCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

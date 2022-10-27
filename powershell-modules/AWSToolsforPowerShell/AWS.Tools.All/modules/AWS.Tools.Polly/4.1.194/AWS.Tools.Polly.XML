@@ -1,0 +1,584 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.Polly</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.POL.GetPOLLexiconCmdlet">
+            <summary>
+            Returns the content of the specified pronunciation lexicon stored in an Amazon Web
+            Services Region. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+            Lexicons</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLLexiconCmdlet.Name">
+            <summary>
+            <para>
+            <para>Name of the lexicon.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLLexiconCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Polly.Model.GetLexiconResponse).
+            Specifying the name of a property of type Amazon.Polly.Model.GetLexiconResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLLexiconCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.POL.GetPOLLexiconListCmdlet">
+            <summary>
+            Returns a list of pronunciation lexicons stored in an Amazon Web Services Region.
+            For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+            Lexicons</a>.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLLexiconListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>An opaque pagination token returned from previous <code>ListLexicons</code> operation.
+            If present, indicates where to continue the list of lexicons.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLLexiconListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Lexicons'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Polly.Model.ListLexiconsResponse).
+            Specifying the name of a property of type Amazon.Polly.Model.ListLexiconsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLLexiconListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the NextToken parameter.
+            The -PassThru parameter is deprecated, use -Select '^NextToken' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLLexiconListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.POL.GetPOLSpeechCmdlet">
+            <summary>
+            Synthesizes UTF-8 input, plain text or SSML, to a stream of bytes. SSML input must
+            be valid, well-formed SSML. Some alphabets might not be available with all the voices
+            (for example, Cyrillic might not be read at all by English voices) unless phoneme
+            mapping is used. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How
+            it Works</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLSpeechCmdlet.Engine">
+            <summary>
+            <para>
+            <para>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly
+            to use when processing input text for speech synthesis. For information on Amazon
+            Polly voices and which voices are available in standard-only, NTTS-only, and both
+            standard and NTTS formats, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available
+            Voices</a>.</para><para><b>NTTS-only voices</b></para><para>When using NTTS-only voices such as Kevin (en-US), this parameter is required and
+            must be set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>,
+            this will result in an error. </para><para>Type: String</para><para>Valid Values: <code>standard</code> | <code>neural</code></para><para>Required: Yes</para><para><b>Standard voices</b></para><para>For standard voices, this is not required; the engine parameter defaults to <code>standard</code>.
+            If the engine is not specified, or is set to <code>standard</code> and an NTTS-only
+            voice is selected, this will result in an error. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLSpeechCmdlet.LanguageCode">
+            <summary>
+            <para>
+            <para>Optional language code for the Synthesize Speech request. This is only necessary if
+            using a bilingual voice, such as Aditi, which can be used for either Indian English
+            (en-IN) or Hindi (hi-IN). </para><para>If a bilingual voice is used and no language code is specified, Amazon Polly uses
+            the default language of the bilingual voice. The default language for any voice is
+            the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a>
+            operation for the <code>LanguageCode</code> parameter. For example, if no language
+            code is specified, Aditi will use Indian English rather than Hindi.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLSpeechCmdlet.LexiconName">
+            <summary>
+            <para>
+            <para>List of one or more pronunciation lexicon names you want the service to apply during
+            synthesis. Lexicons are applied only if the language of the lexicon is the same as
+            the language of the voice. For information about storing lexicons, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html">PutLexicon</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLSpeechCmdlet.OutputFormat">
+            <summary>
+            <para>
+            <para> The format in which the returned output will be encoded. For audio stream, this will
+            be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </para><para>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel
+            (mono), little-endian format. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLSpeechCmdlet.SampleRate">
+            <summary>
+            <para>
+            <para>The audio frequency specified in Hz.</para><para>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000".
+            The default value for standard voices is "22050". The default value for neural voices
+            is "24000".</para><para>Valid values for pcm are "8000" and "16000" The default value is "16000". </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLSpeechCmdlet.SpeechMarkType">
+            <summary>
+            <para>
+            <para>The type of speech marks returned for the input text.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLSpeechCmdlet.Text">
+            <summary>
+            <para>
+            <para> Input text to synthesize. If you specify <code>ssml</code> as the <code>TextType</code>,
+            follow the SSML format for the input text. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLSpeechCmdlet.TextType">
+            <summary>
+            <para>
+            <para> Specifies whether the input text is plain text or SSML. The default value is plain
+            text. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/ssml.html">Using
+            SSML</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLSpeechCmdlet.VoiceId">
+            <summary>
+            <para>
+            <para> Voice ID to use for the synthesis. You can get a list of available voice IDs by calling
+            the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a>
+            operation. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLSpeechCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Polly.Model.SynthesizeSpeechResponse).
+            Specifying the name of a property of type Amazon.Polly.Model.SynthesizeSpeechResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLSpeechCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Text parameter.
+            The -PassThru parameter is deprecated, use -Select '^Text' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.POL.GetPOLSpeechSynthesisTaskCmdlet">
+            <summary>
+            Retrieves a specific SpeechSynthesisTask object based on its TaskID. This object contains
+            information about the given speech synthesis task, including the status of the task,
+            and a link to the S3 bucket containing the output of the task.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLSpeechSynthesisTaskCmdlet.TaskId">
+            <summary>
+            <para>
+            <para>The Amazon Polly generated identifier for a speech synthesis task.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLSpeechSynthesisTaskCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SynthesisTask'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Polly.Model.GetSpeechSynthesisTaskResponse).
+            Specifying the name of a property of type Amazon.Polly.Model.GetSpeechSynthesisTaskResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLSpeechSynthesisTaskCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TaskId parameter.
+            The -PassThru parameter is deprecated, use -Select '^TaskId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.POL.GetPOLSpeechSynthesisTaskListCmdlet">
+            <summary>
+            Returns a list of SpeechSynthesisTask objects ordered by their creation date. This
+            operation can filter the tasks by their status, for example, allowing users to list
+            only tasks that are completed.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLSpeechSynthesisTaskListCmdlet.Status">
+            <summary>
+            <para>
+            <para>Status of the speech synthesis tasks returned in a List operation</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLSpeechSynthesisTaskListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Maximum number of speech synthesis tasks returned in a List operation.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>100</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLSpeechSynthesisTaskListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token to use in the next request to continue the listing of speech
+            synthesis tasks. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLSpeechSynthesisTaskListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SynthesisTasks'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Polly.Model.ListSpeechSynthesisTasksResponse).
+            Specifying the name of a property of type Amazon.Polly.Model.ListSpeechSynthesisTasksResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLSpeechSynthesisTaskListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Status parameter.
+            The -PassThru parameter is deprecated, use -Select '^Status' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLSpeechSynthesisTaskListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.POL.GetPOLVoiceCmdlet">
+            <summary>
+            Returns the list of voices that are available for use when requesting speech synthesis.
+            Each voice speaks a specified language, is either male or female, and is identified
+            by an ID, which is the ASCII version of the voice name. 
+            
+             
+            <para>
+            When synthesizing speech ( <code>SynthesizeSpeech</code> ), you provide the voice
+            ID for the voice you want from the list of voices returned by <code>DescribeVoices</code>.
+            </para><para>
+            For example, you want your news reader application to read news in a specific language,
+            but giving a user the option to choose the voice. Using the <code>DescribeVoices</code>
+            operation you can provide the user with a list of available voices to select from.
+            </para><para>
+             You can optionally specify a language code to filter the available voices. For example,
+            if you specify <code>en-US</code>, the operation returns a list of all available US
+            English voices. 
+            </para><para>
+            This operation requires permissions to perform the <code>polly:DescribeVoices</code>
+            action.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLVoiceCmdlet.Engine">
+            <summary>
+            <para>
+            <para>Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon
+            Polly when processing input text for speech synthesis. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLVoiceCmdlet.IncludeAdditionalLanguageCode">
+            <summary>
+            <para>
+            <para>Boolean value indicating whether to return any bilingual voices that use the specified
+            language as an additional language. For instance, if you request all languages that
+            use US English (es-US), and there is an Italian voice that speaks both Italian (it-IT)
+            and US English, that voice will be included if you specify <code>yes</code> but not
+            if you specify <code>no</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLVoiceCmdlet.LanguageCode">
+            <summary>
+            <para>
+            <para> The language identification tag (ISO 639 code for the language name-ISO 3166 country
+            code) for filtering the list of voices returned. If you don't specify this optional
+            parameter, all available voices are returned. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLVoiceCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>An opaque pagination token returned from the previous <code>DescribeVoices</code>
+            operation. If present, this indicates where to continue the listing.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLVoiceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Voices'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Polly.Model.DescribeVoicesResponse).
+            Specifying the name of a property of type Amazon.Polly.Model.DescribeVoicesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLVoiceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LanguageCode parameter.
+            The -PassThru parameter is deprecated, use -Select '^LanguageCode' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.GetPOLVoiceCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.POL.RemovePOLLexiconCmdlet">
+            <summary>
+            Deletes the specified pronunciation lexicon stored in an Amazon Web Services Region.
+            A lexicon which has been deleted is not available for speech synthesis, nor is it
+            possible to retrieve it using either the <code>GetLexicon</code> or <code>ListLexicon</code>
+            APIs.
+            
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+            Lexicons</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.RemovePOLLexiconCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the lexicon to delete. Must be an existing lexicon in the region.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.RemovePOLLexiconCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Polly.Model.DeleteLexiconResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.RemovePOLLexiconCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.RemovePOLLexiconCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.POL.StartPOLSpeechSynthesisTaskCmdlet">
+            <summary>
+            Allows the creation of an asynchronous synthesis task, by starting a new <code>SpeechSynthesisTask</code>.
+            This operation requires all the standard information needed for speech synthesis,
+            plus the name of an Amazon S3 bucket for the service to store the output of the synthesis
+            task and two optional parameters (<code>OutputS3KeyPrefix</code> and <code>SnsTopicArn</code>).
+            Once the synthesis task is created, this operation will return a <code>SpeechSynthesisTask</code>
+            object, which will include an identifier of this task as well as the current status.
+            The <code>SpeechSynthesisTask</code> object is available for 72 hours after starting
+            the asynchronous synthesis task.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.StartPOLSpeechSynthesisTaskCmdlet.Engine">
+            <summary>
+            <para>
+            <para>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly
+            to use when processing input text for speech synthesis. Using a voice that is not
+            supported for the engine selected will result in an error.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.StartPOLSpeechSynthesisTaskCmdlet.LanguageCode">
+            <summary>
+            <para>
+            <para>Optional language code for the Speech Synthesis request. This is only necessary if
+            using a bilingual voice, such as Aditi, which can be used for either Indian English
+            (en-IN) or Hindi (hi-IN). </para><para>If a bilingual voice is used and no language code is specified, Amazon Polly uses
+            the default language of the bilingual voice. The default language for any voice is
+            the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a>
+            operation for the <code>LanguageCode</code> parameter. For example, if no language
+            code is specified, Aditi will use Indian English rather than Hindi.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.StartPOLSpeechSynthesisTaskCmdlet.LexiconName">
+            <summary>
+            <para>
+            <para>List of one or more pronunciation lexicon names you want the service to apply during
+            synthesis. Lexicons are applied only if the language of the lexicon is the same as
+            the language of the voice. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.StartPOLSpeechSynthesisTaskCmdlet.OutputFormat">
+            <summary>
+            <para>
+            <para>The format in which the returned output will be encoded. For audio stream, this will
+            be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.StartPOLSpeechSynthesisTaskCmdlet.OutputS3BucketName">
+            <summary>
+            <para>
+            <para>Amazon S3 bucket name to which the output file will be saved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.StartPOLSpeechSynthesisTaskCmdlet.OutputS3KeyPrefix">
+            <summary>
+            <para>
+            <para>The Amazon S3 key prefix for the output speech file.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.StartPOLSpeechSynthesisTaskCmdlet.SampleRate">
+            <summary>
+            <para>
+            <para>The audio frequency specified in Hz.</para><para>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000".
+            The default value for standard voices is "22050". The default value for neural voices
+            is "24000".</para><para>Valid values for pcm are "8000" and "16000" The default value is "16000". </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.StartPOLSpeechSynthesisTaskCmdlet.SnsTopicArn">
+            <summary>
+            <para>
+            <para>ARN for the SNS topic optionally used for providing status notification for a speech
+            synthesis task.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.StartPOLSpeechSynthesisTaskCmdlet.SpeechMarkType">
+            <summary>
+            <para>
+            <para>The type of speech marks returned for the input text.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.StartPOLSpeechSynthesisTaskCmdlet.Text">
+            <summary>
+            <para>
+            <para>The input text to synthesize. If you specify ssml as the TextType, follow the SSML
+            format for the input text. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.StartPOLSpeechSynthesisTaskCmdlet.TextType">
+            <summary>
+            <para>
+            <para>Specifies whether the input text is plain text or SSML. The default value is plain
+            text. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.StartPOLSpeechSynthesisTaskCmdlet.VoiceId">
+            <summary>
+            <para>
+            <para>Voice ID to use for the synthesis. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.StartPOLSpeechSynthesisTaskCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SynthesisTask'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Polly.Model.StartSpeechSynthesisTaskResponse).
+            Specifying the name of a property of type Amazon.Polly.Model.StartSpeechSynthesisTaskResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.StartPOLSpeechSynthesisTaskCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Text parameter.
+            The -PassThru parameter is deprecated, use -Select '^Text' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.StartPOLSpeechSynthesisTaskCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.POL.WritePOLLexiconCmdlet">
+            <summary>
+            Stores a pronunciation lexicon in an Amazon Web Services Region. If a lexicon with
+            the same name already exists in the region, it is overwritten by the new lexicon.
+            Lexicon operations have eventual consistency, therefore, it might take some time before
+            the lexicon is available to the SynthesizeSpeech operation.
+            
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
+            Lexicons</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.WritePOLLexiconCmdlet.Content">
+            <summary>
+            <para>
+            <para>Content of the PLS lexicon as string data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.WritePOLLexiconCmdlet.Name">
+            <summary>
+            <para>
+            <para>Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}.
+            That is, the name is a case-sensitive alphanumeric string up to 20 characters long.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.WritePOLLexiconCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Polly.Model.PutLexiconResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.WritePOLLexiconCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Content parameter.
+            The -PassThru parameter is deprecated, use -Select '^Content' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.POL.WritePOLLexiconCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

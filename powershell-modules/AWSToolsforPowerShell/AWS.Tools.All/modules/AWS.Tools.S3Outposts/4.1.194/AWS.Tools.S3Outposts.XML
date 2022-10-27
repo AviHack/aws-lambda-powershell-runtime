@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.S3Outposts</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.S3O.GetS3OEndpointListCmdlet">
+            <summary>
+            Lists endpoints associated with the specified Outpost. 
+            
+             
+            <para>
+            Related actions include:
+            </para><ul><li><para><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a></para></li><li><para><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a></para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.S3O.GetS3OEndpointListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of endpoints that will be returned in the response.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.S3O.GetS3OEndpointListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If a previous response from this operation included a <code>NextToken</code> value,
+            provide that value here to retrieve the next page of results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.S3O.GetS3OEndpointListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Endpoints'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.S3Outposts.Model.ListEndpointsResponse).
+            Specifying the name of a property of type Amazon.S3Outposts.Model.ListEndpointsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.S3O.GetS3OSharedEndpointListCmdlet">
+            <summary>
+            Lists all endpoints associated with an Outpost that has been shared by Amazon Web
+            Services Resource Access Manager (RAM).
+            
+             
+            <para>
+            Related actions include:
+            </para><ul><li><para><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a></para></li><li><para><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a></para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.S3O.GetS3OSharedEndpointListCmdlet.OutpostId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Web Services Outpost.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.S3O.GetS3OSharedEndpointListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of endpoints that will be returned in the response.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.S3O.GetS3OSharedEndpointListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If a previous response from this operation included a <code>NextToken</code> value,
+            you can provide that value here to retrieve the next page of results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.S3O.GetS3OSharedEndpointListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Endpoints'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.S3Outposts.Model.ListSharedEndpointsResponse).
+            Specifying the name of a property of type Amazon.S3Outposts.Model.ListSharedEndpointsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.S3O.GetS3OSharedEndpointListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the OutpostId parameter.
+            The -PassThru parameter is deprecated, use -Select '^OutpostId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.S3O.NewS3OEndpointCmdlet">
+            <summary>
+            Creates an endpoint and associates it with the specified Outpost.
+            
+             <note><para>
+            It can take up to 5 minutes for this action to finish.
+            </para></note><para>
+            Related actions include:
+            </para><ul><li><para><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_DeleteEndpoint.html">DeleteEndpoint</a></para></li><li><para><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html">ListEndpoints</a></para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.S3O.NewS3OEndpointCmdlet.AccessType">
+            <summary>
+            <para>
+            <para>The type of access for the network connectivity for the Amazon S3 on Outposts endpoint.
+            To use the Amazon Web Services VPC, choose <code>Private</code>. To use the endpoint
+            with an on-premises network, choose <code>CustomerOwnedIp</code>. If you choose <code>CustomerOwnedIp</code>,
+            you must also provide the customer-owned IP address pool (CoIP pool).</para><note><para><code>Private</code> is the default access type value.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.S3O.NewS3OEndpointCmdlet.CustomerOwnedIpv4Pool">
+            <summary>
+            <para>
+            <para>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint. IP addresses
+            are allocated from this pool for the endpoint.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.S3O.NewS3OEndpointCmdlet.OutpostId">
+            <summary>
+            <para>
+            <para>The ID of the Outposts. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.S3O.NewS3OEndpointCmdlet.SecurityGroupId">
+            <summary>
+            <para>
+            <para>The ID of the security group to use with the endpoint.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.S3O.NewS3OEndpointCmdlet.SubnetId">
+            <summary>
+            <para>
+            <para>The ID of the subnet in the selected VPC. The endpoint subnet must belong to the Outpost
+            that has Amazon S3 on Outposts provisioned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.S3O.NewS3OEndpointCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EndpointArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.S3Outposts.Model.CreateEndpointResponse).
+            Specifying the name of a property of type Amazon.S3Outposts.Model.CreateEndpointResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.S3O.NewS3OEndpointCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the OutpostId parameter.
+            The -PassThru parameter is deprecated, use -Select '^OutpostId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.S3O.NewS3OEndpointCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.S3O.RemoveS3OEndpointCmdlet">
+            <summary>
+            Deletes an endpoint.
+            
+             <note><para>
+            It can take up to 5 minutes for this action to finish.
+            </para></note><para>
+            Related actions include:
+            </para><ul><li><para><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_CreateEndpoint.html">CreateEndpoint</a></para></li><li><para><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_s3outposts_ListEndpoints.html">ListEndpoints</a></para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.S3O.RemoveS3OEndpointCmdlet.EndpointId">
+            <summary>
+            <para>
+            <para>The ID of the endpoint.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.S3O.RemoveS3OEndpointCmdlet.OutpostId">
+            <summary>
+            <para>
+            <para>The ID of the Outposts. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.S3O.RemoveS3OEndpointCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.S3Outposts.Model.DeleteEndpointResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.S3O.RemoveS3OEndpointCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EndpointId parameter.
+            The -PassThru parameter is deprecated, use -Select '^EndpointId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.S3O.RemoveS3OEndpointCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

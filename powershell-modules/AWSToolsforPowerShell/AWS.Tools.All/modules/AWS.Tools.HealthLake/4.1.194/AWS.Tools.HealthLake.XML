@@ -1,0 +1,698 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.HealthLake</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.AHL.AddAHLResourceTagCmdlet">
+            <summary>
+            Adds a user specifed key and value tag to a Data Store.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.AddAHLResourceTagCmdlet.ResourceARN">
+            <summary>
+            <para>
+            <para> The Amazon Resource Name(ARN)that gives Amazon HealthLake access to the Data Store
+            which tags are being added to. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.AddAHLResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para> The user specified key and value pair tags being added to a Data Store. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.AddAHLResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.HealthLake.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.AddAHLResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceARN parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceARN' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.AddAHLResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRDatastoreCmdlet">
+            <summary>
+            Gets the properties associated with the FHIR Data Store, including the Data Store
+            ID, Data Store ARN, Data Store name, Data Store status, created at, Data Store type
+            version, and Data Store endpoint.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRDatastoreCmdlet.DatastoreId">
+            <summary>
+            <para>
+            <para>The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRDatastoreCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'DatastoreProperties'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.HealthLake.Model.DescribeFHIRDatastoreResponse).
+            Specifying the name of a property of type Amazon.HealthLake.Model.DescribeFHIRDatastoreResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRDatastoreCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DatastoreId parameter.
+            The -PassThru parameter is deprecated, use -Select '^DatastoreId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRDatastoreListCmdlet">
+            <summary>
+            Lists all FHIR Data Stores that are in the user’s account, regardless of Data Store
+            status.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRDatastoreListCmdlet.Filter_CreatedAfter">
+            <summary>
+            <para>
+            <para>A filter that allows the user to set cutoff dates for records. All Data Stores created
+            after the specified date will be included in the results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRDatastoreListCmdlet.Filter_CreatedBefore">
+            <summary>
+            <para>
+            <para>A filter that allows the user to set cutoff dates for records. All Data Stores created
+            before the specified date will be included in the results. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRDatastoreListCmdlet.Filter_DatastoreName">
+            <summary>
+            <para>
+            <para>Allows the user to filter Data Store results by name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRDatastoreListCmdlet.Filter_DatastoreStatus">
+            <summary>
+            <para>
+            <para>Allows the user to filter Data Store results by status.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRDatastoreListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of Data Stores returned in a single page of a ListFHIRDatastoresRequest
+            call.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRDatastoreListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Fetches the next page of Data Stores when results are paginated.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRDatastoreListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'DatastorePropertiesList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.HealthLake.Model.ListFHIRDatastoresResponse).
+            Specifying the name of a property of type Amazon.HealthLake.Model.ListFHIRDatastoresResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRDatastoreListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRExportJobCmdlet">
+            <summary>
+            Displays the properties of a FHIR export job, including the ID, ARN, name, and the
+            status of the job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRExportJobCmdlet.DatastoreId">
+            <summary>
+            <para>
+            <para>The AWS generated ID for the Data Store from which files are being exported from for
+            an export job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRExportJobCmdlet.JobId">
+            <summary>
+            <para>
+            <para>The AWS generated ID for an export job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRExportJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ExportJobProperties'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.HealthLake.Model.DescribeFHIRExportJobResponse).
+            Specifying the name of a property of type Amazon.HealthLake.Model.DescribeFHIRExportJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRExportJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRExportJobListCmdlet">
+            <summary>
+            Lists all FHIR export jobs associated with an account and their statuses.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRExportJobListCmdlet.DatastoreId">
+            <summary>
+            <para>
+            <para> This parameter limits the response to the export job with the specified Data Store
+            ID. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRExportJobListCmdlet.JobName">
+            <summary>
+            <para>
+            <para> This parameter limits the response to the export job with the specified job name.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRExportJobListCmdlet.JobStatus">
+            <summary>
+            <para>
+            <para> This parameter limits the response to the export jobs with the specified job status.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRExportJobListCmdlet.SubmittedAfter">
+            <summary>
+            <para>
+            <para> This parameter limits the response to FHIR export jobs submitted after a user specified
+            date. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRExportJobListCmdlet.SubmittedBefore">
+            <summary>
+            <para>
+            <para> This parameter limits the response to FHIR export jobs submitted before a user specified
+            date. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRExportJobListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para> This parameter limits the number of results returned for a ListFHIRExportJobs to
+            a maximum quantity specified by the user. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRExportJobListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs
+            query. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRExportJobListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ExportJobPropertiesList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.HealthLake.Model.ListFHIRExportJobsResponse).
+            Specifying the name of a property of type Amazon.HealthLake.Model.ListFHIRExportJobsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRExportJobListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DatastoreId parameter.
+            The -PassThru parameter is deprecated, use -Select '^DatastoreId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRExportJobListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRImportJobCmdlet">
+            <summary>
+            Displays the properties of a FHIR import job, including the ID, ARN, name, and the
+            status of the job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRImportJobCmdlet.DatastoreId">
+            <summary>
+            <para>
+            <para>The AWS-generated ID of the Data Store.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRImportJobCmdlet.JobId">
+            <summary>
+            <para>
+            <para>The AWS-generated job ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRImportJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ImportJobProperties'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.HealthLake.Model.DescribeFHIRImportJobResponse).
+            Specifying the name of a property of type Amazon.HealthLake.Model.DescribeFHIRImportJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRImportJobListCmdlet">
+            <summary>
+            Lists all FHIR import jobs associated with an account and their statuses.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRImportJobListCmdlet.DatastoreId">
+            <summary>
+            <para>
+            <para> This parameter limits the response to the import job with the specified Data Store
+            ID. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRImportJobListCmdlet.JobName">
+            <summary>
+            <para>
+            <para> This parameter limits the response to the import job with the specified job name.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRImportJobListCmdlet.JobStatus">
+            <summary>
+            <para>
+            <para> This parameter limits the response to the import job with the specified job status.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRImportJobListCmdlet.SubmittedAfter">
+            <summary>
+            <para>
+            <para> This parameter limits the response to FHIR import jobs submitted after a user specified
+            date. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRImportJobListCmdlet.SubmittedBefore">
+            <summary>
+            <para>
+            <para> This parameter limits the response to FHIR import jobs submitted before a user specified
+            date. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRImportJobListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para> This parameter limits the number of results returned for a ListFHIRImportJobs to
+            a maximum quantity specified by the user. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRImportJobListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs
+            query. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRImportJobListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ImportJobPropertiesList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.HealthLake.Model.ListFHIRImportJobsResponse).
+            Specifying the name of a property of type Amazon.HealthLake.Model.ListFHIRImportJobsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRImportJobListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DatastoreId parameter.
+            The -PassThru parameter is deprecated, use -Select '^DatastoreId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLFHIRImportJobListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AHL.GetAHLResourceTagCmdlet">
+            <summary>
+            Returns a list of all existing tags associated with a Data Store.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLResourceTagCmdlet.ResourceARN">
+            <summary>
+            <para>
+            <para> The Amazon Resource Name(ARN) of the Data Store for which tags are being added. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.HealthLake.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.HealthLake.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.GetAHLResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceARN parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceARN' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AHL.NewAHLFHIRDatastoreCmdlet">
+            <summary>
+            Creates a Data Store that can ingest and export FHIR formatted data.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.NewAHLFHIRDatastoreCmdlet.KmsEncryptionConfig_CmkType">
+            <summary>
+            <para>
+            <para> The type of customer-managed-key(CMK) used for encyrption. The two types of supported
+            CMKs are customer owned CMKs and AWS owned CMKs. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.NewAHLFHIRDatastoreCmdlet.DatastoreName">
+            <summary>
+            <para>
+            <para>The user generated name for the Data Store.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.NewAHLFHIRDatastoreCmdlet.DatastoreTypeVersion">
+            <summary>
+            <para>
+            <para>The FHIR version of the Data Store. The only supported version is R4.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.NewAHLFHIRDatastoreCmdlet.KmsEncryptionConfig_KmsKeyId">
+            <summary>
+            <para>
+            <para> The KMS encryption key id/alias used to encrypt the Data Store contents at rest.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.NewAHLFHIRDatastoreCmdlet.PreloadDataConfig_PreloadDataType">
+            <summary>
+            <para>
+            <para>The type of preloaded data. Only Synthea preloaded data is supported.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.NewAHLFHIRDatastoreCmdlet.Tag">
+            <summary>
+            <para>
+            <para> Resource tags that are applied to a Data Store when it is created. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.NewAHLFHIRDatastoreCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>Optional user provided token used for ensuring idempotency.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.NewAHLFHIRDatastoreCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.HealthLake.Model.CreateFHIRDatastoreResponse).
+            Specifying the name of a property of type Amazon.HealthLake.Model.CreateFHIRDatastoreResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.NewAHLFHIRDatastoreCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DatastoreTypeVersion parameter.
+            The -PassThru parameter is deprecated, use -Select '^DatastoreTypeVersion' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.NewAHLFHIRDatastoreCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AHL.RemoveAHLFHIRDatastoreCmdlet">
+            <summary>
+            Deletes a Data Store.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.RemoveAHLFHIRDatastoreCmdlet.DatastoreId">
+            <summary>
+            <para>
+            <para> The AWS-generated ID for the Data Store to be deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.RemoveAHLFHIRDatastoreCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.HealthLake.Model.DeleteFHIRDatastoreResponse).
+            Specifying the name of a property of type Amazon.HealthLake.Model.DeleteFHIRDatastoreResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.RemoveAHLFHIRDatastoreCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DatastoreId parameter.
+            The -PassThru parameter is deprecated, use -Select '^DatastoreId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.RemoveAHLFHIRDatastoreCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AHL.RemoveAHLResourceTagCmdlet">
+            <summary>
+            Removes tags from a Data Store.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.RemoveAHLResourceTagCmdlet.ResourceARN">
+            <summary>
+            <para>
+            <para> "The Amazon Resource Name(ARN) of the Data Store for which tags are being removed
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.RemoveAHLResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para> The keys for the tags to be removed from the Healthlake Data Store. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.RemoveAHLResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.HealthLake.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.RemoveAHLResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceARN parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceARN' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.RemoveAHLResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AHL.StartAHLFHIRExportJobCmdlet">
+            <summary>
+            Begins a FHIR export job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.StartAHLFHIRExportJobCmdlet.DataAccessRoleArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name used during the initiation of the job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.StartAHLFHIRExportJobCmdlet.DatastoreId">
+            <summary>
+            <para>
+            <para>The AWS generated ID for the Data Store from which files are being exported for an
+            export job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.StartAHLFHIRExportJobCmdlet.JobName">
+            <summary>
+            <para>
+            <para>The user generated name for an export job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.StartAHLFHIRExportJobCmdlet.S3Configuration_KmsKeyId">
+            <summary>
+            <para>
+            <para> The KMS key ID used to access the S3 bucket. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.StartAHLFHIRExportJobCmdlet.S3Configuration_S3Uri">
+            <summary>
+            <para>
+            <para> The S3Uri is the user specified S3 location of the FHIR data to be imported into
+            Amazon HealthLake. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.StartAHLFHIRExportJobCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>An optional user provided token used for ensuring idempotency.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.StartAHLFHIRExportJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.HealthLake.Model.StartFHIRExportJobResponse).
+            Specifying the name of a property of type Amazon.HealthLake.Model.StartFHIRExportJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.StartAHLFHIRExportJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DatastoreId parameter.
+            The -PassThru parameter is deprecated, use -Select '^DatastoreId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.StartAHLFHIRExportJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AHL.StartAHLFHIRImportJobCmdlet">
+            <summary>
+            Begins a FHIR Import job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.StartAHLFHIRImportJobCmdlet.DataAccessRoleArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.StartAHLFHIRImportJobCmdlet.DatastoreId">
+            <summary>
+            <para>
+            <para>The AWS-generated Data Store ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.StartAHLFHIRImportJobCmdlet.JobName">
+            <summary>
+            <para>
+            <para>The name of the FHIR Import job in the StartFHIRImport job request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.StartAHLFHIRImportJobCmdlet.S3Configuration_KmsKeyId">
+            <summary>
+            <para>
+            <para> The KMS key ID used to access the S3 bucket. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.StartAHLFHIRImportJobCmdlet.InputDataConfig_S3Uri">
+            <summary>
+            <para>
+            <para>The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon
+            HealthLake. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.StartAHLFHIRImportJobCmdlet.S3Configuration_S3Uri">
+            <summary>
+            <para>
+            <para> The S3Uri is the user specified S3 location of the FHIR data to be imported into
+            Amazon HealthLake. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.StartAHLFHIRImportJobCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>Optional user provided token used for ensuring idempotency.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.StartAHLFHIRImportJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.HealthLake.Model.StartFHIRImportJobResponse).
+            Specifying the name of a property of type Amazon.HealthLake.Model.StartFHIRImportJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AHL.StartAHLFHIRImportJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

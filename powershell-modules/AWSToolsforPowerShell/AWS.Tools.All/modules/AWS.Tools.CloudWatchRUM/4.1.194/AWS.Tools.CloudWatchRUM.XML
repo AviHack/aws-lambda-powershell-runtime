@@ -1,0 +1,1174 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.CloudWatchRUM</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWRUM.AddCWRUMCreateRumMetricDefinitionCmdlet">
+            <summary>
+            Specifies the extended metrics that you want a CloudWatch RUM app monitor to send
+            to a destination. Valid destinations include CloudWatch and Evidently.
+            
+             
+            <para>
+            By default, RUM app monitors send some metrics to CloudWatch. These default metrics
+            are listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-metrics.html">CloudWatch
+            metrics that you can collect with CloudWatch RUM</a>.
+            </para><para>
+            If you also send extended metrics, you can send metrics to Evidently as well as CloudWatch,
+            and you can also optionally send the metrics with additional dimensions. The valid
+            dimension names for the additional dimensions are <code>BrowserName</code>, <code>CountryCode</code>,
+            <code>DeviceType</code>, <code>FileType</code>, <code>OSName</code>, and <code>PageId</code>.
+            For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html">
+            Extended metrics that you can send to CloudWatch and CloudWatch Evidently</a>.
+            </para><para>
+            The maximum number of metric definitions that you can specify in one <code>BatchCreateRumMetricDefinitions</code>
+            operation is 200.
+            </para><pre><code> &lt;p&gt;The maximum number of metric definitions that one destination
+            can contain is 2000.&lt;/p&gt; &lt;p&gt;Extended metrics sent are charged as CloudWatch
+            custom metrics. Each combination of additional dimension name and dimension value
+            counts as a custom metric. For more information, see &lt;a href="https://aws.amazon.com/cloudwatch/pricing/"&gt;Amazon
+            CloudWatch Pricing&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;You must have already created a destination
+            for the metrics before you send them. For more information, see &lt;a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html"&gt;PutRumMetricsDestination&lt;/a&gt;.&lt;/p&gt;
+            &lt;p&gt;If some metric definitions specified in a &lt;code&gt;BatchCreateRumMetricDefinitions&lt;/code&gt;
+            operations are not valid, those metric definitions fail and return errors, but all
+            valid metric definitions in the same operation still succeed.&lt;/p&gt; </code></pre>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.AddCWRUMCreateRumMetricDefinitionCmdlet.AppMonitorName">
+            <summary>
+            <para>
+            <para>The name of the CloudWatch RUM app monitor that is to send the metrics.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.AddCWRUMCreateRumMetricDefinitionCmdlet.Destination">
+            <summary>
+            <para>
+            <para>The destination to send the metrics to. Valid values are <code>CloudWatch</code> and
+            <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify
+            the ARN of the CloudWatchEvidently experiment that will receive the metrics and an
+            IAM role that has permission to write to the experiment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.AddCWRUMCreateRumMetricDefinitionCmdlet.DestinationArn">
+            <summary>
+            <para>
+            <para>This parameter is required if <code>Destination</code> is <code>Evidently</code>.
+            If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</para><para>This parameter specifies the ARN of the Evidently experiment that is to receive the
+            metrics. You must have already defined this experiment as a valid destination. For
+            more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.AddCWRUMCreateRumMetricDefinitionCmdlet.MetricDefinition">
+            <summary>
+            <para>
+            <para>An array of structures which define the metrics that you want to send.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.AddCWRUMCreateRumMetricDefinitionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchRUM.Model.BatchCreateRumMetricDefinitionsResponse).
+            Specifying the name of a property of type Amazon.CloudWatchRUM.Model.BatchCreateRumMetricDefinitionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.AddCWRUMCreateRumMetricDefinitionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Destination parameter.
+            The -PassThru parameter is deprecated, use -Select '^Destination' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.AddCWRUMCreateRumMetricDefinitionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWRUM.AddCWRUMResourceTagCmdlet">
+            <summary>
+            Assigns one or more tags (key-value pairs) to the specified CloudWatch RUM resource.
+            Currently, the only resources that can be tagged app monitors.
+            
+             
+            <para>
+            Tags can help you organize and categorize your resources. You can also use them to
+            scope user permissions by granting a user permission to access or change only resources
+            with certain tag values.
+            </para><para>
+            Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly
+            as strings of characters.
+            </para><para>
+            You can use the <code>TagResource</code> action with a resource that already has tags.
+            If you specify a new tag key for the resource, this tag is appended to the list of
+            tags associated with the alarm. If you specify a tag key that is already associated
+            with the resource, the new tag value that you specify replaces the previous value
+            for that tag.
+            </para><para>
+            You can associate as many as 50 tags with a resource.
+            </para><para>
+            For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+            Amazon Web Services resources</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.AddCWRUMResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The ARN of the CloudWatch RUM resource that you're adding tags to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.AddCWRUMResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The list of key-value pairs to associate with the resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.AddCWRUMResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchRUM.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.AddCWRUMResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.AddCWRUMResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMAppMonitorCmdlet">
+            <summary>
+            Retrieves the complete configuration information for one app monitor.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMAppMonitorCmdlet.Name">
+            <summary>
+            <para>
+            <para>The app monitor to retrieve information for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMAppMonitorCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AppMonitor'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchRUM.Model.GetAppMonitorResponse).
+            Specifying the name of a property of type Amazon.CloudWatchRUM.Model.GetAppMonitorResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMAppMonitorCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMAppMonitorDataCmdlet">
+            <summary>
+            Retrieves the raw performance events that RUM has collected from your web application,
+            so that you can do your own processing or analysis of this data.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMAppMonitorDataCmdlet.TimeRange_After">
+            <summary>
+            <para>
+            <para>The beginning of the time range to retrieve performance events from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMAppMonitorDataCmdlet.TimeRange_Before">
+            <summary>
+            <para>
+            <para>The end of the time range to retrieve performance events from. If you omit this, the
+            time range extends to the time that this operation is performed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMAppMonitorDataCmdlet.Filter">
+            <summary>
+            <para>
+            <para>An array of structures that you can use to filter the results to those that match
+            one or more sets of key-value pairs that you specify.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMAppMonitorDataCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the app monitor that collected the data that you want to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMAppMonitorDataCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return in one operation. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMAppMonitorDataCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Use the token returned by the previous operation to request the next page of results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMAppMonitorDataCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Events'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchRUM.Model.GetAppMonitorDataResponse).
+            Specifying the name of a property of type Amazon.CloudWatchRUM.Model.GetAppMonitorDataResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMAppMonitorDataCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMAppMonitorListCmdlet">
+            <summary>
+            Returns a list of the Amazon CloudWatch RUM app monitors in the account.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMAppMonitorListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return in one operation. The default is 50. The maximum
+            that you can specify is 100.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMAppMonitorListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Use the token returned by the previous operation to request the next page of results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMAppMonitorListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AppMonitorSummaries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchRUM.Model.ListAppMonitorsResponse).
+            Specifying the name of a property of type Amazon.CloudWatchRUM.Model.ListAppMonitorsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMGetRumMetricDefinitionCmdlet">
+            <summary>
+            Retrieves the list of metrics and dimensions that a RUM app monitor is sending to
+            a single destination.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMGetRumMetricDefinitionCmdlet.AppMonitorName">
+            <summary>
+            <para>
+            <para>The name of the CloudWatch RUM app monitor that is sending the metrics.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMGetRumMetricDefinitionCmdlet.Destination">
+            <summary>
+            <para>
+            <para>The type of destination that you want to view metrics for. Valid values are <code>CloudWatch</code>
+            and <code>Evidently</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMGetRumMetricDefinitionCmdlet.DestinationArn">
+            <summary>
+            <para>
+            <para>This parameter is required if <code>Destination</code> is <code>Evidently</code>.
+            If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</para><para>This parameter specifies the ARN of the Evidently experiment that corresponds to the
+            destination.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMGetRumMetricDefinitionCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return in one operation. The default is 50. The maximum
+            that you can specify is 100.</para><para>To retrieve the remaining results, make another call with the returned <code>NextToken</code>
+            value. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMGetRumMetricDefinitionCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Use the token returned by the previous operation to request the next page of results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMGetRumMetricDefinitionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'MetricDefinitions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchRUM.Model.BatchGetRumMetricDefinitionsResponse).
+            Specifying the name of a property of type Amazon.CloudWatchRUM.Model.BatchGetRumMetricDefinitionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMGetRumMetricDefinitionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Destination parameter.
+            The -PassThru parameter is deprecated, use -Select '^Destination' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMResourceTagCmdlet">
+            <summary>
+            Displays the tags associated with a CloudWatch RUM resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The ARN of the resource that you want to see the tags of.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchRUM.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.CloudWatchRUM.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMRumMetricsDestinationListCmdlet">
+            <summary>
+            Returns a list of destinations that you have created to receive RUM extended metrics,
+            for the specified app monitor.
+            
+             
+            <para>
+            For more information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_AddRumMetrcs.html">AddRumMetrics</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMRumMetricsDestinationListCmdlet.AppMonitorName">
+            <summary>
+            <para>
+            <para>The name of the app monitor associated with the destinations that you want to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMRumMetricsDestinationListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return in one operation. The default is 50. The maximum
+            that you can specify is 100.</para><para>To retrieve the remaining results, make another call with the returned <code>NextToken</code>
+            value. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMRumMetricsDestinationListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Use the token returned by the previous operation to request the next page of results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMRumMetricsDestinationListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Destinations'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchRUM.Model.ListRumMetricsDestinationsResponse).
+            Specifying the name of a property of type Amazon.CloudWatchRUM.Model.ListRumMetricsDestinationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.GetCWRUMRumMetricsDestinationListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AppMonitorName parameter.
+            The -PassThru parameter is deprecated, use -Select '^AppMonitorName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWRUM.NewCWRUMAppMonitorCmdlet">
+            <summary>
+            Creates a Amazon CloudWatch RUM app monitor, which collects telemetry data from your
+            application and sends that data to RUM. The data includes performance and reliability
+            information such as page load time, client-side errors, and user behavior.
+            
+             
+            <para>
+            You use this operation only to create a new app monitor. To update an existing app
+            monitor, use <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_UpdateAppMonitor.html">UpdateAppMonitor</a>
+            instead.
+            </para><para>
+            After you create an app monitor, sign in to the CloudWatch RUM console to get the
+            JavaScript code snippet to add to your web application. For more information, see
+            <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-find-code-snippet.html">How
+            do I find a code snippet that I've already generated?</a></para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.NewCWRUMAppMonitorCmdlet.AppMonitorConfiguration_AllowCookie">
+            <summary>
+            <para>
+            <para>If you set this to <code>true</code>, the RUM web client sets two cookies, a session
+            cookie and a user cookie. The cookies allow the RUM web client to collect data relating
+            to the number of users an application has and the behavior of the application across
+            a sequence of events. Cookies are stored in the top-level domain of the current page.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.NewCWRUMAppMonitorCmdlet.CwLogEnabled">
+            <summary>
+            <para>
+            <para>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter
+            specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs
+            in your account. This enables you to keep the telemetry data for more than 30 days,
+            but it does incur Amazon CloudWatch Logs charges.</para><para>If you omit this parameter, the default is <code>false</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.NewCWRUMAppMonitorCmdlet.Domain">
+            <summary>
+            <para>
+            <para>The top-level internet domain name for which your application has administrative authority.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.NewCWRUMAppMonitorCmdlet.AppMonitorConfiguration_EnableXRay">
+            <summary>
+            <para>
+            <para>If you set this to <code>true</code>, RUM enables X-Ray tracing for the user sessions
+            that RUM samples. RUM adds an X-Ray trace header to allowed HTTP requests. It also
+            records an X-Ray segment for allowed HTTP requests. You can see traces and segments
+            from these user sessions in the X-Ray console and the CloudWatch ServiceLens console.
+            For more information, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What
+            is X-Ray?</a></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.NewCWRUMAppMonitorCmdlet.AppMonitorConfiguration_ExcludedPage">
+            <summary>
+            <para>
+            <para>A list of URLs in your website or application to exclude from RUM data collection.</para><para>You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in
+            the same operation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.NewCWRUMAppMonitorCmdlet.AppMonitorConfiguration_FavoritePage">
+            <summary>
+            <para>
+            <para>A list of pages in your application that are to be displayed with a "favorite" icon
+            in the CloudWatch RUM console.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.NewCWRUMAppMonitorCmdlet.AppMonitorConfiguration_GuestRoleArn">
+            <summary>
+            <para>
+            <para>The ARN of the guest IAM role that is attached to the Amazon Cognito identity pool
+            that is used to authorize the sending of data to RUM.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.NewCWRUMAppMonitorCmdlet.AppMonitorConfiguration_IdentityPoolId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Cognito identity pool that is used to authorize the sending of
+            data to RUM.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.NewCWRUMAppMonitorCmdlet.AppMonitorConfiguration_IncludedPage">
+            <summary>
+            <para>
+            <para>If this app monitor is to collect data from only certain pages in your application,
+            this structure lists those pages. </para><pre><code> &lt;p&gt;You can't include both &lt;code&gt;ExcludedPages&lt;/code&gt;
+            and &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt; </code></pre>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.NewCWRUMAppMonitorCmdlet.Name">
+            <summary>
+            <para>
+            <para>A name for the app monitor.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.NewCWRUMAppMonitorCmdlet.AppMonitorConfiguration_SessionSampleRate">
+            <summary>
+            <para>
+            <para>Specifies the portion of user sessions to use for RUM data collection. Choosing a
+            higher portion gives you more data but also incurs more costs.</para><para>The range for this value is 0 to 1 inclusive. Setting this to 1 means that 100% of
+            user sessions are sampled, and setting it to 0.1 means that 10% of user sessions are
+            sampled.</para><para>If you omit this parameter, the default of 0.1 is used, and 10% of sessions will be
+            sampled.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.NewCWRUMAppMonitorCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Assigns one or more tags (key-value pairs) to the app monitor.</para><para>Tags can help you organize and categorize your resources. You can also use them to
+            scope user permissions by granting a user permission to access or change only resources
+            with certain tag values.</para><para>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly
+            as strings of characters.</para><pre><code> &lt;p&gt;You can associate as many as 50 tags with an app monitor.&lt;/p&gt;
+            &lt;p&gt;For more information, see &lt;a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"&gt;Tagging
+            Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code></pre>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.NewCWRUMAppMonitorCmdlet.AppMonitorConfiguration_Telemetry">
+            <summary>
+            <para>
+            <para>An array that lists the types of telemetry data that this app monitor is to collect.</para><ul><li><para><code>errors</code> indicates that RUM collects data about unhandled JavaScript errors
+            raised by your application.</para></li><li><para><code>performance</code> indicates that RUM collects performance data about how your
+            application and its resources are loaded and rendered. This includes Core Web Vitals.</para></li><li><para><code>http</code> indicates that RUM collects data about HTTP errors thrown by your
+            application.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.NewCWRUMAppMonitorCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Id'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchRUM.Model.CreateAppMonitorResponse).
+            Specifying the name of a property of type Amazon.CloudWatchRUM.Model.CreateAppMonitorResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.NewCWRUMAppMonitorCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.NewCWRUMAppMonitorCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMAppMonitorCmdlet">
+            <summary>
+            Deletes an existing app monitor. This immediately stops the collection of data.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMAppMonitorCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the app monitor to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMAppMonitorCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchRUM.Model.DeleteAppMonitorResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMAppMonitorCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMAppMonitorCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMDeleteRumMetricDefinitionCmdlet">
+            <summary>
+            Removes the specified metrics from being sent to an extended metrics destination.
+            
+             
+            <para>
+            If some metric definition IDs specified in a <code>BatchDeleteRumMetricDefinitions</code>
+            operations are not valid, those metric definitions fail and return errors, but all
+            valid metric definition IDs in the same operation are still deleted.
+            </para><para>
+            The maximum number of metric definitions that you can specify in one <code>BatchDeleteRumMetricDefinitions</code>
+            operation is 200.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMDeleteRumMetricDefinitionCmdlet.AppMonitorName">
+            <summary>
+            <para>
+            <para>The name of the CloudWatch RUM app monitor that is sending these metrics.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMDeleteRumMetricDefinitionCmdlet.Destination">
+            <summary>
+            <para>
+            <para>Defines the destination where you want to stop sending the specified metrics. Valid
+            values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>,
+            you must also specify the ARN of the CloudWatchEvidently experiment that is to be
+            the destination and an IAM role that has permission to write to the experiment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMDeleteRumMetricDefinitionCmdlet.DestinationArn">
+            <summary>
+            <para>
+            <para>This parameter is required if <code>Destination</code> is <code>Evidently</code>.
+            If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.
+            </para><para>This parameter specifies the ARN of the Evidently experiment that was receiving the
+            metrics that are being deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMDeleteRumMetricDefinitionCmdlet.MetricDefinitionId">
+            <summary>
+            <para>
+            <para>An array of structures which define the metrics that you want to stop sending.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMDeleteRumMetricDefinitionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchRUM.Model.BatchDeleteRumMetricDefinitionsResponse).
+            Specifying the name of a property of type Amazon.CloudWatchRUM.Model.BatchDeleteRumMetricDefinitionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMDeleteRumMetricDefinitionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Destination parameter.
+            The -PassThru parameter is deprecated, use -Select '^Destination' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMDeleteRumMetricDefinitionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMResourceTagCmdlet">
+            <summary>
+            Removes one or more tags from the specified resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The ARN of the CloudWatch RUM resource that you're removing tags from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>The list of tag keys to remove from the resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchRUM.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMRumMetricsDestinationCmdlet">
+            <summary>
+            Deletes a destination for CloudWatch RUM extended metrics, so that the specified app
+            monitor stops sending extended metrics to that destination.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMRumMetricsDestinationCmdlet.AppMonitorName">
+            <summary>
+            <para>
+            <para>The name of the app monitor that is sending metrics to the destination that you want
+            to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMRumMetricsDestinationCmdlet.Destination">
+            <summary>
+            <para>
+            <para>The type of destination to delete. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMRumMetricsDestinationCmdlet.DestinationArn">
+            <summary>
+            <para>
+            <para>This parameter is required if <code>Destination</code> is <code>Evidently</code>.
+            If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.
+            This parameter specifies the ARN of the Evidently experiment that corresponds to the
+            destination to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMRumMetricsDestinationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchRUM.Model.DeleteRumMetricsDestinationResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMRumMetricsDestinationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AppMonitorName parameter.
+            The -PassThru parameter is deprecated, use -Select '^AppMonitorName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.RemoveCWRUMRumMetricsDestinationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMAppMonitorCmdlet">
+            <summary>
+            Updates the configuration of an existing app monitor. When you use this operation,
+            only the parts of the app monitor configuration that you specify in this operation
+            are changed. For any parameters that you omit, the existing values are kept.
+            
+             
+            <para>
+            You can't use this operation to change the tags of an existing app monitor. To change
+            the tags of an existing app monitor, use <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_TagResource.html">TagResource</a>.
+            </para><para>
+            To create a new app monitor, use <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_CreateAppMonitor.html">CreateAppMonitor</a>.
+            </para><para>
+            After you update an app monitor, sign in to the CloudWatch RUM console to get the
+            updated JavaScript code snippet to add to your web application. For more information,
+            see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-find-code-snippet.html">How
+            do I find a code snippet that I've already generated?</a></para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMAppMonitorCmdlet.AppMonitorConfiguration_AllowCookie">
+            <summary>
+            <para>
+            <para>If you set this to <code>true</code>, the RUM web client sets two cookies, a session
+            cookie and a user cookie. The cookies allow the RUM web client to collect data relating
+            to the number of users an application has and the behavior of the application across
+            a sequence of events. Cookies are stored in the top-level domain of the current page.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMAppMonitorCmdlet.CwLogEnabled">
+            <summary>
+            <para>
+            <para>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter
+            specifies whether RUM sends a copy of this telemetry data to Amazon CloudWatch Logs
+            in your account. This enables you to keep the telemetry data for more than 30 days,
+            but it does incur Amazon CloudWatch Logs charges.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMAppMonitorCmdlet.Domain">
+            <summary>
+            <para>
+            <para>The top-level internet domain name for which your application has administrative authority.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMAppMonitorCmdlet.AppMonitorConfiguration_EnableXRay">
+            <summary>
+            <para>
+            <para>If you set this to <code>true</code>, RUM enables X-Ray tracing for the user sessions
+            that RUM samples. RUM adds an X-Ray trace header to allowed HTTP requests. It also
+            records an X-Ray segment for allowed HTTP requests. You can see traces and segments
+            from these user sessions in the X-Ray console and the CloudWatch ServiceLens console.
+            For more information, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What
+            is X-Ray?</a></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMAppMonitorCmdlet.AppMonitorConfiguration_ExcludedPage">
+            <summary>
+            <para>
+            <para>A list of URLs in your website or application to exclude from RUM data collection.</para><para>You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in
+            the same operation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMAppMonitorCmdlet.AppMonitorConfiguration_FavoritePage">
+            <summary>
+            <para>
+            <para>A list of pages in your application that are to be displayed with a "favorite" icon
+            in the CloudWatch RUM console.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMAppMonitorCmdlet.AppMonitorConfiguration_GuestRoleArn">
+            <summary>
+            <para>
+            <para>The ARN of the guest IAM role that is attached to the Amazon Cognito identity pool
+            that is used to authorize the sending of data to RUM.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMAppMonitorCmdlet.AppMonitorConfiguration_IdentityPoolId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Cognito identity pool that is used to authorize the sending of
+            data to RUM.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMAppMonitorCmdlet.AppMonitorConfiguration_IncludedPage">
+            <summary>
+            <para>
+            <para>If this app monitor is to collect data from only certain pages in your application,
+            this structure lists those pages. </para><pre><code> &lt;p&gt;You can't include both &lt;code&gt;ExcludedPages&lt;/code&gt;
+            and &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt; </code></pre>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMAppMonitorCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the app monitor to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMAppMonitorCmdlet.AppMonitorConfiguration_SessionSampleRate">
+            <summary>
+            <para>
+            <para>Specifies the portion of user sessions to use for RUM data collection. Choosing a
+            higher portion gives you more data but also incurs more costs.</para><para>The range for this value is 0 to 1 inclusive. Setting this to 1 means that 100% of
+            user sessions are sampled, and setting it to 0.1 means that 10% of user sessions are
+            sampled.</para><para>If you omit this parameter, the default of 0.1 is used, and 10% of sessions will be
+            sampled.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMAppMonitorCmdlet.AppMonitorConfiguration_Telemetry">
+            <summary>
+            <para>
+            <para>An array that lists the types of telemetry data that this app monitor is to collect.</para><ul><li><para><code>errors</code> indicates that RUM collects data about unhandled JavaScript errors
+            raised by your application.</para></li><li><para><code>performance</code> indicates that RUM collects performance data about how your
+            application and its resources are loaded and rendered. This includes Core Web Vitals.</para></li><li><para><code>http</code> indicates that RUM collects data about HTTP errors thrown by your
+            application.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMAppMonitorCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchRUM.Model.UpdateAppMonitorResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMAppMonitorCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMAppMonitorCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMRumMetricDefinitionCmdlet">
+            <summary>
+            Modifies one existing metric definition for CloudWatch RUM extended metrics. For more
+            information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_BatchCreateRumMetricsDefinitions.html">BatchCreateRumMetricsDefinitions</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMRumMetricDefinitionCmdlet.AppMonitorName">
+            <summary>
+            <para>
+            <para>The name of the CloudWatch RUM app monitor that sends these metrics.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMRumMetricDefinitionCmdlet.Destination">
+            <summary>
+            <para>
+            <para>The destination to send the metrics to. Valid values are <code>CloudWatch</code> and
+            <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify
+            the ARN of the CloudWatchEvidently experiment that will receive the metrics and an
+            IAM role that has permission to write to the experiment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMRumMetricDefinitionCmdlet.DestinationArn">
+            <summary>
+            <para>
+            <para>This parameter is required if <code>Destination</code> is <code>Evidently</code>.
+            If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</para><para>This parameter specifies the ARN of the Evidently experiment that is to receive the
+            metrics. You must have already defined this experiment as a valid destination. For
+            more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMRumMetricDefinitionCmdlet.MetricDefinition_DimensionKey">
+            <summary>
+            <para>
+            <para>Use this field only if you are sending the metric to CloudWatch.</para><para>This field is a map of field paths to dimension names. It defines the dimensions to
+            associate with this metric in CloudWatch. Valid values for the entries in this field
+            are the following:</para><ul><li><para><code>"metadata.pageId": "PageId"</code></para></li><li><para><code>"metadata.browserName": "BrowserName"</code></para></li><li><para><code>"metadata.deviceType": "DeviceType"</code></para></li><li><para><code>"metadata.osName": "OSName"</code></para></li><li><para><code>"metadata.countryCode": "CountryCode"</code></para></li><li><para><code>"event_details.fileType": "FileType"</code></para></li></ul><pre><code> &lt;p&gt; All dimensions listed in this field must also be
+            included in &lt;code&gt;EventPattern&lt;/code&gt;.&lt;/p&gt; </code></pre>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMRumMetricDefinitionCmdlet.MetricDefinition_EventPattern">
+            <summary>
+            <para>
+            <para>The pattern that defines the metric, specified as a JSON object. RUM checks events
+            that happen in a user's session against the pattern, and events that match the pattern
+            are sent to the metric destination.</para><para>When you define extended metrics, the metric definition is not valid if <code>EventPattern</code>
+            is omitted.</para><para>Example event patterns:</para><ul><li><para><code>'{ "event_type": ["com.amazon.rum.js_error_event"], "metadata": { "browserName":
+            [ "Chrome", "Safari" ], } }'</code></para></li><li><para><code>'{ "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata":
+            { "browserName": [ "Chrome", "Firefox" ] }, "event_details": { "duration": [{ "numeric":
+            [ "&lt;", 2000 ] }] } }'</code></para></li><li><para><code>'{ "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata":
+            { "browserName": [ "Chrome", "Safari" ], "countryCode": [ "US" ] }, "event_details":
+            { "duration": [{ "numeric": [ "&gt;=", 2000, "&lt;", 8000 ] }] } }'</code></para></li></ul><para>If the metrics destination' is <code>CloudWatch</code> and the event also matches
+            a value in <code>DimensionKeys</code>, then the metric is published with the specified
+            dimensions. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMRumMetricDefinitionCmdlet.MetricDefinitionId">
+            <summary>
+            <para>
+            <para>The ID of the metric definition to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMRumMetricDefinitionCmdlet.MetricDefinition_Name">
+            <summary>
+            <para>
+            <para>The name for the metric that is defined in this structure. Valid values are the following:</para><ul><li><para><code>PerformanceNavigationDuration</code></para></li><li><para><code>PerformanceResourceDuration </code></para></li><li><para><code>NavigationSatisfiedTransaction</code></para></li><li><para><code>NavigationToleratedTransaction</code></para></li><li><para><code>NavigationFrustratedTransaction</code></para></li><li><para><code>WebVitalsCumulativeLayoutShift</code></para></li><li><para><code>WebVitalsFirstInputDelay</code></para></li><li><para><code>WebVitalsLargestContentfulPaint</code></para></li><li><para><code>JsErrorCount</code></para></li><li><para><code>HttpErrorCount</code></para></li><li><para><code>SessionCount</code></para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMRumMetricDefinitionCmdlet.MetricDefinition_UnitLabel">
+            <summary>
+            <para>
+            <para>The CloudWatch metric unit to use for this metric. If you omit this field, the metric
+            is recorded with no unit.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMRumMetricDefinitionCmdlet.MetricDefinition_ValueKey">
+            <summary>
+            <para>
+            <para>The field within the event object that the metric value is sourced from.</para><para>If you omit this field, a hardcoded value of 1 is pushed as the metric value. This
+            is useful if you just want to count the number of events that the filter catches.
+            </para><para>If this metric is sent to CloudWatch Evidently, this field will be passed to Evidently
+            raw and Evidently will handle data extraction from the event.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMRumMetricDefinitionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchRUM.Model.UpdateRumMetricDefinitionResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMRumMetricDefinitionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the MetricDefinitionId parameter.
+            The -PassThru parameter is deprecated, use -Select '^MetricDefinitionId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.UpdateCWRUMRumMetricDefinitionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWRUM.WriteCWRUMRumEventCmdlet">
+            <summary>
+            Sends telemetry events about your application performance and user behavior to CloudWatch
+            RUM. The code snippet that RUM generates for you to add to your application includes
+            <code>PutRumEvents</code> operations to send this data to RUM.
+            
+             
+            <para>
+            Each <code>PutRumEvents</code> operation can send a batch of events from one user
+            session.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.WriteCWRUMRumEventCmdlet.BatchId">
+            <summary>
+            <para>
+            <para>A unique identifier for this batch of RUM event data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.WriteCWRUMRumEventCmdlet.AppMonitorDetails_Id">
+            <summary>
+            <para>
+            <para>The unique ID of the app monitor.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.WriteCWRUMRumEventCmdlet.Id">
+            <summary>
+            <para>
+            <para>The ID of the app monitor that is sending this data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.WriteCWRUMRumEventCmdlet.AppMonitorDetails_Name">
+            <summary>
+            <para>
+            <para>The name of the app monitor.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.WriteCWRUMRumEventCmdlet.RumEvent">
+            <summary>
+            <para>
+            <para>An array of structures that contain the telemetry event data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.WriteCWRUMRumEventCmdlet.UserDetails_SessionId">
+            <summary>
+            <para>
+            <para>The session ID that the performance events are from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.WriteCWRUMRumEventCmdlet.UserDetails_UserId">
+            <summary>
+            <para>
+            <para>The ID of the user for this user session. This ID is generated by RUM and does not
+            include any personally identifiable information about the user.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.WriteCWRUMRumEventCmdlet.AppMonitorDetails_Version">
+            <summary>
+            <para>
+            <para>The version of the app monitor.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.WriteCWRUMRumEventCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchRUM.Model.PutRumEventsResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.WriteCWRUMRumEventCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Id parameter.
+            The -PassThru parameter is deprecated, use -Select '^Id' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.WriteCWRUMRumEventCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWRUM.WriteCWRUMRumMetricsDestinationCmdlet">
+            <summary>
+            Creates or updates a destination to receive extended metrics from CloudWatch RUM.
+            You can send extended metrics to CloudWatch or to a CloudWatch Evidently experiment.
+            
+             
+            <para>
+            For more information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_AddRumMetrics.html">AddRumMetrics</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.WriteCWRUMRumMetricsDestinationCmdlet.AppMonitorName">
+            <summary>
+            <para>
+            <para>The name of the CloudWatch RUM app monitor that will send the metrics.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.WriteCWRUMRumMetricsDestinationCmdlet.Destination">
+            <summary>
+            <para>
+            <para>Defines the destination to send the metrics to. Valid values are <code>CloudWatch</code>
+            and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify
+            the ARN of the CloudWatchEvidently experiment that is to be the destination and an
+            IAM role that has permission to write to the experiment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.WriteCWRUMRumMetricsDestinationCmdlet.DestinationArn">
+            <summary>
+            <para>
+            <para>Use this parameter only if <code>Destination</code> is <code>Evidently</code>. This
+            parameter specifies the ARN of the Evidently experiment that will receive the extended
+            metrics.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.WriteCWRUMRumMetricsDestinationCmdlet.IamRoleArn">
+            <summary>
+            <para>
+            <para>This parameter is required if <code>Destination</code> is <code>Evidently</code>.
+            If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</para><para>This parameter specifies the ARN of an IAM role that RUM will assume to write to the
+            Evidently experiment that you are sending metrics to. This role must have permission
+            to write to that experiment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.WriteCWRUMRumMetricsDestinationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchRUM.Model.PutRumMetricsDestinationResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.WriteCWRUMRumMetricsDestinationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AppMonitorName parameter.
+            The -PassThru parameter is deprecated, use -Select '^AppMonitorName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWRUM.WriteCWRUMRumMetricsDestinationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

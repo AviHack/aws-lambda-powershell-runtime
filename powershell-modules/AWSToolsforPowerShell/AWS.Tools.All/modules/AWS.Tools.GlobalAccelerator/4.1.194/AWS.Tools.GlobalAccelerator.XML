@@ -1,0 +1,2562 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.GlobalAccelerator</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.AddGACLByoipCidrProvisionCmdlet">
+            <summary>
+            Provisions an IP address range to use with your Amazon Web Services resources through
+            bring your own IP addresses (BYOIP) and creates a corresponding address pool. After
+            the address range is provisioned, it is ready to be advertised using <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/AdvertiseByoipCidr.html">
+            AdvertiseByoipCidr</a>.
+            
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+            your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.AddGACLByoipCidrProvisionCmdlet.Cidr">
+            <summary>
+            <para>
+            <para>The public IPv4 address range, in CIDR notation. The most specific IP prefix that
+            you can specify is /24. The address range cannot overlap with another address range
+            that you've brought to this or another Region.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.AddGACLByoipCidrProvisionCmdlet.CidrAuthorizationContext_Message">
+            <summary>
+            <para>
+            <para>The plain-text authorization message for the prefix and account.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.AddGACLByoipCidrProvisionCmdlet.CidrAuthorizationContext_Signature">
+            <summary>
+            <para>
+            <para>The signed authorization message for the prefix and account.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.AddGACLByoipCidrProvisionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ByoipCidr'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.ProvisionByoipCidrResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.ProvisionByoipCidrResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.AddGACLByoipCidrProvisionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Cidr parameter.
+            The -PassThru parameter is deprecated, use -Select '^Cidr' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.AddGACLByoipCidrProvisionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.AddGACLCustomRoutingEndpointCmdlet">
+            <summary>
+            Associate a virtual private cloud (VPC) subnet endpoint with your custom routing accelerator.
+            
+             
+            <para>
+            The listener port range must be large enough to support the number of IP addresses
+            that can be specified in your subnet. The number of ports required is: subnet size
+            times the number of ports per destination EC2 instances. For example, a subnet defined
+            as /24 requires a listener port range of at least 255 ports. 
+            </para><para>
+            Note: You must have enough remaining listener ports available to map to the subnet
+            ports, or the call will fail with a LimitExceededException.
+            </para><para>
+            By default, all destinations in a subnet in a custom routing accelerator cannot receive
+            traffic. To enable all destinations to receive traffic, or to specify individual port
+            mappings that can receive traffic, see the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_AllowCustomRoutingTraffic.html">
+            AllowCustomRoutingTraffic</a> operation.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.AddGACLCustomRoutingEndpointCmdlet.EndpointConfiguration">
+            <summary>
+            <para>
+            <para>The list of endpoint objects to add to a custom routing accelerator.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.AddGACLCustomRoutingEndpointCmdlet.EndpointGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.AddGACLCustomRoutingEndpointCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.AddCustomRoutingEndpointsResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.AddCustomRoutingEndpointsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.AddGACLCustomRoutingEndpointCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EndpointGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^EndpointGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.AddGACLCustomRoutingEndpointCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.AddGACLEndpointCmdlet">
+            <summary>
+            Add endpoints to an endpoint group. The <code>AddEndpoints</code> API operation is
+            the recommended option for adding endpoints. The alternative options are to add endpoints
+            when you create an endpoint group (with the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateEndpointGroup.html">CreateEndpointGroup</a>
+            API) or when you update an endpoint group (with the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html">UpdateEndpointGroup</a>
+            API). 
+            
+             
+            <para>
+            There are two advantages to using <code>AddEndpoints</code> to add endpoints:
+            </para><ul><li><para>
+            It's faster, because Global Accelerator only has to resolve the new endpoints that
+            you're adding.
+            </para></li><li><para>
+            It's more convenient, because you don't need to specify all of the current endpoints
+            that are already in the endpoint group in addition to the new endpoints that you want
+            to add.
+            </para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.AddGACLEndpointCmdlet.EndpointConfiguration">
+            <summary>
+            <para>
+            <para>The list of endpoint objects.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.AddGACLEndpointCmdlet.EndpointGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the endpoint group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.AddGACLEndpointCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.AddEndpointsResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.AddEndpointsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.AddGACLEndpointCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EndpointGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^EndpointGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.AddGACLEndpointCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.AddGACLResourceTagCmdlet">
+            <summary>
+            Add tags to an accelerator resource. 
+            
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
+            in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.AddGACLResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Global Accelerator resource to add tags to.
+            An ARN uniquely identifies a resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.AddGACLResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags to add to a resource. A tag consists of a key and a value that you define.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.AddGACLResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.AddGACLResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.AddGACLResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.DisableGACLCustomRoutingTrafficCmdlet">
+            <summary>
+            Specify the Amazon EC2 instance (destination) IP addresses and ports for a VPC subnet
+            endpoint that cannot receive traffic for a custom routing accelerator. You can deny
+            traffic to all destinations in the VPC endpoint, or deny traffic to a specified list
+            of destination IP addresses and ports. Note that you cannot specify IP addresses or
+            ports outside of the range that you configured for the endpoint group.
+            
+             
+            <para>
+            After you make changes, you can verify that the updates are complete by checking the
+            status of your accelerator: the status changes from IN_PROGRESS to DEPLOYED.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.DisableGACLCustomRoutingTrafficCmdlet.DenyAllTrafficToEndpoint">
+            <summary>
+            <para>
+            <para>Indicates whether all destination IP addresses and ports for a specified VPC subnet
+            endpoint <i>cannot</i> receive traffic from a custom routing accelerator. The value
+            is TRUE or FALSE. </para><para>When set to TRUE, <i>no</i> destinations in the custom routing VPC subnet can receive
+            traffic. Note that you cannot specify destination IP addresses and ports when the
+            value is set to TRUE.</para><para>When set to FALSE (or not specified), you <i>must</i> specify a list of destination
+            IP addresses that cannot receive traffic. A list of ports is optional. If you don't
+            specify a list of ports, the ports that can accept traffic is the same as the ports
+            configured for the endpoint group.</para><para>The default value is FALSE.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.DisableGACLCustomRoutingTrafficCmdlet.DestinationAddress">
+            <summary>
+            <para>
+            <para>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet
+            that you want to prevent from receiving traffic. The IP addresses must be a subset
+            of the IP addresses allowed for the VPC subnet associated with the endpoint group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.DisableGACLCustomRoutingTrafficCmdlet.DestinationPort">
+            <summary>
+            <para>
+            <para>A list of specific Amazon EC2 instance ports (destination ports) in a subnet endpoint
+            that you want to prevent from receiving traffic.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.DisableGACLCustomRoutingTrafficCmdlet.EndpointGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the endpoint group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.DisableGACLCustomRoutingTrafficCmdlet.EndpointId">
+            <summary>
+            <para>
+            <para>An ID for the endpoint. For custom routing accelerators, this is the virtual private
+            cloud (VPC) subnet ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.DisableGACLCustomRoutingTrafficCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.DenyCustomRoutingTrafficResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.DisableGACLCustomRoutingTrafficCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.EnableGACLCustomRoutingTrafficCmdlet">
+            <summary>
+            Specify the Amazon EC2 instance (destination) IP addresses and ports for a VPC subnet
+            endpoint that can receive traffic for a custom routing accelerator. You can allow
+            traffic to all destinations in the subnet endpoint, or allow traffic to a specified
+            list of destination IP addresses and ports in the subnet. Note that you cannot specify
+            IP addresses or ports outside of the range that you configured for the endpoint group.
+            
+             
+            <para>
+            After you make changes, you can verify that the updates are complete by checking the
+            status of your accelerator: the status changes from IN_PROGRESS to DEPLOYED.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.EnableGACLCustomRoutingTrafficCmdlet.AllowAllTrafficToEndpoint">
+            <summary>
+            <para>
+            <para>Indicates whether all destination IP addresses and ports for a specified VPC subnet
+            endpoint can receive traffic from a custom routing accelerator. The value is TRUE
+            or FALSE. </para><para>When set to TRUE, <i>all</i> destinations in the custom routing VPC subnet can receive
+            traffic. Note that you cannot specify destination IP addresses and ports when the
+            value is set to TRUE.</para><para>When set to FALSE (or not specified), you <i>must</i> specify a list of destination
+            IP addresses that are allowed to receive traffic. A list of ports is optional. If
+            you don't specify a list of ports, the ports that can accept traffic is the same as
+            the ports configured for the endpoint group.</para><para>The default value is FALSE.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.EnableGACLCustomRoutingTrafficCmdlet.DestinationAddress">
+            <summary>
+            <para>
+            <para>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet
+            that you want to allow to receive traffic. The IP addresses must be a subset of the
+            IP addresses that you specified for the endpoint group.</para><para><code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code>
+            is <code>FALSE</code> or is not specified.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.EnableGACLCustomRoutingTrafficCmdlet.DestinationPort">
+            <summary>
+            <para>
+            <para>A list of specific Amazon EC2 instance ports (destination ports) that you want to
+            allow to receive traffic.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.EnableGACLCustomRoutingTrafficCmdlet.EndpointGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the endpoint group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.EnableGACLCustomRoutingTrafficCmdlet.EndpointId">
+            <summary>
+            <para>
+            <para>An ID for the endpoint. For custom routing accelerators, this is the virtual private
+            cloud (VPC) subnet ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.EnableGACLCustomRoutingTrafficCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.AllowCustomRoutingTrafficResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.EnableGACLCustomRoutingTrafficCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.GetGACLAcceleratorCmdlet">
+            <summary>
+            Describe an accelerator.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLAcceleratorCmdlet.AcceleratorArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the accelerator to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLAcceleratorCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Accelerator'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.DescribeAcceleratorResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.DescribeAcceleratorResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLAcceleratorCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AcceleratorArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AcceleratorArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.GetGACLAcceleratorAttributeCmdlet">
+            <summary>
+            Describe the attributes of an accelerator.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLAcceleratorAttributeCmdlet.AcceleratorArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the accelerator with the attributes that you want
+            to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLAcceleratorAttributeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AcceleratorAttributes'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.DescribeAcceleratorAttributesResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.DescribeAcceleratorAttributesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLAcceleratorAttributeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AcceleratorArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AcceleratorArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.GetGACLAcceleratorListCmdlet">
+            <summary>
+            List the accelerators for an Amazon Web Services account.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLAcceleratorListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The number of Global Accelerator objects that you want to return with this call. The
+            default value is 10.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>100</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLAcceleratorListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token for the next set of results. You receive this token from a previous call.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLAcceleratorListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Accelerators'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.ListAcceleratorsResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.ListAcceleratorsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLAcceleratorListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.GetGACLByoipCidrListCmdlet">
+            <summary>
+            Lists the IP address ranges that were specified in calls to <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/ProvisionByoipCidr.html">ProvisionByoipCidr</a>,
+            including the current state and a history of state changes.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLByoipCidrListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return with a single call. To retrieve the remaining
+            results, make another call with the returned <code>nextToken</code> value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLByoipCidrListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token for the next page of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLByoipCidrListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ByoipCidrs'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.ListByoipCidrsResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.ListByoipCidrsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLByoipCidrListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingAcceleratorCmdlet">
+            <summary>
+            Describe a custom routing accelerator.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingAcceleratorCmdlet.AcceleratorArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the accelerator to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingAcceleratorCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Accelerator'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.DescribeCustomRoutingAcceleratorResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.DescribeCustomRoutingAcceleratorResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingAcceleratorCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AcceleratorArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AcceleratorArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingAcceleratorAttributeCmdlet">
+            <summary>
+            Describe the attributes of a custom routing accelerator.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingAcceleratorAttributeCmdlet.AcceleratorArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the custom routing accelerator to describe the attributes
+            for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingAcceleratorAttributeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AcceleratorAttributes'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.DescribeCustomRoutingAcceleratorAttributesResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.DescribeCustomRoutingAcceleratorAttributesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingAcceleratorAttributeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AcceleratorArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AcceleratorArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingAcceleratorListCmdlet">
+            <summary>
+            List the custom routing accelerators for an Amazon Web Services account.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingAcceleratorListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The number of custom routing Global Accelerator objects that you want to return with
+            this call. The default value is 10.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingAcceleratorListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token for the next set of results. You receive this token from a previous call.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingAcceleratorListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Accelerators'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.ListCustomRoutingAcceleratorsResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.ListCustomRoutingAcceleratorsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingAcceleratorListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingEndpointGroupCmdlet">
+            <summary>
+            Describe an endpoint group for a custom routing accelerator.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingEndpointGroupCmdlet.EndpointGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the endpoint group to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingEndpointGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EndpointGroup'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.DescribeCustomRoutingEndpointGroupResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.DescribeCustomRoutingEndpointGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingEndpointGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EndpointGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^EndpointGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingEndpointGroupListCmdlet">
+            <summary>
+            List the endpoint groups that are associated with a listener for a custom routing
+            accelerator.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingEndpointGroupListCmdlet.ListenerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the listener to list endpoint groups for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingEndpointGroupListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The number of endpoint group objects that you want to return with this call. The default
+            value is 10.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingEndpointGroupListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token for the next set of results. You receive this token from a previous call.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingEndpointGroupListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EndpointGroups'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.ListCustomRoutingEndpointGroupsResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.ListCustomRoutingEndpointGroupsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingEndpointGroupListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ListenerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ListenerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingEndpointGroupListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingListenerCmdlet">
+            <summary>
+            The description of a listener for a custom routing accelerator.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingListenerCmdlet.ListenerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the listener to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingListenerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Listener'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.DescribeCustomRoutingListenerResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.DescribeCustomRoutingListenerResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingListenerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ListenerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ListenerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingListenerListCmdlet">
+            <summary>
+            List the listeners for a custom routing accelerator.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingListenerListCmdlet.AcceleratorArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the accelerator to list listeners for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingListenerListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The number of listener objects that you want to return with this call. The default
+            value is 10.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingListenerListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token for the next set of results. You receive this token from a previous call.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingListenerListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Listeners'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.ListCustomRoutingListenersResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.ListCustomRoutingListenersResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingListenerListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AcceleratorArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AcceleratorArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingListenerListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingPortMappingListCmdlet">
+            <summary>
+            Provides a complete mapping from the public accelerator IP address and port to destination
+            EC2 instance IP addresses and ports in the virtual public cloud (VPC) subnet endpoint
+            for a custom routing accelerator. For each subnet endpoint that you add, Global Accelerator
+            creates a new static port mapping for the accelerator. The port mappings don't change
+            after Global Accelerator generates them, so you can retrieve and cache the full mapping
+            on your servers. 
+            
+             
+            <para>
+            If you remove a subnet from your accelerator, Global Accelerator removes (reclaims)
+            the port mappings. If you add a subnet to your accelerator, Global Accelerator creates
+            new port mappings (the existing ones don't change). If you add or remove EC2 instances
+            in your subnet, the port mappings don't change, because the mappings are created when
+            you add the subnet to Global Accelerator.
+            </para><para>
+            The mappings also include a flag for each destination denoting which destination IP
+            addresses and ports are allowed or denied traffic.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingPortMappingListCmdlet.AcceleratorArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the accelerator to list the custom routing port
+            mappings for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingPortMappingListCmdlet.EndpointGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the endpoint group to list the custom routing port
+            mappings for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingPortMappingListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The number of destination port mappings that you want to return with this call. The
+            default value is 10.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingPortMappingListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token for the next set of results. You receive this token from a previous call.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingPortMappingListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'PortMappings'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.ListCustomRoutingPortMappingsResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.ListCustomRoutingPortMappingsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingPortMappingListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AcceleratorArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AcceleratorArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingPortMappingListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingPortMappingsByDestinationListCmdlet">
+            <summary>
+            List the port mappings for a specific EC2 instance (destination) in a VPC subnet endpoint.
+            The response is the mappings for one destination IP address. This is useful when your
+            subnet endpoint has mappings that span multiple custom routing accelerators in your
+            account, or for scenarios where you only want to list the port mappings for a specific
+            destination instance.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingPortMappingsByDestinationListCmdlet.DestinationAddress">
+            <summary>
+            <para>
+            <para>The endpoint IP address in a virtual private cloud (VPC) subnet for which you want
+            to receive back port mappings.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingPortMappingsByDestinationListCmdlet.EndpointId">
+            <summary>
+            <para>
+            <para>The ID for the virtual private cloud (VPC) subnet.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingPortMappingsByDestinationListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The number of destination port mappings that you want to return with this call. The
+            default value is 10.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingPortMappingsByDestinationListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token for the next set of results. You receive this token from a previous call.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingPortMappingsByDestinationListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'DestinationPortMappings'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.ListCustomRoutingPortMappingsByDestinationResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.ListCustomRoutingPortMappingsByDestinationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLCustomRoutingPortMappingsByDestinationListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.GetGACLEndpointGroupCmdlet">
+            <summary>
+            Describe an endpoint group.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLEndpointGroupCmdlet.EndpointGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the endpoint group to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLEndpointGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EndpointGroup'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.DescribeEndpointGroupResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.DescribeEndpointGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLEndpointGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EndpointGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^EndpointGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.GetGACLEndpointGroupListCmdlet">
+            <summary>
+            List the endpoint groups that are associated with a listener.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLEndpointGroupListCmdlet.ListenerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the listener.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLEndpointGroupListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The number of endpoint group objects that you want to return with this call. The default
+            value is 10.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>100</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLEndpointGroupListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token for the next set of results. You receive this token from a previous call.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLEndpointGroupListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EndpointGroups'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.ListEndpointGroupsResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.ListEndpointGroupsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLEndpointGroupListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ListenerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ListenerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLEndpointGroupListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.GetGACLListenerCmdlet">
+            <summary>
+            Describe a listener.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLListenerCmdlet.ListenerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the listener to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLListenerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Listener'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.DescribeListenerResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.DescribeListenerResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLListenerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ListenerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ListenerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.GetGACLListenerListCmdlet">
+            <summary>
+            List the listeners for an accelerator.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLListenerListCmdlet.AcceleratorArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the accelerator for which you want to list listener
+            objects.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLListenerListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The number of listener objects that you want to return with this call. The default
+            value is 10.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>100</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLListenerListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token for the next set of results. You receive this token from a previous call.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLListenerListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Listeners'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.ListListenersResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.ListListenersResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLListenerListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AcceleratorArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AcceleratorArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLListenerListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.GetGACLResourceTagCmdlet">
+            <summary>
+            List all tags for an accelerator. 
+            
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
+            in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the accelerator to list tags for. An ARN uniquely
+            identifies an accelerator.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.GetGACLResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.NewGACLAcceleratorCmdlet">
+            <summary>
+            Create an accelerator. An accelerator includes one or more listeners that process
+            inbound connections and direct traffic to one or more endpoint groups, each of which
+            includes endpoints, such as Network Load Balancers. 
+            
+             <important><para>
+            Global Accelerator is a global service that supports endpoints in multiple Amazon
+            Web Services Regions but you must specify the US West (Oregon) Region to create, update,
+            or otherwise work with accelerators. That is, for example, specify <code>--region
+            us-west-2</code> on AWS CLI commands.
+            </para></important>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLAcceleratorCmdlet.Enabled">
+            <summary>
+            <para>
+            <para>Indicates whether an accelerator is enabled. The value is true or false. The default
+            value is true. </para><para>If the value is set to true, an accelerator cannot be deleted. If set to false, the
+            accelerator can be deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLAcceleratorCmdlet.IdempotencyToken">
+            <summary>
+            <para>
+            <para>A unique, case-sensitive identifier that you provide to ensure the idempotency—that
+            is, the uniqueness—of an accelerator.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLAcceleratorCmdlet.IpAddress">
+            <summary>
+            <para>
+            <para>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP),
+            you can choose an IPv4 address from your own pool to use for the accelerator's static
+            IPv4 address when you create an accelerator. </para><para>After you bring an address range to Amazon Web Services, it appears in your account
+            as an address pool. When you create an accelerator, you can assign one IPv4 address
+            from your range to it. Global Accelerator assigns you a second static IPv4 address
+            from an Amazon IP address range. If you bring two IPv4 address ranges to Amazon Web
+            Services, you can assign one IPv4 address from each range to your accelerator. This
+            restriction is because Global Accelerator assigns each address range to a different
+            network zone, for high availability.</para><para>You can specify one or two addresses, separated by a space. Do not include the /32
+            suffix.</para><para>Note that you can't update IP addresses for an existing accelerator. To change them,
+            you must create a new accelerator with the new addresses.</para><para>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+            your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLAcceleratorCmdlet.IpAddressType">
+            <summary>
+            <para>
+            <para>The IP address type that an accelerator supports. For a standard accelerator, the
+            value can be IPV4 or DUAL_STACK.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLAcceleratorCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the accelerator. The name can have a maximum of 64 characters, must contain
+            only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end
+            with a hyphen or period.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLAcceleratorCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Create tags for an accelerator.</para><para>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
+            in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLAcceleratorCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Accelerator'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.CreateAcceleratorResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.CreateAcceleratorResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLAcceleratorCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLAcceleratorCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.NewGACLCustomRoutingAcceleratorCmdlet">
+            <summary>
+            Create a custom routing accelerator. A custom routing accelerator directs traffic
+            to one of possibly thousands of Amazon EC2 instance destinations running in a single
+            or multiple virtual private clouds (VPC) subnet endpoints.
+            
+             
+            <para>
+            Be aware that, by default, all destination EC2 instances in a VPC subnet endpoint
+            cannot receive traffic. To enable all destinations to receive traffic, or to specify
+            individual port mappings that can receive traffic, see the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_AllowCustomRoutingTraffic.html">
+            AllowCustomRoutingTraffic</a> operation.
+            </para><important><para>
+            Global Accelerator is a global service that supports endpoints in multiple Amazon
+            Web Services Regions but you must specify the US West (Oregon) Region to create, update,
+            or otherwise work with accelerators. That is, for example, specify <code>--region
+            us-west-2</code> on AWS CLI commands.
+            </para></important>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLCustomRoutingAcceleratorCmdlet.Enabled">
+            <summary>
+            <para>
+            <para>Indicates whether an accelerator is enabled. The value is true or false. The default
+            value is true. </para><para>If the value is set to true, an accelerator cannot be deleted. If set to false, the
+            accelerator can be deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLCustomRoutingAcceleratorCmdlet.IdempotencyToken">
+            <summary>
+            <para>
+            <para>A unique, case-sensitive identifier that you provide to ensure the idempotency—that
+            is, the uniqueness—of the request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLCustomRoutingAcceleratorCmdlet.IpAddress">
+            <summary>
+            <para>
+            <para>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP),
+            you can choose an IPv4 address from your own pool to use for the accelerator's static
+            IPv4 address when you create an accelerator. </para><para>After you bring an address range to Amazon Web Services, it appears in your account
+            as an address pool. When you create an accelerator, you can assign one IPv4 address
+            from your range to it. Global Accelerator assigns you a second static IPv4 address
+            from an Amazon IP address range. If you bring two IPv4 address ranges to Amazon Web
+            Services, you can assign one IPv4 address from each range to your accelerator. This
+            restriction is because Global Accelerator assigns each address range to a different
+            network zone, for high availability.</para><para>You can specify one or two addresses, separated by a space. Do not include the /32
+            suffix.</para><para>Note that you can't update IP addresses for an existing accelerator. To change them,
+            you must create a new accelerator with the new addresses.</para><para>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+            your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLCustomRoutingAcceleratorCmdlet.IpAddressType">
+            <summary>
+            <para>
+            <para>The IP address type that an accelerator supports. For a custom routing accelerator,
+            the value must be IPV4.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLCustomRoutingAcceleratorCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of a custom routing accelerator. The name can have a maximum of 64 characters,
+            must contain only alphanumeric characters or hyphens (-), and must not begin or end
+            with a hyphen.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLCustomRoutingAcceleratorCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Create tags for an accelerator.</para><para>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
+            in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLCustomRoutingAcceleratorCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Accelerator'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.CreateCustomRoutingAcceleratorResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.CreateCustomRoutingAcceleratorResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLCustomRoutingAcceleratorCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLCustomRoutingAcceleratorCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.NewGACLCustomRoutingEndpointGroupCmdlet">
+            <summary>
+            Create an endpoint group for the specified listener for a custom routing accelerator.
+            An endpoint group is a collection of endpoints in one Amazon Web Services Region.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLCustomRoutingEndpointGroupCmdlet.DestinationConfiguration">
+            <summary>
+            <para>
+            <para>Sets the port range and protocol for all endpoints (virtual private cloud subnets)
+            in a custom routing endpoint group to accept client traffic on.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLCustomRoutingEndpointGroupCmdlet.EndpointGroupRegion">
+            <summary>
+            <para>
+            <para>The Amazon Web Services Region where the endpoint group is located. A listener can
+            have only one endpoint group in a specific Region.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLCustomRoutingEndpointGroupCmdlet.IdempotencyToken">
+            <summary>
+            <para>
+            <para>A unique, case-sensitive identifier that you provide to ensure the idempotency—that
+            is, the uniqueness—of the request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLCustomRoutingEndpointGroupCmdlet.ListenerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the listener for a custom routing endpoint.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLCustomRoutingEndpointGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EndpointGroup'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.CreateCustomRoutingEndpointGroupResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.CreateCustomRoutingEndpointGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLCustomRoutingEndpointGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.NewGACLCustomRoutingListenerCmdlet">
+            <summary>
+            Create a listener to process inbound connections from clients to a custom routing
+            accelerator. Connections arrive to assigned static IP addresses on the port range
+            that you specify.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLCustomRoutingListenerCmdlet.AcceleratorArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the accelerator for a custom routing listener.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLCustomRoutingListenerCmdlet.IdempotencyToken">
+            <summary>
+            <para>
+            <para>A unique, case-sensitive identifier that you provide to ensure the idempotency—that
+            is, the uniqueness—of the request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLCustomRoutingListenerCmdlet.PortRange">
+            <summary>
+            <para>
+            <para>The port range to support for connections from clients to your accelerator.</para><para>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
+            endpoints for custom routing accelerators</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLCustomRoutingListenerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Listener'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.CreateCustomRoutingListenerResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.CreateCustomRoutingListenerResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLCustomRoutingListenerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AcceleratorArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AcceleratorArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLCustomRoutingListenerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.NewGACLEndpointGroupCmdlet">
+            <summary>
+            Create an endpoint group for the specified listener. An endpoint group is a collection
+            of endpoints in one Amazon Web Services Region. A resource must be valid and active
+            when you add it as an endpoint.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLEndpointGroupCmdlet.EndpointConfiguration">
+            <summary>
+            <para>
+            <para>The list of endpoint objects.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLEndpointGroupCmdlet.EndpointGroupRegion">
+            <summary>
+            <para>
+            <para>The Amazon Web Services Region where the endpoint group is located. A listener can
+            have only one endpoint group in a specific Region.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLEndpointGroupCmdlet.HealthCheckIntervalSecond">
+            <summary>
+            <para>
+            <para>The time—10 seconds or 30 seconds—between each health check for an endpoint. The default
+            value is 30.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLEndpointGroupCmdlet.HealthCheckPath">
+            <summary>
+            <para>
+            <para>If the protocol is HTTP/S, then this specifies the path that is the destination for
+            health check targets. The default value is slash (/).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLEndpointGroupCmdlet.HealthCheckPort">
+            <summary>
+            <para>
+            <para>The port that Global Accelerator uses to check the health of endpoints that are part
+            of this endpoint group. The default port is the listener port that this endpoint group
+            is associated with. If listener port is a list of ports, Global Accelerator uses the
+            first port in the list.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLEndpointGroupCmdlet.HealthCheckProtocol">
+            <summary>
+            <para>
+            <para>The protocol that Global Accelerator uses to check the health of endpoints that are
+            part of this endpoint group. The default value is TCP.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLEndpointGroupCmdlet.IdempotencyToken">
+            <summary>
+            <para>
+            <para>A unique, case-sensitive identifier that you provide to ensure the idempotency—that
+            is, the uniqueness—of the request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLEndpointGroupCmdlet.ListenerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the listener.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLEndpointGroupCmdlet.PortOverride">
+            <summary>
+            <para>
+            <para>Override specific listener ports used to route traffic to endpoints that are part
+            of this endpoint group. For example, you can create a port override in which the listener
+            receives user traffic on ports 80 and 443, but your accelerator routes that traffic
+            to ports 1080 and 1443, respectively, on the endpoints.</para><para>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+            Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLEndpointGroupCmdlet.ThresholdCount">
+            <summary>
+            <para>
+            <para>The number of consecutive health checks required to set the state of a healthy endpoint
+            to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLEndpointGroupCmdlet.TrafficDialPercentage">
+            <summary>
+            <para>
+            <para>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic
+            is distributed to other endpoint groups for this listener. </para><para>Use this action to increase (dial up) or decrease (dial down) traffic to a specific
+            Region. The percentage is applied to the traffic that would otherwise have been routed
+            to the Region based on optimal routing.</para><para>The default value is 100.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLEndpointGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EndpointGroup'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.CreateEndpointGroupResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.CreateEndpointGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLEndpointGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ListenerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ListenerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLEndpointGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.NewGACLListenerCmdlet">
+            <summary>
+            Create a listener to process inbound connections from clients to an accelerator. Connections
+            arrive to assigned static IP addresses on a port, port range, or list of port ranges
+            that you specify.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLListenerCmdlet.AcceleratorArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of your accelerator.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLListenerCmdlet.ClientAffinity">
+            <summary>
+            <para>
+            <para>Client affinity lets you direct all requests from a user to the same endpoint, if
+            you have stateful applications, regardless of the port and protocol of the client
+            request. Client affinity gives you control over whether to always route each client
+            to the same specific endpoint.</para><para>Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal
+            endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator
+            uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination
+            IP address, destination port, and protocol—to select the hash value, and then chooses
+            the best endpoint. However, with this setting, if someone uses different ports to
+            connect to Global Accelerator, their connections might not be always routed to the
+            same endpoint because the hash value changes. </para><para>If you want a given client to always be routed to the same endpoint, set client affinity
+            to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting,
+            Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address
+            and destination IP address—to select the hash value.</para><para>The default value is <code>NONE</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLListenerCmdlet.IdempotencyToken">
+            <summary>
+            <para>
+            <para>A unique, case-sensitive identifier that you provide to ensure the idempotency—that
+            is, the uniqueness—of the request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLListenerCmdlet.PortRange">
+            <summary>
+            <para>
+            <para>The list of port ranges to support for connections from clients to your accelerator.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLListenerCmdlet.Protocol">
+            <summary>
+            <para>
+            <para>The protocol for connections from clients to your accelerator.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLListenerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Listener'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.CreateListenerResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.CreateListenerResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLListenerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AcceleratorArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AcceleratorArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.NewGACLListenerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLAcceleratorCmdlet">
+            <summary>
+            Delete an accelerator. Before you can delete an accelerator, you must disable it and
+            remove all dependent resources (listeners and endpoint groups). To disable the accelerator,
+            update the accelerator to set <code>Enabled</code> to false.
+            
+             <important><para>
+            When you create an accelerator, by default, Global Accelerator provides you with a
+            set of two static IP addresses. Alternatively, you can bring your own IP address ranges
+            to Global Accelerator and assign IP addresses from those ranges. 
+            </para><para>
+            The IP addresses are assigned to your accelerator for as long as it exists, even if
+            you disable the accelerator and it no longer accepts or routes traffic. However, when
+            you <i>delete</i> an accelerator, you lose the static IP addresses that are assigned
+            to the accelerator, so you can no longer route traffic by using them. As a best practice,
+            ensure that you have permissions in place to avoid inadvertently deleting accelerators.
+            You can use IAM policies with Global Accelerator to limit the users who have permissions
+            to delete an accelerator. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html">Identity
+            and access management</a> in the <i>Global Accelerator Developer Guide</i>.
+            </para></important>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLAcceleratorCmdlet.AcceleratorArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of an accelerator.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLAcceleratorCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.DeleteAcceleratorResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLAcceleratorCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AcceleratorArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AcceleratorArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLAcceleratorCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLByoipCidrProvisionCmdlet">
+            <summary>
+            Releases the specified address range that you provisioned to use with your Amazon
+            Web Services resources through bring your own IP addresses (BYOIP) and deletes the
+            corresponding address pool. 
+            
+             
+            <para>
+            Before you can release an address range, you must stop advertising it by using <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/WithdrawByoipCidr.html">WithdrawByoipCidr</a>
+            and you must not have any accelerators that are using static IP addresses allocated
+            from its address range. 
+            </para><para>
+            For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+            your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLByoipCidrProvisionCmdlet.Cidr">
+            <summary>
+            <para>
+            <para>The address range, in CIDR notation. The prefix must be the same prefix that you specified
+            when you provisioned the address range.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLByoipCidrProvisionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ByoipCidr'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.DeprovisionByoipCidrResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.DeprovisionByoipCidrResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLByoipCidrProvisionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Cidr parameter.
+            The -PassThru parameter is deprecated, use -Select '^Cidr' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLByoipCidrProvisionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLCustomRoutingAcceleratorCmdlet">
+            <summary>
+            Delete a custom routing accelerator. Before you can delete an accelerator, you must
+            disable it and remove all dependent resources (listeners and endpoint groups). To
+            disable the accelerator, update the accelerator to set <code>Enabled</code> to false.
+            
+             <important><para>
+            When you create a custom routing accelerator, by default, Global Accelerator provides
+            you with a set of two static IP addresses. 
+            </para><para>
+            The IP addresses are assigned to your accelerator for as long as it exists, even if
+            you disable the accelerator and it no longer accepts or routes traffic. However, when
+            you <i>delete</i> an accelerator, you lose the static IP addresses that are assigned
+            to the accelerator, so you can no longer route traffic by using them. As a best practice,
+            ensure that you have permissions in place to avoid inadvertently deleting accelerators.
+            You can use IAM policies with Global Accelerator to limit the users who have permissions
+            to delete an accelerator. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html">Identity
+            and access management</a> in the <i>Global Accelerator Developer Guide</i>.
+            </para></important>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLCustomRoutingAcceleratorCmdlet.AcceleratorArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the custom routing accelerator to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLCustomRoutingAcceleratorCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.DeleteCustomRoutingAcceleratorResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLCustomRoutingAcceleratorCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AcceleratorArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AcceleratorArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLCustomRoutingAcceleratorCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLCustomRoutingEndpointCmdlet">
+            <summary>
+            Remove endpoints from a custom routing accelerator.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLCustomRoutingEndpointCmdlet.EndpointGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLCustomRoutingEndpointCmdlet.EndpointId">
+            <summary>
+            <para>
+            <para>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual
+            private cloud (VPC) subnet IDs. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLCustomRoutingEndpointCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.RemoveCustomRoutingEndpointsResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLCustomRoutingEndpointCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EndpointGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^EndpointGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLCustomRoutingEndpointCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLCustomRoutingEndpointGroupCmdlet">
+            <summary>
+            Delete an endpoint group from a listener for a custom routing accelerator.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLCustomRoutingEndpointGroupCmdlet.EndpointGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the endpoint group to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLCustomRoutingEndpointGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.DeleteCustomRoutingEndpointGroupResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLCustomRoutingEndpointGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EndpointGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^EndpointGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLCustomRoutingEndpointGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLCustomRoutingListenerCmdlet">
+            <summary>
+            Delete a listener for a custom routing accelerator.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLCustomRoutingListenerCmdlet.ListenerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the listener to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLCustomRoutingListenerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.DeleteCustomRoutingListenerResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLCustomRoutingListenerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ListenerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ListenerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLCustomRoutingListenerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLEndpointCmdlet">
+            <summary>
+            Remove endpoints from an endpoint group. 
+            
+             
+            <para>
+            The <code>RemoveEndpoints</code> API operation is the recommended option for removing
+            endpoints. The alternative is to remove endpoints by updating an endpoint group by
+            using the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html">UpdateEndpointGroup</a>
+            API operation. There are two advantages to using <code>AddEndpoints</code> to remove
+            endpoints instead:
+            </para><ul><li><para>
+            It's more convenient, because you only need to specify the endpoints that you want
+            to remove. With the <code>UpdateEndpointGroup</code> API operation, you must specify
+            all of the endpoints in the endpoint group except the ones that you want to remove
+            from the group.
+            </para></li><li><para>
+            It's faster, because Global Accelerator doesn't need to resolve any endpoints. With
+            the <code>UpdateEndpointGroup</code> API operation, Global Accelerator must resolve
+            all of the endpoints that remain in the group.
+            </para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLEndpointCmdlet.EndpointGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the endpoint group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLEndpointCmdlet.EndpointIdentifier">
+            <summary>
+            <para>
+            <para>The identifiers of the endpoints that you want to remove.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLEndpointCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.RemoveEndpointsResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLEndpointCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EndpointGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^EndpointGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLEndpointCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLEndpointGroupCmdlet">
+            <summary>
+            Delete an endpoint group from a listener.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLEndpointGroupCmdlet.EndpointGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the endpoint group to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLEndpointGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.DeleteEndpointGroupResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLEndpointGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EndpointGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^EndpointGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLEndpointGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLListenerCmdlet">
+            <summary>
+            Delete a listener from an accelerator.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLListenerCmdlet.ListenerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the listener.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLListenerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.DeleteListenerResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLListenerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ListenerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ListenerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLListenerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLResourceTagCmdlet">
+            <summary>
+            Remove tags from a Global Accelerator resource. When you specify a tag key, the action
+            removes both that key and its associated value. The operation succeeds even if you
+            attempt to remove tags from an accelerator that was already removed.
+            
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
+            in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Global Accelerator resource to remove tags from.
+            An ARN uniquely identifies a resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>The tag key pairs that you want to remove from the specified resources.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.RemoveGACLResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.StartGACLAdvertisingByoipCidrCmdlet">
+            <summary>
+            Advertises an IPv4 address range that is provisioned for use with your Amazon Web
+            Services resources through bring your own IP addresses (BYOIP). It can take a few
+            minutes before traffic to the specified addresses starts routing to Amazon Web Services
+            because of propagation delays. 
+            
+             
+            <para>
+            To stop advertising the BYOIP address range, use <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/WithdrawByoipCidr.html">
+            WithdrawByoipCidr</a>.
+            </para><para>
+            For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+            your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.StartGACLAdvertisingByoipCidrCmdlet.Cidr">
+            <summary>
+            <para>
+            <para>The address range, in CIDR notation. This must be the exact range that you provisioned.
+            You can't advertise only a portion of the provisioned range.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.StartGACLAdvertisingByoipCidrCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ByoipCidr'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.AdvertiseByoipCidrResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.AdvertiseByoipCidrResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.StartGACLAdvertisingByoipCidrCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Cidr parameter.
+            The -PassThru parameter is deprecated, use -Select '^Cidr' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.StartGACLAdvertisingByoipCidrCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.StopGACLAdvertisingByoipCidrCmdlet">
+            <summary>
+            Stops advertising an address range that is provisioned as an address pool. You can
+            perform this operation at most once every 10 seconds, even if you specify different
+            address ranges each time.
+            
+             
+            <para>
+            It can take a few minutes before traffic to the specified addresses stops routing
+            to Amazon Web Services because of propagation delays.
+            </para><para>
+            For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+            your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.StopGACLAdvertisingByoipCidrCmdlet.Cidr">
+            <summary>
+            <para>
+            <para>The address range, in CIDR notation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.StopGACLAdvertisingByoipCidrCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ByoipCidr'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.WithdrawByoipCidrResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.WithdrawByoipCidrResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.StopGACLAdvertisingByoipCidrCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Cidr parameter.
+            The -PassThru parameter is deprecated, use -Select '^Cidr' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.StopGACLAdvertisingByoipCidrCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLAcceleratorCmdlet">
+            <summary>
+            Update an accelerator. 
+            
+             <important><para>
+            Global Accelerator is a global service that supports endpoints in multiple Amazon
+            Web Services Regions but you must specify the US West (Oregon) Region to create, update,
+            or otherwise work with accelerators. That is, for example, specify <code>--region
+            us-west-2</code> on AWS CLI commands.
+            </para></important>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLAcceleratorCmdlet.AcceleratorArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the accelerator to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLAcceleratorCmdlet.Enabled">
+            <summary>
+            <para>
+            <para>Indicates whether an accelerator is enabled. The value is true or false. The default
+            value is true. </para><para>If the value is set to true, the accelerator cannot be deleted. If set to false, the
+            accelerator can be deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLAcceleratorCmdlet.IpAddressType">
+            <summary>
+            <para>
+            <para>The IP address type that an accelerator supports. For a standard accelerator, the
+            value can be IPV4 or DUAL_STACK.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLAcceleratorCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the accelerator. The name can have a maximum of 64 characters, must contain
+            only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end
+            with a hyphen or period.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLAcceleratorCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Accelerator'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.UpdateAcceleratorResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.UpdateAcceleratorResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLAcceleratorCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AcceleratorArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AcceleratorArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLAcceleratorCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLAcceleratorAttributeCmdlet">
+            <summary>
+            Update the attributes for an accelerator.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLAcceleratorAttributeCmdlet.AcceleratorArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the accelerator that you want to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLAcceleratorAttributeCmdlet.FlowLogsEnabled">
+            <summary>
+            <para>
+            <para>Update whether flow logs are enabled. The default value is false. If the value is
+            true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</para><para>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
+            Logs</a> in the <i>Global Accelerator Developer Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLAcceleratorAttributeCmdlet.FlowLogsS3Bucket">
+            <summary>
+            <para>
+            <para>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code>
+            is <code>true</code>. The bucket must exist and have a bucket policy that grants Global
+            Accelerator permission to write to the bucket.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLAcceleratorAttributeCmdlet.FlowLogsS3Prefix">
+            <summary>
+            <para>
+            <para>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute
+            is required if <code>FlowLogsEnabled</code> is <code>true</code>. </para><para>If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure
+            will include a double slash (//), like the following:</para><para>s3-bucket_name//AWSLogs/aws_account_id</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLAcceleratorAttributeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AcceleratorAttributes'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.UpdateAcceleratorAttributesResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.UpdateAcceleratorAttributesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLAcceleratorAttributeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AcceleratorArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AcceleratorArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLAcceleratorAttributeCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLCustomRoutingAcceleratorCmdlet">
+            <summary>
+            Update a custom routing accelerator.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLCustomRoutingAcceleratorCmdlet.AcceleratorArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the accelerator to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLCustomRoutingAcceleratorCmdlet.Enabled">
+            <summary>
+            <para>
+            <para>Indicates whether an accelerator is enabled. The value is true or false. The default
+            value is true. </para><para>If the value is set to true, the accelerator cannot be deleted. If set to false, the
+            accelerator can be deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLCustomRoutingAcceleratorCmdlet.IpAddressType">
+            <summary>
+            <para>
+            <para>The IP address type that an accelerator supports. For a custom routing accelerator,
+            the value must be IPV4.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLCustomRoutingAcceleratorCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the accelerator. The name can have a maximum of 64 characters, must contain
+            only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end
+            with a hyphen or period.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLCustomRoutingAcceleratorCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Accelerator'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.UpdateCustomRoutingAcceleratorResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.UpdateCustomRoutingAcceleratorResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLCustomRoutingAcceleratorCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AcceleratorArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AcceleratorArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLCustomRoutingAcceleratorCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLCustomRoutingAcceleratorAttributeCmdlet">
+            <summary>
+            Update the attributes for a custom routing accelerator.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLCustomRoutingAcceleratorAttributeCmdlet.AcceleratorArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the custom routing accelerator to update attributes
+            for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLCustomRoutingAcceleratorAttributeCmdlet.FlowLogsEnabled">
+            <summary>
+            <para>
+            <para>Update whether flow logs are enabled. The default value is false. If the value is
+            true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</para><para>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
+            logs</a> in the <i>Global Accelerator Developer Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLCustomRoutingAcceleratorAttributeCmdlet.FlowLogsS3Bucket">
+            <summary>
+            <para>
+            <para>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code>
+            is <code>true</code>. The bucket must exist and have a bucket policy that grants Global
+            Accelerator permission to write to the bucket.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLCustomRoutingAcceleratorAttributeCmdlet.FlowLogsS3Prefix">
+            <summary>
+            <para>
+            <para>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute
+            is required if <code>FlowLogsEnabled</code> is <code>true</code>. </para><para>If you don’t specify a prefix, the flow logs are stored in the root of the bucket.
+            If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure
+            will include a double slash (//), like the following:</para><para>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLCustomRoutingAcceleratorAttributeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AcceleratorAttributes'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.UpdateCustomRoutingAcceleratorAttributesResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.UpdateCustomRoutingAcceleratorAttributesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLCustomRoutingAcceleratorAttributeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AcceleratorArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AcceleratorArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLCustomRoutingAcceleratorAttributeCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLCustomRoutingListenerCmdlet">
+            <summary>
+            Update a listener for a custom routing accelerator.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLCustomRoutingListenerCmdlet.ListenerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the listener to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLCustomRoutingListenerCmdlet.PortRange">
+            <summary>
+            <para>
+            <para>The updated port range to support for connections from clients to your accelerator.
+            If you remove ports that are currently being used by a subnet endpoint, the call fails.</para><para>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
+            endpoints for custom routing accelerators</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLCustomRoutingListenerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Listener'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.UpdateCustomRoutingListenerResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.UpdateCustomRoutingListenerResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLCustomRoutingListenerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ListenerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ListenerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLCustomRoutingListenerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLEndpointGroupCmdlet">
+            <summary>
+            Update an endpoint group. A resource must be valid and active when you add it as an
+            endpoint.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLEndpointGroupCmdlet.EndpointConfiguration">
+            <summary>
+            <para>
+            <para>The list of endpoint objects. A resource must be valid and active when you add it
+            as an endpoint.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLEndpointGroupCmdlet.EndpointGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the endpoint group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLEndpointGroupCmdlet.HealthCheckIntervalSecond">
+            <summary>
+            <para>
+            <para>The time—10 seconds or 30 seconds—between each health check for an endpoint. The default
+            value is 30.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLEndpointGroupCmdlet.HealthCheckPath">
+            <summary>
+            <para>
+            <para>If the protocol is HTTP/S, then this specifies the path that is the destination for
+            health check targets. The default value is slash (/).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLEndpointGroupCmdlet.HealthCheckPort">
+            <summary>
+            <para>
+            <para>The port that Global Accelerator uses to check the health of endpoints that are part
+            of this endpoint group. The default port is the listener port that this endpoint group
+            is associated with. If the listener port is a list of ports, Global Accelerator uses
+            the first port in the list.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLEndpointGroupCmdlet.HealthCheckProtocol">
+            <summary>
+            <para>
+            <para>The protocol that Global Accelerator uses to check the health of endpoints that are
+            part of this endpoint group. The default value is TCP.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLEndpointGroupCmdlet.PortOverride">
+            <summary>
+            <para>
+            <para>Override specific listener ports used to route traffic to endpoints that are part
+            of this endpoint group. For example, you can create a port override in which the listener
+            receives user traffic on ports 80 and 443, but your accelerator routes that traffic
+            to ports 1080 and 1443, respectively, on the endpoints.</para><para>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+            Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLEndpointGroupCmdlet.ThresholdCount">
+            <summary>
+            <para>
+            <para>The number of consecutive health checks required to set the state of a healthy endpoint
+            to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLEndpointGroupCmdlet.TrafficDialPercentage">
+            <summary>
+            <para>
+            <para>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic
+            is distributed to other endpoint groups for this listener. </para><para>Use this action to increase (dial up) or decrease (dial down) traffic to a specific
+            Region. The percentage is applied to the traffic that would otherwise have been routed
+            to the Region based on optimal routing.</para><para>The default value is 100.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLEndpointGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EndpointGroup'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.UpdateEndpointGroupResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.UpdateEndpointGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLEndpointGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EndpointGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^EndpointGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLEndpointGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLListenerCmdlet">
+            <summary>
+            Update a listener.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLListenerCmdlet.ClientAffinity">
+            <summary>
+            <para>
+            <para>Client affinity lets you direct all requests from a user to the same endpoint, if
+            you have stateful applications, regardless of the port and protocol of the client
+            request. Client affinity gives you control over whether to always route each client
+            to the same specific endpoint.</para><para>Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal
+            endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator
+            uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination
+            IP address, destination port, and protocol—to select the hash value, and then chooses
+            the best endpoint. However, with this setting, if someone uses different ports to
+            connect to Global Accelerator, their connections might not be always routed to the
+            same endpoint because the hash value changes. </para><para>If you want a given client to always be routed to the same endpoint, set client affinity
+            to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting,
+            Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address
+            and destination IP address—to select the hash value.</para><para>The default value is <code>NONE</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLListenerCmdlet.ListenerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the listener to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLListenerCmdlet.PortRange">
+            <summary>
+            <para>
+            <para>The updated list of port ranges for the connections from clients to the accelerator.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLListenerCmdlet.Protocol">
+            <summary>
+            <para>
+            <para>The updated protocol for the connections from clients to the accelerator.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLListenerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Listener'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GlobalAccelerator.Model.UpdateListenerResponse).
+            Specifying the name of a property of type Amazon.GlobalAccelerator.Model.UpdateListenerResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLListenerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ListenerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ListenerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GACL.UpdateGACLListenerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.SSOOIDC</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSOOIDC.NewSSOOIDCTokenCmdlet">
+            <summary>
+            Creates and returns an access token for the authorized client. The access token issued
+            will be used to fetch short-term credentials for the assigned roles in the AWS account.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSOOIDC.NewSSOOIDCTokenCmdlet.ClientId">
+            <summary>
+            <para>
+            <para>The unique identifier string for each client. This value should come from the persisted
+            result of the <a>RegisterClient</a> API.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSOOIDC.NewSSOOIDCTokenCmdlet.ClientSecret">
+            <summary>
+            <para>
+            <para>A secret string generated for the client. This value should come from the persisted
+            result of the <a>RegisterClient</a> API.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSOOIDC.NewSSOOIDCTokenCmdlet.Code">
+            <summary>
+            <para>
+            <para>The authorization code received from the authorization service. This parameter is
+            required to perform an authorization grant request to get access to a token.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSOOIDC.NewSSOOIDCTokenCmdlet.DeviceCode">
+            <summary>
+            <para>
+            <para>Used only when calling this API for the device code grant type. This short-term code
+            is used to identify this authentication attempt. This should come from an in-memory
+            reference to the result of the <a>StartDeviceAuthorization</a> API.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSOOIDC.NewSSOOIDCTokenCmdlet.GrantType">
+            <summary>
+            <para>
+            <para>Supports grant types for the authorization code, refresh token, and device code request.
+            For device code requests, specify the following value:</para><para><code>urn:ietf:params:oauth:grant-type:<i>device_code</i></code></para><para>For information about how to obtain the device code, see the <a>StartDeviceAuthorization</a>
+            topic.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSOOIDC.NewSSOOIDCTokenCmdlet.RedirectUri">
+            <summary>
+            <para>
+            <para>The location of the application that will receive the authorization code. Users authorize
+            the service to send the request to this location.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSOOIDC.NewSSOOIDCTokenCmdlet.RefreshToken">
+            <summary>
+            <para>
+            <para>Currently, <code>refreshToken</code> is not yet implemented and is not supported.
+            For more information about the features and limitations of the current IAM Identity
+            Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the
+            <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+            Identity Center OIDC API Reference</a>.</para><para>The token used to obtain an access token in the event that the access token is invalid
+            or expired.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSOOIDC.NewSSOOIDCTokenCmdlet.Scope">
+            <summary>
+            <para>
+            <para>The list of scopes that is defined by the client. Upon authorization, this list is
+            used to restrict permissions when granting an access token.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSOOIDC.NewSSOOIDCTokenCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSOOIDC.Model.CreateTokenResponse).
+            Specifying the name of a property of type Amazon.SSOOIDC.Model.CreateTokenResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSOOIDC.NewSSOOIDCTokenCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClientId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClientId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSOOIDC.NewSSOOIDCTokenCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSOOIDC.RegisterSSOOIDCClientCmdlet">
+            <summary>
+            Registers a client with IAM Identity Center. This allows clients to initiate device
+            authorization. The output should be persisted for reuse through many authentication
+            requests.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSOOIDC.RegisterSSOOIDCClientCmdlet.ClientName">
+            <summary>
+            <para>
+            <para>The friendly name of the client.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSOOIDC.RegisterSSOOIDCClientCmdlet.ClientType">
+            <summary>
+            <para>
+            <para>The type of client. The service supports only <code>public</code> as a client type.
+            Anything other than public will be rejected by the service.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSOOIDC.RegisterSSOOIDCClientCmdlet.Scope">
+            <summary>
+            <para>
+            <para>The list of scopes that are defined by the client. Upon authorization, this list is
+            used to restrict permissions when granting an access token.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSOOIDC.RegisterSSOOIDCClientCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSOOIDC.Model.RegisterClientResponse).
+            Specifying the name of a property of type Amazon.SSOOIDC.Model.RegisterClientResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSOOIDC.RegisterSSOOIDCClientCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClientName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClientName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSOOIDC.RegisterSSOOIDCClientCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSOOIDC.StartSSOOIDCDeviceAuthorizationCmdlet">
+            <summary>
+            Initiates device authorization by requesting a pair of verification codes from the
+            authorization service.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSOOIDC.StartSSOOIDCDeviceAuthorizationCmdlet.ClientId">
+            <summary>
+            <para>
+            <para>The unique identifier string for the client that is registered with IAM Identity Center.
+            This value should come from the persisted result of the <a>RegisterClient</a> API
+            operation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSOOIDC.StartSSOOIDCDeviceAuthorizationCmdlet.ClientSecret">
+            <summary>
+            <para>
+            <para>A secret string that is generated for the client. This value should come from the
+            persisted result of the <a>RegisterClient</a> API operation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSOOIDC.StartSSOOIDCDeviceAuthorizationCmdlet.StartUrl">
+            <summary>
+            <para>
+            <para>The URL for the AWS access portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
+            the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSOOIDC.StartSSOOIDCDeviceAuthorizationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSOOIDC.Model.StartDeviceAuthorizationResponse).
+            Specifying the name of a property of type Amazon.SSOOIDC.Model.StartDeviceAuthorizationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSOOIDC.StartSSOOIDCDeviceAuthorizationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClientId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClientId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSOOIDC.StartSSOOIDCDeviceAuthorizationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

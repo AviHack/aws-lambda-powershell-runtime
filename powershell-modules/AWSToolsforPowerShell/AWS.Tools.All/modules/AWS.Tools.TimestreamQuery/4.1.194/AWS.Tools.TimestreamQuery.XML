@@ -1,0 +1,737 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.TimestreamQuery</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSQ.AddTSQResourceTagCmdlet">
+            <summary>
+            Associate a set of tags with a Timestream resource. You can then activate these user-defined
+            tags so that they appear on the Billing and Cost Management console for cost allocation
+            tracking.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.AddTSQResourceTagCmdlet.ResourceARN">
+            <summary>
+            <para>
+            <para>Identifies the Timestream resource to which tags should be added. This value is an
+            Amazon Resource Name (ARN).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.AddTSQResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags to be assigned to the Timestream resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.AddTSQResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamQuery.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.AddTSQResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceARN parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceARN' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.AddTSQResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSQ.GetTSQEndpointListCmdlet">
+            <summary>
+            DescribeEndpoints returns a list of available endpoints to make Timestream API calls
+            against. This API is available through both Write and Query.
+            
+             
+            <para>
+            Because the Timestream SDKs are designed to transparently work with the service’s
+            architecture, including the management and mapping of the service endpoints, <i>it
+            is not recommended that you use this API unless</i>:
+            </para><ul><li><para>
+            You are using <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/VPCEndpoints">VPC
+            endpoints (Amazon Web Services PrivateLink) with Timestream </a></para></li><li><para>
+            Your application uses a programming language that does not yet have SDK support
+            </para></li><li><para>
+            You require better control over the client-side implementation
+            </para></li></ul><para>
+            For detailed information on how and when to use and implement DescribeEndpoints, see
+            <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/Using.API.html#Using-API.endpoint-discovery">The
+            Endpoint Discovery Pattern</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.GetTSQEndpointListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Endpoints'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamQuery.Model.DescribeEndpointsResponse).
+            Specifying the name of a property of type Amazon.TimestreamQuery.Model.DescribeEndpointsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSQ.GetTSQResourceTagCmdlet">
+            <summary>
+            List all tags on a Timestream query resource.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.GetTSQResourceTagCmdlet.ResourceARN">
+            <summary>
+            <para>
+            <para>The Timestream resource with tags to be listed. This value is an Amazon Resource Name
+            (ARN).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.GetTSQResourceTagCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of tags to return.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.GetTSQResourceTagCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>A pagination token to resume pagination.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.GetTSQResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamQuery.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.TimestreamQuery.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.GetTSQResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceARN parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceARN' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.GetTSQResourceTagCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSQ.GetTSQScheduledQueryCmdlet">
+            <summary>
+            Provides detailed information about a scheduled query.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.GetTSQScheduledQueryCmdlet.ScheduledQueryArn">
+            <summary>
+            <para>
+            <para>The ARN of the scheduled query.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.GetTSQScheduledQueryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ScheduledQuery'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamQuery.Model.DescribeScheduledQueryResponse).
+            Specifying the name of a property of type Amazon.TimestreamQuery.Model.DescribeScheduledQueryResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.GetTSQScheduledQueryCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ScheduledQueryArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ScheduledQueryArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSQ.GetTSQScheduledQueryListCmdlet">
+            <summary>
+            Gets a list of all scheduled queries in the caller's Amazon account and Region. <code>ListScheduledQueries</code>
+            is eventually consistent.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.GetTSQScheduledQueryListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of items to return in the output. If the total number of items
+            available is more than the value specified, a <code>NextToken</code> is provided in
+            the output. To resume pagination, provide the <code>NextToken</code> value as the
+            argument to the subsequent call to <code>ListScheduledQueriesRequest</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.GetTSQScheduledQueryListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para> A pagination token to resume pagination.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.GetTSQScheduledQueryListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ScheduledQueries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamQuery.Model.ListScheduledQueriesResponse).
+            Specifying the name of a property of type Amazon.TimestreamQuery.Model.ListScheduledQueriesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.GetTSQScheduledQueryListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSQ.InitializeTSQQueryCmdlet">
+            <summary>
+            A synchronous operation that allows you to submit a query with parameters to be stored
+            by Timestream for later running. Timestream only supports using this operation with
+            the <code>PrepareQueryRequest$ValidateOnly</code> set to <code>true</code>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.InitializeTSQQueryCmdlet.QueryString">
+            <summary>
+            <para>
+            <para>The Timestream query string that you want to use as a prepared statement. Parameter
+            names can be specified in the query string <code>@</code> character followed by an
+            identifier. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.InitializeTSQQueryCmdlet.ValidateOnly">
+            <summary>
+            <para>
+            <para>By setting this value to <code>true</code>, Timestream will only validate that the
+            query string is a valid Timestream query, and not store the prepared query for later
+            use.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.InitializeTSQQueryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamQuery.Model.PrepareQueryResponse).
+            Specifying the name of a property of type Amazon.TimestreamQuery.Model.PrepareQueryResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.InitializeTSQQueryCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the QueryString parameter.
+            The -PassThru parameter is deprecated, use -Select '^QueryString' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.InitializeTSQQueryCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSQ.InvokeTSQQueryCmdlet">
+            <summary>
+            <code>Query</code> is a synchronous operation that enables you to run a query against
+            your Amazon Timestream data. <code>Query</code> will time out after 60 seconds. You
+            must update the default timeout in the SDK to support a timeout of 60 seconds. See
+            the <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.run-query.html">code
+            sample</a> for details. 
+            
+             
+            <para>
+            Your query request will fail in the following cases:
+            </para><ul><li><para>
+             If you submit a <code>Query</code> request with the same client token outside of
+            the 5-minute idempotency window. 
+            </para></li><li><para>
+             If you submit a <code>Query</code> request with the same client token, but change
+            other parameters, within the 5-minute idempotency window. 
+            </para></li><li><para>
+             If the size of the row (including the query metadata) exceeds 1 MB, then the query
+            will fail with the following error message: 
+            </para><para><code>Query aborted as max page response size has been exceeded by the output result
+            row</code></para></li><li><para>
+             If the IAM principal of the query initiator and the result reader are not the same
+            and/or the query initiator and the result reader do not have the same query string
+            in the query requests, the query will fail with an <code>Invalid pagination token</code>
+            error. 
+            </para></li></ul><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.InvokeTSQQueryCmdlet.MaxRow">
+            <summary>
+            <para>
+            <para> The total number of rows to be returned in the <code>Query</code> output. The initial
+            run of <code>Query</code> with a <code>MaxRows</code> value specified will return
+            the result set of the query in two cases: </para><ul><li><para>The size of the result is less than <code>1MB</code>.</para></li><li><para>The number of rows in the result set is less than the value of <code>maxRows</code>.</para></li></ul><para>Otherwise, the initial invocation of <code>Query</code> only returns a <code>NextToken</code>,
+            which can then be used in subsequent calls to fetch the result set. To resume pagination,
+            provide the <code>NextToken</code> value in the subsequent command.</para><para>If the row size is large (e.g. a row has many columns), Timestream may return fewer
+            rows to keep the response size from exceeding the 1 MB limit. If <code>MaxRows</code>
+            is not provided, Timestream will send the necessary number of rows to meet the 1 MB
+            limit.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.InvokeTSQQueryCmdlet.QueryString">
+            <summary>
+            <para>
+            <para> The query to be run by Timestream. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.InvokeTSQQueryCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para> Unique, case-sensitive string of up to 64 ASCII characters specified when a <code>Query</code>
+            request is made. Providing a <code>ClientToken</code> makes the call to <code>Query</code><i>idempotent</i>. This means that running the same query repeatedly will produce
+            the same result. In other words, making multiple identical <code>Query</code> requests
+            has the same effect as making a single request. When using <code>ClientToken</code>
+            in a query, note the following: </para><ul><li><para> If the Query API is instantiated without a <code>ClientToken</code>, the Query SDK
+            generates a <code>ClientToken</code> on your behalf.</para></li><li><para>If the <code>Query</code> invocation only contains the <code>ClientToken</code> but
+            does not include a <code>NextToken</code>, that invocation of <code>Query</code> is
+            assumed to be a new query run.</para></li><li><para>If the invocation contains <code>NextToken</code>, that particular invocation is assumed
+            to be a subsequent invocation of a prior call to the Query API, and a result set is
+            returned.</para></li><li><para> After 4 hours, any request with the same <code>ClientToken</code> is treated as a
+            new request. </para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.InvokeTSQQueryCmdlet.NextToken">
+            <summary>
+            <para>
+            <para> A pagination token used to return a set of results. When the <code>Query</code> API
+            is invoked using <code>NextToken</code>, that particular invocation is assumed to
+            be a subsequent invocation of a prior call to <code>Query</code>, and a result set
+            is returned. However, if the <code>Query</code> invocation only contains the <code>ClientToken</code>,
+            that invocation of <code>Query</code> is assumed to be a new query run. </para><para>Note the following when using NextToken in a query:</para><ul><li><para>A pagination token can be used for up to five <code>Query</code> invocations, OR for
+            a duration of up to 1 hour – whichever comes first.</para></li><li><para>Using the same <code>NextToken</code> will return the same set of records. To keep
+            paginating through the result set, you must to use the most recent <code>nextToken</code>.</para></li><li><para>Suppose a <code>Query</code> invocation returns two <code>NextToken</code> values,
+            <code>TokenA</code> and <code>TokenB</code>. If <code>TokenB</code> is used in a subsequent
+            <code>Query</code> invocation, then <code>TokenA</code> is invalidated and cannot
+            be reused.</para></li><li><para>To request a previous result set from a query after pagination has begun, you must
+            re-invoke the Query API.</para></li><li><para>The latest <code>NextToken</code> should be used to paginate until <code>null</code>
+            is returned, at which point a new <code>NextToken</code> should be used.</para></li><li><para> If the IAM principal of the query initiator and the result reader are not the same
+            and/or the query initiator and the result reader do not have the same query string
+            in the query requests, the query will fail with an <code>Invalid pagination token</code>
+            error. </para></li></ul>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.InvokeTSQQueryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Rows'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamQuery.Model.QueryResponse).
+            Specifying the name of a property of type Amazon.TimestreamQuery.Model.QueryResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.InvokeTSQQueryCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the QueryString parameter.
+            The -PassThru parameter is deprecated, use -Select '^QueryString' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.InvokeTSQQueryCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSQ.NewTSQScheduledQueryCmdlet">
+            <summary>
+            Create a scheduled query that will be run on your behalf at the configured schedule.
+            Timestream assumes the execution role provided as part of the <code>ScheduledQueryExecutionRoleArn</code>
+            parameter to run the query. You can use the <code>NotificationConfiguration</code>
+            parameter to configure notification for your scheduled query operations.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.NewTSQScheduledQueryCmdlet.S3Configuration_BucketName">
+            <summary>
+            <para>
+            <para> Name of the S3 bucket under which error reports will be created.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.NewTSQScheduledQueryCmdlet.TimestreamConfiguration_DatabaseName">
+            <summary>
+            <para>
+            <para>Name of Timestream database to which the query result will be written.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.NewTSQScheduledQueryCmdlet.TimestreamConfiguration_DimensionMapping">
+            <summary>
+            <para>
+            <para> This is to allow mapping column(s) from the query result to the dimension in the
+            destination table. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.NewTSQScheduledQueryCmdlet.S3Configuration_EncryptionOption">
+            <summary>
+            <para>
+            <para> Encryption at rest options for the error reports. If no encryption option is specified,
+            Timestream will choose SSE_S3 as default. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.NewTSQScheduledQueryCmdlet.KmsKeyId">
+            <summary>
+            <para>
+            <para>The Amazon KMS key used to encrypt the scheduled query resource, at-rest. If the Amazon
+            KMS key is not specified, the scheduled query resource will be encrypted with a Timestream
+            owned Amazon KMS key. To specify a KMS key, use the key ID, key ARN, alias name, or
+            alias ARN. When using an alias name, prefix the name with <i>alias/</i></para><para>If ErrorReportConfiguration uses <code>SSE_KMS</code> as encryption type, the same
+            KmsKeyId is used to encrypt the error report at rest.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.NewTSQScheduledQueryCmdlet.TimestreamConfiguration_MeasureNameColumn">
+            <summary>
+            <para>
+            <para>Name of the measure column.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.NewTSQScheduledQueryCmdlet.TimestreamConfiguration_MixedMeasureMapping">
+            <summary>
+            <para>
+            <para>Specifies how to map measures to multi-measure records.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.NewTSQScheduledQueryCmdlet.MultiMeasureMappings_MultiMeasureAttributeMapping">
+            <summary>
+            <para>
+            <para>Required. Attribute mappings to be used for mapping query results to ingest data for
+            multi-measure attributes.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.NewTSQScheduledQueryCmdlet.Name">
+            <summary>
+            <para>
+            <para>Name of the scheduled query.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.NewTSQScheduledQueryCmdlet.S3Configuration_ObjectKeyPrefix">
+            <summary>
+            <para>
+            <para> Prefix for the error report key. Timestream by default adds the following prefix
+            to the error report path. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.NewTSQScheduledQueryCmdlet.QueryString">
+            <summary>
+            <para>
+            <para>The query string to run. Parameter names can be specified in the query string <code>@</code>
+            character followed by an identifier. The named Parameter <code>@scheduled_runtime</code>
+            is reserved and can be used in the query to get the time at which the query is scheduled
+            to run.</para><para>The timestamp calculated according to the ScheduleConfiguration parameter, will be
+            the value of <code>@scheduled_runtime</code> paramater for each query run. For example,
+            consider an instance of a scheduled query executing on 2021-12-01 00:00:00. For this
+            instance, the <code>@scheduled_runtime</code> parameter is initialized to the timestamp
+            2021-12-01 00:00:00 when invoking the query.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.NewTSQScheduledQueryCmdlet.ScheduledQueryExecutionRoleArn">
+            <summary>
+            <para>
+            <para>The ARN for the IAM role that Timestream will assume when running the scheduled query.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.NewTSQScheduledQueryCmdlet.ScheduleConfiguration_ScheduleExpression">
+            <summary>
+            <para>
+            <para>An expression that denotes when to trigger the scheduled query run. This can be a
+            cron expression or a rate expression. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.NewTSQScheduledQueryCmdlet.TimestreamConfiguration_TableName">
+            <summary>
+            <para>
+            <para>Name of Timestream table that the query result will be written to. The table should
+            be within the same database that is provided in Timestream configuration.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.NewTSQScheduledQueryCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of key-value pairs to label the scheduled query.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.NewTSQScheduledQueryCmdlet.MultiMeasureMappings_TargetMultiMeasureName">
+            <summary>
+            <para>
+            <para>The name of the target multi-measure name in the derived table. This input is required
+            when measureNameColumn is not provided. If MeasureNameColumn is provided, then value
+            from that column will be used as multi-measure name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.NewTSQScheduledQueryCmdlet.TimestreamConfiguration_TimeColumn">
+            <summary>
+            <para>
+            <para>Column from query result that should be used as the time column in destination table.
+            Column type for this should be TIMESTAMP.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.NewTSQScheduledQueryCmdlet.SnsConfiguration_TopicArn">
+            <summary>
+            <para>
+            <para>SNS topic ARN that the scheduled query status notifications will be sent to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.NewTSQScheduledQueryCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>Using a ClientToken makes the call to CreateScheduledQuery idempotent, in other words,
+            making the same request repeatedly will produce the same result. Making multiple identical
+            CreateScheduledQuery requests has the same effect as making a single request. </para><ul><li><para> If CreateScheduledQuery is called without a <code>ClientToken</code>, the Query SDK
+            generates a <code>ClientToken</code> on your behalf.</para></li><li><para> After 8 hours, any request with the same <code>ClientToken</code> is treated as a
+            new request. </para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.NewTSQScheduledQueryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Arn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamQuery.Model.CreateScheduledQueryResponse).
+            Specifying the name of a property of type Amazon.TimestreamQuery.Model.CreateScheduledQueryResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.NewTSQScheduledQueryCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSQ.RemoveTSQResourceTagCmdlet">
+            <summary>
+            Removes the association of tags from a Timestream query resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.RemoveTSQResourceTagCmdlet.ResourceARN">
+            <summary>
+            <para>
+            <para>The Timestream resource that the tags will be removed from. This value is an Amazon
+            Resource Name (ARN). </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.RemoveTSQResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>A list of tags keys. Existing tags of the resource whose keys are members of this
+            list will be removed from the Timestream resource. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.RemoveTSQResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamQuery.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.RemoveTSQResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceARN parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceARN' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.RemoveTSQResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSQ.RemoveTSQScheduledQueryCmdlet">
+            <summary>
+            Deletes a given scheduled query. This is an irreversible operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.RemoveTSQScheduledQueryCmdlet.ScheduledQueryArn">
+            <summary>
+            <para>
+            <para>The ARN of the scheduled query. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.RemoveTSQScheduledQueryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamQuery.Model.DeleteScheduledQueryResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.RemoveTSQScheduledQueryCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ScheduledQueryArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ScheduledQueryArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.RemoveTSQScheduledQueryCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSQ.StartTSQScheduledQueryCmdlet">
+            <summary>
+            You can use this API to run a scheduled query manually.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.StartTSQScheduledQueryCmdlet.InvocationTime">
+            <summary>
+            <para>
+            <para>The timestamp in UTC. Query will be run as if it was invoked at this timestamp. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.StartTSQScheduledQueryCmdlet.ScheduledQueryArn">
+            <summary>
+            <para>
+            <para>ARN of the scheduled query.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.StartTSQScheduledQueryCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>Not used. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.StartTSQScheduledQueryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamQuery.Model.ExecuteScheduledQueryResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.StartTSQScheduledQueryCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ScheduledQueryArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ScheduledQueryArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.StartTSQScheduledQueryCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSQ.StopTSQQueryCmdlet">
+            <summary>
+            Cancels a query that has been issued. Cancellation is provided only if the query
+            has not completed running before the cancellation request was issued. Because cancellation
+            is an idempotent operation, subsequent cancellation requests will return a <code>CancellationMessage</code>,
+            indicating that the query has already been canceled. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.cancel-query.html">code
+            sample</a> for details.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.StopTSQQueryCmdlet.QueryId">
+            <summary>
+            <para>
+            <para> The ID of the query that needs to be cancelled. <code>QueryID</code> is returned
+            as part of the query result. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.StopTSQQueryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'CancellationMessage'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamQuery.Model.CancelQueryResponse).
+            Specifying the name of a property of type Amazon.TimestreamQuery.Model.CancelQueryResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.StopTSQQueryCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the QueryId parameter.
+            The -PassThru parameter is deprecated, use -Select '^QueryId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.StopTSQQueryCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSQ.UpdateTSQScheduledQueryCmdlet">
+            <summary>
+            Update a scheduled query.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.UpdateTSQScheduledQueryCmdlet.ScheduledQueryArn">
+            <summary>
+            <para>
+            <para>ARN of the scheuled query.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.UpdateTSQScheduledQueryCmdlet.State">
+            <summary>
+            <para>
+            <para>State of the scheduled query. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.UpdateTSQScheduledQueryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamQuery.Model.UpdateScheduledQueryResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.UpdateTSQScheduledQueryCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ScheduledQueryArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ScheduledQueryArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSQ.UpdateTSQScheduledQueryCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

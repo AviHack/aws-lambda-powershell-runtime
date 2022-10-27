@@ -1,0 +1,642 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.Cloud9</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.C9.AddC9ResourceTagCmdlet">
+            <summary>
+            Adds tags to an Cloud9 development environment.
+            
+             <important><para>
+            Tags that you add to an Cloud9 environment by using this method will NOT be automatically
+            propagated to underlying resources.
+            </para></important>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.AddC9ResourceTagCmdlet.ResourceARN">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Cloud9 development environment to add tags to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.AddC9ResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The list of tags to add to the given Cloud9 development environment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.AddC9ResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Cloud9.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.AddC9ResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceARN parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceARN' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.AddC9ResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.C9.GetC9EnvironmentDataCmdlet">
+            <summary>
+            Gets information about Cloud9 development environments.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.GetC9EnvironmentDataCmdlet.EnvironmentId">
+            <summary>
+            <para>
+            <para>The IDs of individual environments to get information about.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.GetC9EnvironmentDataCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Environments'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Cloud9.Model.DescribeEnvironmentsResponse).
+            Specifying the name of a property of type Amazon.Cloud9.Model.DescribeEnvironmentsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.GetC9EnvironmentDataCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EnvironmentId parameter.
+            The -PassThru parameter is deprecated, use -Select '^EnvironmentId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.C9.GetC9EnvironmentListCmdlet">
+            <summary>
+            Gets a list of Cloud9 development environment identifiers.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.GetC9EnvironmentListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of environments to get identifiers for.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>25</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.GetC9EnvironmentListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>During a previous call, if there are more than 25 items in the list, only the first
+            25 items are returned, along with a unique string called a <i>next token</i>. To get
+            the next batch of items in the list, call this operation again, adding the next token
+            to the call. To get all of the items in the list, keep calling this operation with
+            each subsequent next token that is returned, until no more next tokens are returned.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.GetC9EnvironmentListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EnvironmentIds'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Cloud9.Model.ListEnvironmentsResponse).
+            Specifying the name of a property of type Amazon.Cloud9.Model.ListEnvironmentsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.GetC9EnvironmentListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.C9.GetC9EnvironmentMembershipListCmdlet">
+            <summary>
+            Gets information about environment members for an Cloud9 development environment.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.GetC9EnvironmentMembershipListCmdlet.EnvironmentId">
+            <summary>
+            <para>
+            <para>The ID of the environment to get environment member information about.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.GetC9EnvironmentMembershipListCmdlet.Permission">
+            <summary>
+            <para>
+            <para>The type of environment member permissions to get information about. Available values
+            include:</para><ul><li><para><code>owner</code>: Owns the environment.</para></li><li><para><code>read-only</code>: Has read-only access to the environment.</para></li><li><para><code>read-write</code>: Has read-write access to the environment.</para></li></ul><para>If no value is specified, information about all environment members are returned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.GetC9EnvironmentMembershipListCmdlet.UserArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of an individual environment member to get information
+            about. If no value is specified, information about all environment members are returned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.GetC9EnvironmentMembershipListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of environment members to get information about.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>25</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.GetC9EnvironmentMembershipListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>During a previous call, if there are more than 25 items in the list, only the first
+            25 items are returned, along with a unique string called a <i>next token</i>. To get
+            the next batch of items in the list, call this operation again, adding the next token
+            to the call. To get all of the items in the list, keep calling this operation with
+            each subsequent next token that is returned, until no more next tokens are returned.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.GetC9EnvironmentMembershipListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Memberships'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Cloud9.Model.DescribeEnvironmentMembershipsResponse).
+            Specifying the name of a property of type Amazon.Cloud9.Model.DescribeEnvironmentMembershipsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.GetC9EnvironmentMembershipListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EnvironmentId parameter.
+            The -PassThru parameter is deprecated, use -Select '^EnvironmentId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.GetC9EnvironmentMembershipListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.C9.GetC9EnvironmentStatusCmdlet">
+            <summary>
+            Gets status information for an Cloud9 development environment.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.GetC9EnvironmentStatusCmdlet.EnvironmentId">
+            <summary>
+            <para>
+            <para>The ID of the environment to get status information about.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.GetC9EnvironmentStatusCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Cloud9.Model.DescribeEnvironmentStatusResponse).
+            Specifying the name of a property of type Amazon.Cloud9.Model.DescribeEnvironmentStatusResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.GetC9EnvironmentStatusCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EnvironmentId parameter.
+            The -PassThru parameter is deprecated, use -Select '^EnvironmentId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.C9.GetC9ResourceTagCmdlet">
+            <summary>
+            Gets a list of the tags associated with an Cloud9 development environment.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.GetC9ResourceTagCmdlet.ResourceARN">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Cloud9 development environment to get the tags
+            for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.GetC9ResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Cloud9.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.Cloud9.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.GetC9ResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceARN parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceARN' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.C9.NewC9EnvironmentEC2Cmdlet">
+            <summary>
+            Creates an Cloud9 development environment, launches an Amazon Elastic Compute Cloud
+            (Amazon EC2) instance, and then connects from the instance to the environment.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.NewC9EnvironmentEC2Cmdlet.AutomaticStopTimeMinute">
+            <summary>
+            <para>
+            <para>The number of minutes until the running instance is shut down after the environment
+            has last been used.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.NewC9EnvironmentEC2Cmdlet.ClientRequestToken">
+            <summary>
+            <para>
+            <para>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes
+            no more than one time.</para><para>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client
+            Tokens</a> in the <i>Amazon EC2 API Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.NewC9EnvironmentEC2Cmdlet.ConnectionType">
+            <summary>
+            <para>
+            <para>The connection type used for connecting to an Amazon EC2 environment. Valid values
+            are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through
+            Amazon EC2 Systems Manager).</para><para>For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing
+            no-ingress EC2 instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User
+            Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.NewC9EnvironmentEC2Cmdlet.Description">
+            <summary>
+            <para>
+            <para>The description of the environment to create.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.NewC9EnvironmentEC2Cmdlet.DryRun">
+            <summary>
+            <para>
+            <para>Checks whether you have the required permissions for the action, without actually
+            making the request, and provides an error response. If you have the required permissions,
+            the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.NewC9EnvironmentEC2Cmdlet.ImageId">
+            <summary>
+            <para>
+            <para>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance.
+            To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon
+            EC2 Systems Manager (SSM) path.</para><para>The default AMI is used if the parameter isn't explicitly assigned a value in the
+            request. Because Amazon Linux AMI has ended standard support as of December 31, 2020,
+            we recommend you choose Amazon Linux 2, which includes long term support through 2023.</para><para><b>AMI aliases </b></para><ul><li><para><b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code></b></para></li><li><para>Amazon Linux 2: <code>amazonlinux-2-x86_64</code></para></li><li><para>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code></para></li></ul><para><b>SSM paths</b></para><ul><li><para><b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code></b></para></li><li><para>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code></para></li><li><para>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code></para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.NewC9EnvironmentEC2Cmdlet.InstanceType">
+            <summary>
+            <para>
+            <para>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.NewC9EnvironmentEC2Cmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the environment to create.</para><para>This name is visible to other IAM users in the same Amazon Web Services account.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.NewC9EnvironmentEC2Cmdlet.OwnerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of
+            any IAM principal. If this value is not specified, the ARN defaults to this environment's
+            creator.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.NewC9EnvironmentEC2Cmdlet.SubnetId">
+            <summary>
+            <para>
+            <para>The ID of the subnet in Amazon VPC that Cloud9 will use to communicate with the Amazon
+            EC2 instance.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.NewC9EnvironmentEC2Cmdlet.Tag">
+            <summary>
+            <para>
+            <para>An array of key-value pairs that will be associated with the new Cloud9 development
+            environment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.NewC9EnvironmentEC2Cmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EnvironmentId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Cloud9.Model.CreateEnvironmentEC2Response).
+            Specifying the name of a property of type Amazon.Cloud9.Model.CreateEnvironmentEC2Response will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.NewC9EnvironmentEC2Cmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.NewC9EnvironmentEC2Cmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.C9.NewC9EnvironmentMembershipCmdlet">
+            <summary>
+            Adds an environment member to an Cloud9 development environment.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.NewC9EnvironmentMembershipCmdlet.EnvironmentId">
+            <summary>
+            <para>
+            <para>The ID of the environment that contains the environment member you want to add.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.NewC9EnvironmentMembershipCmdlet.Permission">
+            <summary>
+            <para>
+            <para>The type of environment member permissions you want to associate with this environment
+            member. Available values include:</para><ul><li><para><code>read-only</code>: Has read-only access to the environment.</para></li><li><para><code>read-write</code>: Has read-write access to the environment.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.NewC9EnvironmentMembershipCmdlet.UserArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the environment member you want to add.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.NewC9EnvironmentMembershipCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Membership'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Cloud9.Model.CreateEnvironmentMembershipResponse).
+            Specifying the name of a property of type Amazon.Cloud9.Model.CreateEnvironmentMembershipResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.NewC9EnvironmentMembershipCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the UserArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^UserArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.NewC9EnvironmentMembershipCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.C9.RemoveC9EnvironmentCmdlet">
+            <summary>
+            Deletes an Cloud9 development environment. If an Amazon EC2 instance is connected
+            to the environment, also terminates the instance.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.RemoveC9EnvironmentCmdlet.EnvironmentId">
+            <summary>
+            <para>
+            <para>The ID of the environment to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.RemoveC9EnvironmentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Cloud9.Model.DeleteEnvironmentResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.RemoveC9EnvironmentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EnvironmentId parameter.
+            The -PassThru parameter is deprecated, use -Select '^EnvironmentId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.RemoveC9EnvironmentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.C9.RemoveC9EnvironmentMembershipCmdlet">
+            <summary>
+            Deletes an environment member from an Cloud9 development environment.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.RemoveC9EnvironmentMembershipCmdlet.EnvironmentId">
+            <summary>
+            <para>
+            <para>The ID of the environment to delete the environment member from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.RemoveC9EnvironmentMembershipCmdlet.UserArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the environment member to delete from the environment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.RemoveC9EnvironmentMembershipCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Cloud9.Model.DeleteEnvironmentMembershipResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.RemoveC9EnvironmentMembershipCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the UserArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^UserArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.RemoveC9EnvironmentMembershipCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.C9.RemoveC9ResourceTagCmdlet">
+            <summary>
+            Removes tags from an Cloud9 development environment.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.RemoveC9ResourceTagCmdlet.ResourceARN">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Cloud9 development environment to remove tags
+            from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.RemoveC9ResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>The tag names of the tags to remove from the given Cloud9 development environment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.RemoveC9ResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Cloud9.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.RemoveC9ResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceARN parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceARN' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.RemoveC9ResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.C9.UpdateC9EnvironmentCmdlet">
+            <summary>
+            Changes the settings of an existing Cloud9 development environment.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.UpdateC9EnvironmentCmdlet.Description">
+            <summary>
+            <para>
+            <para>Any new or replacement description for the environment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.UpdateC9EnvironmentCmdlet.EnvironmentId">
+            <summary>
+            <para>
+            <para>The ID of the environment to change settings.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.UpdateC9EnvironmentCmdlet.ManagedCredentialsAction">
+            <summary>
+            <para>
+            <para>Allows the environment owner to turn on or turn off the Amazon Web Services managed
+            temporary credentials for an Cloud9 environment by using one of the following values:</para><ul><li><para><code>ENABLE</code></para></li><li><para><code>DISABLE</code></para></li></ul><note><para>Only the environment owner can change the status of managed temporary credentials.
+            An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off
+            managed temporary credentials is made by an account that's not the environment owner.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.UpdateC9EnvironmentCmdlet.Name">
+            <summary>
+            <para>
+            <para>A replacement name for the environment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.UpdateC9EnvironmentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Cloud9.Model.UpdateEnvironmentResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.UpdateC9EnvironmentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EnvironmentId parameter.
+            The -PassThru parameter is deprecated, use -Select '^EnvironmentId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.UpdateC9EnvironmentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.C9.UpdateC9EnvironmentMembershipCmdlet">
+            <summary>
+            Changes the settings of an existing environment member for an Cloud9 development environment.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.UpdateC9EnvironmentMembershipCmdlet.EnvironmentId">
+            <summary>
+            <para>
+            <para>The ID of the environment for the environment member whose settings you want to change.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.UpdateC9EnvironmentMembershipCmdlet.Permission">
+            <summary>
+            <para>
+            <para>The replacement type of environment member permissions you want to associate with
+            this environment member. Available values include:</para><ul><li><para><code>read-only</code>: Has read-only access to the environment.</para></li><li><para><code>read-write</code>: Has read-write access to the environment.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.UpdateC9EnvironmentMembershipCmdlet.UserArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the environment member whose settings you want to
+            change.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.UpdateC9EnvironmentMembershipCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Membership'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Cloud9.Model.UpdateEnvironmentMembershipResponse).
+            Specifying the name of a property of type Amazon.Cloud9.Model.UpdateEnvironmentMembershipResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.UpdateC9EnvironmentMembershipCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the UserArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^UserArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.C9.UpdateC9EnvironmentMembershipCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,3225 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.ElasticMapReduce</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.AddEMRInstanceFleetCmdlet">
+            <summary>
+            Adds an instance fleet to a running cluster.
+            
+             <note><para>
+            The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+            later, excluding 5.0.x.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRInstanceFleetCmdlet.OnDemandSpecification_AllocationStrategy">
+            <summary>
+            <para>
+            <para>Specifies the strategy to use in launching On-Demand instance fleets. Currently, the
+            only option is <code>lowest-price</code> (the default), which launches the lowest
+            price first.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRInstanceFleetCmdlet.SpotSpecification_AllocationStrategy">
+            <summary>
+            <para>
+            <para> Specifies the strategy to use in launching Spot Instance fleets. Currently, the only
+            option is capacity-optimized (the default), which launches instances from Spot Instance
+            pools with optimal capacity for the number of instances that are launching. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRInstanceFleetCmdlet.SpotSpecification_BlockDurationMinute">
+            <summary>
+            <para>
+            <para>The defined duration for Spot Instances (also known as Spot blocks) in minutes. When
+            specified, the Spot Instance does not terminate before the defined duration expires,
+            and defined duration pricing for Spot Instances applies. Valid values are 60, 120,
+            180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives
+            its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for
+            termination and provides a Spot Instance termination notice, which gives the instance
+            a two-minute warning before it terminates. </para><note><para>Spot Instances with a defined duration (also known as Spot blocks) are no longer available
+            to new customers from July 1, 2021. For customers who have previously used the feature,
+            we will continue to support Spot Instances with a defined duration until December
+            31, 2022. </para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRInstanceFleetCmdlet.CapacityReservationOptions_CapacityReservationPreference">
+            <summary>
+            <para>
+            <para>Indicates the instance's Capacity Reservation preferences. Possible preferences include:</para><ul><li><para><code>open</code> - The instance can run in any open Capacity Reservation that has
+            matching attributes (instance type, platform, Availability Zone).</para></li><li><para><code>none</code> - The instance avoids running in a Capacity Reservation even if
+            one is available. The instance runs as an On-Demand Instance.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRInstanceFleetCmdlet.CapacityReservationOptions_CapacityReservationResourceGroupArn">
+            <summary>
+            <para>
+            <para>The ARN of the Capacity Reservation resource group in which to run the instance.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRInstanceFleetCmdlet.ClusterId">
+            <summary>
+            <para>
+            <para>The unique identifier of the cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRInstanceFleetCmdlet.InstanceFleet_InstanceFleetType">
+            <summary>
+            <para>
+            <para>The node type that the instance fleet hosts. Valid values are MASTER, CORE, and TASK.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRInstanceFleetCmdlet.InstanceFleet_InstanceTypeConfig">
+            <summary>
+            <para>
+            <para>The instance type configurations that define the EC2 instances in the instance fleet.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRInstanceFleetCmdlet.InstanceFleet_Name">
+            <summary>
+            <para>
+            <para>The friendly name of the instance fleet.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRInstanceFleetCmdlet.InstanceFleet_TargetOnDemandCapacity">
+            <summary>
+            <para>
+            <para>The target capacity of On-Demand units for the instance fleet, which determines how
+            many On-Demand Instances to provision. When the instance fleet launches, Amazon EMR
+            tries to provision On-Demand Instances as specified by <a>InstanceTypeConfig</a>.
+            Each instance configuration has a specified <code>WeightedCapacity</code>. When an
+            On-Demand Instance is provisioned, the <code>WeightedCapacity</code> units count toward
+            the target capacity. Amazon EMR provisions instances until the target capacity is
+            totally fulfilled, even if this results in an overage. For example, if there are 2
+            units remaining to fulfill capacity, and Amazon EMR can only provision an instance
+            with a <code>WeightedCapacity</code> of 5 units, the instance is provisioned, and
+            the target capacity is exceeded by 3 units.</para><note><para>If not specified or set to 0, only Spot Instances are provisioned for the instance
+            fleet using <code>TargetSpotCapacity</code>. At least one of <code>TargetSpotCapacity</code>
+            and <code>TargetOnDemandCapacity</code> should be greater than 0. For a master instance
+            fleet, only one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code>
+            can be specified, and its value must be 1.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRInstanceFleetCmdlet.InstanceFleet_TargetSpotCapacity">
+            <summary>
+            <para>
+            <para>The target capacity of Spot units for the instance fleet, which determines how many
+            Spot Instances to provision. When the instance fleet launches, Amazon EMR tries to
+            provision Spot Instances as specified by <a>InstanceTypeConfig</a>. Each instance
+            configuration has a specified <code>WeightedCapacity</code>. When a Spot Instance
+            is provisioned, the <code>WeightedCapacity</code> units count toward the target capacity.
+            Amazon EMR provisions instances until the target capacity is totally fulfilled, even
+            if this results in an overage. For example, if there are 2 units remaining to fulfill
+            capacity, and Amazon EMR can only provision an instance with a <code>WeightedCapacity</code>
+            of 5 units, the instance is provisioned, and the target capacity is exceeded by 3
+            units.</para><note><para>If not specified or set to 0, only On-Demand Instances are provisioned for the instance
+            fleet. At least one of <code>TargetSpotCapacity</code> and <code>TargetOnDemandCapacity</code>
+            should be greater than 0. For a master instance fleet, only one of <code>TargetSpotCapacity</code>
+            and <code>TargetOnDemandCapacity</code> can be specified, and its value must be 1.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRInstanceFleetCmdlet.SpotSpecification_TimeoutAction">
+            <summary>
+            <para>
+            <para>The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when
+            the <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot Instances
+            could not be provisioned within the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code>
+            and <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot
+            Instances are available, On-Demand Instances should be provisioned to fulfill any
+            remaining Spot capacity.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRInstanceFleetCmdlet.SpotSpecification_TimeoutDurationMinute">
+            <summary>
+            <para>
+            <para>The spot provisioning timeout period in minutes. If Spot Instances are not provisioned
+            within this time period, the <code>TimeOutAction</code> is taken. Minimum value is
+            5 and maximum value is 1440. The timeout applies only during initial provisioning,
+            when the cluster is first created.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRInstanceFleetCmdlet.CapacityReservationOptions_UsageStrategy">
+            <summary>
+            <para>
+            <para>Indicates whether to use unused Capacity Reservations for fulfilling On-Demand capacity.</para><para>If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused
+            Capacity Reservations to fulfill On-Demand capacity up to the target On-Demand capacity.
+            If multiple instance pools have unused Capacity Reservations, the On-Demand allocation
+            strategy (<code>lowest-price</code>) is applied. If the number of unused Capacity
+            Reservations is less than the On-Demand target capacity, the remaining On-Demand target
+            capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code>).</para><para>If you do not specify a value, the fleet fulfills the On-Demand capacity according
+            to the chosen On-Demand allocation strategy.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRInstanceFleetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.AddInstanceFleetResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.AddInstanceFleetResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRInstanceFleetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRInstanceFleetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.AddEMRInstanceGroupCmdlet">
+            <summary>
+            Adds one or more instance groups to a running cluster.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRInstanceGroupCmdlet.InstanceGroup">
+            <summary>
+            <para>
+            <para>Instance groups to add.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRInstanceGroupCmdlet.JobFlowId">
+            <summary>
+            <para>
+            <para>Job flow in which to add the instance groups.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRInstanceGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.AddInstanceGroupsResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.AddInstanceGroupsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRInstanceGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobFlowId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobFlowId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRInstanceGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.AddEMRJobFlowStepCmdlet">
+            <summary>
+            AddJobFlowSteps adds new steps to a running cluster. A maximum of 256 steps are allowed
+            in each job flow.
+            
+             
+            <para>
+            If your cluster is long-running (such as a Hive data warehouse) or complex, you may
+            require more than 256 steps to process your data. You can bypass the 256-step limitation
+            in various ways, including using SSH to connect to the master node and submitting
+            queries directly to the software running on the master node, such as Hive and Hadoop.
+            For more information on how to do this, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add
+            More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management Guide</i>.
+            </para><para>
+            A step specifies the location of a JAR file stored either on the master node of the
+            cluster or in Amazon S3. Each step is performed by the main function of the main class
+            of the JAR file. The main class can be specified either in the manifest of the JAR
+            or by using the MainFunction parameter of the step.
+            </para><para>
+            Amazon EMR executes each step in the order listed. For a step to be considered complete,
+            the main function must exit with a zero exit code and all Hadoop jobs started while
+            the step was running must have completed and run successfully.
+            </para><para>
+            You can only add steps to a cluster that is in one of the following states: STARTING,
+            BOOTSTRAPPING, RUNNING, or WAITING.
+            </para><note><para>
+            The string values passed into <code>HadoopJarStep</code> object cannot exceed a total
+            of 10240 characters.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRJobFlowStepCmdlet.ExecutionRoleArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the runtime role for a step on the cluster. The
+            runtime role can be a cross-account IAM role. The runtime role ARN is a combination
+            of account ID, role name, and role type using the following format: <code>arn:partition:service:region:account:resource</code>.
+            </para><para>For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted
+            runtime role ARN.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRJobFlowStepCmdlet.JobFlowId">
+            <summary>
+            <para>
+            <para>A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a>
+            and can also be obtained from <a>ListClusters</a>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRJobFlowStepCmdlet.Step">
+            <summary>
+            <para>
+            <para> A list of <a>StepConfig</a> to be executed by the job flow. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRJobFlowStepCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'StepIds'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.AddJobFlowStepsResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.AddJobFlowStepsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRJobFlowStepCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobFlowId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobFlowId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRJobFlowStepCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.AddEMRResourceTagCmdlet">
+            <summary>
+            Adds tags to an Amazon EMR resource, such as a cluster or an Amazon EMR Studio. Tags
+            make it easier to associate resources in various ways, such as grouping clusters to
+            track your Amazon EMR resource allocation costs. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
+            Clusters</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRResourceTagCmdlet.ResourceId">
+            <summary>
+            <para>
+            <para>The Amazon EMR resource identifier to which tags will be added. For example, a cluster
+            identifier or an Amazon EMR Studio ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of tags to associate with a resource. Tags are user-defined key-value pairs
+            that consist of a required key string with a maximum of 128 characters, and an optional
+            value string with a maximum of 256 characters.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.AddTagsResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRResourceTagCmdlet.PassThru">
+            <summary>
+            Returns the collection of Tag objects that were added
+            The -PassThru parameter is deprecated, use -Select instead. This parameter will be removed in future
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.AddEMRResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.EditEMRClusterCmdlet">
+            <summary>
+            Modifies the number of steps that can be executed concurrently for the cluster specified
+            using ClusterID.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.EditEMRClusterCmdlet.ClusterId">
+            <summary>
+            <para>
+            <para>The unique identifier of the cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.EditEMRClusterCmdlet.StepConcurrencyLevel">
+            <summary>
+            <para>
+            <para>The number of steps that can be executed concurrently. You can specify a minimum of
+            1 step and a maximum of 256 steps. We recommend that you do not change this parameter
+            while steps are running or the <code>ActionOnFailure</code> setting may not behave
+            as expected. For more information see <a>Step$ActionOnFailure</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.EditEMRClusterCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'StepConcurrencyLevel'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.ModifyClusterResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.ModifyClusterResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.EditEMRClusterCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.EditEMRClusterCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.EditEMRInstanceFleetCmdlet">
+            <summary>
+            Modifies the target On-Demand and target Spot capacities for the instance fleet with
+            the specified InstanceFleetID within the cluster specified using ClusterID. The call
+            either succeeds or fails atomically.
+            
+             <note><para>
+            The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+            later, excluding 5.0.x versions.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.EditEMRInstanceFleetCmdlet.ClusterId">
+            <summary>
+            <para>
+            <para>The unique identifier of the cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.EditEMRInstanceFleetCmdlet.InstanceFleet_InstanceFleetId">
+            <summary>
+            <para>
+            <para>A unique identifier for the instance fleet.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.EditEMRInstanceFleetCmdlet.InstanceFleet_TargetOnDemandCapacity">
+            <summary>
+            <para>
+            <para>The target capacity of On-Demand units for the instance fleet. For more information
+            see <a>InstanceFleetConfig$TargetOnDemandCapacity</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.EditEMRInstanceFleetCmdlet.InstanceFleet_TargetSpotCapacity">
+            <summary>
+            <para>
+            <para>The target capacity of Spot units for the instance fleet. For more information, see
+            <a>InstanceFleetConfig$TargetSpotCapacity</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.EditEMRInstanceFleetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.ModifyInstanceFleetResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.EditEMRInstanceFleetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.EditEMRInstanceFleetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.EditEMRInstanceGroupCmdlet">
+            <summary>
+            ModifyInstanceGroups modifies the number of nodes and configuration settings of an
+            instance group. The input parameters include the new target instance count for the
+            group and the instance group ID. The call will either succeed or fail atomically.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.EditEMRInstanceGroupCmdlet.ClusterId">
+            <summary>
+            <para>
+            <para>The ID of the cluster to which the instance group belongs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.EditEMRInstanceGroupCmdlet.InstanceGroup">
+            <summary>
+            <para>
+            <para>Instance groups to change.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.EditEMRInstanceGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.ModifyInstanceGroupsResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.EditEMRInstanceGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.EditEMRInstanceGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.FindEMRReleaseLabelCmdlet">
+            <summary>
+            Retrieves release labels of EMR services in the region where the API is called.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.FindEMRReleaseLabelCmdlet.Filters_Application">
+            <summary>
+            <para>
+            <para>Optional release label application filter. For example, <code>spark@2.1.0</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.FindEMRReleaseLabelCmdlet.Filters_Prefix">
+            <summary>
+            <para>
+            <para>Optional release label version prefix filter. For example, <code>emr-5</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.FindEMRReleaseLabelCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Defines the maximum number of release labels to return in a single response. The default
+            is <code>100</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.FindEMRReleaseLabelCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Specifies the next page of results. If <code>NextToken</code> is not specified, which
+            is usually the case for the first request of ListReleaseLabels, the first page of
+            results are determined by other filtering parameters or by the latest version. The
+            <code>ListReleaseLabels</code> request fails if the identity (Amazon Web Services
+            account ID) and all filtering parameters are different from the original request,
+            or if the <code>NextToken</code> is expired or tampered with.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.FindEMRReleaseLabelCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ReleaseLabels'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.ListReleaseLabelsResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.ListReleaseLabelsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.GetEMRAutoTerminationPolicyCmdlet">
+            <summary>
+            Returns the auto-termination policy for an Amazon EMR cluster.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRAutoTerminationPolicyCmdlet.ClusterId">
+            <summary>
+            <para>
+            <para>Specifies the ID of the Amazon EMR cluster for which the auto-termination policy will
+            be fetched.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRAutoTerminationPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AutoTerminationPolicy'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.GetAutoTerminationPolicyResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.GetAutoTerminationPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRAutoTerminationPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.GetEMRBlockPublicAccessConfigurationCmdlet">
+            <summary>
+            Returns the Amazon EMR block public access configuration for your Amazon Web Services
+            account in the current Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure
+            Block Public Access for Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRBlockPublicAccessConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.GetBlockPublicAccessConfigurationResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.GetBlockPublicAccessConfigurationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.GetEMRBootstrapActionListCmdlet">
+            <summary>
+            Provides information about the bootstrap actions associated with a cluster.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRBootstrapActionListCmdlet.ClusterId">
+            <summary>
+            <para>
+            <para>The cluster identifier for the bootstrap actions to list.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRBootstrapActionListCmdlet.Marker">
+            <summary>
+            <para>
+            <para>The pagination token that indicates the next set of results to retrieve.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-Marker $null' for the first call and '-Marker $AWSHistory.LastServiceResponse.Marker' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRBootstrapActionListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'BootstrapActions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.ListBootstrapActionsResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.ListBootstrapActionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRBootstrapActionListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRBootstrapActionListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of Marker
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.GetEMRClusterCmdlet">
+            <summary>
+            Provides cluster-level details including status, hardware and software configuration,
+            VPC settings, and so on.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRClusterCmdlet.ClusterId">
+            <summary>
+            <para>
+            <para>The identifier of the cluster to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRClusterCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Cluster'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.DescribeClusterResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.DescribeClusterResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRClusterCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.GetEMRClusterListCmdlet">
+            <summary>
+            Provides the status of all clusters visible to this Amazon Web Services account. Allows
+            you to filter the list of clusters based on certain criteria; for example, filtering
+            by cluster creation date and time or by status. This call returns a maximum of 50
+            clusters in unsorted order per call, but returns a marker to track the paging of the
+            cluster list across multiple ListClusters calls.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRClusterListCmdlet.ClusterState">
+            <summary>
+            <para>
+            <para>The cluster state filters to apply when listing clusters. Clusters that change state
+            while this action runs may be not be returned as expected in the list of clusters.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRClusterListCmdlet.CreatedAfter">
+            <summary>
+            <para>
+            <para>The creation date and time beginning value filter for listing clusters.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRClusterListCmdlet.CreatedBefore">
+            <summary>
+            <para>
+            <para>The creation date and time end value filter for listing clusters.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRClusterListCmdlet.Marker">
+            <summary>
+            <para>
+            <para>The pagination token that indicates the next set of results to retrieve.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-Marker $null' for the first call and '-Marker $AWSHistory.LastServiceResponse.Marker' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRClusterListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Clusters'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.ListClustersResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.ListClustersResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRClusterListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of Marker
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.GetEMRInstanceFleetListCmdlet">
+            <summary>
+            Lists all available details about the instance fleets in a cluster.
+            
+             <note><para>
+            The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+            later, excluding 5.0.x versions.
+            </para></note><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRInstanceFleetListCmdlet.ClusterId">
+            <summary>
+            <para>
+            <para>The unique identifier of the cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRInstanceFleetListCmdlet.Marker">
+            <summary>
+            <para>
+            <para>The pagination token that indicates the next set of results to retrieve.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-Marker $null' for the first call and '-Marker $AWSHistory.LastServiceResponse.Marker' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRInstanceFleetListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'InstanceFleets'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.ListInstanceFleetsResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.ListInstanceFleetsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRInstanceFleetListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRInstanceFleetListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of Marker
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.GetEMRInstanceGroupListCmdlet">
+            <summary>
+            Provides all available details about the instance groups in a cluster.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRInstanceGroupListCmdlet.ClusterId">
+            <summary>
+            <para>
+            <para>The identifier of the cluster for which to list the instance groups.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRInstanceGroupListCmdlet.Marker">
+            <summary>
+            <para>
+            <para>The pagination token that indicates the next set of results to retrieve.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-Marker $null' for the first call and '-Marker $AWSHistory.LastServiceResponse.Marker' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRInstanceGroupListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'InstanceGroups'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.ListInstanceGroupsResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.ListInstanceGroupsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRInstanceGroupListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRInstanceGroupListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of Marker
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.GetEMRInstanceListCmdlet">
+            <summary>
+            Provides information for all active EC2 instances and EC2 instances terminated in
+            the last 30 days, up to a maximum of 2,000. EC2 instances in any of the following
+            states are considered active: AWAITING_FULFILLMENT, PROVISIONING, BOOTSTRAPPING, RUNNING.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRInstanceListCmdlet.ClusterId">
+            <summary>
+            <para>
+            <para>The identifier of the cluster for which to list the instances.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRInstanceListCmdlet.InstanceFleetId">
+            <summary>
+            <para>
+            <para>The unique identifier of the instance fleet.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRInstanceListCmdlet.InstanceFleetType">
+            <summary>
+            <para>
+            <para>The node type of the instance fleet. For example MASTER, CORE, or TASK.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRInstanceListCmdlet.InstanceGroupId">
+            <summary>
+            <para>
+            <para>The identifier of the instance group for which to list the instances.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRInstanceListCmdlet.InstanceGroupType">
+            <summary>
+            <para>
+            <para>The type of instance group for which to list the instances.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRInstanceListCmdlet.InstanceState">
+            <summary>
+            <para>
+            <para>A list of instance states that will filter the instances returned with this request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRInstanceListCmdlet.Marker">
+            <summary>
+            <para>
+            <para>The pagination token that indicates the next set of results to retrieve.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-Marker $null' for the first call and '-Marker $AWSHistory.LastServiceResponse.Marker' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRInstanceListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Instances'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.ListInstancesResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.ListInstancesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRInstanceListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the InstanceGroupId parameter.
+            The -PassThru parameter is deprecated, use -Select '^InstanceGroupId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRInstanceListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of Marker
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.GetEMRJobFlowCmdlet">
+            <summary>
+            This API is no longer supported and will eventually be removed. We recommend you use
+            <a>ListClusters</a>, <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a>
+            and <a>ListBootstrapActions</a> instead.
+            
+             
+            <para>
+            DescribeJobFlows returns a list of job flows that match all of the supplied parameters.
+            The parameters can include a list of job flow IDs, job flow states, and restrictions
+            on job flow creation date and time.
+            </para><para>
+            Regardless of supplied parameters, only job flows created within the last two months
+            are returned.
+            </para><para>
+            If no parameters are supplied, then job flows matching either of the following criteria
+            are returned:
+            </para><ul><li><para>
+            Job flows created and completed in the last two weeks
+            </para></li><li><para>
+             Job flows created within the last two months that are in one of the following states:
+            <code>RUNNING</code>, <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code></para></li></ul><para>
+            Amazon EMR can return a maximum of 512 job flow descriptions.
+            </para><br/><br/>This operation is deprecated.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRJobFlowCmdlet.CreatedAfter">
+            <summary>
+            <para>
+            <para>Return only job flows created after this date and time.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRJobFlowCmdlet.CreatedBefore">
+            <summary>
+            <para>
+            <para>Return only job flows created before this date and time.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRJobFlowCmdlet.JobFlowId">
+            <summary>
+            <para>
+            <para>Return only job flows whose job flow ID is contained in this list.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRJobFlowCmdlet.JobFlowState">
+            <summary>
+            <para>
+            <para>Return only job flows whose state is contained in this list.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRJobFlowCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'JobFlows'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.DescribeJobFlowsResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.DescribeJobFlowsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRJobFlowCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobFlowId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobFlowId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.GetEMRManagedScalingPolicyCmdlet">
+            <summary>
+            Fetches the attached managed scaling policy for an Amazon EMR cluster.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRManagedScalingPolicyCmdlet.ClusterId">
+            <summary>
+            <para>
+            <para>Specifies the ID of the cluster for which the managed scaling policy will be fetched.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRManagedScalingPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ManagedScalingPolicy'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.GetManagedScalingPolicyResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.GetManagedScalingPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRManagedScalingPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.GetEMRNotebookExecutionCmdlet">
+            <summary>
+            Provides details of a notebook execution.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRNotebookExecutionCmdlet.NotebookExecutionId">
+            <summary>
+            <para>
+            <para>The unique identifier of the notebook execution.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRNotebookExecutionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'NotebookExecution'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.DescribeNotebookExecutionResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.DescribeNotebookExecutionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRNotebookExecutionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the NotebookExecutionId parameter.
+            The -PassThru parameter is deprecated, use -Select '^NotebookExecutionId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.GetEMRNotebookExecutionListCmdlet">
+            <summary>
+            Provides summaries of all notebook executions. You can filter the list based on multiple
+            criteria such as status, time range, and editor id. Returns a maximum of 50 notebook
+            executions and a marker to track the paging of a longer notebook execution list across
+            multiple <code>ListNotebookExecution</code> calls.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRNotebookExecutionListCmdlet.EditorId">
+            <summary>
+            <para>
+            <para>The unique ID of the editor associated with the notebook execution.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRNotebookExecutionListCmdlet.From">
+            <summary>
+            <para>
+            <para>The beginning of time range filter for listing notebook executions. The default is
+            the timestamp of 30 days ago.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRNotebookExecutionListCmdlet.Status">
+            <summary>
+            <para>
+            <para>The status filter for listing notebook executions.</para><ul><li><para><code>START_PENDING</code> indicates that the cluster has received the execution
+            request but execution has not begun.</para></li><li><para><code>STARTING</code> indicates that the execution is starting on the cluster.</para></li><li><para><code>RUNNING</code> indicates that the execution is being processed by the cluster.</para></li><li><para><code>FINISHING</code> indicates that execution processing is in the final stages.</para></li><li><para><code>FINISHED</code> indicates that the execution has completed without error.</para></li><li><para><code>FAILING</code> indicates that the execution is failing and will not finish
+            successfully.</para></li><li><para><code>FAILED</code> indicates that the execution failed.</para></li><li><para><code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code>
+            request and the stop is pending.</para></li><li><para><code>STOPPING</code> indicates that the cluster is in the process of stopping the
+            execution as a result of a <code>StopNotebookExecution</code> request.</para></li><li><para><code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code>
+            request.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRNotebookExecutionListCmdlet.To">
+            <summary>
+            <para>
+            <para>The end of time range filter for listing notebook executions. The default is the current
+            timestamp.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRNotebookExecutionListCmdlet.Marker">
+            <summary>
+            <para>
+            <para>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call,
+            that indicates the start of the list for this <code>ListNotebookExecutions</code>
+            call.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-Marker $null' for the first call and '-Marker $AWSHistory.LastServiceResponse.Marker' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRNotebookExecutionListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'NotebookExecutions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.ListNotebookExecutionsResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.ListNotebookExecutionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRNotebookExecutionListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of Marker
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.GetEMRReleaseLabelCmdlet">
+            <summary>
+            Provides EMR release label details, such as releases available the region where the
+            API request is run, and the available applications for a specific EMR release label.
+            Can also list EMR release versions that support a specified version of Spark.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRReleaseLabelCmdlet.ReleaseLabel">
+            <summary>
+            <para>
+            <para>The target release label to be described.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRReleaseLabelCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Reserved for future use. Currently set to null.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRReleaseLabelCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token. Reserved for future use. Currently set to null.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRReleaseLabelCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.DescribeReleaseLabelResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.DescribeReleaseLabelResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRReleaseLabelCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ReleaseLabel parameter.
+            The -PassThru parameter is deprecated, use -Select '^ReleaseLabel' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.GetEMRSecurityConfigurationCmdlet">
+            <summary>
+            Provides the details of a security configuration by returning the configuration JSON.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRSecurityConfigurationCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the security configuration.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRSecurityConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.DescribeSecurityConfigurationResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.DescribeSecurityConfigurationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRSecurityConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.GetEMRSecurityConfigurationListCmdlet">
+            <summary>
+            Lists all the security configurations visible to this account, providing their creation
+            dates and times, and their names. This call returns a maximum of 50 clusters per call,
+            but returns a marker to track the paging of the cluster list across multiple ListSecurityConfigurations
+            calls.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRSecurityConfigurationListCmdlet.Marker">
+            <summary>
+            <para>
+            <para>The pagination token that indicates the set of results to retrieve.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-Marker $null' for the first call and '-Marker $AWSHistory.LastServiceResponse.Marker' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRSecurityConfigurationListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SecurityConfigurations'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.ListSecurityConfigurationsResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.ListSecurityConfigurationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRSecurityConfigurationListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of Marker
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.GetEMRStepCmdlet">
+            <summary>
+            Provides more detail about the cluster step.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStepCmdlet.ClusterId">
+            <summary>
+            <para>
+            <para>The identifier of the cluster with steps to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStepCmdlet.StepId">
+            <summary>
+            <para>
+            <para>The identifier of the step to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStepCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Step'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.DescribeStepResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.DescribeStepResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStepCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the StepId parameter.
+            The -PassThru parameter is deprecated, use -Select '^StepId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.GetEMRStepListCmdlet">
+            <summary>
+            Provides a list of steps for the cluster in reverse order unless you specify <code>stepIds</code>
+            with the request or filter by <code>StepStates</code>. You can specify a maximum of
+            10 <code>stepIDs</code>. The CLI automatically paginates results to return a list
+            greater than 50 steps. To return more than 50 steps using the CLI, specify a <code>Marker</code>,
+            which is a pagination token that indicates the next set of steps to retrieve.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStepListCmdlet.ClusterId">
+            <summary>
+            <para>
+            <para>The identifier of the cluster for which to list the steps.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStepListCmdlet.StepId">
+            <summary>
+            <para>
+            <para>The filter to limit the step list based on the identifier of the steps. You can specify
+            a maximum of ten Step IDs. The character constraint applies to the overall length
+            of the array.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStepListCmdlet.StepState">
+            <summary>
+            <para>
+            <para>The filter to limit the step list based on certain states.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStepListCmdlet.Marker">
+            <summary>
+            <para>
+            <para>The maximum number of steps that a single <code>ListSteps</code> action returns is
+            50. To return a longer list of steps, use multiple <code>ListSteps</code> actions
+            along with the <code>Marker</code> parameter, which is a pagination token that indicates
+            the next set of results to retrieve.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-Marker $null' for the first call and '-Marker $AWSHistory.LastServiceResponse.Marker' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStepListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Steps'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.ListStepsResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.ListStepsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStepListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStepListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of Marker
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.GetEMRStudioCmdlet">
+            <summary>
+            Returns details for the specified Amazon EMR Studio including ID, Name, VPC, Studio
+            access URL, and so on.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStudioCmdlet.StudioId">
+            <summary>
+            <para>
+            <para>The Amazon EMR Studio ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStudioCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Studio'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.DescribeStudioResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.DescribeStudioResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStudioCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the StudioId parameter.
+            The -PassThru parameter is deprecated, use -Select '^StudioId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.GetEMRStudioListCmdlet">
+            <summary>
+            Returns a list of all Amazon EMR Studios associated with the Amazon Web Services account.
+            The list includes details such as ID, Studio Access URL, and creation time for each
+            Studio.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStudioListCmdlet.Marker">
+            <summary>
+            <para>
+            <para>The pagination token that indicates the set of results to retrieve.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-Marker $null' for the first call and '-Marker $AWSHistory.LastServiceResponse.Marker' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStudioListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Studios'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.ListStudiosResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.ListStudiosResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStudioListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of Marker
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.GetEMRStudioSessionMappingCmdlet">
+            <summary>
+            Fetches mapping details for the specified Amazon EMR Studio and identity (user or
+            group).
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStudioSessionMappingCmdlet.IdentityId">
+            <summary>
+            <para>
+            <para>The globally unique identifier (GUID) of the user or group. For more information,
+            see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a>
+            and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a>
+            in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code>
+            or <code>IdentityId</code> must be specified.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStudioSessionMappingCmdlet.IdentityName">
+            <summary>
+            <para>
+            <para>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
+            and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
+            in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code>
+            or <code>IdentityId</code> must be specified.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStudioSessionMappingCmdlet.IdentityType">
+            <summary>
+            <para>
+            <para>Specifies whether the identity to fetch is a user or a group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStudioSessionMappingCmdlet.StudioId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon EMR Studio.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStudioSessionMappingCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SessionMapping'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.GetStudioSessionMappingResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.GetStudioSessionMappingResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.GetEMRStudioSessionMappingListCmdlet">
+            <summary>
+            Returns a list of all user or group session mappings for the Amazon EMR Studio specified
+            by <code>StudioId</code>.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStudioSessionMappingListCmdlet.IdentityType">
+            <summary>
+            <para>
+            <para>Specifies whether to return session mappings for users or groups. If not specified,
+            the results include session mapping details for both users and groups.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStudioSessionMappingListCmdlet.StudioId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon EMR Studio.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStudioSessionMappingListCmdlet.Marker">
+            <summary>
+            <para>
+            <para>The pagination token that indicates the set of results to retrieve.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-Marker $null' for the first call and '-Marker $AWSHistory.LastServiceResponse.Marker' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStudioSessionMappingListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SessionMappings'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.ListStudioSessionMappingsResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.ListStudioSessionMappingsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.GetEMRStudioSessionMappingListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of Marker
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.NewEMRSecurityConfigurationCmdlet">
+            <summary>
+            Creates a security configuration, which is stored in the service and can be specified
+            when a cluster is created.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRSecurityConfigurationCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the security configuration.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRSecurityConfigurationCmdlet.SecurityConfiguration">
+            <summary>
+            <para>
+            <para>The security configuration details in JSON format. For JSON parameters and examples,
+            see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use
+            Security Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management
+            Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRSecurityConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.CreateSecurityConfigurationResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.CreateSecurityConfigurationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRSecurityConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SecurityConfiguration parameter.
+            The -PassThru parameter is deprecated, use -Select '^SecurityConfiguration' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRSecurityConfigurationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.NewEMRStudioCmdlet">
+            <summary>
+            Creates a new Amazon EMR Studio.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRStudioCmdlet.AuthMode">
+            <summary>
+            <para>
+            <para>Specifies whether the Studio authenticates users using IAM or Amazon Web Services
+            SSO.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRStudioCmdlet.DefaultS3Location">
+            <summary>
+            <para>
+            <para>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRStudioCmdlet.Description">
+            <summary>
+            <para>
+            <para>A detailed description of the Amazon EMR Studio.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRStudioCmdlet.EngineSecurityGroupId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon EMR Studio Engine security group. The Engine security group allows
+            inbound network traffic from the Workspace security group, and it must be in the same
+            VPC specified by <code>VpcId</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRStudioCmdlet.IdpAuthUrl">
+            <summary>
+            <para>
+            <para>The authentication endpoint of your identity provider (IdP). Specify this value when
+            you use IAM authentication and want to let federated users log in to a Studio with
+            the Studio URL and credentials from your IdP. Amazon EMR Studio redirects users to
+            this endpoint to enter credentials.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRStudioCmdlet.IdpRelayStateParameterName">
+            <summary>
+            <para>
+            <para>The name that your identity provider (IdP) uses for its <code>RelayState</code> parameter.
+            For example, <code>RelayState</code> or <code>TargetSource</code>. Specify this value
+            when you use IAM authentication and want to let federated users log in to a Studio
+            using the Studio URL. The <code>RelayState</code> parameter differs by IdP.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRStudioCmdlet.Name">
+            <summary>
+            <para>
+            <para>A descriptive name for the Amazon EMR Studio.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRStudioCmdlet.ServiceRole">
+            <summary>
+            <para>
+            <para>The IAM role that the Amazon EMR Studio assumes. The service role provides a way for
+            Amazon EMR Studio to interoperate with other Amazon Web Services services.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRStudioCmdlet.SubnetId">
+            <summary>
+            <para>
+            <para>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a
+            maximum of 5 subnets. The subnets must belong to the VPC specified by <code>VpcId</code>.
+            Studio users can create a Workspace in any of the specified subnets.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRStudioCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value
+            pairs that consist of a required key string with a maximum of 128 characters, and
+            an optional value string with a maximum of 256 characters.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRStudioCmdlet.UserRole">
+            <summary>
+            <para>
+            <para>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio.
+            Only specify a <code>UserRole</code> when you use Amazon Web Services SSO authentication.
+            The permissions attached to the <code>UserRole</code> can be scoped down for each
+            user or group using session policies.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRStudioCmdlet.VpcId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the Studio.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRStudioCmdlet.WorkspaceSecurityGroupId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon EMR Studio Workspace security group. The Workspace security group
+            allows outbound network traffic to resources in the Engine security group, and it
+            must be in the same VPC specified by <code>VpcId</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRStudioCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.CreateStudioResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.CreateStudioResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRStudioCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.NewEMRStudioSessionMappingCmdlet">
+            <summary>
+            Maps a user or group to the Amazon EMR Studio specified by <code>StudioId</code>,
+            and applies a session policy to refine Studio permissions for that user or group.
+            Use <code>CreateStudioSessionMapping</code> to assign users to a Studio when you use
+            Amazon Web Services SSO authentication. For instructions on how to assign users to
+            a Studio when you use IAM authentication, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-manage-users.html#emr-studio-assign-users-groups">Assign
+            a user or group to your EMR Studio</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRStudioSessionMappingCmdlet.IdentityId">
+            <summary>
+            <para>
+            <para>The globally unique identifier (GUID) of the user or group from the Amazon Web Services
+            SSO Identity Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a>
+            and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a>
+            in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code>
+            or <code>IdentityId</code> must be specified, but not both.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRStudioSessionMappingCmdlet.IdentityName">
+            <summary>
+            <para>
+            <para>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
+            and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
+            in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code>
+            or <code>IdentityId</code> must be specified, but not both.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRStudioSessionMappingCmdlet.IdentityType">
+            <summary>
+            <para>
+            <para>Specifies whether the identity to map to the Amazon EMR Studio is a user or a group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRStudioSessionMappingCmdlet.SessionPolicyArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) for the session policy that will be applied to the
+            user or group. You should specify the ARN for the session policy that you want to
+            apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create
+            an EMR Studio User Role with Session Policies</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRStudioSessionMappingCmdlet.StudioId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon EMR Studio to which the user or group will be mapped.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRStudioSessionMappingCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.CreateStudioSessionMappingResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.NewEMRStudioSessionMappingCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRAutoScalingPolicyCmdlet">
+            <summary>
+            Removes an automatic scaling policy from a specified instance group within an EMR
+            cluster.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRAutoScalingPolicyCmdlet.ClusterId">
+            <summary>
+            <para>
+            <para>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
+            is applied is within this cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRAutoScalingPolicyCmdlet.InstanceGroupId">
+            <summary>
+            <para>
+            <para>Specifies the ID of the instance group to which the scaling policy is applied.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRAutoScalingPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.RemoveAutoScalingPolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRAutoScalingPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRAutoScalingPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRAutoTerminationPolicyCmdlet">
+            <summary>
+            Removes an auto-termination policy from an Amazon EMR cluster.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRAutoTerminationPolicyCmdlet.ClusterId">
+            <summary>
+            <para>
+            <para>Specifies the ID of the Amazon EMR cluster from which the auto-termination policy
+            will be removed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRAutoTerminationPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.RemoveAutoTerminationPolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRAutoTerminationPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRAutoTerminationPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRManagedScalingPolicyCmdlet">
+            <summary>
+            Removes a managed scaling policy from a specified EMR cluster.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRManagedScalingPolicyCmdlet.ClusterId">
+            <summary>
+            <para>
+            <para> Specifies the ID of the cluster from which the managed scaling policy will be removed.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRManagedScalingPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.RemoveManagedScalingPolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRManagedScalingPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRManagedScalingPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRResourceTagCmdlet">
+            <summary>
+            Removes tags from an Amazon EMR resource, such as a cluster or Amazon EMR Studio.
+            Tags make it easier to associate resources in various ways, such as grouping clusters
+            to track your Amazon EMR resource allocation costs. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag
+            Clusters</a>. 
+            
+             
+            <para>
+            The following example removes the stack tag with value Prod from a cluster:
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRResourceTagCmdlet.ResourceId">
+            <summary>
+            <para>
+            <para>The Amazon EMR resource identifier from which tags will be removed. For example, a
+            cluster identifier or an Amazon EMR Studio ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>A list of tag keys to remove from the resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.RemoveTagsResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRResourceTagCmdlet.PassThru">
+            <summary>
+            Returns the collection of Tag keys that were removed
+            The -PassThru parameter is deprecated, use -Select instead. This parameter will be removed in future
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRSecurityConfigurationCmdlet">
+            <summary>
+            Deletes a security configuration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRSecurityConfigurationCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the security configuration.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRSecurityConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.DeleteSecurityConfigurationResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRSecurityConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRSecurityConfigurationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRStudioCmdlet">
+            <summary>
+            Removes an Amazon EMR Studio from the Studio metadata store.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRStudioCmdlet.StudioId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon EMR Studio.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRStudioCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.DeleteStudioResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRStudioCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the StudioId parameter.
+            The -PassThru parameter is deprecated, use -Select '^StudioId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRStudioCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRStudioSessionMappingCmdlet">
+            <summary>
+            Removes a user or group from an Amazon EMR Studio.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRStudioSessionMappingCmdlet.IdentityId">
+            <summary>
+            <para>
+            <para>The globally unique identifier (GUID) of the user or group to remove from the Amazon
+            EMR Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a>
+            and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a>
+            in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code>
+            or <code>IdentityId</code> must be specified.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRStudioSessionMappingCmdlet.IdentityName">
+            <summary>
+            <para>
+            <para>The name of the user name or group to remove from the Amazon EMR Studio. For more
+            information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
+            and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
+            in the <i>Amazon Web Services SSO Store API Reference</i>. Either <code>IdentityName</code>
+            or <code>IdentityId</code> must be specified.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRStudioSessionMappingCmdlet.IdentityType">
+            <summary>
+            <para>
+            <para>Specifies whether the identity to delete from the Amazon EMR Studio is a user or a
+            group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRStudioSessionMappingCmdlet.StudioId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon EMR Studio.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRStudioSessionMappingCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.DeleteStudioSessionMappingResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.RemoveEMRStudioSessionMappingCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.SetEMRTerminationProtectionCmdlet">
+            <summary>
+            SetTerminationProtection locks a cluster (job flow) so the EC2 instances in the cluster
+            cannot be terminated by user intervention, an API call, or in the event of a job-flow
+            error. The cluster still terminates upon successful completion of the job flow. Calling
+            <code>SetTerminationProtection</code> on a cluster is similar to calling the Amazon
+            EC2 <code>DisableAPITermination</code> API on all EC2 instances in a cluster.
+            
+             
+            <para><code>SetTerminationProtection</code> is used to prevent accidental termination of
+            a cluster and to ensure that in the event of an error, the instances persist so that
+            you can recover any data stored in their ephemeral instance storage.
+            </para><para>
+             To terminate a cluster that has been locked by setting <code>SetTerminationProtection</code>
+            to <code>true</code>, you must first unlock the job flow by a subsequent call to <code>SetTerminationProtection</code>
+            in which you set the value to <code>false</code>. 
+            </para><para>
+             For more information, see<a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminationProtection.html">Managing
+            Cluster Termination</a> in the <i>Amazon EMR Management Guide</i>. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.SetEMRTerminationProtectionCmdlet.JobFlowId">
+            <summary>
+            <para>
+            <para> A list of strings that uniquely identify the clusters to protect. This identifier
+            is returned by <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a>
+            . </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.SetEMRTerminationProtectionCmdlet.TerminationProtected">
+            <summary>
+            <para>
+            <para>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2
+            instances in the cluster from shutting down due to API calls, user intervention, or
+            job-flow error.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.SetEMRTerminationProtectionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.SetTerminationProtectionResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.SetEMRTerminationProtectionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobFlowId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobFlowId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.SetEMRTerminationProtectionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.SetEMRVisibleToAllUserCmdlet">
+            <summary>
+            <important><para>
+            The SetVisibleToAllUsers parameter is no longer supported. Your cluster may be visible
+            to all users in your account. To restrict cluster access using an IAM policy, see
+            <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html">Identity
+            and Access Management for EMR</a>. 
+            </para></important><para>
+            Sets the <a>Cluster$VisibleToAllUsers</a> value for an EMR cluster. When <code>true</code>,
+            IAM principals in the Amazon Web Services account can perform EMR cluster actions
+            that their IAM policies allow. When <code>false</code>, only the IAM principal that
+            created the cluster and the Amazon Web Services account root user can perform EMR
+            actions on the cluster, regardless of IAM permissions policies attached to other IAM
+            principals.
+            </para><para>
+            This action works on running clusters. When you create a cluster, use the <a>RunJobFlowInput$VisibleToAllUsers</a>
+            parameter.
+            </para><para>
+            For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
+            the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.SetEMRVisibleToAllUserCmdlet.JobFlowId">
+            <summary>
+            <para>
+            <para>The unique identifier of the job flow (cluster).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.SetEMRVisibleToAllUserCmdlet.VisibleToAllUser">
+            <summary>
+            <para>
+            <para>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services
+            account can perform EMR actions on the cluster that the IAM policies attached to the
+            principal allow. A value of <code>false</code> indicates that only the IAM principal
+            that created the cluster and the Amazon Web Services root user can perform EMR actions
+            on the cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.SetEMRVisibleToAllUserCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.SetVisibleToAllUsersResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.SetEMRVisibleToAllUserCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobFlowId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobFlowId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.SetEMRVisibleToAllUserCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet">
+            <summary>
+            RunJobFlow creates and starts running a new cluster (job flow). The cluster runs the
+            steps specified. After the steps complete, the cluster stops and the HDFS partition
+            is lost. To prevent loss of data, configure the last step of the job flow to store
+            results in Amazon S3. If the <a>JobFlowInstancesConfig</a><code>KeepJobFlowAliveWhenNoSteps</code>
+            parameter is set to <code>TRUE</code>, the cluster transitions to the WAITING state
+            rather than shutting down after the steps have completed. 
+            
+             
+            <para>
+            For additional protection, you can set the <a>JobFlowInstancesConfig</a><code>TerminationProtected</code>
+            parameter to <code>TRUE</code> to lock the cluster and prevent it from being terminated
+            by API call, user intervention, or in the event of a job flow error.
+            </para><para>
+            A maximum of 256 steps are allowed in each job flow.
+            </para><para>
+            If your cluster is long-running (such as a Hive data warehouse) or complex, you may
+            require more than 256 steps to process your data. You can bypass the 256-step limitation
+            in various ways, including using the SSH shell to connect to the master node and submitting
+            queries directly to the software running on the master node, such as Hive and Hadoop.
+            For more information on how to do this, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add
+            More than 256 Steps to a Cluster</a> in the <i>Amazon EMR Management Guide</i>.
+            </para><para>
+            For long running clusters, we recommend that you periodically store your results.
+            </para><note><para>
+            The instance fleets configuration is available only in Amazon EMR versions 4.8.0 and
+            later, excluding 5.0.x versions. The RunJobFlow request can contain InstanceFleets
+            parameters or InstanceGroups parameters, but not both.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.AdditionalInfo">
+            <summary>
+            <para>
+            <para>A JSON string for selecting additional features.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.Instances_AdditionalMasterSecurityGroup">
+            <summary>
+            <para>
+            <para>A list of additional Amazon EC2 security group IDs for the master node.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.Instances_AdditionalSlaveSecurityGroup">
+            <summary>
+            <para>
+            <para>A list of additional Amazon EC2 security group IDs for the core and task nodes.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.KerberosAttributes_ADDomainJoinPassword">
+            <summary>
+            <para>
+            <para>The Active Directory password for <code>ADDomainJoinUser</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.KerberosAttributes_ADDomainJoinUser">
+            <summary>
+            <para>
+            <para>Required only when establishing a cross-realm trust with an Active Directory domain.
+            A user with sufficient privileges to join resources to the domain.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.AmiVersion">
+            <summary>
+            <para>
+            <para>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
+            later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.Application">
+            <summary>
+            <para>
+            <para>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications
+            for Amazon EMR to install and configure when launching the cluster. For a list of
+            applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon
+            EMRRelease Guide</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.AutoScalingRole">
+            <summary>
+            <para>
+            <para>An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>.
+            The IAM role provides permissions that the automatic scaling feature requires to launch
+            and terminate EC2 instances in an instance group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.Instances_Placement_AvailabilityZone">
+            <summary>
+            <para>
+            <para>The Amazon EC2 Availability Zone for the cluster. <code>AvailabilityZone</code> is
+            used for uniform instance groups, while <code>AvailabilityZones</code> (plural) is
+            used for instance fleets.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.Instances_Placement_AvailabilityZones">
+            <summary>
+            <para>
+            <para>When multiple Availability Zones are specified, Amazon EMR evaluates them and launches
+            instances in the optimal Availability Zone. <code>AvailabilityZones</code> is used
+            for instance fleets, while <code>AvailabilityZone</code> (singular) is used for uniform
+            instance groups.</para><note><para>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+            later, excluding 5.0.x versions.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.BootstrapAction">
+            <summary>
+            <para>
+            <para>A list of bootstrap actions to run before Hadoop starts on the cluster nodes.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.Configuration">
+            <summary>
+            <para>
+            <para>For Amazon EMR releases 4.0 and later. The list of configurations supplied for the
+            EMR cluster you are creating.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.KerberosAttributes_CrossRealmTrustPrincipalPassword">
+            <summary>
+            <para>
+            <para>Required only when establishing a cross-realm trust with a KDC in a different realm.
+            The cross-realm principal password, which must be identical across realms.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.CustomAmiId">
+            <summary>
+            <para>
+            <para>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed
+            Linux AMI. If specified, Amazon EMR uses this AMI when it launches cluster EC2 instances.
+            For more information about custom AMIs in Amazon EMR, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
+            a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the cluster
+            uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For Amazon EMR
+            versions 2.x and 3.x, use <code>AmiVersion</code> instead.</para><para>For information about creating a custom AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
+            an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide
+            for Linux Instances</i>. For information about finding an AMI ID, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
+            a Linux AMI</a>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.EbsRootVolumeSize">
+            <summary>
+            <para>
+            <para>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used
+            for each EC2 instance. Available in Amazon EMR version 4.x and later.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.Instances_Ec2KeyName">
+            <summary>
+            <para>
+            <para>The name of the EC2 key pair that can be used to connect to the master node using
+            SSH as the user called "hadoop."</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.Instances_Ec2SubnetId">
+            <summary>
+            <para>
+            <para>Applies to clusters that use the uniform instance group configuration. To launch the
+            cluster in Amazon Virtual Private Cloud (Amazon VPC), set this parameter to the identifier
+            of the Amazon VPC subnet where you want the cluster to launch. If you do not specify
+            this value and your account supports EC2-Classic, the cluster launches in EC2-Classic.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.Instances_Ec2SubnetIds">
+            <summary>
+            <para>
+            <para>Applies to clusters that use the instance fleet configuration. When multiple EC2 subnet
+            IDs are specified, Amazon EMR evaluates them and launches instances in the optimal
+            subnet.</para><note><para>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+            later, excluding 5.0.x versions.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.Instances_EmrManagedMasterSecurityGroup">
+            <summary>
+            <para>
+            <para>The identifier of the Amazon EC2 security group for the master node. If you specify
+            <code>EmrManagedMasterSecurityGroup</code>, you must also specify <code>EmrManagedSlaveSecurityGroup</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.Instances_EmrManagedSlaveSecurityGroup">
+            <summary>
+            <para>
+            <para>The identifier of the Amazon EC2 security group for the core and task nodes. If you
+            specify <code>EmrManagedSlaveSecurityGroup</code>, you must also specify <code>EmrManagedMasterSecurityGroup</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.Instances_HadoopVersion">
+            <summary>
+            <para>
+            <para>Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for
+            the cluster. Valid inputs are "0.18" (no longer maintained), "0.20" (no longer maintained),
+            "0.20.205" (no longer maintained), "1.0.3", "2.2.0", or "2.4.0". If you do not set
+            this value, the default of 0.18 is used, unless the <code>AmiVersion</code> parameter
+            is set in the RunJobFlow call, in which case the default version of Hadoop for that
+            AMI version is used.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.AutoTerminationPolicy_IdleTimeout">
+            <summary>
+            <para>
+            <para>Specifies the amount of idle time in seconds after which the cluster automatically
+            terminates. You can specify a minimum of 60 seconds and a maximum of 604800 seconds
+            (seven days).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.Instances_InstanceCount">
+            <summary>
+            <para>
+            <para>The number of EC2 instances in the cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.Instances_InstanceFleet">
+            <summary>
+            <para>
+            <note><para>The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+            later, excluding 5.0.x versions.</para></note><para>Describes the EC2 instances and instance configurations for clusters that use the
+            instance fleet configuration.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.Instances_InstanceGroup">
+            <summary>
+            <para>
+            <para>Configuration for the instance groups in a cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.JobFlowRole">
+            <summary>
+            <para>
+            <para>Also called instance profile and EC2 role. An IAM role for an EMR cluster. The EC2
+            instances of the cluster assume this role. The default role is <code>EMR_EC2_DefaultRole</code>.
+            In order to use the default role, you must have already created it using the CLI or
+            console.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.KerberosAttributes_KdcAdminPassword">
+            <summary>
+            <para>
+            <para>The password used within the cluster for the kadmin service on the cluster-dedicated
+            KDC, which maintains Kerberos principals, password policies, and keytabs for the cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.Instances_KeepJobFlowAliveWhenNoStep">
+            <summary>
+            <para>
+            <para>Specifies whether the cluster should remain available after completing all steps.
+            Defaults to <code>true</code>. For more information about configuring cluster termination,
+            see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control
+            Cluster Termination</a> in the <i>EMR Management Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.LogEncryptionKmsKeyId">
+            <summary>
+            <para>
+            <para>The KMS key used for encrypting log files. If a value is not provided, the logs remain
+            encrypted by AES-256. This attribute is only available with Amazon EMR version 5.30.0
+            and later, excluding Amazon EMR 6.0.0.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.LogUri">
+            <summary>
+            <para>
+            <para>The location in Amazon S3 to write the log files of the job flow. If a value is not
+            provided, logs are not created.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.Instances_MasterInstanceType">
+            <summary>
+            <para>
+            <para>The EC2 instance type of the master node.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.ComputeLimits_MaximumCapacityUnit">
+            <summary>
+            <para>
+            <para> The upper boundary of EC2 units. It is measured through vCPU cores or instances for
+            instance groups and measured through units for instance fleets. Managed scaling activities
+            are not allowed beyond this boundary. The limit only applies to the core and task
+            nodes. The master node cannot be scaled after initial configuration. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.ComputeLimits_MaximumCoreCapacityUnit">
+            <summary>
+            <para>
+            <para> The upper boundary of EC2 units for core node type in a cluster. It is measured through
+            vCPU cores or instances for instance groups and measured through units for instance
+            fleets. The core units are not allowed to scale beyond this boundary. The parameter
+            is used to split capacity allocation between core and task nodes. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.ComputeLimits_MaximumOnDemandCapacityUnit">
+            <summary>
+            <para>
+            <para> The upper boundary of On-Demand EC2 units. It is measured through vCPU cores or instances
+            for instance groups and measured through units for instance fleets. The On-Demand
+            units are not allowed to scale beyond this boundary. The parameter is used to split
+            capacity allocation between On-Demand and Spot Instances. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.ComputeLimits_MinimumCapacityUnit">
+            <summary>
+            <para>
+            <para> The lower boundary of EC2 units. It is measured through vCPU cores or instances for
+            instance groups and measured through units for instance fleets. Managed scaling activities
+            are not allowed beyond this boundary. The limit only applies to the core and task
+            nodes. The master node cannot be scaled after initial configuration. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the job flow.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.NewSupportedProduct">
+            <summary>
+            <para>
+            <note><para>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.</para></note><para>A list of strings that indicates third-party software to use with the job flow that
+            accepts a user argument list. EMR accepts and forwards the argument list to the corresponding
+            installation script as bootstrap action arguments. For more information, see "Launch
+            a Job Flow on the MapR Distribution for Hadoop" in the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+            EMR Developer Guide</a>. Supported values are:</para><ul><li><para>"mapr-m3" - launch the cluster using MapR M3 Edition.</para></li><li><para>"mapr-m5" - launch the cluster using MapR M5 Edition.</para></li><li><para>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch
+            the job flow using MapR M3 or M5 Edition respectively.</para></li><li><para>"mapr-m7" - launch the cluster using MapR M7 Edition.</para></li><li><para>"hunk" - launch the cluster with the Hunk Big Data Analytics Platform.</para></li><li><para>"hue"- launch the cluster with Hue installed.</para></li><li><para>"spark" - launch the cluster with Apache Spark installed.</para></li><li><para>"ganglia" - launch the cluster with the Ganglia Monitoring System installed.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.OSReleaseLabel">
+            <summary>
+            <para>
+            <para>Specifies a particular Amazon Linux release for all nodes in a cluster launch RunJobFlow
+            request. If a release is not specified, Amazon EMR uses the latest validated Amazon
+            Linux release for cluster launch.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.PlacementGroupConfig">
+            <summary>
+            <para>
+            <para>The specified placement group configuration for an Amazon EMR cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.KerberosAttributes_Realm">
+            <summary>
+            <para>
+            <para>The name of the Kerberos realm to which all nodes in a cluster belong. For example,
+            <code>EC2.INTERNAL</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.ReleaseLabel">
+            <summary>
+            <para>
+            <para>The Amazon EMR release label, which determines the version of open-source application
+            packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>,
+            where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For
+            more information about Amazon EMR release versions and included application versions
+            and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+            The release label applies only to Amazon EMR releases version 4.0 and later. Earlier
+            versions use <code>AmiVersion</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.RepoUpgradeOnBoot">
+            <summary>
+            <para>
+            <para>Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the
+            Amazon Linux AMI package repositories to apply automatically when the instance boots
+            using the AMI. If omitted, the default is <code>SECURITY</code>, which indicates that
+            only security updates are applied. If <code>NONE</code> is specified, no updates are
+            applied, and all updates must be applied manually.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.ScaleDownBehavior">
+            <summary>
+            <para>
+            <para>Specifies the way that individual Amazon EC2 instances terminate when an automatic
+            scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code>
+            indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless
+            of when the request to terminate the instance was submitted. This option is only available
+            with Amazon EMR 5.1.0 and later and is the default for clusters created using that
+            version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds
+            nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2
+            instances, regardless of the instance-hour boundary. With either behavior, Amazon
+            EMR removes the least active nodes first and blocks instance termination if it could
+            lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only
+            in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
+            earlier than 5.1.0.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.SecurityConfiguration">
+            <summary>
+            <para>
+            <para>The name of a security configuration to apply to the cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.Instances_ServiceAccessSecurityGroup">
+            <summary>
+            <para>
+            <para>The identifier of the Amazon EC2 security group for the Amazon EMR service to access
+            clusters in VPC private subnets.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.ServiceRole">
+            <summary>
+            <para>
+            <para>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources
+            on your behalf.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.Instances_SlaveInstanceType">
+            <summary>
+            <para>
+            <para>The EC2 instance type of the core and task nodes.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.StepConcurrencyLevel">
+            <summary>
+            <para>
+            <para>Specifies the number of steps that can be executed concurrently. The default value
+            is <code>1</code>. The maximum value is <code>256</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.Step">
+            <summary>
+            <para>
+            <para>A list of steps to run.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.SupportedProduct">
+            <summary>
+            <para>
+            <note><para>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.</para></note><para>A list of strings that indicates third-party software to use. For more information,
+            see the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+            EMR Developer Guide</a>. Currently supported values are:</para><ul><li><para>"mapr-m3" - launch the job flow using MapR M3 Edition.</para></li><li><para>"mapr-m5" - launch the job flow using MapR M5 Edition.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of tags to associate with a cluster and propagate to Amazon EC2 instances.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.Instances_TerminationProtected">
+            <summary>
+            <para>
+            <para>Specifies whether to lock the cluster to prevent the Amazon EC2 instances from being
+            terminated by API call, user intervention, or in the event of a job-flow error.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.ComputeLimits_UnitType">
+            <summary>
+            <para>
+            <para> The unit type used for specifying a managed scaling policy. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.VisibleToAllUser">
+            <summary>
+            <para>
+            <important><para>The VisibleToAllUsers parameter is no longer supported. By default, the value is set
+            to <code>true</code>. Setting it to <code>false</code> now has no effect.</para></important><para>Set this value to <code>true</code> so that IAM principals in the Amazon Web Services
+            account associated with the cluster can perform EMR actions on the cluster that their
+            IAM policies allow. This value defaults to <code>true</code> for clusters created
+            using the EMR API or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
+            command.</para><para>When set to <code>false</code>, only the IAM principal that created the cluster and
+            the Amazon Web Services account root user can perform EMR actions for the cluster,
+            regardless of the IAM permissions policies attached to other IAM principals. For more
+            information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
+            the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'JobFlowId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.RunJobFlowResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.RunJobFlowResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRJobFlowCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.StartEMRNotebookExecutionCmdlet">
+            <summary>
+            Starts a notebook execution.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRNotebookExecutionCmdlet.EditorId">
+            <summary>
+            <para>
+            <para>The unique identifier of the EMR Notebook to use for notebook execution.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRNotebookExecutionCmdlet.ExecutionEngine_Id">
+            <summary>
+            <para>
+            <para>The unique identifier of the execution engine. For an EMR cluster, this is the cluster
+            ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRNotebookExecutionCmdlet.ExecutionEngine_MasterInstanceSecurityGroupId">
+            <summary>
+            <para>
+            <para>An optional unique ID of an EC2 security group to associate with the master instance
+            of the EMR cluster for this notebook execution. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying
+            EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRNotebookExecutionCmdlet.NotebookExecutionName">
+            <summary>
+            <para>
+            <para>An optional name for the notebook execution.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRNotebookExecutionCmdlet.NotebookInstanceSecurityGroupId">
+            <summary>
+            <para>
+            <para>The unique identifier of the Amazon EC2 security group to associate with the EMR Notebook
+            for this notebook execution.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRNotebookExecutionCmdlet.NotebookParam">
+            <summary>
+            <para>
+            <para>Input parameters in JSON format passed to the EMR Notebook at runtime for execution.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRNotebookExecutionCmdlet.RelativePath">
+            <summary>
+            <para>
+            <para>The path and file name of the notebook file for this execution, relative to the path
+            specified for the EMR Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code>
+            when you create an EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code>
+            (the <code>EditorID</code> of this request), and you specify a <code>RelativePath</code>
+            of <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the
+            file for the notebook execution is <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRNotebookExecutionCmdlet.ServiceRole">
+            <summary>
+            <para>
+            <para>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the
+            EMR role) for the notebook execution.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRNotebookExecutionCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of tags associated with a notebook execution. Tags are user-defined key-value
+            pairs that consist of a required key string with a maximum of 128 characters and an
+            optional value string with a maximum of 256 characters.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRNotebookExecutionCmdlet.ExecutionEngine_Type">
+            <summary>
+            <para>
+            <para>The type of execution engine. A value of <code>EMR</code> specifies an EMR cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRNotebookExecutionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'NotebookExecutionId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.StartNotebookExecutionResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.StartNotebookExecutionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StartEMRNotebookExecutionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.StopEMRJobFlowCmdlet">
+            <summary>
+            TerminateJobFlows shuts a list of clusters (job flows) down. When a job flow is shut
+            down, any step not yet completed is canceled and the EC2 instances on which the cluster
+            is running are stopped. Any log files not already saved are uploaded to Amazon S3
+            if a LogUri was specified when the cluster was created.
+            
+             
+            <para>
+            The maximum number of clusters allowed is 10. The call to <code>TerminateJobFlows</code>
+            is asynchronous. Depending on the configuration of the cluster, it may take up to
+            1-5 minutes for the cluster to completely terminate and release allocated resources,
+            such as Amazon EC2 instances.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StopEMRJobFlowCmdlet.JobFlowId">
+            <summary>
+            <para>
+            <para>A list of job flows to be shut down.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StopEMRJobFlowCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.TerminateJobFlowsResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StopEMRJobFlowCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobFlowId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobFlowId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StopEMRJobFlowCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.StopEMRNotebookExecutionCmdlet">
+            <summary>
+            Stops a notebook execution.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StopEMRNotebookExecutionCmdlet.NotebookExecutionId">
+            <summary>
+            <para>
+            <para>The unique identifier of the notebook execution.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StopEMRNotebookExecutionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.StopNotebookExecutionResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StopEMRNotebookExecutionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the NotebookExecutionId parameter.
+            The -PassThru parameter is deprecated, use -Select '^NotebookExecutionId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StopEMRNotebookExecutionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.StopEMRStepCmdlet">
+            <summary>
+            Cancels a pending step or steps in a running cluster. Available only in Amazon EMR
+            versions 4.8.0 and later, excluding version 5.0.0. A maximum of 256 steps are allowed
+            in each CancelSteps request. CancelSteps is idempotent but asynchronous; it does not
+            guarantee that a step will be canceled, even if the request is successfully submitted.
+            When you use Amazon EMR versions 5.28.0 and later, you can cancel steps that are in
+            a <code>PENDING</code> or <code>RUNNING</code> state. In earlier versions of Amazon
+            EMR, you can only cancel steps that are in a <code>PENDING</code> state.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StopEMRStepCmdlet.ClusterId">
+            <summary>
+            <para>
+            <para>The <code>ClusterID</code> for the specified steps that will be canceled. Use <a>RunJobFlow</a>
+            and <a>ListClusters</a> to get ClusterIDs. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StopEMRStepCmdlet.StepCancellationOption">
+            <summary>
+            <para>
+            <para>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is
+            <code>SEND_INTERRUPT</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StopEMRStepCmdlet.StepId">
+            <summary>
+            <para>
+            <para>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps and
+            their states for the specified cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StopEMRStepCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'CancelStepsInfoList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.CancelStepsResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.CancelStepsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StopEMRStepCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.StopEMRStepCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.UpdateEMRStudioCmdlet">
+            <summary>
+            Updates an Amazon EMR Studio configuration, including attributes such as name, description,
+            and subnets.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.UpdateEMRStudioCmdlet.DefaultS3Location">
+            <summary>
+            <para>
+            <para>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR
+            Studio.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.UpdateEMRStudioCmdlet.Description">
+            <summary>
+            <para>
+            <para>A detailed description to assign to the Amazon EMR Studio.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.UpdateEMRStudioCmdlet.Name">
+            <summary>
+            <para>
+            <para>A descriptive name for the Amazon EMR Studio.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.UpdateEMRStudioCmdlet.StudioId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon EMR Studio to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.UpdateEMRStudioCmdlet.SubnetId">
+            <summary>
+            <para>
+            <para>A list of subnet IDs to associate with the Amazon EMR Studio. The list can include
+            new subnet IDs, but must also include all of the subnet IDs previously associated
+            with the Studio. The list order does not matter. A Studio can have a maximum of 5
+            subnets. The subnets must belong to the same VPC as the Studio. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.UpdateEMRStudioCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.UpdateStudioResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.UpdateEMRStudioCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the StudioId parameter.
+            The -PassThru parameter is deprecated, use -Select '^StudioId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.UpdateEMRStudioCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.UpdateEMRStudioSessionMappingCmdlet">
+            <summary>
+            Updates the session policy attached to the user or group for the specified Amazon
+            EMR Studio.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.UpdateEMRStudioSessionMappingCmdlet.IdentityId">
+            <summary>
+            <para>
+            <para>The globally unique identifier (GUID) of the user or group. For more information,
+            see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a>
+            and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a>
+            in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code>
+            or <code>IdentityId</code> must be specified.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.UpdateEMRStudioSessionMappingCmdlet.IdentityName">
+            <summary>
+            <para>
+            <para>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a>
+            and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a>
+            in the <i>Amazon Web Services SSO Identity Store API Reference</i>. Either <code>IdentityName</code>
+            or <code>IdentityId</code> must be specified.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.UpdateEMRStudioSessionMappingCmdlet.IdentityType">
+            <summary>
+            <para>
+            <para>Specifies whether the identity to update is a user or a group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.UpdateEMRStudioSessionMappingCmdlet.SessionPolicyArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the session policy to associate with the specified
+            user or group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.UpdateEMRStudioSessionMappingCmdlet.StudioId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon EMR Studio.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.UpdateEMRStudioSessionMappingCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.UpdateStudioSessionMappingResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.UpdateEMRStudioSessionMappingCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.WriteEMRAutoScalingPolicyCmdlet">
+            <summary>
+            Creates or updates an automatic scaling policy for a core instance group or task instance
+            group in an Amazon EMR cluster. The automatic scaling policy defines how an instance
+            group dynamically adds and terminates EC2 instances in response to the value of a
+            CloudWatch metric.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRAutoScalingPolicyCmdlet.ClusterId">
+            <summary>
+            <para>
+            <para>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
+            is applied is within this cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRAutoScalingPolicyCmdlet.InstanceGroupId">
+            <summary>
+            <para>
+            <para>Specifies the ID of the instance group to which the automatic scaling policy is applied.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRAutoScalingPolicyCmdlet.Constraints_MaxCapacity">
+            <summary>
+            <para>
+            <para>The upper boundary of EC2 instances in an instance group beyond which scaling activities
+            are not allowed to grow. Scale-out activities will not add instances beyond this boundary.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRAutoScalingPolicyCmdlet.Constraints_MinCapacity">
+            <summary>
+            <para>
+            <para>The lower boundary of EC2 instances in an instance group below which scaling activities
+            are not allowed to shrink. Scale-in activities will not terminate instances below
+            this boundary.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRAutoScalingPolicyCmdlet.AutoScalingPolicy_Rule">
+            <summary>
+            <para>
+            <para>The scale-in and scale-out rules that comprise the automatic scaling policy.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRAutoScalingPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.PutAutoScalingPolicyResponse).
+            Specifying the name of a property of type Amazon.ElasticMapReduce.Model.PutAutoScalingPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRAutoScalingPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRAutoScalingPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.WriteEMRAutoTerminationPolicyCmdlet">
+            <summary>
+            <note><para>
+            Auto-termination is supported in Amazon EMR versions 5.30.0 and 6.1.0 and later. For
+            more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-auto-termination-policy.html">Using
+            an auto-termination policy</a>.
+            </para></note><para>
+            Creates or updates an auto-termination policy for an Amazon EMR cluster. An auto-termination
+            policy defines the amount of idle time in seconds after which a cluster automatically
+            terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control
+            cluster termination</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRAutoTerminationPolicyCmdlet.ClusterId">
+            <summary>
+            <para>
+            <para>Specifies the ID of the Amazon EMR cluster to which the auto-termination policy will
+            be attached.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRAutoTerminationPolicyCmdlet.AutoTerminationPolicy_IdleTimeout">
+            <summary>
+            <para>
+            <para>Specifies the amount of idle time in seconds after which the cluster automatically
+            terminates. You can specify a minimum of 60 seconds and a maximum of 604800 seconds
+            (seven days).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRAutoTerminationPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.PutAutoTerminationPolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRAutoTerminationPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRAutoTerminationPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.WriteEMRBlockPublicAccessConfigurationCmdlet">
+            <summary>
+            Creates or updates an Amazon EMR block public access configuration for your Amazon
+            Web Services account in the current Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure
+            Block Public Access for Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRBlockPublicAccessConfigurationCmdlet.BlockPublicAccessConfiguration_BlockPublicSecurityGroupRule">
+            <summary>
+            <para>
+            <para>Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or
+            disabled (<code>false</code>). By default, the value is <code>false</code> for accounts
+            that have created EMR clusters before July 2019. For accounts created after this,
+            the default is <code>true</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRBlockPublicAccessConfigurationCmdlet.BlockPublicAccessConfiguration_PermittedPublicSecurityGroupRuleRange">
+            <summary>
+            <para>
+            <para>Specifies ports and port ranges that are permitted to have security group rules that
+            allow inbound traffic from all public sources. For example, if Port 23 (Telnet) is
+            specified for <code>PermittedPublicSecurityGroupRuleRanges</code>, Amazon EMR allows
+            cluster creation if a security group associated with the cluster has a rule that allows
+            inbound traffic on Port 23 from IPv4 0.0.0.0/0 or IPv6 port ::/0 as the source.</para><para>By default, Port 22, which is used for SSH access to the cluster EC2 instances, is
+            in the list of <code>PermittedPublicSecurityGroupRuleRanges</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRBlockPublicAccessConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.PutBlockPublicAccessConfigurationResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRBlockPublicAccessConfigurationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMR.WriteEMRManagedScalingPolicyCmdlet">
+            <summary>
+            Creates or updates a managed scaling policy for an Amazon EMR cluster. The managed
+            scaling policy defines the limits for resources, such as EC2 instances that can be
+            added or terminated from a cluster. The policy only applies to the core and task nodes.
+            The master node cannot be scaled after initial configuration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRManagedScalingPolicyCmdlet.ClusterId">
+            <summary>
+            <para>
+            <para>Specifies the ID of an EMR cluster where the managed scaling policy is attached. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRManagedScalingPolicyCmdlet.ComputeLimits_MaximumCapacityUnit">
+            <summary>
+            <para>
+            <para> The upper boundary of EC2 units. It is measured through vCPU cores or instances for
+            instance groups and measured through units for instance fleets. Managed scaling activities
+            are not allowed beyond this boundary. The limit only applies to the core and task
+            nodes. The master node cannot be scaled after initial configuration. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRManagedScalingPolicyCmdlet.ComputeLimits_MaximumCoreCapacityUnit">
+            <summary>
+            <para>
+            <para> The upper boundary of EC2 units for core node type in a cluster. It is measured through
+            vCPU cores or instances for instance groups and measured through units for instance
+            fleets. The core units are not allowed to scale beyond this boundary. The parameter
+            is used to split capacity allocation between core and task nodes. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRManagedScalingPolicyCmdlet.ComputeLimits_MaximumOnDemandCapacityUnit">
+            <summary>
+            <para>
+            <para> The upper boundary of On-Demand EC2 units. It is measured through vCPU cores or instances
+            for instance groups and measured through units for instance fleets. The On-Demand
+            units are not allowed to scale beyond this boundary. The parameter is used to split
+            capacity allocation between On-Demand and Spot Instances. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRManagedScalingPolicyCmdlet.ComputeLimits_MinimumCapacityUnit">
+            <summary>
+            <para>
+            <para> The lower boundary of EC2 units. It is measured through vCPU cores or instances for
+            instance groups and measured through units for instance fleets. Managed scaling activities
+            are not allowed beyond this boundary. The limit only applies to the core and task
+            nodes. The master node cannot be scaled after initial configuration. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRManagedScalingPolicyCmdlet.ComputeLimits_UnitType">
+            <summary>
+            <para>
+            <para> The unit type used for specifying a managed scaling policy. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRManagedScalingPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticMapReduce.Model.PutManagedScalingPolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRManagedScalingPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMR.WriteEMRManagedScalingPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

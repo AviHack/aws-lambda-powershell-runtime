@@ -1,0 +1,2987 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.ElasticBeanstalk</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.GetEBAccountAttributeCmdlet">
+            <summary>
+            Returns attributes related to AWS Elastic Beanstalk that are associated with the calling
+            AWS account.
+            
+             
+            <para>
+            The result currently has one set of attributes—resource quotas.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBAccountAttributeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ResourceQuotas'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.DescribeAccountAttributesResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.DescribeAccountAttributesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.GetEBApplicationCmdlet">
+            <summary>
+            Returns the descriptions of existing applications.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBApplicationCmdlet.ApplicationName">
+            <summary>
+            <para>
+            <para>If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include
+            those with the specified names.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBApplicationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Applications'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.DescribeApplicationsResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.DescribeApplicationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBApplicationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ApplicationName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ApplicationName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.GetEBApplicationVersionCmdlet">
+            <summary>
+            Retrieve a list of application versions.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBApplicationVersionCmdlet.ApplicationName">
+            <summary>
+            <para>
+            <para>Specify an application name to show only application versions for that application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBApplicationVersionCmdlet.VersionLabel">
+            <summary>
+            <para>
+            <para>Specify a version label to show a specific application version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBApplicationVersionCmdlet.MaxRecord">
+            <summary>
+            <para>
+            <para>For a paginated request. Specify a maximum number of application versions to include
+            in each response.</para><para>If no <code>MaxRecords</code> is specified, all available application versions are
+            retrieved in a single response.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>1000</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBApplicationVersionCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>For a paginated request. Specify a token from a previous response page to retrieve
+            the next response page. All other parameter values must be identical to the ones specified
+            in the initial request.</para><para>If no <code>NextToken</code> is specified, the first page is retrieved.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBApplicationVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ApplicationVersions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.DescribeApplicationVersionsResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.DescribeApplicationVersionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBApplicationVersionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ApplicationName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ApplicationName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBApplicationVersionCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.GetEBAvailableSolutionStackListCmdlet">
+            <summary>
+            Returns a list of the available solution stack names, with the public version first
+            and then in reverse chronological order.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBAvailableSolutionStackListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.ListAvailableSolutionStacksResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.ListAvailableSolutionStacksResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.GetEBConfigurationOptionCmdlet">
+            <summary>
+            Describes the configuration options that are used in a particular configuration template
+            or environment, or that a specified solution stack defines. The description includes
+            the values the options, their default values, and an indication of the required action
+            on a running environment if an option value is changed.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBConfigurationOptionCmdlet.ApplicationName">
+            <summary>
+            <para>
+            <para>The name of the application associated with the configuration template or environment.
+            Only needed if you want to describe the configuration options associated with either
+            the configuration template or environment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBConfigurationOptionCmdlet.EnvironmentName">
+            <summary>
+            <para>
+            <para>The name of the environment whose configuration options you want to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBConfigurationOptionCmdlet.Option">
+            <summary>
+            <para>
+            <para>If specified, restricts the descriptions to only the specified options.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBConfigurationOptionCmdlet.PlatformArn">
+            <summary>
+            <para>
+            <para>The ARN of the custom platform.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBConfigurationOptionCmdlet.SolutionStackName">
+            <summary>
+            <para>
+            <para>The name of the solution stack whose configuration options you want to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBConfigurationOptionCmdlet.TemplateName">
+            <summary>
+            <para>
+            <para>The name of the configuration template whose configuration options you want to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBConfigurationOptionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.DescribeConfigurationOptionsResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.DescribeConfigurationOptionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBConfigurationOptionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ApplicationName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ApplicationName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.GetEBConfigurationSettingCmdlet">
+            <summary>
+            Returns a description of the settings for the specified configuration set, that is,
+            either a configuration template or the configuration set associated with a running
+            environment.
+            
+             
+            <para>
+            When describing the settings for the configuration set associated with a running environment,
+            it is possible to receive two sets of setting descriptions. One is the deployed configuration
+            set, and the other is a draft configuration of an environment that is either in the
+            process of deployment or that failed to deploy.
+            </para><para>
+            Related Topics
+            </para><ul><li><para><a>DeleteEnvironmentConfiguration</a></para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBConfigurationSettingCmdlet.ApplicationName">
+            <summary>
+            <para>
+            <para>The application for the environment or configuration template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBConfigurationSettingCmdlet.EnvironmentName">
+            <summary>
+            <para>
+            <para>The name of the environment to describe.</para><para> Condition: You must specify either this or a TemplateName, but not both. If you specify
+            both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
+            If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+            error. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBConfigurationSettingCmdlet.TemplateName">
+            <summary>
+            <para>
+            <para>The name of the configuration template to describe.</para><para> Conditional: You must specify either this parameter or an EnvironmentName, but not
+            both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code>
+            error. If you do not specify either, AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code>
+            error. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBConfigurationSettingCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ConfigurationSettings'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.DescribeConfigurationSettingsResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.DescribeConfigurationSettingsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBConfigurationSettingCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ApplicationName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ApplicationName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.GetEBDNSAvailabilityCmdlet">
+            <summary>
+            Checks if the specified CNAME is available.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBDNSAvailabilityCmdlet.CNAMEPrefix">
+            <summary>
+            <para>
+            <para>The prefix used when this CNAME is reserved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBDNSAvailabilityCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.CheckDNSAvailabilityResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.CheckDNSAvailabilityResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBDNSAvailabilityCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the CNAMEPrefix parameter.
+            The -PassThru parameter is deprecated, use -Select '^CNAMEPrefix' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentCmdlet">
+            <summary>
+            Returns descriptions for existing environments.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentCmdlet.ApplicationName">
+            <summary>
+            <para>
+            <para>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include
+            only those that are associated with this application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentCmdlet.EnvironmentId">
+            <summary>
+            <para>
+            <para>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include
+            only those that have the specified IDs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentCmdlet.EnvironmentName">
+            <summary>
+            <para>
+            <para>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include
+            only those that have the specified names.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentCmdlet.UtcIncludedDeletedBackTo">
+            <summary>
+            <para>
+            <para> If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments
+            deleted after this date are displayed. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentCmdlet.IncludeDeleted">
+            <summary>
+            <para>
+            <para>Indicates whether to include deleted environments:</para><para><code>true</code>: Environments that have been deleted after <code>IncludedDeletedBackTo</code>
+            are displayed.</para><para><code>false</code>: Do not include deleted environments.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentCmdlet.VersionLabel">
+            <summary>
+            <para>
+            <para>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include
+            only those that are associated with this application version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentCmdlet.IncludedDeletedBackTo">
+            <summary>
+            <para>
+            <para>This property is deprecated. Setting this property results in non-UTC DateTimes not
+            being marshalled correctly. Use IncludedDeletedBackToUtc instead. Setting either IncludedDeletedBackTo
+            or IncludedDeletedBackToUtc results in both IncludedDeletedBackTo and IncludedDeletedBackToUtc
+            being assigned, the latest assignment to either one of the two property is reflected
+            in the value of both. IncludedDeletedBackTo is provided for backwards compatibility
+            only and assigning a non-Utc DateTime to it results in the wrong timestamp being passed
+            to the service.</para><para> If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments
+            deleted after this date are displayed. </para>
+            </para>
+            <para>This parameter is deprecated.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentCmdlet.MaxRecord">
+            <summary>
+            <para>
+            <para>For a paginated request. Specify a maximum number of environments to include in each
+            response.</para><para>If no <code>MaxRecords</code> is specified, all available environments are retrieved
+            in a single response.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>1000</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>For a paginated request. Specify a token from a previous response page to retrieve
+            the next response page. All other parameter values must be identical to the ones specified
+            in the initial request.</para><para>If no <code>NextToken</code> is specified, the first page is retrieved.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Environments'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.DescribeEnvironmentsResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.DescribeEnvironmentsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ApplicationName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ApplicationName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentHealthCmdlet">
+            <summary>
+            Returns information about the overall health of the specified environment. The <b>DescribeEnvironmentHealth</b>
+            operation is only available with AWS Elastic Beanstalk Enhanced Health.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentHealthCmdlet.AttributeName">
+            <summary>
+            <para>
+            <para>Specify the response elements to return. To retrieve all attributes, set to <code>All</code>.
+            If no attribute names are specified, returns the name of the environment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentHealthCmdlet.EnvironmentId">
+            <summary>
+            <para>
+            <para>Specify the environment by ID.</para><para>You must specify either this or an EnvironmentName, or both.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentHealthCmdlet.EnvironmentName">
+            <summary>
+            <para>
+            <para>Specify the environment by name.</para><para>You must specify either this or an EnvironmentName, or both.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentHealthCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.DescribeEnvironmentHealthResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.DescribeEnvironmentHealthResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentHealthCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EnvironmentId parameter.
+            The -PassThru parameter is deprecated, use -Select '^EnvironmentId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentInfoCmdlet">
+            <summary>
+            Retrieves the compiled information from a <a>RequestEnvironmentInfo</a> request.
+            
+             
+            <para>
+            Related Topics
+            </para><ul><li><para><a>RequestEnvironmentInfo</a></para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentInfoCmdlet.EnvironmentId">
+            <summary>
+            <para>
+            <para>The ID of the data's environment.</para><para>If no such environment is found, returns an <code>InvalidParameterValue</code> error.</para><para>Condition: You must specify either this or an EnvironmentName, or both. If you do
+            not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+            error.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentInfoCmdlet.EnvironmentName">
+            <summary>
+            <para>
+            <para>The name of the data's environment.</para><para> If no such environment is found, returns an <code>InvalidParameterValue</code> error.
+            </para><para> Condition: You must specify either this or an EnvironmentId, or both. If you do not
+            specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+            error. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentInfoCmdlet.InfoType">
+            <summary>
+            <para>
+            <para>The type of information to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentInfoCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EnvironmentInfo'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.RetrieveEnvironmentInfoResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.RetrieveEnvironmentInfoResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentInfoCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EnvironmentId parameter.
+            The -PassThru parameter is deprecated, use -Select '^EnvironmentId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentManagedActionCmdlet">
+            <summary>
+            Lists an environment's upcoming and in-progress managed actions.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentManagedActionCmdlet.EnvironmentId">
+            <summary>
+            <para>
+            <para>The environment ID of the target environment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentManagedActionCmdlet.EnvironmentName">
+            <summary>
+            <para>
+            <para>The name of the target environment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentManagedActionCmdlet.Status">
+            <summary>
+            <para>
+            <para>To show only actions with a particular status, specify a status.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentManagedActionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ManagedActions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.DescribeEnvironmentManagedActionsResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.DescribeEnvironmentManagedActionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentManagedActionHistoryCmdlet">
+            <summary>
+            Lists an environment's completed and failed managed actions.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentManagedActionHistoryCmdlet.EnvironmentId">
+            <summary>
+            <para>
+            <para>The environment ID of the target environment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentManagedActionHistoryCmdlet.EnvironmentName">
+            <summary>
+            <para>
+            <para>The name of the target environment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentManagedActionHistoryCmdlet.MaxItem">
+            <summary>
+            <para>
+            <para>The maximum number of items to return for a single request.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>100</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentManagedActionHistoryCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token returned by a previous request.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentManagedActionHistoryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ManagedActionHistoryItems'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.DescribeEnvironmentManagedActionHistoryResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.DescribeEnvironmentManagedActionHistoryResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentManagedActionHistoryCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentResourceCmdlet">
+            <summary>
+            Returns AWS resources for this environment.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentResourceCmdlet.EnvironmentId">
+            <summary>
+            <para>
+            <para>The ID of the environment to retrieve AWS resource usage data.</para><para> Condition: You must specify either this or an EnvironmentName, or both. If you do
+            not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+            error. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentResourceCmdlet.EnvironmentName">
+            <summary>
+            <para>
+            <para>The name of the environment to retrieve AWS resource usage data.</para><para> Condition: You must specify either this or an EnvironmentId, or both. If you do not
+            specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+            error. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentResourceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EnvironmentResources'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.DescribeEnvironmentResourcesResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.DescribeEnvironmentResourcesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEnvironmentResourceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EnvironmentId parameter.
+            The -PassThru parameter is deprecated, use -Select '^EnvironmentId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.GetEBEventCmdlet">
+            <summary>
+            Returns list of event descriptions matching criteria up to the last 6 weeks.
+            
+             <note><para>
+            This action returns the most recent 1,000 events from the specified <code>NextToken</code>.
+            </para></note><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEventCmdlet.ApplicationName">
+            <summary>
+            <para>
+            <para>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include
+            only those associated with this application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEventCmdlet.UtcEndTime">
+            <summary>
+            <para>
+            <para> If specified, AWS Elastic Beanstalk restricts the returned descriptions to those
+            that occur up to, but not including, the <code>EndTime</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEventCmdlet.EnvironmentId">
+            <summary>
+            <para>
+            <para>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated
+            with this environment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEventCmdlet.EnvironmentName">
+            <summary>
+            <para>
+            <para>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated
+            with this environment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEventCmdlet.PlatformArn">
+            <summary>
+            <para>
+            <para>The ARN of a custom platform version. If specified, AWS Elastic Beanstalk restricts
+            the returned descriptions to those associated with this custom platform version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEventCmdlet.RequestId">
+            <summary>
+            <para>
+            <para>If specified, AWS Elastic Beanstalk restricts the described events to include only
+            those associated with this request ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEventCmdlet.Severity">
+            <summary>
+            <para>
+            <para>If specified, limits the events returned from this call to include only those with
+            the specified severity or higher.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEventCmdlet.UtcStartTime">
+            <summary>
+            <para>
+            <para>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that
+            occur on or after this time.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEventCmdlet.TemplateName">
+            <summary>
+            <para>
+            <para>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that
+            are associated with this environment configuration.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEventCmdlet.VersionLabel">
+            <summary>
+            <para>
+            <para>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated
+            with this application version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEventCmdlet.EndTime">
+            <summary>
+            <para>
+            <para>This property is deprecated. Setting this property results in non-UTC DateTimes not
+            being marshalled correctly. Use EndTimeUtc instead. Setting either EndTime or EndTimeUtc
+            results in both EndTime and EndTimeUtc being assigned, the latest assignment to either
+            one of the two property is reflected in the value of both. EndTime is provided for
+            backwards compatibility only and assigning a non-Utc DateTime to it results in the
+            wrong timestamp being passed to the service.</para><para> If specified, AWS Elastic Beanstalk restricts the returned descriptions to those
+            that occur up to, but not including, the <code>EndTime</code>. </para>
+            </para>
+            <para>This parameter is deprecated.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEventCmdlet.MaxRecord">
+            <summary>
+            <para>
+            <para>Specifies the maximum number of events that can be returned, beginning with the most
+            recent event.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>1000</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEventCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Pagination token. If specified, the events return the next batch of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEventCmdlet.StartTime">
+            <summary>
+            <para>
+            <para>This property is deprecated. Setting this property results in non-UTC DateTimes not
+            being marshalled correctly. Use StartTimeUtc instead. Setting either StartTime or
+            StartTimeUtc results in both StartTime and StartTimeUtc being assigned, the latest
+            assignment to either one of the two property is reflected in the value of both. StartTime
+            is provided for backwards compatibility only and assigning a non-Utc DateTime to it
+            results in the wrong timestamp being passed to the service.</para><para>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that
+            occur on or after this time.</para>
+            </para>
+            <para>This parameter is deprecated.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEventCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Events'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.DescribeEventsResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.DescribeEventsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEventCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ApplicationName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ApplicationName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBEventCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.GetEBInstanceHealthCmdlet">
+            <summary>
+            Retrieves detailed information about the health of instances in your AWS Elastic Beanstalk.
+            This operation requires <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
+            health reporting</a>.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBInstanceHealthCmdlet.AttributeName">
+            <summary>
+            <para>
+            <para>Specifies the response elements you wish to receive. To retrieve all attributes, set
+            to <code>All</code>. If no attribute names are specified, returns a list of instances.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBInstanceHealthCmdlet.EnvironmentId">
+            <summary>
+            <para>
+            <para>Specify the AWS Elastic Beanstalk environment by ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBInstanceHealthCmdlet.EnvironmentName">
+            <summary>
+            <para>
+            <para>Specify the AWS Elastic Beanstalk environment by name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBInstanceHealthCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Specify the pagination token returned by a previous call.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBInstanceHealthCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'InstanceHealthList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.DescribeInstancesHealthResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.DescribeInstancesHealthResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBInstanceHealthCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EnvironmentId parameter.
+            The -PassThru parameter is deprecated, use -Select '^EnvironmentId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBInstanceHealthCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.GetEBPlatformBranchCmdlet">
+            <summary>
+            Lists the platform branches available for your account in an AWS Region. Provides
+            summary information about each platform branch.
+            
+             
+            <para>
+            For definitions of platform branch and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
+            Elastic Beanstalk Platforms Glossary</a>.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBPlatformBranchCmdlet.Filter">
+            <summary>
+            <para>
+            <para>Criteria for restricting the resulting list of platform branches. The filter is evaluated
+            as a logical conjunction (AND) of the separate <code>SearchFilter</code> terms.</para><para>The following list shows valid attribute values for each of the <code>SearchFilter</code>
+            terms. Most operators take a single value. The <code>in</code> and <code>not_in</code>
+            operators can take multiple values.</para><ul><li><para><code>Attribute = BranchName</code>:</para><ul><li><para><code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code>
+            | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code></para></li></ul></li><li><para><code>Attribute = LifecycleState</code>:</para><ul><li><para><code>Operator</code>: <code>=</code> | <code>!=</code> | <code>in</code> | <code>not_in</code></para></li><li><para><code>Values</code>: <code>beta</code> | <code>supported</code> | <code>deprecated</code>
+            | <code>retired</code></para></li></ul></li><li><para><code>Attribute = PlatformName</code>:</para><ul><li><para><code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code>
+            | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code></para></li></ul></li><li><para><code>Attribute = TierType</code>:</para><ul><li><para><code>Operator</code>: <code>=</code> | <code>!=</code></para></li><li><para><code>Values</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code></para></li></ul></li></ul><para>Array size: limited to 10 <code>SearchFilter</code> objects.</para><para>Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited
+            to 10 items.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBPlatformBranchCmdlet.MaxRecord">
+            <summary>
+            <para>
+            <para>The maximum number of platform branch values returned in one call.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBPlatformBranchCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>For a paginated request. Specify a token from a previous response page to retrieve
+            the next response page. All other parameter values must be identical to the ones specified
+            in the initial request.</para><para>If no <code>NextToken</code> is specified, the first page is retrieved.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBPlatformBranchCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'PlatformBranchSummaryList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.ListPlatformBranchesResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.ListPlatformBranchesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBPlatformBranchCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.GetEBPlatformVersionCmdlet">
+            <summary>
+            Lists the platform versions available for your account in an AWS Region. Provides
+            summary information about each platform version. Compare to <a>DescribePlatformVersion</a>,
+            which provides full details about a single platform version.
+            
+             
+            <para>
+            For definitions of platform version and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
+            Elastic Beanstalk Platforms Glossary</a>.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBPlatformVersionCmdlet.Filter">
+            <summary>
+            <para>
+            <para>Criteria for restricting the resulting list of platform versions. The filter is interpreted
+            as a logical conjunction (AND) of the separate <code>PlatformFilter</code> terms.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBPlatformVersionCmdlet.MaxRecord">
+            <summary>
+            <para>
+            <para>The maximum number of platform version values returned in one call.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>1000</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBPlatformVersionCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>For a paginated request. Specify a token from a previous response page to retrieve
+            the next response page. All other parameter values must be identical to the ones specified
+            in the initial request.</para><para>If no <code>NextToken</code> is specified, the first page is retrieved.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBPlatformVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'PlatformSummaryList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.ListPlatformVersionsResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.ListPlatformVersionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBPlatformVersionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Filter parameter.
+            The -PassThru parameter is deprecated, use -Select '^Filter' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBPlatformVersionCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.GetEBPlatformVersionDetailCmdlet">
+            <summary>
+            Describes a platform version. Provides full details. Compare to <a>ListPlatformVersions</a>,
+            which provides summary information about a list of platform versions.
+            
+             
+            <para>
+            For definitions of platform version and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
+            Elastic Beanstalk Platforms Glossary</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBPlatformVersionDetailCmdlet.PlatformArn">
+            <summary>
+            <para>
+            <para>The ARN of the platform version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBPlatformVersionDetailCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'PlatformDescription'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.DescribePlatformVersionResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.DescribePlatformVersionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBPlatformVersionDetailCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PlatformArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^PlatformArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.GetEBResourceTagCmdlet">
+            <summary>
+            Return the tags applied to an AWS Elastic Beanstalk resource. The response contains
+            a list of tag key-value pairs.
+            
+             
+            <para>
+            Elastic Beanstalk supports tagging of all of its resources. For details about resource
+            tagging, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging
+            Application Resources</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resouce for which a tag list is requested.</para><para>Must be the ARN of an Elastic Beanstalk resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GetEBResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.GroupEBEnvironmentCmdlet">
+            <summary>
+            Create or update a group of environments that each run a separate component of a single
+            application. Takes a list of version labels that specify application source bundles
+            for each of the environments to create or update. The name of each environment and
+            other required information must be included in the source bundles in an environment
+            manifest named <code>env.yaml</code>. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose
+            Environments</a> for details.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GroupEBEnvironmentCmdlet.ApplicationName">
+            <summary>
+            <para>
+            <para>The name of the application to which the specified source bundles belong.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GroupEBEnvironmentCmdlet.GroupName">
+            <summary>
+            <para>
+            <para>The name of the group to which the target environments belong. Specify a group name
+            only if the environment name defined in each target environment's manifest ends with
+            a + (plus) character. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+            Manifest (env.yaml)</a> for details.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GroupEBEnvironmentCmdlet.VersionLabel">
+            <summary>
+            <para>
+            <para>A list of version labels, specifying one or more application source bundles that belong
+            to the target application. Each source bundle must include an environment manifest
+            that specifies the name of the environment and the name of the solution stack to use,
+            and optionally can specify environment links to create.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GroupEBEnvironmentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Environments'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.ComposeEnvironmentsResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.ComposeEnvironmentsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GroupEBEnvironmentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ApplicationName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ApplicationName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.GroupEBEnvironmentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationCmdlet">
+            <summary>
+            Creates an application that has one configuration template named <code>default</code>
+            and no application versions.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationCmdlet.ApplicationName">
+            <summary>
+            <para>
+            <para>The name of the application. Must be unique within your account.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationCmdlet.MaxAgeRule_DeleteSourceFromS3">
+            <summary>
+            <para>
+            <para>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic
+            Beanstalk deletes the application version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationCmdlet.MaxCountRule_DeleteSourceFromS3">
+            <summary>
+            <para>
+            <para>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic
+            Beanstalk deletes the application version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationCmdlet.Description">
+            <summary>
+            <para>
+            <para>Your description of the application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationCmdlet.MaxAgeRule_Enabled">
+            <summary>
+            <para>
+            <para>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationCmdlet.MaxCountRule_Enabled">
+            <summary>
+            <para>
+            <para>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationCmdlet.MaxAgeRule_MaxAgeInDay">
+            <summary>
+            <para>
+            <para>Specify the number of days to retain an application versions.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationCmdlet.MaxCountRule_MaxCount">
+            <summary>
+            <para>
+            <para>Specify the maximum number of application versions to retain.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationCmdlet.ResourceLifecycleConfig_ServiceRole">
+            <summary>
+            <para>
+            <para>The ARN of an IAM service role that Elastic Beanstalk has permission to assume.</para><para>The <code>ServiceRole</code> property is required the first time that you provide
+            a <code>VersionLifecycleConfig</code> for the application in one of the supporting
+            calls (<code>CreateApplication</code> or <code>UpdateApplicationResourceLifecycle</code>).
+            After you provide it once, in either one of the calls, Elastic Beanstalk persists
+            the Service Role with the application, and you don't need to specify it again in subsequent
+            <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify it
+            in subsequent calls to change the Service Role to another value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Specifies the tags applied to the application.</para><para>Elastic Beanstalk applies these tags only to the application. Environments that you
+            create in the application don't inherit the tags.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Application'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.CreateApplicationResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.CreateApplicationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ApplicationName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ApplicationName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationVersionCmdlet">
+            <summary>
+            Creates an application version for the specified application. You can create an application
+            version from a source bundle in Amazon S3, a commit in AWS CodeCommit, or the output
+            of an AWS CodeBuild build as follows:
+            
+             
+            <para>
+            Specify a commit in an AWS CodeCommit repository with <code>SourceBuildInformation</code>.
+            </para><para>
+            Specify a build in an AWS CodeBuild with <code>SourceBuildInformation</code> and <code>BuildConfiguration</code>.
+            </para><para>
+            Specify a source bundle in S3 with <code>SourceBundle</code></para><para>
+            Omit both <code>SourceBuildInformation</code> and <code>SourceBundle</code> to use
+            the default sample application.
+            </para><note><para>
+            After you create an application version with a specified Amazon S3 bucket and key
+            location, you can't change that Amazon S3 location. If you change the Amazon S3 location,
+            you receive an exception when you attempt to launch an environment from the application
+            version.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationVersionCmdlet.ApplicationName">
+            <summary>
+            <para>
+            <para> The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code>
+            is <code>false</code>, returns an <code>InvalidParameterValue</code> error. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationVersionCmdlet.BuildConfiguration_ArtifactName">
+            <summary>
+            <para>
+            <para>The name of the artifact of the CodeBuild build. If provided, Elastic Beanstalk stores
+            the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>-<i>artifact-name</i>.zip.
+            If not provided, Elastic Beanstalk stores the build artifact in the S3 location <i>S3-bucket</i>/resources/<i>application-name</i>/codebuild/codebuild-<i>version-label</i>.zip.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationVersionCmdlet.AutoCreateApplication">
+            <summary>
+            <para>
+            <para>Set to <code>true</code> to create an application with the specified name if it doesn't
+            already exist.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationVersionCmdlet.BuildConfiguration_CodeBuildServiceRole">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
+            that enables AWS CodeBuild to interact with dependent AWS services on behalf of the
+            AWS account.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationVersionCmdlet.BuildConfiguration_ComputeType">
+            <summary>
+            <para>
+            <para>Information about the compute resources the build project will use.</para><ul><li><para><code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code></para></li><li><para><code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code></para></li><li><para><code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code></para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationVersionCmdlet.Description">
+            <summary>
+            <para>
+            <para>A description of this application version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationVersionCmdlet.BuildConfiguration_Image">
+            <summary>
+            <para>
+            <para>The ID of the Docker image to use for this build project.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationVersionCmdlet.Process">
+            <summary>
+            <para>
+            <para>Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration
+            files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the
+            source bundle. Validating configuration files can identify issues prior to deploying
+            the application version to an environment.</para><para>You must turn processing on for application versions that you create using AWS CodeBuild
+            or AWS CodeCommit. For application versions built from a source bundle in Amazon S3,
+            processing is optional.</para><note><para>The <code>Process</code> option validates Elastic Beanstalk configuration files. It
+            doesn't validate your application's configuration files, like proxy server or Docker
+            configuration.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationVersionCmdlet.SourceBundle_S3Bucket">
+            <summary>
+            <para>
+            <para>The Amazon S3 bucket where the data is located.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationVersionCmdlet.SourceBundle_S3Key">
+            <summary>
+            <para>
+            <para>The Amazon S3 key where the data is located.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationVersionCmdlet.SourceBuildInformation_SourceLocation">
+            <summary>
+            <para>
+            <para>The location of the source code, as a formatted string, depending on the value of
+            <code>SourceRepository</code></para><ul><li><para>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated
+            by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</para></li><li><para>For <code>S3</code>, the format is the S3 bucket name and object key, separated by
+            a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationVersionCmdlet.SourceBuildInformation_SourceRepository">
+            <summary>
+            <para>
+            <para>Location where the repository is stored.</para><ul><li><para><code>CodeCommit</code></para></li><li><para><code>S3</code></para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationVersionCmdlet.SourceBuildInformation_SourceType">
+            <summary>
+            <para>
+            <para>The type of repository.</para><ul><li><para><code>Git</code></para></li><li><para><code>Zip</code></para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationVersionCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Specifies the tags applied to the application version.</para><para>Elastic Beanstalk applies these tags only to the application version. Environments
+            that use the application version don't inherit the tags.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationVersionCmdlet.BuildConfiguration_TimeoutInMinute">
+            <summary>
+            <para>
+            <para>How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing
+            out any related build that does not get marked as completed. The default is 60 minutes.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationVersionCmdlet.VersionLabel">
+            <summary>
+            <para>
+            <para>A label identifying this version.</para><para>Constraint: Must be unique per application. If an application version already exists
+            with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
+            error. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ApplicationVersion'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.CreateApplicationVersionResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.CreateApplicationVersionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationVersionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ApplicationName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ApplicationName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBApplicationVersionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.NewEBConfigurationTemplateCmdlet">
+            <summary>
+            Creates an AWS Elastic Beanstalk configuration template, associated with a specific
+            Elastic Beanstalk application. You define application configuration settings in a
+            configuration template. You can then use the configuration template to deploy different
+            versions of the application with the same configuration settings.
+            
+             
+            <para>
+            Templates aren't associated with any environment. The <code>EnvironmentName</code>
+            response element is always <code>null</code>.
+            </para><para>
+            Related Topics
+            </para><ul><li><para><a>DescribeConfigurationOptions</a></para></li><li><para><a>DescribeConfigurationSettings</a></para></li><li><para><a>ListAvailableSolutionStacks</a></para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBConfigurationTemplateCmdlet.ApplicationName">
+            <summary>
+            <para>
+            <para>The name of the Elastic Beanstalk application to associate with this configuration
+            template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBConfigurationTemplateCmdlet.SourceConfiguration_ApplicationName">
+            <summary>
+            <para>
+            <para>The name of the application associated with the configuration.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBConfigurationTemplateCmdlet.Description">
+            <summary>
+            <para>
+            <para>An optional description for this configuration.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBConfigurationTemplateCmdlet.EnvironmentId">
+            <summary>
+            <para>
+            <para>The ID of an environment whose settings you want to use to create the configuration
+            template. You must specify <code>EnvironmentId</code> if you don't specify <code>PlatformArn</code>,
+            <code>SolutionStackName</code>, or <code>SourceConfiguration</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBConfigurationTemplateCmdlet.OptionSetting">
+            <summary>
+            <para>
+            <para>Option values for the Elastic Beanstalk configuration, such as the instance type.
+            If specified, these values override the values obtained from the solution stack or
+            the source configuration template. For a complete list of Elastic Beanstalk configuration
+            options, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option
+            Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBConfigurationTemplateCmdlet.PlatformArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the custom platform. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
+            Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</para><note><para>If you specify <code>PlatformArn</code>, then don't specify <code>SolutionStackName</code>.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBConfigurationTemplateCmdlet.SolutionStackName">
+            <summary>
+            <para>
+            <para>The name of an Elastic Beanstalk solution stack (platform version) that this configuration
+            uses. For example, <code>64bit Amazon Linux 2013.09 running Tomcat 7 Java 7</code>.
+            A solution stack specifies the operating system, runtime, and application server for
+            a configuration template. It also determines the set of configuration options as well
+            as the possible and default values. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported
+            Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</para><para>You must specify <code>SolutionStackName</code> if you don't specify <code>PlatformArn</code>,
+            <code>EnvironmentId</code>, or <code>SourceConfiguration</code>.</para><para>Use the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html"><code>ListAvailableSolutionStacks</code></a> API to obtain a list of available solution
+            stacks.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBConfigurationTemplateCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Specifies the tags applied to the configuration template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBConfigurationTemplateCmdlet.SourceConfiguration_TemplateName">
+            <summary>
+            <para>
+            <para>The name of the configuration template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBConfigurationTemplateCmdlet.TemplateName">
+            <summary>
+            <para>
+            <para>The name of the configuration template.</para><para>Constraint: This name must be unique per application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBConfigurationTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.CreateConfigurationTemplateResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.CreateConfigurationTemplateResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBConfigurationTemplateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ApplicationName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ApplicationName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBConfigurationTemplateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.NewEBEnvironmentCmdlet">
+            <summary>
+            Launches an AWS Elastic Beanstalk environment for the specified application using
+            the specified configuration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBEnvironmentCmdlet.ApplicationName">
+            <summary>
+            <para>
+            <para>The name of the application that is associated with this environment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBEnvironmentCmdlet.CNAMEPrefix">
+            <summary>
+            <para>
+            <para>If specified, the environment attempts to use this value as the prefix for the CNAME
+            in your Elastic Beanstalk environment URL. If not specified, the CNAME is generated
+            automatically by appending a random alphanumeric string to the environment name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBEnvironmentCmdlet.Description">
+            <summary>
+            <para>
+            <para>Your description for this environment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBEnvironmentCmdlet.EnvironmentName">
+            <summary>
+            <para>
+            <para>A unique name for the environment.</para><para>Constraint: Must be from 4 to 40 characters in length. The name can contain only letters,
+            numbers, and hyphens. It can't start or end with a hyphen. This name must be unique
+            within a region in your account. If the specified name already exists in the region,
+            Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </para><para>If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name
+            becomes part of the CNAME, and therefore part of the visible URL for your application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBEnvironmentCmdlet.GroupName">
+            <summary>
+            <para>
+            <para>The name of the group to which the target environment belongs. Specify a group name
+            only if the environment's name is specified in an environment manifest and not with
+            the environment name parameter. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+            Manifest (env.yaml)</a> for details.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBEnvironmentCmdlet.Tier_Name">
+            <summary>
+            <para>
+            <para>The name of this environment tier.</para><para>Valid values:</para><ul><li><para>For <i>Web server tier</i> – <code>WebServer</code></para></li><li><para>For <i>Worker tier</i> – <code>Worker</code></para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBEnvironmentCmdlet.OperationsRole">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's
+            operations role. If specified, Elastic Beanstalk uses the operations role for permissions
+            to downstream services during this call and during subsequent calls acting on this
+            environment. To specify an operations role, you must have the <code>iam:PassRole</code>
+            permission for the role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+            roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBEnvironmentCmdlet.OptionSetting">
+            <summary>
+            <para>
+            <para>If specified, AWS Elastic Beanstalk sets the specified configuration options to the
+            requested value in the configuration set for the new environment. These override the
+            values obtained from the solution stack or the configuration template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBEnvironmentCmdlet.OptionsToRemove">
+            <summary>
+            <para>
+            <para>A list of custom user-defined configuration options to remove from the configuration
+            set for this new environment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBEnvironmentCmdlet.PlatformArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the custom platform to use with the environment.
+            For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom
+            Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</para><note><para>If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBEnvironmentCmdlet.SolutionStackName">
+            <summary>
+            <para>
+            <para>The name of an Elastic Beanstalk solution stack (platform version) to use with the
+            environment. If specified, Elastic Beanstalk sets the configuration values to the
+            default values associated with the specified solution stack. For a list of current
+            solution stacks, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic
+            Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.</para><note><para>If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code>
+            or <code>TemplateName</code>.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBEnvironmentCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Specifies the tags applied to resources in the environment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBEnvironmentCmdlet.TemplateName">
+            <summary>
+            <para>
+            <para>The name of the Elastic Beanstalk configuration template to use with the environment.</para><note><para>If you specify <code>TemplateName</code>, then don't specify <code>SolutionStackName</code>.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBEnvironmentCmdlet.Tier_Type">
+            <summary>
+            <para>
+            <para>The type of this environment tier.</para><para>Valid values:</para><ul><li><para>For <i>Web server tier</i> – <code>Standard</code></para></li><li><para>For <i>Worker tier</i> – <code>SQS/HTTP</code></para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBEnvironmentCmdlet.Tier_Version">
+            <summary>
+            <para>
+            <para>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk
+            uses the latest compatible worker tier version.</para><note><para>This member is deprecated. Any specific version that you set may become out of date.
+            We recommend leaving it unspecified.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBEnvironmentCmdlet.VersionLabel">
+            <summary>
+            <para>
+            <para>The name of the application version to deploy.</para><para>Default: If not specified, Elastic Beanstalk attempts to deploy the sample application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBEnvironmentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.CreateEnvironmentResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.CreateEnvironmentResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBEnvironmentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ApplicationName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ApplicationName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBEnvironmentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.NewEBPlatformVersionCmdlet">
+            <summary>
+            Create a new version of your custom platform.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBPlatformVersionCmdlet.EnvironmentName">
+            <summary>
+            <para>
+            <para>The name of the builder environment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBPlatformVersionCmdlet.OptionSetting">
+            <summary>
+            <para>
+            <para>The configuration option settings to apply to the builder environment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBPlatformVersionCmdlet.PlatformName">
+            <summary>
+            <para>
+            <para>The name of your custom platform.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBPlatformVersionCmdlet.PlatformVersion">
+            <summary>
+            <para>
+            <para>The number, such as 1.0.2, for the new platform version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBPlatformVersionCmdlet.PlatformDefinitionBundle_S3Bucket">
+            <summary>
+            <para>
+            <para>The Amazon S3 bucket where the data is located.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBPlatformVersionCmdlet.PlatformDefinitionBundle_S3Key">
+            <summary>
+            <para>
+            <para>The Amazon S3 key where the data is located.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBPlatformVersionCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Specifies the tags applied to the new platform version.</para><para>Elastic Beanstalk applies these tags only to the platform version. Environments that
+            you create using the platform version don't inherit the tags.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBPlatformVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.CreatePlatformVersionResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.CreatePlatformVersionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBPlatformVersionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PlatformName parameter.
+            The -PassThru parameter is deprecated, use -Select '^PlatformName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBPlatformVersionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.NewEBStorageLocationCmdlet">
+            <summary>
+            Creates a bucket in Amazon S3 to store application versions, logs, and other files
+            used by Elastic Beanstalk environments. The Elastic Beanstalk console and EB CLI call
+            this API the first time you create an environment in a region. If the storage location
+            already exists, <code>CreateStorageLocation</code> still returns the bucket name but
+            does not create a new bucket.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBStorageLocationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'S3Bucket'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.CreateStorageLocationResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.CreateStorageLocationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.NewEBStorageLocationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.RegisterEBEnvironmentOperationsRoleCmdlet">
+            <summary>
+            Add or change the operations role used by an environment. After this call is made,
+            Elastic Beanstalk uses the associated operations role for permissions to downstream
+            services during subsequent calls acting on this environment. For more information,
+            see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+            roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RegisterEBEnvironmentOperationsRoleCmdlet.EnvironmentName">
+            <summary>
+            <para>
+            <para>The name of the environment to which to set the operations role.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RegisterEBEnvironmentOperationsRoleCmdlet.OperationsRole">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's
+            operations role.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RegisterEBEnvironmentOperationsRoleCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.AssociateEnvironmentOperationsRoleResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RegisterEBEnvironmentOperationsRoleCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EnvironmentName parameter.
+            The -PassThru parameter is deprecated, use -Select '^EnvironmentName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RegisterEBEnvironmentOperationsRoleCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.RemoveEBApplicationCmdlet">
+            <summary>
+            Deletes the specified application along with all associated versions and configurations.
+            The application versions will not be deleted from your Amazon S3 bucket.
+            
+             <note><para>
+            You cannot delete an application that has a running environment.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RemoveEBApplicationCmdlet.ApplicationName">
+            <summary>
+            <para>
+            <para>The name of the application to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RemoveEBApplicationCmdlet.TerminateEnvByForce">
+            <summary>
+            <para>
+            <para>When set to true, running environments will be terminated before deleting the application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RemoveEBApplicationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.DeleteApplicationResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RemoveEBApplicationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ApplicationName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ApplicationName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RemoveEBApplicationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.RemoveEBApplicationVersionCmdlet">
+            <summary>
+            Deletes the specified version from the specified application.
+            
+             <note><para>
+            You cannot delete an application version that is associated with a running environment.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RemoveEBApplicationVersionCmdlet.ApplicationName">
+            <summary>
+            <para>
+            <para>The name of the application to which the version belongs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RemoveEBApplicationVersionCmdlet.DeleteSourceBundle">
+            <summary>
+            <para>
+            <para>Set to <code>true</code> to delete the source bundle from your storage bucket. Otherwise,
+            the application version is deleted only from Elastic Beanstalk and the source bundle
+            remains in Amazon S3.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RemoveEBApplicationVersionCmdlet.VersionLabel">
+            <summary>
+            <para>
+            <para>The label of the version to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RemoveEBApplicationVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.DeleteApplicationVersionResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RemoveEBApplicationVersionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ApplicationName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ApplicationName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RemoveEBApplicationVersionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.RemoveEBConfigurationTemplateCmdlet">
+            <summary>
+            Deletes the specified configuration template.
+            
+             <note><para>
+            When you launch an environment using a configuration template, the environment gets
+            a copy of the template. You can delete or modify the environment's copy of the template
+            without affecting the running environment.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RemoveEBConfigurationTemplateCmdlet.ApplicationName">
+            <summary>
+            <para>
+            <para>The name of the application to delete the configuration template from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RemoveEBConfigurationTemplateCmdlet.TemplateName">
+            <summary>
+            <para>
+            <para>The name of the configuration template to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RemoveEBConfigurationTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.DeleteConfigurationTemplateResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RemoveEBConfigurationTemplateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ApplicationName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ApplicationName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RemoveEBConfigurationTemplateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.RemoveEBEnvironmentConfigurationCmdlet">
+            <summary>
+            Deletes the draft configuration associated with the running environment.
+            
+             
+            <para>
+            Updating a running environment with any configuration changes creates a draft configuration
+            set. You can get the draft configuration using <a>DescribeConfigurationSettings</a>
+            while the update is in progress or if the update fails. The <code>DeploymentStatus</code>
+            for the draft configuration indicates whether the deployment is in process or has
+            failed. The draft configuration remains in existence until it is deleted with this
+            action.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RemoveEBEnvironmentConfigurationCmdlet.ApplicationName">
+            <summary>
+            <para>
+            <para>The name of the application the environment is associated with.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RemoveEBEnvironmentConfigurationCmdlet.EnvironmentName">
+            <summary>
+            <para>
+            <para>The name of the environment to delete the draft configuration from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RemoveEBEnvironmentConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.DeleteEnvironmentConfigurationResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RemoveEBEnvironmentConfigurationCmdlet.PassThru">
+            <summary>
+            Returns the name of the environment that was updated
+            The -PassThru parameter is deprecated, use -Select instead. This parameter will be removed in future
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RemoveEBEnvironmentConfigurationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.RemoveEBPlatformVersionCmdlet">
+            <summary>
+            Deletes the specified version of a custom platform.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RemoveEBPlatformVersionCmdlet.PlatformArn">
+            <summary>
+            <para>
+            <para>The ARN of the version of the custom platform.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RemoveEBPlatformVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'PlatformSummary'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.DeletePlatformVersionResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.DeletePlatformVersionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RemoveEBPlatformVersionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PlatformArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^PlatformArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RemoveEBPlatformVersionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.RequestEBEnvironmentInfoCmdlet">
+            <summary>
+            Initiates a request to compile the specified type of information of the deployed environment.
+            
+             
+            <para>
+             Setting the <code>InfoType</code> to <code>tail</code> compiles the last lines from
+            the application server log files of every Amazon EC2 instance in your environment.
+            
+            </para><para>
+             Setting the <code>InfoType</code> to <code>bundle</code> compresses the application
+            server log files for every Amazon EC2 instance into a <code>.zip</code> file. Legacy
+            and .NET containers do not support bundle logs. 
+            </para><para>
+             Use <a>RetrieveEnvironmentInfo</a> to obtain the set of logs. 
+            </para><para>
+            Related Topics
+            </para><ul><li><para><a>RetrieveEnvironmentInfo</a></para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RequestEBEnvironmentInfoCmdlet.EnvironmentId">
+            <summary>
+            <para>
+            <para>The ID of the environment of the requested data.</para><para>If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code>
+            error. </para><para>Condition: You must specify either this or an EnvironmentName, or both. If you do
+            not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+            error. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RequestEBEnvironmentInfoCmdlet.EnvironmentName">
+            <summary>
+            <para>
+            <para>The name of the environment of the requested data.</para><para>If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code>
+            error. </para><para>Condition: You must specify either this or an EnvironmentId, or both. If you do not
+            specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+            error. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RequestEBEnvironmentInfoCmdlet.InfoType">
+            <summary>
+            <para>
+            <para>The type of information to request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RequestEBEnvironmentInfoCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.RequestEnvironmentInfoResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RequestEBEnvironmentInfoCmdlet.PassThru">
+            <summary>
+            Returns the id or name of the environment (depending on which parameter was supplied)
+            The -PassThru parameter is deprecated, use -Select instead. This parameter will be removed in future
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RequestEBEnvironmentInfoCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.RestartEBAppServerCmdlet">
+            <summary>
+            Causes the environment to restart the application container server running on each
+            Amazon EC2 instance.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RestartEBAppServerCmdlet.EnvironmentId">
+            <summary>
+            <para>
+            <para>The ID of the environment to restart the server for.</para><para> Condition: You must specify either this or an EnvironmentName, or both. If you do
+            not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+            error. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RestartEBAppServerCmdlet.EnvironmentName">
+            <summary>
+            <para>
+            <para>The name of the environment to restart the server for.</para><para> Condition: You must specify either this or an EnvironmentId, or both. If you do not
+            specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+            error. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RestartEBAppServerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.RestartAppServerResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RestartEBAppServerCmdlet.PassThru">
+            <summary>
+            Returns the id or name of the environment (depending on which parameter was supplied)
+            The -PassThru parameter is deprecated, use -Select instead. This parameter will be removed in future
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.RestartEBAppServerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.SetEBEnvironmentCNAMECmdlet">
+            <summary>
+            Swaps the CNAMEs of two environments.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.SetEBEnvironmentCNAMECmdlet.DestinationEnvironmentId">
+            <summary>
+            <para>
+            <para>The ID of the destination environment.</para><para> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or
+            the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify
+            the <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.SetEBEnvironmentCNAMECmdlet.DestinationEnvironmentName">
+            <summary>
+            <para>
+            <para>The name of the destination environment.</para><para> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or
+            the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify
+            the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.SetEBEnvironmentCNAMECmdlet.SourceEnvironmentId">
+            <summary>
+            <para>
+            <para>The ID of the source environment.</para><para> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
+            <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
+            <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.SetEBEnvironmentCNAMECmdlet.SourceEnvironmentName">
+            <summary>
+            <para>
+            <para>The name of the source environment.</para><para> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
+            <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
+            <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.SetEBEnvironmentCNAMECmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.SwapEnvironmentCNAMEsResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.SetEBEnvironmentCNAMECmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SourceEnvironmentId parameter.
+            The -PassThru parameter is deprecated, use -Select '^SourceEnvironmentId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.SetEBEnvironmentCNAMECmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.StartEBEnvironmentRebuildCmdlet">
+            <summary>
+            Deletes and recreates all of the AWS resources (for example: the Auto Scaling group,
+            load balancer, etc.) for a specified environment and forces a restart.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.StartEBEnvironmentRebuildCmdlet.EnvironmentId">
+            <summary>
+            <para>
+            <para>The ID of the environment to rebuild.</para><para> Condition: You must specify either this or an EnvironmentName, or both. If you do
+            not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+            error. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.StartEBEnvironmentRebuildCmdlet.EnvironmentName">
+            <summary>
+            <para>
+            <para>The name of the environment to rebuild.</para><para> Condition: You must specify either this or an EnvironmentId, or both. If you do not
+            specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+            error. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.StartEBEnvironmentRebuildCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.RebuildEnvironmentResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.StartEBEnvironmentRebuildCmdlet.PassThru">
+            <summary>
+            Returns the id or name of the environment (depending on which parameter was supplied)
+            The -PassThru parameter is deprecated, use -Select instead. This parameter will be removed in future
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.StartEBEnvironmentRebuildCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.StopEBEnvironmentCmdlet">
+            <summary>
+            Terminates the specified environment.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.StopEBEnvironmentCmdlet.EnvironmentId">
+            <summary>
+            <para>
+            <para>The ID of the environment to terminate.</para><para> Condition: You must specify either this or an EnvironmentName, or both. If you do
+            not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+            error. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.StopEBEnvironmentCmdlet.EnvironmentName">
+            <summary>
+            <para>
+            <para>The name of the environment to terminate.</para><para> Condition: You must specify either this or an EnvironmentId, or both. If you do not
+            specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+            error. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.StopEBEnvironmentCmdlet.ForceTerminate">
+            <summary>
+            <para>
+            <para>Terminates the target environment even if another environment in the same group is
+            dependent on it.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.StopEBEnvironmentCmdlet.TerminateResource">
+            <summary>
+            <para>
+            <para>Indicates whether the associated AWS resources should shut down when the environment
+            is terminated:</para><ul><li><para><code>true</code>: The specified environment as well as the associated AWS resources,
+            such as Auto Scaling group and LoadBalancer, are terminated.</para></li><li><para><code>false</code>: AWS Elastic Beanstalk resource management is removed from the
+            environment, but the AWS resources continue to operate.</para></li></ul><para> For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/">
+            AWS Elastic Beanstalk User Guide. </a></para><para> Default: <code>true</code></para><para> Valid Values: <code>true</code> | <code>false</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.StopEBEnvironmentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.TerminateEnvironmentResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.TerminateEnvironmentResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.StopEBEnvironmentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EnvironmentId parameter.
+            The -PassThru parameter is deprecated, use -Select '^EnvironmentId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.StopEBEnvironmentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.StopEBEnvironmentUpdateCmdlet">
+            <summary>
+            Cancels in-progress environment configuration update or application version deployment.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.StopEBEnvironmentUpdateCmdlet.EnvironmentId">
+            <summary>
+            <para>
+            <para>This specifies the ID of the environment with the in-progress update that you want
+            to cancel.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.StopEBEnvironmentUpdateCmdlet.EnvironmentName">
+            <summary>
+            <para>
+            <para>This specifies the name of the environment with the in-progress update that you want
+            to cancel.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.StopEBEnvironmentUpdateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.AbortEnvironmentUpdateResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.StopEBEnvironmentUpdateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EnvironmentName parameter.
+            The -PassThru parameter is deprecated, use -Select '^EnvironmentName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.StopEBEnvironmentUpdateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.SubmitEBEnvironmentManagedActionCmdlet">
+            <summary>
+            Applies a scheduled managed action immediately. A managed action can be applied only
+            if its status is <code>Scheduled</code>. Get the status and action ID of a managed
+            action with <a>DescribeEnvironmentManagedActions</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.SubmitEBEnvironmentManagedActionCmdlet.ActionId">
+            <summary>
+            <para>
+            <para>The action ID of the scheduled managed action to execute.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.SubmitEBEnvironmentManagedActionCmdlet.EnvironmentId">
+            <summary>
+            <para>
+            <para>The environment ID of the target environment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.SubmitEBEnvironmentManagedActionCmdlet.EnvironmentName">
+            <summary>
+            <para>
+            <para>The name of the target environment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.SubmitEBEnvironmentManagedActionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.ApplyEnvironmentManagedActionResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.ApplyEnvironmentManagedActionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.SubmitEBEnvironmentManagedActionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EnvironmentName parameter.
+            The -PassThru parameter is deprecated, use -Select '^EnvironmentName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.SubmitEBEnvironmentManagedActionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.TestEBConfigurationSettingCmdlet">
+            <summary>
+            Takes a set of configuration settings and either a configuration template or environment,
+            and determines whether those values are valid.
+            
+             
+            <para>
+            This action returns a list of messages indicating any errors or warnings associated
+            with the selection of option values.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.TestEBConfigurationSettingCmdlet.ApplicationName">
+            <summary>
+            <para>
+            <para>The name of the application that the configuration template or environment belongs
+            to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.TestEBConfigurationSettingCmdlet.EnvironmentName">
+            <summary>
+            <para>
+            <para>The name of the environment to validate the settings against.</para><para>Condition: You cannot specify both this and a configuration template name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.TestEBConfigurationSettingCmdlet.OptionSetting">
+            <summary>
+            <para>
+            <para>A list of the options and desired values to evaluate.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.TestEBConfigurationSettingCmdlet.TemplateName">
+            <summary>
+            <para>
+            <para>The name of the configuration template to validate the settings against.</para><para>Condition: You cannot specify both this and an environment name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.TestEBConfigurationSettingCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Messages'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.ValidateConfigurationSettingsResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.ValidateConfigurationSettingsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.TestEBConfigurationSettingCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ApplicationName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ApplicationName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.UnregisterEBEnvironmentOperationsRoleCmdlet">
+            <summary>
+            Disassociate the operations role from an environment. After this call is made, Elastic
+            Beanstalk uses the caller's permissions for permissions to downstream services during
+            subsequent calls acting on this environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
+            roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UnregisterEBEnvironmentOperationsRoleCmdlet.EnvironmentName">
+            <summary>
+            <para>
+            <para>The name of the environment from which to disassociate the operations role.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UnregisterEBEnvironmentOperationsRoleCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.DisassociateEnvironmentOperationsRoleResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UnregisterEBEnvironmentOperationsRoleCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EnvironmentName parameter.
+            The -PassThru parameter is deprecated, use -Select '^EnvironmentName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UnregisterEBEnvironmentOperationsRoleCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.UpdateEBApplicationCmdlet">
+            <summary>
+            Updates the specified application to have the specified properties.
+            
+             <note><para>
+            If a property (for example, <code>description</code>) is not provided, the value remains
+            unchanged. To clear these properties, specify an empty string.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBApplicationCmdlet.ApplicationName">
+            <summary>
+            <para>
+            <para>The name of the application to update. If no such application is found, <code>UpdateApplication</code>
+            returns an <code>InvalidParameterValue</code> error. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBApplicationCmdlet.Description">
+            <summary>
+            <para>
+            <para>A new description for the application.</para><para>Default: If not specified, AWS Elastic Beanstalk does not update the description.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBApplicationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Application'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.UpdateApplicationResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.UpdateApplicationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBApplicationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ApplicationName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ApplicationName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBApplicationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.UpdateEBApplicationResourceLifecycleCmdlet">
+            <summary>
+            Modifies lifecycle settings for an application.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBApplicationResourceLifecycleCmdlet.ApplicationName">
+            <summary>
+            <para>
+            <para>The name of the application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBApplicationResourceLifecycleCmdlet.MaxAgeRule_DeleteSourceFromS3">
+            <summary>
+            <para>
+            <para>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic
+            Beanstalk deletes the application version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBApplicationResourceLifecycleCmdlet.MaxCountRule_DeleteSourceFromS3">
+            <summary>
+            <para>
+            <para>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic
+            Beanstalk deletes the application version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBApplicationResourceLifecycleCmdlet.MaxAgeRule_Enabled">
+            <summary>
+            <para>
+            <para>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBApplicationResourceLifecycleCmdlet.MaxCountRule_Enabled">
+            <summary>
+            <para>
+            <para>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBApplicationResourceLifecycleCmdlet.MaxAgeRule_MaxAgeInDay">
+            <summary>
+            <para>
+            <para>Specify the number of days to retain an application versions.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBApplicationResourceLifecycleCmdlet.MaxCountRule_MaxCount">
+            <summary>
+            <para>
+            <para>Specify the maximum number of application versions to retain.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBApplicationResourceLifecycleCmdlet.ResourceLifecycleConfig_ServiceRole">
+            <summary>
+            <para>
+            <para>The ARN of an IAM service role that Elastic Beanstalk has permission to assume.</para><para>The <code>ServiceRole</code> property is required the first time that you provide
+            a <code>VersionLifecycleConfig</code> for the application in one of the supporting
+            calls (<code>CreateApplication</code> or <code>UpdateApplicationResourceLifecycle</code>).
+            After you provide it once, in either one of the calls, Elastic Beanstalk persists
+            the Service Role with the application, and you don't need to specify it again in subsequent
+            <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify it
+            in subsequent calls to change the Service Role to another value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBApplicationResourceLifecycleCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.UpdateApplicationResourceLifecycleResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.UpdateApplicationResourceLifecycleResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBApplicationResourceLifecycleCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ApplicationName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ApplicationName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBApplicationResourceLifecycleCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.UpdateEBApplicationVersionCmdlet">
+            <summary>
+            Updates the specified application version to have the specified properties.
+            
+             <note><para>
+            If a property (for example, <code>description</code>) is not provided, the value remains
+            unchanged. To clear properties, specify an empty string.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBApplicationVersionCmdlet.ApplicationName">
+            <summary>
+            <para>
+            <para>The name of the application associated with this version.</para><para> If no application is found with this name, <code>UpdateApplication</code> returns
+            an <code>InvalidParameterValue</code> error.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBApplicationVersionCmdlet.Description">
+            <summary>
+            <para>
+            <para>A new description for this version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBApplicationVersionCmdlet.VersionLabel">
+            <summary>
+            <para>
+            <para>The name of the version to update.</para><para>If no application version is found with this label, <code>UpdateApplication</code>
+            returns an <code>InvalidParameterValue</code> error. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBApplicationVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ApplicationVersion'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.UpdateApplicationVersionResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.UpdateApplicationVersionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBApplicationVersionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ApplicationName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ApplicationName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBApplicationVersionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.UpdateEBConfigurationTemplateCmdlet">
+            <summary>
+            Updates the specified configuration template to have the specified properties or configuration
+            option values.
+            
+             <note><para>
+            If a property (for example, <code>ApplicationName</code>) is not provided, its value
+            remains unchanged. To clear such properties, specify an empty string.
+            </para></note><para>
+            Related Topics
+            </para><ul><li><para><a>DescribeConfigurationOptions</a></para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBConfigurationTemplateCmdlet.ApplicationName">
+            <summary>
+            <para>
+            <para>The name of the application associated with the configuration template to update.</para><para> If no application is found with this name, <code>UpdateConfigurationTemplate</code>
+            returns an <code>InvalidParameterValue</code> error. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBConfigurationTemplateCmdlet.Description">
+            <summary>
+            <para>
+            <para>A new description for the configuration.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBConfigurationTemplateCmdlet.OptionSetting">
+            <summary>
+            <para>
+            <para>A list of configuration option settings to update with the new specified option value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBConfigurationTemplateCmdlet.OptionsToRemove">
+            <summary>
+            <para>
+            <para>A list of configuration options to remove from the configuration set.</para><para> Constraint: You can remove only <code>UserDefined</code> configuration options. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBConfigurationTemplateCmdlet.TemplateName">
+            <summary>
+            <para>
+            <para>The name of the configuration template to update.</para><para> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code>
+            returns an <code>InvalidParameterValue</code> error. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBConfigurationTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.UpdateConfigurationTemplateResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.UpdateConfigurationTemplateResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBConfigurationTemplateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ApplicationName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ApplicationName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBConfigurationTemplateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.UpdateEBEnvironmentCmdlet">
+            <summary>
+            Updates the environment description, deploys a new application version, updates the
+            configuration settings to an entirely new configuration template, or updates select
+            configuration option values in the running environment.
+            
+             
+            <para>
+             Attempting to update both the release and configuration is not allowed and AWS Elastic
+            Beanstalk returns an <code>InvalidParameterCombination</code> error. 
+            </para><para>
+             When updating the configuration settings to a new template or individual settings,
+            a draft configuration is created and <a>DescribeConfigurationSettings</a> for this
+            environment returns two setting descriptions with different <code>DeploymentStatus</code>
+            values. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBEnvironmentCmdlet.ApplicationName">
+            <summary>
+            <para>
+            <para>The name of the application with which the environment is associated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBEnvironmentCmdlet.Description">
+            <summary>
+            <para>
+            <para>If this parameter is specified, AWS Elastic Beanstalk updates the description of this
+            environment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBEnvironmentCmdlet.EnvironmentId">
+            <summary>
+            <para>
+            <para>The ID of the environment to update.</para><para>If no environment with this ID exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
+            error.</para><para>Condition: You must specify either this or an EnvironmentName, or both. If you do
+            not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+            error. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBEnvironmentCmdlet.EnvironmentName">
+            <summary>
+            <para>
+            <para>The name of the environment to update. If no environment with this name exists, AWS
+            Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </para><para>Condition: You must specify either this or an EnvironmentId, or both. If you do not
+            specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+            error. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBEnvironmentCmdlet.GroupName">
+            <summary>
+            <para>
+            <para>The name of the group to which the target environment belongs. Specify a group name
+            only if the environment's name is specified in an environment manifest and not with
+            the environment name or environment ID parameters. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+            Manifest (env.yaml)</a> for details.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBEnvironmentCmdlet.Tier_Name">
+            <summary>
+            <para>
+            <para>The name of this environment tier.</para><para>Valid values:</para><ul><li><para>For <i>Web server tier</i> – <code>WebServer</code></para></li><li><para>For <i>Worker tier</i> – <code>Worker</code></para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBEnvironmentCmdlet.OptionSetting">
+            <summary>
+            <para>
+            <para>If specified, AWS Elastic Beanstalk updates the configuration set associated with
+            the running environment and sets the specified configuration options to the requested
+            value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBEnvironmentCmdlet.OptionsToRemove">
+            <summary>
+            <para>
+            <para>A list of custom user-defined configuration options to remove from the configuration
+            set for this environment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBEnvironmentCmdlet.PlatformArn">
+            <summary>
+            <para>
+            <para>The ARN of the platform, if used.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBEnvironmentCmdlet.SolutionStackName">
+            <summary>
+            <para>
+            <para>This specifies the platform version that the environment will run after the environment
+            is updated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBEnvironmentCmdlet.TemplateName">
+            <summary>
+            <para>
+            <para>If this parameter is specified, AWS Elastic Beanstalk deploys this configuration template
+            to the environment. If no such configuration template is found, AWS Elastic Beanstalk
+            returns an <code>InvalidParameterValue</code> error. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBEnvironmentCmdlet.Tier_Type">
+            <summary>
+            <para>
+            <para>The type of this environment tier.</para><para>Valid values:</para><ul><li><para>For <i>Web server tier</i> – <code>Standard</code></para></li><li><para>For <i>Worker tier</i> – <code>SQS/HTTP</code></para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBEnvironmentCmdlet.Tier_Version">
+            <summary>
+            <para>
+            <para>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk
+            uses the latest compatible worker tier version.</para><note><para>This member is deprecated. Any specific version that you set may become out of date.
+            We recommend leaving it unspecified.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBEnvironmentCmdlet.VersionLabel">
+            <summary>
+            <para>
+            <para>If this parameter is specified, AWS Elastic Beanstalk deploys the named application
+            version to the environment. If no such application version is found, returns an <code>InvalidParameterValue</code>
+            error. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBEnvironmentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.UpdateEnvironmentResponse).
+            Specifying the name of a property of type Amazon.ElasticBeanstalk.Model.UpdateEnvironmentResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBEnvironmentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EnvironmentId parameter.
+            The -PassThru parameter is deprecated, use -Select '^EnvironmentId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBEnvironmentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EB.UpdateEBResourceTagCmdlet">
+            <summary>
+            Update the list of tags applied to an AWS Elastic Beanstalk resource. Two lists can
+            be passed: <code>TagsToAdd</code> for tags to add or update, and <code>TagsToRemove</code>.
+            
+             
+            <para>
+            Elastic Beanstalk supports tagging of all of its resources. For details about resource
+            tagging, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging
+            Application Resources</a>.
+            </para><para>
+            If you create a custom IAM user policy to control permission to this operation, specify
+            one of the following two virtual actions (or both) instead of the API operation name:
+            </para><dl><dt>elasticbeanstalk:AddTags</dt><dd><para>
+            Controls permission to call <code>UpdateTagsForResource</code> and pass a list of
+            tags to add in the <code>TagsToAdd</code> parameter.
+            </para></dd><dt>elasticbeanstalk:RemoveTags</dt><dd><para>
+            Controls permission to call <code>UpdateTagsForResource</code> and pass a list of
+            tag keys to remove in the <code>TagsToRemove</code> parameter.
+            </para></dd></dl><para>
+            For details about creating a custom user policy, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#AWSHowTo.iam.policies">Creating
+            a Custom User Policy</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resouce to be updated.</para><para>Must be the ARN of an Elastic Beanstalk resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBResourceTagCmdlet.TagsToAdd">
+            <summary>
+            <para>
+            <para>A list of tags to add or update. If a key of an existing tag is added, the tag's value
+            is updated.</para><para>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBResourceTagCmdlet.TagsToRemove">
+            <summary>
+            <para>
+            <para>A list of tag keys to remove. If a tag key doesn't exist, it is silently ignored.</para><para>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticBeanstalk.Model.UpdateTagsForResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EB.UpdateEBResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

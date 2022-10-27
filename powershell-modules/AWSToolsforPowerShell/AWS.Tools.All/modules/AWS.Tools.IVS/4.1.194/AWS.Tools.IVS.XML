@@ -1,0 +1,1158 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.IVS</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.AddIVSResourceTagCmdlet">
+            <summary>
+            Adds or updates tags for the Amazon Web Services resource with the specified ARN.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.AddIVSResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>ARN of the resource for which tags are to be added or updated. The ARN must be URL-encoded.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.AddIVSResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Array of tags to be added or updated. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+            Amazon Web Services Resources</a> for more information, including restrictions that
+            apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific
+            constraints beyond what is documented there.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.AddIVSResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.AddIVSResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.AddIVSResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.GetIVSChannelCmdlet">
+            <summary>
+            Gets the channel configuration for the specified channel ARN. See also <a>BatchGetChannel</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSChannelCmdlet.Arn">
+            <summary>
+            <para>
+            <para>ARN of the channel for which the configuration is to be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSChannelCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Channel'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.GetChannelResponse).
+            Specifying the name of a property of type Amazon.IVS.Model.GetChannelResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSChannelCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.GetIVSChannelBatchCmdlet">
+            <summary>
+            Performs <a>GetChannel</a> on multiple ARNs simultaneously.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSChannelBatchCmdlet.Arn">
+            <summary>
+            <para>
+            <para>Array of ARNs, one per channel.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSChannelBatchCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.BatchGetChannelResponse).
+            Specifying the name of a property of type Amazon.IVS.Model.BatchGetChannelResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.GetIVSChannelListCmdlet">
+            <summary>
+            Gets summary information about all channels in your account, in the Amazon Web Services
+            region where the API request is processed. This list can be filtered to match a specified
+            name or recording-configuration ARN. Filters are mutually exclusive and cannot be
+            used together. If you try to use both filters, you will get an error (409 ConflictException).
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSChannelListCmdlet.FilterByName">
+            <summary>
+            <para>
+            <para>Filters the channel list to match the specified name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSChannelListCmdlet.FilterByRecordingConfigurationArn">
+            <summary>
+            <para>
+            <para>Filters the channel list to match the specified recording-configuration ARN.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSChannelListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Maximum number of channels to return. Default: 100.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSChannelListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code>
+            response field.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSChannelListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Channels'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.ListChannelsResponse).
+            Specifying the name of a property of type Amazon.IVS.Model.ListChannelsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSChannelListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FilterByName parameter.
+            The -PassThru parameter is deprecated, use -Select '^FilterByName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.GetIVSPlaybackKeyPairCmdlet">
+            <summary>
+            Gets a specified playback authorization key pair and returns the <code>arn</code>
+            and <code>fingerprint</code>. The <code>privateKey</code> held by the caller can be
+            used to generate viewer authorization tokens, to grant viewers access to private channels.
+            For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
+            Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSPlaybackKeyPairCmdlet.Arn">
+            <summary>
+            <para>
+            <para>ARN of the key pair to be returned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSPlaybackKeyPairCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'KeyPair'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.GetPlaybackKeyPairResponse).
+            Specifying the name of a property of type Amazon.IVS.Model.GetPlaybackKeyPairResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSPlaybackKeyPairCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.GetIVSPlaybackKeyPairListCmdlet">
+            <summary>
+            Gets summary information about playback key pairs. For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
+            Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSPlaybackKeyPairListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Maximum number of key pairs to return. Default: your service quota or 100, whichever
+            is smaller.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSPlaybackKeyPairListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code>
+            response field.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSPlaybackKeyPairListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'KeyPairs'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.ListPlaybackKeyPairsResponse).
+            Specifying the name of a property of type Amazon.IVS.Model.ListPlaybackKeyPairsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.GetIVSRecordingConfigurationCmdlet">
+            <summary>
+            Gets the recording configuration for the specified ARN.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSRecordingConfigurationCmdlet.Arn">
+            <summary>
+            <para>
+            <para>ARN of the recording configuration to be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSRecordingConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'RecordingConfiguration'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.GetRecordingConfigurationResponse).
+            Specifying the name of a property of type Amazon.IVS.Model.GetRecordingConfigurationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSRecordingConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.GetIVSRecordingConfigurationListCmdlet">
+            <summary>
+            Gets summary information about all recording configurations in your account, in the
+            Amazon Web Services region where the API request is processed.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSRecordingConfigurationListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Maximum number of recording configurations to return. Default: your service quota
+            or 100, whichever is smaller. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSRecordingConfigurationListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The first recording configuration to retrieve. This is used for pagination; see the
+            <code>nextToken</code> response field.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSRecordingConfigurationListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'RecordingConfigurations'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.ListRecordingConfigurationsResponse).
+            Specifying the name of a property of type Amazon.IVS.Model.ListRecordingConfigurationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.GetIVSResourceTagCmdlet">
+            <summary>
+            Gets information about Amazon Web Services tags for the specified ARN.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The ARN of the resource to be retrieved. The ARN must be URL-encoded.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.IVS.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamCmdlet">
+            <summary>
+            Gets information about the active (live) stream on a specified channel.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamCmdlet.ChannelArn">
+            <summary>
+            <para>
+            <para>Channel ARN for stream to be accessed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Stream'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.GetStreamResponse).
+            Specifying the name of a property of type Amazon.IVS.Model.GetStreamResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ChannelArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ChannelArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamKeyCmdlet">
+            <summary>
+            Gets stream-key information for a specified ARN.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamKeyCmdlet.Arn">
+            <summary>
+            <para>
+            <para>ARN for the stream key to be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamKeyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'StreamKey'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.GetStreamKeyResponse).
+            Specifying the name of a property of type Amazon.IVS.Model.GetStreamKeyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamKeyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamKeyBatchCmdlet">
+            <summary>
+            Performs <a>GetStreamKey</a> on multiple ARNs simultaneously.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamKeyBatchCmdlet.Arn">
+            <summary>
+            <para>
+            <para>Array of ARNs, one per channel.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamKeyBatchCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.BatchGetStreamKeyResponse).
+            Specifying the name of a property of type Amazon.IVS.Model.BatchGetStreamKeyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamKeyListCmdlet">
+            <summary>
+            Gets summary information about stream keys for the specified channel.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamKeyListCmdlet.ChannelArn">
+            <summary>
+            <para>
+            <para>Channel ARN used to filter the list.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamKeyListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Maximum number of streamKeys to return. Default: 1.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamKeyListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The first stream key to retrieve. This is used for pagination; see the <code>nextToken</code>
+            response field.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamKeyListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'StreamKeys'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.ListStreamKeysResponse).
+            Specifying the name of a property of type Amazon.IVS.Model.ListStreamKeysResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamKeyListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ChannelArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ChannelArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamListCmdlet">
+            <summary>
+            Gets summary information about live streams in your account, in the Amazon Web Services
+            region where the API request is processed.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamListCmdlet.FilterBy_Health">
+            <summary>
+            <para>
+            <para>The stream’s health.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Maximum number of streams to return. Default: 100.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
+            response field.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Streams'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.ListStreamsResponse).
+            Specifying the name of a property of type Amazon.IVS.Model.ListStreamsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FilterBy_Health parameter.
+            The -PassThru parameter is deprecated, use -Select '^FilterBy_Health' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamSessionCmdlet">
+            <summary>
+            Gets metadata on a specified stream.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamSessionCmdlet.ChannelArn">
+            <summary>
+            <para>
+            <para>ARN of the channel resource</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamSessionCmdlet.StreamId">
+            <summary>
+            <para>
+            <para>Unique identifier for a live or previously live stream in the specified channel. If
+            no <code>streamId</code> is provided, this returns the most recent stream session
+            for the channel, if it exists.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamSessionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'StreamSession'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.GetStreamSessionResponse).
+            Specifying the name of a property of type Amazon.IVS.Model.GetStreamSessionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamSessionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ChannelArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ChannelArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamSessionListCmdlet">
+            <summary>
+            Gets a summary of current and previous streams for a specified channel in your account,
+            in the AWS region where the API request is processed.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamSessionListCmdlet.ChannelArn">
+            <summary>
+            <para>
+            <para>Channel ARN used to filter the list.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamSessionListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Maximum number of streams to return. Default: 100.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamSessionListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code>
+            response field.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamSessionListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'StreamSessions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.ListStreamSessionsResponse).
+            Specifying the name of a property of type Amazon.IVS.Model.ListStreamSessionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.GetIVSStreamSessionListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ChannelArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ChannelArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.ImportIVSPlaybackKeyPairCmdlet">
+            <summary>
+            Imports the public portion of a new key pair and returns its <code>arn</code> and
+            <code>fingerprint</code>. The <code>privateKey</code> can then be used to generate
+            viewer authorization tokens, to grant viewers access to private channels. For more
+            information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
+            Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.ImportIVSPlaybackKeyPairCmdlet.Name">
+            <summary>
+            <para>
+            <para>Playback-key-pair name. The value does not need to be unique.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.ImportIVSPlaybackKeyPairCmdlet.PublicKeyMaterial">
+            <summary>
+            <para>
+            <para>The public portion of a customer-generated key pair.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.ImportIVSPlaybackKeyPairCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Any tags provided with the request are added to the playback key pair tags. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+            Web Services Resources</a> for more information, including restrictions that apply
+            to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific
+            constraints beyond what is documented there.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.ImportIVSPlaybackKeyPairCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'KeyPair'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.ImportPlaybackKeyPairResponse).
+            Specifying the name of a property of type Amazon.IVS.Model.ImportPlaybackKeyPairResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.ImportIVSPlaybackKeyPairCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PublicKeyMaterial parameter.
+            The -PassThru parameter is deprecated, use -Select '^PublicKeyMaterial' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.ImportIVSPlaybackKeyPairCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.NewIVSChannelCmdlet">
+            <summary>
+            Creates a new channel and an associated stream key to start streaming.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.NewIVSChannelCmdlet.Authorized">
+            <summary>
+            <para>
+            <para>Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.NewIVSChannelCmdlet.LatencyMode">
+            <summary>
+            <para>
+            <para>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video
+            up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note:
+            In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to
+            Ultra-low and Standard, respectively.) Default: <code>LOW</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.NewIVSChannelCmdlet.Name">
+            <summary>
+            <para>
+            <para>Channel name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.NewIVSChannelCmdlet.RecordingConfigurationArn">
+            <summary>
+            <para>
+            <para>Recording-configuration ARN. Default: "" (empty string, recording is disabled).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.NewIVSChannelCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+            Web Services Resources</a> for more information, including restrictions that apply
+            to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific
+            constraints beyond what is documented there.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.NewIVSChannelCmdlet.Type">
+            <summary>
+            <para>
+            <para>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed
+            the allowable resolution or bitrate, the stream probably will disconnect immediately.</i>
+            Default: <code>STANDARD</code>. Valid values:</para><ul><li><para><code>STANDARD</code>: Video is transcoded: multiple qualities are generated from
+            the original input, to automatically give viewers the best experience for their devices
+            and network conditions. Transcoding allows higher playback quality across a range
+            of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps.
+            Audio is transcoded only for renditions 360p and below; above that, audio is passed
+            through. This is the default.</para></li><li><para><code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to
+            viewers. The viewer’s video-quality choice is limited to the original input. Resolution
+            can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for
+            resolutions between 480p and 1080p.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.NewIVSChannelCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.CreateChannelResponse).
+            Specifying the name of a property of type Amazon.IVS.Model.CreateChannelResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.NewIVSChannelCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.NewIVSChannelCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.NewIVSRecordingConfigurationCmdlet">
+            <summary>
+            Creates a new recording configuration, used to enable recording to Amazon S3.
+            
+             
+            <para><b>Known issue:</b> In the us-east-1 region, if you use the Amazon Web Services CLI
+            to create a recording configuration, it returns success even if the S3 bucket is in
+            a different region. In this case, the <code>state</code> of the recording configuration
+            is <code>CREATE_FAILED</code> (instead of <code>ACTIVE</code>). (In other regions,
+            the CLI correctly returns failure if the bucket is in a different region.)
+            </para><para><b>Workaround:</b> Ensure that your S3 bucket is in the same region as the recording
+            configuration. If you create a recording configuration in a different region as your
+            S3 bucket, delete that recording configuration and create a new one with an S3 bucket
+            from the correct region.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.NewIVSRecordingConfigurationCmdlet.S3_BucketName">
+            <summary>
+            <para>
+            <para>Location (S3 bucket name) where recorded videos will be stored.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.NewIVSRecordingConfigurationCmdlet.Name">
+            <summary>
+            <para>
+            <para>Recording-configuration name. The value does not need to be unique.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.NewIVSRecordingConfigurationCmdlet.ThumbnailConfiguration_RecordingMode">
+            <summary>
+            <para>
+            <para>Thumbnail recording mode. Default: <code>INTERVAL</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.NewIVSRecordingConfigurationCmdlet.RecordingReconnectWindowSecond">
+            <summary>
+            <para>
+            <para>If a broadcast disconnects and then reconnects within the specified interval, the
+            multiple streams will be considered a single broadcast and merged together. Default:
+            0.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.NewIVSRecordingConfigurationCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+            Web Services Resources</a> for more information, including restrictions that apply
+            to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific
+            constraints beyond what is documented there.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.NewIVSRecordingConfigurationCmdlet.ThumbnailConfiguration_TargetIntervalSecond">
+            <summary>
+            <para>
+            <para>The targeted thumbnail-generation interval in seconds. This is configurable (and required)
+            only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.</para><para><b>Important:</b> Setting a value for <code>targetIntervalSeconds</code> does not
+            guarantee that thumbnails are generated at the specified interval. For thumbnails
+            to be generated at the <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code>
+            value for the input video must be less than the <code>targetIntervalSeconds</code>
+            value. See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html">
+            Amazon IVS Streaming Configuration</a> for information on setting <code>IDR/Keyframe</code>
+            to the recommended value in video-encoder settings.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.NewIVSRecordingConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'RecordingConfiguration'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.CreateRecordingConfigurationResponse).
+            Specifying the name of a property of type Amazon.IVS.Model.CreateRecordingConfigurationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.NewIVSRecordingConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.NewIVSRecordingConfigurationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.NewIVSStreamKeyCmdlet">
+            <summary>
+            Creates a stream key, used to initiate a stream, for the specified channel ARN.
+            
+             
+            <para>
+            Note that <a>CreateChannel</a> creates a stream key. If you subsequently use CreateStreamKey
+            on the same channel, it will fail because a stream key already exists and there is
+            a limit of 1 stream key per channel. To reset the stream key on a channel, use <a>DeleteStreamKey</a>
+            and then CreateStreamKey.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.NewIVSStreamKeyCmdlet.ChannelArn">
+            <summary>
+            <para>
+            <para>ARN of the channel for which to create the stream key.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.NewIVSStreamKeyCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+            Web Services Resources</a> for more information, including restrictions that apply
+            to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific
+            constraints beyond what is documented there.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.NewIVSStreamKeyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'StreamKey'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.CreateStreamKeyResponse).
+            Specifying the name of a property of type Amazon.IVS.Model.CreateStreamKeyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.NewIVSStreamKeyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ChannelArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ChannelArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.NewIVSStreamKeyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSChannelCmdlet">
+            <summary>
+            Deletes the specified channel and its associated stream keys.
+            
+             
+            <para>
+            If you try to delete a live channel, you will get an error (409 ConflictException).
+            To delete a channel that is live, call <a>StopStream</a>, wait for the Amazon EventBridge
+            "Stream End" event (to verify that the stream's state was changed from Live to Offline),
+            then call DeleteChannel. (See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">
+            Using EventBridge with Amazon IVS</a>.) 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSChannelCmdlet.Arn">
+            <summary>
+            <para>
+            <para>ARN of the channel to be deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSChannelCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.DeleteChannelResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSChannelCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSChannelCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSPlaybackKeyPairCmdlet">
+            <summary>
+            Deletes a specified authorization key pair. This invalidates future viewer tokens
+            generated using the key pair’s <code>privateKey</code>. For more information, see
+            <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
+            Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSPlaybackKeyPairCmdlet.Arn">
+            <summary>
+            <para>
+            <para>ARN of the key pair to be deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSPlaybackKeyPairCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.DeletePlaybackKeyPairResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSPlaybackKeyPairCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSPlaybackKeyPairCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSRecordingConfigurationCmdlet">
+            <summary>
+            Deletes the recording configuration for the specified ARN.
+            
+             
+            <para>
+            If you try to delete a recording configuration that is associated with a channel,
+            you will get an error (409 ConflictException). To avoid this, for all channels that
+            reference the recording configuration, first use <a>UpdateChannel</a> to set the <code>recordingConfigurationArn</code>
+            field to an empty string, then use DeleteRecordingConfiguration.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSRecordingConfigurationCmdlet.Arn">
+            <summary>
+            <para>
+            <para>ARN of the recording configuration to be deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSRecordingConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.DeleteRecordingConfigurationResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSRecordingConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSRecordingConfigurationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSResourceTagCmdlet">
+            <summary>
+            Removes tags from the resource with the specified ARN.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>ARN of the resource for which tags are to be removed. The ARN must be URL-encoded.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>Array of tags to be removed. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+            Amazon Web Services Resources</a> for more information, including restrictions that
+            apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific
+            constraints beyond what is documented there.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSStreamKeyCmdlet">
+            <summary>
+            Deletes the stream key for the specified ARN, so it can no longer be used to stream.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSStreamKeyCmdlet.Arn">
+            <summary>
+            <para>
+            <para>ARN of the stream key to be deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSStreamKeyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.DeleteStreamKeyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSStreamKeyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.RemoveIVSStreamKeyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.StopIVSStreamCmdlet">
+            <summary>
+            Disconnects the incoming RTMPS stream for the specified channel. Can be used in conjunction
+            with <a>DeleteStreamKey</a> to prevent further streaming to a channel.
+            
+             <note><para>
+            Many streaming client-software libraries automatically reconnect a dropped RTMPS session,
+            so to stop the stream permanently, you may want to first revoke the <code>streamKey</code>
+            attached to the channel.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.StopIVSStreamCmdlet.ChannelArn">
+            <summary>
+            <para>
+            <para>ARN of the channel for which the stream is to be stopped.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.StopIVSStreamCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.StopStreamResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.StopIVSStreamCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ChannelArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ChannelArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.StopIVSStreamCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.UpdateIVSChannelCmdlet">
+            <summary>
+            Updates a channel's configuration. This does not affect an ongoing stream of this
+            channel. You must stop and restart the stream for the changes to take effect.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.UpdateIVSChannelCmdlet.Arn">
+            <summary>
+            <para>
+            <para>ARN of the channel to be updated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.UpdateIVSChannelCmdlet.Authorized">
+            <summary>
+            <para>
+            <para>Whether the channel is private (enabled for playback authorization).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.UpdateIVSChannelCmdlet.LatencyMode">
+            <summary>
+            <para>
+            <para>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video
+            up to Full HD. Use <code>LOW</code> for near-real-time interaction with viewers. (Note:
+            In the Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to
+            Ultra-low and Standard, respectively.)</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.UpdateIVSChannelCmdlet.Name">
+            <summary>
+            <para>
+            <para>Channel name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.UpdateIVSChannelCmdlet.RecordingConfigurationArn">
+            <summary>
+            <para>
+            <para>Recording-configuration ARN. If this is set to an empty string, recording is disabled.
+            A value other than an empty string indicates that recording is enabled</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.UpdateIVSChannelCmdlet.Type">
+            <summary>
+            <para>
+            <para>Channel type, which determines the allowable resolution and bitrate. <i>If you exceed
+            the allowable resolution or bitrate, the stream probably will disconnect immediately</i>.
+            Valid values:</para><ul><li><para><code>STANDARD</code>: Video is transcoded: multiple qualities are generated from
+            the original input, to automatically give viewers the best experience for their devices
+            and network conditions. Transcoding allows higher playback quality across a range
+            of download speeds. Resolution can be up to 1080p and bitrate can be up to 8.5 Mbps.
+            Audio is transcoded only for renditions 360p and below; above that, audio is passed
+            through. This is the default.</para></li><li><para><code>BASIC</code>: Video is transmuxed: Amazon IVS delivers the original input to
+            viewers. The viewer’s video-quality choice is limited to the original input. Resolution
+            can be up to 1080p and bitrate can be up to 1.5 Mbps for 480p and up to 3.5 Mbps for
+            resolutions between 480p and 1080p.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.UpdateIVSChannelCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Channel'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.UpdateChannelResponse).
+            Specifying the name of a property of type Amazon.IVS.Model.UpdateChannelResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.UpdateIVSChannelCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.UpdateIVSChannelCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IVS.WriteIVSMetadataCmdlet">
+            <summary>
+            Inserts metadata into the active stream of the specified channel. At most 5 requests
+            per second per channel are allowed, each with a maximum 1 KB payload. (If 5 TPS is
+            not sufficient for your needs, we recommend batching your data into a single PutMetadata
+            call.) At most 155 requests per second per account are allowed. Also see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/metadata.html">Embedding
+            Metadata within a Video Stream</a> in the <i>Amazon IVS User Guide</i>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.WriteIVSMetadataCmdlet.ChannelArn">
+            <summary>
+            <para>
+            <para>ARN of the channel into which metadata is inserted. This channel must have an active
+            stream.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.WriteIVSMetadataCmdlet.Metadata">
+            <summary>
+            <para>
+            <para>Metadata to insert into the stream. Maximum: 1 KB per request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.WriteIVSMetadataCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IVS.Model.PutMetadataResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.WriteIVSMetadataCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ChannelArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ChannelArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IVS.WriteIVSMetadataCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,2387 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.NetworkFirewall</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.AddNWFWResourceTagCmdlet">
+            <summary>
+            Adds the specified tags to the specified resource. Tags are key:value pairs that you
+            can use to categorize and manage your resources, for purposes like billing. For example,
+            you might set the tag key to "customer" and the value to the customer name or ID.
+            You can specify one or more tags to add to each Amazon Web Services resource, up to
+            50 tags for a resource.
+            
+             
+            <para>
+            You can tag the Amazon Web Services resources that you manage through Network Firewall:
+            firewalls, firewall policies, and rule groups. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.AddNWFWResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.AddNWFWResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.AddNWFWResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.AddNWFWResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.AddNWFWResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWFirewallCmdlet">
+            <summary>
+            Returns the data objects for the specified firewall.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWFirewallCmdlet.FirewallArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the firewall.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWFirewallCmdlet.FirewallName">
+            <summary>
+            <para>
+            <para>The descriptive name of the firewall. You can't change the name of a firewall after
+            you create it.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWFirewallCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.DescribeFirewallResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.DescribeFirewallResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWFirewallCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FirewallArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^FirewallArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWFirewallListCmdlet">
+            <summary>
+            Retrieves the metadata for the firewalls that you have defined. If you provide VPC
+            identifiers in your request, this returns only the firewalls for those VPCs.
+            
+             
+            <para>
+            Depending on your setting for max results and the number of firewalls, a single call
+            might not return the full list. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWFirewallListCmdlet.VpcId">
+            <summary>
+            <para>
+            <para>The unique identifiers of the VPCs that you want Network Firewall to retrieve the
+            firewalls for. Leave this blank to retrieve all firewalls that you have defined.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWFirewallListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of objects that you want Network Firewall to return for this request.
+            If more objects are available, in the response, Network Firewall provides a <code>NextToken</code>
+            value that you can use in a subsequent call to get the next batch of objects.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWFirewallListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>When you request a list of objects with a <code>MaxResults</code> setting, if the
+            number of objects that are still available for retrieval exceeds the maximum you requested,
+            Network Firewall returns a <code>NextToken</code> value in the response. To retrieve
+            the next batch of objects, use the token returned from the prior request in your next
+            request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWFirewallListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Firewalls'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.ListFirewallsResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.ListFirewallsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWFirewallPolicyCmdlet">
+            <summary>
+            Returns the data objects for the specified firewall policy.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWFirewallPolicyCmdlet.FirewallPolicyArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the firewall policy.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWFirewallPolicyCmdlet.FirewallPolicyName">
+            <summary>
+            <para>
+            <para>The descriptive name of the firewall policy. You can't change the name of a firewall
+            policy after you create it.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWFirewallPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.DescribeFirewallPolicyResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.DescribeFirewallPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWFirewallPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FirewallPolicyArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^FirewallPolicyArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWFirewallPolicyListCmdlet">
+            <summary>
+            Retrieves the metadata for the firewall policies that you have defined. Depending
+            on your setting for max results and the number of firewall policies, a single call
+            might not return the full list.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWFirewallPolicyListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of objects that you want Network Firewall to return for this request.
+            If more objects are available, in the response, Network Firewall provides a <code>NextToken</code>
+            value that you can use in a subsequent call to get the next batch of objects.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWFirewallPolicyListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>When you request a list of objects with a <code>MaxResults</code> setting, if the
+            number of objects that are still available for retrieval exceeds the maximum you requested,
+            Network Firewall returns a <code>NextToken</code> value in the response. To retrieve
+            the next batch of objects, use the token returned from the prior request in your next
+            request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWFirewallPolicyListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'FirewallPolicies'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.ListFirewallPoliciesResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.ListFirewallPoliciesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWLoggingConfigurationCmdlet">
+            <summary>
+            Returns the logging configuration for the specified firewall.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWLoggingConfigurationCmdlet.FirewallArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the firewall.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWLoggingConfigurationCmdlet.FirewallName">
+            <summary>
+            <para>
+            <para>The descriptive name of the firewall. You can't change the name of a firewall after
+            you create it.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWLoggingConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.DescribeLoggingConfigurationResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.DescribeLoggingConfigurationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWLoggingConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FirewallArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^FirewallArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWResourcePolicyCmdlet">
+            <summary>
+            Retrieves a resource policy that you created in a <a>PutResourcePolicy</a> request.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWResourcePolicyCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource
+            policy you want to retrieve. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWResourcePolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Policy'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.DescribeResourcePolicyResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.DescribeResourcePolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWResourcePolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWResourceTagCmdlet">
+            <summary>
+            Retrieves the tags associated with the specified resource. Tags are key:value pairs
+            that you can use to categorize and manage your resources, for purposes like billing.
+            For example, you might set the tag key to "customer" and the value to the customer
+            name or ID. You can specify one or more tags to add to each Amazon Web Services resource,
+            up to 50 tags for a resource.
+            
+             
+            <para>
+            You can tag the Amazon Web Services resources that you manage through Network Firewall:
+            firewalls, firewall policies, and rule groups. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWResourceTagCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of objects that you want Network Firewall to return for this request.
+            If more objects are available, in the response, Network Firewall provides a <code>NextToken</code>
+            value that you can use in a subsequent call to get the next batch of objects.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWResourceTagCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>When you request a list of objects with a <code>MaxResults</code> setting, if the
+            number of objects that are still available for retrieval exceeds the maximum you requested,
+            Network Firewall returns a <code>NextToken</code> value in the response. To retrieve
+            the next batch of objects, use the token returned from the prior request in your next
+            request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWRuleGroupCmdlet">
+            <summary>
+            Returns the data objects for the specified rule group.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWRuleGroupCmdlet.RuleGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the rule group.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWRuleGroupCmdlet.RuleGroupName">
+            <summary>
+            <para>
+            <para>The descriptive name of the rule group. You can't change the name of a rule group
+            after you create it.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWRuleGroupCmdlet.Type">
+            <summary>
+            <para>
+            <para>Indicates whether the rule group is stateless or stateful. If the rule group is stateless,
+            it contains stateless rules. If it is stateful, it contains stateful rules. </para><note><para>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWRuleGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.DescribeRuleGroupResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.DescribeRuleGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWRuleGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RuleGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^RuleGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWRuleGroupListCmdlet">
+            <summary>
+            Retrieves the metadata for the rule groups that you have defined. Depending on your
+            setting for max results and the number of rule groups, a single call might not return
+            the full list.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWRuleGroupListCmdlet.ManagedType">
+            <summary>
+            <para>
+            <para>Indicates the general category of the Amazon Web Services managed rule group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWRuleGroupListCmdlet.Scope">
+            <summary>
+            <para>
+            <para>The scope of the request. The default setting of <code>ACCOUNT</code> or a setting
+            of <code>NULL</code> returns all of the rule groups in your account. A setting of
+            <code>MANAGED</code> returns all available managed rule groups.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWRuleGroupListCmdlet.Type">
+            <summary>
+            <para>
+            <para>Indicates whether the rule group is stateless or stateful. If the rule group is stateless,
+            it contains stateless rules. If it is stateful, it contains stateful rules.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWRuleGroupListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of objects that you want Network Firewall to return for this request.
+            If more objects are available, in the response, Network Firewall provides a <code>NextToken</code>
+            value that you can use in a subsequent call to get the next batch of objects.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWRuleGroupListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>When you request a list of objects with a <code>MaxResults</code> setting, if the
+            number of objects that are still available for retrieval exceeds the maximum you requested,
+            Network Firewall returns a <code>NextToken</code> value in the response. To retrieve
+            the next batch of objects, use the token returned from the prior request in your next
+            request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWRuleGroupListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'RuleGroups'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.ListRuleGroupsResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.ListRuleGroupsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWRuleGroupMetadataCmdlet">
+            <summary>
+            High-level information about a rule group, returned by operations like create and
+            describe. You can use the information provided in the metadata to retrieve and manage
+            a rule group. You can retrieve all objects for a rule group by calling <a>DescribeRuleGroup</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWRuleGroupMetadataCmdlet.RuleGroupArn">
+            <summary>
+            <para>
+            <para>The descriptive name of the rule group. You can't change the name of a rule group
+            after you create it.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWRuleGroupMetadataCmdlet.RuleGroupName">
+            <summary>
+            <para>
+            <para>The descriptive name of the rule group. You can't change the name of a rule group
+            after you create it.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWRuleGroupMetadataCmdlet.Type">
+            <summary>
+            <para>
+            <para>Indicates whether the rule group is stateless or stateful. If the rule group is stateless,
+            it contains stateless rules. If it is stateful, it contains stateful rules. </para><note><para>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWRuleGroupMetadataCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.DescribeRuleGroupMetadataResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.DescribeRuleGroupMetadataResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.GetNWFWRuleGroupMetadataCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RuleGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^RuleGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallCmdlet">
+            <summary>
+            Creates an Network Firewall <a>Firewall</a> and accompanying <a>FirewallStatus</a>
+            for a VPC. 
+            
+             
+            <para>
+            The firewall defines the configuration settings for an Network Firewall firewall.
+            The settings that you can define at creation include the firewall policy, the subnets
+            in your VPC to use for the firewall endpoints, and any tags that are attached to the
+            firewall Amazon Web Services resource. 
+            </para><para>
+            After you create a firewall, you can provide additional settings, like the logging
+            configuration. 
+            </para><para>
+            To update the settings for a firewall, you use the operations that apply to the settings
+            themselves, for example <a>UpdateLoggingConfiguration</a>, <a>AssociateSubnets</a>,
+            and <a>UpdateFirewallDeleteProtection</a>. 
+            </para><para>
+            To manage a firewall's tags, use the standard Amazon Web Services resource tagging
+            operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.
+            </para><para>
+            To retrieve information about firewalls, use <a>ListFirewalls</a> and <a>DescribeFirewall</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallCmdlet.DeleteProtection">
+            <summary>
+            <para>
+            <para>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code>
+            indicates that the firewall is protected against deletion. Use this setting to protect
+            against accidentally deleting a firewall that is in use. When you create a firewall,
+            the operation initializes this flag to <code>TRUE</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallCmdlet.Description">
+            <summary>
+            <para>
+            <para>A description of the firewall.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallCmdlet.FirewallName">
+            <summary>
+            <para>
+            <para>The descriptive name of the firewall. You can't change the name of a firewall after
+            you create it.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallCmdlet.FirewallPolicyArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the <a>FirewallPolicy</a> that you want to use for
+            the firewall.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallCmdlet.FirewallPolicyChangeProtection">
+            <summary>
+            <para>
+            <para>A setting indicating whether the firewall is protected against a change to the firewall
+            policy association. Use this setting to protect against accidentally modifying the
+            firewall policy for a firewall that is in use. When you create a firewall, the operation
+            initializes this setting to <code>TRUE</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallCmdlet.EncryptionConfiguration_KeyId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Web Services Key Management Service (KMS) customer managed key.
+            You can use any of the key identifiers that KMS supports, unless you're using a key
+            that's managed by another account. If you're using a key managed by another account,
+            then specify the key ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
+            ID</a> in the <i>Amazon Web Services KMS Developer Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallCmdlet.SubnetChangeProtection">
+            <summary>
+            <para>
+            <para>A setting indicating whether the firewall is protected against changes to the subnet
+            associations. Use this setting to protect against accidentally modifying the subnet
+            associations for a firewall that is in use. When you create a firewall, the operation
+            initializes this setting to <code>TRUE</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallCmdlet.SubnetMapping">
+            <summary>
+            <para>
+            <para>The public subnets to use for your Network Firewall firewalls. Each subnet must belong
+            to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint
+            in each subnet. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The key:value pairs to associate with the resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallCmdlet.EncryptionConfiguration_Type">
+            <summary>
+            <para>
+            <para>The type of Amazon Web Services KMS key to use for encryption of your Network Firewall
+            resources.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallCmdlet.VpcId">
+            <summary>
+            <para>
+            <para>The unique identifier of the VPC where Network Firewall should create the firewall.
+            </para><para>You can't change this setting after you create the firewall. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.CreateFirewallResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.CreateFirewallResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FirewallPolicyArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^FirewallPolicyArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallPolicyCmdlet">
+            <summary>
+            Creates the firewall policy for the firewall according to the specifications. 
+            
+             
+            <para>
+            An Network Firewall firewall policy defines the behavior of a firewall, in a collection
+            of stateless and stateful rule groups and other settings. You can use one firewall
+            policy for multiple firewalls. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallPolicyCmdlet.Description">
+            <summary>
+            <para>
+            <para>A description of the firewall policy.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallPolicyCmdlet.DryRun">
+            <summary>
+            <para>
+            <para>Indicates whether you want Network Firewall to just check the validity of the request,
+            rather than run the request. </para><para>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
+            but doesn't actually make the requested changes. The call returns the value that the
+            request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't
+            make additions or changes to your resources. This option allows you to make sure that
+            you have the required permissions to run the request and that your request parameters
+            are valid. </para><para>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your
+            resources. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallPolicyCmdlet.FirewallPolicyName">
+            <summary>
+            <para>
+            <para>The descriptive name of the firewall policy. You can't change the name of a firewall
+            policy after you create it.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallPolicyCmdlet.EncryptionConfiguration_KeyId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Web Services Key Management Service (KMS) customer managed key.
+            You can use any of the key identifiers that KMS supports, unless you're using a key
+            that's managed by another account. If you're using a key managed by another account,
+            then specify the key ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
+            ID</a> in the <i>Amazon Web Services KMS Developer Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallPolicyCmdlet.StatefulEngineOptions_RuleOrder">
+            <summary>
+            <para>
+            <para>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code>
+            is the default behavior. Stateful rules are provided to the rule engine as Suricata
+            compatible strings, and Suricata evaluates them based on certain settings. For more
+            information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
+            order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallPolicyCmdlet.FirewallPolicy_StatefulDefaultAction">
+            <summary>
+            <para>
+            <para>The default actions to take on a packet that doesn't match any stateful rules. The
+            stateful default action is optional, and is only valid when using the strict rule
+            order.</para><para>Valid values of the stateful default action:</para><ul><li><para>aws:drop_strict</para></li><li><para>aws:drop_established</para></li><li><para>aws:alert_strict</para></li><li><para>aws:alert_established</para></li></ul><para>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html#suricata-strict-rule-evaluation-order.html">Strict
+            evaluation order</a> in the <i>Network Firewall Developer Guide</i>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallPolicyCmdlet.FirewallPolicy_StatefulRuleGroupReference">
+            <summary>
+            <para>
+            <para>References to the stateful rule groups that are used in the policy. These define the
+            inspection criteria in stateful rules. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallPolicyCmdlet.FirewallPolicy_StatelessCustomAction">
+            <summary>
+            <para>
+            <para>The custom action definitions that are available for use in the firewall policy's
+            <code>StatelessDefaultActions</code> setting. You name each custom action that you
+            define, and then you can use it by name in your default actions specifications.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallPolicyCmdlet.FirewallPolicy_StatelessDefaultAction">
+            <summary>
+            <para>
+            <para>The actions to take on a packet if it doesn't match any of the stateless rules in
+            the policy. If you want non-matching packets to be forwarded for stateful inspection,
+            specify <code>aws:forward_to_sfe</code>. </para><para>You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>,
+            or <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that
+            are compatible with your standard section choice.</para><para>For example, you could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass",
+            “customActionName”]</code>. For information about compatibility, see the custom action
+            descriptions under <a>CustomAction</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallPolicyCmdlet.FirewallPolicy_StatelessFragmentDefaultAction">
+            <summary>
+            <para>
+            <para>The actions to take on a fragmented UDP packet if it doesn't match any of the stateless
+            rules in the policy. Network Firewall only manages UDP packet fragments and silently
+            drops packet fragments for other protocols. If you want non-matching fragmented UDP
+            packets to be forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>.
+            </para><para>You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>,
+            or <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that
+            are compatible with your standard section choice.</para><para>For example, you could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass",
+            “customActionName”]</code>. For information about compatibility, see the custom action
+            descriptions under <a>CustomAction</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallPolicyCmdlet.FirewallPolicy_StatelessRuleGroupReference">
+            <summary>
+            <para>
+            <para>References to the stateless rule groups that are used in the policy. These define
+            the matching criteria in stateless rules. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallPolicyCmdlet.StatefulEngineOptions_StreamExceptionPolicy">
+            <summary>
+            <para>
+            <para>Configures how Network Firewall processes traffic when a network connection breaks
+            midstream. Network connections can break due to disruptions in external networks or
+            within the firewall itself.</para><ul><li><para><code>DROP</code> - Network Firewall fails closed and drops all subsequent traffic
+            going to the firewall. This is the default behavior.</para></li><li><para><code>CONTINUE</code> - Network Firewall continues to apply rules to the subsequent
+            traffic without context from traffic before the break. This impacts the behavior of
+            rules that depend on this context. For example, if you have a stateful rule to <code>drop
+            http</code> traffic, Network Firewall won't match the traffic for this rule because
+            the service won't have the context from session initialization defining the application
+            layer protocol as HTTP. However, this behavior is rule dependent—a TCP-layer rule
+            using a <code>flow:stateless</code> rule would still match, as would the <code>aws:drop_strict</code>
+            default action.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallPolicyCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The key:value pairs to associate with the resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallPolicyCmdlet.EncryptionConfiguration_Type">
+            <summary>
+            <para>
+            <para>The type of Amazon Web Services KMS key to use for encryption of your Network Firewall
+            resources.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.CreateFirewallPolicyResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.CreateFirewallPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FirewallPolicyName parameter.
+            The -PassThru parameter is deprecated, use -Select '^FirewallPolicyName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWFirewallPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet">
+            <summary>
+            Creates the specified stateless or stateful rule group, which includes the rules for
+            network traffic inspection, a capacity setting, and tags. 
+            
+             
+            <para>
+            You provide your rule group specification in your request using either <code>RuleGroup</code>
+            or <code>Rules</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet.Capacity">
+            <summary>
+            <para>
+            <para>The maximum operating resources that this rule group can use. Rule group capacity
+            is fixed at creation. When you update a rule group, you are limited to this capacity.
+            When you reference a rule group from a firewall policy, Network Firewall reserves
+            this capacity for the rule group. </para><para>You can retrieve the capacity that would be required for a rule group before you create
+            the rule group by calling <a>CreateRuleGroup</a> with <code>DryRun</code> set to <code>TRUE</code>.
+            </para><note><para>You can't change or exceed this capacity when you update the rule group, so leave
+            room for your rule group to grow. </para></note><para><b>Capacity for a stateless rule group</b></para><para>For a stateless rule group, the capacity required is the sum of the capacity requirements
+            of the individual rules that you expect to have in the rule group. </para><para>To calculate the capacity requirement of a single rule, multiply the capacity requirement
+            values of each of the rule's match settings:</para><ul><li><para>A match setting with no criteria specified has a value of 1. </para></li><li><para>A match setting with <code>Any</code> specified has a value of 1. </para></li><li><para>All other match settings have a value equal to the number of elements provided in
+            the setting. For example, a protocol setting ["UDP"] and a source setting ["10.0.0.0/24"]
+            each have a value of 1. A protocol setting ["UDP","TCP"] has a value of 2. A source
+            setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"] has a value of 3. </para></li></ul><para>A rule with no criteria specified in any of its match settings has a capacity requirement
+            of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"],
+            and a single specification or no specification for each of the other match settings
+            has a capacity requirement of 6. </para><para><b>Capacity for a stateful rule group</b></para><para>For a stateful rule group, the minimum capacity required is the number of individual
+            rules that you expect to have in the rule group. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet.StatelessRulesAndCustomActions_CustomAction">
+            <summary>
+            <para>
+            <para>Defines an array of individual custom action definitions that are available for use
+            by the stateless rules in this <code>StatelessRulesAndCustomActions</code> specification.
+            You name each custom action that you define, and then you can use it by name in your
+            <a>StatelessRule</a><a>RuleDefinition</a><code>Actions</code> specification.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet.Description">
+            <summary>
+            <para>
+            <para>A description of the rule group. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet.DryRun">
+            <summary>
+            <para>
+            <para>Indicates whether you want Network Firewall to just check the validity of the request,
+            rather than run the request. </para><para>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
+            but doesn't actually make the requested changes. The call returns the value that the
+            request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't
+            make additions or changes to your resources. This option allows you to make sure that
+            you have the required permissions to run the request and that your request parameters
+            are valid. </para><para>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your
+            resources. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet.RulesSourceList_GeneratedRulesType">
+            <summary>
+            <para>
+            <para>Whether you want to allow or deny access to the domains in your target list.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet.ReferenceSets_IPSetReference">
+            <summary>
+            <para>
+            <para>The list of IP set references.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet.RuleVariables_IPSet">
+            <summary>
+            <para>
+            <para>A list of IP addresses and address ranges, in CIDR notation. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet.EncryptionConfiguration_KeyId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Web Services Key Management Service (KMS) customer managed key.
+            You can use any of the key identifiers that KMS supports, unless you're using a key
+            that's managed by another account. If you're using a key managed by another account,
+            then specify the key ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
+            ID</a> in the <i>Amazon Web Services KMS Developer Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet.RuleVariables_PortSet">
+            <summary>
+            <para>
+            <para>A list of port ranges. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet.RuleGroupName">
+            <summary>
+            <para>
+            <para>The descriptive name of the rule group. You can't change the name of a rule group
+            after you create it.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet.StatefulRuleOptions_RuleOrder">
+            <summary>
+            <para>
+            <para>Indicates how to manage the order of the rule evaluation for the rule group. <code>DEFAULT_ACTION_ORDER</code>
+            is the default behavior. Stateful rules are provided to the rule engine as Suricata
+            compatible strings, and Suricata evaluates them based on certain settings. For more
+            information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
+            order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet.Rule">
+            <summary>
+            <para>
+            <para>A string containing stateful rule group rules specifications in Suricata flat format,
+            with one rule per line. Use this to import your existing Suricata compatible rule
+            groups. </para><note><para>You must provide either this rules setting or a populated <code>RuleGroup</code> setting,
+            but not both. </para></note><para>You can provide your rule group specification in Suricata flat format through this
+            setting when you create or update your rule group. The call response returns a <a>RuleGroup</a>
+            object that Network Firewall has populated from your string. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet.RulesSource_RulesString">
+            <summary>
+            <para>
+            <para>Stateful inspection criteria, provided in Suricata compatible intrusion prevention
+            system (IPS) rules. Suricata is an open-source network IPS that includes a standard
+            rule-based language for network traffic inspection.</para><para>These rules contain the inspection criteria and the action to take for traffic that
+            matches the criteria, so this type of rule group doesn't have a separate action setting.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet.SourceMetadata_SourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the rule group that your own rule group is copied
+            from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet.SourceMetadata_SourceUpdateToken">
+            <summary>
+            <para>
+            <para>The update token of the Amazon Web Services managed rule group that your own rule
+            group is copied from. To determine the update token for the managed rule group, call
+            <a href="https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html#networkfirewall-DescribeRuleGroup-response-UpdateToken">DescribeRuleGroup</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet.RulesSource_StatefulRule">
+            <summary>
+            <para>
+            <para>An array of individual stateful rules inspection criteria to be used together in a
+            stateful rule group. Use this option to specify simple Suricata rules with protocol,
+            source and destination, ports, direction, and rule options. For information about
+            the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/rules/intro.html#">Rules
+            Format</a>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet.StatelessRulesAndCustomActions_StatelessRule">
+            <summary>
+            <para>
+            <para>Defines the set of stateless rules for use in a stateless rule group. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The key:value pairs to associate with the resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet.RulesSourceList_Target">
+            <summary>
+            <para>
+            <para>The domains that you want to inspect for in your traffic flows. Valid domain specifications
+            are the following:</para><ul><li><para>Explicit names. For example, <code>abc.example.com</code> matches only the domain
+            <code>abc.example.com</code>.</para></li><li><para>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'.
+            For example,<code>.example.com</code> matches <code>example.com</code> and matches
+            all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and
+            <code>www.example.com</code>. </para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet.RulesSourceList_TargetType">
+            <summary>
+            <para>
+            <para>The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>.
+            Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet.EncryptionConfiguration_Type">
+            <summary>
+            <para>
+            <para>The type of Amazon Web Services KMS key to use for encryption of your Network Firewall
+            resources.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet.Type">
+            <summary>
+            <para>
+            <para>Indicates whether the rule group is stateless or stateful. If the rule group is stateless,
+            it contains stateless rules. If it is stateful, it contains stateful rules. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.CreateRuleGroupResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.CreateRuleGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RuleGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^RuleGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.NewNWFWRuleGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.RegisterNWFWFirewallPolicyCmdlet">
+            <summary>
+            Associates a <a>FirewallPolicy</a> to a <a>Firewall</a>. 
+            
+             
+            <para>
+            A firewall policy defines how to monitor and manage your VPC network traffic, using
+            a collection of inspection rule groups and other settings. Each firewall requires
+            one firewall policy association, and you can use the same firewall policy for multiple
+            firewalls. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RegisterNWFWFirewallPolicyCmdlet.FirewallArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the firewall.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RegisterNWFWFirewallPolicyCmdlet.FirewallName">
+            <summary>
+            <para>
+            <para>The descriptive name of the firewall. You can't change the name of a firewall after
+            you create it.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RegisterNWFWFirewallPolicyCmdlet.FirewallPolicyArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the firewall policy.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RegisterNWFWFirewallPolicyCmdlet.UpdateToken">
+            <summary>
+            <para>
+            <para>An optional token that you can use for optimistic locking. Network Firewall returns
+            a token to your requests that access the firewall. The token marks the state of the
+            firewall resource at the time of the request. </para><para>To make an unconditional change to the firewall, omit the token in your update request.
+            Without the token, Network Firewall performs your updates regardless of whether the
+            firewall has changed since you last retrieved it.</para><para>To make a conditional change to the firewall, provide the token in your update request.
+            Network Firewall uses the token to ensure that the firewall hasn't changed since you
+            last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>.
+            If this happens, retrieve the firewall again to get a current copy of it with a new
+            token. Reapply your changes as needed, then try the operation again using the new
+            token. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RegisterNWFWFirewallPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.AssociateFirewallPolicyResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.AssociateFirewallPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RegisterNWFWFirewallPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FirewallPolicyArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^FirewallPolicyArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RegisterNWFWFirewallPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.RegisterNWFWSubnetCmdlet">
+            <summary>
+            Associates the specified subnets in the Amazon VPC to the firewall. You can specify
+            one subnet for each of the Availability Zones that the VPC spans. 
+            
+             
+            <para>
+            This request creates an Network Firewall firewall endpoint in each of the subnets.
+            To enable the firewall's protections, you must also modify the VPC's route tables
+            for each subnet's Availability Zone, to redirect the traffic that's coming into and
+            going out of the zone through the firewall endpoint. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RegisterNWFWSubnetCmdlet.FirewallArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the firewall.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RegisterNWFWSubnetCmdlet.FirewallName">
+            <summary>
+            <para>
+            <para>The descriptive name of the firewall. You can't change the name of a firewall after
+            you create it.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RegisterNWFWSubnetCmdlet.SubnetMapping">
+            <summary>
+            <para>
+            <para>The IDs of the subnets that you want to associate with the firewall. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RegisterNWFWSubnetCmdlet.UpdateToken">
+            <summary>
+            <para>
+            <para>An optional token that you can use for optimistic locking. Network Firewall returns
+            a token to your requests that access the firewall. The token marks the state of the
+            firewall resource at the time of the request. </para><para>To make an unconditional change to the firewall, omit the token in your update request.
+            Without the token, Network Firewall performs your updates regardless of whether the
+            firewall has changed since you last retrieved it.</para><para>To make a conditional change to the firewall, provide the token in your update request.
+            Network Firewall uses the token to ensure that the firewall hasn't changed since you
+            last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>.
+            If this happens, retrieve the firewall again to get a current copy of it with a new
+            token. Reapply your changes as needed, then try the operation again using the new
+            token. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RegisterNWFWSubnetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.AssociateSubnetsResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.AssociateSubnetsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RegisterNWFWSubnetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FirewallArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^FirewallArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RegisterNWFWSubnetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWFirewallCmdlet">
+            <summary>
+            Deletes the specified <a>Firewall</a> and its <a>FirewallStatus</a>. This operation
+            requires the firewall's <code>DeleteProtection</code> flag to be <code>FALSE</code>.
+            You can't revert this operation. 
+            
+             
+            <para>
+            You can check whether a firewall is in use by reviewing the route tables for the Availability
+            Zones where you have firewall subnet mappings. Retrieve the subnet mappings by calling
+            <a>DescribeFirewall</a>. You define and update the route tables through Amazon VPC.
+            As needed, update the route tables for the zones to remove the firewall endpoints.
+            When the route tables no longer use the firewall endpoints, you can remove the firewall
+            safely.
+            </para><para>
+            To delete a firewall, remove the delete protection if you need to using <a>UpdateFirewallDeleteProtection</a>,
+            then delete the firewall by calling <a>DeleteFirewall</a>. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWFirewallCmdlet.FirewallArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the firewall.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWFirewallCmdlet.FirewallName">
+            <summary>
+            <para>
+            <para>The descriptive name of the firewall. You can't change the name of a firewall after
+            you create it.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWFirewallCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.DeleteFirewallResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.DeleteFirewallResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWFirewallCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FirewallArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^FirewallArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWFirewallCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWFirewallPolicyCmdlet">
+            <summary>
+            Deletes the specified <a>FirewallPolicy</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWFirewallPolicyCmdlet.FirewallPolicyArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the firewall policy.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWFirewallPolicyCmdlet.FirewallPolicyName">
+            <summary>
+            <para>
+            <para>The descriptive name of the firewall policy. You can't change the name of a firewall
+            policy after you create it.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWFirewallPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'FirewallPolicyResponse'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.DeleteFirewallPolicyResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.DeleteFirewallPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWFirewallPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FirewallPolicyArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^FirewallPolicyArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWFirewallPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWResourcePolicyCmdlet">
+            <summary>
+            Deletes a resource policy that you created in a <a>PutResourcePolicy</a> request.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWResourcePolicyCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the rule group or firewall policy whose resource
+            policy you want to delete. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWResourcePolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.DeleteResourcePolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWResourcePolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWResourcePolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWResourceTagCmdlet">
+            <summary>
+            Removes the tags with the specified keys from the specified resource. Tags are key:value
+            pairs that you can use to categorize and manage your resources, for purposes like
+            billing. For example, you might set the tag key to "customer" and the value to the
+            customer name or ID. You can specify one or more tags to add to each Amazon Web Services
+            resource, up to 50 tags for a resource.
+            
+             
+            <para>
+            You can manage tags for the Amazon Web Services resources that you manage through
+            Network Firewall: firewalls, firewall policies, and rule groups. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWRuleGroupCmdlet">
+            <summary>
+            Deletes the specified <a>RuleGroup</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWRuleGroupCmdlet.RuleGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the rule group.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWRuleGroupCmdlet.RuleGroupName">
+            <summary>
+            <para>
+            <para>The descriptive name of the rule group. You can't change the name of a rule group
+            after you create it.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWRuleGroupCmdlet.Type">
+            <summary>
+            <para>
+            <para>Indicates whether the rule group is stateless or stateful. If the rule group is stateless,
+            it contains stateless rules. If it is stateful, it contains stateful rules. </para><note><para>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWRuleGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'RuleGroupResponse'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.DeleteRuleGroupResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.DeleteRuleGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWRuleGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RuleGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^RuleGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.RemoveNWFWRuleGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.UnregisterNWFWSubnetCmdlet">
+            <summary>
+            Removes the specified subnet associations from the firewall. This removes the firewall
+            endpoints from the subnets and removes any network filtering protections that the
+            endpoints were providing.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UnregisterNWFWSubnetCmdlet.FirewallArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the firewall.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UnregisterNWFWSubnetCmdlet.FirewallName">
+            <summary>
+            <para>
+            <para>The descriptive name of the firewall. You can't change the name of a firewall after
+            you create it.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UnregisterNWFWSubnetCmdlet.SubnetId">
+            <summary>
+            <para>
+            <para>The unique identifiers for the subnets that you want to disassociate. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UnregisterNWFWSubnetCmdlet.UpdateToken">
+            <summary>
+            <para>
+            <para>An optional token that you can use for optimistic locking. Network Firewall returns
+            a token to your requests that access the firewall. The token marks the state of the
+            firewall resource at the time of the request. </para><para>To make an unconditional change to the firewall, omit the token in your update request.
+            Without the token, Network Firewall performs your updates regardless of whether the
+            firewall has changed since you last retrieved it.</para><para>To make a conditional change to the firewall, provide the token in your update request.
+            Network Firewall uses the token to ensure that the firewall hasn't changed since you
+            last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>.
+            If this happens, retrieve the firewall again to get a current copy of it with a new
+            token. Reapply your changes as needed, then try the operation again using the new
+            token. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UnregisterNWFWSubnetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.DisassociateSubnetsResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.DisassociateSubnetsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UnregisterNWFWSubnetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FirewallArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^FirewallArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UnregisterNWFWSubnetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallDeleteProtectionCmdlet">
+            <summary>
+            Modifies the flag, <code>DeleteProtection</code>, which indicates whether it is possible
+            to delete the firewall. If the flag is set to <code>TRUE</code>, the firewall is protected
+            against deletion. This setting helps protect against accidentally deleting a firewall
+            that's in use.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallDeleteProtectionCmdlet.DeleteProtection">
+            <summary>
+            <para>
+            <para>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code>
+            indicates that the firewall is protected against deletion. Use this setting to protect
+            against accidentally deleting a firewall that is in use. When you create a firewall,
+            the operation initializes this flag to <code>TRUE</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallDeleteProtectionCmdlet.FirewallArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the firewall.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallDeleteProtectionCmdlet.FirewallName">
+            <summary>
+            <para>
+            <para>The descriptive name of the firewall. You can't change the name of a firewall after
+            you create it.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallDeleteProtectionCmdlet.UpdateToken">
+            <summary>
+            <para>
+            <para>An optional token that you can use for optimistic locking. Network Firewall returns
+            a token to your requests that access the firewall. The token marks the state of the
+            firewall resource at the time of the request. </para><para>To make an unconditional change to the firewall, omit the token in your update request.
+            Without the token, Network Firewall performs your updates regardless of whether the
+            firewall has changed since you last retrieved it.</para><para>To make a conditional change to the firewall, provide the token in your update request.
+            Network Firewall uses the token to ensure that the firewall hasn't changed since you
+            last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>.
+            If this happens, retrieve the firewall again to get a current copy of it with a new
+            token. Reapply your changes as needed, then try the operation again using the new
+            token. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallDeleteProtectionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.UpdateFirewallDeleteProtectionResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.UpdateFirewallDeleteProtectionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallDeleteProtectionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DeleteProtection parameter.
+            The -PassThru parameter is deprecated, use -Select '^DeleteProtection' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallDeleteProtectionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallDescriptionCmdlet">
+            <summary>
+            Modifies the description for the specified firewall. Use the description to help you
+            identify the firewall when you're working with it.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallDescriptionCmdlet.Description">
+            <summary>
+            <para>
+            <para>The new description for the firewall. If you omit this setting, Network Firewall removes
+            the description for the firewall.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallDescriptionCmdlet.FirewallArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the firewall.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallDescriptionCmdlet.FirewallName">
+            <summary>
+            <para>
+            <para>The descriptive name of the firewall. You can't change the name of a firewall after
+            you create it.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallDescriptionCmdlet.UpdateToken">
+            <summary>
+            <para>
+            <para>An optional token that you can use for optimistic locking. Network Firewall returns
+            a token to your requests that access the firewall. The token marks the state of the
+            firewall resource at the time of the request. </para><para>To make an unconditional change to the firewall, omit the token in your update request.
+            Without the token, Network Firewall performs your updates regardless of whether the
+            firewall has changed since you last retrieved it.</para><para>To make a conditional change to the firewall, provide the token in your update request.
+            Network Firewall uses the token to ensure that the firewall hasn't changed since you
+            last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>.
+            If this happens, retrieve the firewall again to get a current copy of it with a new
+            token. Reapply your changes as needed, then try the operation again using the new
+            token. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallDescriptionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.UpdateFirewallDescriptionResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.UpdateFirewallDescriptionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallDescriptionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FirewallArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^FirewallArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallDescriptionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallEncryptionConfigurationCmdlet">
+            <summary>
+            A complex type that contains settings for encryption of your firewall resources.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallEncryptionConfigurationCmdlet.FirewallArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the firewall.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallEncryptionConfigurationCmdlet.FirewallName">
+            <summary>
+            <para>
+            <para>The descriptive name of the firewall. You can't change the name of a firewall after
+            you create it.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallEncryptionConfigurationCmdlet.EncryptionConfiguration_KeyId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Web Services Key Management Service (KMS) customer managed key.
+            You can use any of the key identifiers that KMS supports, unless you're using a key
+            that's managed by another account. If you're using a key managed by another account,
+            then specify the key ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
+            ID</a> in the <i>Amazon Web Services KMS Developer Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallEncryptionConfigurationCmdlet.EncryptionConfiguration_Type">
+            <summary>
+            <para>
+            <para>The type of Amazon Web Services KMS key to use for encryption of your Network Firewall
+            resources.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallEncryptionConfigurationCmdlet.UpdateToken">
+            <summary>
+            <para>
+            <para>An optional token that you can use for optimistic locking. Network Firewall returns
+            a token to your requests that access the firewall. The token marks the state of the
+            firewall resource at the time of the request. </para><para>To make an unconditional change to the firewall, omit the token in your update request.
+            Without the token, Network Firewall performs your updates regardless of whether the
+            firewall has changed since you last retrieved it.</para><para>To make a conditional change to the firewall, provide the token in your update request.
+            Network Firewall uses the token to ensure that the firewall hasn't changed since you
+            last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>.
+            If this happens, retrieve the firewall again to get a current copy of it with a new
+            token. Reapply your changes as needed, then try the operation again using the new
+            token. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallEncryptionConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.UpdateFirewallEncryptionConfigurationResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.UpdateFirewallEncryptionConfigurationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallEncryptionConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FirewallArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^FirewallArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallEncryptionConfigurationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyCmdlet">
+            <summary>
+            Updates the properties of the specified firewall policy.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyCmdlet.Description">
+            <summary>
+            <para>
+            <para>A description of the firewall policy.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyCmdlet.DryRun">
+            <summary>
+            <para>
+            <para>Indicates whether you want Network Firewall to just check the validity of the request,
+            rather than run the request. </para><para>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
+            but doesn't actually make the requested changes. The call returns the value that the
+            request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't
+            make additions or changes to your resources. This option allows you to make sure that
+            you have the required permissions to run the request and that your request parameters
+            are valid. </para><para>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your
+            resources. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyCmdlet.FirewallPolicyArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the firewall policy.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyCmdlet.FirewallPolicyName">
+            <summary>
+            <para>
+            <para>The descriptive name of the firewall policy. You can't change the name of a firewall
+            policy after you create it.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyCmdlet.EncryptionConfiguration_KeyId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Web Services Key Management Service (KMS) customer managed key.
+            You can use any of the key identifiers that KMS supports, unless you're using a key
+            that's managed by another account. If you're using a key managed by another account,
+            then specify the key ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
+            ID</a> in the <i>Amazon Web Services KMS Developer Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyCmdlet.StatefulEngineOptions_RuleOrder">
+            <summary>
+            <para>
+            <para>Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code>
+            is the default behavior. Stateful rules are provided to the rule engine as Suricata
+            compatible strings, and Suricata evaluates them based on certain settings. For more
+            information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
+            order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyCmdlet.FirewallPolicy_StatefulDefaultAction">
+            <summary>
+            <para>
+            <para>The default actions to take on a packet that doesn't match any stateful rules. The
+            stateful default action is optional, and is only valid when using the strict rule
+            order.</para><para>Valid values of the stateful default action:</para><ul><li><para>aws:drop_strict</para></li><li><para>aws:drop_established</para></li><li><para>aws:alert_strict</para></li><li><para>aws:alert_established</para></li></ul><para>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html#suricata-strict-rule-evaluation-order.html">Strict
+            evaluation order</a> in the <i>Network Firewall Developer Guide</i>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyCmdlet.FirewallPolicy_StatefulRuleGroupReference">
+            <summary>
+            <para>
+            <para>References to the stateful rule groups that are used in the policy. These define the
+            inspection criteria in stateful rules. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyCmdlet.FirewallPolicy_StatelessCustomAction">
+            <summary>
+            <para>
+            <para>The custom action definitions that are available for use in the firewall policy's
+            <code>StatelessDefaultActions</code> setting. You name each custom action that you
+            define, and then you can use it by name in your default actions specifications.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyCmdlet.FirewallPolicy_StatelessDefaultAction">
+            <summary>
+            <para>
+            <para>The actions to take on a packet if it doesn't match any of the stateless rules in
+            the policy. If you want non-matching packets to be forwarded for stateful inspection,
+            specify <code>aws:forward_to_sfe</code>. </para><para>You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>,
+            or <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that
+            are compatible with your standard section choice.</para><para>For example, you could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass",
+            “customActionName”]</code>. For information about compatibility, see the custom action
+            descriptions under <a>CustomAction</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyCmdlet.FirewallPolicy_StatelessFragmentDefaultAction">
+            <summary>
+            <para>
+            <para>The actions to take on a fragmented UDP packet if it doesn't match any of the stateless
+            rules in the policy. Network Firewall only manages UDP packet fragments and silently
+            drops packet fragments for other protocols. If you want non-matching fragmented UDP
+            packets to be forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>.
+            </para><para>You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>,
+            or <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that
+            are compatible with your standard section choice.</para><para>For example, you could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass",
+            “customActionName”]</code>. For information about compatibility, see the custom action
+            descriptions under <a>CustomAction</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyCmdlet.FirewallPolicy_StatelessRuleGroupReference">
+            <summary>
+            <para>
+            <para>References to the stateless rule groups that are used in the policy. These define
+            the matching criteria in stateless rules. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyCmdlet.StatefulEngineOptions_StreamExceptionPolicy">
+            <summary>
+            <para>
+            <para>Configures how Network Firewall processes traffic when a network connection breaks
+            midstream. Network connections can break due to disruptions in external networks or
+            within the firewall itself.</para><ul><li><para><code>DROP</code> - Network Firewall fails closed and drops all subsequent traffic
+            going to the firewall. This is the default behavior.</para></li><li><para><code>CONTINUE</code> - Network Firewall continues to apply rules to the subsequent
+            traffic without context from traffic before the break. This impacts the behavior of
+            rules that depend on this context. For example, if you have a stateful rule to <code>drop
+            http</code> traffic, Network Firewall won't match the traffic for this rule because
+            the service won't have the context from session initialization defining the application
+            layer protocol as HTTP. However, this behavior is rule dependent—a TCP-layer rule
+            using a <code>flow:stateless</code> rule would still match, as would the <code>aws:drop_strict</code>
+            default action.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyCmdlet.EncryptionConfiguration_Type">
+            <summary>
+            <para>
+            <para>The type of Amazon Web Services KMS key to use for encryption of your Network Firewall
+            resources.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyCmdlet.UpdateToken">
+            <summary>
+            <para>
+            <para>A token used for optimistic locking. Network Firewall returns a token to your requests
+            that access the firewall policy. The token marks the state of the policy resource
+            at the time of the request. </para><para>To make changes to the policy, you provide the token in your request. Network Firewall
+            uses the token to ensure that the policy hasn't changed since you last retrieved it.
+            If it has changed, the operation fails with an <code>InvalidTokenException</code>.
+            If this happens, retrieve the firewall policy again to get a current copy of it with
+            current token. Reapply your changes as needed, then try the operation again using
+            the new token. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.UpdateFirewallPolicyResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.UpdateFirewallPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the UpdateToken parameter.
+            The -PassThru parameter is deprecated, use -Select '^UpdateToken' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyChangeProtectionCmdlet">
+            <summary>
+            Modifies the flag, <code>ChangeProtection</code>, which indicates whether it is possible
+            to change the firewall. If the flag is set to <code>TRUE</code>, the firewall is protected
+            from changes. This setting helps protect against accidentally changing a firewall
+            that's in use.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyChangeProtectionCmdlet.FirewallArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the firewall.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyChangeProtectionCmdlet.FirewallName">
+            <summary>
+            <para>
+            <para>The descriptive name of the firewall. You can't change the name of a firewall after
+            you create it.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyChangeProtectionCmdlet.FirewallPolicyChangeProtection">
+            <summary>
+            <para>
+            <para>A setting indicating whether the firewall is protected against a change to the firewall
+            policy association. Use this setting to protect against accidentally modifying the
+            firewall policy for a firewall that is in use. When you create a firewall, the operation
+            initializes this setting to <code>TRUE</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyChangeProtectionCmdlet.UpdateToken">
+            <summary>
+            <para>
+            <para>An optional token that you can use for optimistic locking. Network Firewall returns
+            a token to your requests that access the firewall. The token marks the state of the
+            firewall resource at the time of the request. </para><para>To make an unconditional change to the firewall, omit the token in your update request.
+            Without the token, Network Firewall performs your updates regardless of whether the
+            firewall has changed since you last retrieved it.</para><para>To make a conditional change to the firewall, provide the token in your update request.
+            Network Firewall uses the token to ensure that the firewall hasn't changed since you
+            last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>.
+            If this happens, retrieve the firewall again to get a current copy of it with a new
+            token. Reapply your changes as needed, then try the operation again using the new
+            token. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyChangeProtectionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.UpdateFirewallPolicyChangeProtectionResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.UpdateFirewallPolicyChangeProtectionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyChangeProtectionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FirewallPolicyChangeProtection parameter.
+            The -PassThru parameter is deprecated, use -Select '^FirewallPolicyChangeProtection' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWFirewallPolicyChangeProtectionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWLoggingConfigurationCmdlet">
+            <summary>
+            Sets the logging configuration for the specified firewall. 
+            
+             
+            <para>
+            To change the logging configuration, retrieve the <a>LoggingConfiguration</a> by calling
+            <a>DescribeLoggingConfiguration</a>, then change it and provide the modified object
+            to this update call. You must change the logging configuration one <a>LogDestinationConfig</a>
+            at a time inside the retrieved <a>LoggingConfiguration</a> object. 
+            </para><para>
+            You can perform only one of the following actions in any call to <code>UpdateLoggingConfiguration</code>:
+            
+            </para><ul><li><para>
+            Create a new log destination object by adding a single <code>LogDestinationConfig</code>
+            array element to <code>LogDestinationConfigs</code>.
+            </para></li><li><para>
+            Delete a log destination object by removing a single <code>LogDestinationConfig</code>
+            array element from <code>LogDestinationConfigs</code>.
+            </para></li><li><para>
+            Change the <code>LogDestination</code> setting in a single <code>LogDestinationConfig</code>
+            array element.
+            </para></li></ul><para>
+            You can't change the <code>LogDestinationType</code> or <code>LogType</code> in a
+            <code>LogDestinationConfig</code>. To change these settings, delete the existing <code>LogDestinationConfig</code>
+            object and create a new one, using two separate calls to this update operation.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWLoggingConfigurationCmdlet.FirewallArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the firewall.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWLoggingConfigurationCmdlet.FirewallName">
+            <summary>
+            <para>
+            <para>The descriptive name of the firewall. You can't change the name of a firewall after
+            you create it.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWLoggingConfigurationCmdlet.LoggingConfiguration_LogDestinationConfig">
+            <summary>
+            <para>
+            <para>Defines the logging destinations for the logs for a firewall. Network Firewall generates
+            logs for stateful rule groups. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWLoggingConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.UpdateLoggingConfigurationResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.UpdateLoggingConfigurationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWLoggingConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FirewallArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^FirewallArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWLoggingConfigurationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet">
+            <summary>
+            Updates the rule settings for the specified rule group. You use a rule group by reference
+            in one or more firewall policies. When you modify a rule group, you modify all firewall
+            policies that use the rule group. 
+            
+             
+            <para>
+            To update a rule group, first call <a>DescribeRuleGroup</a> to retrieve the current
+            <a>RuleGroup</a> object, update the object as needed, and then provide the updated
+            object to this call. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet.StatelessRulesAndCustomActions_CustomAction">
+            <summary>
+            <para>
+            <para>Defines an array of individual custom action definitions that are available for use
+            by the stateless rules in this <code>StatelessRulesAndCustomActions</code> specification.
+            You name each custom action that you define, and then you can use it by name in your
+            <a>StatelessRule</a><a>RuleDefinition</a><code>Actions</code> specification.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet.Description">
+            <summary>
+            <para>
+            <para>A description of the rule group. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet.DryRun">
+            <summary>
+            <para>
+            <para>Indicates whether you want Network Firewall to just check the validity of the request,
+            rather than run the request. </para><para>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
+            but doesn't actually make the requested changes. The call returns the value that the
+            request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't
+            make additions or changes to your resources. This option allows you to make sure that
+            you have the required permissions to run the request and that your request parameters
+            are valid. </para><para>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your
+            resources. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet.RulesSourceList_GeneratedRulesType">
+            <summary>
+            <para>
+            <para>Whether you want to allow or deny access to the domains in your target list.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet.ReferenceSets_IPSetReference">
+            <summary>
+            <para>
+            <para>The list of IP set references.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet.RuleVariables_IPSet">
+            <summary>
+            <para>
+            <para>A list of IP addresses and address ranges, in CIDR notation. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet.EncryptionConfiguration_KeyId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Web Services Key Management Service (KMS) customer managed key.
+            You can use any of the key identifiers that KMS supports, unless you're using a key
+            that's managed by another account. If you're using a key managed by another account,
+            then specify the key ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key
+            ID</a> in the <i>Amazon Web Services KMS Developer Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet.RuleVariables_PortSet">
+            <summary>
+            <para>
+            <para>A list of port ranges. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet.RuleGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the rule group.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet.RuleGroupName">
+            <summary>
+            <para>
+            <para>The descriptive name of the rule group. You can't change the name of a rule group
+            after you create it.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet.StatefulRuleOptions_RuleOrder">
+            <summary>
+            <para>
+            <para>Indicates how to manage the order of the rule evaluation for the rule group. <code>DEFAULT_ACTION_ORDER</code>
+            is the default behavior. Stateful rules are provided to the rule engine as Suricata
+            compatible strings, and Suricata evaluates them based on certain settings. For more
+            information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
+            order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet.Rule">
+            <summary>
+            <para>
+            <para>A string containing stateful rule group rules specifications in Suricata flat format,
+            with one rule per line. Use this to import your existing Suricata compatible rule
+            groups. </para><note><para>You must provide either this rules setting or a populated <code>RuleGroup</code> setting,
+            but not both. </para></note><para>You can provide your rule group specification in Suricata flat format through this
+            setting when you create or update your rule group. The call response returns a <a>RuleGroup</a>
+            object that Network Firewall has populated from your string. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet.RulesSource_RulesString">
+            <summary>
+            <para>
+            <para>Stateful inspection criteria, provided in Suricata compatible intrusion prevention
+            system (IPS) rules. Suricata is an open-source network IPS that includes a standard
+            rule-based language for network traffic inspection.</para><para>These rules contain the inspection criteria and the action to take for traffic that
+            matches the criteria, so this type of rule group doesn't have a separate action setting.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet.SourceMetadata_SourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the rule group that your own rule group is copied
+            from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet.SourceMetadata_SourceUpdateToken">
+            <summary>
+            <para>
+            <para>The update token of the Amazon Web Services managed rule group that your own rule
+            group is copied from. To determine the update token for the managed rule group, call
+            <a href="https://docs.aws.amazon.com/network-firewall/latest/APIReference/API_DescribeRuleGroup.html#networkfirewall-DescribeRuleGroup-response-UpdateToken">DescribeRuleGroup</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet.RulesSource_StatefulRule">
+            <summary>
+            <para>
+            <para>An array of individual stateful rules inspection criteria to be used together in a
+            stateful rule group. Use this option to specify simple Suricata rules with protocol,
+            source and destination, ports, direction, and rule options. For information about
+            the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/rules/intro.html#">Rules
+            Format</a>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet.StatelessRulesAndCustomActions_StatelessRule">
+            <summary>
+            <para>
+            <para>Defines the set of stateless rules for use in a stateless rule group. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet.RulesSourceList_Target">
+            <summary>
+            <para>
+            <para>The domains that you want to inspect for in your traffic flows. Valid domain specifications
+            are the following:</para><ul><li><para>Explicit names. For example, <code>abc.example.com</code> matches only the domain
+            <code>abc.example.com</code>.</para></li><li><para>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'.
+            For example,<code>.example.com</code> matches <code>example.com</code> and matches
+            all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and
+            <code>www.example.com</code>. </para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet.RulesSourceList_TargetType">
+            <summary>
+            <para>
+            <para>The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>.
+            Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet.EncryptionConfiguration_Type">
+            <summary>
+            <para>
+            <para>The type of Amazon Web Services KMS key to use for encryption of your Network Firewall
+            resources.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet.Type">
+            <summary>
+            <para>
+            <para>Indicates whether the rule group is stateless or stateful. If the rule group is stateless,
+            it contains stateless rules. If it is stateful, it contains stateful rules. </para><note><para>This setting is required for requests that do not include the <code>RuleGroupARN</code>.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet.UpdateToken">
+            <summary>
+            <para>
+            <para>A token used for optimistic locking. Network Firewall returns a token to your requests
+            that access the rule group. The token marks the state of the rule group resource at
+            the time of the request. </para><para>To make changes to the rule group, you provide the token in your request. Network
+            Firewall uses the token to ensure that the rule group hasn't changed since you last
+            retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>.
+            If this happens, retrieve the rule group again to get a current copy of it with a
+            current token. Reapply your changes as needed, then try the operation again using
+            the new token. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.UpdateRuleGroupResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.UpdateRuleGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the UpdateToken parameter.
+            The -PassThru parameter is deprecated, use -Select '^UpdateToken' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWRuleGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWSubnetChangeProtectionCmdlet" -->
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWSubnetChangeProtectionCmdlet.FirewallArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the firewall.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWSubnetChangeProtectionCmdlet.FirewallName">
+            <summary>
+            <para>
+            <para>The descriptive name of the firewall. You can't change the name of a firewall after
+            you create it.</para><para>You must specify the ARN or the name, and you can specify both. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWSubnetChangeProtectionCmdlet.SubnetChangeProtection">
+            <summary>
+            <para>
+            <para>A setting indicating whether the firewall is protected against changes to the subnet
+            associations. Use this setting to protect against accidentally modifying the subnet
+            associations for a firewall that is in use. When you create a firewall, the operation
+            initializes this setting to <code>TRUE</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWSubnetChangeProtectionCmdlet.UpdateToken">
+            <summary>
+            <para>
+            <para>An optional token that you can use for optimistic locking. Network Firewall returns
+            a token to your requests that access the firewall. The token marks the state of the
+            firewall resource at the time of the request. </para><para>To make an unconditional change to the firewall, omit the token in your update request.
+            Without the token, Network Firewall performs your updates regardless of whether the
+            firewall has changed since you last retrieved it.</para><para>To make a conditional change to the firewall, provide the token in your update request.
+            Network Firewall uses the token to ensure that the firewall hasn't changed since you
+            last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>.
+            If this happens, retrieve the firewall again to get a current copy of it with a new
+            token. Reapply your changes as needed, then try the operation again using the new
+            token. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWSubnetChangeProtectionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.UpdateSubnetChangeProtectionResponse).
+            Specifying the name of a property of type Amazon.NetworkFirewall.Model.UpdateSubnetChangeProtectionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWSubnetChangeProtectionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SubnetChangeProtection parameter.
+            The -PassThru parameter is deprecated, use -Select '^SubnetChangeProtection' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.UpdateNWFWSubnetChangeProtectionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.NWFW.WriteNWFWResourcePolicyCmdlet">
+            <summary>
+            Creates or updates an IAM policy for your rule group or firewall policy. Use this
+            to share rule groups and firewall policies between accounts. This operation works
+            in conjunction with the Amazon Web Services Resource Access Manager (RAM) service
+            to manage resource sharing for Network Firewall. 
+            
+             
+            <para>
+            Use this operation to create or update a resource policy for your rule group or firewall
+            policy. In the policy, you specify the accounts that you want to share the resource
+            with and the operations that you want the accounts to be able to perform. 
+            </para><para>
+            When you add an account in the resource policy, you then run the following Resource
+            Access Manager (RAM) operations to access and accept the shared rule group or firewall
+            policy. 
+            </para><ul><li><para><a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_GetResourceShareInvitations.html">GetResourceShareInvitations</a>
+            - Returns the Amazon Resource Names (ARNs) of the resource share invitations. 
+            </para></li><li><para><a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_AcceptResourceShareInvitation.html">AcceptResourceShareInvitation</a>
+            - Accepts the share invitation for a specified resource share. 
+            </para></li></ul><para>
+            For additional information about resource sharing using RAM, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/what-is.html">Resource
+            Access Manager User Guide</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.WriteNWFWResourcePolicyCmdlet.Policy">
+            <summary>
+            <para>
+            <para>The IAM policy statement that lists the accounts that you want to share your rule
+            group or firewall policy with and the operations that you want the accounts to be
+            able to perform. </para><para>For a rule group resource, you can specify the following operations in the Actions
+            section of the statement:</para><ul><li><para>network-firewall:CreateFirewallPolicy</para></li><li><para>network-firewall:UpdateFirewallPolicy</para></li><li><para>network-firewall:ListRuleGroups</para></li></ul><para>For a firewall policy resource, you can specify the following operations in the Actions
+            section of the statement:</para><ul><li><para>network-firewall:CreateFirewall</para></li><li><para>network-firewall:UpdateFirewall</para></li><li><para>network-firewall:AssociateFirewallPolicy</para></li><li><para>network-firewall:ListFirewallPolicies</para></li></ul><para>In the Resource section of the statement, you specify the ARNs for the rule groups
+            and firewall policies that you want to share with the account that you specified in
+            <code>Arn</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.WriteNWFWResourcePolicyCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the account that you want to share rule groups and
+            firewall policies with.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.WriteNWFWResourcePolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.NetworkFirewall.Model.PutResourcePolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.WriteNWFWResourcePolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.NWFW.WriteNWFWResourcePolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

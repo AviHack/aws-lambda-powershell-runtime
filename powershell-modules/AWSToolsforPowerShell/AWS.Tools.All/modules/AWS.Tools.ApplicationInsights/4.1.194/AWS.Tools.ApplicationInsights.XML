@@ -1,0 +1,1377 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.ApplicationInsights</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.AddCWAIResourceTagCmdlet">
+            <summary>
+            Add one or more tags (keys and values) to a specified application. A <i>tag</i> is
+            a label that you optionally define and associate with an application. Tags can help
+            you categorize and manage application in different ways, such as by purpose, owner,
+            environment, or other criteria. 
+            
+             
+            <para>
+            Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>,
+            both of which you define. A tag key is a general label that acts as a category for
+            more specific tag values. A tag value acts as a descriptor within a tag key.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.AddCWAIResourceTagCmdlet.ResourceARN">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the application that you want to add one or more
+            tags to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.AddCWAIResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of tags that to add to the application. A tag consists of a required tag key
+            (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length
+            of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.AddCWAIResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.AddCWAIResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceARN parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceARN' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.AddCWAIResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIApplicationCmdlet">
+            <summary>
+            Describes the application.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIApplicationCmdlet.ResourceGroupName">
+            <summary>
+            <para>
+            <para>The name of the resource group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIApplicationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ApplicationInfo'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.DescribeApplicationResponse).
+            Specifying the name of a property of type Amazon.ApplicationInsights.Model.DescribeApplicationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIApplicationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIApplicationListCmdlet">
+            <summary>
+            Lists the IDs of the applications that you are monitoring.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIApplicationListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return in a single call. To retrieve the remaining
+            results, make another call with the returned <code>NextToken</code> value.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIApplicationListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to request the next page of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIApplicationListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ApplicationInfoList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.ListApplicationsResponse).
+            Specifying the name of a property of type Amazon.ApplicationInsights.Model.ListApplicationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIApplicationListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIComponentCmdlet">
+            <summary>
+            Describes a component and lists the resources that are grouped together in a component.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIComponentCmdlet.ComponentName">
+            <summary>
+            <para>
+            <para>The name of the component.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIComponentCmdlet.ResourceGroupName">
+            <summary>
+            <para>
+            <para>The name of the resource group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIComponentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.DescribeComponentResponse).
+            Specifying the name of a property of type Amazon.ApplicationInsights.Model.DescribeComponentResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIComponentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ComponentName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ComponentName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIComponentConfigurationCmdlet">
+            <summary>
+            Describes the monitoring configuration of the component.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIComponentConfigurationCmdlet.ComponentName">
+            <summary>
+            <para>
+            <para>The name of the component.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIComponentConfigurationCmdlet.ResourceGroupName">
+            <summary>
+            <para>
+            <para>The name of the resource group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIComponentConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.DescribeComponentConfigurationResponse).
+            Specifying the name of a property of type Amazon.ApplicationInsights.Model.DescribeComponentConfigurationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIComponentConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ComponentName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ComponentName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIComponentConfigurationRecommendationCmdlet">
+            <summary>
+            Describes the recommended monitoring configuration of the component.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIComponentConfigurationRecommendationCmdlet.ComponentName">
+            <summary>
+            <para>
+            <para>The name of the component.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIComponentConfigurationRecommendationCmdlet.ResourceGroupName">
+            <summary>
+            <para>
+            <para>The name of the resource group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIComponentConfigurationRecommendationCmdlet.Tier">
+            <summary>
+            <para>
+            <para>The tier of the application component.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIComponentConfigurationRecommendationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ComponentConfiguration'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.DescribeComponentConfigurationRecommendationResponse).
+            Specifying the name of a property of type Amazon.ApplicationInsights.Model.DescribeComponentConfigurationRecommendationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIComponentConfigurationRecommendationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ComponentName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ComponentName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIComponentListCmdlet">
+            <summary>
+            Lists the auto-grouped, standalone, and custom components of the application.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIComponentListCmdlet.ResourceGroupName">
+            <summary>
+            <para>
+            <para>The name of the resource group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIComponentListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return in a single call. To retrieve the remaining
+            results, make another call with the returned <code>NextToken</code> value.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIComponentListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to request the next page of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIComponentListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ApplicationComponentList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.ListComponentsResponse).
+            Specifying the name of a property of type Amazon.ApplicationInsights.Model.ListComponentsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIComponentListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIComponentListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIConfigurationHistoryListCmdlet">
+            <summary>
+            Lists the INFO, WARN, and ERROR events for periodic configuration updates performed
+            by Application Insights. Examples of events represented are: 
+            
+             <ul><li><para>
+            INFO: creating a new alarm or updating an alarm threshold.
+            </para></li><li><para>
+            WARN: alarm not created due to insufficient data points used to predict thresholds.
+            </para></li><li><para>
+            ERROR: alarm not created due to permission errors or exceeding quotas. 
+            </para></li></ul><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIConfigurationHistoryListCmdlet.EndTime">
+            <summary>
+            <para>
+            <para>The end time of the event.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIConfigurationHistoryListCmdlet.EventStatus">
+            <summary>
+            <para>
+            <para>The status of the configuration update event. Possible values include INFO, WARN,
+            and ERROR.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIConfigurationHistoryListCmdlet.ResourceGroupName">
+            <summary>
+            <para>
+            <para>Resource group to which the application belongs. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIConfigurationHistoryListCmdlet.StartTime">
+            <summary>
+            <para>
+            <para>The start time of the event. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIConfigurationHistoryListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para> The maximum number of results returned by <code>ListConfigurationHistory</code> in
+            paginated output. When this parameter is used, <code>ListConfigurationHistory</code>
+            returns only <code>MaxResults</code> in a single page along with a <code>NextToken</code>
+            response element. The remaining results of the initial request can be seen by sending
+            another <code>ListConfigurationHistory</code> request with the returned <code>NextToken</code>
+            value. If this parameter is not used, then <code>ListConfigurationHistory</code> returns
+            all results. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIConfigurationHistoryListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code>
+            request where <code>MaxResults</code> was used and the results exceeded the value
+            of that parameter. Pagination continues from the end of the previous results that
+            returned the <code>NextToken</code> value. This value is <code>null</code> when there
+            are no more results to return.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIConfigurationHistoryListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EventList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.ListConfigurationHistoryResponse).
+            Specifying the name of a property of type Amazon.ApplicationInsights.Model.ListConfigurationHistoryResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIConfigurationHistoryListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIConfigurationHistoryListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.GetCWAILogPatternCmdlet">
+            <summary>
+            Describe a specific log pattern from a <code>LogPatternSet</code>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAILogPatternCmdlet.PatternName">
+            <summary>
+            <para>
+            <para>The name of the log pattern.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAILogPatternCmdlet.PatternSetName">
+            <summary>
+            <para>
+            <para>The name of the log pattern set.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAILogPatternCmdlet.ResourceGroupName">
+            <summary>
+            <para>
+            <para>The name of the resource group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAILogPatternCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'LogPattern'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.DescribeLogPatternResponse).
+            Specifying the name of a property of type Amazon.ApplicationInsights.Model.DescribeLogPatternResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAILogPatternCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PatternName parameter.
+            The -PassThru parameter is deprecated, use -Select '^PatternName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.GetCWAILogPatternListCmdlet">
+            <summary>
+            Lists the log patterns in the specific log <code>LogPatternSet</code>.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAILogPatternListCmdlet.PatternSetName">
+            <summary>
+            <para>
+            <para>The name of the log pattern set.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAILogPatternListCmdlet.ResourceGroupName">
+            <summary>
+            <para>
+            <para>The name of the resource group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAILogPatternListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return in a single call. To retrieve the remaining
+            results, make another call with the returned <code>NextToken</code> value.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAILogPatternListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to request the next page of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAILogPatternListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'LogPatterns'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.ListLogPatternsResponse).
+            Specifying the name of a property of type Amazon.ApplicationInsights.Model.ListLogPatternsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAILogPatternListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAILogPatternListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.GetCWAILogPatternSetListCmdlet">
+            <summary>
+            Lists the log pattern sets in the specific application.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAILogPatternSetListCmdlet.ResourceGroupName">
+            <summary>
+            <para>
+            <para>The name of the resource group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAILogPatternSetListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return in a single call. To retrieve the remaining
+            results, make another call with the returned <code>NextToken</code> value.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAILogPatternSetListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to request the next page of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAILogPatternSetListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'LogPatternSets'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.ListLogPatternSetsResponse).
+            Specifying the name of a property of type Amazon.ApplicationInsights.Model.ListLogPatternSetsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAILogPatternSetListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAILogPatternSetListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIObservationCmdlet">
+            <summary>
+            Describes an anomaly or error with the application.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIObservationCmdlet.ObservationId">
+            <summary>
+            <para>
+            <para>The ID of the observation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIObservationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Observation'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.DescribeObservationResponse).
+            Specifying the name of a property of type Amazon.ApplicationInsights.Model.DescribeObservationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIObservationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ObservationId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ObservationId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIProblemCmdlet">
+            <summary>
+            Describes an application problem.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIProblemCmdlet.ProblemId">
+            <summary>
+            <para>
+            <para>The ID of the problem.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIProblemCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Problem'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.DescribeProblemResponse).
+            Specifying the name of a property of type Amazon.ApplicationInsights.Model.DescribeProblemResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIProblemCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ProblemId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ProblemId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIProblemListCmdlet">
+            <summary>
+            Lists the problems with your application.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIProblemListCmdlet.ComponentName">
+            <summary>
+            <para>
+            <para> The name of the component. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIProblemListCmdlet.EndTime">
+            <summary>
+            <para>
+            <para>The time when the problem ended, in epoch seconds. If not specified, problems within
+            the past seven days are returned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIProblemListCmdlet.ResourceGroupName">
+            <summary>
+            <para>
+            <para>The name of the resource group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIProblemListCmdlet.StartTime">
+            <summary>
+            <para>
+            <para>The time when the problem was detected, in epoch seconds. If you don't specify a time
+            frame for the request, problems within the past seven days are returned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIProblemListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return in a single call. To retrieve the remaining
+            results, make another call with the returned <code>NextToken</code> value.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIProblemListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to request the next page of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIProblemListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ProblemList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.ListProblemsResponse).
+            Specifying the name of a property of type Amazon.ApplicationInsights.Model.ListProblemsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIProblemListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIProblemListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIProblemObservationCmdlet">
+            <summary>
+            Describes the anomalies or errors associated with the problem.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIProblemObservationCmdlet.ProblemId">
+            <summary>
+            <para>
+            <para>The ID of the problem.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIProblemObservationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'RelatedObservations'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.DescribeProblemObservationsResponse).
+            Specifying the name of a property of type Amazon.ApplicationInsights.Model.DescribeProblemObservationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIProblemObservationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ProblemId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ProblemId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIResourceTagCmdlet">
+            <summary>
+            Retrieve a list of the tags (keys and values) that are associated with a specified
+            application. A <i>tag</i> is a label that you optionally define and associate with
+            an application. Each tag consists of a required <i>tag key</i> and an optional associated
+            <i>tag value</i>. A tag key is a general label that acts as a category for more specific
+            tag values. A tag value acts as a descriptor within a tag key.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIResourceTagCmdlet.ResourceARN">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the application that you want to retrieve tag information
+            for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.ApplicationInsights.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.GetCWAIResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceARN parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceARN' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.NewCWAIApplicationCmdlet">
+            <summary>
+            Adds an application that is created from a resource group.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.NewCWAIApplicationCmdlet.AutoConfigEnabled">
+            <summary>
+            <para>
+            <para> Indicates whether Application Insights automatically configures unmonitored resources
+            in the resource group. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.NewCWAIApplicationCmdlet.AutoCreate">
+            <summary>
+            <para>
+            <para> Configures all of the resources in the resource group by applying the recommended
+            configurations. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.NewCWAIApplicationCmdlet.CWEMonitorEnabled">
+            <summary>
+            <para>
+            <para> Indicates whether Application Insights can listen to CloudWatch events for the application
+            resources, such as <code>instance terminated</code>, <code>failed deployment</code>,
+            and others. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.NewCWAIApplicationCmdlet.GroupingType">
+            <summary>
+            <para>
+            <para>Application Insights can create applications based on a resource group or on an account.
+            To create an account-based application using all of the resources in the account,
+            set this parameter to <code>ACCOUNT_BASED</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.NewCWAIApplicationCmdlet.OpsCenterEnabled">
+            <summary>
+            <para>
+            <para> When set to <code>true</code>, creates opsItems for any problems detected on an application.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.NewCWAIApplicationCmdlet.OpsItemSNSTopicArn">
+            <summary>
+            <para>
+            <para> The SNS topic provided to Application Insights that is associated to the created
+            opsItem. Allows you to receive notifications for updates to the opsItem. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.NewCWAIApplicationCmdlet.ResourceGroupName">
+            <summary>
+            <para>
+            <para>The name of the resource group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.NewCWAIApplicationCmdlet.Tag">
+            <summary>
+            <para>
+            <para>List of tags to add to the application. tag key (<code>Key</code>) and an associated
+            tag value (<code>Value</code>). The maximum length of a tag key is 128 characters.
+            The maximum length of a tag value is 256 characters.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.NewCWAIApplicationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ApplicationInfo'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.CreateApplicationResponse).
+            Specifying the name of a property of type Amazon.ApplicationInsights.Model.CreateApplicationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.NewCWAIApplicationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.NewCWAIApplicationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.NewCWAIComponentCmdlet">
+            <summary>
+            Creates a custom component by grouping similar standalone instances to monitor.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.NewCWAIComponentCmdlet.ComponentName">
+            <summary>
+            <para>
+            <para>The name of the component.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.NewCWAIComponentCmdlet.ResourceGroupName">
+            <summary>
+            <para>
+            <para>The name of the resource group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.NewCWAIComponentCmdlet.ResourceList">
+            <summary>
+            <para>
+            <para>The list of resource ARNs that belong to the component.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.NewCWAIComponentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.CreateComponentResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.NewCWAIComponentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ComponentName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ComponentName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.NewCWAIComponentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.NewCWAILogPatternCmdlet">
+            <summary>
+            Adds an log pattern to a <code>LogPatternSet</code>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.NewCWAILogPatternCmdlet.Pattern">
+            <summary>
+            <para>
+            <para>The log pattern. The pattern must be DFA compatible. Patterns that utilize forward
+            lookahead or backreference constructions are not supported.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.NewCWAILogPatternCmdlet.PatternName">
+            <summary>
+            <para>
+            <para>The name of the log pattern.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.NewCWAILogPatternCmdlet.PatternSetName">
+            <summary>
+            <para>
+            <para>The name of the log pattern set.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.NewCWAILogPatternCmdlet.Rank">
+            <summary>
+            <para>
+            <para>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>.
+            The patterns are sorted by rank, so we recommend that you set your highest priority
+            patterns with the lowest rank. A pattern of rank <code>1</code> will be the first
+            to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last
+            to get matched. When you configure custom log patterns from the console, a <code>Low</code>
+            severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code>
+            severity pattern translates to a <code>500,000</code> rank. And a <code>High</code>
+            severity pattern translates to a <code>250,000</code> rank. Rank values less than
+            <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided
+            patterns. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.NewCWAILogPatternCmdlet.ResourceGroupName">
+            <summary>
+            <para>
+            <para>The name of the resource group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.NewCWAILogPatternCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'LogPattern'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.CreateLogPatternResponse).
+            Specifying the name of a property of type Amazon.ApplicationInsights.Model.CreateLogPatternResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.NewCWAILogPatternCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PatternName parameter.
+            The -PassThru parameter is deprecated, use -Select '^PatternName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.NewCWAILogPatternCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.RemoveCWAIApplicationCmdlet">
+            <summary>
+            Removes the specified application from monitoring. Does not delete the application.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.RemoveCWAIApplicationCmdlet.ResourceGroupName">
+            <summary>
+            <para>
+            <para>The name of the resource group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.RemoveCWAIApplicationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.DeleteApplicationResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.RemoveCWAIApplicationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.RemoveCWAIApplicationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.RemoveCWAIComponentCmdlet">
+            <summary>
+            Ungroups a custom component. When you ungroup custom components, all applicable monitors
+            that are set up for the component are removed and the instances revert to their standalone
+            status.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.RemoveCWAIComponentCmdlet.ComponentName">
+            <summary>
+            <para>
+            <para>The name of the component.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.RemoveCWAIComponentCmdlet.ResourceGroupName">
+            <summary>
+            <para>
+            <para>The name of the resource group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.RemoveCWAIComponentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.DeleteComponentResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.RemoveCWAIComponentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ComponentName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ComponentName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.RemoveCWAIComponentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.RemoveCWAILogPatternCmdlet">
+            <summary>
+            Removes the specified log pattern from a <code>LogPatternSet</code>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.RemoveCWAILogPatternCmdlet.PatternName">
+            <summary>
+            <para>
+            <para>The name of the log pattern.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.RemoveCWAILogPatternCmdlet.PatternSetName">
+            <summary>
+            <para>
+            <para>The name of the log pattern set.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.RemoveCWAILogPatternCmdlet.ResourceGroupName">
+            <summary>
+            <para>
+            <para>The name of the resource group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.RemoveCWAILogPatternCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.DeleteLogPatternResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.RemoveCWAILogPatternCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PatternName parameter.
+            The -PassThru parameter is deprecated, use -Select '^PatternName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.RemoveCWAILogPatternCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.RemoveCWAIResourceTagCmdlet">
+            <summary>
+            Remove one or more tags (keys and values) from a specified application.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.RemoveCWAIResourceTagCmdlet.ResourceARN">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the application that you want to remove one or more
+            tags from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.RemoveCWAIResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>The tags (tag keys) that you want to remove from the resource. When you specify a
+            tag key, the action removes both that key and its associated tag value.</para><para>To remove more than one tag from the application, append the <code>TagKeys</code>
+            parameter and argument for each additional tag to remove, separated by an ampersand.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.RemoveCWAIResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.RemoveCWAIResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceARN parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceARN' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.RemoveCWAIResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIApplicationCmdlet">
+            <summary>
+            Updates the application.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIApplicationCmdlet.AutoConfigEnabled">
+            <summary>
+            <para>
+            <para> Turns auto-configuration on or off. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIApplicationCmdlet.CWEMonitorEnabled">
+            <summary>
+            <para>
+            <para> Indicates whether Application Insights can listen to CloudWatch events for the application
+            resources, such as <code>instance terminated</code>, <code>failed deployment</code>,
+            and others. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIApplicationCmdlet.OpsCenterEnabled">
+            <summary>
+            <para>
+            <para> When set to <code>true</code>, creates opsItems for any problems detected on an application.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIApplicationCmdlet.OpsItemSNSTopicArn">
+            <summary>
+            <para>
+            <para> The SNS topic provided to Application Insights that is associated to the created
+            opsItem. Allows you to receive notifications for updates to the opsItem.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIApplicationCmdlet.RemoveSNSTopic">
+            <summary>
+            <para>
+            <para> Disassociates the SNS topic from the opsItem created for detected problems.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIApplicationCmdlet.ResourceGroupName">
+            <summary>
+            <para>
+            <para>The name of the resource group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIApplicationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ApplicationInfo'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.UpdateApplicationResponse).
+            Specifying the name of a property of type Amazon.ApplicationInsights.Model.UpdateApplicationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIApplicationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIApplicationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIComponentCmdlet">
+            <summary>
+            Updates the custom component name and/or the list of resources that make up the component.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIComponentCmdlet.ComponentName">
+            <summary>
+            <para>
+            <para>The name of the component.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIComponentCmdlet.NewComponentName">
+            <summary>
+            <para>
+            <para>The new name of the component.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIComponentCmdlet.ResourceGroupName">
+            <summary>
+            <para>
+            <para>The name of the resource group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIComponentCmdlet.ResourceList">
+            <summary>
+            <para>
+            <para>The list of resource ARNs that belong to the component.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIComponentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.UpdateComponentResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIComponentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ComponentName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ComponentName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIComponentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIComponentConfigurationCmdlet">
+            <summary>
+            Updates the monitoring configurations for the component. The configuration input parameter
+            is an escaped JSON of the configuration and should match the schema of what is returned
+            by <code>DescribeComponentConfigurationRecommendation</code>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIComponentConfigurationCmdlet.AutoConfigEnabled">
+            <summary>
+            <para>
+            <para> Automatically configures the component by applying the recommended configurations.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIComponentConfigurationCmdlet.ComponentConfiguration">
+            <summary>
+            <para>
+            <para>The configuration settings of the component. The value is the escaped JSON of the
+            configuration. For more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working
+            with JSON</a>. You can send a request to <code>DescribeComponentConfigurationRecommendation</code>
+            to see the recommended configuration for a component. For the complete format of the
+            component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component
+            Configuration</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIComponentConfigurationCmdlet.ComponentName">
+            <summary>
+            <para>
+            <para>The name of the component.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIComponentConfigurationCmdlet.Monitor">
+            <summary>
+            <para>
+            <para>Indicates whether the application component is monitored.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIComponentConfigurationCmdlet.ResourceGroupName">
+            <summary>
+            <para>
+            <para>The name of the resource group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIComponentConfigurationCmdlet.Tier">
+            <summary>
+            <para>
+            <para>The tier of the application component.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIComponentConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.UpdateComponentConfigurationResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIComponentConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ComponentName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ComponentName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAIComponentConfigurationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAILogPatternCmdlet">
+            <summary>
+            Adds a log pattern to a <code>LogPatternSet</code>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAILogPatternCmdlet.Pattern">
+            <summary>
+            <para>
+            <para>The log pattern. The pattern must be DFA compatible. Patterns that utilize forward
+            lookahead or backreference constructions are not supported.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAILogPatternCmdlet.PatternName">
+            <summary>
+            <para>
+            <para>The name of the log pattern.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAILogPatternCmdlet.PatternSetName">
+            <summary>
+            <para>
+            <para>The name of the log pattern set.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAILogPatternCmdlet.Rank">
+            <summary>
+            <para>
+            <para>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>.
+            The patterns are sorted by rank, so we recommend that you set your highest priority
+            patterns with the lowest rank. A pattern of rank <code>1</code> will be the first
+            to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last
+            to get matched. When you configure custom log patterns from the console, a <code>Low</code>
+            severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code>
+            severity pattern translates to a <code>500,000</code> rank. And a <code>High</code>
+            severity pattern translates to a <code>250,000</code> rank. Rank values less than
+            <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided
+            patterns. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAILogPatternCmdlet.ResourceGroupName">
+            <summary>
+            <para>
+            <para>The name of the resource group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAILogPatternCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'LogPattern'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ApplicationInsights.Model.UpdateLogPatternResponse).
+            Specifying the name of a property of type Amazon.ApplicationInsights.Model.UpdateLogPatternResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAILogPatternCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PatternName parameter.
+            The -PassThru parameter is deprecated, use -Select '^PatternName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWAI.UpdateCWAILogPatternCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

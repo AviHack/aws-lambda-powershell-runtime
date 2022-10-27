@@ -1,0 +1,1708 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.RedshiftServerless</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.AddRSSResourceTagCmdlet">
+            <summary>
+            Assigns one or more tags to a resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.AddRSSResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource to tag.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.AddRSSResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The map of the key-value pairs used to tag the resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.AddRSSResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.AddRSSResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.AddRSSResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.ConvertRSSRecoveryPointToSnapshotCmdlet">
+            <summary>
+            Converts a recovery point to a snapshot. For more information about recovery points
+            and snapshots, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery.html">Working
+            with snapshots and recovery points</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.ConvertRSSRecoveryPointToSnapshotCmdlet.RecoveryPointId">
+            <summary>
+            <para>
+            <para>The unique identifier of the recovery point.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.ConvertRSSRecoveryPointToSnapshotCmdlet.RetentionPeriod">
+            <summary>
+            <para>
+            <para>How long to retain the snapshot.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.ConvertRSSRecoveryPointToSnapshotCmdlet.SnapshotName">
+            <summary>
+            <para>
+            <para>The name of the snapshot.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.ConvertRSSRecoveryPointToSnapshotCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Snapshot'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.ConvertRecoveryPointToSnapshotResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.ConvertRecoveryPointToSnapshotResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.ConvertRSSRecoveryPointToSnapshotCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RecoveryPointId parameter.
+            The -PassThru parameter is deprecated, use -Select '^RecoveryPointId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.ConvertRSSRecoveryPointToSnapshotCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.GetRSSCredentialCmdlet">
+            <summary>
+            Returns a database user name and temporary password with temporary authorization to
+            log in to Amazon Redshift Serverless.
+            
+             
+            <para>
+            By default, the temporary credentials expire in 900 seconds. You can optionally specify
+            a duration between 900 seconds (15 minutes) and 3600 seconds (60 minutes).
+            </para><pre><code> &lt;p&gt; The Identity and Access Management (IAM) user or role that
+            runs GetCredentials must have an IAM policy attached that allows access to all necessary
+            actions and resources. &lt;/p&gt; &lt;p&gt; If the &lt;code&gt;DbName&lt;/code&gt;
+            parameter is specified, the IAM policy must allow access to the resource dbname for
+            the specified database name.&lt;/p&gt; </code></pre>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSCredentialCmdlet.DbName">
+            <summary>
+            <para>
+            <para>The name of the database to get temporary authorization to log on to.</para><para>Constraints:</para><ul><li><para>Must be 1 to 64 alphanumeric characters or hyphens.</para></li><li><para>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot),
+            at symbol (@), or hyphen.</para></li><li><para>The first character must be a letter.</para></li><li><para>Must not contain a colon ( : ) or slash ( / ).</para></li><li><para>Cannot be a reserved word. A list of reserved words can be found in <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
+            Words </a> in the Amazon Redshift Database Developer Guide</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSCredentialCmdlet.DurationSecond">
+            <summary>
+            <para>
+            <para>The number of seconds until the returned temporary password expires. The minimum is
+            900 seconds, and the maximum is 3600 seconds.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSCredentialCmdlet.WorkgroupName">
+            <summary>
+            <para>
+            <para>The name of the workgroup associated with the database.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSCredentialCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.GetCredentialsResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.GetCredentialsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSCredentialCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the WorkgroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^WorkgroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.GetRSSEndpointAccessCmdlet">
+            <summary>
+            Returns information, such as the name, about a VPC endpoint.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSEndpointAccessCmdlet.EndpointName">
+            <summary>
+            <para>
+            <para>The name of the VPC endpoint to return information for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSEndpointAccessCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Endpoint'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.GetEndpointAccessResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.GetEndpointAccessResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSEndpointAccessCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EndpointName parameter.
+            The -PassThru parameter is deprecated, use -Select '^EndpointName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.GetRSSEndpointAccessListCmdlet">
+            <summary>
+            Returns an array of <code>EndpointAccess</code> objects and relevant information.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSEndpointAccessListCmdlet.VpcId">
+            <summary>
+            <para>
+            <para>The unique identifier of the virtual private cloud with access to Amazon Redshift
+            Serverless.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSEndpointAccessListCmdlet.WorkgroupName">
+            <summary>
+            <para>
+            <para>The name of the workgroup associated with the VPC endpoint to return.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSEndpointAccessListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>An optional parameter that specifies the maximum number of results to return. You
+            can use <code>nextToken</code> to get the next page of results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSEndpointAccessListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If your initial <code>ListEndpointAccess</code> operation returns a <code>nextToken</code>,
+            you can include the returned <code>nextToken</code> in subsequent <code>ListEndpointAccess</code>
+            operations, which returns results in the next page.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSEndpointAccessListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Endpoints'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.ListEndpointAccessResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.ListEndpointAccessResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSEndpointAccessListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the WorkgroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^WorkgroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.GetRSSNamespaceCmdlet">
+            <summary>
+            Returns information about a namespace in Amazon Redshift Serverless.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSNamespaceCmdlet.NamespaceName">
+            <summary>
+            <para>
+            <para>The name of the namespace to retrieve information for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSNamespaceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Namespace'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.GetNamespaceResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.GetNamespaceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSNamespaceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the NamespaceName parameter.
+            The -PassThru parameter is deprecated, use -Select '^NamespaceName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.GetRSSNamespaceListCmdlet">
+            <summary>
+            Returns information about a list of specified namespaces.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSNamespaceListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>An optional parameter that specifies the maximum number of results to return. You
+            can use <code>nextToken</code> to get the next page of results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSNamespaceListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If your initial <code>ListNamespaces</code> operation returns a <code>nextToken</code>,
+            you can include the returned <code>nextToken</code> in subsequent <code>ListNamespaces</code>
+            operations, which returns results in the next page.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSNamespaceListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Namespaces'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.ListNamespacesResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.ListNamespacesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.GetRSSRecoveryPointCmdlet">
+            <summary>
+            Returns information about a recovery point.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSRecoveryPointCmdlet.RecoveryPointId">
+            <summary>
+            <para>
+            <para>The unique identifier of the recovery point to return information for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSRecoveryPointCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'RecoveryPoint'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.GetRecoveryPointResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.GetRecoveryPointResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSRecoveryPointCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RecoveryPointId parameter.
+            The -PassThru parameter is deprecated, use -Select '^RecoveryPointId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.GetRSSRecoveryPointListCmdlet">
+            <summary>
+            Returns an array of recovery points.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSRecoveryPointListCmdlet.EndTime">
+            <summary>
+            <para>
+            <para>The time when creation of the recovery point finished.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSRecoveryPointListCmdlet.NamespaceName">
+            <summary>
+            <para>
+            <para>The name of the namespace to list recovery points for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSRecoveryPointListCmdlet.StartTime">
+            <summary>
+            <para>
+            <para>The time when the recovery point's creation was initiated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSRecoveryPointListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>An optional parameter that specifies the maximum number of results to return. You
+            can use <code>nextToken</code> to get the next page of results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSRecoveryPointListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>,
+            you can include the returned <code>nextToken</code> in subsequent <code>ListRecoveryPoints</code>
+            operations, which returns results in the next page.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSRecoveryPointListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'RecoveryPoints'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.ListRecoveryPointsResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.ListRecoveryPointsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSRecoveryPointListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the NamespaceName parameter.
+            The -PassThru parameter is deprecated, use -Select '^NamespaceName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.GetRSSResourcePolicyCmdlet">
+            <summary>
+            Returns a resource policy.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSResourcePolicyCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource to return.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSResourcePolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ResourcePolicy'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.GetResourcePolicyResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.GetResourcePolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSResourcePolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.GetRSSResourceTagCmdlet">
+            <summary>
+            Lists the tags assigned to a resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource to list tags for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.GetRSSSnapshotCmdlet">
+            <summary>
+            Returns information about a specific snapshot.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSSnapshotCmdlet.OwnerAccount">
+            <summary>
+            <para>
+            <para>The owner Amazon Web Services account of a snapshot shared with another user.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSSnapshotCmdlet.SnapshotArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the snapshot to return.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSSnapshotCmdlet.SnapshotName">
+            <summary>
+            <para>
+            <para>The name of the snapshot to return.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSSnapshotCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Snapshot'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.GetSnapshotResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.GetSnapshotResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSSnapshotCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SnapshotName parameter.
+            The -PassThru parameter is deprecated, use -Select '^SnapshotName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.GetRSSSnapshotListCmdlet">
+            <summary>
+            Returns a list of snapshots.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSSnapshotListCmdlet.EndTime">
+            <summary>
+            <para>
+            <para>The timestamp showing when the snapshot creation finished.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSSnapshotListCmdlet.NamespaceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the namespace from which to list all snapshots.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSSnapshotListCmdlet.NamespaceName">
+            <summary>
+            <para>
+            <para>The namespace from which to list all snapshots.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSSnapshotListCmdlet.OwnerAccount">
+            <summary>
+            <para>
+            <para>The owner Amazon Web Services account of the snapshot.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSSnapshotListCmdlet.StartTime">
+            <summary>
+            <para>
+            <para>The time when the creation of the snapshot was initiated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSSnapshotListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>An optional parameter that specifies the maximum number of results to return. You
+            can use <code>nextToken</code> to get the next page of results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSSnapshotListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If <code>nextToken</code> is returned, there are more results available. The value
+            of <code>nextToken</code> is a unique pagination token for each page. Make the call
+            again using the returned token to retrieve the next page.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSSnapshotListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Snapshots'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.ListSnapshotsResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.ListSnapshotsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSSnapshotListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the NamespaceName parameter.
+            The -PassThru parameter is deprecated, use -Select '^NamespaceName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.GetRSSUsageLimitCmdlet">
+            <summary>
+            Returns information about a usage limit.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSUsageLimitCmdlet.UsageLimitId">
+            <summary>
+            <para>
+            <para>The unique identifier of the usage limit to return information for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSUsageLimitCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'UsageLimit'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.GetUsageLimitResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.GetUsageLimitResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSUsageLimitCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the UsageLimitId parameter.
+            The -PassThru parameter is deprecated, use -Select '^UsageLimitId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.GetRSSUsageLimitListCmdlet">
+            <summary>
+            Lists all usage limits within Amazon Redshift Serverless.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSUsageLimitListCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) associated with the resource whose usage limits you
+            want to list.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSUsageLimitListCmdlet.UsageType">
+            <summary>
+            <para>
+            <para>The Amazon Redshift Serverless feature whose limits you want to see.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSUsageLimitListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>An optional parameter that specifies the maximum number of results to return. You
+            can use <code>nextToken</code> to get the next page of results. The default is 100.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSUsageLimitListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>,
+            you can include the returned <code>nextToken</code> in subsequent <code>ListUsageLimits</code>
+            operations, which returns results in the next page. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSUsageLimitListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'UsageLimits'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.ListUsageLimitsResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.ListUsageLimitsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSUsageLimitListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.GetRSSWorkgroupCmdlet">
+            <summary>
+            Returns information about a specific workgroup.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSWorkgroupCmdlet.WorkgroupName">
+            <summary>
+            <para>
+            <para>The name of the workgroup to return information for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSWorkgroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Workgroup'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.GetWorkgroupResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.GetWorkgroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSWorkgroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the WorkgroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^WorkgroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.GetRSSWorkgroupListCmdlet">
+            <summary>
+            Returns information about a list of specified workgroups.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSWorkgroupListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>An optional parameter that specifies the maximum number of results to return. You
+            can use <code>nextToken</code> to get the next page of results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSWorkgroupListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If your initial ListWorkgroups operation returns a <code>nextToken</code>, you can
+            include the returned <code>nextToken</code> in subsequent ListNamespaces operations,
+            which returns results in the next page.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.GetRSSWorkgroupListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Workgroups'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.ListWorkgroupsResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.ListWorkgroupsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.NewRSSEndpointAccessCmdlet">
+            <summary>
+            Creates an Amazon Redshift Serverless managed VPC endpoint.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSEndpointAccessCmdlet.EndpointName">
+            <summary>
+            <para>
+            <para>The name of the VPC endpoint. An endpoint name must contain 1-30 characters. Valid
+            characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter.
+            The name can't contain two consecutive hyphens or end with a hyphen.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSEndpointAccessCmdlet.SubnetId">
+            <summary>
+            <para>
+            <para>The unique identifers of subnets from which Amazon Redshift Serverless chooses one
+            to deploy a VPC endpoint.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSEndpointAccessCmdlet.VpcSecurityGroupId">
+            <summary>
+            <para>
+            <para>The unique identifiers of the security group that defines the ports, protocols, and
+            sources for inbound traffic that you are authorizing into your endpoint.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSEndpointAccessCmdlet.WorkgroupName">
+            <summary>
+            <para>
+            <para>The name of the workgroup to associate with the VPC endpoint.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSEndpointAccessCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Endpoint'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.CreateEndpointAccessResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.CreateEndpointAccessResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSEndpointAccessCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the WorkgroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^WorkgroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSEndpointAccessCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.NewRSSNamespaceCmdlet">
+            <summary>
+            Creates a namespace in Amazon Redshift Serverless.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSNamespaceCmdlet.AdminUsername">
+            <summary>
+            <para>
+            <para>The username of the administrator for the first database created in the namespace.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSNamespaceCmdlet.AdminUserPassword">
+            <summary>
+            <para>
+            <para>The password of the administrator for the first database created in the namespace.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSNamespaceCmdlet.DbName">
+            <summary>
+            <para>
+            <para>The name of the first database created in the namespace.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSNamespaceCmdlet.DefaultIamRoleArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSNamespaceCmdlet.IamRole">
+            <summary>
+            <para>
+            <para>A list of IAM roles to associate with the namespace.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSNamespaceCmdlet.KmsKeyId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Web Services Key Management Service key used to encrypt your
+            data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSNamespaceCmdlet.LogExport">
+            <summary>
+            <para>
+            <para>The types of logs the namespace can export. Available export types are <code>userlog</code>,
+            <code>connectionlog</code>, and <code>useractivitylog</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSNamespaceCmdlet.NamespaceName">
+            <summary>
+            <para>
+            <para>The name of the namespace.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSNamespaceCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of tag instances.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSNamespaceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Namespace'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.CreateNamespaceResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.CreateNamespaceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSNamespaceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the NamespaceName parameter.
+            The -PassThru parameter is deprecated, use -Select '^NamespaceName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSNamespaceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.NewRSSSnapshotCmdlet">
+            <summary>
+            Creates a snapshot of all databases in a namespace. For more information about snapshots,
+            see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery.html">
+            Working with snapshots and recovery points</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSSnapshotCmdlet.NamespaceName">
+            <summary>
+            <para>
+            <para>The namespace to create a snapshot for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSSnapshotCmdlet.RetentionPeriod">
+            <summary>
+            <para>
+            <para>How long to retain the created snapshot.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSSnapshotCmdlet.SnapshotName">
+            <summary>
+            <para>
+            <para>The name of the snapshot.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSSnapshotCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Snapshot'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.CreateSnapshotResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.CreateSnapshotResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSSnapshotCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the NamespaceName parameter.
+            The -PassThru parameter is deprecated, use -Select '^NamespaceName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSSnapshotCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.NewRSSUsageLimitCmdlet">
+            <summary>
+            Creates a usage limit for a specified Amazon Redshift Serverless usage type. The usage
+            limit is identified by the returned usage limit identifier.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSUsageLimitCmdlet.Amount">
+            <summary>
+            <para>
+            <para>The limit amount. If time-based, this amount is in Redshift Processing Units (RPU)
+            consumed per hour. If data-based, this amount is in terabytes (TB) of data transferred
+            between Regions in cross-account sharing. The value must be a positive number.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSUsageLimitCmdlet.BreachAction">
+            <summary>
+            <para>
+            <para>The action that Amazon Redshift Serverless takes when the limit is reached. The default
+            is log.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSUsageLimitCmdlet.Period">
+            <summary>
+            <para>
+            <para>The time period that the amount applies to. A weekly period begins on Sunday. The
+            default is monthly.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSUsageLimitCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Amazon Redshift Serverless resource to create
+            the usage limit for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSUsageLimitCmdlet.UsageType">
+            <summary>
+            <para>
+            <para>The type of Amazon Redshift Serverless usage to create a usage limit for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSUsageLimitCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'UsageLimit'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.CreateUsageLimitResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.CreateUsageLimitResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSUsageLimitCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSUsageLimitCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.NewRSSWorkgroupCmdlet">
+            <summary>
+            Creates an workgroup in Amazon Redshift Serverless.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSWorkgroupCmdlet.BaseCapacity">
+            <summary>
+            <para>
+            <para>The base data warehouse capacity of the workgroup in Redshift Processing Units (RPUs).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSWorkgroupCmdlet.ConfigParameter">
+            <summary>
+            <para>
+            <para>An array of parameters to set for more control over a serverless database. The options
+            are <code>datestyle</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>,
+            <code>search_path</code>, and <code>max_query_execution_time</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSWorkgroupCmdlet.EnhancedVpcRouting">
+            <summary>
+            <para>
+            <para>The value that specifies whether to turn on enhanced virtual private cloud (VPC) routing,
+            which forces Amazon Redshift Serverless to route traffic through your VPC instead
+            of over the internet.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSWorkgroupCmdlet.NamespaceName">
+            <summary>
+            <para>
+            <para>The name of the namespace to associate with the workgroup.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSWorkgroupCmdlet.PubliclyAccessible">
+            <summary>
+            <para>
+            <para>A value that specifies whether the workgroup can be accessed from a public network.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSWorkgroupCmdlet.SecurityGroupId">
+            <summary>
+            <para>
+            <para>An array of security group IDs to associate with the workgroup.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSWorkgroupCmdlet.SubnetId">
+            <summary>
+            <para>
+            <para>An array of VPC subnet IDs to associate with the workgroup.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSWorkgroupCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A array of tag instances.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSWorkgroupCmdlet.WorkgroupName">
+            <summary>
+            <para>
+            <para>The name of the created workgroup.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSWorkgroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Workgroup'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.CreateWorkgroupResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.CreateWorkgroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSWorkgroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the NamespaceName parameter.
+            The -PassThru parameter is deprecated, use -Select '^NamespaceName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.NewRSSWorkgroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSEndpointAccessCmdlet">
+            <summary>
+            Deletes an Amazon Redshift Serverless managed VPC endpoint.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSEndpointAccessCmdlet.EndpointName">
+            <summary>
+            <para>
+            <para>The name of the VPC endpoint to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSEndpointAccessCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Endpoint'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.DeleteEndpointAccessResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.DeleteEndpointAccessResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSEndpointAccessCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EndpointName parameter.
+            The -PassThru parameter is deprecated, use -Select '^EndpointName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSEndpointAccessCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSNamespaceCmdlet">
+            <summary>
+            Deletes a namespace from Amazon Redshift Serverless. Before you delete the namespace,
+            you can create a final snapshot that has all of the data within the namespace.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSNamespaceCmdlet.FinalSnapshotName">
+            <summary>
+            <para>
+            <para>The name of the snapshot to be created before the namespace is deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSNamespaceCmdlet.FinalSnapshotRetentionPeriod">
+            <summary>
+            <para>
+            <para>How long to retain the final snapshot.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSNamespaceCmdlet.NamespaceName">
+            <summary>
+            <para>
+            <para>The name of the namespace to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSNamespaceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Namespace'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.DeleteNamespaceResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.DeleteNamespaceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSNamespaceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the NamespaceName parameter.
+            The -PassThru parameter is deprecated, use -Select '^NamespaceName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSNamespaceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSResourcePolicyCmdlet">
+            <summary>
+            Deletes the specified resource policy.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSResourcePolicyCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the policy to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSResourcePolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.DeleteResourcePolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSResourcePolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSResourcePolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSResourceTagCmdlet">
+            <summary>
+            Removes a tag or set of tags from a resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource to remove tags from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>The tag or set of tags to remove from the resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSSnapshotCmdlet">
+            <summary>
+            Deletes a snapshot from Amazon Redshift Serverless.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSSnapshotCmdlet.SnapshotName">
+            <summary>
+            <para>
+            <para>The name of the snapshot to be deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSSnapshotCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Snapshot'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.DeleteSnapshotResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.DeleteSnapshotResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSSnapshotCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SnapshotName parameter.
+            The -PassThru parameter is deprecated, use -Select '^SnapshotName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSSnapshotCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSUsageLimitCmdlet">
+            <summary>
+            Deletes a usage limit from Amazon Redshift Serverless.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSUsageLimitCmdlet.UsageLimitId">
+            <summary>
+            <para>
+            <para>The unique identifier of the usage limit to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSUsageLimitCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'UsageLimit'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.DeleteUsageLimitResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.DeleteUsageLimitResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSUsageLimitCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the UsageLimitId parameter.
+            The -PassThru parameter is deprecated, use -Select '^UsageLimitId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSUsageLimitCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSWorkgroupCmdlet">
+            <summary>
+            Deletes a workgroup.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSWorkgroupCmdlet.WorkgroupName">
+            <summary>
+            <para>
+            <para>The name of the workgroup to be deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSWorkgroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Workgroup'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.DeleteWorkgroupResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.DeleteWorkgroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSWorkgroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the WorkgroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^WorkgroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RemoveRSSWorkgroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.RestoreRSSFromRecoveryPointCmdlet">
+            <summary>
+            Restore the data from a recovery point.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RestoreRSSFromRecoveryPointCmdlet.NamespaceName">
+            <summary>
+            <para>
+            <para>The name of the namespace to restore data into.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RestoreRSSFromRecoveryPointCmdlet.RecoveryPointId">
+            <summary>
+            <para>
+            <para>The unique identifier of the recovery point to restore from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RestoreRSSFromRecoveryPointCmdlet.WorkgroupName">
+            <summary>
+            <para>
+            <para>The name of the workgroup used to restore data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RestoreRSSFromRecoveryPointCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.RestoreFromRecoveryPointResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.RestoreFromRecoveryPointResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RestoreRSSFromRecoveryPointCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RecoveryPointId parameter.
+            The -PassThru parameter is deprecated, use -Select '^RecoveryPointId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RestoreRSSFromRecoveryPointCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.RestoreRSSFromSnapshotCmdlet">
+            <summary>
+            Restores a namespace from a snapshot.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RestoreRSSFromSnapshotCmdlet.NamespaceName">
+            <summary>
+            <para>
+            <para>The name of the namespace to restore the snapshot to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RestoreRSSFromSnapshotCmdlet.OwnerAccount">
+            <summary>
+            <para>
+            <para>The Amazon Web Services account that owns the snapshot.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RestoreRSSFromSnapshotCmdlet.SnapshotArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the snapshot to restore from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RestoreRSSFromSnapshotCmdlet.SnapshotName">
+            <summary>
+            <para>
+            <para>The name of the snapshot to restore from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RestoreRSSFromSnapshotCmdlet.WorkgroupName">
+            <summary>
+            <para>
+            <para>The name of the workgroup used to restore the snapshot.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RestoreRSSFromSnapshotCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.RestoreFromSnapshotResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.RestoreFromSnapshotResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RestoreRSSFromSnapshotCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the NamespaceName parameter.
+            The -PassThru parameter is deprecated, use -Select '^NamespaceName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.RestoreRSSFromSnapshotCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSEndpointAccessCmdlet">
+            <summary>
+            Updates an Amazon Redshift Serverless managed endpoint.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSEndpointAccessCmdlet.EndpointName">
+            <summary>
+            <para>
+            <para>The name of the VPC endpoint to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSEndpointAccessCmdlet.VpcSecurityGroupId">
+            <summary>
+            <para>
+            <para>The list of VPC security groups associated with the endpoint after the endpoint is
+            modified.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSEndpointAccessCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Endpoint'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.UpdateEndpointAccessResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.UpdateEndpointAccessResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSEndpointAccessCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EndpointName parameter.
+            The -PassThru parameter is deprecated, use -Select '^EndpointName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSEndpointAccessCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSNamespaceCmdlet">
+            <summary>
+            Updates a namespace with the specified settings.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSNamespaceCmdlet.AdminUsername">
+            <summary>
+            <para>
+            <para>The username of the administrator for the first database created in the namespace.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSNamespaceCmdlet.AdminUserPassword">
+            <summary>
+            <para>
+            <para>The password of the administrator for the first database created in the namespace.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSNamespaceCmdlet.DefaultIamRoleArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSNamespaceCmdlet.IamRole">
+            <summary>
+            <para>
+            <para>A list of IAM roles to associate with the namespace.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSNamespaceCmdlet.KmsKeyId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Web Services Key Management Service key used to encrypt your
+            data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSNamespaceCmdlet.LogExport">
+            <summary>
+            <para>
+            <para>The types of logs the namespace can export. The export types are <code>userlog</code>,
+            <code>connectionlog</code>, and <code>useractivitylog</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSNamespaceCmdlet.NamespaceName">
+            <summary>
+            <para>
+            <para>The name of the namespace.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSNamespaceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Namespace'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.UpdateNamespaceResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.UpdateNamespaceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSNamespaceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the NamespaceName parameter.
+            The -PassThru parameter is deprecated, use -Select '^NamespaceName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSNamespaceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSSnapshotCmdlet">
+            <summary>
+            Updates a snapshot.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSSnapshotCmdlet.RetentionPeriod">
+            <summary>
+            <para>
+            <para>The new retention period of the snapshot.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSSnapshotCmdlet.SnapshotName">
+            <summary>
+            <para>
+            <para>The name of the snapshot.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSSnapshotCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Snapshot'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.UpdateSnapshotResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.UpdateSnapshotResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSSnapshotCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SnapshotName parameter.
+            The -PassThru parameter is deprecated, use -Select '^SnapshotName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSSnapshotCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSUsageLimitCmdlet">
+            <summary>
+            Update a usage limit in Amazon Redshift Serverless. You can't update the usage type
+            or period of a usage limit.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSUsageLimitCmdlet.Amount">
+            <summary>
+            <para>
+            <para>The new limit amount. For more information about this parameter.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSUsageLimitCmdlet.BreachAction">
+            <summary>
+            <para>
+            <para>The new action that Amazon Redshift Serverless takes when the limit is reached.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSUsageLimitCmdlet.UsageLimitId">
+            <summary>
+            <para>
+            <para>The identifier of the usage limit to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSUsageLimitCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'UsageLimit'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.UpdateUsageLimitResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.UpdateUsageLimitResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSUsageLimitCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the UsageLimitId parameter.
+            The -PassThru parameter is deprecated, use -Select '^UsageLimitId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSUsageLimitCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSWorkgroupCmdlet">
+            <summary>
+            Updates a workgroup with the specified configuration settings.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSWorkgroupCmdlet.BaseCapacity">
+            <summary>
+            <para>
+            <para>The new base data warehouse capacity in Redshift Processing Units (RPUs).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSWorkgroupCmdlet.ConfigParameter">
+            <summary>
+            <para>
+            <para>An array of parameters to set for advanced control over a database. The options are
+            <code>datestyle</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>,
+            <code>search_path</code>, and <code>max_query_execution_time</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSWorkgroupCmdlet.EnhancedVpcRouting">
+            <summary>
+            <para>
+            <para>The value that specifies whether to turn on enhanced virtual private cloud (VPC) routing,
+            which forces Amazon Redshift Serverless to route traffic through your VPC.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSWorkgroupCmdlet.PubliclyAccessible">
+            <summary>
+            <para>
+            <para>A value that specifies whether the workgroup can be accessible from a public network.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSWorkgroupCmdlet.SecurityGroupId">
+            <summary>
+            <para>
+            <para>An array of security group IDs to associate with the workgroup.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSWorkgroupCmdlet.SubnetId">
+            <summary>
+            <para>
+            <para>An array of VPC subnet IDs to associate with the workgroup.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSWorkgroupCmdlet.WorkgroupName">
+            <summary>
+            <para>
+            <para>The name of the workgroup to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSWorkgroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Workgroup'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.UpdateWorkgroupResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.UpdateWorkgroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSWorkgroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the WorkgroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^WorkgroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.UpdateRSSWorkgroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RSS.WriteRSSResourcePolicyCmdlet">
+            <summary>
+            Creates or updates a resource policy. Currently, you can use policies to share snapshots
+            across Amazon Web Services accounts.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.WriteRSSResourcePolicyCmdlet.Policy">
+            <summary>
+            <para>
+            <para>The policy to create or update. For example, the following policy grants a user authorization
+            to restore a snapshot.</para><para><code>"{\"Version\": \"2012-10-17\", \"Statement\" : [{ \"Sid\": \"AllowUserRestoreFromSnapshot\",
+            \"Principal\":{\"AWS\": [\"739247239426\"]}, \"Action\": [\"redshift-serverless:RestoreFromSnapshot\"]
+            , \"Effect\": \"Allow\" }]}"</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.WriteRSSResourcePolicyCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the account to create or update a resource policy
+            for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.WriteRSSResourcePolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ResourcePolicy'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RedshiftServerless.Model.PutResourcePolicyResponse).
+            Specifying the name of a property of type Amazon.RedshiftServerless.Model.PutResourcePolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.WriteRSSResourcePolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RSS.WriteRSSResourcePolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

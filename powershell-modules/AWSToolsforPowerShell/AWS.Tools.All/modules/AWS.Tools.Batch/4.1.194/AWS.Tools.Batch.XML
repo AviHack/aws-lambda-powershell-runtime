@@ -1,0 +1,2734 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.Batch</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAT.AddBATResourceTagCmdlet">
+            <summary>
+            Associates the specified tags to a resource with the specified <code>resourceArn</code>.
+            If existing tags on a resource aren't specified in the request parameters, they aren't
+            changed. When a resource is deleted, the tags that are associated with that resource
+            are deleted as well. Batch resources that support tags are compute environments, jobs,
+            job definitions, job queues, and scheduling policies. ARNs for child jobs of array
+            and multi-node parallel (MNP) jobs aren't supported.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.AddBATResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources
+            that support tags are compute environments, jobs, job definitions, job queues, and
+            scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs
+            aren't supported.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.AddBATResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags that you apply to the resource to help you categorize and organize your resources.
+            Each tag consists of a key and an optional value. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+            Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.AddBATResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Batch.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.AddBATResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.AddBATResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAT.GetBATComputeEnvironmentCmdlet">
+            <summary>
+            Describes one or more of your compute environments.
+            
+             
+            <para>
+            If you're using an unmanaged compute environment, you can use the <code>DescribeComputeEnvironment</code>
+            operation to determine the <code>ecsClusterArn</code> that you launch your Amazon
+            ECS container instances into.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATComputeEnvironmentCmdlet.ComputeEnvironment">
+            <summary>
+            <para>
+            <para>A list of up to 100 compute environment names or full Amazon Resource Name (ARN) entries.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATComputeEnvironmentCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of cluster results returned by <code>DescribeComputeEnvironments</code>
+            in paginated output. When this parameter is used, <code>DescribeComputeEnvironments</code>
+            only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+            response element. The remaining results of the initial request can be seen by sending
+            another <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code>
+            value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeComputeEnvironments</code>
+            returns up to 100 results and a <code>nextToken</code> value if applicable.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATComputeEnvironmentCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The <code>nextToken</code> value returned from a previous paginated <code>DescribeComputeEnvironments</code>
+            request where <code>maxResults</code> was used and the results exceeded the value
+            of that parameter. Pagination continues from the end of the previous results that
+            returned the <code>nextToken</code> value. This value is <code>null</code> when there
+            are no more results to return.</para><note><para>Treat this token as an opaque identifier that's only used to retrieve the next items
+            in a list and not for other programmatic purposes.</para></note>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATComputeEnvironmentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ComputeEnvironments'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Batch.Model.DescribeComputeEnvironmentsResponse).
+            Specifying the name of a property of type Amazon.Batch.Model.DescribeComputeEnvironmentsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATComputeEnvironmentCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAT.GetBATJobDefinitionCmdlet">
+            <summary>
+            Describes a list of job definitions. You can specify a <code>status</code> (such as
+            <code>ACTIVE</code>) to only return job definitions that match that status.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobDefinitionCmdlet.JobDefinitionName">
+            <summary>
+            <para>
+            <para>The name of the job definition to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobDefinitionCmdlet.JobDefinition">
+            <summary>
+            <para>
+            <para>A list of up to 100 job definitions. Each entry in the list can either be an ARN in
+            the format <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>
+            or a short version using the form <code>${JobDefinitionName}:${Revision}</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobDefinitionCmdlet.Status">
+            <summary>
+            <para>
+            <para>The status used to filter job definitions.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobDefinitionCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results returned by <code>DescribeJobDefinitions</code> in paginated
+            output. When this parameter is used, <code>DescribeJobDefinitions</code> only returns
+            <code>maxResults</code> results in a single page and a <code>nextToken</code> response
+            element. The remaining results of the initial request can be seen by sending another
+            <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code>
+            value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeJobDefinitions</code>
+            returns up to 100 results and a <code>nextToken</code> value if applicable.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobDefinitionCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobDefinitions</code>
+            request where <code>maxResults</code> was used and the results exceeded the value
+            of that parameter. Pagination continues from the end of the previous results that
+            returned the <code>nextToken</code> value. This value is <code>null</code> when there
+            are no more results to return.</para><note><para>Treat this token as an opaque identifier that's only used to retrieve the next items
+            in a list and not for other programmatic purposes.</para></note>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobDefinitionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'JobDefinitions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Batch.Model.DescribeJobDefinitionsResponse).
+            Specifying the name of a property of type Amazon.Batch.Model.DescribeJobDefinitionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobDefinitionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobDefinitionName parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobDefinitionName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobDefinitionCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAT.GetBATJobDetailCmdlet">
+            <summary>
+            Describes a list of Batch jobs.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobDetailCmdlet.Job">
+            <summary>
+            <para>
+            <para>A list of up to 100 job IDs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobDetailCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Jobs'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Batch.Model.DescribeJobsResponse).
+            Specifying the name of a property of type Amazon.Batch.Model.DescribeJobsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobDetailCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Job parameter.
+            The -PassThru parameter is deprecated, use -Select '^Job' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAT.GetBATJobListCmdlet">
+            <summary>
+            Returns a list of Batch jobs.
+            
+             
+            <para>
+            You must specify only one of the following items:
+            </para><ul><li><para>
+            A job queue ID to return a list of jobs in that job queue
+            </para></li><li><para>
+            A multi-node parallel job ID to return a list of nodes for that job
+            </para></li><li><para>
+            An array job ID to return a list of the children for that job
+            </para></li></ul><para>
+            You can filter the results by job status with the <code>jobStatus</code> parameter.
+            If you don't specify a status, only <code>RUNNING</code> jobs are returned.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobListCmdlet.ArrayJobId">
+            <summary>
+            <para>
+            <para>The job ID for an array job. Specifying an array job ID with this parameter lists
+            all child jobs from within the specified array.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobListCmdlet.Filter">
+            <summary>
+            <para>
+            <para>The filter to apply to the query. Only one filter can be used at a time. When the
+            filter is used, <code>jobStatus</code> is ignored. The filter doesn't apply to child
+            jobs in an array or multi-node parallel (MNP) jobs. The results are sorted by the
+            <code>createdAt</code> field, with the most recent jobs being first.</para><dl><dt>JOB_NAME</dt><dd><para>The value of the filter is a case-insensitive match for the job name. If the value
+            ends with an asterisk (*), the filter matches any job name that begins with the string
+            before the '*'. This corresponds to the <code>jobName</code> value. For example, <code>test1</code>
+            matches both <code>Test1</code> and <code>test1</code>, and <code>test1*</code> matches
+            both <code>test1</code> and <code>Test10</code>. When the <code>JOB_NAME</code> filter
+            is used, the results are grouped by the job name and version.</para></dd><dt>JOB_DEFINITION</dt><dd><para>The value for the filter is the name or Amazon Resource Name (ARN) of the job definition.
+            This corresponds to the <code>jobDefinition</code> value. The value is case sensitive.
+            When the value for the filter is the job definition name, the results include all
+            the jobs that used any revision of that job definition name. If the value ends with
+            an asterisk (*), the filter matches any job definition name that begins with the string
+            before the '*'. For example, <code>jd1</code> matches only <code>jd1</code>, and <code>jd1*</code>
+            matches both <code>jd1</code> and <code>jd1A</code>. The version of the job definition
+            that's used doesn't affect the sort order. When the <code>JOB_DEFINITION</code> filter
+            is used and the ARN is used (which is in the form <code>arn:${Partition}:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>),
+            the results include jobs that used the specified revision of the job definition. Asterisk
+            (*) isn't supported when the ARN is used.</para></dd><dt>BEFORE_CREATED_AT</dt><dd><para>The value for the filter is the time that's before the job was created. This corresponds
+            to the <code>createdAt</code> value. The value is a string representation of the number
+            of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</para></dd><dt>AFTER_CREATED_AT</dt><dd><para>The value for the filter is the time that's after the job was created. This corresponds
+            to the <code>createdAt</code> value. The value is a string representation of the number
+            of milliseconds since 00:00:00 UTC (midnight) on January 1, 1970.</para></dd></dl>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobListCmdlet.JobQueue">
+            <summary>
+            <para>
+            <para>The name or full Amazon Resource Name (ARN) of the job queue used to list jobs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobListCmdlet.JobStatus">
+            <summary>
+            <para>
+            <para>The job status used to filter jobs in the specified queue. If the <code>filters</code>
+            parameter is specified, the <code>jobStatus</code> parameter is ignored and jobs with
+            any status are returned. If you don't specify a status, only <code>RUNNING</code>
+            jobs are returned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobListCmdlet.MultiNodeJobId">
+            <summary>
+            <para>
+            <para>The job ID for a multi-node parallel job. Specifying a multi-node parallel job ID
+            with this parameter lists all nodes that are associated with the specified job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results returned by <code>ListJobs</code> in paginated output.
+            When this parameter is used, <code>ListJobs</code> only returns <code>maxResults</code>
+            results in a single page and a <code>nextToken</code> response element. The remaining
+            results of the initial request can be seen by sending another <code>ListJobs</code>
+            request with the returned <code>nextToken</code> value. This value can be between
+            1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to
+            100 results and a <code>nextToken</code> value if applicable.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The <code>nextToken</code> value returned from a previous paginated <code>ListJobs</code>
+            request where <code>maxResults</code> was used and the results exceeded the value
+            of that parameter. Pagination continues from the end of the previous results that
+            returned the <code>nextToken</code> value. This value is <code>null</code> when there
+            are no more results to return.</para><note><para>Treat this token as an opaque identifier that's only used to retrieve the next items
+            in a list and not for other programmatic purposes.</para></note>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'JobSummaryList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Batch.Model.ListJobsResponse).
+            Specifying the name of a property of type Amazon.Batch.Model.ListJobsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobQueue parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobQueue' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAT.GetBATJobQueueCmdlet">
+            <summary>
+            Describes one or more of your job queues.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobQueueCmdlet.JobQueue">
+            <summary>
+            <para>
+            <para>A list of up to 100 queue names or full queue Amazon Resource Name (ARN) entries.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobQueueCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results returned by <code>DescribeJobQueues</code> in paginated
+            output. When this parameter is used, <code>DescribeJobQueues</code> only returns <code>maxResults</code>
+            results in a single page and a <code>nextToken</code> response element. The remaining
+            results of the initial request can be seen by sending another <code>DescribeJobQueues</code>
+            request with the returned <code>nextToken</code> value. This value can be between
+            1 and 100. If this parameter isn't used, then <code>DescribeJobQueues</code> returns
+            up to 100 results and a <code>nextToken</code> value if applicable.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobQueueCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobQueues</code>
+            request where <code>maxResults</code> was used and the results exceeded the value
+            of that parameter. Pagination continues from the end of the previous results that
+            returned the <code>nextToken</code> value. This value is <code>null</code> when there
+            are no more results to return.</para><note><para>Treat this token as an opaque identifier that's only used to retrieve the next items
+            in a list and not for other programmatic purposes.</para></note>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobQueueCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'JobQueues'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Batch.Model.DescribeJobQueuesResponse).
+            Specifying the name of a property of type Amazon.Batch.Model.DescribeJobQueuesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATJobQueueCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAT.GetBATResourceTagCmdlet">
+            <summary>
+            Lists the tags for an Batch resource. Batch resources that support tags are compute
+            environments, jobs, job definitions, job queues, and scheduling policies. ARNs for
+            child jobs of array and multi-node parallel (MNP) jobs aren't supported.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for.
+            Batch resources that support tags are compute environments, jobs, job definitions,
+            job queues, and scheduling policies. ARNs for child jobs of array and multi-node parallel
+            (MNP) jobs aren't supported.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Batch.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.Batch.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAT.GetBATSchedulingPolicyCmdlet">
+            <summary>
+            Describes one or more of your scheduling policies.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATSchedulingPolicyCmdlet.Arn">
+            <summary>
+            <para>
+            <para>A list of up to 100 scheduling policy Amazon Resource Name (ARN) entries.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATSchedulingPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SchedulingPolicies'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Batch.Model.DescribeSchedulingPoliciesResponse).
+            Specifying the name of a property of type Amazon.Batch.Model.DescribeSchedulingPoliciesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAT.GetBATSchedulingPolicyListCmdlet">
+            <summary>
+            Returns a list of Batch scheduling policies.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATSchedulingPolicyListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results that's returned by <code>ListSchedulingPolicies</code>
+            in paginated output. When this parameter is used, <code>ListSchedulingPolicies</code>
+            only returns <code>maxResults</code> results in a single page and a <code>nextToken</code>
+            response element. You can see the remaining results of the initial request by sending
+            another <code>ListSchedulingPolicies</code> request with the returned <code>nextToken</code>
+            value. This value can be between 1 and 100. If this parameter isn't used, <code>ListSchedulingPolicies</code>
+            returns up to 100 results and a <code>nextToken</code> value if applicable.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATSchedulingPolicyListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The <code>nextToken</code> value that's returned from a previous paginated <code>ListSchedulingPolicies</code>
+            request where <code>maxResults</code> was used and the results exceeded the value
+            of that parameter. Pagination continues from the end of the previous results that
+            returned the <code>nextToken</code> value. This value is <code>null</code> when there
+            are no more results to return.</para><note><para>Treat this token as an opaque identifier that's only used to retrieve the next items
+            in a list and not for other programmatic purposes.</para></note>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATSchedulingPolicyListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SchedulingPolicies'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Batch.Model.ListSchedulingPoliciesResponse).
+            Specifying the name of a property of type Amazon.Batch.Model.ListSchedulingPoliciesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.GetBATSchedulingPolicyListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet">
+            <summary>
+            Creates an Batch compute environment. You can create <code>MANAGED</code> or <code>UNMANAGED</code>
+            compute environments. <code>MANAGED</code> compute environments can use Amazon EC2
+            or Fargate resources. <code>UNMANAGED</code> compute environments can only use EC2
+            resources.
+            
+             
+            <para>
+            In a managed compute environment, Batch manages the capacity and instance types of
+            the compute resources within the environment. This is based on the compute resource
+            specification that you define or the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
+            template</a> that you specify when you create the compute environment. Either, you
+            can choose to use EC2 On-Demand Instances and EC2 Spot Instances. Or, you can use
+            Fargate and Fargate Spot capacity in your managed compute environment. You can optionally
+            set a maximum price so that Spot Instances only launch when the Spot Instance price
+            is less than a specified percentage of the On-Demand price.
+            </para><note><para>
+            Multi-node parallel jobs aren't supported on Spot Instances.
+            </para></note><para>
+            In an unmanaged compute environment, you can manage your own EC2 compute resources
+            and have flexibility with how you configure your compute resources. For example, you
+            can use custom AMIs. However, you must verify that each of your AMIs meet the Amazon
+            ECS container instance AMI specification. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">container
+            instance AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+            After you created your unmanaged compute environment, you can use the <a>DescribeComputeEnvironments</a>
+            operation to find the Amazon ECS cluster that's associated with it. Then, launch your
+            container instances into that Amazon ECS cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching
+            an Amazon ECS container instance</a> in the <i>Amazon Elastic Container Service Developer
+            Guide</i>.
+            </para><note><para>
+            Batch doesn't automatically upgrade the AMIs in a compute environment after it's created.
+            For example, it also doesn't update the AMIs in your compute environment when a newer
+            version of the Amazon ECS optimized AMI is available. You're responsible for the management
+            of the guest operating system. This includes any updates and security patches. You're
+            also responsible for any additional application software or utilities that you install
+            on the compute resources. There are two ways to use a new AMI for your Batch jobs.
+            The original method is to complete these steps:
+            </para><ol><li><para>
+            Create a new compute environment with the new AMI.
+            </para></li><li><para>
+            Add the compute environment to an existing job queue.
+            </para></li><li><para>
+            Remove the earlier compute environment from your job queue.
+            </para></li><li><para>
+            Delete the earlier compute environment.
+            </para></li></ol><para>
+            In April 2022, Batch added enhanced support for updating compute environments. For
+            more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+            compute environments</a>. To use the enhanced updating of compute environments to
+            update AMIs, follow these rules:
+            </para><ul><li><para>
+            Either don't set the service role (<code>serviceRole</code>) parameter or set it to
+            the <b>AWSBatchServiceRole</b> service-linked role.
+            </para></li><li><para>
+            Set the allocation strategy (<code>allocationStrategy</code>) parameter to <code>BEST_FIT_PROGRESSIVE</code>
+            or <code>SPOT_CAPACITY_OPTIMIZED</code>.
+            </para></li><li><para>
+            Set the update to latest image version (<code>updateToLatestImageVersion</code>) parameter
+            to <code>true</code>.
+            </para></li><li><para>
+            Don't specify an AMI ID in <code>imageId</code>, <code>imageIdOverride</code> (in
+            <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_Ec2Configuration.html"><code>ec2Configuration</code></a>), or in the launch template (<code>launchTemplate</code>).
+            In that case, Batch selects the latest Amazon ECS optimized AMI that's supported by
+            Batch at the time the infrastructure update is initiated. Alternatively, you can specify
+            the AMI ID in the <code>imageId</code> or <code>imageIdOverride</code> parameters,
+            or the launch template identified by the <code>LaunchTemplate</code> properties. Changing
+            any of these properties starts an infrastructure update. If the AMI ID is specified
+            in the launch template, it can't be replaced by specifying an AMI ID in either the
+            <code>imageId</code> or <code>imageIdOverride</code> parameters. It can only be replaced
+            by specifying a different launch template, or if the launch template version is set
+            to <code>$Default</code> or <code>$Latest</code>, by setting either a new default
+            version for the launch template (if <code>$Default</code>) or by adding a new version
+            to the launch template (if <code>$Latest</code>).
+            </para></li></ul><para>
+            If these rules are followed, any update that starts an infrastructure update causes
+            the AMI ID to be re-selected. If the <code>version</code> setting in the launch template
+            (<code>launchTemplate</code>) is set to <code>$Latest</code> or <code>$Default</code>,
+            the latest or default version of the launch template is evaluated up at the time of
+            the infrastructure update, even if the <code>launchTemplate</code> wasn't updated.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.ComputeResources_AllocationStrategy">
+            <summary>
+            <para>
+            <para>The allocation strategy to use for the compute resource if not enough instances of
+            the best fitting instance type can be allocated. This might be because of availability
+            of the instance type in the Region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
+            EC2 service limits</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation
+            strategies</a> in the <i>Batch User Guide</i>.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            specify it.</para></note><dl><dt>BEST_FIT (default)</dt><dd><para>Batch selects an instance type that best fits the needs of the jobs with a preference
+            for the lowest-cost instance type. If additional instances of the selected instance
+            type aren't available, Batch waits for the additional instances to be available. If
+            there aren't enough instances available or the user is reaching <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
+            EC2 service limits</a>, additional jobs aren't run until the currently running jobs
+            are completed. This allocation strategy keeps costs lower but can limit scaling. If
+            you're using Spot Fleets with <code>BEST_FIT</code>, the Spot Fleet IAM Role must
+            be specified. Compute resources that use a <code>BEST_FIT</code> allocation strategy
+            don't support infrastructure updates and can't update some parameters. For more information,
+            see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+            compute environments</a> in the <i>Batch User Guide</i>.</para></dd><dt>BEST_FIT_PROGRESSIVE</dt><dd><para>Batch selects additional instance types that are large enough to meet the requirements
+            of the jobs in the queue. Its preference is for instance types with lower cost vCPUs.
+            If additional instances of the previously selected instance types aren't available,
+            Batch selects new instance types.</para></dd><dt>SPOT_CAPACITY_OPTIMIZED</dt><dd><para>Batch selects one or more instance types that are large enough to meet the requirements
+            of the jobs in the queue. Its preference is for instance types that are less likely
+            to be interrupted. This allocation strategy is only available for Spot Instance compute
+            resources.</para></dd></dl><para>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code>
+            strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy
+            using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your
+            capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by
+            more than a single instance.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.ComputeResources_BidPercentage">
+            <summary>
+            <para>
+            <para>The maximum percentage that a Spot Instance price can be when compared with the On-Demand
+            price for that instance type before instances are launched. For example, if your maximum
+            percentage is 20%, then the Spot price must be less than 20% of the current On-Demand
+            price for that Amazon EC2 instance. You always pay the lowest (market) price and never
+            more than your maximum percentage. If you leave this field empty, the default value
+            is 100% of the On-Demand price.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            specify it.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.ComputeEnvironmentName">
+            <summary>
+            <para>
+            <para>The name for your compute environment. It can be up to 128 characters long. It can
+            contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.ComputeResources_DesiredvCpu">
+            <summary>
+            <para>
+            <para>The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies
+            this value between the minimum and maximum values based on job queue demand.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            specify it.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.ComputeResources_Ec2Configuration">
+            <summary>
+            <para>
+            <para>Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances
+            in the compute environment. If <code>Ec2Configuration</code> isn't specified, the
+            default is <code>ECS_AL2</code>.</para><para>One or two values can be provided.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            specify it.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.ComputeResources_Ec2KeyPair">
+            <summary>
+            <para>
+            <para>The Amazon EC2 key pair that's used for instances launched in the compute environment.
+            You can use this key pair to log in to your instances with SSH.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            specify it.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.EksConfiguration_EksClusterArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Amazon EKS cluster. An example is <code>arn:<i>aws</i>:eks:<i>us-east-1</i>:<i>123456789012</i>:cluster/<i>ClusterForBatch</i></code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.ComputeResources_InstanceRole">
+            <summary>
+            <para>
+            <para>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment.
+            You can specify the short name or full Amazon Resource Name (ARN) of an instance profile.
+            For example, <code><i>ecsInstanceRole</i></code> or <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i></code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
+            ECS instance role</a> in the <i>Batch User Guide</i>.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            specify it.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.ComputeResources_InstanceType">
+            <summary>
+            <para>
+            <para>The instances types that can be launched. You can specify instance families to launch
+            any instance type within those families (for example, <code>c5</code> or <code>p3</code>),
+            or you can specify specific sizes within a family (such as <code>c5.8xlarge</code>).
+            You can also choose <code>optimal</code> to select instance types (from the C4, M4,
+            and R4 instance families) that match the demand of your job queues.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            specify it.</para></note><note><para>When you create a compute environment, the instance types that you select for the
+            compute environment must share the same architecture. For example, you can't mix x86
+            and ARM instances in the same compute environment.</para></note><note><para>Currently, <code>optimal</code> uses instance types from the C4, M4, and R4 instance
+            families. In Regions that don't have instance types from those instance families,
+            instance types from the C5, M5, and R5 instance families are used.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.EksConfiguration_KubernetesNamespace">
+            <summary>
+            <para>
+            <para>The namespace of the Amazon EKS cluster. Batch manages pods in this namespace. The
+            value can't left empty or null. It must be fewer than 64 characters long, can't be
+            set to <code>default</code>, can't start with "<code>kube-</code>," and must match
+            this regular expression: <code>^[a-z0-9]([-a-z0-9]*[a-z0-9])?$</code>. For more information,
+            see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">Namespaces</a>
+            in the Kubernetes documentation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.LaunchTemplate_LaunchTemplateId">
+            <summary>
+            <para>
+            <para>The ID of the launch template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.LaunchTemplate_LaunchTemplateName">
+            <summary>
+            <para>
+            <para>The name of the launch template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.ComputeResources_MaxvCpu">
+            <summary>
+            <para>
+            <para>The maximum number of Amazon EC2 vCPUs that a compute environment can reach.</para><note><para>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code>
+            allocation strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code>
+            strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to
+            meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code>
+            by more than a single instance. For example, no more than a single instance from among
+            those specified in your compute environment is allocated.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.ComputeResources_MinvCpu">
+            <summary>
+            <para>
+            <para>The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if
+            the compute environment is <code>DISABLED</code>).</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            specify it.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.ComputeResources_PlacementGroup">
+            <summary>
+            <para>
+            <para>The Amazon EC2 placement group to associate with your compute resources. If you intend
+            to submit multi-node parallel jobs to your compute environment, you should consider
+            creating a cluster placement group and associate it with your compute resources. This
+            keeps your multi-node parallel job on a logical grouping of instances within a single
+            Availability Zone with high network flow potential. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+            groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            specify it.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.ComputeResources_SecurityGroupId">
+            <summary>
+            <para>
+            <para>The Amazon EC2 security groups that are associated with instances launched in the
+            compute environment. One or more security groups must be specified, either in <code>securityGroupIds</code>
+            or using a launch template referenced in <code>launchTemplate</code>. This parameter
+            is required for jobs that are running on Fargate resources and must contain at least
+            one security group. Fargate doesn't support launch templates. If security groups are
+            specified using both <code>securityGroupIds</code> and <code>launchTemplate</code>,
+            the values in <code>securityGroupIds</code> are used.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.ServiceRole">
+            <summary>
+            <para>
+            <para>The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls
+            to other Amazon Web Services services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch
+            service IAM role</a> in the <i>Batch User Guide</i>.</para><important><para>If your account already created the Batch service-linked role, that role is used by
+            default for your compute environment unless you specify a different role here. If
+            the Batch service-linked role doesn't exist in your account, and no role is specified
+            here, the service attempts to create the Batch service-linked role in your account.</para></important><para>If your specified role has a path other than <code>/</code>, then you must specify
+            either the full role ARN (recommended) or prefix the role name with the path. For
+            example, if a role with the name <code>bar</code> has a path of <code>/foo/</code>,
+            specify <code>/foo/bar</code> as the role name. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+            names and paths</a> in the <i>IAM User Guide</i>.</para><note><para>Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code>
+            path prefix. When you only specify the name of the service role, Batch assumes that
+            your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we
+            recommend that you specify the full ARN of your service role when you create compute
+            environments.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.ComputeResources_SpotIamFleetRole">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a
+            <code>SPOT</code> compute environment. This role is required if the allocation strategy
+            set to <code>BEST_FIT</code> or if the allocation strategy isn't specified. For more
+            information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon
+            EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            specify it.</para></note><important><para>To tag your Spot Instances on creation, the Spot Fleet IAM role specified here must
+            use the newer <b>AmazonEC2SpotFleetTaggingRole</b> managed policy. The previously
+            recommended <b>AmazonEC2SpotFleetRole</b> managed policy doesn't have the required
+            permissions to tag Spot Instances. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#spot-instance-no-tag">Spot
+            instances not tagged on creation</a> in the <i>Batch User Guide</i>.</para></important>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.State">
+            <summary>
+            <para>
+            <para>The state of the compute environment. If the state is <code>ENABLED</code>, then the
+            compute environment accepts jobs from a queue and can scale out automatically based
+            on queues.</para><para>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place
+            jobs from an associated job queue on the compute resources within the environment.
+            If the compute environment is managed, then it can scale its instances out or in automatically,
+            based on the job queue demand.</para><para>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to
+            place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
+            state continue to progress normally. Managed compute environments in the <code>DISABLED</code>
+            state don't scale out. However, they scale in to <code>minvCpus</code> value after
+            instances become idle.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.ComputeResources_Subnet">
+            <summary>
+            <para>
+            <para>The VPC subnets where the compute resources are launched. These subnets must be within
+            the same VPC. Fargate compute resources can contain up to 16 subnets. For more information,
+            see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
+            and subnets</a> in the <i>Amazon VPC User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.ComputeResources_Tag">
+            <summary>
+            <para>
+            <para>Key-value pair tags to be applied to EC2 resources that are launched in the compute
+            environment. For Batch, these take the form of <code>"String1": "String2"</code>,
+            where <code>String1</code> is the tag key and <code>String2</code> is the tag value-for
+            example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for
+            recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires
+            an infrastructure update to the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+            compute environments</a> in the <i>Batch User Guide</i>. These tags aren't seen when
+            using the Batch <code>ListTagsForResource</code> API operation.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            specify it.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags that you apply to the compute environment to help you categorize and organize
+            your resources. Each tag consists of a key and an optional value. For more information,
+            see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+            Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</para><para>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a>
+            and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a>
+            API operations. These tags don't propagate to the underlying compute resources.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.ComputeResources_Type">
+            <summary>
+            <para>
+            <para>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>,
+            or <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+            environments</a> in the <i>Batch User Guide</i>.</para><para> If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role
+            with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon
+            EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.Type">
+            <summary>
+            <para>
+            <para>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>.
+            For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+            Environments</a> in the <i>Batch User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.UnmanagedvCpu">
+            <summary>
+            <para>
+            <para>The maximum number of vCPUs for an unmanaged compute environment. This parameter is
+            only used for fair share scheduling to reserve vCPU capacity for new share identifiers.
+            If this parameter isn't provided for a fair share job queue, no vCPU capacity is reserved.</para><note><para>This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.LaunchTemplate_Version">
+            <summary>
+            <para>
+            <para>The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.</para><para>If the value is <code>$Latest</code>, the latest version of the launch template is
+            used. If the value is <code>$Default</code>, the default version of the launch template
+            is used.</para><important><para>If the AMI ID that's used in a compute environment is from the launch template, the
+            AMI isn't changed when the compute environment is updated. It's only changed if the
+            <code>updateToLatestImageVersion</code> parameter for the compute environment is set
+            to <code>true</code>. During an infrastructure update, if either <code>$Latest</code>
+            or <code>$Default</code> is specified, Batch re-evaluates the launch template version,
+            and it might use a different version of the launch template. This is the case even
+            if the launch template isn't specified in the update. When updating a compute environment,
+            changing the launch template requires an infrastructure update of the compute environment.
+            For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+            compute environments</a> in the <i>Batch User Guide</i>.</para></important><para>Default: <code>$Default</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.ComputeResources_ImageId">
+            <summary>
+            <para>
+            <para>The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
+            This parameter is overridden by the <code>imageIdOverride</code> member of the <code>Ec2Configuration</code>
+            structure.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            specify it.</para></note><note><para>The AMI that you choose for a compute environment must match the architecture of the
+            instance types that you intend to use for that compute environment. For example, if
+            your compute environment uses A1 instance types, the compute resource AMI that you
+            choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the
+            Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon
+            ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service Developer
+            Guide</i>.</para></note>
+            </para>
+            <para>This parameter is deprecated.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Batch.Model.CreateComputeEnvironmentResponse).
+            Specifying the name of a property of type Amazon.Batch.Model.CreateComputeEnvironmentResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATComputeEnvironmentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAT.NewBATJobQueueCmdlet">
+            <summary>
+            Creates an Batch job queue. When you create a job queue, you associate one or more
+            compute environments to the queue and assign an order of preference for the compute
+            environments.
+            
+             
+            <para>
+            You also set a priority to the job queue that determines the order that the Batch
+            scheduler places jobs onto its associated compute environments. For example, if a
+            compute environment is associated with more than one job queue, the job queue with
+            a higher priority is given preference for scheduling jobs to that compute environment.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATJobQueueCmdlet.ComputeEnvironmentOrder">
+            <summary>
+            <para>
+            <para>The set of compute environments mapped to a job queue and their order relative to
+            each other. The job scheduler uses this parameter to determine which compute environment
+            runs a specific job. Compute environments must be in the <code>VALID</code> state
+            before you can associate them with a job queue. You can associate up to three compute
+            environments with a job queue. All of the compute environments must be either EC2
+            (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>);
+            EC2 and Fargate compute environments can't be mixed.</para><note><para>All compute environments that are associated with a job queue must share the same
+            architecture. Batch doesn't support mixing compute environment architecture types
+            in a single job queue.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATJobQueueCmdlet.JobQueueName">
+            <summary>
+            <para>
+            <para>The name of the job queue. It can be up to 128 letters long. It can contain uppercase
+            and lowercase letters, numbers, hyphens (-), and underscores (_).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATJobQueueCmdlet.Priority">
+            <summary>
+            <para>
+            <para>The priority of the job queue. Job queues with a higher priority (or a higher integer
+            value for the <code>priority</code> parameter) are evaluated first when associated
+            with the same compute environment. Priority is determined in descending order. For
+            example, a job queue with a priority value of <code>10</code> is given scheduling
+            preference over a job queue with a priority value of <code>1</code>. All of the compute
+            environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate
+            (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments
+            can't be mixed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATJobQueueCmdlet.SchedulingPolicyArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this parameter
+            is specified, the job queue uses a fair share scheduling policy. If this parameter
+            isn't specified, the job queue uses a first in, first out (FIFO) scheduling policy.
+            After a job queue is created, you can replace but can't remove the fair share scheduling
+            policy. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i></code>. An example is <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATJobQueueCmdlet.State">
+            <summary>
+            <para>
+            <para>The state of the job queue. If the job queue state is <code>ENABLED</code>, it is
+            able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't
+            be added to the queue, but jobs already in the queue can finish.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATJobQueueCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags that you apply to the job queue to help you categorize and organize your
+            resources. Each tag consists of a key and an optional value. For more information,
+            see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
+            your Batch resources</a> in <i>Batch User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATJobQueueCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Batch.Model.CreateJobQueueResponse).
+            Specifying the name of a property of type Amazon.Batch.Model.CreateJobQueueResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATJobQueueCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAT.NewBATSchedulingPolicyCmdlet">
+            <summary>
+            Creates an Batch scheduling policy.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATSchedulingPolicyCmdlet.FairsharePolicy_ComputeReservation">
+            <summary>
+            <para>
+            <para>A value used to reserve some of the available maximum vCPU for fair share identifiers
+            that aren't already used.</para><para>The reserved ratio is <code>(<i>computeReservation</i>/100)^<i>ActiveFairShares</i></code> where <code><i>ActiveFairShares</i></code> is the number of active fair
+            share identifiers.</para><para>For example, a <code>computeReservation</code> value of 50 indicates that Batchreserves
+            50% of the maximum available vCPU if there's only one fair share identifier. It reserves
+            25% if there are two fair share identifiers. It reserves 12.5% if there are three
+            fair share identifiers. A <code>computeReservation</code> value of 25 indicates that
+            Batch should reserve 25% of the maximum available vCPU if there's only one fair share
+            identifier, 6.25% if there are two fair share identifiers, and 1.56% if there are
+            three fair share identifiers.</para><para>The minimum value is 0 and the maximum value is 99.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATSchedulingPolicyCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the scheduling policy. It can be up to 128 letters long. It can contain
+            uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATSchedulingPolicyCmdlet.FairsharePolicy_ShareDecaySecond">
+            <summary>
+            <para>
+            <para>The amount of time (in seconds) to use to calculate a fair share percentage for each
+            fair share identifier in use. A value of zero (0) indicates that only current usage
+            is measured. The decay allows for more recently run jobs to have more weight than
+            jobs that ran earlier. The maximum supported value is 604800 (1 week).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATSchedulingPolicyCmdlet.FairsharePolicy_ShareDistribution">
+            <summary>
+            <para>
+            <para>An array of <code>SharedIdentifier</code> objects that contain the weights for the
+            fair share identifiers for the fair share policy. Fair share identifiers that aren't
+            included have a default weight of <code>1.0</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATSchedulingPolicyCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags that you apply to the scheduling policy to help you categorize and organize
+            your resources. Each tag consists of a key and an optional value. For more information,
+            see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+            Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</para><para>These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a>
+            and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a>
+            API operations.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATSchedulingPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Batch.Model.CreateSchedulingPolicyResponse).
+            Specifying the name of a property of type Amazon.Batch.Model.CreateSchedulingPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATSchedulingPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.NewBATSchedulingPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet">
+            <summary>
+            Registers an Batch job definition.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.NetworkConfiguration_AssignPublicIp">
+            <summary>
+            <para>
+            <para>Indicates whether the job has a public IP address. For a job that's running on Fargate
+            resources in a private subnet to send outbound traffic to the internet (for example,
+            to pull container images), the private subnet requires a NAT gateway be attached to
+            route requests to the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon
+            ECS task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+            The default value is "<code>DISABLED</code>".</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.RetryStrategy_Attempt">
+            <summary>
+            <para>
+            <para>The number of times to move a job to the <code>RUNNABLE</code> status. You can specify
+            between 1 and 10 attempts. If the value of <code>attempts</code> is greater than one,
+            the job is retried on failure the same number of attempts as the value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.ContainerProperties_Command">
+            <summary>
+            <para>
+            <para>The command that's passed to the container. This parameter maps to <code>Cmd</code>
+            in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+            a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
+            Remote API</a> and the <code>COMMAND</code> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker
+            run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.PodProperties_Container">
+            <summary>
+            <para>
+            <para>The properties of the container that's used on the Amazon EKS pod.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.LinuxParameters_Device">
+            <summary>
+            <para>
+            <para>Any of the host devices to expose to the container. This parameter maps to <code>Devices</code>
+            in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+            a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
+            Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+            run</a>.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            provide it for these jobs.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.PodProperties_DnsPolicy">
+            <summary>
+            <para>
+            <para>The DNS policy for the pod. The default value is <code>ClusterFirst</code>. If the
+            <code>hostNetwork</code> parameter is not specified, the default is <code>ClusterFirstWithHostNet</code>.
+            <code>ClusterFirst</code> indicates that any DNS query that does not match the configured
+            cluster domain suffix is forwarded to the upstream nameserver inherited from the node.
+            For more information, see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's
+            DNS policy</a> in the <i>Kubernetes documentation</i>.</para><para>Valid values: <code>Default</code> | <code>ClusterFirst</code> | <code>ClusterFirstWithHostNet</code>
+            | <code>None</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.ContainerProperties_Environment">
+            <summary>
+            <para>
+            <para>The environment variables to pass to a container. This parameter maps to <code>Env</code>
+            in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+            a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
+            Remote API</a> and the <code>--env</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+            run</a>.</para><important><para>We don't recommend using plaintext environment variables for sensitive information,
+            such as credential data.</para></important><note><para>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention
+            is reserved for variables that Batch sets.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.RetryStrategy_EvaluateOnExit">
+            <summary>
+            <para>
+            <para>Array of up to 5 objects that specify the conditions where jobs are retried or failed.
+            If this parameter is specified, then the <code>attempts</code> parameter must also
+            be specified. If none of the listed conditions match, then the job is retried.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.ContainerProperties_ExecutionRoleArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the execution role that Batch can assume. For jobs
+            that run on Fargate resources, you must provide an execution role. For more information,
+            see <a href="https://docs.aws.amazon.com/batch/latest/userguide/execution-IAM-role.html">Batch
+            execution IAM role</a> in the <i>Batch User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.PodProperties_HostNetwork">
+            <summary>
+            <para>
+            <para>Indicates if the pod uses the hosts' network IP address. The default value is <code>true</code>.
+            Setting this to <code>false</code> enables the Kubernetes pod networking model. Most
+            Batch workloads are egress-only and don't require the overhead of IP allocation for
+            each pod for incoming connections. For more information, see <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#host-namespaces">Host
+            namespaces</a> and <a href="https://kubernetes.io/docs/concepts/workloads/pods/#pod-networking">Pod
+            networking</a> in the <i>Kubernetes documentation</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.ContainerProperties_Image">
+            <summary>
+            <para>
+            <para>The image used to start a container. This string is passed directly to the Docker
+            daemon. Images in the Docker Hub registry are available by default. Other repositories
+            are specified with <code><i>repository-url</i>/<i>image</i>:<i>tag</i></code>. It
+            can be 255 characters long. It can contain uppercase and lowercase letters, numbers,
+            hyphens (-), underscores (_), colons (:), periods (.), forward slashes (/), and number
+            signs (#). This parameter maps to <code>Image</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+            a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
+            Remote API</a> and the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker
+            run</a>.</para><note><para>Docker image architecture must match the processor architecture of the compute resources
+            that they're scheduled on. For example, ARM-based Docker images can only run on ARM-based
+            compute resources.</para></note><ul><li><para>Images in Amazon ECR Public repositories use the full <code>registry/repository[:tag]</code>
+            or <code>registry/repository[@digest]</code> naming conventions. For example, <code>public.ecr.aws/<i>registry_alias</i>/<i>my-web-app</i>:<i>latest</i></code>.</para></li><li><para>Images in Amazon ECR repositories use the full registry and repository URI (for example,
+            <code>123456789012.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).</para></li><li><para>Images in official repositories on Docker Hub use a single name (for example, <code>ubuntu</code>
+            or <code>mongo</code>).</para></li><li><para>Images in other repositories on Docker Hub are qualified with an organization name
+            (for example, <code>amazon/amazon-ecs-agent</code>).</para></li><li><para>Images in other online repositories are qualified further by a domain name (for example,
+            <code>quay.io/assemblyline/ubuntu</code>).</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.LinuxParameters_InitProcessEnabled">
+            <summary>
+            <para>
+            <para>If true, run an <code>init</code> process inside the container that forwards signals
+            and reaps processes. This parameter maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+            run</a>. This parameter requires version 1.25 of the Docker Remote API or greater
+            on your container instance. To check the Docker Remote API version on your container
+            instance, log in to your container instance and run the following command: <code>sudo
+            docker version | grep "Server API version"</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.ContainerProperties_InstanceType">
+            <summary>
+            <para>
+            <para>The instance type to use for a multi-node parallel job. All node groups in a multi-node
+            parallel job must use the same instance type.</para><note><para>This parameter isn't applicable to single-node container jobs or jobs that run on
+            Fargate resources, and shouldn't be provided.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.JobDefinitionName">
+            <summary>
+            <para>
+            <para>The name of the job definition to register. It can be up to 128 letters long. It can
+            contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.ContainerProperties_JobRoleArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the IAM role that the container can assume for Amazon
+            Web Services permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+            roles for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.LogConfiguration_LogDriver">
+            <summary>
+            <para>
+            <para>The log driver to use for the container. The valid values that are listed for this
+            parameter are log drivers that the Amazon ECS container agent can communicate with
+            by default.</para><para>The supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>,
+            <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>,
+            and <code>splunk</code>.</para><note><para>Jobs that are running on Fargate resources are restricted to the <code>awslogs</code>
+            and <code>splunk</code> log drivers.</para></note><dl><dt>awslogs</dt><dd><para>Specifies the Amazon CloudWatch Logs logging driver. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using_awslogs.html">Using
+            the awslogs log driver</a> in the <i>Batch User Guide</i> and <a href="https://docs.docker.com/config/containers/logging/awslogs/">Amazon
+            CloudWatch Logs logging driver</a> in the Docker documentation.</para></dd><dt>fluentd</dt><dd><para>Specifies the Fluentd logging driver. For more information including usage and options,
+            see <a href="https://docs.docker.com/config/containers/logging/fluentd/">Fluentd logging
+            driver</a> in the <i>Docker documentation</i>.</para></dd><dt>gelf</dt><dd><para>Specifies the Graylog Extended Format (GELF) logging driver. For more information
+            including usage and options, see <a href="https://docs.docker.com/config/containers/logging/gelf/">Graylog
+            Extended Format logging driver</a> in the <i>Docker documentation</i>.</para></dd><dt>journald</dt><dd><para>Specifies the journald logging driver. For more information including usage and options,
+            see <a href="https://docs.docker.com/config/containers/logging/journald/">Journald
+            logging driver</a> in the <i>Docker documentation</i>.</para></dd><dt>json-file</dt><dd><para>Specifies the JSON file logging driver. For more information including usage and options,
+            see <a href="https://docs.docker.com/config/containers/logging/json-file/">JSON File
+            logging driver</a> in the <i>Docker documentation</i>.</para></dd><dt>splunk</dt><dd><para>Specifies the Splunk logging driver. For more information including usage and options,
+            see <a href="https://docs.docker.com/config/containers/logging/splunk/">Splunk logging
+            driver</a> in the <i>Docker documentation</i>.</para></dd><dt>syslog</dt><dd><para>Specifies the syslog logging driver. For more information including usage and options,
+            see <a href="https://docs.docker.com/config/containers/logging/syslog/">Syslog logging
+            driver</a> in the <i>Docker documentation</i>.</para></dd></dl><note><para>If you have a custom driver that's not listed earlier that you want to work with the
+            Amazon ECS container agent, you can fork the Amazon ECS container agent project that's
+            <a href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize
+            it to work with that driver. We encourage you to submit pull requests for changes
+            that you want to have included. However, Amazon Web Services doesn't currently support
+            running modified copies of this software.</para></note><para>This parameter requires version 1.18 of the Docker Remote API or greater on your container
+            instance. To check the Docker Remote API version on your container instance, log in
+            to your container instance and run the following command: <code>sudo docker version
+            | grep "Server API version"</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.NodeProperties_MainNode">
+            <summary>
+            <para>
+            <para>Specifies the node index for the main node of a multi-node parallel job. This node
+            index value must be fewer than the number of nodes.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.LinuxParameters_MaxSwap">
+            <summary>
+            <para>
+            <para>The total amount of swap memory (in MiB) a container can use. This parameter is translated
+            to the <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+            run</a> where the value is the sum of the container memory plus the <code>maxSwap</code>
+            value. For more information, see <a href="https://docs.docker.com/config/containers/resource_constraints/#--memory-swap-details"><code>--memory-swap</code> details</a> in the Docker documentation.</para><para>If a <code>maxSwap</code> value of <code>0</code> is specified, the container doesn't
+            use swap. Accepted values are <code>0</code> or any positive integer. If the <code>maxSwap</code>
+            parameter is omitted, the container doesn't use the swap configuration for the container
+            instance that it's running on. A <code>maxSwap</code> value must be set for the <code>swappiness</code>
+            parameter to be used.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            provide it for these jobs.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.ContainerProperties_MountPoint">
+            <summary>
+            <para>
+            <para>The mount points for data volumes in your container. This parameter maps to <code>Volumes</code>
+            in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+            a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
+            Remote API</a> and the <code>--volume</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+            run</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.NodeProperties_NodeRangeProperty">
+            <summary>
+            <para>
+            <para>A list of node ranges and their properties that are associated with a multi-node parallel
+            job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.NodeProperties_NumNode">
+            <summary>
+            <para>
+            <para>The number of nodes that are associated with a multi-node parallel job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.LogConfiguration_Option">
+            <summary>
+            <para>
+            <para>The configuration options to send to the log driver. This parameter requires version
+            1.19 of the Docker Remote API or greater on your container instance. To check the
+            Docker Remote API version on your container instance, log in to your container instance
+            and run the following command: <code>sudo docker version | grep "Server API version"</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.Parameter">
+            <summary>
+            <para>
+            <para>Default parameter substitution placeholders to set in the job definition. Parameters
+            are specified as a key-value pair mapping. Parameters in a <code>SubmitJob</code>
+            request override any corresponding parameter defaults from the job definition.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.PlatformCapability">
+            <summary>
+            <para>
+            <para>The platform capabilities required by the job definition. If no value is specified,
+            it defaults to <code>EC2</code>. To run the job on Fargate resources, specify <code>FARGATE</code>.</para><note><para>If the job runs on Amazon EKS resources, then you must not specify <code>platformCapabilities</code>.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.FargatePlatformConfiguration_PlatformVersion">
+            <summary>
+            <para>
+            <para>The Fargate platform version where the jobs are running. A platform version is specified
+            only for jobs that are running on Fargate resources. If one isn't specified, the <code>LATEST</code>
+            platform version is used by default. This uses a recent, approved version of the Fargate
+            platform for compute resources. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+            platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.ContainerProperties_Privileged">
+            <summary>
+            <para>
+            <para>When this parameter is true, the container is given elevated permissions on the host
+            container instance (similar to the <code>root</code> user). This parameter maps to
+            <code>Privileged</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+            a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
+            Remote API</a> and the <code>--privileged</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+            run</a>. The default value is false.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources and
+            shouldn't be provided, or specified as false.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.PropagateTag">
+            <summary>
+            <para>
+            <para>Specifies whether to propagate the tags from the job or job definition to the corresponding
+            Amazon ECS task. If no value is specified, the tags are not propagated. Tags can only
+            be propagated to the tasks during task creation. For tags with the same name, job
+            tags are given priority over job definitions tags. If the total number of combined
+            tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code>
+            state.</para><note><para>If the job runs on Amazon EKS resources, then you must not specify <code>propagateTags</code>.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.ContainerProperties_ReadonlyRootFilesystem">
+            <summary>
+            <para>
+            <para>When this parameter is true, the container is given read-only access to its root file
+            system. This parameter maps to <code>ReadonlyRootfs</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+            a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
+            Remote API</a> and the <code>--read-only</code> option to <code>docker run</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.ContainerProperties_ResourceRequirement">
+            <summary>
+            <para>
+            <para>The type and amount of resources to assign to a container. The supported resources
+            include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.SchedulingPriority">
+            <summary>
+            <para>
+            <para>The scheduling priority for jobs that are submitted with this job definition. This
+            only affects jobs in job queues with a fair share policy. Jobs with a higher scheduling
+            priority are scheduled before jobs with a lower scheduling priority.</para><para>The minimum supported value is 0 and the maximum supported value is 9999.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.LogConfiguration_SecretOption">
+            <summary>
+            <para>
+            <para>The secrets to pass to the log configuration. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+            sensitive data</a> in the <i>Batch User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.ContainerProperties_Secret">
+            <summary>
+            <para>
+            <para>The secrets for the container. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html">Specifying
+            sensitive data</a> in the <i>Batch User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.PodProperties_ServiceAccountName">
+            <summary>
+            <para>
+            <para>The name of the service account that's used to run the pod. For more information,
+            see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-accounts.html">Kubernetes
+            service accounts</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/associate-service-account-role.html">Configure
+            a Kubernetes service account to assume an IAM role</a> in the <i>Amazon EKS User Guide</i>
+            and <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">Configure
+            service accounts for pods</a> in the <i>Kubernetes documentation</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.LinuxParameters_SharedMemorySize">
+            <summary>
+            <para>
+            <para>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter
+            maps to the <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+            run</a>.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            provide it for these jobs.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.LinuxParameters_Swappiness">
+            <summary>
+            <para>
+            <para>You can use this parameter to tune a container's memory swappiness behavior. A <code>swappiness</code>
+            value of <code>0</code> causes swapping to not occur unless absolutely necessary.
+            A <code>swappiness</code> value of <code>100</code> causes pages to be swapped aggressively.
+            Valid values are whole numbers between <code>0</code> and <code>100</code>. If the
+            <code>swappiness</code> parameter isn't specified, a default value of <code>60</code>
+            is used. If a value isn't specified for <code>maxSwap</code>, then this parameter
+            is ignored. If <code>maxSwap</code> is set to 0, the container doesn't use swap. This
+            parameter maps to the <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+            run</a>.</para><para>Consider the following when you use a per-container swap configuration.</para><ul><li><para>Swap space must be enabled and allocated on the container instance for the containers
+            to use.</para><note><para>By default, the Amazon ECS optimized AMIs don't have swap enabled. You must enable
+            swap on the instance to use this feature. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-swap-volumes.html">Instance
+            store swap volumes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> or
+            <a href="http://aws.amazon.com/premiumsupport/knowledge-center/ec2-memory-swap-file/">How
+            do I allocate memory to work as swap space in an Amazon EC2 instance by using a swap
+            file?</a></para></note></li><li><para>The swap space parameters are only supported for job definitions using EC2 resources.</para></li><li><para>If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from
+            a job definition, each container has a default <code>swappiness</code> value of 60.
+            Moreover, the total swap usage is limited to two times the memory reservation of the
+            container.</para></li></ul><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            provide it for these jobs.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags that you apply to the job definition to help you categorize and organize
+            your resources. Each tag consists of a key and an optional value. For more information,
+            see <a href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging
+            Amazon Web Services Resources</a> in <i>Batch User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.Timeout">
+            <summary>
+            <para>
+            <para>The timeout configuration for jobs that are submitted with this job definition, after
+            which Batch terminates your jobs if they have not finished. If a job is terminated
+            due to a timeout, it isn't retried. The minimum value for the timeout is 60 seconds.
+            Any timeout configuration that's specified during a <a>SubmitJob</a> operation overrides
+            the timeout configuration defined here. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job
+            Timeouts</a> in the <i>Batch User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.LinuxParameters_Tmpf">
+            <summary>
+            <para>
+            <para>The container path, mount options, and size (in MiB) of the <code>tmpfs</code> mount.
+            This parameter maps to the <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+            run</a>.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            provide this parameter for this resource type.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.Type">
+            <summary>
+            <para>
+            <para>The type of job definition. For more information about multi-node parallel jobs, see
+            <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
+            a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</para><note><para>If the job is run on Fargate resources, then <code>multinode</code> isn't supported.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.ContainerProperties_Ulimit">
+            <summary>
+            <para>
+            <para>A list of <code>ulimits</code> to set in the container. This parameter maps to <code>Ulimits</code>
+            in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+            a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
+            Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+            run</a>.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources and
+            shouldn't be provided.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.ContainerProperties_User">
+            <summary>
+            <para>
+            <para>The user name to use inside the container. This parameter maps to <code>User</code>
+            in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+            a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
+            Remote API</a> and the <code>--user</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+            run</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.ContainerProperties_Volume">
+            <summary>
+            <para>
+            <para>A list of data volumes used in a job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.PodProperties_Volume">
+            <summary>
+            <para>
+            <para>Specifies the volumes for a job definition that uses Amazon EKS resources.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.ContainerProperties_Memory">
+            <summary>
+            <para>
+            <para>This parameter is deprecated, use <code>resourceRequirements</code> to specify the
+            memory requirements for the job definition. It's not supported for jobs running on
+            Fargate resources. For jobs that run on EC2 resources, it specifies the memory hard
+            limit (in MiB) for a container. If your container attempts to exceed the specified
+            number, it's terminated. You must specify at least 4 MiB of memory for a job using
+            this parameter. The memory hard limit can be specified in several places. It must
+            be specified for each node at least once.</para>
+            </para>
+            <para>This parameter is deprecated.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.ContainerProperties_Vcpus">
+            <summary>
+            <para>
+            <para>This parameter is deprecated, use <code>resourceRequirements</code> to specify the
+            vCPU requirements for the job definition. It's not supported for jobs running on Fargate
+            resources. For jobs running on EC2 resources, it specifies the number of vCPUs reserved
+            for the job.</para><para>Each vCPU is equivalent to 1,024 CPU shares. This parameter maps to <code>CpuShares</code>
+            in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+            a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
+            Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+            run</a>. The number of vCPUs must be specified but can be specified in several places.
+            You must specify it at least once for each node.</para>
+            </para>
+            <para>This parameter is deprecated.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Batch.Model.RegisterJobDefinitionResponse).
+            Specifying the name of a property of type Amazon.Batch.Model.RegisterJobDefinitionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobDefinitionName parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobDefinitionName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RegisterBATJobDefinitionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAT.RemoveBATComputeEnvironmentCmdlet">
+            <summary>
+            Deletes an Batch compute environment.
+            
+             
+            <para>
+            Before you can delete a compute environment, you must set its state to <code>DISABLED</code>
+            with the <a>UpdateComputeEnvironment</a> API operation and disassociate it from any
+            job queues with the <a>UpdateJobQueue</a> API operation. Compute environments that
+            use Fargate resources must terminate all active jobs on that compute environment before
+            deleting the compute environment. If this isn't done, the compute environment enters
+            an invalid state.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RemoveBATComputeEnvironmentCmdlet.ComputeEnvironment">
+            <summary>
+            <para>
+            <para>The name or Amazon Resource Name (ARN) of the compute environment to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RemoveBATComputeEnvironmentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Batch.Model.DeleteComputeEnvironmentResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RemoveBATComputeEnvironmentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ComputeEnvironment parameter.
+            The -PassThru parameter is deprecated, use -Select '^ComputeEnvironment' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RemoveBATComputeEnvironmentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAT.RemoveBATJobCmdlet">
+            <summary>
+            Terminates a job in a job queue. Jobs that are in the <code>STARTING</code> or <code>RUNNING</code>
+            state are terminated, which causes them to transition to <code>FAILED</code>. Jobs
+            that have not progressed to the <code>STARTING</code> state are cancelled.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RemoveBATJobCmdlet.JobId">
+            <summary>
+            <para>
+            <para>The Batch job ID of the job to terminate.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RemoveBATJobCmdlet.Reason">
+            <summary>
+            <para>
+            <para>A message to attach to the job that explains the reason for canceling it. This message
+            is returned by future <a>DescribeJobs</a> operations on the job. This message is also
+            recorded in the Batch activity logs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RemoveBATJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Batch.Model.TerminateJobResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RemoveBATJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RemoveBATJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAT.RemoveBATJobQueueCmdlet">
+            <summary>
+            Deletes the specified job queue. You must first disable submissions for a queue with
+            the <a>UpdateJobQueue</a> operation. All jobs in the queue are eventually terminated
+            when you delete a job queue. The jobs are terminated at a rate of about 16 jobs each
+            second.
+            
+             
+            <para>
+            It's not necessary to disassociate compute environments from a queue before submitting
+            a <code>DeleteJobQueue</code> request.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RemoveBATJobQueueCmdlet.JobQueue">
+            <summary>
+            <para>
+            <para>The short name or full Amazon Resource Name (ARN) of the queue to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RemoveBATJobQueueCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Batch.Model.DeleteJobQueueResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RemoveBATJobQueueCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobQueue parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobQueue' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RemoveBATJobQueueCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAT.RemoveBATResourceTagCmdlet">
+            <summary>
+            Deletes specified tags from an Batch resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RemoveBATResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources
+            that support tags are compute environments, jobs, job definitions, job queues, and
+            scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs
+            aren't supported.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RemoveBATResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>The keys of the tags to be removed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RemoveBATResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Batch.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RemoveBATResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RemoveBATResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAT.RemoveBATSchedulingPolicyCmdlet">
+            <summary>
+            Deletes the specified scheduling policy.
+            
+             
+            <para>
+            You can't delete a scheduling policy that's used in any job queues.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RemoveBATSchedulingPolicyCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the scheduling policy to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RemoveBATSchedulingPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Batch.Model.DeleteSchedulingPolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RemoveBATSchedulingPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.RemoveBATSchedulingPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAT.StopBATJobCmdlet">
+            <summary>
+            Cancels a job in an Batch job queue. Jobs that are in the <code>SUBMITTED</code>,
+            <code>PENDING</code>, or <code>RUNNABLE</code> state are canceled. Jobs that progressed
+            to the <code>STARTING</code> or <code>RUNNING</code> state aren't canceled. However,
+            the API operation still succeeds, even if no job is canceled. These jobs must be terminated
+            with the <a>TerminateJob</a> operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.StopBATJobCmdlet.JobId">
+            <summary>
+            <para>
+            <para>The Batch job ID of the job to cancel.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.StopBATJobCmdlet.Reason">
+            <summary>
+            <para>
+            <para>A message to attach to the job that explains the reason for canceling it. This message
+            is returned by future <a>DescribeJobs</a> operations on the job. This message is also
+            recorded in the Batch activity logs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.StopBATJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Batch.Model.CancelJobResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.StopBATJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.StopBATJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet">
+            <summary>
+            Submits an Batch job from a job definition. Parameters that are specified during <a>SubmitJob</a>
+            override parameters defined in the job definition. vCPU and memory requirements that
+            are specified in the <code>resourceRequirements</code> objects in the job definition
+            are the exception. They can't be overridden this way using the <code>memory</code>
+            and <code>vcpus</code> parameters. Rather, you must specify updates to job definition
+            parameters in a <code>resourceRequirements</code> object that's included in the <code>containerOverrides</code>
+            parameter.
+            
+             <note><para>
+            Job queues with a scheduling policy are limited to 500 active fair share identifiers
+            at a time. 
+            </para></note><important><para>
+            Jobs that run on Fargate resources can't be guaranteed to run for more than 14 days.
+            This is because, after 14 days, Fargate resources might become unavailable and job
+            might be terminated.
+            </para></important>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet.RetryStrategy_Attempt">
+            <summary>
+            <para>
+            <para>The number of times to move a job to the <code>RUNNABLE</code> status. You can specify
+            between 1 and 10 attempts. If the value of <code>attempts</code> is greater than one,
+            the job is retried on failure the same number of attempts as the value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet.ContainerOverrides_Command">
+            <summary>
+            <para>
+            <para>The command to send to the container that overrides the default command from the Docker
+            image or the job definition.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet.PodProperties_Container">
+            <summary>
+            <para>
+            <para>The overrides for the container that's used on the Amazon EKS pod.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet.DependsOn">
+            <summary>
+            <para>
+            <para>A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You
+            can specify a <code>SEQUENTIAL</code> type dependency without specifying a job ID
+            for array jobs so that each child array job completes sequentially, starting at index
+            0. You can also specify an <code>N_TO_N</code> type dependency with a job ID for array
+            jobs. In that case, each index child of this job must wait for the corresponding index
+            child of each dependency to complete before it can begin.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet.ContainerOverrides_Environment">
+            <summary>
+            <para>
+            <para>The environment variables to send to the container. You can add new environment variables,
+            which are added to the container at launch, or you can override the existing environment
+            variables from the Docker image or the job definition.</para><note><para>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention
+            is reserved for variables that Batch sets.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet.RetryStrategy_EvaluateOnExit">
+            <summary>
+            <para>
+            <para>Array of up to 5 objects that specify the conditions where jobs are retried or failed.
+            If this parameter is specified, then the <code>attempts</code> parameter must also
+            be specified. If none of the listed conditions match, then the job is retried.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet.ContainerOverrides_InstanceType">
+            <summary>
+            <para>
+            <para>The instance type to use for a multi-node parallel job.</para><note><para>This parameter isn't applicable to single-node container jobs or jobs that run on
+            Fargate resources, and shouldn't be provided.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet.JobDefinition">
+            <summary>
+            <para>
+            <para>The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>,
+            or the Amazon Resource Name (ARN) for the job definition. If <code>name</code> is
+            specified without a revision then the latest active revision is used.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet.JobName">
+            <summary>
+            <para>
+            <para>The name of the job. It can be up to 128 letters long. The first character must be
+            alphanumeric, can contain uppercase and lowercase letters, numbers, hyphens (-), and
+            underscores (_).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet.JobQueue">
+            <summary>
+            <para>
+            <para>The job queue where the job is submitted. You can specify either the name or the Amazon
+            Resource Name (ARN) of the queue.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet.NodeOverrides_NodePropertyOverride">
+            <summary>
+            <para>
+            <para>The node property overrides for the job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet.NodeOverrides_NumNode">
+            <summary>
+            <para>
+            <para>The number of nodes to use with a multi-node parallel job. This value overrides the
+            number of nodes that are specified in the job definition. To use this override, you
+            must meet the following conditions:</para><ul><li><para>There must be at least one node range in your job definition that has an open upper
+            boundary, such as <code>:</code> or <code>n:</code>.</para></li><li><para>The lower boundary of the node range that's specified in the job definition must be
+            fewer than the number of nodes specified in the override.</para></li><li><para>The main node index that's specified in the job definition must be fewer than the
+            number of nodes specified in the override.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet.Parameter">
+            <summary>
+            <para>
+            <para>Additional parameters passed to the job that replace parameter substitution placeholders
+            that are set in the job definition. Parameters are specified as a key and value pair
+            mapping. Parameters in a <code>SubmitJob</code> request override any corresponding
+            parameter defaults from the job definition.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet.PropagateTag">
+            <summary>
+            <para>
+            <para>Specifies whether to propagate the tags from the job or job definition to the corresponding
+            Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only
+            be propagated to the tasks during task creation. For tags with the same name, job
+            tags are given priority over job definitions tags. If the total number of combined
+            tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code>
+            state. When specified, this overrides the tag propagation setting in the job definition.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet.ContainerOverrides_ResourceRequirement">
+            <summary>
+            <para>
+            <para>The type and amount of resources to assign to a container. This overrides the settings
+            in the job definition. The supported resources include <code>GPU</code>, <code>MEMORY</code>,
+            and <code>VCPU</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet.SchedulingPriorityOverride">
+            <summary>
+            <para>
+            <para>The scheduling priority for the job. This only affects jobs in job queues with a fair
+            share policy. Jobs with a higher scheduling priority are scheduled before jobs with
+            a lower scheduling priority. This overrides any scheduling priority in the job definition.</para><para>The minimum supported value is 0 and the maximum supported value is 9999.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet.ShareIdentifier">
+            <summary>
+            <para>
+            <para>The share identifier for the job. If the job queue doesn't have a scheduling policy,
+            then this parameter must not be specified. If the job queue has a scheduling policy,
+            then this parameter must be specified.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet.ArrayProperties_Size">
+            <summary>
+            <para>
+            <para>The size of the array job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags that you apply to the job request to help you categorize and organize your
+            resources. Each tag consists of a key and an optional value. For more information,
+            see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+            Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet.Timeout">
+            <summary>
+            <para>
+            <para>The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout
+            duration after which Batch terminates your jobs if they haven't finished. If a job
+            is terminated due to a timeout, it isn't retried. The minimum value for the timeout
+            is 60 seconds. This configuration overrides any timeout configuration specified in
+            the job definition. For array jobs, child jobs have the same timeout configuration
+            as the parent job. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+            Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet.ContainerOverrides_Memory">
+            <summary>
+            <para>
+            <para>This parameter is deprecated, use <code>resourceRequirements</code> to override the
+            memory requirements specified in the job definition. It's not supported for jobs running
+            on Fargate resources. For jobs that run on EC2 resources, it overrides the <code>memory</code>
+            parameter set in the job definition, but doesn't override any memory requirement that's
+            specified in the <code>resourceRequirements</code> structure in the job definition.
+            To override memory requirements that are specified in the <code>resourceRequirements</code>
+            structure in the job definition, <code>resourceRequirements</code> must be specified
+            in the <code>SubmitJob</code> request, with <code>type</code> set to <code>MEMORY</code>
+            and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't
+            override job definition resource requirements</a> in the <i>Batch User Guide</i>.</para>
+            </para>
+            <para>This parameter is deprecated.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet.ContainerOverrides_Vcpus">
+            <summary>
+            <para>
+            <para>This parameter is deprecated, use <code>resourceRequirements</code> to override the
+            <code>vcpus</code> parameter that's set in the job definition. It's not supported
+            for jobs running on Fargate resources. For jobs that run on EC2 resources, it overrides
+            the <code>vcpus</code> parameter set in the job definition, but doesn't override any
+            vCPU requirement specified in the <code>resourceRequirements</code> structure in the
+            job definition. To override vCPU requirements that are specified in the <code>resourceRequirements</code>
+            structure in the job definition, <code>resourceRequirements</code> must be specified
+            in the <code>SubmitJob</code> request, with <code>type</code> set to <code>VCPU</code>
+            and <code>value</code> set to the new value. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#override-resource-requirements">Can't
+            override job definition resource requirements</a> in the <i>Batch User Guide</i>.</para>
+            </para>
+            <para>This parameter is deprecated.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Batch.Model.SubmitJobResponse).
+            Specifying the name of a property of type Amazon.Batch.Model.SubmitJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobName parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.SubmitBATJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAT.UnregisterBATJobDefinitionCmdlet">
+            <summary>
+            Deregisters an Batch job definition. Job definitions are permanently deleted after
+            180 days.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UnregisterBATJobDefinitionCmdlet.JobDefinition">
+            <summary>
+            <para>
+            <para>The name and revision (<code>name:revision</code>) or full Amazon Resource Name (ARN)
+            of the job definition to deregister.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UnregisterBATJobDefinitionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Batch.Model.DeregisterJobDefinitionResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UnregisterBATJobDefinitionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobDefinition parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobDefinition' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UnregisterBATJobDefinitionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet">
+            <summary>
+            Updates an Batch compute environment.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.ComputeResources_AllocationStrategy">
+            <summary>
+            <para>
+            <para>The allocation strategy to use for the compute resource if there's not enough instances
+            of the best fitting instance type that can be allocated. This might be because of
+            availability of the instance type in the Region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
+            EC2 service limits</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation
+            strategies</a> in the <i>Batch User Guide</i>.</para><para>When updating a compute environment, changing the allocation strategy requires an
+            infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+            compute environments</a> in the <i>Batch User Guide</i>. <code>BEST_FIT</code> isn't
+            supported when updating a compute environment.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            specify it.</para></note><dl><dt>BEST_FIT_PROGRESSIVE</dt><dd><para>Batch selects additional instance types that are large enough to meet the requirements
+            of the jobs in the queue. Its preference is for instance types with lower cost vCPUs.
+            If additional instances of the previously selected instance types aren't available,
+            Batch selects new instance types.</para></dd><dt>SPOT_CAPACITY_OPTIMIZED</dt><dd><para>Batch selects one or more instance types that are large enough to meet the requirements
+            of the jobs in the queue. Its preference is for instance types that are less likely
+            to be interrupted. This allocation strategy is only available for Spot Instance compute
+            resources.</para></dd></dl><para>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code>
+            strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy
+            using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet your
+            capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by
+            more than a single instance.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.ComputeResources_BidPercentage">
+            <summary>
+            <para>
+            <para>The maximum percentage that a Spot Instance price can be when compared with the On-Demand
+            price for that instance type before instances are launched. For example, if your maximum
+            percentage is 20%, the Spot price must be less than 20% of the current On-Demand price
+            for that Amazon EC2 instance. You always pay the lowest (market) price and never more
+            than your maximum percentage.</para><para>When updating a compute environment, changing the bid percentage requires an infrastructure
+            update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+            compute environments</a> in the <i>Batch User Guide</i>.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            specify it.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.ComputeEnvironment">
+            <summary>
+            <para>
+            <para>The name or full Amazon Resource Name (ARN) of the compute environment to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.ComputeResources_DesiredvCpu">
+            <summary>
+            <para>
+            <para>The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies
+            this value between the minimum and maximum values based on job queue demand.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            specify it.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.ComputeResources_Ec2Configuration">
+            <summary>
+            <para>
+            <para>Provides information used to select Amazon Machine Images (AMIs) for EC2 instances
+            in the compute environment. If <code>Ec2Configuration</code> isn't specified, the
+            default is <code>ECS_AL2</code>.</para><para>When updating a compute environment, changing this setting requires an infrastructure
+            update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+            compute environments</a> in the <i>Batch User Guide</i>. To remove the EC2 configuration
+            and any custom AMI ID specified in <code>imageIdOverride</code>, set this value to
+            an empty string.</para><para>One or two values can be provided.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            specify it.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.ComputeResources_Ec2KeyPair">
+            <summary>
+            <para>
+            <para>The Amazon EC2 key pair that's used for instances launched in the compute environment.
+            You can use this key pair to log in to your instances with SSH. To remove the Amazon
+            EC2 key pair, set this value to an empty string.</para><para>When updating a compute environment, changing the EC2 key pair requires an infrastructure
+            update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+            compute environments</a> in the <i>Batch User Guide</i>.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            specify it.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.ComputeResources_ImageId">
+            <summary>
+            <para>
+            <para>The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.
+            This parameter is overridden by the <code>imageIdOverride</code> member of the <code>Ec2Configuration</code>
+            structure. To remove the custom AMI ID and use the default AMI ID, set this value
+            to an empty string.</para><para>When updating a compute environment, changing the AMI ID requires an infrastructure
+            update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+            compute environments</a> in the <i>Batch User Guide</i>.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            specify it.</para></note><note><para>The AMI that you choose for a compute environment must match the architecture of the
+            instance types that you intend to use for that compute environment. For example, if
+            your compute environment uses A1 instance types, the compute resource AMI that you
+            choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the
+            Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon
+            ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service Developer
+            Guide</i>.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.ComputeResources_InstanceRole">
+            <summary>
+            <para>
+            <para>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment.
+            You can specify the short name or full Amazon Resource Name (ARN) of an instance profile.
+            For example, <code><i>ecsInstanceRole</i></code> or <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i></code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon
+            ECS instance role</a> in the <i>Batch User Guide</i>.</para><para>When updating a compute environment, changing this setting requires an infrastructure
+            update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+            compute environments</a> in the <i>Batch User Guide</i>.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            specify it.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.ComputeResources_InstanceType">
+            <summary>
+            <para>
+            <para>The instances types that can be launched. You can specify instance families to launch
+            any instance type within those families (for example, <code>c5</code> or <code>p3</code>),
+            or you can specify specific sizes within a family (such as <code>c5.8xlarge</code>).
+            You can also choose <code>optimal</code> to select instance types (from the C4, M4,
+            and R4 instance families) that match the demand of your job queues.</para><para>When updating a compute environment, changing this setting requires an infrastructure
+            update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+            compute environments</a> in the <i>Batch User Guide</i>.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            specify it.</para></note><note><para>When you create a compute environment, the instance types that you select for the
+            compute environment must share the same architecture. For example, you can't mix x86
+            and ARM instances in the same compute environment.</para></note><note><para>Currently, <code>optimal</code> uses instance types from the C4, M4, and R4 instance
+            families. In Regions that don't have instance types from those instance families,
+            instance types from the C5, M5, and R5 instance families are used.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.UpdatePolicy_JobExecutionTimeoutMinute">
+            <summary>
+            <para>
+            <para>Specifies the job timeout (in minutes) when the compute environment infrastructure
+            is updated. The default value is 30.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.LaunchTemplate_LaunchTemplateId">
+            <summary>
+            <para>
+            <para>The ID of the launch template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.LaunchTemplate_LaunchTemplateName">
+            <summary>
+            <para>
+            <para>The name of the launch template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.ComputeResources_MaxvCpu">
+            <summary>
+            <para>
+            <para>The maximum number of Amazon EC2 vCPUs that an environment can reach.</para><note><para>With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code>
+            allocation strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code>
+            strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to
+            meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code>
+            by more than a single instance. That is, no more than a single instance from among
+            those specified in your compute environment.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.ComputeResources_MinvCpu">
+            <summary>
+            <para>
+            <para>The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if
+            the compute environment is <code>DISABLED</code>).</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            specify it.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.ComputeResources_PlacementGroup">
+            <summary>
+            <para>
+            <para>The Amazon EC2 placement group to associate with your compute resources. If you intend
+            to submit multi-node parallel jobs to your compute environment, you should consider
+            creating a cluster placement group and associate it with your compute resources. This
+            keeps your multi-node parallel job on a logical grouping of instances within a single
+            Availability Zone with high network flow potential. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+            groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</para><para>When updating a compute environment, changing the placement group requires an infrastructure
+            update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+            compute environments</a> in the <i>Batch User Guide</i>.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            specify it.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.ComputeResources_SecurityGroupId">
+            <summary>
+            <para>
+            <para>The Amazon EC2 security groups that are associated with instances launched in the
+            compute environment. This parameter is required for Fargate compute resources, where
+            it can contain up to 5 security groups. For Fargate compute resources, providing an
+            empty list is handled as if this parameter wasn't specified and no change is made.
+            For EC2 compute resources, providing an empty list removes the security groups from
+            the compute resource.</para><para>When updating a compute environment, changing the EC2 security groups requires an
+            infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+            compute environments</a> in the <i>Batch User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.ServiceRole">
+            <summary>
+            <para>
+            <para>The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls
+            to other Amazon Web Services services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch
+            service IAM role</a> in the <i>Batch User Guide</i>.</para><important><para>If the compute environment has a service-linked role, it can't be changed to use a
+            regular IAM role. Likewise, if the compute environment has a regular IAM role, it
+            can't be changed to use a service-linked role. To update the parameters for the compute
+            environment that require an infrastructure update to change, the <b>AWSServiceRoleForBatch</b>
+            service-linked role must be used. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+            compute environments</a> in the <i>Batch User Guide</i>.</para></important><para>If your specified role has a path other than <code>/</code>, then you must either
+            specify the full role ARN (recommended) or prefix the role name with the path.</para><note><para>Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code>
+            path prefix. When you only specify the name of the service role, Batch assumes that
+            your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we
+            recommend that you specify the full ARN of your service role when you create compute
+            environments.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.State">
+            <summary>
+            <para>
+            <para>The state of the compute environment. Compute environments in the <code>ENABLED</code>
+            state can accept jobs from a queue and scale in or out automatically based on the
+            workload demand of its associated queues.</para><para>If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place
+            jobs from an associated job queue on the compute resources within the environment.
+            If the compute environment is managed, then it can scale its instances out or in automatically,
+            based on the job queue demand.</para><para>If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to
+            place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
+            state continue to progress normally. Managed compute environments in the <code>DISABLED</code>
+            state don't scale out. However, they scale in to <code>minvCpus</code> value after
+            instances become idle.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.ComputeResources_Subnet">
+            <summary>
+            <para>
+            <para>The VPC subnets where the compute resources are launched. Fargate compute resources
+            can contain up to 16 subnets. For Fargate compute resources, providing an empty list
+            will be handled as if this parameter wasn't specified and no change is made. For EC2
+            compute resources, providing an empty list removes the VPC subnets from the compute
+            resource. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
+            and subnets</a> in the <i>Amazon VPC User Guide</i>.</para><para>When updating a compute environment, changing the VPC subnets requires an infrastructure
+            update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+            compute environments</a> in the <i>Batch User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.ComputeResources_Tag">
+            <summary>
+            <para>
+            <para>Key-value pair tags to be applied to EC2 resources that are launched in the compute
+            environment. For Batch, these take the form of <code>"String1": "String2"</code>,
+            where <code>String1</code> is the tag key and <code>String2</code> is the tag value-for
+            example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for
+            recognizing your Batch instances in the Amazon EC2 console. These tags aren't seen
+            when using the Batch <code>ListTagsForResource</code> API operation.</para><para>When updating a compute environment, changing this setting requires an infrastructure
+            update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+            compute environments</a> in the <i>Batch User Guide</i>.</para><note><para>This parameter isn't applicable to jobs that are running on Fargate resources. Don't
+            specify it.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.UpdatePolicy_TerminateJobsOnUpdate">
+            <summary>
+            <para>
+            <para>Specifies whether jobs are automatically terminated when the computer environment
+            infrastructure is updated. The default value is <code>false</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.ComputeResources_Type">
+            <summary>
+            <para>
+            <para>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>,
+            or <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+            environments</a> in the <i>Batch User Guide</i>.</para><para> If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role
+            with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon
+            EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</para><para>When updating a compute environment, changing the type of a compute environment requires
+            an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+            compute environments</a> in the <i>Batch User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.UnmanagedvCpu">
+            <summary>
+            <para>
+            <para>The maximum number of vCPUs expected to be used for an unmanaged compute environment.
+            Don't specify this parameter for a managed compute environment. This parameter is
+            only used for fair share scheduling to reserve vCPU capacity for new share identifiers.
+            If this parameter isn't provided for a fair share job queue, no vCPU capacity is reserved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.ComputeResources_UpdateToLatestImageVersion">
+            <summary>
+            <para>
+            <para>Specifies whether the AMI ID is updated to the latest one that's supported by Batch
+            when the compute environment has an infrastructure update. The default value is <code>false</code>.</para><note><para>An AMI ID can either be specified in the <code>imageId</code> or <code>imageIdOverride</code>
+            parameters or be determined by the launch template that's specified in the <code>launchTemplate</code>
+            parameter. If an AMI ID is specified any of these ways, this parameter is ignored.
+            For more information about to update AMI IDs during an infrastructure update, see
+            <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html#updating-compute-environments-ami">Updating
+            the AMI ID</a> in the <i>Batch User Guide</i>.</para></note><para>When updating a compute environment, changing this setting requires an infrastructure
+            update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+            compute environments</a> in the <i>Batch User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.LaunchTemplate_Version">
+            <summary>
+            <para>
+            <para>The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.</para><para>If the value is <code>$Latest</code>, the latest version of the launch template is
+            used. If the value is <code>$Default</code>, the default version of the launch template
+            is used.</para><important><para>If the AMI ID that's used in a compute environment is from the launch template, the
+            AMI isn't changed when the compute environment is updated. It's only changed if the
+            <code>updateToLatestImageVersion</code> parameter for the compute environment is set
+            to <code>true</code>. During an infrastructure update, if either <code>$Latest</code>
+            or <code>$Default</code> is specified, Batch re-evaluates the launch template version,
+            and it might use a different version of the launch template. This is the case even
+            if the launch template isn't specified in the update. When updating a compute environment,
+            changing the launch template requires an infrastructure update of the compute environment.
+            For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+            compute environments</a> in the <i>Batch User Guide</i>.</para></important><para>Default: <code>$Default</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Batch.Model.UpdateComputeEnvironmentResponse).
+            Specifying the name of a property of type Amazon.Batch.Model.UpdateComputeEnvironmentResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ComputeEnvironment parameter.
+            The -PassThru parameter is deprecated, use -Select '^ComputeEnvironment' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATComputeEnvironmentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAT.UpdateBATJobQueueCmdlet">
+            <summary>
+            Updates a job queue.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATJobQueueCmdlet.ComputeEnvironmentOrder">
+            <summary>
+            <para>
+            <para>Details the set of compute environments mapped to a job queue and their order relative
+            to each other. This is one of the parameters used by the job scheduler to determine
+            which compute environment runs a given job. Compute environments must be in the <code>VALID</code>
+            state before you can associate them with a job queue. All of the compute environments
+            must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code>
+            or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</para><note><para>All compute environments that are associated with a job queue must share the same
+            architecture. Batch doesn't support mixing compute environment architecture types
+            in a single job queue.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATJobQueueCmdlet.JobQueue">
+            <summary>
+            <para>
+            <para>The name or the Amazon Resource Name (ARN) of the job queue.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATJobQueueCmdlet.Priority">
+            <summary>
+            <para>
+            <para>The priority of the job queue. Job queues with a higher priority (or a higher integer
+            value for the <code>priority</code> parameter) are evaluated first when associated
+            with the same compute environment. Priority is determined in descending order. For
+            example, a job queue with a priority value of <code>10</code> is given scheduling
+            preference over a job queue with a priority value of <code>1</code>. All of the compute
+            environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate
+            (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments
+            can't be mixed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATJobQueueCmdlet.SchedulingPolicyArn">
+            <summary>
+            <para>
+            <para>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is
+            created, the fair share scheduling policy can be replaced but not removed. The format
+            is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i></code>. For example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATJobQueueCmdlet.State">
+            <summary>
+            <para>
+            <para>Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>,
+            it can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't
+            be added to the queue, but jobs already in the queue can finish.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATJobQueueCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Batch.Model.UpdateJobQueueResponse).
+            Specifying the name of a property of type Amazon.Batch.Model.UpdateJobQueueResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATJobQueueCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobQueue parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobQueue' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATJobQueueCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAT.UpdateBATSchedulingPolicyCmdlet">
+            <summary>
+            Updates a scheduling policy.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATSchedulingPolicyCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the scheduling policy to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATSchedulingPolicyCmdlet.FairsharePolicy_ComputeReservation">
+            <summary>
+            <para>
+            <para>A value used to reserve some of the available maximum vCPU for fair share identifiers
+            that aren't already used.</para><para>The reserved ratio is <code>(<i>computeReservation</i>/100)^<i>ActiveFairShares</i></code> where <code><i>ActiveFairShares</i></code> is the number of active fair
+            share identifiers.</para><para>For example, a <code>computeReservation</code> value of 50 indicates that Batchreserves
+            50% of the maximum available vCPU if there's only one fair share identifier. It reserves
+            25% if there are two fair share identifiers. It reserves 12.5% if there are three
+            fair share identifiers. A <code>computeReservation</code> value of 25 indicates that
+            Batch should reserve 25% of the maximum available vCPU if there's only one fair share
+            identifier, 6.25% if there are two fair share identifiers, and 1.56% if there are
+            three fair share identifiers.</para><para>The minimum value is 0 and the maximum value is 99.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATSchedulingPolicyCmdlet.FairsharePolicy_ShareDecaySecond">
+            <summary>
+            <para>
+            <para>The amount of time (in seconds) to use to calculate a fair share percentage for each
+            fair share identifier in use. A value of zero (0) indicates that only current usage
+            is measured. The decay allows for more recently run jobs to have more weight than
+            jobs that ran earlier. The maximum supported value is 604800 (1 week).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATSchedulingPolicyCmdlet.FairsharePolicy_ShareDistribution">
+            <summary>
+            <para>
+            <para>An array of <code>SharedIdentifier</code> objects that contain the weights for the
+            fair share identifiers for the fair share policy. Fair share identifiers that aren't
+            included have a default weight of <code>1.0</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATSchedulingPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Batch.Model.UpdateSchedulingPolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATSchedulingPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAT.UpdateBATSchedulingPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

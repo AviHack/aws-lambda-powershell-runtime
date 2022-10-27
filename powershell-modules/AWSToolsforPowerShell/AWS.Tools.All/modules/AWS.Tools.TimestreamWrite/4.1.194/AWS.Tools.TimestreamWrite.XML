@@ -1,0 +1,847 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.TimestreamWrite</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSW.AddTSWResourceTagCmdlet">
+            <summary>
+            Associate a set of tags with a Timestream resource. You can then activate these user-defined
+            tags so that they appear on the Billing and Cost Management console for cost allocation
+            tracking.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.AddTSWResourceTagCmdlet.ResourceARN">
+            <summary>
+            <para>
+            <para> Identifies the Timestream resource to which tags should be added. This value is an
+            Amazon Resource Name (ARN). </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.AddTSWResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para> The tags to be assigned to the Timestream resource. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.AddTSWResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamWrite.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.AddTSWResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceARN parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceARN' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.AddTSWResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSW.GetTSWDatabaseCmdlet">
+            <summary>
+            Returns information about the database, including the database name, time that the
+            database was created, and the total number of tables found within the database. <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+            quotas apply</a>. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.describe-db.html">code
+            sample</a> for details.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.GetTSWDatabaseCmdlet.DatabaseName">
+            <summary>
+            <para>
+            <para>The name of the Timestream database.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.GetTSWDatabaseCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Database'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamWrite.Model.DescribeDatabaseResponse).
+            Specifying the name of a property of type Amazon.TimestreamWrite.Model.DescribeDatabaseResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.GetTSWDatabaseCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DatabaseName parameter.
+            The -PassThru parameter is deprecated, use -Select '^DatabaseName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSW.GetTSWDatabaseListCmdlet">
+            <summary>
+            Returns a list of your Timestream databases. <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+            quotas apply</a>. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.list-db.html">code
+            sample</a> for details.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.GetTSWDatabaseListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The total number of items to return in the output. If the total number of items available
+            is more than the value specified, a NextToken is provided in the output. To resume
+            pagination, provide the NextToken value as argument of a subsequent API invocation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.GetTSWDatabaseListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token. To resume pagination, provide the NextToken value as argument
+            of a subsequent API invocation.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.GetTSWDatabaseListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Databases'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamWrite.Model.ListDatabasesResponse).
+            Specifying the name of a property of type Amazon.TimestreamWrite.Model.ListDatabasesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.GetTSWDatabaseListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSW.GetTSWEndpointListCmdlet">
+            <summary>
+            DescribeEndpoints returns a list of available endpoints to make Timestream API calls
+            against. This API is available through both Write and Query.
+            
+             
+            <para>
+            Because the Timestream SDKs are designed to transparently work with the service’s
+            architecture, including the management and mapping of the service endpoints, <i>it
+            is not recommended that you use this API unless</i>:
+            </para><ul><li><para>
+            You are using <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/VPCEndpoints">VPC
+            endpoints (Amazon Web Services PrivateLink) with Timestream</a></para></li><li><para>
+            Your application uses a programming language that does not yet have SDK support
+            </para></li><li><para>
+            You require better control over the client-side implementation
+            </para></li></ul><para>
+            For detailed information on how and when to use and implement DescribeEndpoints, see
+            <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/Using.API.html#Using-API.endpoint-discovery">The
+            Endpoint Discovery Pattern</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.GetTSWEndpointListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Endpoints'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamWrite.Model.DescribeEndpointsResponse).
+            Specifying the name of a property of type Amazon.TimestreamWrite.Model.DescribeEndpointsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSW.GetTSWResourceTagListCmdlet">
+            <summary>
+            List all tags on a Timestream resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.GetTSWResourceTagListCmdlet.ResourceARN">
+            <summary>
+            <para>
+            <para> The Timestream resource with tags to be listed. This value is an Amazon Resource
+            Name (ARN). </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.GetTSWResourceTagListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamWrite.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.TimestreamWrite.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.GetTSWResourceTagListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceARN parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceARN' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSW.GetTSWTableCmdlet">
+            <summary>
+            Returns information about the table, including the table name, database name, retention
+            duration of the memory store and the magnetic store. <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+            quotas apply</a>. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.describe-table.html">code
+            sample</a> for details.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.GetTSWTableCmdlet.DatabaseName">
+            <summary>
+            <para>
+            <para>The name of the Timestream database.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.GetTSWTableCmdlet.TableName">
+            <summary>
+            <para>
+            <para>The name of the Timestream table.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.GetTSWTableCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Table'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamWrite.Model.DescribeTableResponse).
+            Specifying the name of a property of type Amazon.TimestreamWrite.Model.DescribeTableResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSW.GetTSWTableListCmdlet">
+            <summary>
+            A list of tables, along with the name, status and retention properties of each table.
+            See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.list-table.html">code
+            sample</a> for details.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.GetTSWTableListCmdlet.DatabaseName">
+            <summary>
+            <para>
+            <para>The name of the Timestream database.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.GetTSWTableListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The total number of items to return in the output. If the total number of items available
+            is more than the value specified, a NextToken is provided in the output. To resume
+            pagination, provide the NextToken value as argument of a subsequent API invocation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.GetTSWTableListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token. To resume pagination, provide the NextToken value as argument
+            of a subsequent API invocation.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.GetTSWTableListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tables'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamWrite.Model.ListTablesResponse).
+            Specifying the name of a property of type Amazon.TimestreamWrite.Model.ListTablesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.GetTSWTableListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DatabaseName parameter.
+            The -PassThru parameter is deprecated, use -Select '^DatabaseName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.GetTSWTableListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSW.NewTSWDatabaseCmdlet">
+            <summary>
+            Creates a new Timestream database. If the KMS key is not specified, the database will
+            be encrypted with a Timestream managed KMS key located in your account. Refer to <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+            Web Services managed KMS keys</a> for more info. <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+            quotas apply</a>. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.create-db.html">code
+            sample</a> for details.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.NewTSWDatabaseCmdlet.DatabaseName">
+            <summary>
+            <para>
+            <para>The name of the Timestream database.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.NewTSWDatabaseCmdlet.KmsKeyId">
+            <summary>
+            <para>
+            <para>The KMS key for the database. If the KMS key is not specified, the database will be
+            encrypted with a Timestream managed KMS key located in your account. Refer to <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+            Web Services managed KMS keys</a> for more info.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.NewTSWDatabaseCmdlet.Tag">
+            <summary>
+            <para>
+            <para> A list of key-value pairs to label the table. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.NewTSWDatabaseCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Database'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamWrite.Model.CreateDatabaseResponse).
+            Specifying the name of a property of type Amazon.TimestreamWrite.Model.CreateDatabaseResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.NewTSWDatabaseCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DatabaseName parameter.
+            The -PassThru parameter is deprecated, use -Select '^DatabaseName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.NewTSWDatabaseCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSW.NewTSWTableCmdlet">
+            <summary>
+            The CreateTable operation adds a new table to an existing database in your account.
+            In an Amazon Web Services account, table names must be at least unique within each
+            Region if they are in the same database. You may have identical table names in the
+            same Region if the tables are in separate databases. While creating the table, you
+            must specify the table name, database name, and the retention properties. <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+            quotas apply</a>. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.create-table.html">code
+            sample</a> for details.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.NewTSWTableCmdlet.S3Configuration_BucketName">
+            <summary>
+            <para>
+            <para>&gt;Bucket name of the customer S3 bucket.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.NewTSWTableCmdlet.DatabaseName">
+            <summary>
+            <para>
+            <para>The name of the Timestream database.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.NewTSWTableCmdlet.MagneticStoreWriteProperties_EnableMagneticStoreWrite">
+            <summary>
+            <para>
+            <para>A flag to enable magnetic store writes.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.NewTSWTableCmdlet.S3Configuration_EncryptionOption">
+            <summary>
+            <para>
+            <para>Encryption option for the customer s3 location. Options are S3 server side encryption
+            with an S3-managed key or KMS managed key.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.NewTSWTableCmdlet.S3Configuration_KmsKeyId">
+            <summary>
+            <para>
+            <para>KMS key id for the customer s3 location when encrypting with a KMS managed key.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.NewTSWTableCmdlet.RetentionProperties_MagneticStoreRetentionPeriodInDay">
+            <summary>
+            <para>
+            <para>The duration for which data must be stored in the magnetic store. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.NewTSWTableCmdlet.RetentionProperties_MemoryStoreRetentionPeriodInHour">
+            <summary>
+            <para>
+            <para>The duration for which data must be stored in the memory store. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.NewTSWTableCmdlet.S3Configuration_ObjectKeyPrefix">
+            <summary>
+            <para>
+            <para>Object key preview for the customer S3 location.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.NewTSWTableCmdlet.TableName">
+            <summary>
+            <para>
+            <para>The name of the Timestream table.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.NewTSWTableCmdlet.Tag">
+            <summary>
+            <para>
+            <para> A list of key-value pairs to label the table. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.NewTSWTableCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Table'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamWrite.Model.CreateTableResponse).
+            Specifying the name of a property of type Amazon.TimestreamWrite.Model.CreateTableResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.NewTSWTableCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^TableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.NewTSWTableCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSW.RemoveTSWDatabaseCmdlet">
+            <summary>
+            Deletes a given Timestream database. <i>This is an irreversible operation. After a
+            database is deleted, the time series data from its tables cannot be recovered.</i><note><para>
+            All tables in the database must be deleted first, or a ValidationException error will
+            be thrown. 
+            </para><para>
+            Due to the nature of distributed retries, the operation can return either success
+            or a ResourceNotFoundException. Clients should consider them equivalent.
+            </para></note><para>
+            See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.delete-db.html">code
+            sample</a> for details.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.RemoveTSWDatabaseCmdlet.DatabaseName">
+            <summary>
+            <para>
+            <para>The name of the Timestream database to be deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.RemoveTSWDatabaseCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamWrite.Model.DeleteDatabaseResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.RemoveTSWDatabaseCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DatabaseName parameter.
+            The -PassThru parameter is deprecated, use -Select '^DatabaseName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.RemoveTSWDatabaseCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSW.RemoveTSWResourceTagCmdlet">
+            <summary>
+            Removes the association of tags from a Timestream resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.RemoveTSWResourceTagCmdlet.ResourceARN">
+            <summary>
+            <para>
+            <para> The Timestream resource that the tags will be removed from. This value is an Amazon
+            Resource Name (ARN). </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.RemoveTSWResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para> A list of tags keys. Existing tags of the resource whose keys are members of this
+            list will be removed from the Timestream resource. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.RemoveTSWResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamWrite.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.RemoveTSWResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceARN parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceARN' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.RemoveTSWResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSW.RemoveTSWTableCmdlet">
+            <summary>
+            Deletes a given Timestream table. This is an irreversible operation. After a Timestream
+            database table is deleted, the time series data stored in the table cannot be recovered.
+            
+            
+             <note><para>
+            Due to the nature of distributed retries, the operation can return either success
+            or a ResourceNotFoundException. Clients should consider them equivalent.
+            </para></note><para>
+            See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.delete-table.html">code
+            sample</a> for details.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.RemoveTSWTableCmdlet.DatabaseName">
+            <summary>
+            <para>
+            <para>The name of the database where the Timestream database is to be deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.RemoveTSWTableCmdlet.TableName">
+            <summary>
+            <para>
+            <para>The name of the Timestream table to be deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.RemoveTSWTableCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamWrite.Model.DeleteTableResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.RemoveTSWTableCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSW.UpdateTSWDatabaseCmdlet">
+            <summary>
+            Modifies the KMS key for an existing database. While updating the database, you must
+            specify the database name and the identifier of the new KMS key to be used (<code>KmsKeyId</code>).
+            If there are any concurrent <code>UpdateDatabase</code> requests, first writer wins.
+            
+            
+             
+            <para>
+            See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.update-db.html">code
+            sample</a> for details.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.UpdateTSWDatabaseCmdlet.DatabaseName">
+            <summary>
+            <para>
+            <para> The name of the database. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.UpdateTSWDatabaseCmdlet.KmsKeyId">
+            <summary>
+            <para>
+            <para> The identifier of the new KMS key (<code>KmsKeyId</code>) to be used to encrypt the
+            data stored in the database. If the <code>KmsKeyId</code> currently registered with
+            the database is the same as the <code>KmsKeyId</code> in the request, there will not
+            be any update. </para><para>You can specify the <code>KmsKeyId</code> using any of the following:</para><ul><li><para>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code></para></li><li><para>Key ARN: <code>arn:aws:kms:us-east-1:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code></para></li><li><para>Alias name: <code>alias/ExampleAlias</code></para></li><li><para>Alias ARN: <code>arn:aws:kms:us-east-1:111122223333:alias/ExampleAlias</code></para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.UpdateTSWDatabaseCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Database'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamWrite.Model.UpdateDatabaseResponse).
+            Specifying the name of a property of type Amazon.TimestreamWrite.Model.UpdateDatabaseResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.UpdateTSWDatabaseCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSW.UpdateTSWTableCmdlet">
+            <summary>
+            Modifies the retention duration of the memory store and magnetic store for your Timestream
+            table. Note that the change in retention duration takes effect immediately. For example,
+            if the retention period of the memory store was initially set to 2 hours and then
+            changed to 24 hours, the memory store will be capable of holding 24 hours of data,
+            but will be populated with 24 hours of data 22 hours after this change was made. Timestream
+            does not retrieve data from the magnetic store to populate the memory store. 
+            
+             
+            <para>
+            See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.update-table.html">code
+            sample</a> for details.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.UpdateTSWTableCmdlet.S3Configuration_BucketName">
+            <summary>
+            <para>
+            <para>&gt;Bucket name of the customer S3 bucket.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.UpdateTSWTableCmdlet.DatabaseName">
+            <summary>
+            <para>
+            <para>The name of the Timestream database.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.UpdateTSWTableCmdlet.MagneticStoreWriteProperties_EnableMagneticStoreWrite">
+            <summary>
+            <para>
+            <para>A flag to enable magnetic store writes.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.UpdateTSWTableCmdlet.S3Configuration_EncryptionOption">
+            <summary>
+            <para>
+            <para>Encryption option for the customer s3 location. Options are S3 server side encryption
+            with an S3-managed key or KMS managed key.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.UpdateTSWTableCmdlet.S3Configuration_KmsKeyId">
+            <summary>
+            <para>
+            <para>KMS key id for the customer s3 location when encrypting with a KMS managed key.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.UpdateTSWTableCmdlet.RetentionProperties_MagneticStoreRetentionPeriodInDay">
+            <summary>
+            <para>
+            <para>The duration for which data must be stored in the magnetic store. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.UpdateTSWTableCmdlet.RetentionProperties_MemoryStoreRetentionPeriodInHour">
+            <summary>
+            <para>
+            <para>The duration for which data must be stored in the memory store. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.UpdateTSWTableCmdlet.S3Configuration_ObjectKeyPrefix">
+            <summary>
+            <para>
+            <para>Object key preview for the customer S3 location.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.UpdateTSWTableCmdlet.TableName">
+            <summary>
+            <para>
+            <para>The name of the Timestream table.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.UpdateTSWTableCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Table'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamWrite.Model.UpdateTableResponse).
+            Specifying the name of a property of type Amazon.TimestreamWrite.Model.UpdateTableResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.UpdateTSWTableCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.TSW.WriteTSWRecordCmdlet">
+            <summary>
+            The WriteRecords operation enables you to write your time series data into Timestream.
+            You can specify a single data point or a batch of data points to be inserted into
+            the system. Timestream offers you with a flexible schema that auto detects the column
+            names and data types for your Timestream tables based on the dimension names and data
+            types of the data points you specify when invoking writes into the database. Timestream
+            support eventual consistency read semantics. This means that when you query data immediately
+            after writing a batch of data into Timestream, the query results might not reflect
+            the results of a recently completed write operation. The results may also include
+            some stale data. If you repeat the query request after a short time, the results should
+            return the latest data. <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+            quotas apply</a>. 
+            
+             
+            <para>
+            See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.write.html">code
+            sample</a> for details.
+            </para><para><b>Upserts</b></para><para>
+            You can use the <code>Version</code> parameter in a <code>WriteRecords</code> request
+            to update data points. Timestream tracks a version number with each record. <code>Version</code>
+            defaults to <code>1</code> when not specified for the record in the request. Timestream
+            will update an existing record’s measure value along with its <code>Version</code>
+            upon receiving a write request with a higher <code>Version</code> number for that
+            record. Upon receiving an update request where the measure value is the same as that
+            of the existing record, Timestream still updates <code>Version</code>, if it is greater
+            than the existing value of <code>Version</code>. You can update a data point as many
+            times as desired, as long as the value of <code>Version</code> continuously increases.
+            
+            </para><para>
+             For example, suppose you write a new record without indicating <code>Version</code>
+            in the request. Timestream will store this record, and set <code>Version</code> to
+            <code>1</code>. Now, suppose you try to update this record with a <code>WriteRecords</code>
+            request of the same record with a different measure value but, like before, do not
+            provide <code>Version</code>. In this case, Timestream will reject this update with
+            a <code>RejectedRecordsException</code> since the updated record’s version is not
+            greater than the existing value of Version. However, if you were to resend the update
+            request with <code>Version</code> set to <code>2</code>, Timestream would then succeed
+            in updating the record’s value, and the <code>Version</code> would be set to <code>2</code>.
+            Next, suppose you sent a <code>WriteRecords</code> request with this same record and
+            an identical measure value, but with <code>Version</code> set to <code>3</code>. In
+            this case, Timestream would only update <code>Version</code> to <code>3</code>. Any
+            further updates would need to send a version number greater than <code>3</code>, or
+            the update requests would receive a <code>RejectedRecordsException</code>. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.WriteTSWRecordCmdlet.DatabaseName">
+            <summary>
+            <para>
+            <para>The name of the Timestream database.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.WriteTSWRecordCmdlet.CommonAttributes_Dimension">
+            <summary>
+            <para>
+            <para>Contains the list of dimensions for time series data points.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.WriteTSWRecordCmdlet.CommonAttributes_MeasureName">
+            <summary>
+            <para>
+            <para>Measure represents the data attribute of the time series. For example, the CPU utilization
+            of an EC2 instance or the RPM of a wind turbine are measures. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.WriteTSWRecordCmdlet.CommonAttributes_MeasureValue">
+            <summary>
+            <para>
+            <para> Contains the measure value for the time series data point. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.WriteTSWRecordCmdlet.CommonAttributes_MeasureValueList">
+            <summary>
+            <para>
+            <para> Contains the list of MeasureValue for time series data points. </para><para> This is only allowed for type <code>MULTI</code>. For scalar values, use <code>MeasureValue</code>
+            attribute of the Record directly. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.WriteTSWRecordCmdlet.CommonAttributes_MeasureValueType">
+            <summary>
+            <para>
+            <para> Contains the data type of the measure value for the time series data point. Default
+            type is <code>DOUBLE</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.WriteTSWRecordCmdlet.Record">
+            <summary>
+            <para>
+            <para>An array of records containing the unique measure, dimension, time, and version attributes
+            for each time series data point. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.WriteTSWRecordCmdlet.TableName">
+            <summary>
+            <para>
+            <para>The name of the Timestream table.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.WriteTSWRecordCmdlet.CommonAttributes_Time">
+            <summary>
+            <para>
+            <para> Contains the time at which the measure value for the data point was collected. The
+            time value plus the unit provides the time elapsed since the epoch. For example, if
+            the time value is <code>12345</code> and the unit is <code>ms</code>, then <code>12345
+            ms</code> have elapsed since the epoch. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.WriteTSWRecordCmdlet.CommonAttributes_TimeUnit">
+            <summary>
+            <para>
+            <para> The granularity of the timestamp unit. It indicates if the time value is in seconds,
+            milliseconds, nanoseconds or other supported values. Default is <code>MILLISECONDS</code>.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.WriteTSWRecordCmdlet.CommonAttributes_Version">
+            <summary>
+            <para>
+            <para>64-bit attribute used for record updates. Write requests for duplicate data with a
+            higher version number will update the existing measure value and version. In cases
+            where the measure value is the same, <code>Version</code> will still be updated .
+            Default value is <code>1</code>.</para><note><para><code>Version</code> must be <code>1</code> or greater, or you will receive a <code>ValidationException</code>
+            error.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.WriteTSWRecordCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.TimestreamWrite.Model.WriteRecordsResponse).
+            Specifying the name of a property of type Amazon.TimestreamWrite.Model.WriteRecordsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.WriteTSWRecordCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Record parameter.
+            The -PassThru parameter is deprecated, use -Select '^Record' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.TSW.WriteTSWRecordCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

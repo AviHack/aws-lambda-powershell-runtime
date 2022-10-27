@@ -1,0 +1,358 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.MarketplaceCatalog</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.MCAT.GetMCATChangeSetCmdlet">
+            <summary>
+            Provides information about a given change set.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATChangeSetCmdlet.Catalog">
+            <summary>
+            <para>
+            <para>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATChangeSetCmdlet.ChangeSetId">
+            <summary>
+            <para>
+            <para>Required. The unique identifier for the <code>StartChangeSet</code> request that you
+            want to describe the details for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATChangeSetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MarketplaceCatalog.Model.DescribeChangeSetResponse).
+            Specifying the name of a property of type Amazon.MarketplaceCatalog.Model.DescribeChangeSetResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATChangeSetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ChangeSetId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ChangeSetId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MCAT.GetMCATChangeSetListCmdlet">
+            <summary>
+            Returns the list of change sets owned by the account being used to make the call.
+            You can filter this list by providing any combination of <code>entityId</code>, <code>ChangeSetName</code>,
+            and status. If you provide more than one filter, the API operation applies a logical
+            AND between the filters.
+            
+             
+            <para>
+            You can describe a change during the 60-day request history retention period for API
+            calls.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATChangeSetListCmdlet.Catalog">
+            <summary>
+            <para>
+            <para>The catalog related to the request. Fixed value: <code>AWSMarketplace</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATChangeSetListCmdlet.FilterList">
+            <summary>
+            <para>
+            <para>An array of filter objects.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATChangeSetListCmdlet.Sort_SortBy">
+            <summary>
+            <para>
+            <para>For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code>
+            (default), <code>Visibility</code>, <code>EntityId</code>, and <code>Name</code>.</para><para>For <code>ListChangeSets</code>, supported attributes include <code>StartTime</code>
+            and <code>EndTime</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATChangeSetListCmdlet.Sort_SortOrder">
+            <summary>
+            <para>
+            <para>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default
+            value is <code>DESCENDING</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATChangeSetListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results returned by a single call. This value must be provided
+            in the next call to retrieve the next set of results. By default, this value is 20.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATChangeSetListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token value retrieved from a previous call to access the next page of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATChangeSetListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ChangeSetSummaryList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MarketplaceCatalog.Model.ListChangeSetsResponse).
+            Specifying the name of a property of type Amazon.MarketplaceCatalog.Model.ListChangeSetsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATChangeSetListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Catalog parameter.
+            The -PassThru parameter is deprecated, use -Select '^Catalog' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATChangeSetListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MCAT.GetMCATEntityCmdlet">
+            <summary>
+            Returns the metadata and content of the entity.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATEntityCmdlet.Catalog">
+            <summary>
+            <para>
+            <para>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATEntityCmdlet.EntityId">
+            <summary>
+            <para>
+            <para>Required. The unique ID of the entity to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATEntityCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MarketplaceCatalog.Model.DescribeEntityResponse).
+            Specifying the name of a property of type Amazon.MarketplaceCatalog.Model.DescribeEntityResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATEntityCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EntityId parameter.
+            The -PassThru parameter is deprecated, use -Select '^EntityId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MCAT.GetMCATEntityListCmdlet">
+            <summary>
+            Provides the list of entities of a given type.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATEntityListCmdlet.Catalog">
+            <summary>
+            <para>
+            <para>The catalog related to the request. Fixed value: <code>AWSMarketplace</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATEntityListCmdlet.EntityType">
+            <summary>
+            <para>
+            <para>The type of entities to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATEntityListCmdlet.FilterList">
+            <summary>
+            <para>
+            <para>An array of filter objects. Each filter object contains two attributes, <code>filterName</code>
+            and <code>filterValues</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATEntityListCmdlet.Sort_SortBy">
+            <summary>
+            <para>
+            <para>For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code>
+            (default), <code>Visibility</code>, <code>EntityId</code>, and <code>Name</code>.</para><para>For <code>ListChangeSets</code>, supported attributes include <code>StartTime</code>
+            and <code>EndTime</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATEntityListCmdlet.Sort_SortOrder">
+            <summary>
+            <para>
+            <para>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default
+            value is <code>DESCENDING</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATEntityListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Specifies the upper limit of the elements on a single page. If a value isn't provided,
+            the default value is 20.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATEntityListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The value of the next token, if it exists. Null if there are no more results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATEntityListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EntitySummaryList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MarketplaceCatalog.Model.ListEntitiesResponse).
+            Specifying the name of a property of type Amazon.MarketplaceCatalog.Model.ListEntitiesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATEntityListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Catalog parameter.
+            The -PassThru parameter is deprecated, use -Select '^Catalog' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.GetMCATEntityListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MCAT.StartMCATChangeSetCmdlet">
+            <summary>
+            This operation allows you to request changes for your entities. Within a single ChangeSet,
+            you cannot start the same change type against the same entity multiple times. Additionally,
+            when a ChangeSet is running, all the entities targeted by the different changes are
+            locked until the ChangeSet has completed (either succeeded, cancelled, or failed).
+            If you try to start a ChangeSet containing a change against an entity that is already
+            locked, you will receive a <code>ResourceInUseException</code>.
+            
+             
+            <para>
+            For example, you cannot start the ChangeSet described in the <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples">example</a>
+            later in this topic, because it contains two changes to execute the same change type
+            (<code>AddRevisions</code>) against the same entity (<code>entity-id@1)</code>.
+            </para><para>
+            For more information about working with change sets, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">
+            Working with change sets</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.StartMCATChangeSetCmdlet.Catalog">
+            <summary>
+            <para>
+            <para>The catalog related to the request. Fixed value: <code>AWSMarketplace</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.StartMCATChangeSetCmdlet.ChangeSet">
+            <summary>
+            <para>
+            <para>Array of <code>change</code> object.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.StartMCATChangeSetCmdlet.ChangeSetName">
+            <summary>
+            <para>
+            <para>Optional case sensitive string of up to 100 ASCII characters. The change set name
+            can be used to filter the list of change sets. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.StartMCATChangeSetCmdlet.ClientRequestToken">
+            <summary>
+            <para>
+            <para>A unique token to identify the request to ensure idempotency.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.StartMCATChangeSetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MarketplaceCatalog.Model.StartChangeSetResponse).
+            Specifying the name of a property of type Amazon.MarketplaceCatalog.Model.StartChangeSetResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.StartMCATChangeSetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Catalog parameter.
+            The -PassThru parameter is deprecated, use -Select '^Catalog' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.StartMCATChangeSetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MCAT.StopMCATChangeSetCmdlet">
+            <summary>
+            Used to cancel an open change request. Must be sent before the status of the request
+            changes to <code>APPLYING</code>, the final stage of completing your change request.
+            You can describe a change during the 60-day request history retention period for API
+            calls.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.StopMCATChangeSetCmdlet.Catalog">
+            <summary>
+            <para>
+            <para>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.StopMCATChangeSetCmdlet.ChangeSetId">
+            <summary>
+            <para>
+            <para>Required. The unique identifier of the <code>StartChangeSet</code> request that you
+            want to cancel.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.StopMCATChangeSetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MarketplaceCatalog.Model.CancelChangeSetResponse).
+            Specifying the name of a property of type Amazon.MarketplaceCatalog.Model.CancelChangeSetResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.StopMCATChangeSetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ChangeSetId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ChangeSetId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MCAT.StopMCATChangeSetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

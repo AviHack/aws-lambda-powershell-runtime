@@ -1,0 +1,1491 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.SSMIncidents</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.AddSSMIResourceTagCmdlet">
+            <summary>
+            Adds a tag to a response plan.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.AddSSMIResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the response plan you're adding the tags to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.AddSSMIResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of tags that you are adding to the response plan.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.AddSSMIResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.AddSSMIResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.AddSSMIResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIIncidentRecordCmdlet">
+            <summary>
+            Returns the details for the specified incident record.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIIncidentRecordCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the incident record.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIIncidentRecordCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'IncidentRecord'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.GetIncidentRecordResponse).
+            Specifying the name of a property of type Amazon.SSMIncidents.Model.GetIncidentRecordResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIIncidentRecordCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIIncidentRecordListCmdlet">
+            <summary>
+            Lists all incident records in your account. Use this command to retrieve the Amazon
+            Resource Name (ARN) of the incident record you want to update.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIIncidentRecordListCmdlet.Filter">
+            <summary>
+            <para>
+            <para>Filters the list of incident records through which you are searching. You can filter
+            on the following keys:</para><ul><li><para><code>creationTime</code></para></li><li><para><code>impact</code></para></li><li><para><code>status</code></para></li><li><para><code>createdBy</code></para></li></ul><para>Note the following when deciding how to use Filters:</para><ul><li><para>If you don't specify a Filter, the response includes all incident records.</para></li><li><para>If you specify more than one filter in a single request, the response returns incident
+            records that match all filters.</para></li><li><para>If you specify a filter with more than one value, the response returns incident records
+            that match any of the values provided.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIIncidentRecordListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results per page.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIIncidentRecordListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token to continue to the next page of results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIIncidentRecordListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'IncidentRecordSummaries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.ListIncidentRecordsResponse).
+            Specifying the name of a property of type Amazon.SSMIncidents.Model.ListIncidentRecordsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIRelatedItemListCmdlet">
+            <summary>
+            List all related items for an incident record.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIRelatedItemListCmdlet.IncidentRecordArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the incident record containing the listed related
+            items.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIRelatedItemListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of related items per page.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIRelatedItemListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token to continue to the next page of results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIRelatedItemListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'RelatedItems'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.ListRelatedItemsResponse).
+            Specifying the name of a property of type Amazon.SSMIncidents.Model.ListRelatedItemsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIRelatedItemListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the IncidentRecordArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^IncidentRecordArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIReplicationSetCmdlet">
+            <summary>
+            Retrieve your Incident Manager replication set.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIReplicationSetCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the replication set you want to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIReplicationSetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ReplicationSet'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.GetReplicationSetResponse).
+            Specifying the name of a property of type Amazon.SSMIncidents.Model.GetReplicationSetResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIReplicationSetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIReplicationSetListCmdlet">
+            <summary>
+            Lists details about the replication set configured in your account.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIReplicationSetListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results per page. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIReplicationSetListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token to continue to the next page of results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIReplicationSetListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ReplicationSetArns'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.ListReplicationSetsResponse).
+            Specifying the name of a property of type Amazon.SSMIncidents.Model.ListReplicationSetsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIResourcePolicyCmdlet">
+            <summary>
+            Retrieves the resource policies attached to the specified response plan.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIResourcePolicyCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the response plan with the attached resource policy.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIResourcePolicyCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of resource policies to display per page of results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIResourcePolicyCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token to continue to the next page of results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIResourcePolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ResourcePolicies'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.GetResourcePoliciesResponse).
+            Specifying the name of a property of type Amazon.SSMIncidents.Model.GetResourcePoliciesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIResourcePolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIResourceTagCmdlet">
+            <summary>
+            Lists the tags that are attached to the specified response plan.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the response plan.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.SSMIncidents.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIResponsePlanCmdlet">
+            <summary>
+            Retrieves the details of the specified response plan.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIResponsePlanCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the response plan.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIResponsePlanCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.GetResponsePlanResponse).
+            Specifying the name of a property of type Amazon.SSMIncidents.Model.GetResponsePlanResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIResponsePlanCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIResponsePlanListCmdlet">
+            <summary>
+            Lists all response plans in your account.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIResponsePlanListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of response plans per page.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIResponsePlanListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token to continue to the next page of results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMIResponsePlanListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ResponsePlanSummaries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.ListResponsePlansResponse).
+            Specifying the name of a property of type Amazon.SSMIncidents.Model.ListResponsePlansResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.GetSSMITimelineEventCmdlet">
+            <summary>
+            Retrieves a timeline event based on its ID and incident record.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMITimelineEventCmdlet.EventId">
+            <summary>
+            <para>
+            <para>The ID of the event. You can get an event's ID when you create it, or by using <code>ListTimelineEvents</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMITimelineEventCmdlet.IncidentRecordArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMITimelineEventCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Event'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.GetTimelineEventResponse).
+            Specifying the name of a property of type Amazon.SSMIncidents.Model.GetTimelineEventResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMITimelineEventCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EventId parameter.
+            The -PassThru parameter is deprecated, use -Select '^EventId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.GetSSMITimelineEventListCmdlet">
+            <summary>
+            Lists timeline events for the specified incident record.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMITimelineEventListCmdlet.Filter">
+            <summary>
+            <para>
+            <para>Filters the timeline events based on the provided conditional values. You can filter
+            timeline events using the following keys:</para><ul><li><para><code>eventTime</code></para></li><li><para><code>eventType</code></para></li></ul><para>Note the following when deciding how to use Filters:</para><ul><li><para>If you don't specify a Filter, the response includes all timeline events.</para></li><li><para>If you specify more than one filter in a single request, the response returns timeline
+            events that match all filters.</para></li><li><para>If you specify a filter with more than one value, the response returns timeline events
+            that match any of the values provided.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMITimelineEventListCmdlet.IncidentRecordArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMITimelineEventListCmdlet.SortBy">
+            <summary>
+            <para>
+            <para>Sort by the specified key value pair.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMITimelineEventListCmdlet.SortOrder">
+            <summary>
+            <para>
+            <para>Sorts the order of timeline events by the value specified in the <code>sortBy</code>
+            field.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMITimelineEventListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results per page.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMITimelineEventListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token to continue to the next page of results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMITimelineEventListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EventSummaries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.ListTimelineEventsResponse).
+            Specifying the name of a property of type Amazon.SSMIncidents.Model.ListTimelineEventsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.GetSSMITimelineEventListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the IncidentRecordArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^IncidentRecordArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.NewSSMIReplicationSetCmdlet">
+            <summary>
+            A replication set replicates and encrypts your data to the provided Regions with the
+            provided KMS key.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMIReplicationSetCmdlet.ReplicationSetRegions">
+            <summary>
+            <para>
+            <para>The Regions that Incident Manager replicates your data to. You can have up to three
+            Regions in your replication set.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMIReplicationSetCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>A token ensuring that the operation is called only once with the specified details.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMIReplicationSetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Arn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.CreateReplicationSetResponse).
+            Specifying the name of a property of type Amazon.SSMIncidents.Model.CreateReplicationSetResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMIReplicationSetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.NewSSMIResponsePlanCmdlet">
+            <summary>
+            Creates a response plan that automates the initial response to incidents. A response
+            plan engages contacts, starts chat channel collaboration, and initiates runbooks at
+            the beginning of an incident.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMIResponsePlanCmdlet.Action">
+            <summary>
+            <para>
+            <para>The actions that the response plan starts at the beginning of an incident.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMIResponsePlanCmdlet.ChatChannel_ChatbotSn">
+            <summary>
+            <para>
+            <para>The Amazon SNS targets that Chatbot uses to notify the chat channel of updates to
+            an incident. You can also make updates to the incident through the chat channel by
+            using the Amazon SNS topics. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMIResponsePlanCmdlet.IncidentTemplate_DedupeString">
+            <summary>
+            <para>
+            <para>Used to stop Incident Manager from creating multiple incident records for the same
+            incident. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMIResponsePlanCmdlet.DisplayName">
+            <summary>
+            <para>
+            <para>The long format of the response plan name. This field can contain spaces.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMIResponsePlanCmdlet.ChatChannel_Empty">
+            <summary>
+            <para>
+            <para>Used to remove the chat channel from an incident record or response plan.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMIResponsePlanCmdlet.Engagement">
+            <summary>
+            <para>
+            <para>The contacts and escalation plans that the response plan engages during an incident.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMIResponsePlanCmdlet.IncidentTemplate_Impact">
+            <summary>
+            <para>
+            <para>The impact of the incident on your customers and applications. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMIResponsePlanCmdlet.IncidentTemplate_IncidentTag">
+            <summary>
+            <para>
+            <para>Tags to apply to an incident when calling the <code>StartIncident</code> API action.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMIResponsePlanCmdlet.Name">
+            <summary>
+            <para>
+            <para>The short format name of the response plan. Can't include spaces.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMIResponsePlanCmdlet.IncidentTemplate_NotificationTarget">
+            <summary>
+            <para>
+            <para>The Amazon SNS targets that are notified when updates are made to an incident.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMIResponsePlanCmdlet.IncidentTemplate_Summary">
+            <summary>
+            <para>
+            <para>The summary of the incident. The summary is a brief synopsis of what occurred, what's
+            currently happening, and context.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMIResponsePlanCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of tags that you are adding to the response plan.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMIResponsePlanCmdlet.IncidentTemplate_Title">
+            <summary>
+            <para>
+            <para>The title of the incident. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMIResponsePlanCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>A token ensuring that the operation is called only once with the specified details.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMIResponsePlanCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Arn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.CreateResponsePlanResponse).
+            Specifying the name of a property of type Amazon.SSMIncidents.Model.CreateResponsePlanResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMIResponsePlanCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMIResponsePlanCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.NewSSMITimelineEventCmdlet">
+            <summary>
+            Creates a custom timeline event on the incident details page of an incident record.
+            Timeline events are automatically created by Incident Manager, marking key moment
+            during an incident. You can create custom timeline events to mark important events
+            that are automatically detected by Incident Manager.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMITimelineEventCmdlet.EventData">
+            <summary>
+            <para>
+            <para>A short description of the event.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMITimelineEventCmdlet.EventTime">
+            <summary>
+            <para>
+            <para>The time that the event occurred.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMITimelineEventCmdlet.EventType">
+            <summary>
+            <para>
+            <para>The type of the event. You can create timeline events of type <code>Custom Event</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMITimelineEventCmdlet.IncidentRecordArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the incident record to which the event will be added.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMITimelineEventCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>A token ensuring that the action is called only once with the specified details.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMITimelineEventCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.CreateTimelineEventResponse).
+            Specifying the name of a property of type Amazon.SSMIncidents.Model.CreateTimelineEventResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMITimelineEventCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the IncidentRecordArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^IncidentRecordArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.NewSSMITimelineEventCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIIncidentRecordCmdlet">
+            <summary>
+            Delete an incident record from Incident Manager.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIIncidentRecordCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the incident record you are deleting.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIIncidentRecordCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.DeleteIncidentRecordResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIIncidentRecordCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIIncidentRecordCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIReplicationSetCmdlet">
+            <summary>
+            Deletes all Regions in your replication set. Deleting the replication set deletes
+            all Incident Manager data.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIReplicationSetCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the replication set you're deleting.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIReplicationSetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.DeleteReplicationSetResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIReplicationSetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIReplicationSetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIResourcePolicyCmdlet">
+            <summary>
+            Deletes the resource policy that Resource Access Manager uses to share your Incident
+            Manager resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIResourcePolicyCmdlet.PolicyId">
+            <summary>
+            <para>
+            <para>The ID of the resource policy you're deleting.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIResourcePolicyCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource you're deleting the policy from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIResourcePolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.DeleteResourcePolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIResourcePolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIResourcePolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIResourceTagCmdlet">
+            <summary>
+            Removes a tag from a resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the response plan you're removing a tag from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>The name of the tag you're removing from the response plan.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIResponsePlanCmdlet">
+            <summary>
+            Deletes the specified response plan. Deleting a response plan stops all linked CloudWatch
+            alarms and EventBridge events from creating an incident with this response plan.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIResponsePlanCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the response plan.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIResponsePlanCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.DeleteResponsePlanResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIResponsePlanCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMIResponsePlanCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMITimelineEventCmdlet">
+            <summary>
+            Deletes a timeline event from an incident.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMITimelineEventCmdlet.EventId">
+            <summary>
+            <para>
+            <para>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMITimelineEventCmdlet.IncidentRecordArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMITimelineEventCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.DeleteTimelineEventResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMITimelineEventCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EventId parameter.
+            The -PassThru parameter is deprecated, use -Select '^EventId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.RemoveSSMITimelineEventCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.StartSSMIIncidentCmdlet">
+            <summary>
+            Used to start an incident from CloudWatch alarms, EventBridge events, or manually.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.StartSSMIIncidentCmdlet.Impact">
+            <summary>
+            <para>
+            Amazon.SSMIncidents.Model.StartIncidentRequest.Impact
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.StartSSMIIncidentCmdlet.TriggerDetails_RawData">
+            <summary>
+            <para>
+            <para>Raw data passed from either Amazon EventBridge, Amazon CloudWatch, or Incident Manager
+            when an incident is created.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.StartSSMIIncidentCmdlet.RelatedItem">
+            <summary>
+            <para>
+            <para>Add related items to the incident for other responders to use. Related items are AWS
+            resources, external links, or files uploaded to an Amazon S3 bucket. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.StartSSMIIncidentCmdlet.ResponsePlanArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat
+            channels, Amazon SNS topics, runbooks, title, and impact of the incident. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.StartSSMIIncidentCmdlet.TriggerDetails_Source">
+            <summary>
+            <para>
+            <para>Identifies the service that sourced the event. All events sourced from within Amazon
+            Web Services begin with "<code>aws.</code>" Customer-generated events can have any
+            value here, as long as it doesn't begin with "<code>aws.</code>" We recommend the
+            use of Java package-name style reverse domain-name strings. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.StartSSMIIncidentCmdlet.TriggerDetails_Timestamp">
+            <summary>
+            <para>
+            <para>The time that the incident was detected.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.StartSSMIIncidentCmdlet.Title">
+            <summary>
+            <para>
+            <para>Provide a title for the incident. Providing a title overwrites the title provided
+            by the response plan. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.StartSSMIIncidentCmdlet.TriggerDetails_TriggerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the source that detected the incident.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.StartSSMIIncidentCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>A token ensuring that the operation is called only once with the specified details.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.StartSSMIIncidentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'IncidentRecordArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.StartIncidentResponse).
+            Specifying the name of a property of type Amazon.SSMIncidents.Model.StartIncidentResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.StartSSMIIncidentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResponsePlanArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResponsePlanArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.StartSSMIIncidentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIDeletionProtectionCmdlet">
+            <summary>
+            Update deletion protection to either allow or deny deletion of the final Region in
+            a replication set.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIDeletionProtectionCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the replication set you're updating.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIDeletionProtectionCmdlet.DeletionProtected">
+            <summary>
+            <para>
+            <para>Details if deletion protection is enabled or disabled in your account.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIDeletionProtectionCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>A token ensuring that the operation is called only once with the specified details.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIDeletionProtectionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.UpdateDeletionProtectionResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIDeletionProtectionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIDeletionProtectionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIIncidentRecordCmdlet">
+            <summary>
+            Update the details of an incident record. You can use this operation to update an
+            incident record from the defined chat channel. For more information about using actions
+            in chat channels, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/chat.html#chat-interact">Interacting
+            through chat</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIIncidentRecordCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the incident record you are updating.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIIncidentRecordCmdlet.ChatChannel_ChatbotSn">
+            <summary>
+            <para>
+            <para>The Amazon SNS targets that Chatbot uses to notify the chat channel of updates to
+            an incident. You can also make updates to the incident through the chat channel by
+            using the Amazon SNS topics. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIIncidentRecordCmdlet.ChatChannel_Empty">
+            <summary>
+            <para>
+            <para>Used to remove the chat channel from an incident record or response plan.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIIncidentRecordCmdlet.Impact">
+            <summary>
+            <para>
+            Amazon.SSMIncidents.Model.UpdateIncidentRecordRequest.Impact
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIIncidentRecordCmdlet.NotificationTarget">
+            <summary>
+            <para>
+            <para>The Amazon SNS targets that are notified when updates are made to an incident.</para><para>Using multiple SNS topics creates redundancy in the event that a Region is down during
+            the incident.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIIncidentRecordCmdlet.Status">
+            <summary>
+            <para>
+            <para>The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIIncidentRecordCmdlet.Summary">
+            <summary>
+            <para>
+            <para>A longer description of what occurred during the incident.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIIncidentRecordCmdlet.Title">
+            <summary>
+            <para>
+            <para>A brief description of the incident.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIIncidentRecordCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>A token that ensures that the operation is called only once with the specified details.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIIncidentRecordCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.UpdateIncidentRecordResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIIncidentRecordCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIIncidentRecordCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIRelatedItemCmdlet">
+            <summary>
+            Add or remove related items from the related items tab of an incident record.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIRelatedItemCmdlet.RelatedItemsUpdate_ItemToAdd_Identifier_Value_Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the related item, if the related item is an Amazon
+            resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIRelatedItemCmdlet.RelatedItemsUpdate_ItemToRemove_Value_Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the related item, if the related item is an Amazon
+            resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIRelatedItemCmdlet.IncidentRecordArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the incident record containing the related items
+            you are updating.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIRelatedItemCmdlet.RelatedItemsUpdate_ItemToAdd_Identifier_Value_MetricDefinition">
+            <summary>
+            <para>
+            <para>The metric definition, if the related item is a metric in Amazon CloudWatch.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIRelatedItemCmdlet.RelatedItemsUpdate_ItemToRemove_Value_MetricDefinition">
+            <summary>
+            <para>
+            <para>The metric definition, if the related item is a metric in Amazon CloudWatch.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIRelatedItemCmdlet.ItemToAdd_Title">
+            <summary>
+            <para>
+            <para>The title of the related item.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIRelatedItemCmdlet.Identifier_Type">
+            <summary>
+            <para>
+            <para>The type of related item. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIRelatedItemCmdlet.ItemToRemove_Type">
+            <summary>
+            <para>
+            <para>The type of related item. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIRelatedItemCmdlet.RelatedItemsUpdate_ItemToAdd_Identifier_Value_Url">
+            <summary>
+            <para>
+            <para>The URL, if the related item is a non-Amazon Web Services resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIRelatedItemCmdlet.RelatedItemsUpdate_ItemToRemove_Value_Url">
+            <summary>
+            <para>
+            <para>The URL, if the related item is a non-Amazon Web Services resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIRelatedItemCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>A token ensuring that the operation is called only once with the specified details.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIRelatedItemCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.UpdateRelatedItemsResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIRelatedItemCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the IncidentRecordArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^IncidentRecordArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIRelatedItemCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIReplicationSetCmdlet">
+            <summary>
+            Add or delete Regions from your replication set.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIReplicationSetCmdlet.Action">
+            <summary>
+            <para>
+            <para>An action to add or delete a Region.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIReplicationSetCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the replication set you're updating.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIReplicationSetCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>A token ensuring that the operation is called only once with the specified details.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIReplicationSetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.UpdateReplicationSetResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIReplicationSetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIReplicationSetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIResponsePlanCmdlet">
+            <summary>
+            Updates the specified response plan.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIResponsePlanCmdlet.Action">
+            <summary>
+            <para>
+            <para>The actions that this response plan takes at the beginning of an incident.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIResponsePlanCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the response plan.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIResponsePlanCmdlet.ChatChannel_ChatbotSn">
+            <summary>
+            <para>
+            <para>The Amazon SNS targets that Chatbot uses to notify the chat channel of updates to
+            an incident. You can also make updates to the incident through the chat channel by
+            using the Amazon SNS topics. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIResponsePlanCmdlet.DisplayName">
+            <summary>
+            <para>
+            <para>The long format name of the response plan. The display name can't contain spaces.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIResponsePlanCmdlet.ChatChannel_Empty">
+            <summary>
+            <para>
+            <para>Used to remove the chat channel from an incident record or response plan.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIResponsePlanCmdlet.Engagement">
+            <summary>
+            <para>
+            <para>The contacts and escalation plans that Incident Manager engages at the start of the
+            incident.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIResponsePlanCmdlet.IncidentTemplateDedupeString">
+            <summary>
+            <para>
+            <para>The string Incident Manager uses to prevent duplicate incidents from being created
+            by the same incident in the same account.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIResponsePlanCmdlet.IncidentTemplateImpact">
+            <summary>
+            <para>
+            Amazon.SSMIncidents.Model.UpdateResponsePlanRequest.IncidentTemplateImpact
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIResponsePlanCmdlet.IncidentTemplateNotificationTarget">
+            <summary>
+            <para>
+            <para>The Amazon SNS targets that are notified when updates are made to an incident.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIResponsePlanCmdlet.IncidentTemplateSummary">
+            <summary>
+            <para>
+            <para>A brief summary of the incident. This typically contains what has happened, what's
+            currently happening, and next steps.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIResponsePlanCmdlet.IncidentTemplateTag">
+            <summary>
+            <para>
+            <para>Tags to apply to an incident when calling the <code>StartIncident</code> API action.
+            To call this action, you must also have permission to call the <code>TagResource</code>
+            API action for the incident record resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIResponsePlanCmdlet.IncidentTemplateTitle">
+            <summary>
+            <para>
+            <para>The short format name of the incident. The title can't contain spaces.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIResponsePlanCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>A token ensuring that the operation is called only once with the specified details.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIResponsePlanCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.UpdateResponsePlanResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIResponsePlanCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMIResponsePlanCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMITimelineEventCmdlet">
+            <summary>
+            Updates a timeline event. You can update events of type <code>Custom Event</code>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMITimelineEventCmdlet.EventData">
+            <summary>
+            <para>
+            <para>A short description of the event.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMITimelineEventCmdlet.EventId">
+            <summary>
+            <para>
+            <para>The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMITimelineEventCmdlet.EventTime">
+            <summary>
+            <para>
+            <para>The time that the event occurred.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMITimelineEventCmdlet.EventType">
+            <summary>
+            <para>
+            <para>The type of the event. You can update events of type <code>Custom Event</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMITimelineEventCmdlet.IncidentRecordArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMITimelineEventCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>A token ensuring that the operation is called only once with the specified details.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMITimelineEventCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.UpdateTimelineEventResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMITimelineEventCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EventId parameter.
+            The -PassThru parameter is deprecated, use -Select '^EventId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.UpdateSSMITimelineEventCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.SSMI.WriteSSMIResourcePolicyCmdlet">
+            <summary>
+            Adds a resource policy to the specified response plan. The resource policy is used
+            to share the response plan using Resource Access Manager (RAM). For more information
+            about cross-account sharing, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/xa.html">Setting
+            up cross-account functionality</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.WriteSSMIResourcePolicyCmdlet.Policy">
+            <summary>
+            <para>
+            <para>Details of the resource policy.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.WriteSSMIResourcePolicyCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the response plan you're adding the resource policy
+            to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.WriteSSMIResourcePolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'PolicyId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.SSMIncidents.Model.PutResourcePolicyResponse).
+            Specifying the name of a property of type Amazon.SSMIncidents.Model.PutResourcePolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.WriteSSMIResourcePolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.SSMI.WriteSSMIResourcePolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

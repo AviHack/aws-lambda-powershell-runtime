@@ -1,0 +1,1013 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.DataPipeline</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.DP.AddDPResourceTagCmdlet">
+            <summary>
+            Adds or modifies tags for the specified pipeline.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.AddDPResourceTagCmdlet.PipelineId">
+            <summary>
+            <para>
+            <para>The ID of the pipeline.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.AddDPResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags to add, as key/value pairs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.AddDPResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DataPipeline.Model.AddTagsResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.AddDPResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PipelineId parameter.
+            The -PassThru parameter is deprecated, use -Select '^PipelineId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.AddDPResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DP.DisableDPPipelineCmdlet">
+            <summary>
+            Deactivates the specified running pipeline. The pipeline is set to the <code>DEACTIVATING</code>
+            state until the deactivation process completes.
+            
+             
+            <para>
+            To resume a deactivated pipeline, use <a>ActivatePipeline</a>. By default, the pipeline
+            resumes from the last completed execution. Optionally, you can specify the date and
+            time to resume the pipeline.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.DisableDPPipelineCmdlet.CancelActive">
+            <summary>
+            <para>
+            <para>Indicates whether to cancel any running objects. The default is true, which sets the
+            state of any running objects to <code>CANCELED</code>. If this value is false, the
+            pipeline is deactivated after all running objects finish.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.DisableDPPipelineCmdlet.PipelineId">
+            <summary>
+            <para>
+            <para>The ID of the pipeline.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.DisableDPPipelineCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DataPipeline.Model.DeactivatePipelineResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.DisableDPPipelineCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PipelineId parameter.
+            The -PassThru parameter is deprecated, use -Select '^PipelineId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.DisableDPPipelineCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DP.EnableDPPipelineCmdlet">
+            <summary>
+            Validates the specified pipeline and starts processing pipeline tasks. If the pipeline
+            does not pass validation, activation fails.
+            
+             
+            <para>
+            If you need to pause the pipeline to investigate an issue with a component, such as
+            a data source or script, call <a>DeactivatePipeline</a>.
+            </para><para>
+            To activate a finished pipeline, modify the end date for the pipeline and then activate
+            it.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.EnableDPPipelineCmdlet.ParameterValue">
+            <summary>
+            <para>
+            <para>A list of parameter values to pass to the pipeline at activation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.EnableDPPipelineCmdlet.PipelineId">
+            <summary>
+            <para>
+            <para>The ID of the pipeline.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.EnableDPPipelineCmdlet.StartTimestamp">
+            <summary>
+            <para>
+            <para>The date and time to resume the pipeline. By default, the pipeline resumes from the
+            last completed execution.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.EnableDPPipelineCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DataPipeline.Model.ActivatePipelineResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.EnableDPPipelineCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PipelineId parameter.
+            The -PassThru parameter is deprecated, use -Select '^PipelineId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.EnableDPPipelineCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DP.FindDPObjectCmdlet">
+            <summary>
+            Queries the specified pipeline for the names of objects that match the specified set
+            of conditions.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.FindDPObjectCmdlet.PipelineId">
+            <summary>
+            <para>
+            <para>The ID of the pipeline.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.FindDPObjectCmdlet.Query_Selector">
+            <summary>
+            <para>
+            <para>List of selectors that define the query. An object must satisfy all of the selectors
+            to match the query.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.FindDPObjectCmdlet.Sphere">
+            <summary>
+            <para>
+            <para>Indicates whether the query applies to components or instances. The possible values
+            are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.FindDPObjectCmdlet.Limit">
+            <summary>
+            <para>
+            <para>The maximum number of object names that <code>QueryObjects</code> will return in a
+            single call. The default value is 100. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.FindDPObjectCmdlet.Marker">
+            <summary>
+            <para>
+            <para>The starting point for the results to be returned. For the first call, this value
+            should be empty. As long as there are more results, continue to call <code>QueryObjects</code>
+            with the marker value from the previous call to retrieve the next set of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-Marker $null' for the first call and '-Marker $AWSHistory.LastServiceResponse.Marker' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.FindDPObjectCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Ids'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DataPipeline.Model.QueryObjectsResponse).
+            Specifying the name of a property of type Amazon.DataPipeline.Model.QueryObjectsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.FindDPObjectCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PipelineId parameter.
+            The -PassThru parameter is deprecated, use -Select '^PipelineId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.FindDPObjectCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of Marker
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DP.GetDPObjectCmdlet">
+            <summary>
+            Gets the object definitions for a set of objects associated with the pipeline. Object
+            definitions are composed of a set of fields that define the properties of the object.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.GetDPObjectCmdlet.EvaluateExpression">
+            <summary>
+            <para>
+            <para>Indicates whether any expressions in the object should be evaluated when the object
+            descriptions are returned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.GetDPObjectCmdlet.ObjectId">
+            <summary>
+            <para>
+            <para>The IDs of the pipeline objects that contain the definitions to be described. You
+            can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.GetDPObjectCmdlet.PipelineId">
+            <summary>
+            <para>
+            <para>The ID of the pipeline that contains the object definitions.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.GetDPObjectCmdlet.Marker">
+            <summary>
+            <para>
+            <para>The starting point for the results to be returned. For the first call, this value
+            should be empty. As long as there are more results, continue to call <code>DescribeObjects</code>
+            with the marker value from the previous call to retrieve the next set of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-Marker $null' for the first call and '-Marker $AWSHistory.LastServiceResponse.Marker' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.GetDPObjectCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'PipelineObjects'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DataPipeline.Model.DescribeObjectsResponse).
+            Specifying the name of a property of type Amazon.DataPipeline.Model.DescribeObjectsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.GetDPObjectCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PipelineId parameter.
+            The -PassThru parameter is deprecated, use -Select '^PipelineId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.GetDPObjectCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of Marker
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DP.GetDPPipelineCmdlet">
+            <summary>
+            Lists the pipeline identifiers for all active pipelines that you have permission to
+            access.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.GetDPPipelineCmdlet.Marker">
+            <summary>
+            <para>
+            <para>The starting point for the results to be returned. For the first call, this value
+            should be empty. As long as there are more results, continue to call <code>ListPipelines</code>
+            with the marker value from the previous call to retrieve the next set of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-Marker $null' for the first call and '-Marker $AWSHistory.LastServiceResponse.Marker' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.GetDPPipelineCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'PipelineIdList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DataPipeline.Model.ListPipelinesResponse).
+            Specifying the name of a property of type Amazon.DataPipeline.Model.ListPipelinesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.GetDPPipelineCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of Marker
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DP.GetDPPipelineDefinitionCmdlet">
+            <summary>
+            Gets the definition of the specified pipeline. You can call <code>GetPipelineDefinition</code>
+            to retrieve the pipeline definition that you provided using <a>PutPipelineDefinition</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.GetDPPipelineDefinitionCmdlet.PipelineId">
+            <summary>
+            <para>
+            <para>The ID of the pipeline.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.GetDPPipelineDefinitionCmdlet.Version">
+            <summary>
+            <para>
+            <para>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code>
+            (default) to use the last definition saved to the pipeline or <code>active</code>
+            to use the last definition that was activated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.GetDPPipelineDefinitionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DataPipeline.Model.GetPipelineDefinitionResponse).
+            Specifying the name of a property of type Amazon.DataPipeline.Model.GetPipelineDefinitionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.GetDPPipelineDefinitionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PipelineId parameter.
+            The -PassThru parameter is deprecated, use -Select '^PipelineId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DP.GetDPPipelineDescriptionCmdlet">
+            <summary>
+            Retrieves metadata about one or more pipelines. The information retrieved includes
+            the name of the pipeline, the pipeline identifier, its current state, and the user
+            account that owns the pipeline. Using account credentials, you can retrieve metadata
+            about pipelines that you or your IAM users have created. If you are using an IAM user
+            account, you can retrieve metadata about only those pipelines for which you have read
+            permissions.
+            
+             
+            <para>
+            To retrieve the full pipeline definition instead of metadata about the pipeline, call
+            <a>GetPipelineDefinition</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.GetDPPipelineDescriptionCmdlet.PipelineId">
+            <summary>
+            <para>
+            <para>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a
+            single call. To obtain pipeline IDs, call <a>ListPipelines</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.GetDPPipelineDescriptionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'PipelineDescriptionList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DataPipeline.Model.DescribePipelinesResponse).
+            Specifying the name of a property of type Amazon.DataPipeline.Model.DescribePipelinesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.GetDPPipelineDescriptionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PipelineId parameter.
+            The -PassThru parameter is deprecated, use -Select '^PipelineId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DP.GetDPTaskCmdlet">
+            <summary>
+            Task runners call <code>PollForTask</code> to receive a task to perform from AWS Data
+            Pipeline. The task runner specifies which tasks it can perform by setting a value
+            for the <code>workerGroup</code> parameter. The task returned can come from any of
+            the pipelines that match the <code>workerGroup</code> value passed in by the task
+            runner and that was launched using the IAM user credentials specified by the task
+            runner.
+            
+             
+            <para>
+            If tasks are ready in the work queue, <code>PollForTask</code> returns a response
+            immediately. If no tasks are available in the queue, <code>PollForTask</code> uses
+            long-polling and holds on to a poll connection for up to a 90 seconds, during which
+            time the first newly scheduled task is handed to the task runner. To accomodate this,
+            set the socket timeout in your task runner to 90 seconds. The task runner should not
+            call <code>PollForTask</code> again on the same <code>workerGroup</code> until it
+            receives a response, and this can take up to 90 seconds. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.GetDPTaskCmdlet.InstanceIdentity_Document">
+            <summary>
+            <para>
+            <para>A description of an EC2 instance that is generated when the instance is launched and
+            exposed to the instance via the instance metadata service in the form of a JSON representation
+            of an object.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.GetDPTaskCmdlet.Hostname">
+            <summary>
+            <para>
+            <para>The public DNS name of the calling task runner.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.GetDPTaskCmdlet.InstanceIdentity_Signature">
+            <summary>
+            <para>
+            <para>A signature which can be used to verify the accuracy and authenticity of the information
+            provided in the instance identity document.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.GetDPTaskCmdlet.WorkerGroup">
+            <summary>
+            <para>
+            <para>The type of task the task runner is configured to accept and process. The worker group
+            is set as a field on objects in the pipeline when they are created. You can only specify
+            a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>.
+            There are no wildcard values permitted in <code>workerGroup</code>; the string must
+            be an exact, case-sensitive, match.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.GetDPTaskCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TaskObject'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DataPipeline.Model.PollForTaskResponse).
+            Specifying the name of a property of type Amazon.DataPipeline.Model.PollForTaskResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.GetDPTaskCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the WorkerGroup parameter.
+            The -PassThru parameter is deprecated, use -Select '^WorkerGroup' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DP.InvokeDPExpressionCmdlet">
+            <summary>
+            Task runners call <code>EvaluateExpression</code> to evaluate a string in the context
+            of the specified object. For example, a task runner can evaluate SQL queries stored
+            in Amazon S3.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.InvokeDPExpressionCmdlet.Expression">
+            <summary>
+            <para>
+            <para>The expression to evaluate.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.InvokeDPExpressionCmdlet.ObjectId">
+            <summary>
+            <para>
+            <para>The ID of the object.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.InvokeDPExpressionCmdlet.PipelineId">
+            <summary>
+            <para>
+            <para>The ID of the pipeline.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.InvokeDPExpressionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EvaluatedExpression'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DataPipeline.Model.EvaluateExpressionResponse).
+            Specifying the name of a property of type Amazon.DataPipeline.Model.EvaluateExpressionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.InvokeDPExpressionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PipelineId parameter.
+            The -PassThru parameter is deprecated, use -Select '^PipelineId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.InvokeDPExpressionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DP.NewDPPipelineCmdlet">
+            <summary>
+            Creates a new, empty pipeline. Use <a>PutPipelineDefinition</a> to populate the pipeline.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.NewDPPipelineCmdlet.Description">
+            <summary>
+            <para>
+            <para>The description for the pipeline.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.NewDPPipelineCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name for the pipeline. You can use the same name for multiple pipelines associated
+            with your AWS account, because AWS Data Pipeline assigns each pipeline a unique pipeline
+            identifier.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.NewDPPipelineCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of tags to associate with the pipeline at creation. Tags let you control access
+            to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
+            User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.NewDPPipelineCmdlet.UniqueId">
+            <summary>
+            <para>
+            <para>A unique identifier. This identifier is not the same as the pipeline identifier assigned
+            by AWS Data Pipeline. You are responsible for defining the format and ensuring the
+            uniqueness of this identifier. You use this parameter to ensure idempotency during
+            repeated calls to <code>CreatePipeline</code>. For example, if the first call to <code>CreatePipeline</code>
+            does not succeed, you can pass in the same unique identifier and pipeline name combination
+            on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code> ensures
+            that if a pipeline already exists with the same name and unique identifier, a new
+            pipeline is not created. Instead, you'll receive the pipeline identifier from the
+            previous attempt. The uniqueness of the name and unique identifier combination is
+            scoped to the AWS account or IAM user credentials.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.NewDPPipelineCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'PipelineId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DataPipeline.Model.CreatePipelineResponse).
+            Specifying the name of a property of type Amazon.DataPipeline.Model.CreatePipelineResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.NewDPPipelineCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.NewDPPipelineCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DP.RemoveDPPipelineCmdlet">
+            <summary>
+            Deletes a pipeline, its pipeline definition, and its run history. AWS Data Pipeline
+            attempts to cancel instances associated with the pipeline that are currently being
+            processed by task runners.
+            
+             
+            <para>
+            Deleting a pipeline cannot be undone. You cannot query or restore a deleted pipeline.
+            To temporarily pause a pipeline instead of deleting it, call <a>SetStatus</a> with
+            the status set to <code>PAUSE</code> on individual components. Components that are
+            paused by <a>SetStatus</a> can be resumed.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.RemoveDPPipelineCmdlet.PipelineId">
+            <summary>
+            <para>
+            <para>The ID of the pipeline.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.RemoveDPPipelineCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DataPipeline.Model.DeletePipelineResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.RemoveDPPipelineCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PipelineId parameter.
+            The -PassThru parameter is deprecated, use -Select '^PipelineId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.RemoveDPPipelineCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DP.RemoveDPResourceTagCmdlet">
+            <summary>
+            Removes existing tags from the specified pipeline.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.RemoveDPResourceTagCmdlet.PipelineId">
+            <summary>
+            <para>
+            <para>The ID of the pipeline.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.RemoveDPResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>The keys of the tags to remove.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.RemoveDPResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DataPipeline.Model.RemoveTagsResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.RemoveDPResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PipelineId parameter.
+            The -PassThru parameter is deprecated, use -Select '^PipelineId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.RemoveDPResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DP.SetDPStatusCmdlet">
+            <summary>
+            Requests that the status of the specified physical or logical pipeline objects be
+            updated in the specified pipeline. This update might not occur immediately, but is
+            eventually consistent. The status that can be set depends on the type of object (for
+            example, DataNode or Activity). You cannot perform this operation on <code>FINISHED</code>
+            pipelines and attempting to do so returns <code>InvalidRequestException</code>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.SetDPStatusCmdlet.ObjectId">
+            <summary>
+            <para>
+            <para>The IDs of the objects. The corresponding objects can be either physical or components,
+            but not a mix of both types.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.SetDPStatusCmdlet.PipelineId">
+            <summary>
+            <para>
+            <para>The ID of the pipeline that contains the objects.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.SetDPStatusCmdlet.Status">
+            <summary>
+            <para>
+            <para>The status to be set on all the objects specified in <code>objectIds</code>. For components,
+            use <code>PAUSE</code> or <code>RESUME</code>. For instances, use <code>TRY_CANCEL</code>,
+            <code>RERUN</code>, or <code>MARK_FINISHED</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.SetDPStatusCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DataPipeline.Model.SetStatusResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.SetDPStatusCmdlet.PassThru">
+            <summary>
+            Returns the object ids
+            The -PassThru parameter is deprecated, use -Select instead. This parameter will be removed in future
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.SetDPStatusCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DP.SetDPTaskStatusCmdlet">
+            <summary>
+            Task runners call <code>SetTaskStatus</code> to notify AWS Data Pipeline that a task
+            is completed and provide information about the final status. A task runner makes this
+            call regardless of whether the task was sucessful. A task runner does not need to
+            call <code>SetTaskStatus</code> for tasks that are canceled by the web service during
+            a call to <a>ReportTaskProgress</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.SetDPTaskStatusCmdlet.ErrorId">
+            <summary>
+            <para>
+            <para>If an error occurred during the task, this value specifies the error code. This value
+            is set on the physical attempt object. It is used to display error information to
+            the user. It should not start with string "Service_" which is reserved by the system.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.SetDPTaskStatusCmdlet.ErrorMessage">
+            <summary>
+            <para>
+            <para>If an error occurred during the task, this value specifies a text description of the
+            error. This value is set on the physical attempt object. It is used to display error
+            information to the user. The web service does not parse this value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.SetDPTaskStatusCmdlet.ErrorStackTrace">
+            <summary>
+            <para>
+            <para>If an error occurred during the task, this value specifies the stack trace associated
+            with the error. This value is set on the physical attempt object. It is used to display
+            error information to the user. The web service does not parse this value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.SetDPTaskStatusCmdlet.TaskId">
+            <summary>
+            <para>
+            <para>The ID of the task assigned to the task runner. This value is provided in the response
+            for <a>PollForTask</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.SetDPTaskStatusCmdlet.TaskStatus">
+            <summary>
+            <para>
+            <para>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>,
+            the task ended unsuccessfully. Preconditions use false.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.SetDPTaskStatusCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DataPipeline.Model.SetTaskStatusResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.SetDPTaskStatusCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TaskId parameter.
+            The -PassThru parameter is deprecated, use -Select '^TaskId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.SetDPTaskStatusCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DP.TestDPPipelineDefinitionCmdlet">
+            <summary>
+            Validates the specified pipeline definition to ensure that it is well formed and can
+            be run without error.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.TestDPPipelineDefinitionCmdlet.ParameterObject">
+            <summary>
+            <para>
+            <para>The parameter objects used with the pipeline.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.TestDPPipelineDefinitionCmdlet.ParameterValue">
+            <summary>
+            <para>
+            <para>The parameter values used with the pipeline.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.TestDPPipelineDefinitionCmdlet.PipelineId">
+            <summary>
+            <para>
+            <para>The ID of the pipeline.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.TestDPPipelineDefinitionCmdlet.PipelineObject">
+            <summary>
+            <para>
+            <para>The objects that define the pipeline changes to validate against the pipeline.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.TestDPPipelineDefinitionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DataPipeline.Model.ValidatePipelineDefinitionResponse).
+            Specifying the name of a property of type Amazon.DataPipeline.Model.ValidatePipelineDefinitionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.TestDPPipelineDefinitionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PipelineId parameter.
+            The -PassThru parameter is deprecated, use -Select '^PipelineId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DP.UpdateDPTaskProgressCmdlet">
+            <summary>
+            Task runners call <code>ReportTaskProgress</code> when assigned a task to acknowledge
+            that it has the task. If the web service does not receive this acknowledgement within
+            2 minutes, it assigns the task in a subsequent <a>PollForTask</a> call. After this
+            initial acknowledgement, the task runner only needs to report progress every 15 minutes
+            to maintain its ownership of the task. You can change this reporting time from 15
+            minutes by specifying a <code>reportProgressTimeout</code> field in your pipeline.
+            
+             
+            <para>
+            If a task runner does not report its status after 5 minutes, AWS Data Pipeline assumes
+            that the task runner is unable to process the task and reassigns the task in a subsequent
+            response to <a>PollForTask</a>. Task runners should call <code>ReportTaskProgress</code>
+            every 60 seconds.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.UpdateDPTaskProgressCmdlet.Field">
+            <summary>
+            <para>
+            <para>Key-value pairs that define the properties of the ReportTaskProgressInput object.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.UpdateDPTaskProgressCmdlet.TaskId">
+            <summary>
+            <para>
+            <para>The ID of the task assigned to the task runner. This value is provided in the response
+            for <a>PollForTask</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.UpdateDPTaskProgressCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Canceled'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DataPipeline.Model.ReportTaskProgressResponse).
+            Specifying the name of a property of type Amazon.DataPipeline.Model.ReportTaskProgressResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.UpdateDPTaskProgressCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TaskId parameter.
+            The -PassThru parameter is deprecated, use -Select '^TaskId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.UpdateDPTaskProgressCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DP.UpdateDPTaskRunnerHeartbeatCmdlet">
+            <summary>
+            Task runners call <code>ReportTaskRunnerHeartbeat</code> every 15 minutes to indicate
+            that they are operational. If the AWS Data Pipeline Task Runner is launched on a resource
+            managed by AWS Data Pipeline, the web service can use this call to detect when the
+            task runner application has failed and restart a new instance.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.UpdateDPTaskRunnerHeartbeatCmdlet.Hostname">
+            <summary>
+            <para>
+            <para>The public DNS name of the task runner.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.UpdateDPTaskRunnerHeartbeatCmdlet.TaskrunnerId">
+            <summary>
+            <para>
+            <para>The ID of the task runner. This value should be unique across your AWS account. In
+            the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data
+            Pipeline, the web service provides a unique identifier when it launches the application.
+            If you have written a custom task runner, you should assign a unique identifier for
+            the task runner.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.UpdateDPTaskRunnerHeartbeatCmdlet.WorkerGroup">
+            <summary>
+            <para>
+            <para>The type of task the task runner is configured to accept and process. The worker group
+            is set as a field on objects in the pipeline when they are created. You can only specify
+            a single value for <code>workerGroup</code>. There are no wildcard values permitted
+            in <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.UpdateDPTaskRunnerHeartbeatCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Terminate'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DataPipeline.Model.ReportTaskRunnerHeartbeatResponse).
+            Specifying the name of a property of type Amazon.DataPipeline.Model.ReportTaskRunnerHeartbeatResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.UpdateDPTaskRunnerHeartbeatCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TaskrunnerId parameter.
+            The -PassThru parameter is deprecated, use -Select '^TaskrunnerId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.UpdateDPTaskRunnerHeartbeatCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DP.WriteDPPipelineDefinitionCmdlet">
+            <summary>
+            Adds tasks, schedules, and preconditions to the specified pipeline. You can use <code>PutPipelineDefinition</code>
+            to populate a new pipeline.
+            
+             
+            <para><code>PutPipelineDefinition</code> also validates the configuration as it adds it
+            to the pipeline. Changes to the pipeline are saved unless one of the following three
+            validation errors exists in the pipeline. 
+            </para><ol><li>An object is missing a name or identifier field.</li><li>A string or reference
+            field is empty.</li><li>The number of objects in the pipeline exceeds the maximum
+            allowed objects.</li><li>The pipeline is in a FINISHED state.</li></ol><para>
+             Pipeline object definitions are passed to the <code>PutPipelineDefinition</code>
+            action and returned by the <a>GetPipelineDefinition</a> action. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.WriteDPPipelineDefinitionCmdlet.ParameterObject">
+            <summary>
+            <para>
+            <para>The parameter objects used with the pipeline.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.WriteDPPipelineDefinitionCmdlet.ParameterValue">
+            <summary>
+            <para>
+            <para>The parameter values used with the pipeline.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.WriteDPPipelineDefinitionCmdlet.PipelineId">
+            <summary>
+            <para>
+            <para>The ID of the pipeline.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.WriteDPPipelineDefinitionCmdlet.PipelineObject">
+            <summary>
+            <para>
+            <para>The objects that define the pipeline. These objects overwrite the existing pipeline
+            definition.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.WriteDPPipelineDefinitionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DataPipeline.Model.PutPipelineDefinitionResponse).
+            Specifying the name of a property of type Amazon.DataPipeline.Model.PutPipelineDefinitionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.WriteDPPipelineDefinitionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PipelineId parameter.
+            The -PassThru parameter is deprecated, use -Select '^PipelineId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DP.WriteDPPipelineDefinitionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

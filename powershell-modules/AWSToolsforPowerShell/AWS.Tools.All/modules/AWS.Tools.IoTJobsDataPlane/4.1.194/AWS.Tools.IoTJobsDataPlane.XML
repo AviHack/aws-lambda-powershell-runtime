@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.IoTJobsDataPlane</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.IOTJ.GetIOTJJobExecutionCmdlet">
+            <summary>
+            Gets details of a job execution.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.GetIOTJJobExecutionCmdlet.ExecutionNumber">
+            <summary>
+            <para>
+            <para>Optional. A number that identifies a particular job execution on a particular device.
+            If not specified, the latest job execution is returned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.GetIOTJJobExecutionCmdlet.IncludeJobDocument">
+            <summary>
+            <para>
+            <para>Optional. When set to true, the response contains the job document. The default is
+            false.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.GetIOTJJobExecutionCmdlet.JobId">
+            <summary>
+            <para>
+            <para>The unique identifier assigned to this job when it was created.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.GetIOTJJobExecutionCmdlet.ThingName">
+            <summary>
+            <para>
+            <para>The thing name associated with the device the job execution is running on.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.GetIOTJJobExecutionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Execution'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IoTJobsDataPlane.Model.DescribeJobExecutionResponse).
+            Specifying the name of a property of type Amazon.IoTJobsDataPlane.Model.DescribeJobExecutionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.GetIOTJJobExecutionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IOTJ.GetIOTJPendingJobExecutionCmdlet">
+            <summary>
+            Gets the list of all jobs for a thing that are not in a terminal status.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.GetIOTJPendingJobExecutionCmdlet.ThingName">
+            <summary>
+            <para>
+            <para>The name of the thing that is executing the job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.GetIOTJPendingJobExecutionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IoTJobsDataPlane.Model.GetPendingJobExecutionsResponse).
+            Specifying the name of a property of type Amazon.IoTJobsDataPlane.Model.GetPendingJobExecutionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.GetIOTJPendingJobExecutionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ThingName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ThingName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IOTJ.StartIOTJNextPendingJobExecutionCmdlet">
+            <summary>
+            Gets and starts the next pending (status IN_PROGRESS or QUEUED) job execution for
+            a thing.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.StartIOTJNextPendingJobExecutionCmdlet.StatusDetail">
+            <summary>
+            <para>
+            <para>A collection of name/value pairs that describe the status of the job execution. If
+            not specified, the statusDetails are unchanged.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.StartIOTJNextPendingJobExecutionCmdlet.StepTimeoutInMinute">
+            <summary>
+            <para>
+            <para>Specifies the amount of time this device has to finish execution of this job. If the
+            job execution status is not set to a terminal state before this timer expires, or
+            before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the
+            status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>)
+            the job execution status will be automatically set to <code>TIMED_OUT</code>. Note
+            that setting this timeout has no effect on that job execution timeout which may have
+            been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.StartIOTJNextPendingJobExecutionCmdlet.ThingName">
+            <summary>
+            <para>
+            <para>The name of the thing associated with the device.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.StartIOTJNextPendingJobExecutionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Execution'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IoTJobsDataPlane.Model.StartNextPendingJobExecutionResponse).
+            Specifying the name of a property of type Amazon.IoTJobsDataPlane.Model.StartNextPendingJobExecutionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.StartIOTJNextPendingJobExecutionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ThingName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ThingName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.StartIOTJNextPendingJobExecutionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.IOTJ.UpdateIOTJJobExecutionCmdlet">
+            <summary>
+            Updates the status of a job execution.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.UpdateIOTJJobExecutionCmdlet.ExecutionNumber">
+            <summary>
+            <para>
+            <para>Optional. A number that identifies a particular job execution on a particular device.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.UpdateIOTJJobExecutionCmdlet.ExpectedVersion">
+            <summary>
+            <para>
+            <para>Optional. The expected current version of the job execution. Each time you update
+            the job execution, its version is incremented. If the version of the job execution
+            stored in Jobs does not match, the update is rejected with a VersionMismatch error,
+            and an ErrorResponse that contains the current job execution status data is returned.
+            (This makes it unnecessary to perform a separate DescribeJobExecution request in order
+            to obtain the job execution status data.)</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.UpdateIOTJJobExecutionCmdlet.IncludeJobDocument">
+            <summary>
+            <para>
+            <para>Optional. When set to true, the response contains the job document. The default is
+            false.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.UpdateIOTJJobExecutionCmdlet.IncludeJobExecutionState">
+            <summary>
+            <para>
+            <para>Optional. When included and set to true, the response contains the JobExecutionState
+            data. The default is false.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.UpdateIOTJJobExecutionCmdlet.JobId">
+            <summary>
+            <para>
+            <para>The unique identifier assigned to this job when it was created.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.UpdateIOTJJobExecutionCmdlet.Status">
+            <summary>
+            <para>
+            <para>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED).
+            This must be specified on every update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.UpdateIOTJJobExecutionCmdlet.StatusDetail">
+            <summary>
+            <para>
+            <para> Optional. A collection of name/value pairs that describe the status of the job execution.
+            If not specified, the statusDetails are unchanged.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.UpdateIOTJJobExecutionCmdlet.StepTimeoutInMinute">
+            <summary>
+            <para>
+            <para>Specifies the amount of time this device has to finish execution of this job. If the
+            job execution status is not set to a terminal state before this timer expires, or
+            before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting
+            the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this
+            field) the job execution status will be automatically set to <code>TIMED_OUT</code>.
+            Note that setting or resetting this timeout has no effect on that job execution timeout
+            which may have been specified when the job was created (<code>CreateJob</code> using
+            field <code>timeoutConfig</code>).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.UpdateIOTJJobExecutionCmdlet.ThingName">
+            <summary>
+            <para>
+            <para>The name of the thing associated with the device.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.UpdateIOTJJobExecutionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.IoTJobsDataPlane.Model.UpdateJobExecutionResponse).
+            Specifying the name of a property of type Amazon.IoTJobsDataPlane.Model.UpdateJobExecutionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.UpdateIOTJJobExecutionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.IOTJ.UpdateIOTJJobExecutionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

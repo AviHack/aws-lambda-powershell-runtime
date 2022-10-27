@@ -1,0 +1,1721 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.RAM</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.RAM.AddRAMPermissionToResourceShareCmdlet">
+            <summary>
+            Adds or replaces the RAM permission for a resource type included in a resource share.
+            You can have exactly one permission associated with each resource type in the resource
+            share. You can add a new RAM permission only if there are currently no resources of
+            that resource type currently in the resource share.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.AddRAMPermissionToResourceShareCmdlet.PermissionArn">
+            <summary>
+            <para>
+            <para>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resoure Name (ARN)</a> of the RAM permission to associate with the resource share.
+            To find the ARN for a permission, use either the <a>ListPermissions</a> operation
+            or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions
+            library</a> page in the RAM console and then choose the name of the permission. The
+            ARN is displayed on the detail page.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.AddRAMPermissionToResourceShareCmdlet.PermissionVersion">
+            <summary>
+            <para>
+            <para>Specifies the version of the RAM permission to associate with the resource share.
+            If you don't specify this parameter, the operation uses the version designated as
+            the default. You can use the <a>ListPermissionVersions</a> operation to discover the
+            available versions of a permission.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.AddRAMPermissionToResourceShareCmdlet.Replace">
+            <summary>
+            <para>
+            <para>Specifies whether the specified permission should replace or add to the existing permission
+            associated with the resource share. Use <code>true</code> to replace the current permissions.
+            Use <code>false</code> to add the permission to the current permission. The default
+            value is <code>false</code>.</para><note><para>A resource share can have only one permission per resource type. If a resource share
+            already has a permission for the specified resource type and you don't set <code>replace</code>
+            to <code>true</code> then the operation returns an error. This helps prevent accidental
+            overwriting of a permission.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.AddRAMPermissionToResourceShareCmdlet.ResourceShareArn">
+            <summary>
+            <para>
+            <para>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resoure Name (ARN)</a> of the resource share to which you want to add or replace permissions.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.AddRAMPermissionToResourceShareCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency
+            of the request. This lets you safely retry the request without accidentally performing
+            the same operation a second time. Passing the same value to a later call to an operation
+            requires that you also pass the same value for all other parameters. We recommend
+            that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID
+            type of value.</a>.</para><para>If you don't provide this value, then Amazon Web Services generates a random one for
+            you.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.AddRAMPermissionToResourceShareCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ReturnValue'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RAM.Model.AssociateResourceSharePermissionResponse).
+            Specifying the name of a property of type Amazon.RAM.Model.AssociateResourceSharePermissionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.AddRAMPermissionToResourceShareCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PermissionArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^PermissionArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.AddRAMPermissionToResourceShareCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RAM.AddRAMResourceTagCmdlet">
+            <summary>
+            Adds the specified tag keys and values to the specified resource share. The tags are
+            attached only to the resource share, not to the resources that are in the resource
+            share.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.AddRAMResourceTagCmdlet.ResourceShareArn">
+            <summary>
+            <para>
+            <para>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resoure Name (ARN)</a> of the resource share that you want to add tags to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.AddRAMResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of one or more tag key and value pairs. The tag key must be present and not
+            be an empty string. The tag value must be present but can be an empty string.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.AddRAMResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RAM.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.AddRAMResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceShareArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceShareArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.AddRAMResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RAM.ConfirmRAMResourceShareInvitationCmdlet">
+            <summary>
+            Accepts an invitation to a resource share from another Amazon Web Services account.
+            After you accept the invitation, the resources included in the resource share are
+            available to interact with in the relevant Amazon Web Services Management Consoles
+            and tools.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.ConfirmRAMResourceShareInvitationCmdlet.ResourceShareInvitationArn">
+            <summary>
+            <para>
+            <para>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resoure Name (ARN)</a> of the invitation that you want to accept.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.ConfirmRAMResourceShareInvitationCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency
+            of the request. This lets you safely retry the request without accidentally performing
+            the same operation a second time. Passing the same value to a later call to an operation
+            requires that you also pass the same value for all other parameters. We recommend
+            that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID
+            type of value.</a>.</para><para>If you don't provide this value, then Amazon Web Services generates a random one for
+            you.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.ConfirmRAMResourceShareInvitationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ResourceShareInvitation'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RAM.Model.AcceptResourceShareInvitationResponse).
+            Specifying the name of a property of type Amazon.RAM.Model.AcceptResourceShareInvitationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.ConfirmRAMResourceShareInvitationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceShareInvitationArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceShareInvitationArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.ConfirmRAMResourceShareInvitationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RAM.ConnectRAMResourceShareCmdlet">
+            <summary>
+            Adds the specified list of principals and list of resources to a resource share. Principals
+            that already have access to this resource share immediately receive access to the
+            added resources. Newly added principals immediately receive access to the resources
+            shared in this resource share.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.ConnectRAMResourceShareCmdlet.Principal">
+            <summary>
+            <para>
+            <para>Specifies a list of principals to whom you want to the resource share. This can be
+            <code>null</code> if you want to add only resources.</para><para>What the principals can do with the resources in the share is determined by the RAM
+            permissions that you associate with the resource share. See <a>AssociateResourceSharePermission</a>.</para><para>You can include the following values:</para><ul><li><para>An Amazon Web Services account ID, for example: <code>123456789012</code></para></li><li><para>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code></para></li><li><para>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code></para></li><li><para>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></para></li><li><para>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></para></li></ul><note><para>Not all resource types can be shared with IAM roles and users. For more information,
+            see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing
+            with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.ConnectRAMResourceShareCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resource Names (ARNs)</a> of the resources that you want to share. This can be <code>null</code>
+            if you want to add only principals.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.ConnectRAMResourceShareCmdlet.ResourceShareArn">
+            <summary>
+            <para>
+            <para>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resoure Name (ARN)</a> of the resource share that you want to add principals or resources
+            to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.ConnectRAMResourceShareCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency
+            of the request. This lets you safely retry the request without accidentally performing
+            the same operation a second time. Passing the same value to a later call to an operation
+            requires that you also pass the same value for all other parameters. We recommend
+            that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID
+            type of value.</a>.</para><para>If you don't provide this value, then Amazon Web Services generates a random one for
+            you.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.ConnectRAMResourceShareCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ResourceShareAssociations'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RAM.Model.AssociateResourceShareResponse).
+            Specifying the name of a property of type Amazon.RAM.Model.AssociateResourceShareResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.ConnectRAMResourceShareCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceShareArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceShareArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.ConnectRAMResourceShareCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RAM.ConvertRAMPolicyBasedResourceShareToPromotedCmdlet">
+            <summary>
+            When you attach a resource-based permission policy to a resource, it automatically
+            creates a resource share. However, resource shares created this way are visible only
+            to the resource share owner, and the resource share can't be modified in RAM.
+            
+             
+            <para>
+            You can use this operation to promote the resource share to a full RAM resource share.
+            When you promote a resource share, you can then manage the resource share in RAM and
+            it becomes visible to all of the principals you shared it with.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.ConvertRAMPolicyBasedResourceShareToPromotedCmdlet.ResourceShareArn">
+            <summary>
+            <para>
+            <para>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resoure Name (ARN)</a> of the resource share to promote.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.ConvertRAMPolicyBasedResourceShareToPromotedCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ReturnValue'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RAM.Model.PromoteResourceShareCreatedFromPolicyResponse).
+            Specifying the name of a property of type Amazon.RAM.Model.PromoteResourceShareCreatedFromPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.ConvertRAMPolicyBasedResourceShareToPromotedCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceShareArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceShareArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.ConvertRAMPolicyBasedResourceShareToPromotedCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RAM.DenyRAMResourceShareInvitationCmdlet">
+            <summary>
+            Rejects an invitation to a resource share from another Amazon Web Services account.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.DenyRAMResourceShareInvitationCmdlet.ResourceShareInvitationArn">
+            <summary>
+            <para>
+            <para>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resoure Name (ARN)</a> of the invitation that you want to reject.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.DenyRAMResourceShareInvitationCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency
+            of the request. This lets you safely retry the request without accidentally performing
+            the same operation a second time. Passing the same value to a later call to an operation
+            requires that you also pass the same value for all other parameters. We recommend
+            that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID
+            type of value.</a>.</para><para>If you don't provide this value, then Amazon Web Services generates a random one for
+            you.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.DenyRAMResourceShareInvitationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ResourceShareInvitation'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RAM.Model.RejectResourceShareInvitationResponse).
+            Specifying the name of a property of type Amazon.RAM.Model.RejectResourceShareInvitationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.DenyRAMResourceShareInvitationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceShareInvitationArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceShareInvitationArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.DenyRAMResourceShareInvitationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RAM.DisconnectRAMResourceShareCmdlet">
+            <summary>
+            Disassociates the specified principals or resources from the specified resource share.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.DisconnectRAMResourceShareCmdlet.Principal">
+            <summary>
+            <para>
+            <para>Specifies a list of one or more principals that no longer are to have access to the
+            resources in this resource share.</para><para>You can include the following values:</para><ul><li><para>An Amazon Web Services account ID, for example: <code>123456789012</code></para></li><li><para>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code></para></li><li><para>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code></para></li><li><para>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></para></li><li><para>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></para></li></ul><note><para>Not all resource types can be shared with IAM roles and users. For more information,
+            see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing
+            with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.DisconnectRAMResourceShareCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resource Names (ARNs)</a> for one or more resources that you want to remove from the
+            resource share. After the operation runs, these resources are no longer shared with
+            principals outside of the Amazon Web Services account that created the resources.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.DisconnectRAMResourceShareCmdlet.ResourceShareArn">
+            <summary>
+            <para>
+            <para>Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resoure Name (ARN)</a> of the resource share that you want to remove resources from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.DisconnectRAMResourceShareCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency
+            of the request. This lets you safely retry the request without accidentally performing
+            the same operation a second time. Passing the same value to a later call to an operation
+            requires that you also pass the same value for all other parameters. We recommend
+            that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID
+            type of value.</a>.</para><para>If you don't provide this value, then Amazon Web Services generates a random one for
+            you.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.DisconnectRAMResourceShareCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ResourceShareAssociations'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RAM.Model.DisassociateResourceShareResponse).
+            Specifying the name of a property of type Amazon.RAM.Model.DisassociateResourceShareResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.DisconnectRAMResourceShareCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceShareArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceShareArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.DisconnectRAMResourceShareCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RAM.EnableRAMSharingWithAwsOrganizationCmdlet">
+            <summary>
+            Enables resource sharing within your organization in Organizations. Calling this operation
+            enables RAM to retrieve information about the organization and its structure. This
+            lets you share resources with all of the accounts in an organization by specifying
+            the organization's ID, or all of the accounts in an organizational unit (OU) by specifying
+            the OU's ID. Until you enable sharing within the organization, you can specify only
+            individual Amazon Web Services accounts, or for supported resource types, IAM users
+            and roles.
+            
+             
+            <para>
+            You must call this operation from an IAM user or role in the organization's management
+            account.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.EnableRAMSharingWithAwsOrganizationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ReturnValue'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RAM.Model.EnableSharingWithAwsOrganizationResponse).
+            Specifying the name of a property of type Amazon.RAM.Model.EnableSharingWithAwsOrganizationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.EnableRAMSharingWithAwsOrganizationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RAM.GetRAMPendingInvitationResourceListCmdlet">
+            <summary>
+            Lists the resources in a resource share that is shared with you but for which the
+            invitation is still <code>PENDING</code>. That means that you haven't accepted or
+            rejected the invitation and the invitation hasn't expired.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPendingInvitationResourceListCmdlet.ResourceRegionScope">
+            <summary>
+            <para>
+            <para>Specifies that you want the results to include only resources that have the specified
+            scope.</para><ul><li><para><code>ALL</code> – the results include both global and regional resources or resource
+            types.</para></li><li><para><code>GLOBAL</code> – the results include only global resources or resource types.</para></li><li><para><code>REGIONAL</code> – the results include only regional resources or resource types.</para></li></ul><para>The default value is <code>ALL</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPendingInvitationResourceListCmdlet.ResourceShareInvitationArn">
+            <summary>
+            <para>
+            <para>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resoure Name (ARN)</a> of the invitation. You can use <a>GetResourceShareInvitations</a>
+            to find the ARN of the invitation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPendingInvitationResourceListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Specifies the total number of results that you want included on each page of the response.
+            If you do not include this parameter, it defaults to a value that is specific to the
+            operation. If additional items exist beyond the number you specify, the <code>NextToken</code>
+            response element is returned with a value (not null). Include the specified value
+            as the <code>NextToken</code> request parameter in the next call to the operation
+            to get the next part of the results. Note that the service might return fewer results
+            than the maximum even when there are more results available. You should check <code>NextToken</code>
+            after every operation to ensure that you receive all of the results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>500</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPendingInvitationResourceListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Specifies that you want to receive the next page of results. Valid only if you received
+            a <code>NextToken</code> response in the previous request. If you did, it indicates
+            that more output is available. Set this parameter to the value provided by the previous
+            call's <code>NextToken</code> response to request the next page of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPendingInvitationResourceListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Resources'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RAM.Model.ListPendingInvitationResourcesResponse).
+            Specifying the name of a property of type Amazon.RAM.Model.ListPendingInvitationResourcesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPendingInvitationResourceListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceShareInvitationArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceShareInvitationArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPendingInvitationResourceListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RAM.GetRAMPermissionCmdlet">
+            <summary>
+            Gets the contents of an RAM permission in JSON format.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPermissionCmdlet.PermissionArn">
+            <summary>
+            <para>
+            <para>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resoure Name (ARN)</a> of the permission whose contents you want to retrieve. To find
+            the ARN for a permission, use either the <a>ListPermissions</a> operation or go to
+            the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a>
+            page in the RAM console and then choose the name of the permission. The ARN is displayed
+            on the detail page.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPermissionCmdlet.PermissionVersion">
+            <summary>
+            <para>
+            <para>Specifies identifier for the version of the RAM permission to retrieve. If you don't
+            specify this parameter, the operation retrieves the default version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPermissionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Permission'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RAM.Model.GetPermissionResponse).
+            Specifying the name of a property of type Amazon.RAM.Model.GetPermissionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPermissionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PermissionArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^PermissionArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RAM.GetRAMPermissionListCmdlet">
+            <summary>
+            Retrieves a list of available RAM permissions that you can use for the supported resource
+            types.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPermissionListCmdlet.ResourceType">
+            <summary>
+            <para>
+            <para>Specifies that you want to list permissions for only the specified resource type.
+            For example, to list only permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>.
+            You can use the <a>ListResourceTypes</a> operation to get the specific string required.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPermissionListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Specifies the total number of results that you want included on each page of the response.
+            If you do not include this parameter, it defaults to a value that is specific to the
+            operation. If additional items exist beyond the number you specify, the <code>NextToken</code>
+            response element is returned with a value (not null). Include the specified value
+            as the <code>NextToken</code> request parameter in the next call to the operation
+            to get the next part of the results. Note that the service might return fewer results
+            than the maximum even when there are more results available. You should check <code>NextToken</code>
+            after every operation to ensure that you receive all of the results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>500</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPermissionListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Specifies that you want to receive the next page of results. Valid only if you received
+            a <code>NextToken</code> response in the previous request. If you did, it indicates
+            that more output is available. Set this parameter to the value provided by the previous
+            call's <code>NextToken</code> response to request the next page of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPermissionListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Permissions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RAM.Model.ListPermissionsResponse).
+            Specifying the name of a property of type Amazon.RAM.Model.ListPermissionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPermissionListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceType parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceType' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPermissionListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RAM.GetRAMPermissionVersionListCmdlet">
+            <summary>
+            Lists the available versions of the specified RAM permission.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPermissionVersionListCmdlet.PermissionArn">
+            <summary>
+            <para>
+            <para>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resoure Name (ARN)</a> of the RAM permission whose versions you want to list. You
+            can use the <code>permissionVersion</code> parameter on the <a>AssociateResourceSharePermission</a>
+            operation to specify a non-default version to attach.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPermissionVersionListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Specifies the total number of results that you want included on each page of the response.
+            If you do not include this parameter, it defaults to a value that is specific to the
+            operation. If additional items exist beyond the number you specify, the <code>NextToken</code>
+            response element is returned with a value (not null). Include the specified value
+            as the <code>NextToken</code> request parameter in the next call to the operation
+            to get the next part of the results. Note that the service might return fewer results
+            than the maximum even when there are more results available. You should check <code>NextToken</code>
+            after every operation to ensure that you receive all of the results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPermissionVersionListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Specifies that you want to receive the next page of results. Valid only if you received
+            a <code>NextToken</code> response in the previous request. If you did, it indicates
+            that more output is available. Set this parameter to the value provided by the previous
+            call's <code>NextToken</code> response to request the next page of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPermissionVersionListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Permissions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RAM.Model.ListPermissionVersionsResponse).
+            Specifying the name of a property of type Amazon.RAM.Model.ListPermissionVersionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPermissionVersionListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PermissionArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^PermissionArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPermissionVersionListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RAM.GetRAMPrincipalListCmdlet">
+            <summary>
+            Lists the principals that you are sharing resources with or that are sharing resources
+            with you.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPrincipalListCmdlet.Principal">
+            <summary>
+            <para>
+            <para>Specifies that you want to list information for only the listed principals.</para><para>You can include the following values:</para><ul><li><para>An Amazon Web Services account ID, for example: <code>123456789012</code></para></li><li><para>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code></para></li><li><para>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code></para></li><li><para>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></para></li><li><para>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></para></li></ul><note><para>Not all resource types can be shared with IAM roles and users. For more information,
+            see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing
+            with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPrincipalListCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>Specifies that you want to list principal information for the resource share with
+            the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resoure Name (ARN)</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPrincipalListCmdlet.ResourceOwner">
+            <summary>
+            <para>
+            <para>Specifies that you want to list information for only resource shares that match the
+            following:</para><ul><li><para><b><code>SELF</code></b> – principals that your account is sharing resources with</para></li><li><para><b><code>OTHER-ACCOUNTS</code></b> – principals that are sharing resources with
+            your account</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPrincipalListCmdlet.ResourceShareArn">
+            <summary>
+            <para>
+            <para>Specifies that you want to list information for only principals associated with the
+            resource shares specified by a list the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resource Names (ARNs)</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPrincipalListCmdlet.ResourceType">
+            <summary>
+            <para>
+            <para>Specifies that you want to list information for only principals associated with resource
+            shares that include the specified resource type.</para><para>For a list of valid values, query the <a>ListResourceTypes</a> operation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPrincipalListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Specifies the total number of results that you want included on each page of the response.
+            If you do not include this parameter, it defaults to a value that is specific to the
+            operation. If additional items exist beyond the number you specify, the <code>NextToken</code>
+            response element is returned with a value (not null). Include the specified value
+            as the <code>NextToken</code> request parameter in the next call to the operation
+            to get the next part of the results. Note that the service might return fewer results
+            than the maximum even when there are more results available. You should check <code>NextToken</code>
+            after every operation to ensure that you receive all of the results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>500</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPrincipalListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Specifies that you want to receive the next page of results. Valid only if you received
+            a <code>NextToken</code> response in the previous request. If you did, it indicates
+            that more output is available. Set this parameter to the value provided by the previous
+            call's <code>NextToken</code> response to request the next page of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPrincipalListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Principals'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RAM.Model.ListPrincipalsResponse).
+            Specifying the name of a property of type Amazon.RAM.Model.ListPrincipalsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPrincipalListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceOwner parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceOwner' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMPrincipalListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceListCmdlet">
+            <summary>
+            Lists the resources that you added to a resource share or the resources that are shared
+            with you.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceListCmdlet.Principal">
+            <summary>
+            <para>
+            <para>Specifies that you want to list only the resource shares that are associated with
+            the specified principal.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceListCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>Specifies that you want to list only the resource shares that include resources with
+            the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resource Names (ARNs)</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceListCmdlet.ResourceOwner">
+            <summary>
+            <para>
+            <para>Specifies that you want to list only the resource shares that match the following:</para><ul><li><para><b><code>SELF</code></b> – resources that your account shares with other accounts</para></li><li><para><b><code>OTHER-ACCOUNTS</code></b> – resources that other accounts share with your
+            account</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceListCmdlet.ResourceRegionScope">
+            <summary>
+            <para>
+            <para>Specifies that you want the results to include only resources that have the specified
+            scope.</para><ul><li><para><code>ALL</code> – the results include both global and regional resources or resource
+            types.</para></li><li><para><code>GLOBAL</code> – the results include only global resources or resource types.</para></li><li><para><code>REGIONAL</code> – the results include only regional resources or resource types.</para></li></ul><para>The default value is <code>ALL</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceListCmdlet.ResourceShareArn">
+            <summary>
+            <para>
+            <para>Specifies that you want to list only resources in the resource shares identified by
+            the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resource Names (ARNs)</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceListCmdlet.ResourceType">
+            <summary>
+            <para>
+            <para>Specifies that you want to list only the resource shares that include resources of
+            the specified resource type.</para><para>For valid values, query the <a>ListResourceTypes</a> operation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Specifies the total number of results that you want included on each page of the response.
+            If you do not include this parameter, it defaults to a value that is specific to the
+            operation. If additional items exist beyond the number you specify, the <code>NextToken</code>
+            response element is returned with a value (not null). Include the specified value
+            as the <code>NextToken</code> request parameter in the next call to the operation
+            to get the next part of the results. Note that the service might return fewer results
+            than the maximum even when there are more results available. You should check <code>NextToken</code>
+            after every operation to ensure that you receive all of the results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>500</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Specifies that you want to receive the next page of results. Valid only if you received
+            a <code>NextToken</code> response in the previous request. If you did, it indicates
+            that more output is available. Set this parameter to the value provided by the previous
+            call's <code>NextToken</code> response to request the next page of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Resources'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RAM.Model.ListResourcesResponse).
+            Specifying the name of a property of type Amazon.RAM.Model.ListResourcesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceOwner parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceOwner' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourcePolicyCmdlet">
+            <summary>
+            Retrieves the resource policies for the specified resources that you own and have
+            shared.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourcePolicyCmdlet.Principal">
+            <summary>
+            <para>
+            <para>Specifies the principal.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourcePolicyCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resource Names (ARNs)</a> of the resources whose policies you want to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourcePolicyCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Specifies the total number of results that you want included on each page of the response.
+            If you do not include this parameter, it defaults to a value that is specific to the
+            operation. If additional items exist beyond the number you specify, the <code>NextToken</code>
+            response element is returned with a value (not null). Include the specified value
+            as the <code>NextToken</code> request parameter in the next call to the operation
+            to get the next part of the results. Note that the service might return fewer results
+            than the maximum even when there are more results available. You should check <code>NextToken</code>
+            after every operation to ensure that you receive all of the results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>500</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourcePolicyCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Specifies that you want to receive the next page of results. Valid only if you received
+            a <code>NextToken</code> response in the previous request. If you did, it indicates
+            that more output is available. Set this parameter to the value provided by the previous
+            call's <code>NextToken</code> response to request the next page of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourcePolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Policies'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RAM.Model.GetResourcePoliciesResponse).
+            Specifying the name of a property of type Amazon.RAM.Model.GetResourcePoliciesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourcePolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourcePolicyCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareCmdlet">
+            <summary>
+            Retrieves details about the resource shares that you own or that are shared with you.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareCmdlet.Name">
+            <summary>
+            <para>
+            <para>Specifies the name of an individual resource share that you want to retrieve details
+            about.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareCmdlet.PermissionArn">
+            <summary>
+            <para>
+            <para>Specifies that you want to retrieve details of only those resource shares that use
+            the RAM permission with this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resoure Name (ARN)</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareCmdlet.ResourceOwner">
+            <summary>
+            <para>
+            <para>Specifies that you want to retrieve details of only those resource shares that match
+            the following:</para><ul><li><para><b><code>SELF</code></b> – resource shares that your account shares with other
+            accounts</para></li><li><para><b><code>OTHER-ACCOUNTS</code></b> – resource shares that other accounts share
+            with your account</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareCmdlet.ResourceShareArn">
+            <summary>
+            <para>
+            <para>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resource Names (ARNs)</a> of individual resource shares that you want information
+            about.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareCmdlet.ResourceShareStatus">
+            <summary>
+            <para>
+            <para>Specifies that you want to retrieve details of only those resource shares that have
+            this status.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareCmdlet.TagFilter">
+            <summary>
+            <para>
+            <para>Specifies that you want to retrieve details of only those resource shares that match
+            the specified tag keys and values.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Specifies the total number of results that you want included on each page of the response.
+            If you do not include this parameter, it defaults to a value that is specific to the
+            operation. If additional items exist beyond the number you specify, the <code>NextToken</code>
+            response element is returned with a value (not null). Include the specified value
+            as the <code>NextToken</code> request parameter in the next call to the operation
+            to get the next part of the results. Note that the service might return fewer results
+            than the maximum even when there are more results available. You should check <code>NextToken</code>
+            after every operation to ensure that you receive all of the results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>500</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Specifies that you want to receive the next page of results. Valid only if you received
+            a <code>NextToken</code> response in the previous request. If you did, it indicates
+            that more output is available. Set this parameter to the value provided by the previous
+            call's <code>NextToken</code> response to request the next page of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ResourceShares'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RAM.Model.GetResourceSharesResponse).
+            Specifying the name of a property of type Amazon.RAM.Model.GetResourceSharesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceOwner parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceOwner' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareAssociationCmdlet">
+            <summary>
+            Retrieves the resource and principal associations for resource shares that you own.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareAssociationCmdlet.AssociationStatus">
+            <summary>
+            <para>
+            <para>Specifies that you want to retrieve only associations with this status.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareAssociationCmdlet.AssociationType">
+            <summary>
+            <para>
+            <para>Specifies whether you want to retrieve the associations that involve a specified resource
+            or principal.</para><ul><li><para><code>PRINCIPAL</code> – list the principals that are associated with the specified
+            resource share.</para></li><li><para><code>RESOURCE</code> – list the resources that are associated with the specified
+            resource share.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareAssociationCmdlet.Principal">
+            <summary>
+            <para>
+            <para>Specifies the ID of the principal whose resource shares you want to retrieve. This
+            can be an Amazon Web Services account ID, an organization ID, an organizational unit
+            ID, or the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resoure Name (ARN)</a> of an individual IAM user or role.</para><para>You cannot specify this parameter if the association type is <code>RESOURCE</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareAssociationCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resoure Name (ARN)</a> of the resource whose resource shares you want to retrieve.</para><para>You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareAssociationCmdlet.ResourceShareArn">
+            <summary>
+            <para>
+            <para>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resource Names (ARNs)</a> of the resource share whose associations you want to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareAssociationCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Specifies the total number of results that you want included on each page of the response.
+            If you do not include this parameter, it defaults to a value that is specific to the
+            operation. If additional items exist beyond the number you specify, the <code>NextToken</code>
+            response element is returned with a value (not null). Include the specified value
+            as the <code>NextToken</code> request parameter in the next call to the operation
+            to get the next part of the results. Note that the service might return fewer results
+            than the maximum even when there are more results available. You should check <code>NextToken</code>
+            after every operation to ensure that you receive all of the results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>500</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareAssociationCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Specifies that you want to receive the next page of results. Valid only if you received
+            a <code>NextToken</code> response in the previous request. If you did, it indicates
+            that more output is available. Set this parameter to the value provided by the previous
+            call's <code>NextToken</code> response to request the next page of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareAssociationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ResourceShareAssociations'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RAM.Model.GetResourceShareAssociationsResponse).
+            Specifying the name of a property of type Amazon.RAM.Model.GetResourceShareAssociationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareAssociationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssociationType parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssociationType' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareAssociationCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareInvitationCmdlet">
+            <summary>
+            Retrieves details about invitations that you have received for resource shares.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareInvitationCmdlet.ResourceShareArn">
+            <summary>
+            <para>
+            <para>Specifies that you want details about invitations only for the resource shares described
+            by this list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resource Names (ARNs)</a></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareInvitationCmdlet.ResourceShareInvitationArn">
+            <summary>
+            <para>
+            <para>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resource Names (ARNs)</a> of the resource share invitations you want information about.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareInvitationCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Specifies the total number of results that you want included on each page of the response.
+            If you do not include this parameter, it defaults to a value that is specific to the
+            operation. If additional items exist beyond the number you specify, the <code>NextToken</code>
+            response element is returned with a value (not null). Include the specified value
+            as the <code>NextToken</code> request parameter in the next call to the operation
+            to get the next part of the results. Note that the service might return fewer results
+            than the maximum even when there are more results available. You should check <code>NextToken</code>
+            after every operation to ensure that you receive all of the results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>500</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareInvitationCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Specifies that you want to receive the next page of results. Valid only if you received
+            a <code>NextToken</code> response in the previous request. If you did, it indicates
+            that more output is available. Set this parameter to the value provided by the previous
+            call's <code>NextToken</code> response to request the next page of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareInvitationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ResourceShareInvitations'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RAM.Model.GetResourceShareInvitationsResponse).
+            Specifying the name of a property of type Amazon.RAM.Model.GetResourceShareInvitationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceShareInvitationCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceSharePermissionListCmdlet">
+            <summary>
+            Lists the RAM permissions that are associated with a resource share.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceSharePermissionListCmdlet.ResourceShareArn">
+            <summary>
+            <para>
+            <para>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resoure Name (ARN)</a> of the resource share for which you want to retrieve the associated
+            permissions.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceSharePermissionListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Specifies the total number of results that you want included on each page of the response.
+            If you do not include this parameter, it defaults to a value that is specific to the
+            operation. If additional items exist beyond the number you specify, the <code>NextToken</code>
+            response element is returned with a value (not null). Include the specified value
+            as the <code>NextToken</code> request parameter in the next call to the operation
+            to get the next part of the results. Note that the service might return fewer results
+            than the maximum even when there are more results available. You should check <code>NextToken</code>
+            after every operation to ensure that you receive all of the results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>500</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceSharePermissionListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Specifies that you want to receive the next page of results. Valid only if you received
+            a <code>NextToken</code> response in the previous request. If you did, it indicates
+            that more output is available. Set this parameter to the value provided by the previous
+            call's <code>NextToken</code> response to request the next page of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceSharePermissionListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Permissions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RAM.Model.ListResourceSharePermissionsResponse).
+            Specifying the name of a property of type Amazon.RAM.Model.ListResourceSharePermissionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceSharePermissionListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceShareArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceShareArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceSharePermissionListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceTypeListCmdlet">
+            <summary>
+            Lists the resource types that can be shared by RAM.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceTypeListCmdlet.ResourceRegionScope">
+            <summary>
+            <para>
+            <para>Specifies that you want the results to include only resources that have the specified
+            scope.</para><ul><li><para><code>ALL</code> – the results include both global and regional resources or resource
+            types.</para></li><li><para><code>GLOBAL</code> – the results include only global resources or resource types.</para></li><li><para><code>REGIONAL</code> – the results include only regional resources or resource types.</para></li></ul><para>The default value is <code>ALL</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceTypeListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Specifies the total number of results that you want included on each page of the response.
+            If you do not include this parameter, it defaults to a value that is specific to the
+            operation. If additional items exist beyond the number you specify, the <code>NextToken</code>
+            response element is returned with a value (not null). Include the specified value
+            as the <code>NextToken</code> request parameter in the next call to the operation
+            to get the next part of the results. Note that the service might return fewer results
+            than the maximum even when there are more results available. You should check <code>NextToken</code>
+            after every operation to ensure that you receive all of the results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceTypeListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Specifies that you want to receive the next page of results. Valid only if you received
+            a <code>NextToken</code> response in the previous request. If you did, it indicates
+            that more output is available. Set this parameter to the value provided by the previous
+            call's <code>NextToken</code> response to request the next page of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceTypeListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ResourceTypes'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RAM.Model.ListResourceTypesResponse).
+            Specifying the name of a property of type Amazon.RAM.Model.ListResourceTypesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.GetRAMResourceTypeListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RAM.NewRAMResourceShareCmdlet">
+            <summary>
+            Creates a resource share. You can provide a list of the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resource Names (ARNs)</a> for the resources that you want to share, a list of principals
+            you want to share the resources with, and the permissions to grant those principals.
+            
+             <note><para>
+            Sharing a resource makes it available for use by principals outside of the Amazon
+            Web Services account that created the resource. Sharing doesn't change any permissions
+            or quotas that apply to the resource in the account that created it.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.NewRAMResourceShareCmdlet.AllowExternalPrincipal">
+            <summary>
+            <para>
+            <para>Specifies whether principals outside your organization in Organizations can be associated
+            with a resource share. A value of <code>true</code> lets you share with individual
+            Amazon Web Services accounts that are <i>not</i> in your organization. A value of
+            <code>false</code> only has meaning if your account is a member of an Amazon Web Services
+            Organization. The default value is <code>true</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.NewRAMResourceShareCmdlet.Name">
+            <summary>
+            <para>
+            <para>Specifies the name of the resource share.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.NewRAMResourceShareCmdlet.PermissionArn">
+            <summary>
+            <para>
+            <para>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resource Names (ARNs)</a> of the RAM permission to associate with the resource share.
+            If you do not specify an ARN for the permission, RAM automatically attaches the default
+            version of the permission for each resource type. You can associate only one permission
+            with each resource type included in the resource share.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.NewRAMResourceShareCmdlet.Principal">
+            <summary>
+            <para>
+            <para>Specifies a list of one or more principals to associate with the resource share.</para><para>You can include the following values:</para><ul><li><para>An Amazon Web Services account ID, for example: <code>123456789012</code></para></li><li><para>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code></para></li><li><para>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code></para></li><li><para>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code></para></li><li><para>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code></para></li></ul><note><para>Not all resource types can be shared with IAM roles and users. For more information,
+            see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing
+            with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.NewRAMResourceShareCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>Specifies a list of one or more ARNs of the resources to associate with the resource
+            share.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.NewRAMResourceShareCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Specifies one or more tags to attach to the resource share itself. It doesn't attach
+            the tags to the resources associated with the resource share.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.NewRAMResourceShareCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency
+            of the request. This lets you safely retry the request without accidentally performing
+            the same operation a second time. Passing the same value to a later call to an operation
+            requires that you also pass the same value for all other parameters. We recommend
+            that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID
+            type of value.</a>.</para><para>If you don't provide this value, then Amazon Web Services generates a random one for
+            you.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.NewRAMResourceShareCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ResourceShare'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RAM.Model.CreateResourceShareResponse).
+            Specifying the name of a property of type Amazon.RAM.Model.CreateResourceShareResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.NewRAMResourceShareCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.NewRAMResourceShareCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RAM.RemoveRAMPermissionFromResourceShareCmdlet">
+            <summary>
+            Disassociates an RAM permission from a resource share. Permission changes take effect
+            immediately. You can remove a RAM permission from a resource share only if there are
+            currently no resources of the relevant resource type currently attached to the resource
+            share.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.RemoveRAMPermissionFromResourceShareCmdlet.PermissionArn">
+            <summary>
+            <para>
+            <para>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resoure Name (ARN)</a> of the permission to disassociate from the resource share.
+            Changes to permissions take effect immediately.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.RemoveRAMPermissionFromResourceShareCmdlet.ResourceShareArn">
+            <summary>
+            <para>
+            <para>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resoure Name (ARN)</a> of the resource share from which you want to disassociate a
+            permission.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.RemoveRAMPermissionFromResourceShareCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency
+            of the request. This lets you safely retry the request without accidentally performing
+            the same operation a second time. Passing the same value to a later call to an operation
+            requires that you also pass the same value for all other parameters. We recommend
+            that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID
+            type of value.</a>.</para><para>If you don't provide this value, then Amazon Web Services generates a random one for
+            you.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.RemoveRAMPermissionFromResourceShareCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ReturnValue'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RAM.Model.DisassociateResourceSharePermissionResponse).
+            Specifying the name of a property of type Amazon.RAM.Model.DisassociateResourceSharePermissionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.RemoveRAMPermissionFromResourceShareCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PermissionArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^PermissionArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.RemoveRAMPermissionFromResourceShareCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RAM.RemoveRAMResourceShareCmdlet">
+            <summary>
+            Deletes the specified resource share. This doesn't delete any of the resources that
+            were associated with the resource share; it only stops the sharing of those resources
+            outside of the Amazon Web Services account that created them.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.RemoveRAMResourceShareCmdlet.ResourceShareArn">
+            <summary>
+            <para>
+            <para>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resoure Name (ARN)</a> of the resource share to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.RemoveRAMResourceShareCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency
+            of the request. This lets you safely retry the request without accidentally performing
+            the same operation a second time. Passing the same value to a later call to an operation
+            requires that you also pass the same value for all other parameters. We recommend
+            that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID
+            type of value.</a>.</para><para>If you don't provide this value, then Amazon Web Services generates a random one for
+            you.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.RemoveRAMResourceShareCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ReturnValue'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RAM.Model.DeleteResourceShareResponse).
+            Specifying the name of a property of type Amazon.RAM.Model.DeleteResourceShareResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.RemoveRAMResourceShareCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceShareArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceShareArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.RemoveRAMResourceShareCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RAM.RemoveRAMResourceTagCmdlet">
+            <summary>
+            Removes the specified tag key and value pairs from the specified resource share.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.RemoveRAMResourceTagCmdlet.ResourceShareArn">
+            <summary>
+            <para>
+            <para>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resoure Name (ARN)</a> of the resource share that you want to remove tags from. The
+            tags are removed from the resource share, not the resources in the resource share.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.RemoveRAMResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>Specifies a list of one or more tag keys that you want to remove.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.RemoveRAMResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RAM.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.RemoveRAMResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceShareArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceShareArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.RemoveRAMResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RAM.UpdateRAMResourceShareCmdlet">
+            <summary>
+            Modifies some of the properties of the specified resource share.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.UpdateRAMResourceShareCmdlet.AllowExternalPrincipal">
+            <summary>
+            <para>
+            <para>Specifies whether principals outside your organization in Organizations can be associated
+            with a resource share.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.UpdateRAMResourceShareCmdlet.Name">
+            <summary>
+            <para>
+            <para>If specified, the new name that you want to attach to the resource share.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.UpdateRAMResourceShareCmdlet.ResourceShareArn">
+            <summary>
+            <para>
+            <para>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+            Resoure Name (ARN)</a> of the resource share that you want to modify.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.UpdateRAMResourceShareCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency
+            of the request. This lets you safely retry the request without accidentally performing
+            the same operation a second time. Passing the same value to a later call to an operation
+            requires that you also pass the same value for all other parameters. We recommend
+            that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID
+            type of value.</a>.</para><para>If you don't provide this value, then Amazon Web Services generates a random one for
+            you.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.UpdateRAMResourceShareCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ResourceShare'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RAM.Model.UpdateResourceShareResponse).
+            Specifying the name of a property of type Amazon.RAM.Model.UpdateResourceShareResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.UpdateRAMResourceShareCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceShareArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceShareArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RAM.UpdateRAMResourceShareCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

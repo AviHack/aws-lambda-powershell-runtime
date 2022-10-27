@@ -1,0 +1,1624 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.Appflow</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.AF.AddAFResourceTagCmdlet">
+            <summary>
+            Applies a tag to the specified flow.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.AddAFResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para> The Amazon Resource Name (ARN) of the flow that you want to tag. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.AddAFResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para> The tags used to organize, track, or control access for your flow. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.AddAFResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Appflow.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.AddAFResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.AddAFResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorCmdlet">
+            <summary>
+            Describes the given custom connector registered in your Amazon Web Services account.
+            This API can be used for custom connectors that are registered in your account and
+            also for Amazon authored connectors.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorCmdlet.ConnectorLabel">
+            <summary>
+            <para>
+            <para>The label of the connector. The label is unique for each <code>ConnectorRegistration</code>
+            in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector
+            type/.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorCmdlet.ConnectorType">
+            <summary>
+            <para>
+            <para>The connector type, such as CUSTOMCONNECTOR, Saleforce, Marketo. Please choose CUSTOMCONNECTOR
+            for Lambda based custom connectors.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ConnectorConfiguration'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Appflow.Model.DescribeConnectorResponse).
+            Specifying the name of a property of type Amazon.Appflow.Model.DescribeConnectorResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ConnectorType parameter.
+            The -PassThru parameter is deprecated, use -Select '^ConnectorType' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorConfigurationListCmdlet">
+            <summary>
+            Describes the connectors vended by Amazon AppFlow for specified connector types.
+            If you don't specify a connector type, this operation describes all connectors vended
+            by Amazon AppFlow. If there are more connectors than can be returned in one page,
+            the response contains a <code>nextToken</code> object, which can be be passed in to
+            the next call to the <code>DescribeConnectors</code> API operation to retrieve the
+            next page.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorConfigurationListCmdlet.ConnectorType">
+            <summary>
+            <para>
+            <para> The type of connector, such as Salesforce, Amplitude, and so on. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorConfigurationListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of items that should be returned in the result set. The default
+            is 20.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorConfigurationListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para> The pagination token for the next page of data. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorConfigurationListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ConnectorConfigurations'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Appflow.Model.DescribeConnectorsResponse).
+            Specifying the name of a property of type Amazon.Appflow.Model.DescribeConnectorsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorEntityCmdlet">
+            <summary>
+            Provides details regarding the entity used with the connector, with a description
+            of the data model for each field in that entity.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorEntityCmdlet.ApiVersion">
+            <summary>
+            <para>
+            <para>The version of the API that's used by the connector.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorEntityCmdlet.ConnectorEntityName">
+            <summary>
+            <para>
+            <para> The entity name for that connector. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorEntityCmdlet.ConnectorProfileName">
+            <summary>
+            <para>
+            <para> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code>
+            in the Amazon Web Services account. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorEntityCmdlet.ConnectorType">
+            <summary>
+            <para>
+            <para> The type of connector application, such as Salesforce, Amplitude, and so on. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorEntityCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ConnectorEntityFields'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Appflow.Model.DescribeConnectorEntityResponse).
+            Specifying the name of a property of type Amazon.Appflow.Model.DescribeConnectorEntityResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorEntityCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ConnectorEntityName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ConnectorEntityName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorEntityListCmdlet">
+            <summary>
+            Returns the list of available connector entities supported by Amazon AppFlow. For
+            example, you can query Salesforce for <i>Account</i> and <i>Opportunity</i> entities,
+            or query ServiceNow for the <i>Incident</i> entity.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorEntityListCmdlet.ApiVersion">
+            <summary>
+            <para>
+            <para>The version of the API that's used by the connector.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorEntityListCmdlet.ConnectorProfileName">
+            <summary>
+            <para>
+            <para> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code>
+            in the Amazon Web Services account, and is used to query the downstream connector.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorEntityListCmdlet.ConnectorType">
+            <summary>
+            <para>
+            <para> The type of connector, such as Salesforce, Amplitude, and so on. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorEntityListCmdlet.EntitiesPath">
+            <summary>
+            <para>
+            <para> This optional parameter is specific to connector implementation. Some connectors
+            support multiple levels or categories of entities. You can find out the list of roots
+            for such providers by sending a request without the <code>entitiesPath</code> parameter.
+            If the connector supports entities at different roots, this initial request returns
+            the list of roots. Otherwise, this request returns all entities supported by the provider.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorEntityListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ConnectorEntityMap'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Appflow.Model.ListConnectorEntitiesResponse).
+            Specifying the name of a property of type Amazon.Appflow.Model.ListConnectorEntitiesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorEntityListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ConnectorProfileName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ConnectorProfileName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorListCmdlet">
+            <summary>
+            Returns the list of all registered custom connectors in your Amazon Web Services account.
+            This API lists only custom connectors registered in this account, not the Amazon Web
+            Services authored connectors.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Specifies the maximum number of items that should be returned in the result set. The
+            default for <code>maxResults</code> is 20 (for all paginated API operations).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token for the next page of data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Connectors'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Appflow.Model.ListConnectorsResponse).
+            Specifying the name of a property of type Amazon.Appflow.Model.ListConnectorsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorProfileCmdlet">
+            <summary>
+            Returns a list of <code>connector-profile</code> details matching the provided <code>connector-profile</code>
+            names and <code>connector-types</code>. Both input lists are optional, and you can
+            use them to filter the result. 
+            
+             
+            <para>
+            If no names or <code>connector-types</code> are provided, returns all connector profiles
+            in a paginated form. If there is no match, this operation returns an empty list.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorProfileCmdlet.ConnectorLabel">
+            <summary>
+            <para>
+            <para>The name of the connector. The name is unique for each <code>ConnectorRegistration</code>
+            in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector
+            type/.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorProfileCmdlet.ConnectorProfileName">
+            <summary>
+            <para>
+            <para> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code>
+            in the Amazon Web Services account. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorProfileCmdlet.ConnectorType">
+            <summary>
+            <para>
+            <para> The type of connector, such as Salesforce, Amplitude, and so on. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorProfileCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para> Specifies the maximum number of items that should be returned in the result set.
+            The default for <code>maxResults</code> is 20 (for all paginated API operations).
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorProfileCmdlet.NextToken">
+            <summary>
+            <para>
+            <para> The pagination token for the next page of data. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorProfileCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ConnectorProfileDetails'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Appflow.Model.DescribeConnectorProfilesResponse).
+            Specifying the name of a property of type Amazon.Appflow.Model.DescribeConnectorProfilesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFConnectorProfileCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ConnectorType parameter.
+            The -PassThru parameter is deprecated, use -Select '^ConnectorType' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AF.GetAFFlowCmdlet">
+            <summary>
+            Provides a description of the specified flow.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFFlowCmdlet.FlowName">
+            <summary>
+            <para>
+            <para> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
+            (-) only. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFFlowCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Appflow.Model.DescribeFlowResponse).
+            Specifying the name of a property of type Amazon.Appflow.Model.DescribeFlowResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFFlowCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FlowName parameter.
+            The -PassThru parameter is deprecated, use -Select '^FlowName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AF.GetAFFlowExecutionRecordCmdlet">
+            <summary>
+            Fetches the execution history of the flow.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFFlowExecutionRecordCmdlet.FlowName">
+            <summary>
+            <para>
+            <para> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
+            (-) only. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFFlowExecutionRecordCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para> Specifies the maximum number of items that should be returned in the result set.
+            The default for <code>maxResults</code> is 20 (for all paginated API operations).
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFFlowExecutionRecordCmdlet.NextToken">
+            <summary>
+            <para>
+            <para> The pagination token for the next page of data. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFFlowExecutionRecordCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'FlowExecutions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Appflow.Model.DescribeFlowExecutionRecordsResponse).
+            Specifying the name of a property of type Amazon.Appflow.Model.DescribeFlowExecutionRecordsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFFlowExecutionRecordCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FlowName parameter.
+            The -PassThru parameter is deprecated, use -Select '^FlowName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AF.GetAFFlowListCmdlet">
+            <summary>
+            Lists all of the flows associated with your account.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFFlowListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para> Specifies the maximum number of items that should be returned in the result set.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFFlowListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para> The pagination token for next page of data. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFFlowListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Flows'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Appflow.Model.ListFlowsResponse).
+            Specifying the name of a property of type Amazon.Appflow.Model.ListFlowsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AF.GetAFResourceTagCmdlet">
+            <summary>
+            Retrieves the tags that are associated with a specified flow.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para> The Amazon Resource Name (ARN) of the specified flow. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Appflow.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.Appflow.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.GetAFResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AF.NewAFConnectorProfileCmdlet">
+            <summary>
+            Creates a new connector profile associated with your Amazon Web Services account.
+            There is a soft quota of 100 connector profiles per Amazon Web Services account. If
+            you need more connector profiles than this quota allows, you can submit a request
+            to the Amazon AppFlow team through the Amazon AppFlow support channel. In each connector
+            profile that you create, you can provide the credentials and properties for only one
+            connector.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFConnectorProfileCmdlet.ConnectionMode">
+            <summary>
+            <para>
+            <para> Indicates the connection mode and specifies whether it is public or private. Private
+            flows use Amazon Web Services PrivateLink to route data over Amazon Web Services infrastructure
+            without exposing it to the public internet. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFConnectorProfileCmdlet.ConnectorLabel">
+            <summary>
+            <para>
+            <para>The label of the connector. The label is unique for each <code>ConnectorRegistration</code>
+            in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector
+            type/.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFConnectorProfileCmdlet.ConnectorProfileConfig">
+            <summary>
+            <para>
+            <para> Defines the connector-specific configuration and credentials. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFConnectorProfileCmdlet.ConnectorProfileName">
+            <summary>
+            <para>
+            <para> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code>
+            in your Amazon Web Services account. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFConnectorProfileCmdlet.ConnectorType">
+            <summary>
+            <para>
+            <para> The type of connector, such as Salesforce, Amplitude, and so on. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFConnectorProfileCmdlet.KmsArn">
+            <summary>
+            <para>
+            <para> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide
+            for encryption. This is required if you do not want to use the Amazon AppFlow-managed
+            KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed
+            KMS key. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFConnectorProfileCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ConnectorProfileArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Appflow.Model.CreateConnectorProfileResponse).
+            Specifying the name of a property of type Amazon.Appflow.Model.CreateConnectorProfileResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFConnectorProfileCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ConnectorProfileName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ConnectorProfileName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFConnectorProfileCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet">
+            <summary>
+            Enables your application to create a new flow using Amazon AppFlow. You must create
+            a connector profile before calling this API. Please note that the Request Syntax below
+            shows syntax for multiple destinations, however, you can only transfer data to one
+            item in this list at a time. Amazon AppFlow does not currently support flows to multiple
+            destinations at once.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.SourceFlowConfig_ApiVersion">
+            <summary>
+            <para>
+            <para>The API version of the connector when it's used as a source in the flow.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.S3_BucketName">
+            <summary>
+            <para>
+            <para> The Amazon S3 bucket name where the source files are stored. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.S3_BucketPrefix">
+            <summary>
+            <para>
+            <para> The object key for the Amazon S3 bucket in which the source files are stored. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.SourceFlowConfig_ConnectorProfileName">
+            <summary>
+            <para>
+            <para> The name of the connector profile. This name must be unique for each connector profile
+            in the Amazon Web Services account. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.SourceFlowConfig_ConnectorType">
+            <summary>
+            <para>
+            <para> The type of connector, such as Salesforce, Amplitude, and so on. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.CustomConnector_CustomProperty">
+            <summary>
+            <para>
+            <para>Custom properties that are required to use the custom connector as a source.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Scheduled_DataPullMode">
+            <summary>
+            <para>
+            <para> Specifies whether a scheduled flow has an incremental data transfer or a complete
+            data transfer for each flow run. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Salesforce_DataTransferApi">
+            <summary>
+            <para>
+            <para>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers
+            data from Salesforce.</para><dl><dt>AUTOMATIC</dt><dd><para>The default. Amazon AppFlow selects which API to use based on the number of records
+            that your flow transfers from Salesforce. If your flow transfers fewer than 1,000,000
+            records, Amazon AppFlow uses Salesforce REST API. If your flow transfers 1,000,000
+            records or more, Amazon AppFlow uses Salesforce Bulk API 2.0.</para><para>Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects
+            the API automatically, be aware that, for recurring flows, the data output might vary
+            from one flow run to the next. For example, if a flow runs daily, it might use REST
+            API on one day to transfer 900,000 records, and it might use Bulk API 2.0 on the next
+            day to transfer 1,100,000 records. For each of these flow runs, the respective Salesforce
+            API formats the data differently. Some of the differences include how dates are formatted
+            and null values are represented. Also, Bulk API 2.0 doesn't transfer Salesforce compound
+            fields.</para><para>By choosing this option, you optimize flow performance for both small and large data
+            transfers, but the tradeoff is inconsistent formatting in the output.</para></dd><dt>BULKV2</dt><dd><para>Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data
+            transfers, and it's optimal for large sets of data. By choosing this option, you ensure
+            that your flow writes consistent output, but you optimize performance only for large
+            data transfers.</para><para>Note that Bulk API 2.0 does not transfer Salesforce compound fields.</para></dd><dt>REST_SYNC</dt><dd><para>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure
+            that your flow writes consistent output, but you decrease performance for large data
+            transfers that are better suited for Bulk API 2.0. In some cases, if your flow attempts
+            to transfer a vary large set of data, it might fail with a timed out error.</para></dd></dl>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.IncrementalPullConfig_DatetimeTypeFieldName">
+            <summary>
+            <para>
+            <para> A field that specifies the date time or timestamp field as the criteria to use when
+            importing incremental records from the source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Description">
+            <summary>
+            <para>
+            <para> A description of the flow you want to create. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.DestinationFlowConfigList">
+            <summary>
+            <para>
+            <para> The configuration that controls how Amazon AppFlow places data in the destination
+            connector. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Veeva_DocumentType">
+            <summary>
+            <para>
+            <para>The document type specified in the Veeva document extract flow.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Salesforce_EnableDynamicFieldUpdate">
+            <summary>
+            <para>
+            <para> The flag that enables dynamic fetching of new (recently added) fields in the Salesforce
+            objects while running a flow. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.CustomConnector_EntityName">
+            <summary>
+            <para>
+            <para>The entity specified in the custom connector as a source in the flow.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Scheduled_FirstExecutionFrom">
+            <summary>
+            <para>
+            <para> Specifies the date range for the records to import from the connector in the first
+            flow run. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Scheduled_FlowErrorDeactivationThreshold">
+            <summary>
+            <para>
+            <para>Defines how many times a scheduled flow fails consecutively before Amazon AppFlow
+            deactivates it.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.FlowName">
+            <summary>
+            <para>
+            <para> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
+            (-) only. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Veeva_IncludeAllVersion">
+            <summary>
+            <para>
+            <para>Boolean value to include All Versions of files in Veeva document extract flow.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Salesforce_IncludeDeletedRecord">
+            <summary>
+            <para>
+            <para> Indicates whether Amazon AppFlow includes deleted files in the flow run. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Veeva_IncludeRendition">
+            <summary>
+            <para>
+            <para>Boolean value to include file renditions in Veeva document extract flow.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Veeva_IncludeSourceFile">
+            <summary>
+            <para>
+            <para>Boolean value to include source files in Veeva document extract flow.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.KmsArn">
+            <summary>
+            <para>
+            <para> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide
+            for encryption. This is required if you do not want to use the Amazon AppFlow-managed
+            KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed
+            KMS key. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Amplitude_Object">
+            <summary>
+            <para>
+            <para> The object specified in the Amplitude flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Datadog_Object">
+            <summary>
+            <para>
+            <para> The object specified in the Datadog flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Dynatrace_Object">
+            <summary>
+            <para>
+            <para> The object specified in the Dynatrace flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.GoogleAnalytics_Object">
+            <summary>
+            <para>
+            <para> The object specified in the Google Analytics flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.InforNexus_Object">
+            <summary>
+            <para>
+            <para> The object specified in the Infor Nexus flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Marketo_Object">
+            <summary>
+            <para>
+            <para> The object specified in the Marketo flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Salesforce_Object">
+            <summary>
+            <para>
+            <para> The object specified in the Salesforce flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.ServiceNow_Object">
+            <summary>
+            <para>
+            <para> The object specified in the ServiceNow flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Singular_Object">
+            <summary>
+            <para>
+            <para> The object specified in the Singular flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Slack_Object">
+            <summary>
+            <para>
+            <para> The object specified in the Slack flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Trendmicro_Object">
+            <summary>
+            <para>
+            <para> The object specified in the Trend Micro flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Veeva_Object">
+            <summary>
+            <para>
+            <para> The object specified in the Veeva flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Zendesk_Object">
+            <summary>
+            <para>
+            <para> The object specified in the Zendesk flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.SAPOData_ObjectPath">
+            <summary>
+            <para>
+            <para> The object path specified in the SAPOData flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.S3InputFormatConfig_S3InputFileType">
+            <summary>
+            <para>
+            <para> The file type that Amazon AppFlow gets from your Amazon S3 bucket. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Scheduled_ScheduleEndTime">
+            <summary>
+            <para>
+            <para>The time at which the scheduled flow ends. The time is formatted as a timestamp that
+            follows the ISO 8601 standard, such as <code>2022-04-27T13:00:00-07:00</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Scheduled_ScheduleExpression">
+            <summary>
+            <para>
+            <para> The scheduling expression that determines the rate at which the schedule will run,
+            for example <code>rate(5minutes)</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Scheduled_ScheduleOffset">
+            <summary>
+            <para>
+            <para> Specifies the optional offset that is added to the time interval for a schedule-triggered
+            flow. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Scheduled_ScheduleStartTime">
+            <summary>
+            <para>
+            <para>The time at which the scheduled flow starts. The time is formatted as a timestamp
+            that follows the ISO 8601 standard, such as <code>2022-04-26T13:00:00-07:00</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Tag">
+            <summary>
+            <para>
+            <para> The tags used to organize, track, or control access for your flow. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Task">
+            <summary>
+            <para>
+            <para> A list of tasks that Amazon AppFlow performs while transferring the data in the flow
+            run. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Scheduled_Timezone">
+            <summary>
+            <para>
+            <para>Specifies the time zone used when referring to the dates and times of a scheduled
+            flow, such as <code>America/New_York</code>. This time zone is only a descriptive
+            label. It doesn't affect how Amazon AppFlow interprets the timestamps that you specify
+            to schedule the flow.</para><para>If you want to schedule a flow by using times in a particular time zone, indicate
+            the time zone as a UTC offset in your timestamps. For example, the UTC offsets for
+            the <code>America/New_York</code> timezone are <code>-04:00</code> EDT and <code>-05:00
+            EST</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.TriggerConfig_TriggerType">
+            <summary>
+            <para>
+            <para> Specifies the type of flow trigger. This can be <code>OnDemand</code>, <code>Scheduled</code>,
+            or <code>Event</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'FlowArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Appflow.Model.CreateFlowResponse).
+            Specifying the name of a property of type Amazon.Appflow.Model.CreateFlowResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FlowName parameter.
+            The -PassThru parameter is deprecated, use -Select '^FlowName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.NewAFFlowCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AF.RegisterAFConnectorCmdlet">
+            <summary>
+            Registers a new connector with your Amazon Web Services account. Before you can register
+            the connector, you must deploy lambda in your account.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.RegisterAFConnectorCmdlet.ConnectorLabel">
+            <summary>
+            <para>
+            <para> The name of the connector. The name is unique for each <code>ConnectorRegistration</code>
+            in your Amazon Web Services account.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.RegisterAFConnectorCmdlet.ConnectorProvisioningType">
+            <summary>
+            <para>
+            <para>The provisioning type of the connector. Currently the only supported value is LAMBDA.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.RegisterAFConnectorCmdlet.Description">
+            <summary>
+            <para>
+            <para>A description about the connector that's being registered.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.RegisterAFConnectorCmdlet.Lambda_LambdaArn">
+            <summary>
+            <para>
+            <para>Lambda ARN of the connector being registered.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.RegisterAFConnectorCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ConnectorArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Appflow.Model.RegisterConnectorResponse).
+            Specifying the name of a property of type Amazon.Appflow.Model.RegisterConnectorResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.RegisterAFConnectorCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ConnectorLabel parameter.
+            The -PassThru parameter is deprecated, use -Select '^ConnectorLabel' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.RegisterAFConnectorCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AF.RemoveAFConnectorProfileCmdlet">
+            <summary>
+            Enables you to delete an existing connector profile.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.RemoveAFConnectorProfileCmdlet.ConnectorProfileName">
+            <summary>
+            <para>
+            <para> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code>
+            in your account. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.RemoveAFConnectorProfileCmdlet.ForceDelete">
+            <summary>
+            <para>
+            <para> Indicates whether Amazon AppFlow should delete the profile, even if it is currently
+            in use in one or more flows. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.RemoveAFConnectorProfileCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Appflow.Model.DeleteConnectorProfileResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.RemoveAFConnectorProfileCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ConnectorProfileName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ConnectorProfileName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.RemoveAFConnectorProfileCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AF.RemoveAFFlowCmdlet">
+            <summary>
+            Enables your application to delete an existing flow. Before deleting the flow, Amazon
+            AppFlow validates the request by checking the flow configuration and status. You can
+            delete flows one at a time.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.RemoveAFFlowCmdlet.FlowName">
+            <summary>
+            <para>
+            <para> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
+            (-) only. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.RemoveAFFlowCmdlet.ForceDelete">
+            <summary>
+            <para>
+            <para> Indicates whether Amazon AppFlow should delete the flow, even if it is currently
+            in use. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.RemoveAFFlowCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Appflow.Model.DeleteFlowResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.RemoveAFFlowCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FlowName parameter.
+            The -PassThru parameter is deprecated, use -Select '^FlowName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.RemoveAFFlowCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AF.RemoveAFResourceTagCmdlet">
+            <summary>
+            Removes a tag from the specified flow.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.RemoveAFResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para> The Amazon Resource Name (ARN) of the flow that you want to untag. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.RemoveAFResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para> The tag keys associated with the tag that you want to remove from your flow. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.RemoveAFResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Appflow.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.RemoveAFResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.RemoveAFResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AF.StartAFFlowCmdlet">
+            <summary>
+            Activates an existing flow. For on-demand flows, this operation runs the flow immediately.
+            For schedule and event-triggered flows, this operation activates the flow.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.StartAFFlowCmdlet.FlowName">
+            <summary>
+            <para>
+            <para> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
+            (-) only. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.StartAFFlowCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Appflow.Model.StartFlowResponse).
+            Specifying the name of a property of type Amazon.Appflow.Model.StartFlowResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.StartAFFlowCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FlowName parameter.
+            The -PassThru parameter is deprecated, use -Select '^FlowName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.StartAFFlowCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AF.StopAFFlowCmdlet">
+            <summary>
+            Deactivates the existing flow. For on-demand flows, this operation returns an <code>unsupportedOperationException</code>
+            error message. For schedule and event-triggered flows, this operation deactivates
+            the flow.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.StopAFFlowCmdlet.FlowName">
+            <summary>
+            <para>
+            <para> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
+            (-) only. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.StopAFFlowCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Appflow.Model.StopFlowResponse).
+            Specifying the name of a property of type Amazon.Appflow.Model.StopFlowResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.StopAFFlowCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FlowName parameter.
+            The -PassThru parameter is deprecated, use -Select '^FlowName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.StopAFFlowCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AF.UnregisterAFConnectorCmdlet">
+            <summary>
+            Unregisters the custom connector registered in your account that matches the connectorLabel
+            provided in the request.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UnregisterAFConnectorCmdlet.ConnectorLabel">
+            <summary>
+            <para>
+            <para>The label of the connector. The label is unique for each <code>ConnectorRegistration</code>
+            in your Amazon Web Services account.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UnregisterAFConnectorCmdlet.ForceDelete">
+            <summary>
+            <para>
+            <para>Indicates whether Amazon AppFlow should unregister the connector, even if it is currently
+            in use in one or more connector profiles. The default value is false.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UnregisterAFConnectorCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Appflow.Model.UnregisterConnectorResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UnregisterAFConnectorCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ConnectorLabel parameter.
+            The -PassThru parameter is deprecated, use -Select '^ConnectorLabel' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UnregisterAFConnectorCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AF.UpdateAFConnectorProfileCmdlet">
+            <summary>
+            Updates a given connector profile associated with your account.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFConnectorProfileCmdlet.ConnectionMode">
+            <summary>
+            <para>
+            <para> Indicates the connection mode and if it is public or private. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFConnectorProfileCmdlet.ConnectorProfileConfig">
+            <summary>
+            <para>
+            <para> Defines the connector-specific profile configuration and credentials. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFConnectorProfileCmdlet.ConnectorProfileName">
+            <summary>
+            <para>
+            <para> The name of the connector profile and is unique for each <code>ConnectorProfile</code>
+            in the Amazon Web Services account. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFConnectorProfileCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ConnectorProfileArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Appflow.Model.UpdateConnectorProfileResponse).
+            Specifying the name of a property of type Amazon.Appflow.Model.UpdateConnectorProfileResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFConnectorProfileCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ConnectorProfileName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ConnectorProfileName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFConnectorProfileCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet">
+            <summary>
+            Updates an existing flow.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.SourceFlowConfig_ApiVersion">
+            <summary>
+            <para>
+            <para>The API version of the connector when it's used as a source in the flow.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.S3_BucketName">
+            <summary>
+            <para>
+            <para> The Amazon S3 bucket name where the source files are stored. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.S3_BucketPrefix">
+            <summary>
+            <para>
+            <para> The object key for the Amazon S3 bucket in which the source files are stored. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.SourceFlowConfig_ConnectorProfileName">
+            <summary>
+            <para>
+            <para> The name of the connector profile. This name must be unique for each connector profile
+            in the Amazon Web Services account. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.SourceFlowConfig_ConnectorType">
+            <summary>
+            <para>
+            <para> The type of connector, such as Salesforce, Amplitude, and so on. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.CustomConnector_CustomProperty">
+            <summary>
+            <para>
+            <para>Custom properties that are required to use the custom connector as a source.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Scheduled_DataPullMode">
+            <summary>
+            <para>
+            <para> Specifies whether a scheduled flow has an incremental data transfer or a complete
+            data transfer for each flow run. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Salesforce_DataTransferApi">
+            <summary>
+            <para>
+            <para>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers
+            data from Salesforce.</para><dl><dt>AUTOMATIC</dt><dd><para>The default. Amazon AppFlow selects which API to use based on the number of records
+            that your flow transfers from Salesforce. If your flow transfers fewer than 1,000,000
+            records, Amazon AppFlow uses Salesforce REST API. If your flow transfers 1,000,000
+            records or more, Amazon AppFlow uses Salesforce Bulk API 2.0.</para><para>Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects
+            the API automatically, be aware that, for recurring flows, the data output might vary
+            from one flow run to the next. For example, if a flow runs daily, it might use REST
+            API on one day to transfer 900,000 records, and it might use Bulk API 2.0 on the next
+            day to transfer 1,100,000 records. For each of these flow runs, the respective Salesforce
+            API formats the data differently. Some of the differences include how dates are formatted
+            and null values are represented. Also, Bulk API 2.0 doesn't transfer Salesforce compound
+            fields.</para><para>By choosing this option, you optimize flow performance for both small and large data
+            transfers, but the tradeoff is inconsistent formatting in the output.</para></dd><dt>BULKV2</dt><dd><para>Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data
+            transfers, and it's optimal for large sets of data. By choosing this option, you ensure
+            that your flow writes consistent output, but you optimize performance only for large
+            data transfers.</para><para>Note that Bulk API 2.0 does not transfer Salesforce compound fields.</para></dd><dt>REST_SYNC</dt><dd><para>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure
+            that your flow writes consistent output, but you decrease performance for large data
+            transfers that are better suited for Bulk API 2.0. In some cases, if your flow attempts
+            to transfer a vary large set of data, it might fail with a timed out error.</para></dd></dl>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.IncrementalPullConfig_DatetimeTypeFieldName">
+            <summary>
+            <para>
+            <para> A field that specifies the date time or timestamp field as the criteria to use when
+            importing incremental records from the source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Description">
+            <summary>
+            <para>
+            <para> A description of the flow. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.DestinationFlowConfigList">
+            <summary>
+            <para>
+            <para> The configuration that controls how Amazon AppFlow transfers data to the destination
+            connector. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Veeva_DocumentType">
+            <summary>
+            <para>
+            <para>The document type specified in the Veeva document extract flow.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Salesforce_EnableDynamicFieldUpdate">
+            <summary>
+            <para>
+            <para> The flag that enables dynamic fetching of new (recently added) fields in the Salesforce
+            objects while running a flow. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.CustomConnector_EntityName">
+            <summary>
+            <para>
+            <para>The entity specified in the custom connector as a source in the flow.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Scheduled_FirstExecutionFrom">
+            <summary>
+            <para>
+            <para> Specifies the date range for the records to import from the connector in the first
+            flow run. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Scheduled_FlowErrorDeactivationThreshold">
+            <summary>
+            <para>
+            <para>Defines how many times a scheduled flow fails consecutively before Amazon AppFlow
+            deactivates it.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.FlowName">
+            <summary>
+            <para>
+            <para> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens
+            (-) only. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Veeva_IncludeAllVersion">
+            <summary>
+            <para>
+            <para>Boolean value to include All Versions of files in Veeva document extract flow.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Salesforce_IncludeDeletedRecord">
+            <summary>
+            <para>
+            <para> Indicates whether Amazon AppFlow includes deleted files in the flow run. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Veeva_IncludeRendition">
+            <summary>
+            <para>
+            <para>Boolean value to include file renditions in Veeva document extract flow.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Veeva_IncludeSourceFile">
+            <summary>
+            <para>
+            <para>Boolean value to include source files in Veeva document extract flow.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Amplitude_Object">
+            <summary>
+            <para>
+            <para> The object specified in the Amplitude flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Datadog_Object">
+            <summary>
+            <para>
+            <para> The object specified in the Datadog flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Dynatrace_Object">
+            <summary>
+            <para>
+            <para> The object specified in the Dynatrace flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.GoogleAnalytics_Object">
+            <summary>
+            <para>
+            <para> The object specified in the Google Analytics flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.InforNexus_Object">
+            <summary>
+            <para>
+            <para> The object specified in the Infor Nexus flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Marketo_Object">
+            <summary>
+            <para>
+            <para> The object specified in the Marketo flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Salesforce_Object">
+            <summary>
+            <para>
+            <para> The object specified in the Salesforce flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.ServiceNow_Object">
+            <summary>
+            <para>
+            <para> The object specified in the ServiceNow flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Singular_Object">
+            <summary>
+            <para>
+            <para> The object specified in the Singular flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Slack_Object">
+            <summary>
+            <para>
+            <para> The object specified in the Slack flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Trendmicro_Object">
+            <summary>
+            <para>
+            <para> The object specified in the Trend Micro flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Veeva_Object">
+            <summary>
+            <para>
+            <para> The object specified in the Veeva flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Zendesk_Object">
+            <summary>
+            <para>
+            <para> The object specified in the Zendesk flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.SAPOData_ObjectPath">
+            <summary>
+            <para>
+            <para> The object path specified in the SAPOData flow source. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.S3InputFormatConfig_S3InputFileType">
+            <summary>
+            <para>
+            <para> The file type that Amazon AppFlow gets from your Amazon S3 bucket. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Scheduled_ScheduleEndTime">
+            <summary>
+            <para>
+            <para>The time at which the scheduled flow ends. The time is formatted as a timestamp that
+            follows the ISO 8601 standard, such as <code>2022-04-27T13:00:00-07:00</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Scheduled_ScheduleExpression">
+            <summary>
+            <para>
+            <para> The scheduling expression that determines the rate at which the schedule will run,
+            for example <code>rate(5minutes)</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Scheduled_ScheduleOffset">
+            <summary>
+            <para>
+            <para> Specifies the optional offset that is added to the time interval for a schedule-triggered
+            flow. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Scheduled_ScheduleStartTime">
+            <summary>
+            <para>
+            <para>The time at which the scheduled flow starts. The time is formatted as a timestamp
+            that follows the ISO 8601 standard, such as <code>2022-04-26T13:00:00-07:00</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Task">
+            <summary>
+            <para>
+            <para> A list of tasks that Amazon AppFlow performs while transferring the data in the flow
+            run. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Scheduled_Timezone">
+            <summary>
+            <para>
+            <para>Specifies the time zone used when referring to the dates and times of a scheduled
+            flow, such as <code>America/New_York</code>. This time zone is only a descriptive
+            label. It doesn't affect how Amazon AppFlow interprets the timestamps that you specify
+            to schedule the flow.</para><para>If you want to schedule a flow by using times in a particular time zone, indicate
+            the time zone as a UTC offset in your timestamps. For example, the UTC offsets for
+            the <code>America/New_York</code> timezone are <code>-04:00</code> EDT and <code>-05:00
+            EST</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.TriggerConfig_TriggerType">
+            <summary>
+            <para>
+            <para> Specifies the type of flow trigger. This can be <code>OnDemand</code>, <code>Scheduled</code>,
+            or <code>Event</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'FlowStatus'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Appflow.Model.UpdateFlowResponse).
+            Specifying the name of a property of type Amazon.Appflow.Model.UpdateFlowResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FlowName parameter.
+            The -PassThru parameter is deprecated, use -Select '^FlowName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.AF.UpdateAFFlowCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,751 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.MediaPackageVod</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMPV.AddEMPVResourceTagCmdlet">
+            <summary>
+            Adds tags to the specified resource. You can specify one or more tags to add.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.AddEMPVResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            The Amazon Resource Name (ARN) for the resource.
+            You can get this from the response to any request to the resource.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.AddEMPVResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            A collection of tags associated with a resource
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.AddEMPVResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaPackageVod.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.AddEMPVResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.AddEMPVResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVAssetCmdlet">
+            <summary>
+            Returns a description of a MediaPackage VOD Asset resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVAssetCmdlet.Id">
+            <summary>
+            <para>
+            The ID of an MediaPackage VOD Asset resource.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVAssetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaPackageVod.Model.DescribeAssetResponse).
+            Specifying the name of a property of type Amazon.MediaPackageVod.Model.DescribeAssetResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVAssetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Id parameter.
+            The -PassThru parameter is deprecated, use -Select '^Id' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVAssetListCmdlet">
+            <summary>
+            Returns a collection of MediaPackage VOD Asset resources.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVAssetListCmdlet.PackagingGroupId">
+            <summary>
+            <para>
+            Returns Assets associated with the specified
+            PackagingGroup.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVAssetListCmdlet.MaxResult">
+            <summary>
+            <para>
+            Upper bound on number of records to return.
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVAssetListCmdlet.NextToken">
+            <summary>
+            <para>
+            A token used to resume pagination from the end
+            of a previous request.
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVAssetListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Assets'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaPackageVod.Model.ListAssetsResponse).
+            Specifying the name of a property of type Amazon.MediaPackageVod.Model.ListAssetsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVAssetListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PackagingGroupId parameter.
+            The -PassThru parameter is deprecated, use -Select '^PackagingGroupId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVAssetListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVPackagingConfigurationCmdlet">
+            <summary>
+            Returns a description of a MediaPackage VOD PackagingConfiguration resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVPackagingConfigurationCmdlet.Id">
+            <summary>
+            <para>
+            The ID of a MediaPackage VOD PackagingConfiguration
+            resource.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVPackagingConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaPackageVod.Model.DescribePackagingConfigurationResponse).
+            Specifying the name of a property of type Amazon.MediaPackageVod.Model.DescribePackagingConfigurationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVPackagingConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Id parameter.
+            The -PassThru parameter is deprecated, use -Select '^Id' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVPackagingConfigurationListCmdlet">
+            <summary>
+            Returns a collection of MediaPackage VOD PackagingConfiguration resources.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVPackagingConfigurationListCmdlet.PackagingGroupId">
+            <summary>
+            <para>
+            Returns MediaPackage VOD PackagingConfigurations
+            associated with the specified PackagingGroup.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVPackagingConfigurationListCmdlet.MaxResult">
+            <summary>
+            <para>
+            Upper bound on number of records to return.
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVPackagingConfigurationListCmdlet.NextToken">
+            <summary>
+            <para>
+            A token used to resume pagination from the end
+            of a previous request.
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVPackagingConfigurationListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'PackagingConfigurations'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaPackageVod.Model.ListPackagingConfigurationsResponse).
+            Specifying the name of a property of type Amazon.MediaPackageVod.Model.ListPackagingConfigurationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVPackagingConfigurationListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PackagingGroupId parameter.
+            The -PassThru parameter is deprecated, use -Select '^PackagingGroupId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVPackagingConfigurationListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVPackagingGroupCmdlet">
+            <summary>
+            Returns a description of a MediaPackage VOD PackagingGroup resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVPackagingGroupCmdlet.Id">
+            <summary>
+            <para>
+            The ID of a MediaPackage VOD PackagingGroup resource.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVPackagingGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaPackageVod.Model.DescribePackagingGroupResponse).
+            Specifying the name of a property of type Amazon.MediaPackageVod.Model.DescribePackagingGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVPackagingGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Id parameter.
+            The -PassThru parameter is deprecated, use -Select '^Id' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVPackagingGroupListCmdlet">
+            <summary>
+            Returns a collection of MediaPackage VOD PackagingGroup resources.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVPackagingGroupListCmdlet.MaxResult">
+            <summary>
+            <para>
+            Upper bound on number of records to return.
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVPackagingGroupListCmdlet.NextToken">
+            <summary>
+            <para>
+            A token used to resume pagination from the end
+            of a previous request.
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVPackagingGroupListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'PackagingGroups'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaPackageVod.Model.ListPackagingGroupsResponse).
+            Specifying the name of a property of type Amazon.MediaPackageVod.Model.ListPackagingGroupsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVPackagingGroupListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVResourceTagCmdlet">
+            <summary>
+            Returns a list of the tags assigned to the specified resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            The Amazon Resource Name (ARN) for the resource.
+            You can get this from the response to any request to the resource.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaPackageVod.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.MediaPackageVod.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.GetEMPVResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVAssetCmdlet">
+            <summary>
+            Creates a new MediaPackage VOD Asset resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVAssetCmdlet.Id">
+            <summary>
+            <para>
+            The unique identifier for the Asset.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVAssetCmdlet.PackagingGroupId">
+            <summary>
+            <para>
+            The ID of the PackagingGroup for the
+            Asset.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVAssetCmdlet.ResourceId">
+            <summary>
+            <para>
+            The resource ID to include in SPEKE key requests.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVAssetCmdlet.SourceArn">
+            <summary>
+            <para>
+            ARN of the source object in S3.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVAssetCmdlet.SourceRoleArn">
+            <summary>
+            <para>
+            The IAM role ARN used to access the source
+            S3 bucket.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVAssetCmdlet.Tag">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVAssetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaPackageVod.Model.CreateAssetResponse).
+            Specifying the name of a property of type Amazon.MediaPackageVod.Model.CreateAssetResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVAssetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Id parameter.
+            The -PassThru parameter is deprecated, use -Select '^Id' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVAssetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVPackagingConfigurationCmdlet">
+            <summary>
+            Creates a new MediaPackage VOD PackagingConfiguration resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVPackagingConfigurationCmdlet.CmafPackage">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVPackagingConfigurationCmdlet.DashPackage">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVPackagingConfigurationCmdlet.HlsPackage">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVPackagingConfigurationCmdlet.Id">
+            <summary>
+            <para>
+            The ID of the PackagingConfiguration.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVPackagingConfigurationCmdlet.MssPackage">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVPackagingConfigurationCmdlet.PackagingGroupId">
+            <summary>
+            <para>
+            The ID of a PackagingGroup.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVPackagingConfigurationCmdlet.Tag">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVPackagingConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaPackageVod.Model.CreatePackagingConfigurationResponse).
+            Specifying the name of a property of type Amazon.MediaPackageVod.Model.CreatePackagingConfigurationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVPackagingConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Id parameter.
+            The -PassThru parameter is deprecated, use -Select '^Id' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVPackagingConfigurationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVPackagingGroupCmdlet">
+            <summary>
+            Creates a new MediaPackage VOD PackagingGroup resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVPackagingGroupCmdlet.Authorization_CdnIdentifierSecret">
+            <summary>
+            <para>
+            The Amazon Resource Name (ARN) for
+            the secret in AWS Secrets Manager that is used for CDN authorization.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVPackagingGroupCmdlet.Id">
+            <summary>
+            <para>
+            The ID of the PackagingGroup.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVPackagingGroupCmdlet.EgressAccessLogs_LogGroupName">
+            <summary>
+            <para>
+            Customize the log group name.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVPackagingGroupCmdlet.Authorization_SecretsRoleArn">
+            <summary>
+            <para>
+            The Amazon Resource Name (ARN) for the
+            IAM role that allows MediaPackage to communicate with AWS Secrets Manager.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVPackagingGroupCmdlet.Tag">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVPackagingGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaPackageVod.Model.CreatePackagingGroupResponse).
+            Specifying the name of a property of type Amazon.MediaPackageVod.Model.CreatePackagingGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVPackagingGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Id parameter.
+            The -PassThru parameter is deprecated, use -Select '^Id' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.NewEMPVPackagingGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMPV.RemoveEMPVAssetCmdlet">
+            <summary>
+            Deletes an existing MediaPackage VOD Asset resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.RemoveEMPVAssetCmdlet.Id">
+            <summary>
+            <para>
+            The ID of the MediaPackage VOD Asset resource to delete.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.RemoveEMPVAssetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaPackageVod.Model.DeleteAssetResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.RemoveEMPVAssetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Id parameter.
+            The -PassThru parameter is deprecated, use -Select '^Id' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.RemoveEMPVAssetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMPV.RemoveEMPVPackagingConfigurationCmdlet">
+            <summary>
+            Deletes a MediaPackage VOD PackagingConfiguration resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.RemoveEMPVPackagingConfigurationCmdlet.Id">
+            <summary>
+            <para>
+            The ID of the MediaPackage VOD PackagingConfiguration
+            resource to delete.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.RemoveEMPVPackagingConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaPackageVod.Model.DeletePackagingConfigurationResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.RemoveEMPVPackagingConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Id parameter.
+            The -PassThru parameter is deprecated, use -Select '^Id' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.RemoveEMPVPackagingConfigurationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMPV.RemoveEMPVPackagingGroupCmdlet">
+            <summary>
+            Deletes a MediaPackage VOD PackagingGroup resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.RemoveEMPVPackagingGroupCmdlet.Id">
+            <summary>
+            <para>
+            The ID of the MediaPackage VOD PackagingGroup resource
+            to delete.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.RemoveEMPVPackagingGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaPackageVod.Model.DeletePackagingGroupResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.RemoveEMPVPackagingGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Id parameter.
+            The -PassThru parameter is deprecated, use -Select '^Id' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.RemoveEMPVPackagingGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMPV.RemoveEMPVResourceTagCmdlet">
+            <summary>
+            Removes tags from the specified resource. You can specify one or more tags to remove.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.RemoveEMPVResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            The Amazon Resource Name (ARN) for the resource.
+            You can get this from the response to any request to the resource.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.RemoveEMPVResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            A comma-separated list of the tag keys to remove
+            from the resource.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.RemoveEMPVResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaPackageVod.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.RemoveEMPVResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.RemoveEMPVResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMPV.UpdateEMPVLogCmdlet">
+            <summary>
+            Changes the packaging group's properities to configure log subscription
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.UpdateEMPVLogCmdlet.Id">
+            <summary>
+            <para>
+            The ID of a MediaPackage VOD PackagingGroup resource.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.UpdateEMPVLogCmdlet.EgressAccessLogs_LogGroupName">
+            <summary>
+            <para>
+            Customize the log group name.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.UpdateEMPVLogCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaPackageVod.Model.ConfigureLogsResponse).
+            Specifying the name of a property of type Amazon.MediaPackageVod.Model.ConfigureLogsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.UpdateEMPVLogCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Id parameter.
+            The -PassThru parameter is deprecated, use -Select '^Id' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.UpdateEMPVLogCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMPV.UpdateEMPVPackagingGroupCmdlet">
+            <summary>
+            Updates a specific packaging group. You can't change the id attribute or any other
+            system-generated attributes.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.UpdateEMPVPackagingGroupCmdlet.Authorization_CdnIdentifierSecret">
+            <summary>
+            <para>
+            The Amazon Resource Name (ARN) for
+            the secret in AWS Secrets Manager that is used for CDN authorization.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.UpdateEMPVPackagingGroupCmdlet.Id">
+            <summary>
+            <para>
+            The ID of a MediaPackage VOD PackagingGroup resource.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.UpdateEMPVPackagingGroupCmdlet.Authorization_SecretsRoleArn">
+            <summary>
+            <para>
+            The Amazon Resource Name (ARN) for the
+            IAM role that allows MediaPackage to communicate with AWS Secrets Manager.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.UpdateEMPVPackagingGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaPackageVod.Model.UpdatePackagingGroupResponse).
+            Specifying the name of a property of type Amazon.MediaPackageVod.Model.UpdatePackagingGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.UpdateEMPVPackagingGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Id parameter.
+            The -PassThru parameter is deprecated, use -Select '^Id' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMPV.UpdateEMPVPackagingGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

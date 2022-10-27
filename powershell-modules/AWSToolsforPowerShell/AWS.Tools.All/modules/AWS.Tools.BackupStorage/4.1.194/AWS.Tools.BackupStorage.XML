@@ -1,0 +1,569 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.BackupStorage</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSChunkCmdlet">
+            <summary>
+            Gets the specified object's chunk.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSChunkCmdlet.ChunkToken">
+            <summary>
+            <para>
+            Chunk token
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSChunkCmdlet.StorageJobId">
+            <summary>
+            <para>
+            Storage job id
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSChunkCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BackupStorage.Model.GetChunkResponse).
+            Specifying the name of a property of type Amazon.BackupStorage.Model.GetChunkResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSChunkCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ChunkToken parameter.
+            The -PassThru parameter is deprecated, use -Select '^ChunkToken' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSChunkListCmdlet">
+            <summary>
+            List chunks in a given Object<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSChunkListCmdlet.ObjectToken">
+            <summary>
+            <para>
+            Object token
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSChunkListCmdlet.StorageJobId">
+            <summary>
+            <para>
+            Storage job id
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSChunkListCmdlet.MaxResult">
+            <summary>
+            <para>
+            Maximum number of chunks
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSChunkListCmdlet.NextToken">
+            <summary>
+            <para>
+            Pagination token
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSChunkListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ChunkList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BackupStorage.Model.ListChunksResponse).
+            Specifying the name of a property of type Amazon.BackupStorage.Model.ListChunksResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSChunkListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ObjectToken parameter.
+            The -PassThru parameter is deprecated, use -Select '^ObjectToken' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSChunkListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSObjectListCmdlet">
+            <summary>
+            List all Objects in a given Backup.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSObjectListCmdlet.CreatedAfter">
+            <summary>
+            <para>
+            (Optional) Created after filter
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSObjectListCmdlet.CreatedBefore">
+            <summary>
+            <para>
+            (Optional) Created before filter
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSObjectListCmdlet.StartingObjectName">
+            <summary>
+            <para>
+            Optional, specifies the starting Object
+            name to list from. Ignored if NextToken is not NULL
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSObjectListCmdlet.StartingObjectPrefix">
+            <summary>
+            <para>
+            Optional, specifies the starting
+            Object prefix to list from. Ignored if NextToken is not NULL
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSObjectListCmdlet.StorageJobId">
+            <summary>
+            <para>
+            Storage job id
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSObjectListCmdlet.MaxResult">
+            <summary>
+            <para>
+            Maximum objects count
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSObjectListCmdlet.NextToken">
+            <summary>
+            <para>
+            Pagination token
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSObjectListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ObjectList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BackupStorage.Model.ListObjectsResponse).
+            Specifying the name of a property of type Amazon.BackupStorage.Model.ListObjectsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSObjectListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the StorageJobId parameter.
+            The -PassThru parameter is deprecated, use -Select '^StorageJobId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSObjectListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSObjectMetadataCmdlet">
+            <summary>
+            Get metadata associated with an Object.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSObjectMetadataCmdlet.ObjectToken">
+            <summary>
+            <para>
+            Object token.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSObjectMetadataCmdlet.StorageJobId">
+            <summary>
+            <para>
+            Backup job id for the in-progress backup.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSObjectMetadataCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BackupStorage.Model.GetObjectMetadataResponse).
+            Specifying the name of a property of type Amazon.BackupStorage.Model.GetObjectMetadataResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.GetBAKSObjectMetadataCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ObjectToken parameter.
+            The -PassThru parameter is deprecated, use -Select '^ObjectToken' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAKS.RemoveBAKSObjectCmdlet">
+            <summary>
+            Delete Object from the incremental base Backup.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.RemoveBAKSObjectCmdlet.BackupJobId">
+            <summary>
+            <para>
+            Backup job Id for the in-progress backup.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.RemoveBAKSObjectCmdlet.ObjectName">
+            <summary>
+            <para>
+            The name of the Object.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.RemoveBAKSObjectCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BackupStorage.Model.DeleteObjectResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.RemoveBAKSObjectCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ObjectName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ObjectName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.RemoveBAKSObjectCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAKS.StartBAKSObjectCmdlet">
+            <summary>
+            Start upload containing one or many chunks.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.StartBAKSObjectCmdlet.BackupJobId">
+            <summary>
+            <para>
+            Backup job Id for the in-progress backup
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.StartBAKSObjectCmdlet.ObjectName">
+            <summary>
+            <para>
+            Name for the object.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.StartBAKSObjectCmdlet.ThrowOnDuplicate">
+            <summary>
+            <para>
+            Throw an exception if Object name is
+            already exist.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.StartBAKSObjectCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'UploadId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BackupStorage.Model.StartObjectResponse).
+            Specifying the name of a property of type Amazon.BackupStorage.Model.StartObjectResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.StartBAKSObjectCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ObjectName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ObjectName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.StartBAKSObjectCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAKS.SubmitBAKSObjectCompleteCmdlet">
+            <summary>
+            Complete upload
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.SubmitBAKSObjectCompleteCmdlet.BackupJobId">
+            <summary>
+            <para>
+            Backup job Id for the in-progress backup
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.SubmitBAKSObjectCompleteCmdlet.MetadataBlob">
+            <summary>
+            <para>
+            Optional metadata associated with an Object.
+            Maximum length is 4MB.
+            </para>
+            <para>The cmdlet accepts a parameter of type string, string[], System.IO.FileInfo or System.IO.Stream.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.SubmitBAKSObjectCompleteCmdlet.MetadataBlobChecksum">
+            <summary>
+            <para>
+            Checksum of MetadataBlob.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.SubmitBAKSObjectCompleteCmdlet.MetadataBlobChecksumAlgorithm">
+            <summary>
+            <para>
+            Checksum algorithm.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.SubmitBAKSObjectCompleteCmdlet.MetadataBlobLength">
+            <summary>
+            <para>
+            The size of MetadataBlob.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.SubmitBAKSObjectCompleteCmdlet.MetadataString">
+            <summary>
+            <para>
+            Optional metadata associated with an Object.
+            Maximum string length is 256 bytes.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.SubmitBAKSObjectCompleteCmdlet.ObjectChecksum">
+            <summary>
+            <para>
+            Object checksum
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.SubmitBAKSObjectCompleteCmdlet.ObjectChecksumAlgorithm">
+            <summary>
+            <para>
+            Checksum algorithm
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.SubmitBAKSObjectCompleteCmdlet.UploadId">
+            <summary>
+            <para>
+            Upload Id for the in-progress upload
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.SubmitBAKSObjectCompleteCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BackupStorage.Model.NotifyObjectCompleteResponse).
+            Specifying the name of a property of type Amazon.BackupStorage.Model.NotifyObjectCompleteResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.SubmitBAKSObjectCompleteCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the UploadId parameter.
+            The -PassThru parameter is deprecated, use -Select '^UploadId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.SubmitBAKSObjectCompleteCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAKS.WriteBAKSChunkCmdlet">
+            <summary>
+            Upload chunk.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.WriteBAKSChunkCmdlet.BackupJobId">
+            <summary>
+            <para>
+            Backup job Id for the in-progress backup.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.WriteBAKSChunkCmdlet.Checksum">
+            <summary>
+            <para>
+            Data checksum
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.WriteBAKSChunkCmdlet.ChecksumAlgorithm">
+            <summary>
+            <para>
+            Checksum algorithm
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.WriteBAKSChunkCmdlet.ChunkIndex">
+            <summary>
+            <para>
+            Describes this chunk's position relative to
+            the other chunks
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.WriteBAKSChunkCmdlet.Data">
+            <summary>
+            <para>
+            Data to be uploaded
+            </para>
+            <para>The cmdlet accepts a parameter of type string, string[], System.IO.FileInfo or System.IO.Stream.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.WriteBAKSChunkCmdlet.Length">
+            <summary>
+            <para>
+            Data length
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.WriteBAKSChunkCmdlet.UploadId">
+            <summary>
+            <para>
+            Upload Id for the in-progress upload.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.WriteBAKSChunkCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BackupStorage.Model.PutChunkResponse).
+            Specifying the name of a property of type Amazon.BackupStorage.Model.PutChunkResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.WriteBAKSChunkCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Data parameter.
+            The -PassThru parameter is deprecated, use -Select '^Data' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.WriteBAKSChunkCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BAKS.WriteBAKSObjectCmdlet">
+            <summary>
+            Upload object that can store object metadata String and data blob in single API call
+            using inline chunk field.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.WriteBAKSObjectCmdlet.BackupJobId">
+            <summary>
+            <para>
+            Backup job Id for the in-progress backup.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.WriteBAKSObjectCmdlet.InlineChunk">
+            <summary>
+            <para>
+            Inline chunk data to be uploaded.
+            </para>
+            <para>The cmdlet accepts a parameter of type string, string[], System.IO.FileInfo or System.IO.Stream.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.WriteBAKSObjectCmdlet.InlineChunkChecksum">
+            <summary>
+            <para>
+            Inline chunk checksum
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.WriteBAKSObjectCmdlet.InlineChunkChecksumAlgorithm">
+            <summary>
+            <para>
+            Inline chunk checksum algorithm
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.WriteBAKSObjectCmdlet.InlineChunkLength">
+            <summary>
+            <para>
+            Length of the inline chunk data.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.WriteBAKSObjectCmdlet.MetadataString">
+            <summary>
+            <para>
+            Store user defined metadata like backup
+            checksum, disk ids, restore metadata etc.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.WriteBAKSObjectCmdlet.ObjectChecksum">
+            <summary>
+            <para>
+            object checksum
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.WriteBAKSObjectCmdlet.ObjectChecksumAlgorithm">
+            <summary>
+            <para>
+            object checksum algorithm
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.WriteBAKSObjectCmdlet.ObjectName">
+            <summary>
+            <para>
+            The name of the Object to be uploaded.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.WriteBAKSObjectCmdlet.ThrowOnDuplicate">
+            <summary>
+            <para>
+            Throw an exception if Object name is
+            already exist.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.WriteBAKSObjectCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BackupStorage.Model.PutObjectResponse).
+            Specifying the name of a property of type Amazon.BackupStorage.Model.PutObjectResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.WriteBAKSObjectCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ObjectName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ObjectName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BAKS.WriteBAKSObjectCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

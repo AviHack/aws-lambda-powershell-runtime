@@ -1,0 +1,637 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.CodeStarNotifications</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.CSTN.AddCSTNResourceTagCmdlet">
+            <summary>
+            Associates a set of provided tags with a notification rule.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.AddCSTNResourceTagCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the notification rule to tag.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.AddCSTNResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The list of tags to associate with the resource. Tag key names cannot start with "<code>aws</code>".</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.AddCSTNResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeStarNotifications.Model.TagResourceResponse).
+            Specifying the name of a property of type Amazon.CodeStarNotifications.Model.TagResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.AddCSTNResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.AddCSTNResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CSTN.AddCSTNSubscriptionCmdlet">
+            <summary>
+            Creates an association between a notification rule and an Chatbot topic or Chatbot
+            client so that the associated target can receive notifications when the events described
+            in the rule are triggered.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.AddCSTNSubscriptionCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the notification rule for which you want to create
+            the association.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.AddCSTNSubscriptionCmdlet.ClientRequestToken">
+            <summary>
+            <para>
+            <para>An enumeration token that, when provided in a request, returns the next batch of the
+            results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.AddCSTNSubscriptionCmdlet.Target_TargetAddress">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.AddCSTNSubscriptionCmdlet.Target_TargetType">
+            <summary>
+            <para>
+            <para>The target type. Can be an Chatbot topic or Chatbot client.</para><ul><li><para>Chatbot topics are specified as <code>SNS</code>.</para></li><li><para>Chatbot clients are specified as <code>AWSChatbotSlack</code>.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.AddCSTNSubscriptionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Arn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeStarNotifications.Model.SubscribeResponse).
+            Specifying the name of a property of type Amazon.CodeStarNotifications.Model.SubscribeResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.AddCSTNSubscriptionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.AddCSTNSubscriptionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNEventTypeListCmdlet">
+            <summary>
+            Returns information about the event types available for configuring notifications.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNEventTypeListCmdlet.Filter">
+            <summary>
+            <para>
+            <para>The filters to use to return information by service or resource type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNEventTypeListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>A non-negative integer used to limit the number of returned results. The default number
+            is 50. The maximum number of results that can be returned is 100.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNEventTypeListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>An enumeration token that, when provided in a request, returns the next batch of the
+            results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNEventTypeListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EventTypes'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeStarNotifications.Model.ListEventTypesResponse).
+            Specifying the name of a property of type Amazon.CodeStarNotifications.Model.ListEventTypesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNEventTypeListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNNotificationRuleCmdlet">
+            <summary>
+            Returns information about a specified notification rule.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNNotificationRuleCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the notification rule.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNNotificationRuleCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeStarNotifications.Model.DescribeNotificationRuleResponse).
+            Specifying the name of a property of type Amazon.CodeStarNotifications.Model.DescribeNotificationRuleResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNNotificationRuleCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNNotificationRuleListCmdlet">
+            <summary>
+            Returns a list of the notification rules for an Amazon Web Services account.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNNotificationRuleListCmdlet.Filter">
+            <summary>
+            <para>
+            <para>The filters to use to return information by service or resource type. For valid values,
+            see <a>ListNotificationRulesFilter</a>.</para><note><para>A filter with the same name can appear more than once when used with OR statements.
+            Filters with different names should be applied with AND statements.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNNotificationRuleListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>A non-negative integer used to limit the number of returned results. The maximum number
+            of results that can be returned is 100.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNNotificationRuleListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>An enumeration token that, when provided in a request, returns the next batch of the
+            results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNNotificationRuleListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'NotificationRules'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeStarNotifications.Model.ListNotificationRulesResponse).
+            Specifying the name of a property of type Amazon.CodeStarNotifications.Model.ListNotificationRulesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNNotificationRuleListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNResourceTagCmdlet">
+            <summary>
+            Returns a list of the tags associated with a notification rule.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNResourceTagCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) for the notification rule.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeStarNotifications.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.CodeStarNotifications.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNTargetListCmdlet">
+            <summary>
+            Returns a list of the notification rule targets for an Amazon Web Services account.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNTargetListCmdlet.Filter">
+            <summary>
+            <para>
+            <para>The filters to use to return information by service or resource type. Valid filters
+            include target type, target address, and target status.</para><note><para>A filter with the same name can appear more than once when used with OR statements.
+            Filters with different names should be applied with AND statements.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNTargetListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>A non-negative integer used to limit the number of returned results. The maximum number
+            of results that can be returned is 100.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNTargetListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>An enumeration token that, when provided in a request, returns the next batch of the
+            results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNTargetListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Targets'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeStarNotifications.Model.ListTargetsResponse).
+            Specifying the name of a property of type Amazon.CodeStarNotifications.Model.ListTargetsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.GetCSTNTargetListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CSTN.NewCSTNNotificationRuleCmdlet">
+            <summary>
+            Creates a notification rule for a resource. The rule specifies the events you want
+            notifications about and the targets (such as Chatbot topics or Chatbot clients configured
+            for Slack) where you want to receive them.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.NewCSTNNotificationRuleCmdlet.ClientRequestToken">
+            <summary>
+            <para>
+            <para>A unique, client-generated idempotency token that, when provided in a request, ensures
+            the request cannot be repeated with a changed parameter. If a request with the same
+            parameters is received and a token is included, the request returns information about
+            the initial request that used that token.</para><note><para>The Amazon Web Services SDKs prepopulate client request tokens. If you are using an
+            Amazon Web Services SDK, an idempotency token is created for you.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.NewCSTNNotificationRuleCmdlet.DetailType">
+            <summary>
+            <para>
+            <para>The level of detail to include in the notifications for this resource. <code>BASIC</code>
+            will include only the contents of the event as it would appear in Amazon CloudWatch.
+            <code>FULL</code> will include any supplemental information provided by AWS CodeStar
+            Notifications and/or the service for the resource for which the notification is created.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.NewCSTNNotificationRuleCmdlet.EventTypeId">
+            <summary>
+            <para>
+            <para>A list of event types associated with this notification rule. For a list of allowed
+            events, see <a>EventTypeSummary</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.NewCSTNNotificationRuleCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name for the notification rule. Notification rule names must be unique in your
+            Amazon Web Services account.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.NewCSTNNotificationRuleCmdlet.Resource">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource to associate with the notification
+            rule. Supported resources include pipelines in CodePipeline, repositories in CodeCommit,
+            and build projects in CodeBuild.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.NewCSTNNotificationRuleCmdlet.Status">
+            <summary>
+            <para>
+            <para>The status of the notification rule. The default value is <code>ENABLED</code>. If
+            the status is set to <code>DISABLED</code>, notifications aren't sent for the notification
+            rule.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.NewCSTNNotificationRuleCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>".
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.NewCSTNNotificationRuleCmdlet.Target">
+            <summary>
+            <para>
+            <para>A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics
+            and Chatbot clients to associate with the notification rule.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.NewCSTNNotificationRuleCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Arn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeStarNotifications.Model.CreateNotificationRuleResponse).
+            Specifying the name of a property of type Amazon.CodeStarNotifications.Model.CreateNotificationRuleResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.NewCSTNNotificationRuleCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Resource parameter.
+            The -PassThru parameter is deprecated, use -Select '^Resource' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.NewCSTNNotificationRuleCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CSTN.RemoveCSTNNotificationRuleCmdlet">
+            <summary>
+            Deletes a notification rule for a resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.RemoveCSTNNotificationRuleCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the notification rule you want to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.RemoveCSTNNotificationRuleCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Arn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeStarNotifications.Model.DeleteNotificationRuleResponse).
+            Specifying the name of a property of type Amazon.CodeStarNotifications.Model.DeleteNotificationRuleResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.RemoveCSTNNotificationRuleCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.RemoveCSTNNotificationRuleCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CSTN.RemoveCSTNResourceTagCmdlet">
+            <summary>
+            Removes the association between one or more provided tags and a notification rule.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.RemoveCSTNResourceTagCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the notification rule from which to remove the tags.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.RemoveCSTNResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>The key names of the tags to remove.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.RemoveCSTNResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeStarNotifications.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.RemoveCSTNResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.RemoveCSTNResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CSTN.RemoveCSTNSubscriptionCmdlet">
+            <summary>
+            Removes an association between a notification rule and an Chatbot topic so that subscribers
+            to that topic stop receiving notifications when the events described in the rule are
+            triggered.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.RemoveCSTNSubscriptionCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the notification rule.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.RemoveCSTNSubscriptionCmdlet.TargetAddress">
+            <summary>
+            <para>
+            <para>The ARN of the Chatbot topic to unsubscribe from the notification rule.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.RemoveCSTNSubscriptionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Arn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeStarNotifications.Model.UnsubscribeResponse).
+            Specifying the name of a property of type Amazon.CodeStarNotifications.Model.UnsubscribeResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.RemoveCSTNSubscriptionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.RemoveCSTNSubscriptionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CSTN.RemoveCSTNTargetCmdlet">
+            <summary>
+            Deletes a specified target for notifications.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.RemoveCSTNTargetCmdlet.ForceUnsubscribeAll">
+            <summary>
+            <para>
+            <para>A Boolean value that can be used to delete all associations with this Chatbot topic.
+            The default value is FALSE. If set to TRUE, all associations between that target and
+            every notification rule in your Amazon Web Services account are deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.RemoveCSTNTargetCmdlet.TargetAddress">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.RemoveCSTNTargetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeStarNotifications.Model.DeleteTargetResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.RemoveCSTNTargetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TargetAddress parameter.
+            The -PassThru parameter is deprecated, use -Select '^TargetAddress' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.RemoveCSTNTargetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CSTN.UpdateCSTNNotificationRuleCmdlet">
+            <summary>
+            Updates a notification rule for a resource. You can change the events that trigger
+            the notification rule, the status of the rule, and the targets that receive the notifications.
+            
+             <note><para>
+            To add or remove tags for a notification rule, you must use <a>TagResource</a> and
+            <a>UntagResource</a>.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.UpdateCSTNNotificationRuleCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the notification rule.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.UpdateCSTNNotificationRuleCmdlet.DetailType">
+            <summary>
+            <para>
+            <para>The level of detail to include in the notifications for this resource. BASIC will
+            include only the contents of the event as it would appear in Amazon CloudWatch. FULL
+            will include any supplemental information provided by AWS CodeStar Notifications and/or
+            the service for the resource for which the notification is created.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.UpdateCSTNNotificationRuleCmdlet.EventTypeId">
+            <summary>
+            <para>
+            <para>A list of event types associated with this notification rule. For a complete list
+            of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification
+            concepts</a> in the <i>Developer Tools Console User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.UpdateCSTNNotificationRuleCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the notification rule.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.UpdateCSTNNotificationRuleCmdlet.Status">
+            <summary>
+            <para>
+            <para>The status of the notification rule. Valid statuses include enabled (sending notifications)
+            or disabled (not sending notifications).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.UpdateCSTNNotificationRuleCmdlet.Target">
+            <summary>
+            <para>
+            <para>The address and type of the targets to receive notifications from this notification
+            rule.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.UpdateCSTNNotificationRuleCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeStarNotifications.Model.UpdateNotificationRuleResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.UpdateCSTNNotificationRuleCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CSTN.UpdateCSTNNotificationRuleCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

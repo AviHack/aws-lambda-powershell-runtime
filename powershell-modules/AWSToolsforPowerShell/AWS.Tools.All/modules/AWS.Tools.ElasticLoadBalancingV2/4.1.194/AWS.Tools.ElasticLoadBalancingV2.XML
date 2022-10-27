@@ -1,0 +1,2079 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.ElasticLoadBalancingV2</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.AddELB2ListenerCertificateCmdlet">
+            <summary>
+            Adds the specified SSL server certificate to the certificate list for the specified
+            HTTPS or TLS listener.
+            
+             
+            <para>
+            If the certificate in already in the certificate list, the call is successful but
+            the certificate is not added again.
+            </para><para>
+            For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html">HTTPS
+            listeners</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html">TLS
+            listeners</a> in the <i>Network Load Balancers Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.AddELB2ListenerCertificateCmdlet.Certificate">
+            <summary>
+            <para>
+            <para>The certificate to add. You can specify one certificate per call. Set <code>CertificateArn</code>
+            to the certificate ARN but do not set <code>IsDefault</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.AddELB2ListenerCertificateCmdlet.ListenerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the listener.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.AddELB2ListenerCertificateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Certificates'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.AddListenerCertificatesResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancingV2.Model.AddListenerCertificatesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.AddELB2ListenerCertificateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Certificate parameter.
+            The -PassThru parameter is deprecated, use -Select '^Certificate' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.AddELB2ListenerCertificateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.AddELB2TagCmdlet">
+            <summary>
+            Adds the specified tags to the specified Elastic Load Balancing resource. You can
+            tag your Application Load Balancers, Network Load Balancers, Gateway Load Balancers,
+            target groups, listeners, and rules.
+            
+             
+            <para>
+            Each tag consists of a key and an optional value. If a resource already has a tag
+            with the same key, <code>AddTags</code> updates its value.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.AddELB2TagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.AddELB2TagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.AddELB2TagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.AddTagsResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.AddELB2TagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.EditELB2ListenerCmdlet">
+            <summary>
+            Replaces the specified properties of the specified listener. Any properties that you
+            do not specify remain unchanged.
+            
+             
+            <para>
+            Changing the protocol from HTTPS to HTTP, or from TLS to TCP, removes the security
+            policy and default certificate properties. If you change the protocol from HTTP to
+            HTTPS, or from TCP to TLS, you must add the security policy and default certificate
+            properties.
+            </para><para>
+            To add an item to a list, remove an item from a list, or update an item in a list,
+            you must provide the entire list. For example, to add an action, specify a list with
+            the current actions plus the new action.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2ListenerCmdlet.AlpnPolicy">
+            <summary>
+            <para>
+            <para>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy.
+            You can specify one policy name. The following are the possible values:</para><ul><li><para><code>HTTP1Only</code></para></li><li><para><code>HTTP2Only</code></para></li><li><para><code>HTTP2Optional</code></para></li><li><para><code>HTTP2Preferred</code></para></li><li><para><code>None</code></para></li></ul><para>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
+            policies</a> in the <i>Network Load Balancers Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2ListenerCmdlet.Certificate">
+            <summary>
+            <para>
+            <para>[HTTPS and TLS listeners] The default certificate for the listener. You must provide
+            exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but
+            do not set <code>IsDefault</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2ListenerCmdlet.DefaultAction">
+            <summary>
+            <para>
+            <para>The actions for the default rule.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2ListenerCmdlet.ListenerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the listener.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2ListenerCmdlet.Port">
+            <summary>
+            <para>
+            <para>The port for connections from clients to the load balancer. You cannot specify a port
+            for a Gateway Load Balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2ListenerCmdlet.Protocol">
+            <summary>
+            <para>
+            <para>The protocol for connections from clients to the load balancer. Application Load Balancers
+            support the HTTP and HTTPS protocols. Network Load Balancers support the TCP, TLS,
+            UDP, and TCP_UDP protocols. You can’t change the protocol to UDP or TCP_UDP if dual-stack
+            mode is enabled. You cannot specify a protocol for a Gateway Load Balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2ListenerCmdlet.SslPolicy">
+            <summary>
+            <para>
+            <para>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers
+            are supported.</para><para>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+            policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security
+            policies</a> in the <i>Network Load Balancers Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2ListenerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Listeners'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.ModifyListenerResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancingV2.Model.ModifyListenerResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2ListenerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ListenerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ListenerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2ListenerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.EditELB2LoadBalancerAttributeCmdlet">
+            <summary>
+            Modifies the specified attributes of the specified Application Load Balancer, Network
+            Load Balancer, or Gateway Load Balancer.
+            
+             
+            <para>
+            If any of the specified attributes can't be modified as requested, the call fails.
+            Any existing attributes that you do not modify retain their current values.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2LoadBalancerAttributeCmdlet.Attribute">
+            <summary>
+            <para>
+            <para>The load balancer attributes.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2LoadBalancerAttributeCmdlet.LoadBalancerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2LoadBalancerAttributeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Attributes'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.ModifyLoadBalancerAttributesResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancingV2.Model.ModifyLoadBalancerAttributesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2LoadBalancerAttributeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2LoadBalancerAttributeCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.EditELB2RuleCmdlet">
+            <summary>
+            Replaces the specified properties of the specified rule. Any properties that you do
+            not specify are unchanged.
+            
+             
+            <para>
+            To add an item to a list, remove an item from a list, or update an item in a list,
+            you must provide the entire list. For example, to add an action, specify a list with
+            the current actions plus the new action.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2RuleCmdlet.Action">
+            <summary>
+            <para>
+            <para>The actions.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2RuleCmdlet.Condition">
+            <summary>
+            <para>
+            <para>The conditions.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2RuleCmdlet.RuleArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the rule.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2RuleCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Rules'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.ModifyRuleResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancingV2.Model.ModifyRuleResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2RuleCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RuleArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^RuleArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2RuleCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.EditELB2TargetGroupCmdlet">
+            <summary>
+            Modifies the health checks used when evaluating the health state of the targets in
+            the specified target group.
+            
+             
+            <para>
+            If the protocol of the target group is TCP, TLS, UDP, or TCP_UDP, you can't modify
+            the health check protocol, interval, timeout, or success codes.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2TargetGroupCmdlet.Matcher_GrpcCode">
+            <summary>
+            <para>
+            <para>You can specify values between 0 and 99. You can specify multiple values (for example,
+            "0,1") or a range of values (for example, "0-5"). The default value is 12.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2TargetGroupCmdlet.HealthCheckEnabled">
+            <summary>
+            <para>
+            <para>Indicates whether health checks are enabled.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2TargetGroupCmdlet.HealthCheckIntervalSecond">
+            <summary>
+            <para>
+            <para>The approximate amount of time, in seconds, between health checks of an individual
+            target. For TCP health checks, the supported values are 10 or 30 seconds.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2TargetGroupCmdlet.HealthCheckPath">
+            <summary>
+            <para>
+            <para>[HTTP/HTTPS health checks] The destination for health checks on the targets.</para><para>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</para><para>[GRPC protocol version] The path of a custom health check method with the format /package.service/method.
+            The default is /Amazon Web Services.ALB/healthcheck.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2TargetGroupCmdlet.HealthCheckPort">
+            <summary>
+            <para>
+            <para>The port the load balancer uses when performing health checks on targets.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2TargetGroupCmdlet.HealthCheckProtocol">
+            <summary>
+            <para>
+            <para>The protocol the load balancer uses when performing health checks on targets. For
+            Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway
+            Load Balancers, the default is TCP. The TCP protocol is not supported for health checks
+            if the protocol of the target group is HTTP or HTTPS. It is supported for health checks
+            only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE,
+            TLS, UDP, and TCP_UDP protocols are not supported for health checks.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2TargetGroupCmdlet.HealthCheckTimeoutSecond">
+            <summary>
+            <para>
+            <para>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response
+            means a failed health check.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2TargetGroupCmdlet.HealthyThresholdCount">
+            <summary>
+            <para>
+            <para>The number of consecutive health checks successes required before considering an unhealthy
+            target healthy.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2TargetGroupCmdlet.Matcher_HttpCode">
+            <summary>
+            <para>
+            <para>For Application Load Balancers, you can specify values between 200 and 499, and the
+            default value is 200. You can specify multiple values (for example, "200,202") or
+            a range of values (for example, "200-299").</para><para>For Network Load Balancers and Gateway Load Balancers, this must be "200–399".</para><para>Note that when using shorthand syntax, some values such as commas need to be escaped.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2TargetGroupCmdlet.TargetGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the target group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2TargetGroupCmdlet.UnhealthyThresholdCount">
+            <summary>
+            <para>
+            <para>The number of consecutive health check failures required before considering the target
+            unhealthy. For target groups with a protocol of TCP or TLS, this value must be the
+            same as the healthy threshold count.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2TargetGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TargetGroups'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.ModifyTargetGroupResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancingV2.Model.ModifyTargetGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2TargetGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TargetGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^TargetGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2TargetGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.EditELB2TargetGroupAttributeCmdlet">
+            <summary>
+            Modifies the specified attributes of the specified target group.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2TargetGroupAttributeCmdlet.Attribute">
+            <summary>
+            <para>
+            <para>The attributes.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2TargetGroupAttributeCmdlet.TargetGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the target group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2TargetGroupAttributeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Attributes'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.ModifyTargetGroupAttributesResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancingV2.Model.ModifyTargetGroupAttributesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2TargetGroupAttributeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TargetGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^TargetGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.EditELB2TargetGroupAttributeCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.GetELB2AccountLimitCmdlet">
+            <summary>
+            Describes the current Elastic Load Balancing resource limits for your Amazon Web Services
+            account.
+            
+             
+            <para>
+            For more information, see the following:
+            </para><ul><li><para><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Quotas
+            for your Application Load Balancers</a></para></li><li><para><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Quotas
+            for your Network Load Balancers</a></para></li><li><para><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/quotas-limits.html">Quotas
+            for your Gateway Load Balancers</a></para></li></ul><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2AccountLimitCmdlet.Marker">
+            <summary>
+            <para>
+            <para>The marker for the next set of results. (You received this marker from a previous
+            call.)</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-Marker $null' for the first call and '-Marker $AWSHistory.LastServiceResponse.NextMarker' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2AccountLimitCmdlet.PageSize">
+            <summary>
+            <para>
+            <para>The maximum number of results to return with this call.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2AccountLimitCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Limits'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.DescribeAccountLimitsResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancingV2.Model.DescribeAccountLimitsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2AccountLimitCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of Marker
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.GetELB2ListenerCmdlet">
+            <summary>
+            Describes the specified listeners or the listeners for the specified Application Load
+            Balancer, Network Load Balancer, or Gateway Load Balancer. You must specify either
+            a load balancer or one or more listeners.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2ListenerCmdlet.ListenerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Names (ARN) of the listeners.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2ListenerCmdlet.LoadBalancerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2ListenerCmdlet.Marker">
+            <summary>
+            <para>
+            <para>The marker for the next set of results. (You received this marker from a previous
+            call.)</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-Marker $null' for the first call and '-Marker $AWSHistory.LastServiceResponse.NextMarker' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2ListenerCmdlet.PageSize">
+            <summary>
+            <para>
+            <para>The maximum number of results to return with this call.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2ListenerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Listeners'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.DescribeListenersResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancingV2.Model.DescribeListenersResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2ListenerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ListenerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ListenerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2ListenerCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of Marker
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.GetELB2ListenerCertificateCmdlet">
+            <summary>
+            Describes the default certificate and the certificate list for the specified HTTPS
+            or TLS listener.
+            
+             
+            <para>
+            If the default certificate is also in the certificate list, it appears twice in the
+            results (once with <code>IsDefault</code> set to true and once with <code>IsDefault</code>
+            set to false).
+            </para><para>
+            For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#https-listener-certificates">SSL
+            certificates</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#tls-listener-certificate">Server
+            certificates</a> in the <i>Network Load Balancers Guide</i>.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2ListenerCertificateCmdlet.ListenerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Names (ARN) of the listener.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2ListenerCertificateCmdlet.Marker">
+            <summary>
+            <para>
+            <para>The marker for the next set of results. (You received this marker from a previous
+            call.)</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-Marker $null' for the first call and '-Marker $AWSHistory.LastServiceResponse.NextMarker' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2ListenerCertificateCmdlet.PageSize">
+            <summary>
+            <para>
+            <para>The maximum number of results to return with this call.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2ListenerCertificateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Certificates'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.DescribeListenerCertificatesResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancingV2.Model.DescribeListenerCertificatesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2ListenerCertificateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ListenerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ListenerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2ListenerCertificateCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of Marker
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.GetELB2LoadBalancerCmdlet">
+            <summary>
+            Describes the specified load balancers or all of your load balancers.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2LoadBalancerCmdlet.LoadBalancerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Names (ARN) of the load balancers. You can specify up to 20 load
+            balancers in a single call.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2LoadBalancerCmdlet.Name">
+            <summary>
+            <para>
+            <para>The names of the load balancers.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2LoadBalancerCmdlet.Marker">
+            <summary>
+            <para>
+            <para>The marker for the next set of results. (You received this marker from a previous
+            call.)</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-Marker $null' for the first call and '-Marker $AWSHistory.LastServiceResponse.NextMarker' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2LoadBalancerCmdlet.PageSize">
+            <summary>
+            <para>
+            <para>The maximum number of results to return with this call.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2LoadBalancerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'LoadBalancers'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.DescribeLoadBalancersResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancingV2.Model.DescribeLoadBalancersResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2LoadBalancerCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of Marker
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.GetELB2LoadBalancerAttributeCmdlet">
+            <summary>
+            Describes the attributes for the specified Application Load Balancer, Network Load
+            Balancer, or Gateway Load Balancer.
+            
+             
+            <para>
+            For more information, see the following:
+            </para><ul><li><para><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes">Load
+            balancer attributes</a> in the <i>Application Load Balancers Guide</i></para></li><li><para><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes">Load
+            balancer attributes</a> in the <i>Network Load Balancers Guide</i></para></li><li><para><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-load-balancers.html#load-balancer-attributes">Load
+            balancer attributes</a> in the <i>Gateway Load Balancers Guide</i></para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2LoadBalancerAttributeCmdlet.LoadBalancerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2LoadBalancerAttributeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Attributes'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.DescribeLoadBalancerAttributesResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancingV2.Model.DescribeLoadBalancerAttributesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2LoadBalancerAttributeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.GetELB2RuleCmdlet">
+            <summary>
+            Describes the specified rules or the rules for the specified listener. You must specify
+            either a listener or one or more rules.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2RuleCmdlet.ListenerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the listener.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2RuleCmdlet.RuleArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Names (ARN) of the rules.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2RuleCmdlet.Marker">
+            <summary>
+            <para>
+            <para>The marker for the next set of results. (You received this marker from a previous
+            call.)</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-Marker $null' for the first call and '-Marker $AWSHistory.LastServiceResponse.NextMarker' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2RuleCmdlet.PageSize">
+            <summary>
+            <para>
+            <para>The maximum number of results to return with this call.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2RuleCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Rules'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.DescribeRulesResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancingV2.Model.DescribeRulesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2RuleCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ListenerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ListenerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2RuleCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of Marker
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.GetELB2SSLPolicyCmdlet">
+            <summary>
+            Describes the specified policies or all policies used for SSL negotiation.
+            
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+            policies</a> in the <i>Application Load Balancers Guide</i> or <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security
+            policies</a> in the <i>Network Load Balancers Guide</i>.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2SSLPolicyCmdlet.LoadBalancerType">
+            <summary>
+            <para>
+            <para> The type of load balancer. The default lists the SSL policies for all load balancers.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2SSLPolicyCmdlet.Name">
+            <summary>
+            <para>
+            <para>The names of the policies.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2SSLPolicyCmdlet.Marker">
+            <summary>
+            <para>
+            <para>The marker for the next set of results. (You received this marker from a previous
+            call.)</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-Marker $null' for the first call and '-Marker $AWSHistory.LastServiceResponse.NextMarker' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2SSLPolicyCmdlet.PageSize">
+            <summary>
+            <para>
+            <para>The maximum number of results to return with this call.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2SSLPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SslPolicies'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.DescribeSSLPoliciesResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancingV2.Model.DescribeSSLPoliciesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2SSLPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2SSLPolicyCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of Marker
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.GetELB2TagCmdlet">
+            <summary>
+            Describes the tags for the specified Elastic Load Balancing resources. You can describe
+            the tags for one or more Application Load Balancers, Network Load Balancers, Gateway
+            Load Balancers, target groups, listeners, or rules.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2TagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Names (ARN) of the resources. You can specify up to 20 resources
+            in a single call.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2TagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TagDescriptions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.DescribeTagsResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancingV2.Model.DescribeTagsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2TagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.GetELB2TargetGroupCmdlet">
+            <summary>
+            Describes the specified target groups or all of your target groups. By default, all
+            target groups are described. Alternatively, you can specify one of the following to
+            filter the results: the ARN of the load balancer, the names of one or more target
+            groups, or the ARNs of one or more target groups.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2TargetGroupCmdlet.LoadBalancerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2TargetGroupCmdlet.Name">
+            <summary>
+            <para>
+            <para>The names of the target groups.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2TargetGroupCmdlet.TargetGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Names (ARN) of the target groups.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2TargetGroupCmdlet.Marker">
+            <summary>
+            <para>
+            <para>The marker for the next set of results. (You received this marker from a previous
+            call.)</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-Marker $null' for the first call and '-Marker $AWSHistory.LastServiceResponse.NextMarker' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2TargetGroupCmdlet.PageSize">
+            <summary>
+            <para>
+            <para>The maximum number of results to return with this call.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2TargetGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TargetGroups'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.DescribeTargetGroupsResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancingV2.Model.DescribeTargetGroupsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2TargetGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2TargetGroupCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of Marker
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.GetELB2TargetGroupAttributeCmdlet">
+            <summary>
+            Describes the attributes for the specified target group.
+            
+             
+            <para>
+            For more information, see the following:
+            </para><ul><li><para><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes">Target
+            group attributes</a> in the <i>Application Load Balancers Guide</i></para></li><li><para><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes">Target
+            group attributes</a> in the <i>Network Load Balancers Guide</i></para></li><li><para><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/target-groups.html#target-group-attributes">Target
+            group attributes</a> in the <i>Gateway Load Balancers Guide</i></para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2TargetGroupAttributeCmdlet.TargetGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the target group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2TargetGroupAttributeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Attributes'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.DescribeTargetGroupAttributesResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancingV2.Model.DescribeTargetGroupAttributesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2TargetGroupAttributeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TargetGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^TargetGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.GetELB2TargetHealthCmdlet">
+            <summary>
+            Describes the health of the specified targets or all of your targets.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2TargetHealthCmdlet.TargetGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the target group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2TargetHealthCmdlet.Target">
+            <summary>
+            <para>
+            <para>The targets.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2TargetHealthCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TargetHealthDescriptions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.DescribeTargetHealthResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancingV2.Model.DescribeTargetHealthResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.GetELB2TargetHealthCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TargetGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^TargetGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.NewELB2ListenerCmdlet">
+            <summary>
+            Creates a listener for the specified Application Load Balancer, Network Load Balancer,
+            or Gateway Load Balancer.
+            
+             
+            <para>
+            For more information, see the following:
+            </para><ul><li><para><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
+            for your Application Load Balancers</a></para></li><li><para><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners
+            for your Network Load Balancers</a></para></li><li><para><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-listeners.html">Listeners
+            for your Gateway Load Balancers</a></para></li></ul><para>
+            This operation is idempotent, which means that it completes at most one time. If you
+            attempt to create multiple listeners with the same settings, each call succeeds.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2ListenerCmdlet.AlpnPolicy">
+            <summary>
+            <para>
+            <para>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy.
+            You can specify one policy name. The following are the possible values:</para><ul><li><para><code>HTTP1Only</code></para></li><li><para><code>HTTP2Only</code></para></li><li><para><code>HTTP2Optional</code></para></li><li><para><code>HTTP2Preferred</code></para></li><li><para><code>None</code></para></li></ul><para>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
+            policies</a> in the <i>Network Load Balancers Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2ListenerCmdlet.Certificate">
+            <summary>
+            <para>
+            <para>[HTTPS and TLS listeners] The default certificate for the listener. You must provide
+            exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but
+            do not set <code>IsDefault</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2ListenerCmdlet.DefaultAction">
+            <summary>
+            <para>
+            <para>The actions for the default rule.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2ListenerCmdlet.LoadBalancerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2ListenerCmdlet.Port">
+            <summary>
+            <para>
+            <para>The port on which the load balancer is listening. You cannot specify a port for a
+            Gateway Load Balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2ListenerCmdlet.Protocol">
+            <summary>
+            <para>
+            <para>The protocol for connections from clients to the load balancer. For Application Load
+            Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers,
+            the supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP
+            or TCP_UDP protocol if dual-stack mode is enabled. You cannot specify a protocol for
+            a Gateway Load Balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2ListenerCmdlet.SslPolicy">
+            <summary>
+            <para>
+            <para>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers
+            are supported.</para><para>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+            policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security
+            policies</a> in the <i>Network Load Balancers Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2ListenerCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags to assign to the listener.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2ListenerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Listeners'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.CreateListenerResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancingV2.Model.CreateListenerResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2ListenerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2ListenerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.NewELB2LoadBalancerCmdlet">
+            <summary>
+            Creates an Application Load Balancer, Network Load Balancer, or Gateway Load Balancer.
+            
+             
+            <para>
+            For more information, see the following:
+            </para><ul><li><para><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application
+            Load Balancers</a></para></li><li><para><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network
+            Load Balancers</a></para></li><li><para><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-load-balancers.html">Gateway
+            Load Balancers</a></para></li></ul><para>
+            This operation is idempotent, which means that it completes at most one time. If you
+            attempt to create multiple load balancers with the same settings, each call succeeds.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2LoadBalancerCmdlet.CustomerOwnedIpv4Pool">
+            <summary>
+            <para>
+            <para>[Application Load Balancers on Outposts] The ID of the customer-owned address pool
+            (CoIP pool).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2LoadBalancerCmdlet.IpAddressType">
+            <summary>
+            <para>
+            <para>The type of IP addresses used by the subnets for your load balancer. The possible
+            values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for
+            IPv4 and IPv6 addresses). </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2LoadBalancerCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the load balancer.</para><para>This name must be unique per region per account, can have a maximum of 32 characters,
+            must contain only alphanumeric characters or hyphens, must not begin or end with a
+            hyphen, and must not begin with "internal-".</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2LoadBalancerCmdlet.Scheme">
+            <summary>
+            <para>
+            <para>The nodes of an Internet-facing load balancer have public IP addresses. The DNS name
+            of an Internet-facing load balancer is publicly resolvable to the public IP addresses
+            of the nodes. Therefore, Internet-facing load balancers can route requests from clients
+            over the internet.</para><para>The nodes of an internal load balancer have only private IP addresses. The DNS name
+            of an internal load balancer is publicly resolvable to the private IP addresses of
+            the nodes. Therefore, internal load balancers can route requests only from clients
+            with access to the VPC for the load balancer.</para><para>The default is an Internet-facing load balancer.</para><para>You cannot specify a scheme for a Gateway Load Balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2LoadBalancerCmdlet.SecurityGroup">
+            <summary>
+            <para>
+            <para>[Application Load Balancers] The IDs of the security groups for the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2LoadBalancerCmdlet.SubnetMapping">
+            <summary>
+            <para>
+            <para>The IDs of the public subnets. You can specify only one subnet per Availability Zone.
+            You must specify either subnets or subnet mappings, but not both.</para><para>[Application Load Balancers] You must specify subnets from at least two Availability
+            Zones. You cannot specify Elastic IP addresses for your subnets.</para><para>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</para><para>[Application Load Balancers on Local Zones] You can specify subnets from one or more
+            Local Zones.</para><para>[Network Load Balancers] You can specify subnets from one or more Availability Zones.
+            You can specify one Elastic IP address per subnet if you need static IP addresses
+            for your internet-facing load balancer. For internal load balancers, you can specify
+            one private IP address per subnet from the IPv4 range of the subnet. For internet-facing
+            load balancer, you can specify one IPv6 address per subnet.</para><para>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones.
+            You cannot specify Elastic IP addresses for your subnets.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2LoadBalancerCmdlet.Subnet">
+            <summary>
+            <para>
+            <para>The IDs of the public subnets. You can specify only one subnet per Availability Zone.
+            You must specify either subnets or subnet mappings, but not both. To specify an Elastic
+            IP address, specify subnet mappings instead of subnets.</para><para>[Application Load Balancers] You must specify subnets from at least two Availability
+            Zones.</para><para>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</para><para>[Application Load Balancers on Local Zones] You can specify subnets from one or more
+            Local Zones.</para><para>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</para><para>[Gateway Load Balancers] You can specify subnets from one or more Availability Zones.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2LoadBalancerCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags to assign to the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2LoadBalancerCmdlet.Type">
+            <summary>
+            <para>
+            <para>The type of load balancer. The default is <code>application</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2LoadBalancerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'LoadBalancers'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.CreateLoadBalancerResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancingV2.Model.CreateLoadBalancerResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2LoadBalancerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.NewELB2RuleCmdlet">
+            <summary>
+            Creates a rule for the specified listener. The listener must be associated with an
+            Application Load Balancer.
+            
+             
+            <para>
+            Each rule consists of a priority, one or more actions, and one or more conditions.
+            Rules are evaluated in priority order, from the lowest value to the highest value.
+            When the conditions for a rule are met, its actions are performed. If the conditions
+            for no rules are met, the actions for the default rule are performed. For more information,
+            see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
+            rules</a> in the <i>Application Load Balancers Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2RuleCmdlet.Action">
+            <summary>
+            <para>
+            <para>The actions.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2RuleCmdlet.Condition">
+            <summary>
+            <para>
+            <para>The conditions.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2RuleCmdlet.ListenerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the listener.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2RuleCmdlet.Priority">
+            <summary>
+            <para>
+            <para>The rule priority. A listener can't have multiple rules with the same priority.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2RuleCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags to assign to the rule.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2RuleCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Rules'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.CreateRuleResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancingV2.Model.CreateRuleResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2RuleCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ListenerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ListenerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2RuleCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.NewELB2TargetGroupCmdlet">
+            <summary>
+            Creates a target group.
+            
+             
+            <para>
+            For more information, see the following:
+            </para><ul><li><para><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">Target
+            groups for your Application Load Balancers</a></para></li><li><para><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html">Target
+            groups for your Network Load Balancers</a></para></li><li><para><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/target-groups.html">Target
+            groups for your Gateway Load Balancers</a></para></li></ul><para>
+            This operation is idempotent, which means that it completes at most one time. If you
+            attempt to create multiple target groups with the same settings, each call succeeds.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2TargetGroupCmdlet.Matcher_GrpcCode">
+            <summary>
+            <para>
+            <para>You can specify values between 0 and 99. You can specify multiple values (for example,
+            "0,1") or a range of values (for example, "0-5"). The default value is 12.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2TargetGroupCmdlet.HealthCheckEnabled">
+            <summary>
+            <para>
+            <para>Indicates whether health checks are enabled. If the target type is <code>lambda</code>,
+            health checks are disabled by default but can be enabled. If the target type is <code>instance</code>,
+            <code>ip</code>, or <code>alb</code>, health checks are always enabled and cannot
+            be disabled.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2TargetGroupCmdlet.HealthCheckIntervalSecond">
+            <summary>
+            <para>
+            <para>The approximate amount of time, in seconds, between health checks of an individual
+            target. If the target group protocol is HTTP or HTTPS, the default is 30 seconds.
+            If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are
+            10 and 30 seconds and the default is 30 seconds. If the target group protocol is GENEVE,
+            the default is 10 seconds. If the target type is <code>lambda</code>, the default
+            is 35 seconds.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2TargetGroupCmdlet.HealthCheckPath">
+            <summary>
+            <para>
+            <para>[HTTP/HTTPS health checks] The destination for health checks on the targets.</para><para>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</para><para>[GRPC protocol version] The path of a custom health check method with the format /package.service/method.
+            The default is /Amazon Web Services.ALB/healthcheck.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2TargetGroupCmdlet.HealthCheckPort">
+            <summary>
+            <para>
+            <para>The port the load balancer uses when performing health checks on targets. If the protocol
+            is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>,
+            which is the port on which each target receives traffic from the load balancer. If
+            the protocol is GENEVE, the default is port 80.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2TargetGroupCmdlet.HealthCheckProtocol">
+            <summary>
+            <para>
+            <para>The protocol the load balancer uses when performing health checks on targets. For
+            Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway
+            Load Balancers, the default is TCP. The TCP protocol is not supported for health checks
+            if the protocol of the target group is HTTP or HTTPS. The GENEVE, TLS, UDP, and TCP_UDP
+            protocols are not supported for health checks.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2TargetGroupCmdlet.HealthCheckTimeoutSecond">
+            <summary>
+            <para>
+            <para>The amount of time, in seconds, during which no response from a target means a failed
+            health check. For target groups with a protocol of HTTP, HTTPS, or GENEVE, the default
+            is 5 seconds. For target groups with a protocol of TCP or TLS, this value must be
+            6 seconds for HTTP health checks and 10 seconds for TCP and HTTPS health checks. If
+            the target type is <code>lambda</code>, the default is 30 seconds.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2TargetGroupCmdlet.HealthyThresholdCount">
+            <summary>
+            <para>
+            <para>The number of consecutive health checks successes required before considering an unhealthy
+            target healthy. For target groups with a protocol of HTTP or HTTPS, the default is
+            5. For target groups with a protocol of TCP, TLS, or GENEVE, the default is 3. If
+            the target type is <code>lambda</code>, the default is 5.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2TargetGroupCmdlet.Matcher_HttpCode">
+            <summary>
+            <para>
+            <para>For Application Load Balancers, you can specify values between 200 and 499, and the
+            default value is 200. You can specify multiple values (for example, "200,202") or
+            a range of values (for example, "200-299").</para><para>For Network Load Balancers and Gateway Load Balancers, this must be "200–399".</para><para>Note that when using shorthand syntax, some values such as commas need to be escaped.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2TargetGroupCmdlet.IpAddressType">
+            <summary>
+            <para>
+            <para>The type of IP address used for this target group. The possible values are <code>ipv4</code>
+            and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address
+            type defaults to <code>ipv4</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2TargetGroupCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the target group.</para><para>This name must be unique per region per account, can have a maximum of 32 characters,
+            must contain only alphanumeric characters or hyphens, and must not begin or end with
+            a hyphen.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2TargetGroupCmdlet.Port">
+            <summary>
+            <para>
+            <para>The port on which the targets receive traffic. This port is used unless you specify
+            a port override when registering the target. If the target is a Lambda function, this
+            parameter does not apply. If the protocol is GENEVE, the supported port is 6081.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2TargetGroupCmdlet.Protocol">
+            <summary>
+            <para>
+            <para>The protocol to use for routing traffic to the targets. For Application Load Balancers,
+            the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported
+            protocols are TCP, TLS, UDP, or TCP_UDP. For Gateway Load Balancers, the supported
+            protocol is GENEVE. A TCP_UDP listener must be associated with a TCP_UDP target group.
+            If the target is a Lambda function, this parameter does not apply.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2TargetGroupCmdlet.ProtocolVersion">
+            <summary>
+            <para>
+            <para>[HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests
+            to targets using gRPC. Specify <code>HTTP2</code> to send requests to targets using
+            HTTP/2. The default is <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2TargetGroupCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags to assign to the target group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2TargetGroupCmdlet.TargetType">
+            <summary>
+            <para>
+            <para>The type of target that you must specify when registering targets with this target
+            group. You can't specify targets for a target group using more than one target type.</para><ul><li><para><code>instance</code> - Register targets by instance ID. This is the default value.</para></li><li><para><code>ip</code> - Register targets by IP address. You can specify IP addresses from
+            the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918
+            range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10).
+            You can't specify publicly routable IP addresses.</para></li><li><para><code>lambda</code> - Register a single Lambda function as a target.</para></li><li><para><code>alb</code> - Register a single Application Load Balancer as a target.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2TargetGroupCmdlet.UnhealthyThresholdCount">
+            <summary>
+            <para>
+            <para>The number of consecutive health check failures required before considering a target
+            unhealthy. If the target group protocol is HTTP or HTTPS, the default is 2. If the
+            target group protocol is TCP or TLS, this value must be the same as the healthy threshold
+            count. If the target group protocol is GENEVE, the default is 3. If the target type
+            is <code>lambda</code>, the default is 2.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2TargetGroupCmdlet.VpcId">
+            <summary>
+            <para>
+            <para>The identifier of the virtual private cloud (VPC). If the target is a Lambda function,
+            this parameter does not apply. Otherwise, this parameter is required.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2TargetGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TargetGroups'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.CreateTargetGroupResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancingV2.Model.CreateTargetGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.NewELB2TargetGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.RegisterELB2TargetCmdlet">
+            <summary>
+            Registers the specified targets with the specified target group.
+            
+             
+            <para>
+            If the target is an EC2 instance, it must be in the <code>running</code> state when
+            you register it.
+            </para><para>
+            By default, the load balancer routes requests to registered targets using the protocol
+            and port for the target group. Alternatively, you can override the port for a target
+            when you register it. You can register each EC2 instance or IP address with the same
+            target group multiple times using different ports.
+            </para><para>
+            With a Network Load Balancer, you cannot register instances by instance ID if they
+            have the following instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1,
+            HS1, M1, M2, M3, and T1. You can register instances of these types by IP address.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RegisterELB2TargetCmdlet.TargetGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the target group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RegisterELB2TargetCmdlet.Target">
+            <summary>
+            <para>
+            <para>The targets.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RegisterELB2TargetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.RegisterTargetsResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RegisterELB2TargetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TargetGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^TargetGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RegisterELB2TargetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2ListenerCmdlet">
+            <summary>
+            Deletes the specified listener.
+            
+             
+            <para>
+            Alternatively, your listener is deleted when you delete the load balancer to which
+            it is attached.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2ListenerCmdlet.ListenerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the listener.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2ListenerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.DeleteListenerResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2ListenerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ListenerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ListenerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2ListenerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2ListenerCertificateCmdlet">
+            <summary>
+            Removes the specified certificate from the certificate list for the specified HTTPS
+            or TLS listener.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2ListenerCertificateCmdlet.Certificate">
+            <summary>
+            <para>
+            <para>The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code>
+            to the certificate ARN but do not set <code>IsDefault</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2ListenerCertificateCmdlet.ListenerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the listener.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2ListenerCertificateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.RemoveListenerCertificatesResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2ListenerCertificateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Certificate parameter.
+            The -PassThru parameter is deprecated, use -Select '^Certificate' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2ListenerCertificateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2LoadBalancerCmdlet">
+            <summary>
+            Deletes the specified Application Load Balancer, Network Load Balancer, or Gateway
+            Load Balancer. Deleting a load balancer also deletes its listeners.
+            
+             
+            <para>
+            You can't delete a load balancer if deletion protection is enabled. If the load balancer
+            does not exist or has already been deleted, the call succeeds.
+            </para><para>
+            Deleting a load balancer does not affect its registered targets. For example, your
+            EC2 instances continue to run and are still registered to their target groups. If
+            you no longer need these EC2 instances, you can stop or terminate them.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2LoadBalancerCmdlet.LoadBalancerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2LoadBalancerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.DeleteLoadBalancerResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2LoadBalancerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2LoadBalancerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2RuleCmdlet">
+            <summary>
+            Deletes the specified rule.
+            
+             
+            <para>
+            You can't delete the default rule.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2RuleCmdlet.RuleArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the rule.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2RuleCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.DeleteRuleResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2RuleCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RuleArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^RuleArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2RuleCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2TagCmdlet">
+            <summary>
+            Removes the specified tags from the specified Elastic Load Balancing resources. You
+            can remove the tags for one or more Application Load Balancers, Network Load Balancers,
+            Gateway Load Balancers, target groups, listeners, or rules.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2TagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2TagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>The tag keys for the tags to remove.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2TagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.RemoveTagsResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2TagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2TargetGroupCmdlet">
+            <summary>
+            Deletes the specified target group.
+            
+             
+            <para>
+            You can delete a target group if it is not referenced by any actions. Deleting a target
+            group also deletes any associated health checks. Deleting a target group does not
+            affect its registered targets. For example, any EC2 instances continue to run until
+            you stop or terminate them.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2TargetGroupCmdlet.TargetGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the target group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2TargetGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.DeleteTargetGroupResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2TargetGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TargetGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^TargetGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.RemoveELB2TargetGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.SetELB2IpAddressTypeCmdlet">
+            <summary>
+            Sets the type of IP addresses used by the subnets of the specified load balancer.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.SetELB2IpAddressTypeCmdlet.IpAddressType">
+            <summary>
+            <para>
+            <para>The IP address type. The possible values are <code>ipv4</code> (for IPv4 addresses)
+            and <code>dualstack</code> (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code>
+            for a load balancer with a UDP or TCP_UDP listener.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.SetELB2IpAddressTypeCmdlet.LoadBalancerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.SetELB2IpAddressTypeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'IpAddressType'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.SetIpAddressTypeResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancingV2.Model.SetIpAddressTypeResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.SetELB2IpAddressTypeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.SetELB2IpAddressTypeCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.SetELB2RulePriorityCmdlet">
+            <summary>
+            Sets the priorities of the specified rules.
+            
+             
+            <para>
+            You can reorder the rules as long as there are no priority conflicts in the new order.
+            Any existing rules that you do not specify retain their current priority.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.SetELB2RulePriorityCmdlet.RulePriority">
+            <summary>
+            <para>
+            <para>The rule priorities.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.SetELB2RulePriorityCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Rules'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.SetRulePrioritiesResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancingV2.Model.SetRulePrioritiesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.SetELB2RulePriorityCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.SetELB2SecurityGroupCmdlet">
+            <summary>
+            Associates the specified security groups with the specified Application Load Balancer.
+            The specified security groups override the previously associated security groups.
+            
+             
+            <para>
+            You can't specify a security group for a Network Load Balancer or Gateway Load Balancer.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.SetELB2SecurityGroupCmdlet.LoadBalancerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.SetELB2SecurityGroupCmdlet.SecurityGroup">
+            <summary>
+            <para>
+            <para>The IDs of the security groups.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.SetELB2SecurityGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SecurityGroupIds'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.SetSecurityGroupsResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancingV2.Model.SetSecurityGroupsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.SetELB2SecurityGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.SetELB2SecurityGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.SetELB2SubnetCmdlet">
+            <summary>
+            Enables the Availability Zones for the specified public subnets for the specified
+            Application Load Balancer or Network Load Balancer. The specified subnets replace
+            the previously enabled subnets.
+            
+             
+            <para>
+            When you specify subnets for a Network Load Balancer, you must include all subnets
+            that were enabled previously, with their existing configurations, plus any additional
+            subnets.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.SetELB2SubnetCmdlet.IpAddressType">
+            <summary>
+            <para>
+            <para>[Network Load Balancers] The type of IP addresses used by the subnets for your load
+            balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code>
+            (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load
+            balancer with a UDP or TCP_UDP listener. .</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.SetELB2SubnetCmdlet.LoadBalancerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.SetELB2SubnetCmdlet.SubnetMapping">
+            <summary>
+            <para>
+            <para>The IDs of the public subnets. You can specify only one subnet per Availability Zone.
+            You must specify either subnets or subnet mappings.</para><para>[Application Load Balancers] You must specify subnets from at least two Availability
+            Zones. You cannot specify Elastic IP addresses for your subnets.</para><para>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</para><para>[Application Load Balancers on Local Zones] You can specify subnets from one or more
+            Local Zones.</para><para>[Network Load Balancers] You can specify subnets from one or more Availability Zones.
+            You can specify one Elastic IP address per subnet if you need static IP addresses
+            for your internet-facing load balancer. For internal load balancers, you can specify
+            one private IP address per subnet from the IPv4 range of the subnet. For internet-facing
+            load balancer, you can specify one IPv6 address per subnet.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.SetELB2SubnetCmdlet.Subnet">
+            <summary>
+            <para>
+            <para>The IDs of the public subnets. You can specify only one subnet per Availability Zone.
+            You must specify either subnets or subnet mappings.</para><para>[Application Load Balancers] You must specify subnets from at least two Availability
+            Zones.</para><para>[Application Load Balancers on Outposts] You must specify one Outpost subnet.</para><para>[Application Load Balancers on Local Zones] You can specify subnets from one or more
+            Local Zones.</para><para>[Network Load Balancers] You can specify subnets from one or more Availability Zones.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.SetELB2SubnetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AvailabilityZones'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.SetSubnetsResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancingV2.Model.SetSubnetsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.SetELB2SubnetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.SetELB2SubnetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB2.UnregisterELB2TargetCmdlet">
+            <summary>
+            Deregisters the specified targets from the specified target group. After the targets
+            are deregistered, they no longer receive traffic from the load balancer.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.UnregisterELB2TargetCmdlet.TargetGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the target group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.UnregisterELB2TargetCmdlet.Target">
+            <summary>
+            <para>
+            <para>The targets. If you specified a port override when you registered a target, you must
+            specify both the target ID and the port when you deregister it.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.UnregisterELB2TargetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancingV2.Model.DeregisterTargetsResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.UnregisterELB2TargetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TargetGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^TargetGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB2.UnregisterELB2TargetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

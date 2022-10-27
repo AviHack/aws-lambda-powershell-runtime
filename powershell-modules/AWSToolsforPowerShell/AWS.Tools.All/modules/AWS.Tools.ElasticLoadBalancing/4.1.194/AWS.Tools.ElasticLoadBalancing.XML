@@ -1,0 +1,1574 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.ElasticLoadBalancing</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.AddELBLoadBalancerToSubnetCmdlet">
+            <summary>
+            Adds one or more subnets to the set of configured subnets for the specified load balancer.
+            
+             
+            <para>
+            The load balancer evenly distributes requests across all registered subnets. For more
+            information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-manage-subnets.html">Add
+            or Remove Subnets for Your Load Balancer in a VPC</a> in the <i>Classic Load Balancers
+            Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.AddELBLoadBalancerToSubnetCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The name of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.AddELBLoadBalancerToSubnetCmdlet.Subnet">
+            <summary>
+            <para>
+            <para>The IDs of the subnets to add. You can add only one subnet per Availability Zone.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.AddELBLoadBalancerToSubnetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Subnets'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.AttachLoadBalancerToSubnetsResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancing.Model.AttachLoadBalancerToSubnetsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.AddELBLoadBalancerToSubnetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.AddELBLoadBalancerToSubnetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.AddELBResourceTagCmdlet">
+            <summary>
+            Adds the specified tags to the specified load balancer. Each load balancer can have
+            a maximum of 10 tags.
+            
+             
+            <para>
+            Each tag consists of a key and an optional value. If a tag with the same key is already
+            associated with the load balancer, <code>AddTags</code> updates its value.
+            </para><para>
+            For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
+            Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.AddELBResourceTagCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The name of the load balancer. You can specify one load balancer only.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.AddELBResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.AddELBResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.AddTagsResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.AddELBResourceTagCmdlet.PassThru">
+            <summary>
+            Returns the collection of Tag objects that were added
+            The -PassThru parameter is deprecated, use -Select instead. This parameter will be removed in future
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.AddELBResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.DisableELBAvailabilityZoneForLoadBalancerCmdlet">
+            <summary>
+            Removes the specified Availability Zones from the set of Availability Zones for the
+            specified load balancer in EC2-Classic or a default VPC.
+            
+             
+            <para>
+            For load balancers in a non-default VPC, use <a>DetachLoadBalancerFromSubnets</a>.
+            </para><para>
+            There must be at least one Availability Zone registered with a load balancer at all
+            times. After an Availability Zone is removed, all instances registered with the load
+            balancer that are in the removed Availability Zone go into the <code>OutOfService</code>
+            state. Then, the load balancer attempts to equally balance the traffic among its remaining
+            Availability Zones.
+            </para><para>
+            For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add
+            or Remove Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.DisableELBAvailabilityZoneForLoadBalancerCmdlet.AvailabilityZone">
+            <summary>
+            <para>
+            <para>The Availability Zones.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.DisableELBAvailabilityZoneForLoadBalancerCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The name of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.DisableELBAvailabilityZoneForLoadBalancerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AvailabilityZones'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.DisableAvailabilityZonesForLoadBalancerResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancing.Model.DisableAvailabilityZonesForLoadBalancerResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.DisableELBAvailabilityZoneForLoadBalancerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.DisableELBAvailabilityZoneForLoadBalancerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.DismountELBLoadBalancerFromSubnetCmdlet">
+            <summary>
+            Removes the specified subnets from the set of configured subnets for the load balancer.
+            
+             
+            <para>
+            After a subnet is removed, all EC2 instances registered with the load balancer in
+            the removed subnet go into the <code>OutOfService</code> state. Then, the load balancer
+            balances the traffic among the remaining routable subnets.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.DismountELBLoadBalancerFromSubnetCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The name of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.DismountELBLoadBalancerFromSubnetCmdlet.Subnet">
+            <summary>
+            <para>
+            <para>The IDs of the subnets.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.DismountELBLoadBalancerFromSubnetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Subnets'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.DetachLoadBalancerFromSubnetsResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancing.Model.DetachLoadBalancerFromSubnetsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.DismountELBLoadBalancerFromSubnetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.DismountELBLoadBalancerFromSubnetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.EditELBLoadBalancerAttributeCmdlet">
+            <summary>
+            Modifies the attributes of the specified load balancer.
+            
+             
+            <para>
+            You can modify the load balancer attributes, such as <code>AccessLogs</code>, <code>ConnectionDraining</code>,
+            and <code>CrossZoneLoadBalancing</code> by either enabling or disabling them. Or,
+            you can modify the load balancer attribute <code>ConnectionSettings</code> by specifying
+            an idle connection timeout value for your load balancer.
+            </para><para>
+            For more information, see the following in the <i>Classic Load Balancers Guide</i>:
+            </para><ul><li><para><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Cross-Zone
+            Load Balancing</a></para></li><li><para><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Connection
+            Draining</a></para></li><li><para><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html">Access
+            Logs</a></para></li><li><para><a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Idle
+            Connection Timeout</a></para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.EditELBLoadBalancerAttributeCmdlet.LoadBalancerAttributes_AdditionalAttribute">
+            <summary>
+            <para>
+            <para>Any additional attributes.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.EditELBLoadBalancerAttributeCmdlet.AccessLog_EmitInterval">
+            <summary>
+            <para>
+            <para>The interval for publishing the access logs. You can specify an interval of either
+            5 minutes or 60 minutes.</para><para>Default: 60 minutes</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.EditELBLoadBalancerAttributeCmdlet.AccessLog_Enabled">
+            <summary>
+            <para>
+            <para>Specifies whether access logs are enabled for the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.EditELBLoadBalancerAttributeCmdlet.ConnectionDraining_Enabled">
+            <summary>
+            <para>
+            <para>Specifies whether connection draining is enabled for the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.EditELBLoadBalancerAttributeCmdlet.CrossZoneLoadBalancing_Enabled">
+            <summary>
+            <para>
+            <para>Specifies whether cross-zone load balancing is enabled for the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.EditELBLoadBalancerAttributeCmdlet.ConnectionSettings_IdleTimeout">
+            <summary>
+            <para>
+            <para>The time, in seconds, that the connection is allowed to be idle (no data has been
+            sent over the connection) before it is closed by the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.EditELBLoadBalancerAttributeCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The name of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.EditELBLoadBalancerAttributeCmdlet.AccessLog_S3BucketName">
+            <summary>
+            <para>
+            <para>The name of the Amazon S3 bucket where the access logs are stored.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.EditELBLoadBalancerAttributeCmdlet.AccessLog_S3BucketPrefix">
+            <summary>
+            <para>
+            <para>The logical hierarchy you created for your Amazon S3 bucket, for example <code>my-bucket-prefix/prod</code>.
+            If the prefix is not provided, the log is placed at the root level of the bucket.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.EditELBLoadBalancerAttributeCmdlet.ConnectionDraining_Timeout">
+            <summary>
+            <para>
+            <para>The maximum time, in seconds, to keep the existing connections open before deregistering
+            the instances.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.EditELBLoadBalancerAttributeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.ModifyLoadBalancerAttributesResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancing.Model.ModifyLoadBalancerAttributesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.EditELBLoadBalancerAttributeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.EditELBLoadBalancerAttributeCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.EnableELBAvailabilityZoneForLoadBalancerCmdlet">
+            <summary>
+            Adds the specified Availability Zones to the set of Availability Zones for the specified
+            load balancer in EC2-Classic or a default VPC.
+            
+             
+            <para>
+            For load balancers in a non-default VPC, use <a>AttachLoadBalancerToSubnets</a>.
+            </para><para>
+            The load balancer evenly distributes requests across all its registered Availability
+            Zones that contain instances. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-az.html">Add
+            or Remove Availability Zones</a> in the <i>Classic Load Balancers Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.EnableELBAvailabilityZoneForLoadBalancerCmdlet.AvailabilityZone">
+            <summary>
+            <para>
+            <para>The Availability Zones. These must be in the same region as the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.EnableELBAvailabilityZoneForLoadBalancerCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The name of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.EnableELBAvailabilityZoneForLoadBalancerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AvailabilityZones'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.EnableAvailabilityZonesForLoadBalancerResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancing.Model.EnableAvailabilityZonesForLoadBalancerResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.EnableELBAvailabilityZoneForLoadBalancerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.EnableELBAvailabilityZoneForLoadBalancerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.GetELBAccountLimitCmdlet">
+            <summary>
+            Describes the current Elastic Load Balancing resource limits for your AWS account.
+            
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits
+            for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBAccountLimitCmdlet.Marker">
+            <summary>
+            <para>
+            <para>The marker for the next set of results. (You received this marker from a previous
+            call.)</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-Marker $null' for the first call and '-Marker $AWSHistory.LastServiceResponse.NextMarker' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBAccountLimitCmdlet.PageSize">
+            <summary>
+            <para>
+            <para>The maximum number of results to return with this call.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBAccountLimitCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Limits'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.DescribeAccountLimitsResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancing.Model.DescribeAccountLimitsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBAccountLimitCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of Marker
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.GetELBInstanceHealthCmdlet">
+            <summary>
+            Describes the state of the specified instances with respect to the specified load
+            balancer. If no instances are specified, the call describes the state of all instances
+            that are currently registered with the load balancer. If instances are specified,
+            their state is returned even if they are no longer registered with the load balancer.
+            The state of terminated instances is not returned.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBInstanceHealthCmdlet.Instance">
+            <summary>
+            <para>
+            <para>The IDs of the instances.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBInstanceHealthCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The name of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBInstanceHealthCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'InstanceStates'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.DescribeInstanceHealthResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancing.Model.DescribeInstanceHealthResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBInstanceHealthCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.GetELBLoadBalancerCmdlet">
+            <summary>
+            Describes the specified the load balancers. If no load balancers are specified, the
+            call describes all of your load balancers.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBLoadBalancerCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The names of the load balancers.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBLoadBalancerCmdlet.Marker">
+            <summary>
+            <para>
+            <para>The marker for the next set of results. (You received this marker from a previous
+            call.)</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-Marker $null' for the first call and '-Marker $AWSHistory.LastServiceResponse.NextMarker' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBLoadBalancerCmdlet.PageSize">
+            <summary>
+            <para>
+            <para>The maximum number of results to return with this call (a number from 1 to 400). The
+            default is 400.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBLoadBalancerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'LoadBalancerDescriptions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.DescribeLoadBalancersResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancing.Model.DescribeLoadBalancersResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBLoadBalancerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBLoadBalancerCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of Marker
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.GetELBLoadBalancerAttributeCmdlet">
+            <summary>
+            Describes the attributes for the specified load balancer.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBLoadBalancerAttributeCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The name of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBLoadBalancerAttributeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'LoadBalancerAttributes'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.DescribeLoadBalancerAttributesResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancing.Model.DescribeLoadBalancerAttributesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBLoadBalancerAttributeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.GetELBLoadBalancerPolicyCmdlet">
+            <summary>
+            Describes the specified policies.
+            
+             
+            <para>
+            If you specify a load balancer name, the action returns the descriptions of all policies
+            created for the load balancer. If you specify a policy name associated with your load
+            balancer, the action returns the description of that policy. If you don't specify
+            a load balancer name, the action returns descriptions of the specified sample policies,
+            or descriptions of all sample policies. The names of the sample policies have the
+            <code>ELBSample-</code> prefix.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBLoadBalancerPolicyCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The name of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBLoadBalancerPolicyCmdlet.PolicyName">
+            <summary>
+            <para>
+            <para>The names of the policies.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBLoadBalancerPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'PolicyDescriptions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.DescribeLoadBalancerPoliciesResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancing.Model.DescribeLoadBalancerPoliciesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBLoadBalancerPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.GetELBLoadBalancerPolicyTypeCmdlet">
+            <summary>
+            Describes the specified load balancer policy types or all load balancer policy types.
+            
+             
+            <para>
+            The description of each type indicates how it can be used. For example, some policies
+            can be used only with layer 7 listeners, some policies can be used only with layer
+            4 listeners, and some policies can be used only with your EC2 instances.
+            </para><para>
+            You can use <a>CreateLoadBalancerPolicy</a> to create a policy configuration for any
+            of these policy types. Then, depending on the policy type, use either <a>SetLoadBalancerPoliciesOfListener</a>
+            or <a>SetLoadBalancerPoliciesForBackendServer</a> to set the policy.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBLoadBalancerPolicyTypeCmdlet.PolicyTypeName">
+            <summary>
+            <para>
+            <para>The names of the policy types. If no names are specified, describes all policy types
+            defined by Elastic Load Balancing.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBLoadBalancerPolicyTypeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'PolicyTypeDescriptions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.DescribeLoadBalancerPolicyTypesResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancing.Model.DescribeLoadBalancerPolicyTypesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBLoadBalancerPolicyTypeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PolicyTypeName parameter.
+            The -PassThru parameter is deprecated, use -Select '^PolicyTypeName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.GetELBResourceTagCmdlet">
+            <summary>
+            Describes the tags associated with the specified load balancers.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBResourceTagCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The names of the load balancers.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TagDescriptions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.DescribeTagsResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancing.Model.DescribeTagsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.GetELBResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.JoinELBSecurityGroupToLoadBalancerCmdlet">
+            <summary>
+            Associates one or more security groups with your load balancer in a virtual private
+            cloud (VPC). The specified security groups override the previously associated security
+            groups.
+            
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-security-groups.html#elb-vpc-security-groups">Security
+            Groups for Load Balancers in a VPC</a> in the <i>Classic Load Balancers Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.JoinELBSecurityGroupToLoadBalancerCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The name of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.JoinELBSecurityGroupToLoadBalancerCmdlet.SecurityGroup">
+            <summary>
+            <para>
+            <para>The IDs of the security groups to associate with the load balancer. Note that you
+            cannot specify the name of the security group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.JoinELBSecurityGroupToLoadBalancerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SecurityGroups'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.ApplySecurityGroupsToLoadBalancerResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancing.Model.ApplySecurityGroupsToLoadBalancerResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.JoinELBSecurityGroupToLoadBalancerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.JoinELBSecurityGroupToLoadBalancerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.NewELBAppCookieStickinessPolicyCmdlet">
+            <summary>
+            Generates a stickiness policy with sticky session lifetimes that follow that of an
+            application-generated cookie. This policy can be associated only with HTTP/HTTPS listeners.
+            
+             
+            <para>
+            This policy is similar to the policy created by <a>CreateLBCookieStickinessPolicy</a>,
+            except that the lifetime of the special Elastic Load Balancing cookie, <code>AWSELB</code>,
+            follows the lifetime of the application-generated cookie specified in the policy configuration.
+            The load balancer only inserts a new stickiness cookie when the application response
+            includes a new application cookie.
+            </para><para>
+            If the application cookie is explicitly removed or expires, the session stops being
+            sticky until a new application cookie is issued.
+            </para><para>
+            For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application">Application-Controlled
+            Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBAppCookieStickinessPolicyCmdlet.CookieName">
+            <summary>
+            <para>
+            <para>The name of the application cookie used for stickiness.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBAppCookieStickinessPolicyCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The name of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBAppCookieStickinessPolicyCmdlet.PolicyName">
+            <summary>
+            <para>
+            <para>The name of the policy being created. Policy names must consist of alphanumeric characters
+            and dashes (-). This name must be unique within the set of policies for this load
+            balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBAppCookieStickinessPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.CreateAppCookieStickinessPolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBAppCookieStickinessPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBAppCookieStickinessPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.NewELBLBCookieStickinessPolicyCmdlet">
+            <summary>
+            Generates a stickiness policy with sticky session lifetimes controlled by the lifetime
+            of the browser (user-agent) or a specified expiration period. This policy can be associated
+            only with HTTP/HTTPS listeners.
+            
+             
+            <para>
+            When a load balancer implements this policy, the load balancer uses a special cookie
+            to track the instance for each request. When the load balancer receives a request,
+            it first checks to see if this cookie is present in the request. If so, the load balancer
+            sends the request to the application server specified in the cookie. If not, the load
+            balancer sends the request to a server that is chosen based on the existing load-balancing
+            algorithm.
+            </para><para>
+            A cookie is inserted into the response for binding subsequent requests from the same
+            user to that server. The validity of the cookie is based on the cookie expiration
+            time, which is specified in the policy configuration.
+            </para><para>
+            For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based
+            Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLBCookieStickinessPolicyCmdlet.CookieExpirationPeriod">
+            <summary>
+            <para>
+            <para>The time period, in seconds, after which the cookie should be considered stale. If
+            you do not specify this parameter, the default value is 0, which indicates that the
+            sticky session should last for the duration of the browser session.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLBCookieStickinessPolicyCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The name of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLBCookieStickinessPolicyCmdlet.PolicyName">
+            <summary>
+            <para>
+            <para>The name of the policy being created. Policy names must consist of alphanumeric characters
+            and dashes (-). This name must be unique within the set of policies for this load
+            balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLBCookieStickinessPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.CreateLBCookieStickinessPolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLBCookieStickinessPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLBCookieStickinessPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.NewELBLoadBalancerCmdlet">
+            <summary>
+            Creates a Classic Load Balancer.
+            
+             
+            <para>
+            You can add listeners, security groups, subnets, and tags when you create your load
+            balancer, or you can add them later using <a>CreateLoadBalancerListeners</a>, <a>ApplySecurityGroupsToLoadBalancer</a>,
+            <a>AttachLoadBalancerToSubnets</a>, and <a>AddTags</a>.
+            </para><para>
+            To describe your current load balancers, see <a>DescribeLoadBalancers</a>. When you
+            are finished with a load balancer, you can delete it using <a>DeleteLoadBalancer</a>.
+            </para><para>
+            You can create up to 20 load balancers per region per account. You can request an
+            increase for the number of load balancers for your account. For more information,
+            see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-limits.html">Limits
+            for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLoadBalancerCmdlet.AvailabilityZone">
+            <summary>
+            <para>
+            <para>One or more Availability Zones from the same region as the load balancer.</para><para>You must specify at least one Availability Zone.</para><para>You can add more Availability Zones after you create the load balancer using <a>EnableAvailabilityZonesForLoadBalancer</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLoadBalancerCmdlet.Listener">
+            <summary>
+            <para>
+            <para>The listeners.</para><para>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
+            for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLoadBalancerCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The name of the load balancer.</para><para>This name must be unique within your set of load balancers for the region, must have
+            a maximum of 32 characters, must contain only alphanumeric characters or hyphens,
+            and cannot begin or end with a hyphen.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLoadBalancerCmdlet.Scheme">
+            <summary>
+            <para>
+            <para>The type of a load balancer. Valid only for load balancers in a VPC.</para><para>By default, Elastic Load Balancing creates an Internet-facing load balancer with a
+            DNS name that resolves to public IP addresses. For more information about Internet-facing
+            and Internal load balancers, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load
+            Balancer Scheme</a> in the <i>Elastic Load Balancing User Guide</i>.</para><para>Specify <code>internal</code> to create a load balancer with a DNS name that resolves
+            to private IP addresses.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLoadBalancerCmdlet.SecurityGroup">
+            <summary>
+            <para>
+            <para>The IDs of the security groups to assign to the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLoadBalancerCmdlet.Subnet">
+            <summary>
+            <para>
+            <para>The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet
+            per Availability Zone specified in <code>AvailabilityZones</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLoadBalancerCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of tags to assign to the load balancer.</para><para>For more information about tagging your load balancer, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
+            Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLoadBalancerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'DNSName'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLoadBalancerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLoadBalancerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.NewELBLoadBalancerListenerCmdlet">
+            <summary>
+            Creates one or more listeners for the specified load balancer. If a listener with
+            the specified port does not already exist, it is created; otherwise, the properties
+            of the new listener must match the properties of the existing listener.
+            
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
+            for Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLoadBalancerListenerCmdlet.Listener">
+            <summary>
+            <para>
+            <para>The listeners.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLoadBalancerListenerCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The name of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLoadBalancerListenerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerListenersResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLoadBalancerListenerCmdlet.PassThru">
+            <summary>
+            Returns the collection of Listener objects that were created
+            The -PassThru parameter is deprecated, use -Select instead. This parameter will be removed in future
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLoadBalancerListenerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.NewELBLoadBalancerPolicyCmdlet">
+            <summary>
+            Creates a policy with the specified attributes for the specified load balancer.
+            
+             
+            <para>
+            Policies are settings that are saved for your load balancer and that can be applied
+            to the listener or the application server, depending on the policy type.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLoadBalancerPolicyCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The name of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLoadBalancerPolicyCmdlet.PolicyAttribute">
+            <summary>
+            <para>
+            <para>The policy attributes.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLoadBalancerPolicyCmdlet.PolicyName">
+            <summary>
+            <para>
+            <para>The name of the load balancer policy to be created. This name must be unique within
+            the set of policies for this load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLoadBalancerPolicyCmdlet.PolicyTypeName">
+            <summary>
+            <para>
+            <para>The name of the base policy type. To get the list of policy types, use <a>DescribeLoadBalancerPolicyTypes</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLoadBalancerPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.CreateLoadBalancerPolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLoadBalancerPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.NewELBLoadBalancerPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.RegisterELBInstanceWithLoadBalancerCmdlet">
+            <summary>
+            Adds the specified instances to the specified load balancer.
+            
+             
+            <para>
+            The instance must be a running instance in the same network as the load balancer (EC2-Classic
+            or the same VPC). If you have EC2-Classic instances and a load balancer in a VPC with
+            ClassicLink enabled, you can link the EC2-Classic instances to that VPC and then register
+            the linked EC2-Classic instances with the load balancer in the VPC.
+            </para><para>
+            Note that <code>RegisterInstanceWithLoadBalancer</code> completes when the request
+            has been registered. Instance registration takes a little time to complete. To check
+            the state of the registered instances, use <a>DescribeLoadBalancers</a> or <a>DescribeInstanceHealth</a>.
+            </para><para>
+            After the instance is registered, it starts receiving traffic and requests from the
+            load balancer. Any instance that is not in one of the Availability Zones registered
+            for the load balancer is moved to the <code>OutOfService</code> state. If an Availability
+            Zone is added to the load balancer later, any instances registered with the load balancer
+            move to the <code>InService</code> state.
+            </para><para>
+            To deregister instances from a load balancer, use <a>DeregisterInstancesFromLoadBalancer</a>.
+            </para><para>
+            For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html">Register
+            or De-Register EC2 Instances</a> in the <i>Classic Load Balancers Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RegisterELBInstanceWithLoadBalancerCmdlet.Instance">
+            <summary>
+            <para>
+            <para>The IDs of the instances.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RegisterELBInstanceWithLoadBalancerCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The name of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RegisterELBInstanceWithLoadBalancerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Instances'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.RegisterInstancesWithLoadBalancerResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancing.Model.RegisterInstancesWithLoadBalancerResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RegisterELBInstanceWithLoadBalancerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RegisterELBInstanceWithLoadBalancerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.RemoveELBInstanceFromLoadBalancerCmdlet">
+            <summary>
+            Deregisters the specified instances from the specified load balancer. After the instance
+            is deregistered, it no longer receives traffic from the load balancer.
+            
+             
+            <para>
+            You can use <a>DescribeLoadBalancers</a> to verify that the instance is deregistered
+            from the load balancer.
+            </para><para>
+            For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-deregister-register-instances.html">Register
+            or De-Register EC2 Instances</a> in the <i>Classic Load Balancers Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RemoveELBInstanceFromLoadBalancerCmdlet.Instance">
+            <summary>
+            <para>
+            <para>The IDs of the instances.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RemoveELBInstanceFromLoadBalancerCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The name of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RemoveELBInstanceFromLoadBalancerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Instances'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.DeregisterInstancesFromLoadBalancerResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancing.Model.DeregisterInstancesFromLoadBalancerResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RemoveELBInstanceFromLoadBalancerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RemoveELBInstanceFromLoadBalancerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.RemoveELBLoadBalancerCmdlet">
+            <summary>
+            Deletes the specified load balancer.
+            
+             
+            <para>
+            If you are attempting to recreate a load balancer, you must reconfigure all settings.
+            The DNS name associated with a deleted load balancer are no longer usable. The name
+            and associated DNS record of the deleted load balancer no longer exist and traffic
+            sent to any of its IP addresses is no longer delivered to your instances.
+            </para><para>
+            If the load balancer does not exist or has already been deleted, the call to <code>DeleteLoadBalancer</code>
+            still succeeds.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RemoveELBLoadBalancerCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The name of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RemoveELBLoadBalancerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.DeleteLoadBalancerResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RemoveELBLoadBalancerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RemoveELBLoadBalancerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.RemoveELBLoadBalancerListenerCmdlet">
+            <summary>
+            Deletes the specified listeners from the specified load balancer.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RemoveELBLoadBalancerListenerCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The name of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RemoveELBLoadBalancerListenerCmdlet.LoadBalancerPort">
+            <summary>
+            <para>
+            <para>The client port numbers of the listeners.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RemoveELBLoadBalancerListenerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.DeleteLoadBalancerListenersResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RemoveELBLoadBalancerListenerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RemoveELBLoadBalancerListenerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.RemoveELBLoadBalancerPolicyCmdlet">
+            <summary>
+            Deletes the specified policy from the specified load balancer. This policy must not
+            be enabled for any listeners.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RemoveELBLoadBalancerPolicyCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The name of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RemoveELBLoadBalancerPolicyCmdlet.PolicyName">
+            <summary>
+            <para>
+            <para>The name of the policy.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RemoveELBLoadBalancerPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.DeleteLoadBalancerPolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RemoveELBLoadBalancerPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RemoveELBLoadBalancerPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.RemoveELBResourceTagCmdlet">
+            <summary>
+            Removes one or more tags from the specified load balancer.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RemoveELBResourceTagCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The name of the load balancer. You can specify a maximum of one load balancer name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RemoveELBResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The list of tag keys to remove.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RemoveELBResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.RemoveTagsResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RemoveELBResourceTagCmdlet.PassThru">
+            <summary>
+            Returns the collection of tag keys that were removed
+            The -PassThru parameter is deprecated, use -Select instead. This parameter will be removed in future
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.RemoveELBResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.SetELBHealthCheckCmdlet">
+            <summary>
+            Specifies the health check settings to use when evaluating the health state of your
+            EC2 instances.
+            
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-healthchecks.html">Configure
+            Health Checks for Your Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBHealthCheckCmdlet.HealthCheck_HealthyThreshold">
+            <summary>
+            <para>
+            <para>The number of consecutive health checks successes required before moving the instance
+            to the <code>Healthy</code> state.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBHealthCheckCmdlet.HealthCheck_Interval">
+            <summary>
+            <para>
+            <para>The approximate interval, in seconds, between health checks of an individual instance.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBHealthCheckCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The name of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBHealthCheckCmdlet.HealthCheck_Target">
+            <summary>
+            <para>
+            <para>The instance being checked. The protocol is either TCP, HTTP, HTTPS, or SSL. The range
+            of valid ports is one (1) through 65535.</para><para>TCP is the default, specified as a TCP: port pair, for example "TCP:5000". In this
+            case, a health check simply attempts to open a TCP connection to the instance on the
+            specified port. Failure to connect within the configured timeout is considered unhealthy.</para><para>SSL is also specified as SSL: port pair, for example, SSL:5000.</para><para>For HTTP/HTTPS, you must include a ping path in the string. HTTP is specified as a
+            HTTP:port;/;PathToPing; grouping, for example "HTTP:80/weather/us/wa/seattle". In
+            this case, a HTTP GET request is issued to the instance on the given port and path.
+            Any answer other than "200 OK" within the timeout period is considered unhealthy.</para><para>The total length of the HTTP ping target must be 1024 16-bit Unicode characters or
+            less.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBHealthCheckCmdlet.HealthCheck_Timeout">
+            <summary>
+            <para>
+            <para>The amount of time, in seconds, during which no response means a failed health check.</para><para>This value must be less than the <code>Interval</code> value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBHealthCheckCmdlet.HealthCheck_UnhealthyThreshold">
+            <summary>
+            <para>
+            <para>The number of consecutive health check failures required before moving the instance
+            to the <code>Unhealthy</code> state.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBHealthCheckCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'HealthCheck'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.ConfigureHealthCheckResponse).
+            Specifying the name of a property of type Amazon.ElasticLoadBalancing.Model.ConfigureHealthCheckResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBHealthCheckCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBHealthCheckCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.SetELBLoadBalancerListenerSSLCertificateCmdlet">
+            <summary>
+            Sets the certificate that terminates the specified listener's SSL connections. The
+            specified certificate replaces any prior certificate that was used on the same load
+            balancer and port.
+            
+             
+            <para>
+            For more information about updating your SSL certificate, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-update-ssl-cert.html">Replace
+            the SSL Certificate for Your Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBLoadBalancerListenerSSLCertificateCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The name of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBLoadBalancerListenerSSLCertificateCmdlet.LoadBalancerPort">
+            <summary>
+            <para>
+            <para>The port that uses the specified SSL certificate.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBLoadBalancerListenerSSLCertificateCmdlet.SSLCertificateId">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the SSL certificate.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBLoadBalancerListenerSSLCertificateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.SetLoadBalancerListenerSSLCertificateResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBLoadBalancerListenerSSLCertificateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBLoadBalancerListenerSSLCertificateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.SetELBLoadBalancerPolicyForBackendServerCmdlet">
+            <summary>
+            Replaces the set of policies associated with the specified port on which the EC2 instance
+            is listening with a new set of policies. At this time, only the back-end server authentication
+            policy type can be applied to the instance ports; this policy type is composed of
+            multiple public key policies.
+            
+             
+            <para>
+            Each time you use <code>SetLoadBalancerPoliciesForBackendServer</code> to enable the
+            policies, use the <code>PolicyNames</code> parameter to list the policies that you
+            want to enable.
+            </para><para>
+            You can use <a>DescribeLoadBalancers</a> or <a>DescribeLoadBalancerPolicies</a> to
+            verify that the policy is associated with the EC2 instance.
+            </para><para>
+            For more information about enabling back-end instance authentication, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-create-https-ssl-load-balancer.html#configure_backendauth_clt">Configure
+            Back-end Instance Authentication</a> in the <i>Classic Load Balancers Guide</i>. For
+            more information about Proxy Protocol, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-proxy-protocol.html">Configure
+            Proxy Protocol Support</a> in the <i>Classic Load Balancers Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBLoadBalancerPolicyForBackendServerCmdlet.InstancePort">
+            <summary>
+            <para>
+            <para>The port number associated with the EC2 instance.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBLoadBalancerPolicyForBackendServerCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The name of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBLoadBalancerPolicyForBackendServerCmdlet.PolicyName">
+            <summary>
+            <para>
+            <para>The names of the policies. If the list is empty, then all current polices are removed
+            from the EC2 instance.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBLoadBalancerPolicyForBackendServerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.SetLoadBalancerPoliciesForBackendServerResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBLoadBalancerPolicyForBackendServerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBLoadBalancerPolicyForBackendServerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ELB.SetELBLoadBalancerPolicyOfListenerCmdlet">
+            <summary>
+            Replaces the current set of policies for the specified load balancer port with the
+            specified set of policies.
+            
+             
+            <para>
+            To enable back-end server authentication, use <a>SetLoadBalancerPoliciesForBackendServer</a>.
+            </para><para>
+            For more information about setting policies, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/ssl-config-update.html">Update
+            the SSL Negotiation Configuration</a>, <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-duration">Duration-Based
+            Session Stickiness</a>, and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html#enable-sticky-sessions-application">Application-Controlled
+            Session Stickiness</a> in the <i>Classic Load Balancers Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBLoadBalancerPolicyOfListenerCmdlet.LoadBalancerName">
+            <summary>
+            <para>
+            <para>The name of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBLoadBalancerPolicyOfListenerCmdlet.LoadBalancerPort">
+            <summary>
+            <para>
+            <para>The external port of the load balancer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBLoadBalancerPolicyOfListenerCmdlet.PolicyName">
+            <summary>
+            <para>
+            <para>The names of the policies. This list must include all policies to be enabled. If you
+            omit a policy that is currently enabled, it is disabled. If the list is empty, all
+            current policies are disabled.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBLoadBalancerPolicyOfListenerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ElasticLoadBalancing.Model.SetLoadBalancerPoliciesOfListenerResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBLoadBalancerPolicyOfListenerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LoadBalancerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LoadBalancerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ELB.SetELBLoadBalancerPolicyOfListenerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.MediaStoreData</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMSD.WriteEMSDObjectCmdlet">
+            <summary>
+            Uploads an object to the specified path. Object sizes are limited to 25 MB for standard
+            upload availability and 10 MB for streaming upload availability.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.WriteEMSDObjectCmdlet.FilePath">
+            <summary>
+            This parameter is obsolete and will be removed in a future version. Use 'Body' instead.
+            The path to the file containing the content to be uploaded.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.WriteEMSDObjectCmdlet.Body">
+            <summary>
+            <para>
+            <para>The bytes to be stored. </para>
+            </para>
+            <para>The cmdlet accepts a parameter of type string, string[], System.IO.FileInfo or System.IO.Stream.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.WriteEMSDObjectCmdlet.CacheControl">
+            <summary>
+            <para>
+            <para>An optional <code>CacheControl</code> header that allows the caller to control the
+            object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</para><para>Headers with a custom user-defined value are also accepted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.WriteEMSDObjectCmdlet.ContentType">
+            <summary>
+            <para>
+            <para>The content type of the object.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.WriteEMSDObjectCmdlet.Path">
+            <summary>
+            <para>
+            <para>The path (including the file name) where the object is stored in the container. Format:
+            &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</para><para>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\canada</code>
+            in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</para><para>Do not include the container name in this path.</para><para>If the path includes any folders that don't exist yet, the service creates them. For
+            example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify
+            <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in
+            the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and
+            <code>canada</code>, in the <code>premium</code> folder. </para><para>There is no correlation between the path to the source and the path (folders) in the
+            container in AWS Elemental MediaStore.</para><para>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS
+            Elemental MediaStore User Guide</a>.</para><para>The file name is the name that is assigned to the file that you upload. The file can
+            have the same name inside and outside of AWS Elemental MediaStore, or it can have
+            the same name. The file name can include or omit an extension. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.WriteEMSDObjectCmdlet.StorageClass">
+            <summary>
+            <para>
+            <para>Indicates the storage class of a <code>Put</code> request. Defaults to high-performance
+            temporal storage class, and objects are persisted into durable storage shortly after
+            being received.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.WriteEMSDObjectCmdlet.UploadAvailability">
+            <summary>
+            <para>
+            <para>Indicates the availability of an object while it is still uploading. If the value
+            is set to <code>streaming</code>, the object is available for downloading after some
+            initial buffering but before the object is uploaded completely. If the value is set
+            to <code>standard</code>, the object is available for downloading only when it is
+            uploaded completely. The default value for this header is <code>standard</code>.</para><para>To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header
+            to <code>chunked</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.WriteEMSDObjectCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStoreData.Model.PutObjectResponse).
+            Specifying the name of a property of type Amazon.MediaStoreData.Model.PutObjectResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.WriteEMSDObjectCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Path parameter.
+            The -PassThru parameter is deprecated, use -Select '^Path' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.WriteEMSDObjectCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMSD.GetEMSDItemListCmdlet">
+            <summary>
+            Provides a list of metadata entries about folders and objects in the specified folder.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.GetEMSDItemListCmdlet.Path">
+            <summary>
+            <para>
+            <para>The path in the container from which to retrieve items. Format: &lt;folder name&gt;/&lt;folder
+            name&gt;/&lt;file name&gt;</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.GetEMSDItemListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return per API request. For example, you submit a
+            <code>ListItems</code> request with <code>MaxResults</code> set at 500. Although 2,000
+            items match your request, the service returns no more than the first 500 items. (The
+            service also returns a <code>NextToken</code> value that you can use to fetch the
+            next batch of results.) The service might return fewer results than the <code>MaxResults</code>
+            value.</para><para>If <code>MaxResults</code> is not included in the request, the service defaults to
+            pagination with a maximum of 1,000 results per page.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.GetEMSDItemListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token that identifies which batch of results that you want to see. For example,
+            you submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500.
+            The service returns the first batch of results (up to 500) and a <code>NextToken</code>
+            value. To see the next batch of results, you can submit the <code>ListItems</code>
+            request a second time and specify the <code>NextToken</code> value.</para><para>Tokens expire after 15 minutes.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.GetEMSDItemListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Items'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStoreData.Model.ListItemsResponse).
+            Specifying the name of a property of type Amazon.MediaStoreData.Model.ListItemsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.GetEMSDItemListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Path parameter.
+            The -PassThru parameter is deprecated, use -Select '^Path' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.GetEMSDItemListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMSD.GetEMSDObjectCmdlet">
+            <summary>
+            Downloads the object at the specified path. If the object’s upload availability is
+            set to <code>streaming</code>, AWS Elemental MediaStore downloads the object even
+            if it’s still uploading the object.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.GetEMSDObjectCmdlet.Path">
+            <summary>
+            <para>
+            <para>The path (including the file name) where the object is stored in the container. Format:
+            &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</para><para>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\canada</code>
+            in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</para><para>Do not include the container name in this path.</para><para>If the path includes any folders that don't exist yet, the service creates them. For
+            example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify
+            <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in
+            the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and
+            <code>canada</code>, in the <code>premium</code> folder. </para><para>There is no correlation between the path to the source and the path (folders) in the
+            container in AWS Elemental MediaStore.</para><para>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS
+            Elemental MediaStore User Guide</a>.</para><para>The file name is the name that is assigned to the file that you upload. The file can
+            have the same name inside and outside of AWS Elemental MediaStore, or it can have
+            the same name. The file name can include or omit an extension. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.GetEMSDObjectCmdlet.Range">
+            <summary>
+            <para>
+            <para>The range bytes of an object to retrieve. For more information about the <code>Range</code>
+            header, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.
+            AWS Elemental MediaStore ignores this header for partially uploaded objects that have
+            streaming upload availability.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.GetEMSDObjectCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStoreData.Model.GetObjectResponse).
+            Specifying the name of a property of type Amazon.MediaStoreData.Model.GetObjectResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.GetEMSDObjectCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Path parameter.
+            The -PassThru parameter is deprecated, use -Select '^Path' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMSD.GetEMSDObjectMetadataCmdlet">
+            <summary>
+            Gets the headers for an object at the specified path.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.GetEMSDObjectMetadataCmdlet.Path">
+            <summary>
+            <para>
+            <para>The path (including the file name) where the object is stored in the container. Format:
+            &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.GetEMSDObjectMetadataCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStoreData.Model.DescribeObjectResponse).
+            Specifying the name of a property of type Amazon.MediaStoreData.Model.DescribeObjectResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.GetEMSDObjectMetadataCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Path parameter.
+            The -PassThru parameter is deprecated, use -Select '^Path' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMSD.RemoveEMSDObjectCmdlet">
+            <summary>
+            Deletes an object at the specified path.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.RemoveEMSDObjectCmdlet.Path">
+            <summary>
+            <para>
+            <para>The path (including the file name) where the object is stored in the container. Format:
+            &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.RemoveEMSDObjectCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStoreData.Model.DeleteObjectResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.RemoveEMSDObjectCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Path parameter.
+            The -PassThru parameter is deprecated, use -Select '^Path' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMSD.RemoveEMSDObjectCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

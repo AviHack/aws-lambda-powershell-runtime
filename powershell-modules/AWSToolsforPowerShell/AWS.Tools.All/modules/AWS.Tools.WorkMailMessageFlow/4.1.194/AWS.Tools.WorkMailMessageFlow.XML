@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.WorkMailMessageFlow</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.WMMF.GetWMMFRawMessageContentCmdlet">
+            <summary>
+            Retrieves the raw content of an in-transit email message, in MIME format.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.WMMF.GetWMMFRawMessageContentCmdlet.MessageId">
+            <summary>
+            <para>
+            <para>The identifier of the email message to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.WMMF.GetWMMFRawMessageContentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'MessageContent'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.WorkMailMessageFlow.Model.GetRawMessageContentResponse).
+            Specifying the name of a property of type Amazon.WorkMailMessageFlow.Model.GetRawMessageContentResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.WMMF.GetWMMFRawMessageContentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the MessageId parameter.
+            The -PassThru parameter is deprecated, use -Select '^MessageId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.WMMF.WriteWMMFRawMessageContentCmdlet">
+            <summary>
+            Updates the raw content of an in-transit email message, in MIME format.
+            
+             
+            <para>
+            This example describes how to update in-transit email message. For more information
+            and examples for using this API, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/update-with-lambda.html">
+            Updating message content with AWS Lambda</a>.
+            </para><note><para>
+            Updates to an in-transit message only appear when you call <code>PutRawMessageContent</code>
+            from an AWS Lambda function configured with a synchronous <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/lambda.html#synchronous-rules">
+            Run Lambda</a> rule. If you call <code>PutRawMessageContent</code> on a delivered
+            or sent message, the message remains unchanged, even though <a href="https://docs.aws.amazon.com/workmail/latest/APIReference/API_messageflow_GetRawMessageContent.html">GetRawMessageContent</a>
+            returns an updated message. 
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.WMMF.WriteWMMFRawMessageContentCmdlet.S3Reference_Bucket">
+            <summary>
+            <para>
+            <para>The S3 bucket name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.WMMF.WriteWMMFRawMessageContentCmdlet.S3Reference_Key">
+            <summary>
+            <para>
+            <para>The S3 key object name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.WMMF.WriteWMMFRawMessageContentCmdlet.MessageId">
+            <summary>
+            <para>
+            <para>The identifier of the email message being updated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.WMMF.WriteWMMFRawMessageContentCmdlet.S3Reference_ObjectVersion">
+            <summary>
+            <para>
+            <para>If you enable versioning for the bucket, you can specify the object version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.WMMF.WriteWMMFRawMessageContentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.WorkMailMessageFlow.Model.PutRawMessageContentResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.WMMF.WriteWMMFRawMessageContentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the MessageId parameter.
+            The -PassThru parameter is deprecated, use -Select '^MessageId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.WMMF.WriteWMMFRawMessageContentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

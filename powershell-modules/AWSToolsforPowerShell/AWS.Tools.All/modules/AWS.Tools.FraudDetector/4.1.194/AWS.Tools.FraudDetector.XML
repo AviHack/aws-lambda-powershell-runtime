@@ -1,0 +1,3713 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.FraudDetector</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.AddFDResourceTagCmdlet">
+            <summary>
+            Assigns tags to a resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.AddFDResourceTagCmdlet.ResourceARN">
+            <summary>
+            <para>
+            <para>The resource ARN.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.AddFDResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags to assign to the resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.AddFDResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.AddFDResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceARN parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceARN' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.AddFDResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.GetFDBatchImportJobCmdlet">
+            <summary>
+            Gets all batch import jobs or a specific job of the specified ID. This is a paginated
+            API. If you provide a null <code>maxResults</code>, this action retrieves a maximum
+            of 50 records per page. If you provide a <code>maxResults</code>, the value must be
+            between 1 and 50. To get the next page results, provide the pagination token from
+            the <code>GetBatchImportJobsResponse</code> as part of your request. A null pagination
+            token fetches the records from the beginning.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDBatchImportJobCmdlet.JobId">
+            <summary>
+            <para>
+            <para>The ID of the batch import job to get.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDBatchImportJobCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of objects to return for request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDBatchImportJobCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The next token from the previous request.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDBatchImportJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'BatchImports'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.GetBatchImportJobsResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.GetBatchImportJobsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDBatchImportJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDBatchImportJobCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.GetFDBatchPredictionJobCmdlet">
+            <summary>
+            Gets all batch prediction jobs or a specific job if you specify a job ID. This is
+            a paginated API. If you provide a null maxResults, this action retrieves a maximum
+            of 50 records per page. If you provide a maxResults, the value must be between 1 and
+            50. To get the next page results, provide the pagination token from the GetBatchPredictionJobsResponse
+            as part of your request. A null pagination token fetches the records from the beginning.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDBatchPredictionJobCmdlet.JobId">
+            <summary>
+            <para>
+            <para>The batch prediction job for which to get the details.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDBatchPredictionJobCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of objects to return for the request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDBatchPredictionJobCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The next token from the previous request.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDBatchPredictionJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'BatchPredictions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.GetBatchPredictionJobsResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.GetBatchPredictionJobsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDBatchPredictionJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDBatchPredictionJobCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.GetFDDeleteEventsByEventTypeStatusCmdlet">
+            <summary>
+            Retrieves the status of a <code>DeleteEventsByEventType</code> action.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDDeleteEventsByEventTypeStatusCmdlet.EventTypeName">
+            <summary>
+            <para>
+            <para>Name of event type for which to get the deletion status.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDDeleteEventsByEventTypeStatusCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.GetDeleteEventsByEventTypeStatusResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.GetDeleteEventsByEventTypeStatusResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDDeleteEventsByEventTypeStatusCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EventTypeName parameter.
+            The -PassThru parameter is deprecated, use -Select '^EventTypeName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.GetFDDetectorCmdlet">
+            <summary>
+            Gets all detectors or a single detector if a <code>detectorId</code> is specified.
+            This is a paginated API. If you provide a null <code>maxResults</code>, this action
+            retrieves a maximum of 10 records per page. If you provide a <code>maxResults</code>,
+            the value must be between 5 and 10. To get the next page results, provide the pagination
+            token from the <code>GetDetectorsResponse</code> as part of your request. A null pagination
+            token fetches the records from the beginning.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDDetectorCmdlet.DetectorId">
+            <summary>
+            <para>
+            <para>The detector ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDDetectorCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of objects to return for the request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDDetectorCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The next token for the subsequent request.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDDetectorCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Detectors'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.GetDetectorsResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.GetDetectorsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDDetectorCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DetectorId parameter.
+            The -PassThru parameter is deprecated, use -Select '^DetectorId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDDetectorCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.GetFDDetectorVersionCmdlet">
+            <summary>
+            Gets a particular detector version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDDetectorVersionCmdlet.DetectorId">
+            <summary>
+            <para>
+            <para>The detector ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDDetectorVersionCmdlet.DetectorVersionId">
+            <summary>
+            <para>
+            <para>The detector version ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDDetectorVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.GetDetectorVersionResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.GetDetectorVersionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDDetectorVersionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DetectorVersionId parameter.
+            The -PassThru parameter is deprecated, use -Select '^DetectorVersionId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.GetFDDetectorVersionListCmdlet">
+            <summary>
+            Gets all versions for a specified detector.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDDetectorVersionListCmdlet.DetectorId">
+            <summary>
+            <para>
+            <para>The detector ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDDetectorVersionListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return for the request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDDetectorVersionListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The next token from the previous response.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDDetectorVersionListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'DetectorVersionSummaries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.DescribeDetectorResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.DescribeDetectorResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDDetectorVersionListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DetectorId parameter.
+            The -PassThru parameter is deprecated, use -Select '^DetectorId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDDetectorVersionListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.GetFDEntityTypeCmdlet">
+            <summary>
+            Gets all entity types or a specific entity type if a name is specified. This is a
+            paginated API. If you provide a null <code>maxResults</code>, this action retrieves
+            a maximum of 10 records per page. If you provide a <code>maxResults</code>, the value
+            must be between 5 and 10. To get the next page results, provide the pagination token
+            from the <code>GetEntityTypesResponse</code> as part of your request. A null pagination
+            token fetches the records from the beginning.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEntityTypeCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEntityTypeCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of objects to return for the request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEntityTypeCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The next token for the subsequent request.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEntityTypeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EntityTypes'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.GetEntityTypesResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.GetEntityTypesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEntityTypeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEntityTypeCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.GetFDEventCmdlet">
+            <summary>
+            Retrieves details of events stored with Amazon Fraud Detector. This action does not
+            retrieve prediction results.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventCmdlet.EventId">
+            <summary>
+            <para>
+            <para>The ID of the event to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventCmdlet.EventTypeName">
+            <summary>
+            <para>
+            <para>The event type of the event to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Event'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.GetEventResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.GetEventResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EventId parameter.
+            The -PassThru parameter is deprecated, use -Select '^EventId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionCmdlet">
+            <summary>
+            Evaluates an event against a detector version. If a version ID is not provided, the
+            detector’s (<code>ACTIVE</code>) version is used.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionCmdlet.DetectorId">
+            <summary>
+            <para>
+            <para>The detector ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionCmdlet.DetectorVersionId">
+            <summary>
+            <para>
+            <para>The detector version ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionCmdlet.Entity">
+            <summary>
+            <para>
+            <para>The entity type (associated with the detector's event type) and specific entity ID
+            representing who performed the event. If an entity id is not available, use "UNKNOWN."</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionCmdlet.EventId">
+            <summary>
+            <para>
+            <para>The unique ID used to identify the event.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionCmdlet.EventTimestamp">
+            <summary>
+            <para>
+            <para>Timestamp that defines when the event under evaluation occurred. The timestamp must
+            be specified using ISO 8601 standard in UTC.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionCmdlet.EventTypeName">
+            <summary>
+            <para>
+            <para>The event type associated with the detector specified for the prediction.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionCmdlet.EventVariable">
+            <summary>
+            <para>
+            <para>Names of the event type's variables you defined in Amazon Fraud Detector to represent
+            data elements and their corresponding values for the event you are sending for evaluation.</para><important><para>You must provide at least one eventVariable</para></important><para>To ensure most accurate fraud prediction and to simplify your data preparation, Amazon
+            Fraud Detector will replace all missing variables or values as follows:</para><para><b>For Amazon Fraud Detector trained models:</b></para><para>If a null value is provided explicitly for a variable or if a variable is missing,
+            model will replace the null value or the missing variable (no variable name in the
+            eventVariables map) with calculated default mean/medians for numeric variables and
+            with special values for categorical variables.</para><para><b>For imported SageMaker models:</b></para><para>If a null value is provided explicitly for a variable, the model and rules will use
+            “null” as the value. If a variable is not provided (no variable name in the eventVariables
+            map), model and rules will use the default value that is provided for the variable.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionCmdlet.ExternalModelEndpointDataBlob">
+            <summary>
+            <para>
+            <para>The Amazon SageMaker model endpoint input data blobs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.GetEventPredictionResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.GetEventPredictionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EventId parameter.
+            The -PassThru parameter is deprecated, use -Select '^EventId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionListCmdlet">
+            <summary>
+            Gets a list of past predictions. The list can be filtered by detector ID, detector
+            version ID, event ID, event type, or by specifying a time period. If filter is not
+            specified, the most recent prediction is returned.
+            
+             
+            <para>
+            For example, the following filter lists all past predictions for <code>xyz</code>
+            event type - <code>{ "eventType":{ "value": "xyz" }” } </code></para><para>
+            This is a paginated API. If you provide a null <code>maxResults</code>, this action
+            will retrieve a maximum of 10 records per page. If you provide a <code>maxResults</code>,
+            the value must be between 50 and 100. To get the next page results, provide the <code>nextToken</code>
+            from the response as part of your request. A null <code>nextToken</code> fetches the
+            records from the beginning. 
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionListCmdlet.PredictionTimeRange_EndTime">
+            <summary>
+            <para>
+            <para> The end time of the time period for when the predictions were generated. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionListCmdlet.PredictionTimeRange_StartTime">
+            <summary>
+            <para>
+            <para> The start time of the time period for when the predictions were generated. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionListCmdlet.DetectorId_Value">
+            <summary>
+            <para>
+            <para> A statement containing a resource property and a value to specify filter condition.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionListCmdlet.DetectorVersionId_Value">
+            <summary>
+            <para>
+            <para> A statement containing a resource property and a value to specify filter condition.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionListCmdlet.EventId_Value">
+            <summary>
+            <para>
+            <para> A statement containing a resource property and a value to specify filter condition.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionListCmdlet.EventType_Value">
+            <summary>
+            <para>
+            <para> A statement containing a resource property and a value to specify filter condition.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para> The maximum number of predictions to return for the request. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para> Identifies the next page of results to return. Use the token to make the call again
+            to retrieve the next page. Keep all other arguments unchanged. Each pagination token
+            expires after 24 hours. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EventPredictionSummaries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.ListEventPredictionsResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.ListEventPredictionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionMetadataCmdlet">
+            <summary>
+            Gets details of the past fraud predictions for the specified event ID, event type,
+            detector ID, and detector version ID that was generated in the specified time period.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionMetadataCmdlet.DetectorId">
+            <summary>
+            <para>
+            <para> The detector ID. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionMetadataCmdlet.DetectorVersionId">
+            <summary>
+            <para>
+            <para> The detector version ID. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionMetadataCmdlet.EventId">
+            <summary>
+            <para>
+            <para> The event ID. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionMetadataCmdlet.EventTypeName">
+            <summary>
+            <para>
+            <para> The event type associated with the detector specified for the prediction. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionMetadataCmdlet.PredictionTimestamp">
+            <summary>
+            <para>
+            <para> The timestamp that defines when the prediction was generated. The timestamp must
+            be specified using ISO 8601 standard in UTC.</para><para>We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a>
+            first, and using the <code>predictionTimestamp</code> value in the response to provide
+            an accurate prediction timestamp value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventPredictionMetadataCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.GetEventPredictionMetadataResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.GetEventPredictionMetadataResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.GetFDEventTypeCmdlet">
+            <summary>
+            Gets all event types or a specific event type if name is provided. This is a paginated
+            API. If you provide a null <code>maxResults</code>, this action retrieves a maximum
+            of 10 records per page. If you provide a <code>maxResults</code>, the value must be
+            between 5 and 10. To get the next page results, provide the pagination token from
+            the <code>GetEventTypesResponse</code> as part of your request. A null pagination
+            token fetches the records from the beginning.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventTypeCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventTypeCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of objects to return for the request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventTypeCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The next token for the subsequent request.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventTypeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EventTypes'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.GetEventTypesResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.GetEventTypesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventTypeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDEventTypeCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.GetFDExternalModelCmdlet">
+            <summary>
+            Gets the details for one or more Amazon SageMaker models that have been imported into
+            the service. This is a paginated API. If you provide a null <code>maxResults</code>,
+            this actions retrieves a maximum of 10 records per page. If you provide a <code>maxResults</code>,
+            the value must be between 5 and 10. To get the next page results, provide the pagination
+            token from the <code>GetExternalModelsResult</code> as part of your request. A null
+            pagination token fetches the records from the beginning.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDExternalModelCmdlet.ModelEndpoint">
+            <summary>
+            <para>
+            <para>The Amazon SageMaker model endpoint.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDExternalModelCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of objects to return for the request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDExternalModelCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The next page token for the request.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDExternalModelCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ExternalModels'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.GetExternalModelsResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.GetExternalModelsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDExternalModelCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ModelEndpoint parameter.
+            The -PassThru parameter is deprecated, use -Select '^ModelEndpoint' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDExternalModelCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.GetFDKMSEncryptionKeyCmdlet">
+            <summary>
+            Gets the encryption key if a KMS key has been specified to be used to encrypt content
+            in Amazon Fraud Detector.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDKMSEncryptionKeyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'KmsKey'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.GetKMSEncryptionKeyResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.GetKMSEncryptionKeyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.GetFDLabelCmdlet">
+            <summary>
+            Gets all labels or a specific label if name is provided. This is a paginated API.
+            If you provide a null <code>maxResults</code>, this action retrieves a maximum of
+            50 records per page. If you provide a <code>maxResults</code>, the value must be between
+            10 and 50. To get the next page results, provide the pagination token from the <code>GetGetLabelsResponse</code>
+            as part of your request. A null pagination token fetches the records from the beginning.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDLabelCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the label or labels to get.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDLabelCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of objects to return for the request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDLabelCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The next token for the subsequent request.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDLabelCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Labels'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.GetLabelsResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.GetLabelsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDLabelCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDLabelCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.GetFDModelCmdlet">
+            <summary>
+            Gets one or more models. Gets all models for the Amazon Web Services account if no
+            model type and no model id provided. Gets all models for the Amazon Web Services account
+            and model type, if the model type is specified but model id is not provided. Gets
+            a specific model if (model type, model id) tuple is specified. 
+            
+             
+            <para>
+            This is a paginated API. If you provide a null <code>maxResults</code>, this action
+            retrieves a maximum of 10 records per page. If you provide a <code>maxResults</code>,
+            the value must be between 1 and 10. To get the next page results, provide the pagination
+            token from the response as part of your request. A null pagination token fetches the
+            records from the beginning.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDModelCmdlet.ModelId">
+            <summary>
+            <para>
+            <para>The model ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDModelCmdlet.ModelType">
+            <summary>
+            <para>
+            <para>The model type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDModelCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of objects to return for the request. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDModelCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The next token for the subsequent request.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDModelCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Models'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.GetModelsResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.GetModelsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDModelCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ModelId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ModelId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDModelCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.GetFDModelVersionCmdlet">
+            <summary>
+            Gets the details of the specified model version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDModelVersionCmdlet.ModelId">
+            <summary>
+            <para>
+            <para>The model ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDModelVersionCmdlet.ModelType">
+            <summary>
+            <para>
+            <para>The model type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDModelVersionCmdlet.ModelVersionNumber">
+            <summary>
+            <para>
+            <para>The model version number.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDModelVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.GetModelVersionResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.GetModelVersionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDModelVersionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ModelId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ModelId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.GetFDModelVersionListCmdlet">
+            <summary>
+            Gets all of the model versions for the specified model type or for the specified model
+            type and model ID. You can also get details for a single, specified model version.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDModelVersionListCmdlet.ModelId">
+            <summary>
+            <para>
+            <para>The model ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDModelVersionListCmdlet.ModelType">
+            <summary>
+            <para>
+            <para>The model type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDModelVersionListCmdlet.ModelVersionNumber">
+            <summary>
+            <para>
+            <para>The model version number.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDModelVersionListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDModelVersionListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The next token from the previous results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDModelVersionListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ModelVersionDetails'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.DescribeModelVersionsResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.DescribeModelVersionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDModelVersionListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ModelId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ModelId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDModelVersionListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.GetFDOutcomeCmdlet">
+            <summary>
+            Gets one or more outcomes. This is a paginated API. If you provide a null <code>maxResults</code>,
+            this actions retrieves a maximum of 100 records per page. If you provide a <code>maxResults</code>,
+            the value must be between 50 and 100. To get the next page results, provide the pagination
+            token from the <code>GetOutcomesResult</code> as part of your request. A null pagination
+            token fetches the records from the beginning.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDOutcomeCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the outcome or outcomes to get.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDOutcomeCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of objects to return for the request. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDOutcomeCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The next page token for the request. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDOutcomeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Outcomes'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.GetOutcomesResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.GetOutcomesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDOutcomeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDOutcomeCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.GetFDResourceTagCmdlet">
+            <summary>
+            Lists all tags associated with the resource. This is a paginated API. To get the next
+            page results, provide the pagination token from the response as part of your request.
+            A null pagination token fetches the records from the beginning.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDResourceTagCmdlet.ResourceARN">
+            <summary>
+            <para>
+            <para>The ARN that specifies the resource whose tags you want to list.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDResourceTagCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of objects to return for the request. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDResourceTagCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The next token from the previous results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceARN parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceARN' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDResourceTagCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.GetFDRuleCmdlet">
+            <summary>
+            Get all rules for a detector (paginated) if <code>ruleId</code> and <code>ruleVersion</code>
+            are not specified. Gets all rules for the detector and the <code>ruleId</code> if
+            present (paginated). Gets a specific rule if both the <code>ruleId</code> and the
+            <code>ruleVersion</code> are specified.
+            
+             
+            <para>
+            This is a paginated API. Providing null maxResults results in retrieving maximum of
+            100 records per page. If you provide maxResults the value must be between 50 and 100.
+            To get the next page result, a provide a pagination token from GetRulesResult as part
+            of your request. Null pagination token fetches the records from the beginning.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDRuleCmdlet.DetectorId">
+            <summary>
+            <para>
+            <para>The detector ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDRuleCmdlet.RuleId">
+            <summary>
+            <para>
+            <para>The rule ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDRuleCmdlet.RuleVersion">
+            <summary>
+            <para>
+            <para>The rule version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDRuleCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of rules to return for the request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDRuleCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The next page token.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDRuleCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'RuleDetails'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.GetRulesResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.GetRulesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDRuleCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DetectorId parameter.
+            The -PassThru parameter is deprecated, use -Select '^DetectorId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDRuleCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.GetFDVariableCmdlet">
+            <summary>
+            Gets all of the variables or the specific variable. This is a paginated API. Providing
+            null <code>maxSizePerPage</code> results in retrieving maximum of 100 records per
+            page. If you provide <code>maxSizePerPage</code> the value must be between 50 and
+            100. To get the next page result, a provide a pagination token from <code>GetVariablesResult</code>
+            as part of your request. Null pagination token fetches the records from the beginning.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDVariableCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the variable. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDVariableCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The max size per page determined for the get variable request. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDVariableCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The next page token of the get variable request. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDVariableCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Variables'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.GetVariablesResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.GetVariablesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDVariableCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDVariableCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.GetFDVariableBatchCmdlet">
+            <summary>
+            Gets a batch of variables.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDVariableBatchCmdlet.Name">
+            <summary>
+            <para>
+            <para>The list of variable names to get.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.GetFDVariableBatchCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.BatchGetVariableResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.BatchGetVariableResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.NewFDBatchImportJobCmdlet">
+            <summary>
+            Creates a batch import job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDBatchImportJobCmdlet.EventTypeName">
+            <summary>
+            <para>
+            <para>The name of the event type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDBatchImportJobCmdlet.IamRoleArn">
+            <summary>
+            <para>
+            <para>The ARN of the IAM role created for Amazon S3 bucket that holds your data file.</para><para>The IAM role must have read permissions to your input S3 bucket and write permissions
+            to your output S3 bucket. For more information about bucket permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User
+            policy examples</a> in the <i>Amazon S3 User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDBatchImportJobCmdlet.InputPath">
+            <summary>
+            <para>
+            <para>The URI that points to the Amazon S3 location of your data file.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDBatchImportJobCmdlet.JobId">
+            <summary>
+            <para>
+            <para>The ID of the batch import job. The ID cannot be of a past job, unless the job exists
+            in <code>CREATE_FAILED</code> state.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDBatchImportJobCmdlet.OutputPath">
+            <summary>
+            <para>
+            <para>The URI that points to the Amazon S3 location for storing your results. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDBatchImportJobCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A collection of key-value pairs associated with this request. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDBatchImportJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.CreateBatchImportJobResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDBatchImportJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDBatchImportJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.NewFDBatchPredictionJobCmdlet">
+            <summary>
+            Creates a batch prediction job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDBatchPredictionJobCmdlet.DetectorName">
+            <summary>
+            <para>
+            <para>The name of the detector.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDBatchPredictionJobCmdlet.DetectorVersion">
+            <summary>
+            <para>
+            <para>The detector version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDBatchPredictionJobCmdlet.EventTypeName">
+            <summary>
+            <para>
+            <para>The name of the event type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDBatchPredictionJobCmdlet.IamRoleArn">
+            <summary>
+            <para>
+            <para>The ARN of the IAM role to use for this job request.</para><para>The IAM Role must have read permissions to your input S3 bucket and write permissions
+            to your output S3 bucket. For more information about bucket permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User
+            policy examples</a> in the <i>Amazon S3 User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDBatchPredictionJobCmdlet.InputPath">
+            <summary>
+            <para>
+            <para>The Amazon S3 location of your training file.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDBatchPredictionJobCmdlet.JobId">
+            <summary>
+            <para>
+            <para>The ID of the batch prediction job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDBatchPredictionJobCmdlet.OutputPath">
+            <summary>
+            <para>
+            <para>The Amazon S3 location of your output file.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDBatchPredictionJobCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A collection of key and value pairs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDBatchPredictionJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.CreateBatchPredictionJobResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDBatchPredictionJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDBatchPredictionJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.NewFDDetectorVersionCmdlet">
+            <summary>
+            Creates a detector version. The detector version starts in a <code>DRAFT</code> status.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDDetectorVersionCmdlet.Description">
+            <summary>
+            <para>
+            <para>The description of the detector version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDDetectorVersionCmdlet.DetectorId">
+            <summary>
+            <para>
+            <para>The ID of the detector under which you want to create a new version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDDetectorVersionCmdlet.ExternalModelEndpoint">
+            <summary>
+            <para>
+            <para>The Amazon Sagemaker model endpoints to include in the detector version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDDetectorVersionCmdlet.ModelVersion">
+            <summary>
+            <para>
+            <para>The model versions to include in the detector version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDDetectorVersionCmdlet.RuleExecutionMode">
+            <summary>
+            <para>
+            <para>The rule execution mode for the rules included in the detector version.</para><para>You can define and edit the rule mode at the detector version level, when it is in
+            draft status.</para><para>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially,
+            first to last, stopping at the first matched rule. Amazon Fraud dectector then provides
+            the outcomes for that single rule.</para><para>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules
+            and returns the outcomes for all matched rules. </para><para>The default behavior is <code>FIRST_MATCHED</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDDetectorVersionCmdlet.Rule">
+            <summary>
+            <para>
+            <para>The rules to include in the detector version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDDetectorVersionCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A collection of key and value pairs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDDetectorVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.CreateDetectorVersionResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.CreateDetectorVersionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDDetectorVersionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DetectorId parameter.
+            The -PassThru parameter is deprecated, use -Select '^DetectorId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDDetectorVersionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.NewFDModelCmdlet">
+            <summary>
+            Creates a model using the specified model type.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDModelCmdlet.Description">
+            <summary>
+            <para>
+            <para>The model description. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDModelCmdlet.EventTypeName">
+            <summary>
+            <para>
+            <para>The name of the event type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDModelCmdlet.ModelId">
+            <summary>
+            <para>
+            <para>The model ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDModelCmdlet.ModelType">
+            <summary>
+            <para>
+            <para>The model type. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDModelCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A collection of key and value pairs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDModelCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.CreateModelResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDModelCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ModelId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ModelId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDModelCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.NewFDModelVersionCmdlet">
+            <summary>
+            Creates a version of the model using the specified model type and model id.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDModelVersionCmdlet.ExternalEventsDetail_DataAccessRoleArn">
+            <summary>
+            <para>
+            <para>The ARN of the role that provides Amazon Fraud Detector access to the data location.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDModelVersionCmdlet.ExternalEventsDetail_DataLocation">
+            <summary>
+            <para>
+            <para>The Amazon S3 bucket location for the data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDModelVersionCmdlet.IngestedEventsTimeWindow_EndTime">
+            <summary>
+            <para>
+            <para>Timestamp of the final ingested event.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDModelVersionCmdlet.LabelSchema_LabelMapper">
+            <summary>
+            <para>
+            <para>The label mapper maps the Amazon Fraud Detector supported model classification labels
+            (<code>FRAUD</code>, <code>LEGIT</code>) to the appropriate event type labels. For
+            example, if "<code>FRAUD</code>" and "<code>LEGIT</code>" are Amazon Fraud Detector
+            supported labels, this mapper could be: <code>{"FRAUD" =&gt; ["0"]</code>, <code>"LEGIT"
+            =&gt; ["1"]}</code> or <code>{"FRAUD" =&gt; ["false"]</code>, <code>"LEGIT" =&gt;
+            ["true"]}</code> or <code>{"FRAUD" =&gt; ["fraud", "abuse"]</code>, <code>"LEGIT"
+            =&gt; ["legit", "safe"]}</code>. The value part of the mapper is a list, because you
+            may have multiple label variants from your event type for a single Amazon Fraud Detector
+            label. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDModelVersionCmdlet.ModelId">
+            <summary>
+            <para>
+            <para>The model ID. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDModelVersionCmdlet.ModelType">
+            <summary>
+            <para>
+            <para>The model type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDModelVersionCmdlet.TrainingDataSchema_ModelVariable">
+            <summary>
+            <para>
+            <para>The training data schema variables.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDModelVersionCmdlet.IngestedEventsTimeWindow_StartTime">
+            <summary>
+            <para>
+            <para>Timestamp of the first ingensted event.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDModelVersionCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A collection of key and value pairs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDModelVersionCmdlet.TrainingDataSource">
+            <summary>
+            <para>
+            <para>The training data source location in Amazon S3. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDModelVersionCmdlet.LabelSchema_UnlabeledEventsTreatment">
+            <summary>
+            <para>
+            <para>The action to take for unlabeled events.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDModelVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.CreateModelVersionResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.CreateModelVersionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDModelVersionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ModelId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ModelId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDModelVersionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.NewFDRuleCmdlet">
+            <summary>
+            Creates a rule for use with the specified detector.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDRuleCmdlet.Description">
+            <summary>
+            <para>
+            <para>The rule description.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDRuleCmdlet.DetectorId">
+            <summary>
+            <para>
+            <para>The detector ID for the rule's parent detector.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDRuleCmdlet.Expression">
+            <summary>
+            <para>
+            <para>The rule expression.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDRuleCmdlet.Language">
+            <summary>
+            <para>
+            <para>The language of the rule.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDRuleCmdlet.Outcome">
+            <summary>
+            <para>
+            <para>The outcome or outcomes returned when the rule expression matches.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDRuleCmdlet.RuleId">
+            <summary>
+            <para>
+            <para>The rule ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDRuleCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A collection of key and value pairs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDRuleCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Rule'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.CreateRuleResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.CreateRuleResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDRuleCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RuleId parameter.
+            The -PassThru parameter is deprecated, use -Select '^RuleId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDRuleCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.NewFDVariableCmdlet">
+            <summary>
+            Creates a variable.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDVariableCmdlet.DataSource">
+            <summary>
+            <para>
+            <para>The source of the data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDVariableCmdlet.DataType">
+            <summary>
+            <para>
+            <para>The data type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDVariableCmdlet.DefaultValue">
+            <summary>
+            <para>
+            <para>The default value for the variable when no value is received.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDVariableCmdlet.Description">
+            <summary>
+            <para>
+            <para>The description.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDVariableCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the variable.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDVariableCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A collection of key and value pairs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDVariableCmdlet.VariableType">
+            <summary>
+            <para>
+            <para>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+            types</a>. </para><para>Valid Values: <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY
+            | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN
+            | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT
+            | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY
+            | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME
+            | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDVariableCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.CreateVariableResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDVariableCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDVariableCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.NewFDVariableBatchCmdlet">
+            <summary>
+            Creates a batch of variables.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDVariableBatchCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A collection of key and value pairs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDVariableBatchCmdlet.VariableEntry">
+            <summary>
+            <para>
+            <para>The list of variables for the batch create variable request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDVariableBatchCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Errors'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.BatchCreateVariableResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.BatchCreateVariableResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.NewFDVariableBatchCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.RemoveFDBatchImportJobCmdlet">
+            <summary>
+            Deletes the specified batch import job ID record. This action does not delete the
+            data that was batch imported.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDBatchImportJobCmdlet.JobId">
+            <summary>
+            <para>
+            <para>The ID of the batch import job to delete. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDBatchImportJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.DeleteBatchImportJobResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDBatchImportJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDBatchImportJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.RemoveFDBatchPredictionJobCmdlet">
+            <summary>
+            Deletes a batch prediction job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDBatchPredictionJobCmdlet.JobId">
+            <summary>
+            <para>
+            <para>The ID of the batch prediction job to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDBatchPredictionJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.DeleteBatchPredictionJobResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDBatchPredictionJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDBatchPredictionJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.RemoveFDDetectorCmdlet">
+            <summary>
+            Deletes the detector. Before deleting a detector, you must first delete all detector
+            versions and rule versions associated with the detector.
+            
+             
+            <para>
+            When you delete a detector, Amazon Fraud Detector permanently deletes the detector
+            and the data is no longer stored in Amazon Fraud Detector.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDDetectorCmdlet.DetectorId">
+            <summary>
+            <para>
+            <para>The ID of the detector to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDDetectorCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.DeleteDetectorResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDDetectorCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DetectorId parameter.
+            The -PassThru parameter is deprecated, use -Select '^DetectorId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDDetectorCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.RemoveFDDetectorVersionCmdlet">
+            <summary>
+            Deletes the detector version. You cannot delete detector versions that are in <code>ACTIVE</code>
+            status.
+            
+             
+            <para>
+            When you delete a detector version, Amazon Fraud Detector permanently deletes the
+            detector and the data is no longer stored in Amazon Fraud Detector.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDDetectorVersionCmdlet.DetectorId">
+            <summary>
+            <para>
+            <para>The ID of the parent detector for the detector version to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDDetectorVersionCmdlet.DetectorVersionId">
+            <summary>
+            <para>
+            <para>The ID of the detector version to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDDetectorVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.DeleteDetectorVersionResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDDetectorVersionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DetectorVersionId parameter.
+            The -PassThru parameter is deprecated, use -Select '^DetectorVersionId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDDetectorVersionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.RemoveFDEntityTypeCmdlet">
+            <summary>
+            Deletes an entity type.
+            
+             
+            <para>
+            You cannot delete an entity type that is included in an event type.
+            </para><para>
+            When you delete an entity type, Amazon Fraud Detector permanently deletes that entity
+            type and the data is no longer stored in Amazon Fraud Detector.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDEntityTypeCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the entity type to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDEntityTypeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.DeleteEntityTypeResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDEntityTypeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDEntityTypeCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.RemoveFDEventCmdlet">
+            <summary>
+            Deletes the specified event.
+            
+             
+            <para>
+            When you delete an event, Amazon Fraud Detector permanently deletes that event and
+            the event data is no longer stored in Amazon Fraud Detector.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDEventCmdlet.DeleteAuditHistory">
+            <summary>
+            <para>
+            <para>Specifies whether or not to delete any predictions associated with the event.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDEventCmdlet.EventId">
+            <summary>
+            <para>
+            <para>The ID of the event to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDEventCmdlet.EventTypeName">
+            <summary>
+            <para>
+            <para>The name of the event type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDEventCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.DeleteEventResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDEventCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EventId parameter.
+            The -PassThru parameter is deprecated, use -Select '^EventId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDEventCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.RemoveFDEventsByEventTypeCmdlet">
+            <summary>
+            Deletes all events of a particular event type.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDEventsByEventTypeCmdlet.EventTypeName">
+            <summary>
+            <para>
+            <para>The name of the event type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDEventsByEventTypeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.DeleteEventsByEventTypeResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.DeleteEventsByEventTypeResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDEventsByEventTypeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EventTypeName parameter.
+            The -PassThru parameter is deprecated, use -Select '^EventTypeName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDEventsByEventTypeCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.RemoveFDEventTypeCmdlet">
+            <summary>
+            Deletes an event type.
+            
+             
+            <para>
+            You cannot delete an event type that is used in a detector or a model.
+            </para><para>
+            When you delete an event type, Amazon Fraud Detector permanently deletes that event
+            type and the data is no longer stored in Amazon Fraud Detector.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDEventTypeCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the event type to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDEventTypeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.DeleteEventTypeResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDEventTypeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDEventTypeCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.RemoveFDExternalModelCmdlet">
+            <summary>
+            Removes a SageMaker model from Amazon Fraud Detector.
+            
+             
+            <para>
+            You can remove an Amazon SageMaker model if it is not associated with a detector version.
+            Removing a SageMaker model disconnects it from Amazon Fraud Detector, but the model
+            remains available in SageMaker.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDExternalModelCmdlet.ModelEndpoint">
+            <summary>
+            <para>
+            <para>The endpoint of the Amazon Sagemaker model to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDExternalModelCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.DeleteExternalModelResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDExternalModelCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ModelEndpoint parameter.
+            The -PassThru parameter is deprecated, use -Select '^ModelEndpoint' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDExternalModelCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.RemoveFDLabelCmdlet">
+            <summary>
+            Deletes a label.
+            
+             
+            <para>
+            You cannot delete labels that are included in an event type in Amazon Fraud Detector.
+            </para><para>
+            You cannot delete a label assigned to an event ID. You must first delete the relevant
+            event ID.
+            </para><para>
+            When you delete a label, Amazon Fraud Detector permanently deletes that label and
+            the data is no longer stored in Amazon Fraud Detector.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDLabelCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the label to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDLabelCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.DeleteLabelResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDLabelCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDLabelCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.RemoveFDModelCmdlet">
+            <summary>
+            Deletes a model.
+            
+             
+            <para>
+            You can delete models and model versions in Amazon Fraud Detector, provided that they
+            are not associated with a detector version.
+            </para><para>
+             When you delete a model, Amazon Fraud Detector permanently deletes that model and
+            the data is no longer stored in Amazon Fraud Detector.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDModelCmdlet.ModelId">
+            <summary>
+            <para>
+            <para>The model ID of the model to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDModelCmdlet.ModelType">
+            <summary>
+            <para>
+            <para>The model type of the model to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDModelCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.DeleteModelResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDModelCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ModelId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ModelId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDModelCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.RemoveFDModelVersionCmdlet">
+            <summary>
+            Deletes a model version.
+            
+             
+            <para>
+            You can delete models and model versions in Amazon Fraud Detector, provided that they
+            are not associated with a detector version.
+            </para><para>
+             When you delete a model version, Amazon Fraud Detector permanently deletes that model
+            version and the data is no longer stored in Amazon Fraud Detector.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDModelVersionCmdlet.ModelId">
+            <summary>
+            <para>
+            <para>The model ID of the model version to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDModelVersionCmdlet.ModelType">
+            <summary>
+            <para>
+            <para>The model type of the model version to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDModelVersionCmdlet.ModelVersionNumber">
+            <summary>
+            <para>
+            <para>The model version number of the model version to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDModelVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.DeleteModelVersionResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDModelVersionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ModelId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ModelId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDModelVersionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.RemoveFDOutcomeCmdlet">
+            <summary>
+            Deletes an outcome.
+            
+             
+            <para>
+            You cannot delete an outcome that is used in a rule version.
+            </para><para>
+            When you delete an outcome, Amazon Fraud Detector permanently deletes that outcome
+            and the data is no longer stored in Amazon Fraud Detector.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDOutcomeCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the outcome to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDOutcomeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.DeleteOutcomeResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDOutcomeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDOutcomeCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.RemoveFDResourceTagCmdlet">
+            <summary>
+            Removes tags from a resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDResourceTagCmdlet.ResourceARN">
+            <summary>
+            <para>
+            <para>The ARN of the resource from which to remove the tag.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>The resource ARN.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceARN parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceARN' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.RemoveFDRuleCmdlet">
+            <summary>
+            Deletes the rule. You cannot delete a rule if it is used by an <code>ACTIVE</code>
+            or <code>INACTIVE</code> detector version.
+            
+             
+            <para>
+            When you delete a rule, Amazon Fraud Detector permanently deletes that rule and the
+            data is no longer stored in Amazon Fraud Detector.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDRuleCmdlet.Rule_DetectorId">
+            <summary>
+            <para>
+            <para>The detector for which the rule is associated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDRuleCmdlet.Rule_RuleId">
+            <summary>
+            <para>
+            <para>The rule ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDRuleCmdlet.Rule_RuleVersion">
+            <summary>
+            <para>
+            <para>The rule version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDRuleCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.DeleteRuleResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDRuleCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.RemoveFDVariableCmdlet">
+            <summary>
+            Deletes a variable.
+            
+             
+            <para>
+            You can't delete variables that are included in an event type in Amazon Fraud Detector.
+            </para><para>
+            Amazon Fraud Detector automatically deletes model output variables and SageMaker model
+            output variables when you delete the model. You can't delete these variables manually.
+            </para><para>
+            When you delete a variable, Amazon Fraud Detector permanently deletes that variable
+            and the data is no longer stored in Amazon Fraud Detector.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDVariableCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the variable to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDVariableCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.DeleteVariableResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDVariableCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.RemoveFDVariableCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.SendFDEventCmdlet">
+            <summary>
+            Stores events in Amazon Fraud Detector without generating fraud predictions for those
+            events. For example, you can use <code>SendEvent</code> to upload a historical dataset,
+            which you can then later use to train a model.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.SendFDEventCmdlet.AssignedLabel">
+            <summary>
+            <para>
+            <para>The label to associate with the event. Required if specifying <code>labelTimestamp</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.SendFDEventCmdlet.Entity">
+            <summary>
+            <para>
+            <para>An array of entities.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.SendFDEventCmdlet.EventId">
+            <summary>
+            <para>
+            <para>The event ID to upload.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.SendFDEventCmdlet.EventTimestamp">
+            <summary>
+            <para>
+            <para>The timestamp that defines when the event under evaluation occurred. The timestamp
+            must be specified using ISO 8601 standard in UTC.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.SendFDEventCmdlet.EventTypeName">
+            <summary>
+            <para>
+            <para>The event type name of the event.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.SendFDEventCmdlet.EventVariable">
+            <summary>
+            <para>
+            <para>Names of the event type's variables you defined in Amazon Fraud Detector to represent
+            data elements and their corresponding values for the event you are sending for evaluation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.SendFDEventCmdlet.LabelTimestamp">
+            <summary>
+            <para>
+            <para>The timestamp associated with the label. Required if specifying <code>assignedLabel</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.SendFDEventCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.SendEventResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.SendFDEventCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EventId parameter.
+            The -PassThru parameter is deprecated, use -Select '^EventId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.SendFDEventCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.StopFDBatchImportJobCmdlet">
+            <summary>
+            Cancels an in-progress batch import job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.StopFDBatchImportJobCmdlet.JobId">
+            <summary>
+            <para>
+            <para> The ID of an in-progress batch import job to cancel. </para><para>Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>,
+            <code>CANCELED</code>, or <code>COMPLETED</code> state.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.StopFDBatchImportJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.CancelBatchImportJobResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.StopFDBatchImportJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.StopFDBatchImportJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.StopFDBatchPredictionJobCmdlet">
+            <summary>
+            Cancels the specified batch prediction job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.StopFDBatchPredictionJobCmdlet.JobId">
+            <summary>
+            <para>
+            <para>The ID of the batch prediction job to cancel.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.StopFDBatchPredictionJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.CancelBatchPredictionJobResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.StopFDBatchPredictionJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.StopFDBatchPredictionJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.UpdateFDDetectorVersionCmdlet">
+            <summary>
+            Updates a detector version. The detector version attributes that you can update include
+            models, external model endpoints, rules, rule execution mode, and description. You
+            can only update a <code>DRAFT</code> detector version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDDetectorVersionCmdlet.Description">
+            <summary>
+            <para>
+            <para>The detector version description. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDDetectorVersionCmdlet.DetectorId">
+            <summary>
+            <para>
+            <para>The parent detector ID for the detector version you want to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDDetectorVersionCmdlet.DetectorVersionId">
+            <summary>
+            <para>
+            <para>The detector version ID. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDDetectorVersionCmdlet.ExternalModelEndpoint">
+            <summary>
+            <para>
+            <para>The Amazon SageMaker model endpoints to include in the detector version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDDetectorVersionCmdlet.ModelVersion">
+            <summary>
+            <para>
+            <para>The model versions to include in the detector version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDDetectorVersionCmdlet.RuleExecutionMode">
+            <summary>
+            <para>
+            <para>The rule execution mode to add to the detector.</para><para>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially,
+            first to last, stopping at the first matched rule. Amazon Fraud dectector then provides
+            the outcomes for that single rule.</para><para>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules
+            and returns the outcomes for all matched rules. You can define and edit the rule mode
+            at the detector version level, when it is in draft status.</para><para>The default behavior is <code>FIRST_MATCHED</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDDetectorVersionCmdlet.Rule">
+            <summary>
+            <para>
+            <para>The rules to include in the detector version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDDetectorVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.UpdateDetectorVersionResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDDetectorVersionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DetectorVersionId parameter.
+            The -PassThru parameter is deprecated, use -Select '^DetectorVersionId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDDetectorVersionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.UpdateFDDetectorVersionMetadataCmdlet">
+            <summary>
+            Updates the detector version's description. You can update the metadata for any detector
+            version (<code>DRAFT, ACTIVE,</code> or <code>INACTIVE</code>).
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDDetectorVersionMetadataCmdlet.Description">
+            <summary>
+            <para>
+            <para>The description.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDDetectorVersionMetadataCmdlet.DetectorId">
+            <summary>
+            <para>
+            <para>The detector ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDDetectorVersionMetadataCmdlet.DetectorVersionId">
+            <summary>
+            <para>
+            <para>The detector version ID. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDDetectorVersionMetadataCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.UpdateDetectorVersionMetadataResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDDetectorVersionMetadataCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DetectorVersionId parameter.
+            The -PassThru parameter is deprecated, use -Select '^DetectorVersionId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDDetectorVersionMetadataCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.UpdateFDDetectorVersionStatusCmdlet">
+            <summary>
+            Updates the detector version’s status. You can perform the following promotions or
+            demotions using <code>UpdateDetectorVersionStatus</code>: <code>DRAFT</code> to <code>ACTIVE</code>,
+            <code>ACTIVE</code> to <code>INACTIVE</code>, and <code>INACTIVE</code> to <code>ACTIVE</code>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDDetectorVersionStatusCmdlet.DetectorId">
+            <summary>
+            <para>
+            <para>The detector ID. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDDetectorVersionStatusCmdlet.DetectorVersionId">
+            <summary>
+            <para>
+            <para>The detector version ID. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDDetectorVersionStatusCmdlet.Status">
+            <summary>
+            <para>
+            <para>The new status.</para><para>The only supported values are <code>ACTIVE</code> and <code>INACTIVE</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDDetectorVersionStatusCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.UpdateDetectorVersionStatusResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDDetectorVersionStatusCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DetectorVersionId parameter.
+            The -PassThru parameter is deprecated, use -Select '^DetectorVersionId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDDetectorVersionStatusCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.UpdateFDEventLabelCmdlet">
+            <summary>
+            Updates the specified event with a new label.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDEventLabelCmdlet.AssignedLabel">
+            <summary>
+            <para>
+            <para>The new label to assign to the event.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDEventLabelCmdlet.EventId">
+            <summary>
+            <para>
+            <para>The ID of the event associated with the label to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDEventLabelCmdlet.EventTypeName">
+            <summary>
+            <para>
+            <para>The event type of the event associated with the label to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDEventLabelCmdlet.LabelTimestamp">
+            <summary>
+            <para>
+            <para>The timestamp associated with the label. The timestamp must be specified using ISO
+            8601 standard in UTC. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDEventLabelCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.UpdateEventLabelResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDEventLabelCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EventId parameter.
+            The -PassThru parameter is deprecated, use -Select '^EventId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDEventLabelCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelCmdlet">
+            <summary>
+            Updates model description.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelCmdlet.Description">
+            <summary>
+            <para>
+            <para>The new model description.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelCmdlet.ModelId">
+            <summary>
+            <para>
+            <para>The model ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelCmdlet.ModelType">
+            <summary>
+            <para>
+            <para>The model type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.UpdateModelResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ModelId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ModelId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelVersionCmdlet">
+            <summary>
+            Updates a model version. Updating a model version retrains an existing model version
+            using updated training data and produces a new minor version of the model. You can
+            update the training data set location and data access role attributes using this action.
+            This action creates and trains a new minor version of the model, for example version
+            1.01, 1.02, 1.03.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelVersionCmdlet.ExternalEventsDetail_DataAccessRoleArn">
+            <summary>
+            <para>
+            <para>The ARN of the role that provides Amazon Fraud Detector access to the data location.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelVersionCmdlet.ExternalEventsDetail_DataLocation">
+            <summary>
+            <para>
+            <para>The Amazon S3 bucket location for the data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelVersionCmdlet.IngestedEventsTimeWindow_EndTime">
+            <summary>
+            <para>
+            <para>Timestamp of the final ingested event.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelVersionCmdlet.MajorVersionNumber">
+            <summary>
+            <para>
+            <para>The major version number.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelVersionCmdlet.ModelId">
+            <summary>
+            <para>
+            <para>The model ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelVersionCmdlet.ModelType">
+            <summary>
+            <para>
+            <para>The model type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelVersionCmdlet.IngestedEventsTimeWindow_StartTime">
+            <summary>
+            <para>
+            <para>Timestamp of the first ingensted event.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelVersionCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A collection of key and value pairs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.UpdateModelVersionResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.UpdateModelVersionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelVersionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the MajorVersionNumber parameter.
+            The -PassThru parameter is deprecated, use -Select '^MajorVersionNumber' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelVersionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelVersionStatusCmdlet">
+            <summary>
+            Updates the status of a model version.
+            
+             
+            <para>
+            You can perform the following status updates:
+            </para><ol><li><para>
+            Change the <code>TRAINING_IN_PROGRESS</code> status to <code>TRAINING_CANCELLED</code>.
+            </para></li><li><para>
+            Change the <code>TRAINING_COMPLETE</code> status to <code>ACTIVE</code>.
+            </para></li><li><para>
+            Change <code>ACTIVE</code> to <code>INACTIVE</code>.
+            </para></li></ol>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelVersionStatusCmdlet.ModelId">
+            <summary>
+            <para>
+            <para>The model ID of the model version to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelVersionStatusCmdlet.ModelType">
+            <summary>
+            <para>
+            <para>The model type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelVersionStatusCmdlet.ModelVersionNumber">
+            <summary>
+            <para>
+            <para>The model version number.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelVersionStatusCmdlet.Status">
+            <summary>
+            <para>
+            <para>The model version status.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelVersionStatusCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.UpdateModelVersionStatusResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDModelVersionStatusCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.UpdateFDRuleMetadataCmdlet">
+            <summary>
+            Updates a rule's metadata. The description attribute can be updated.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDRuleMetadataCmdlet.Description">
+            <summary>
+            <para>
+            <para>The rule description.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDRuleMetadataCmdlet.Rule_DetectorId">
+            <summary>
+            <para>
+            <para>The detector for which the rule is associated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDRuleMetadataCmdlet.Rule_RuleId">
+            <summary>
+            <para>
+            <para>The rule ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDRuleMetadataCmdlet.Rule_RuleVersion">
+            <summary>
+            <para>
+            <para>The rule version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDRuleMetadataCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.UpdateRuleMetadataResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDRuleMetadataCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Description parameter.
+            The -PassThru parameter is deprecated, use -Select '^Description' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDRuleMetadataCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.UpdateFDRuleVersionCmdlet">
+            <summary>
+            Updates a rule version resulting in a new rule version. Updates a rule version resulting
+            in a new rule version (version 1, 2, 3 ...).
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDRuleVersionCmdlet.Description">
+            <summary>
+            <para>
+            <para>The description.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDRuleVersionCmdlet.Rule_DetectorId">
+            <summary>
+            <para>
+            <para>The detector for which the rule is associated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDRuleVersionCmdlet.Expression">
+            <summary>
+            <para>
+            <para>The rule expression.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDRuleVersionCmdlet.Language">
+            <summary>
+            <para>
+            <para>The language.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDRuleVersionCmdlet.Outcome">
+            <summary>
+            <para>
+            <para>The outcomes.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDRuleVersionCmdlet.Rule_RuleId">
+            <summary>
+            <para>
+            <para>The rule ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDRuleVersionCmdlet.Rule_RuleVersion">
+            <summary>
+            <para>
+            <para>The rule version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDRuleVersionCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags to assign to the rule version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDRuleVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Rule'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.UpdateRuleVersionResponse).
+            Specifying the name of a property of type Amazon.FraudDetector.Model.UpdateRuleVersionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDRuleVersionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Rule_RuleVersion parameter.
+            The -PassThru parameter is deprecated, use -Select '^Rule_RuleVersion' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDRuleVersionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.UpdateFDVariableCmdlet">
+            <summary>
+            Updates a variable.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDVariableCmdlet.DefaultValue">
+            <summary>
+            <para>
+            <para>The new default value of the variable.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDVariableCmdlet.Description">
+            <summary>
+            <para>
+            <para>The new description.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDVariableCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the variable.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDVariableCmdlet.VariableType">
+            <summary>
+            <para>
+            <para>The variable type. For more information see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+            types</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDVariableCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.UpdateVariableResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDVariableCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.UpdateFDVariableCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.WriteFDDetectorCmdlet">
+            <summary>
+            Creates or updates a detector.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDDetectorCmdlet.Description">
+            <summary>
+            <para>
+            <para>The description of the detector.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDDetectorCmdlet.DetectorId">
+            <summary>
+            <para>
+            <para>The detector ID. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDDetectorCmdlet.EventTypeName">
+            <summary>
+            <para>
+            <para>The name of the event type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDDetectorCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A collection of key and value pairs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDDetectorCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.PutDetectorResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDDetectorCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DetectorId parameter.
+            The -PassThru parameter is deprecated, use -Select '^DetectorId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDDetectorCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.WriteFDEntityTypeCmdlet">
+            <summary>
+            Creates or updates an entity type. An entity represents who is performing the event.
+            As part of a fraud prediction, you pass the entity ID to indicate the specific entity
+            who performed the event. An entity type classifies the entity. Example classifications
+            include customer, merchant, or account.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDEntityTypeCmdlet.Description">
+            <summary>
+            <para>
+            <para>The description.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDEntityTypeCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the entity type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDEntityTypeCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A collection of key and value pairs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDEntityTypeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.PutEntityTypeResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDEntityTypeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDEntityTypeCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.WriteFDEventTypeCmdlet">
+            <summary>
+            Creates or updates an event type. An event is a business activity that is evaluated
+            for fraud risk. With Amazon Fraud Detector, you generate fraud predictions for events.
+            An event type defines the structure for an event sent to Amazon Fraud Detector. This
+            includes the variables sent as part of the event, the entity performing the event
+            (such as a customer), and the labels that classify the event. Example event types
+            include online payment transactions, account registrations, and authentications.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDEventTypeCmdlet.Description">
+            <summary>
+            <para>
+            <para>The description of the event type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDEventTypeCmdlet.EntityType">
+            <summary>
+            <para>
+            <para>The entity type for the event type. Example entity types: customer, merchant, account.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDEventTypeCmdlet.EventIngestion">
+            <summary>
+            <para>
+            <para>Specifies if ingenstion is enabled or disabled.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDEventTypeCmdlet.EventVariable">
+            <summary>
+            <para>
+            <para>The event type variables.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDEventTypeCmdlet.Label">
+            <summary>
+            <para>
+            <para>The event type labels.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDEventTypeCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDEventTypeCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A collection of key and value pairs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDEventTypeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.PutEventTypeResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDEventTypeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDEventTypeCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.WriteFDExternalModelCmdlet">
+            <summary>
+            Creates or updates an Amazon SageMaker model endpoint. You can also use this action
+            to update the configuration of the model endpoint, including the IAM role and/or the
+            mapped variables.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDExternalModelCmdlet.OutputConfiguration_CsvIndexToVariableMap">
+            <summary>
+            <para>
+            <para>A map of CSV index values in the SageMaker response to the Amazon Fraud Detector variables.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDExternalModelCmdlet.InputConfiguration_CsvInputTemplate">
+            <summary>
+            <para>
+            <para> Template for constructing the CSV input-data sent to SageMaker. At event-evaluation,
+            the placeholders for variable-names in the template will be replaced with the variable
+            values before being sent to SageMaker. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDExternalModelCmdlet.InputConfiguration_EventTypeName">
+            <summary>
+            <para>
+            <para>The event type name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDExternalModelCmdlet.InputConfiguration_Format">
+            <summary>
+            <para>
+            <para> The format of the model input configuration. The format differs depending on if it
+            is passed through to SageMaker or constructed by Amazon Fraud Detector.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDExternalModelCmdlet.OutputConfiguration_Format">
+            <summary>
+            <para>
+            <para>The format of the model output configuration.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDExternalModelCmdlet.InvokeModelEndpointRoleArn">
+            <summary>
+            <para>
+            <para>The IAM role used to invoke the model endpoint.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDExternalModelCmdlet.InputConfiguration_JsonInputTemplate">
+            <summary>
+            <para>
+            <para> Template for constructing the JSON input-data sent to SageMaker. At event-evaluation,
+            the placeholders for variable names in the template will be replaced with the variable
+            values before being sent to SageMaker. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDExternalModelCmdlet.OutputConfiguration_JsonKeyToVariableMap">
+            <summary>
+            <para>
+            <para>A map of JSON keys in response from SageMaker to the Amazon Fraud Detector variables.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDExternalModelCmdlet.ModelEndpoint">
+            <summary>
+            <para>
+            <para>The model endpoints name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDExternalModelCmdlet.ModelEndpointStatus">
+            <summary>
+            <para>
+            <para>The model endpoint’s status in Amazon Fraud Detector.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDExternalModelCmdlet.ModelSource">
+            <summary>
+            <para>
+            <para>The source of the model.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDExternalModelCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A collection of key and value pairs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDExternalModelCmdlet.InputConfiguration_UseEventVariable">
+            <summary>
+            <para>
+            <para>The event variables.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDExternalModelCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.PutExternalModelResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDExternalModelCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ModelSource parameter.
+            The -PassThru parameter is deprecated, use -Select '^ModelSource' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDExternalModelCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.WriteFDKMSEncryptionKeyCmdlet">
+            <summary>
+            Specifies the KMS key to be used to encrypt content in Amazon Fraud Detector.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDKMSEncryptionKeyCmdlet.KmsEncryptionKeyArn">
+            <summary>
+            <para>
+            <para>The KMS encryption key ARN.</para><para>The KMS key must be single-Region key. Amazon Fraud Detector does not support multi-Region
+            KMS key.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDKMSEncryptionKeyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.PutKMSEncryptionKeyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDKMSEncryptionKeyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the KmsEncryptionKeyArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^KmsEncryptionKeyArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDKMSEncryptionKeyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.WriteFDLabelCmdlet">
+            <summary>
+            Creates or updates label. A label classifies an event as fraudulent or legitimate.
+            Labels are associated with event types and used to train supervised machine learning
+            models in Amazon Fraud Detector.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDLabelCmdlet.Description">
+            <summary>
+            <para>
+            <para>The label description.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDLabelCmdlet.Name">
+            <summary>
+            <para>
+            <para>The label name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDLabelCmdlet.Tag">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDLabelCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.PutLabelResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDLabelCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDLabelCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.FD.WriteFDOutcomeCmdlet">
+            <summary>
+            Creates or updates an outcome.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDOutcomeCmdlet.Description">
+            <summary>
+            <para>
+            <para>The outcome description.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDOutcomeCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the outcome.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDOutcomeCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A collection of key and value pairs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDOutcomeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.FraudDetector.Model.PutOutcomeResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDOutcomeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.FD.WriteFDOutcomeCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

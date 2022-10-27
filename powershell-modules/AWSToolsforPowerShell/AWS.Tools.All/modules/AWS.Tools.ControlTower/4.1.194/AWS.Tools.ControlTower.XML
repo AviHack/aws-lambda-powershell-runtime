@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.ControlTower</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.ACT.DisableACTControlCmdlet">
+            <summary>
+            This API call turns off a control. It starts an asynchronous operation that deletes
+            AWS resources on the specified organizational unit and the accounts it contains. The
+            resources will vary according to the control that you specify.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACT.DisableACTControlCmdlet.ControlIdentifier">
+            <summary>
+            <para>
+            <para>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls
+            are permitted, with the exception of the <b>Region deny</b> guardrail.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACT.DisableACTControlCmdlet.TargetIdentifier">
+            <summary>
+            <para>
+            <para>The ARN of the organizational unit.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACT.DisableACTControlCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'OperationIdentifier'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ControlTower.Model.DisableControlResponse).
+            Specifying the name of a property of type Amazon.ControlTower.Model.DisableControlResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACT.DisableACTControlCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TargetIdentifier parameter.
+            The -PassThru parameter is deprecated, use -Select '^TargetIdentifier' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACT.DisableACTControlCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ACT.EnableACTControlCmdlet">
+            <summary>
+            This API call activates a control. It starts an asynchronous operation that creates
+            AWS resources on the specified organizational unit and the accounts it contains. The
+            resources created will vary according to the control that you specify.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACT.EnableACTControlCmdlet.ControlIdentifier">
+            <summary>
+            <para>
+            <para>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls
+            are permitted, with the exception of the <b>Region deny</b> guardrail.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACT.EnableACTControlCmdlet.TargetIdentifier">
+            <summary>
+            <para>
+            <para>The ARN of the organizational unit.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACT.EnableACTControlCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'OperationIdentifier'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ControlTower.Model.EnableControlResponse).
+            Specifying the name of a property of type Amazon.ControlTower.Model.EnableControlResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACT.EnableACTControlCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TargetIdentifier parameter.
+            The -PassThru parameter is deprecated, use -Select '^TargetIdentifier' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACT.EnableACTControlCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ACT.GetACTControlOperationCmdlet">
+            <summary>
+            Returns the status of a particular <code>EnableControl</code> or <code>DisableControl</code>
+            operation. Displays a message in case of error. Details for an operation are available
+            for 90 days.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACT.GetACTControlOperationCmdlet.OperationIdentifier">
+            <summary>
+            <para>
+            <para>The ID of the asynchronous operation, which is used to track status. The operation
+            is available for 90 days.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACT.GetACTControlOperationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ControlOperation'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ControlTower.Model.GetControlOperationResponse).
+            Specifying the name of a property of type Amazon.ControlTower.Model.GetControlOperationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACT.GetACTControlOperationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the OperationIdentifier parameter.
+            The -PassThru parameter is deprecated, use -Select '^OperationIdentifier' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ACT.GetACTEnabledControlListCmdlet">
+            <summary>
+            Lists the controls enabled by AWS Control Tower on the specified organizational unit
+            and the accounts it contains.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACT.GetACTEnabledControlListCmdlet.TargetIdentifier">
+            <summary>
+            <para>
+            <para>The ARN of the organizational unit.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACT.GetACTEnabledControlListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>How many results to return per API call.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACT.GetACTEnabledControlListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to continue the list from a previous API call with the same parameters.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACT.GetACTEnabledControlListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EnabledControls'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ControlTower.Model.ListEnabledControlsResponse).
+            Specifying the name of a property of type Amazon.ControlTower.Model.ListEnabledControlsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ACT.GetACTEnabledControlListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TargetIdentifier parameter.
+            The -PassThru parameter is deprecated, use -Select '^TargetIdentifier' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.AugmentedAIRuntime</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.A2IR.GetA2IRHumanLoopCmdlet">
+            <summary>
+            Returns information about the specified human loop. If the human loop was deleted,
+            this operation will return a <code>ResourceNotFoundException</code> error.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.GetA2IRHumanLoopCmdlet.HumanLoopName">
+            <summary>
+            <para>
+            <para>The name of the human loop that you want information about.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.GetA2IRHumanLoopCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AugmentedAIRuntime.Model.DescribeHumanLoopResponse).
+            Specifying the name of a property of type Amazon.AugmentedAIRuntime.Model.DescribeHumanLoopResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.GetA2IRHumanLoopCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the HumanLoopName parameter.
+            The -PassThru parameter is deprecated, use -Select '^HumanLoopName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.A2IR.GetA2IRHumanLoopListCmdlet">
+            <summary>
+            Returns information about human loops, given the specified parameters. If a human
+            loop was deleted, it will not be included.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.GetA2IRHumanLoopListCmdlet.CreationTimeAfter">
+            <summary>
+            <para>
+            <para>(Optional) The timestamp of the date when you want the human loops to begin in ISO
+            8601 format. For example, <code>2020-02-24</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.GetA2IRHumanLoopListCmdlet.CreationTimeBefore">
+            <summary>
+            <para>
+            <para>(Optional) The timestamp of the date before which you want the human loops to begin
+            in ISO 8601 format. For example, <code>2020-02-24</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.GetA2IRHumanLoopListCmdlet.FlowDefinitionArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of a flow definition.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.GetA2IRHumanLoopListCmdlet.SortOrder">
+            <summary>
+            <para>
+            <para>Optional. The order for displaying results. Valid values: <code>Ascending</code> and
+            <code>Descending</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.GetA2IRHumanLoopListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The total number of items to return. If the total number of available items is more
+            than the value specified in <code>MaxResults</code>, then a <code>NextToken</code>
+            is returned in the output. You can use this token to display the next page of results.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.GetA2IRHumanLoopListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>A token to display the next page of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.GetA2IRHumanLoopListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'HumanLoopSummaries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AugmentedAIRuntime.Model.ListHumanLoopsResponse).
+            Specifying the name of a property of type Amazon.AugmentedAIRuntime.Model.ListHumanLoopsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.GetA2IRHumanLoopListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.A2IR.RemoveA2IRHumanLoopCmdlet">
+            <summary>
+            Deletes the specified human loop for a flow definition.
+            
+             
+            <para>
+            If the human loop was deleted, this operation will return a <code>ResourceNotFoundException</code>.
+            
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.RemoveA2IRHumanLoopCmdlet.HumanLoopName">
+            <summary>
+            <para>
+            <para>The name of the human loop that you want to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.RemoveA2IRHumanLoopCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AugmentedAIRuntime.Model.DeleteHumanLoopResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.RemoveA2IRHumanLoopCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the HumanLoopName parameter.
+            The -PassThru parameter is deprecated, use -Select '^HumanLoopName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.RemoveA2IRHumanLoopCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.A2IR.StartA2IRHumanLoopCmdlet">
+            <summary>
+            Starts a human loop, provided that at least one activation condition is met.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.StartA2IRHumanLoopCmdlet.DataAttributes_ContentClassifier">
+            <summary>
+            <para>
+            <para>Declares that your content is free of personally identifiable information or adult
+            content.</para><para>Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your
+            task based on this information.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.StartA2IRHumanLoopCmdlet.FlowDefinitionArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the flow definition associated with this human loop.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.StartA2IRHumanLoopCmdlet.HumanLoopName">
+            <summary>
+            <para>
+            <para>The name of the human loop.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.StartA2IRHumanLoopCmdlet.HumanLoopInput_InputContent">
+            <summary>
+            <para>
+            <para>Serialized input from the human loop. The input must be a string representation of
+            a file in JSON format.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.StartA2IRHumanLoopCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AugmentedAIRuntime.Model.StartHumanLoopResponse).
+            Specifying the name of a property of type Amazon.AugmentedAIRuntime.Model.StartHumanLoopResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.StartA2IRHumanLoopCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the HumanLoopName parameter.
+            The -PassThru parameter is deprecated, use -Select '^HumanLoopName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.StartA2IRHumanLoopCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.A2IR.StopA2IRHumanLoopCmdlet">
+            <summary>
+            Stops the specified human loop.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.StopA2IRHumanLoopCmdlet.HumanLoopName">
+            <summary>
+            <para>
+            <para>The name of the human loop that you want to stop.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.StopA2IRHumanLoopCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AugmentedAIRuntime.Model.StopHumanLoopResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.StopA2IRHumanLoopCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the HumanLoopName parameter.
+            The -PassThru parameter is deprecated, use -Select '^HumanLoopName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.A2IR.StopA2IRHumanLoopCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

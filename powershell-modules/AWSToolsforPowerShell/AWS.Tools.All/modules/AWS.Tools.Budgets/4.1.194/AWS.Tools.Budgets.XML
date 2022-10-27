@@ -1,0 +1,2347 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.Budgets</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetCmdlet">
+            <summary>
+            Describes a budget.
+            
+             <important><para>
+            The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>,
+            see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudget.html#API_DescribeBudget_Examples">Examples</a>
+            section. 
+            </para></important>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>accountId</code> that is associated with the budget that you want a description
+            of.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetCmdlet.BudgetName">
+            <summary>
+            <para>
+            <para>The name of the budget that you want a description of.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Budget'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Budgets.Model.DescribeBudgetResponse).
+            Specifying the name of a property of type Amazon.Budgets.Model.DescribeBudgetResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BudgetName parameter.
+            The -PassThru parameter is deprecated, use -Select '^BudgetName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionCmdlet">
+            <summary>
+            Describes a budget action detail.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionCmdlet.AccountId">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionCmdlet.ActionId">
+            <summary>
+            <para>
+            <para> A system-generated universally unique identifier (UUID) for the action. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionCmdlet.BudgetName">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Budgets.Model.DescribeBudgetActionResponse).
+            Specifying the name of a property of type Amazon.Budgets.Model.DescribeBudgetActionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BudgetName parameter.
+            The -PassThru parameter is deprecated, use -Select '^BudgetName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionHistoryCmdlet">
+            <summary>
+            Describes a budget action history detail.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionHistoryCmdlet.AccountId">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionHistoryCmdlet.ActionId">
+            <summary>
+            <para>
+            <para> A system-generated universally unique identifier (UUID) for the action. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionHistoryCmdlet.BudgetName">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionHistoryCmdlet.TimePeriod_End">
+            <summary>
+            <para>
+            <para>The end date for a budget. If you didn't specify an end date, Amazon Web Services
+            set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for
+            the Billing and Cost Management console and the API.</para><para>After the end date, Amazon Web Services deletes the budget and all the associated
+            notifications and subscribers. You can change your end date with the <code>UpdateBudget</code>
+            operation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionHistoryCmdlet.TimePeriod_Start">
+            <summary>
+            <para>
+            <para>The start date for a budget. If you created your budget and didn't specify a start
+            date, Amazon Web Services defaults to the start of your chosen time period (DAILY,
+            MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January
+            24, 2018, chose <code>DAILY</code>, and didn't set a start date, Amazon Web Services
+            set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>,
+            Amazon Web Services set your start date to <code>01/01/18 00:00 UTC</code>. The defaults
+            are the same for the Billing and Cost Management console and the API.</para><para>You can change your start date with the <code>UpdateBudget</code> operation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionHistoryCmdlet.MaxResult">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionHistoryCmdlet.NextToken">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionHistoryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Budgets.Model.DescribeBudgetActionHistoriesResponse).
+            Specifying the name of a property of type Amazon.Budgets.Model.DescribeBudgetActionHistoriesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionHistoryCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BudgetName parameter.
+            The -PassThru parameter is deprecated, use -Select '^BudgetName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionHistoryCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionsForAccountCmdlet">
+            <summary>
+            Describes all of the budget actions for an account.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionsForAccountCmdlet.AccountId">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionsForAccountCmdlet.MaxResult">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionsForAccountCmdlet.NextToken">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionsForAccountCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Budgets.Model.DescribeBudgetActionsForAccountResponse).
+            Specifying the name of a property of type Amazon.Budgets.Model.DescribeBudgetActionsForAccountResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionsForAccountCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AccountId parameter.
+            The -PassThru parameter is deprecated, use -Select '^AccountId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionsForAccountCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionsForBudgetCmdlet">
+            <summary>
+            Describes all of the budget actions for a budget.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionsForBudgetCmdlet.AccountId">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionsForBudgetCmdlet.BudgetName">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionsForBudgetCmdlet.MaxResult">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionsForBudgetCmdlet.NextToken">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionsForBudgetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Budgets.Model.DescribeBudgetActionsForBudgetResponse).
+            Specifying the name of a property of type Amazon.Budgets.Model.DescribeBudgetActionsForBudgetResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionsForBudgetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BudgetName parameter.
+            The -PassThru parameter is deprecated, use -Select '^BudgetName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetActionsForBudgetCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetListCmdlet">
+            <summary>
+            Lists the budgets that are associated with an account.
+            
+             <important><para>
+            The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>,
+            see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudgets.html#API_DescribeBudgets_Examples">Examples</a>
+            section. 
+            </para></important><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetListCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>accountId</code> that is associated with the budgets that you want descriptions
+            of.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>An optional integer that represents how many entries a paginated response contains.
+            The maximum is 100.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token that you include in your request to indicate the next set of
+            results that you want to retrieve.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Budgets'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Budgets.Model.DescribeBudgetsResponse).
+            Specifying the name of a property of type Amazon.Budgets.Model.DescribeBudgetsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AccountId parameter.
+            The -PassThru parameter is deprecated, use -Select '^AccountId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetNotificationsForAccountCmdlet">
+            <summary>
+            Lists the budget names and notifications that are associated with an account.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetNotificationsForAccountCmdlet.AccountId">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetNotificationsForAccountCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para> An integer that shows how many budget name entries a paginated response contains.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetNotificationsForAccountCmdlet.NextToken">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetNotificationsForAccountCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'BudgetNotificationsForAccount'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Budgets.Model.DescribeBudgetNotificationsForAccountResponse).
+            Specifying the name of a property of type Amazon.Budgets.Model.DescribeBudgetNotificationsForAccountResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetNotificationsForAccountCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AccountId parameter.
+            The -PassThru parameter is deprecated, use -Select '^AccountId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetNotificationsForAccountCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetPerformanceHistoryCmdlet">
+            <summary>
+            Describes the history for <code>DAILY</code>, <code>MONTHLY</code>, and <code>QUARTERLY</code>
+            budgets. Budget history isn't available for <code>ANNUAL</code> budgets.<br/><br/>In the AWS.Tools.Budgets module, this cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetPerformanceHistoryCmdlet.AccountId">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetPerformanceHistoryCmdlet.BudgetName">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetPerformanceHistoryCmdlet.TimePeriod_End">
+            <summary>
+            <para>
+            <para>The end date for a budget. If you didn't specify an end date, Amazon Web Services
+            set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for
+            the Billing and Cost Management console and the API.</para><para>After the end date, Amazon Web Services deletes the budget and all the associated
+            notifications and subscribers. You can change your end date with the <code>UpdateBudget</code>
+            operation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetPerformanceHistoryCmdlet.TimePeriod_Start">
+            <summary>
+            <para>
+            <para>The start date for a budget. If you created your budget and didn't specify a start
+            date, Amazon Web Services defaults to the start of your chosen time period (DAILY,
+            MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January
+            24, 2018, chose <code>DAILY</code>, and didn't set a start date, Amazon Web Services
+            set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>,
+            Amazon Web Services set your start date to <code>01/01/18 00:00 UTC</code>. The defaults
+            are the same for the Billing and Cost Management console and the API.</para><para>You can change your start date with the <code>UpdateBudget</code> operation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetPerformanceHistoryCmdlet.MaxResult">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetPerformanceHistoryCmdlet.NextToken">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            <para>
+            <br/><b>Note:</b> In the AWS.Tools.Budgets module, this parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetPerformanceHistoryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'BudgetPerformanceHistory'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Budgets.Model.DescribeBudgetPerformanceHistoryResponse).
+            Specifying the name of a property of type Amazon.Budgets.Model.DescribeBudgetPerformanceHistoryResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetPerformanceHistoryCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BudgetName parameter.
+            The -PassThru parameter is deprecated, use -Select '^BudgetName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTBudgetPerformanceHistoryCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BGT.GetBGTNotificationsForBudgetCmdlet">
+            <summary>
+            Lists the notifications that are associated with a budget.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTNotificationsForBudgetCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>accountId</code> that is associated with the budget whose notifications
+            you want descriptions of.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTNotificationsForBudgetCmdlet.BudgetName">
+            <summary>
+            <para>
+            <para>The name of the budget whose notifications you want descriptions of.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTNotificationsForBudgetCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>An optional integer that represents how many entries a paginated response contains.
+            The maximum is 100.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTNotificationsForBudgetCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token that you include in your request to indicate the next set of
+            results that you want to retrieve.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTNotificationsForBudgetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Notifications'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Budgets.Model.DescribeNotificationsForBudgetResponse).
+            Specifying the name of a property of type Amazon.Budgets.Model.DescribeNotificationsForBudgetResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTNotificationsForBudgetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BudgetName parameter.
+            The -PassThru parameter is deprecated, use -Select '^BudgetName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTNotificationsForBudgetCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BGT.GetBGTSubscribersForNotificationCmdlet">
+            <summary>
+            Lists the subscribers that are associated with a notification.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTSubscribersForNotificationCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>accountId</code> that is associated with the budget whose subscribers you
+            want descriptions of.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTSubscribersForNotificationCmdlet.BudgetName">
+            <summary>
+            <para>
+            <para>The name of the budget whose subscribers you want descriptions of.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTSubscribersForNotificationCmdlet.Notification_ComparisonOperator">
+            <summary>
+            <para>
+            <para>The comparison that's used for this notification.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTSubscribersForNotificationCmdlet.Notification_NotificationState">
+            <summary>
+            <para>
+            <para>Specifies whether this notification is in alarm. If a budget notification is in the
+            <code>ALARM</code> state, you passed the set threshold for the budget.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTSubscribersForNotificationCmdlet.Notification_NotificationType">
+            <summary>
+            <para>
+            <para>Specifies whether the notification is for how much you have spent (<code>ACTUAL</code>)
+            or for how much that you're forecasted to spend (<code>FORECASTED</code>).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTSubscribersForNotificationCmdlet.Notification_Threshold">
+            <summary>
+            <para>
+            <para>The threshold that's associated with a notification. Thresholds are always a percentage,
+            and many customers find value being alerted between 50% - 200% of the budgeted amount.
+            The maximum limit for your threshold is 1,000,000% above the budgeted amount.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTSubscribersForNotificationCmdlet.Notification_ThresholdType">
+            <summary>
+            <para>
+            <para>The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds,
+            Amazon Web Services notifies you when you go over or are forecasted to go over your
+            total cost threshold. For <code>PERCENTAGE</code> thresholds, Amazon Web Services
+            notifies you when you go over or are forecasted to go over a certain percentage of
+            your forecasted spend. For example, if you have a budget for 200 dollars and you have
+            a <code>PERCENTAGE</code> threshold of 80%, Amazon Web Services notifies you when
+            you go over 160 dollars.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTSubscribersForNotificationCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>An optional integer that represents how many entries a paginated response contains.
+            The maximum is 100.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTSubscribersForNotificationCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token that you include in your request to indicate the next set of
+            results that you want to retrieve.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTSubscribersForNotificationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Subscribers'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Budgets.Model.DescribeSubscribersForNotificationResponse).
+            Specifying the name of a property of type Amazon.Budgets.Model.DescribeSubscribersForNotificationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTSubscribersForNotificationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BudgetName parameter.
+            The -PassThru parameter is deprecated, use -Select '^BudgetName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.GetBGTSubscribersForNotificationCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BGT.InvokeBGTBudgetActionCmdlet">
+            <summary>
+            Executes a budget action.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.InvokeBGTBudgetActionCmdlet.AccountId">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.InvokeBGTBudgetActionCmdlet.ActionId">
+            <summary>
+            <para>
+            <para> A system-generated universally unique identifier (UUID) for the action. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.InvokeBGTBudgetActionCmdlet.BudgetName">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.InvokeBGTBudgetActionCmdlet.ExecutionType">
+            <summary>
+            <para>
+            <para> The type of execution. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.InvokeBGTBudgetActionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Budgets.Model.ExecuteBudgetActionResponse).
+            Specifying the name of a property of type Amazon.Budgets.Model.ExecuteBudgetActionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.InvokeBGTBudgetActionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BudgetName parameter.
+            The -PassThru parameter is deprecated, use -Select '^BudgetName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.InvokeBGTBudgetActionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet">
+            <summary>
+            Creates a budget and, if included, notifications and subscribers. 
+            
+             <important><para>
+            Only one of <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present
+            in the syntax at one time. Use the syntax that matches your case. The Request Syntax
+            section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>,
+            see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_CreateBudget.html#API_CreateBudget_Examples">Examples</a>
+            section. 
+            </para></important>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>accountId</code> that is associated with the budget.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.BudgetLimit_Amount">
+            <summary>
+            <para>
+            <para>The cost or usage amount that's associated with a budget forecast, actual spend, or
+            budget threshold.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.ActualSpend_Amount">
+            <summary>
+            <para>
+            <para>The cost or usage amount that's associated with a budget forecast, actual spend, or
+            budget threshold.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.ForecastedSpend_Amount">
+            <summary>
+            <para>
+            <para>The cost or usage amount that's associated with a budget forecast, actual spend, or
+            budget threshold.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.AutoAdjustData_AutoAdjustType">
+            <summary>
+            <para>
+            <para>The string that defines whether your budget auto-adjusts based on historical or forecasted
+            data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.HistoricalOptions_BudgetAdjustmentPeriod">
+            <summary>
+            <para>
+            <para>The number of budget periods included in the moving-average calculation that determines
+            your auto-adjusted budget amount. The maximum value depends on the <code>TimeUnit</code>
+            granularity of the budget:</para><ul><li><para>For the <code>DAILY</code> granularity, the maximum value is <code>60</code>.</para></li><li><para>For the <code>MONTHLY</code> granularity, the maximum value is <code>12</code>.</para></li><li><para>For the <code>QUARTERLY</code> granularity, the maximum value is <code>4</code>.</para></li><li><para>For the <code>ANNUALLY</code> granularity, the maximum value is <code>1</code>.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.Budget_BudgetName">
+            <summary>
+            <para>
+            <para>The name of a budget. The name must be unique within an account. The <code>:</code>
+            and <code>\</code> characters aren't allowed in <code>BudgetName</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.Budget_BudgetType">
+            <summary>
+            <para>
+            <para>Specifies whether this budget tracks costs, usage, RI utilization, RI coverage, Savings
+            Plans utilization, or Savings Plans coverage.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.Budget_CostFilter">
+            <summary>
+            <para>
+            <para>The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member
+            account</code>, <code>Tag</code>, or <code>Cost Category</code>, that are applied
+            to a budget.</para><para>Amazon Web Services Budgets supports the following services as a <code>Service</code>
+            filter for RI budgets:</para><ul><li><para>Amazon EC2</para></li><li><para>Amazon Redshift</para></li><li><para>Amazon Relational Database Service</para></li><li><para>Amazon ElastiCache</para></li><li><para>Amazon OpenSearch Service</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.TimePeriod_End">
+            <summary>
+            <para>
+            <para>The end date for a budget. If you didn't specify an end date, Amazon Web Services
+            set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for
+            the Billing and Cost Management console and the API.</para><para>After the end date, Amazon Web Services deletes the budget and all the associated
+            notifications and subscribers. You can change your end date with the <code>UpdateBudget</code>
+            operation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.CostTypes_IncludeCredit">
+            <summary>
+            <para>
+            <para>Specifies whether a budget includes credits.</para><para>The default value is <code>true</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.CostTypes_IncludeDiscount">
+            <summary>
+            <para>
+            <para>Specifies whether a budget includes discounts.</para><para>The default value is <code>true</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.CostTypes_IncludeOtherSubscription">
+            <summary>
+            <para>
+            <para>Specifies whether a budget includes non-RI subscription costs.</para><para>The default value is <code>true</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.CostTypes_IncludeRecurring">
+            <summary>
+            <para>
+            <para>Specifies whether a budget includes recurring fees such as monthly RI fees.</para><para>The default value is <code>true</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.CostTypes_IncludeRefund">
+            <summary>
+            <para>
+            <para>Specifies whether a budget includes refunds.</para><para>The default value is <code>true</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.CostTypes_IncludeSubscription">
+            <summary>
+            <para>
+            <para>Specifies whether a budget includes subscriptions.</para><para>The default value is <code>true</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.CostTypes_IncludeSupport">
+            <summary>
+            <para>
+            <para>Specifies whether a budget includes support subscription fees.</para><para>The default value is <code>true</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.CostTypes_IncludeTax">
+            <summary>
+            <para>
+            <para>Specifies whether a budget includes taxes.</para><para>The default value is <code>true</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.CostTypes_IncludeUpfront">
+            <summary>
+            <para>
+            <para>Specifies whether a budget includes upfront RI costs.</para><para>The default value is <code>true</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.AutoAdjustData_LastAutoAdjustTime">
+            <summary>
+            <para>
+            <para>The last time that your budget was auto-adjusted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.Budget_LastUpdatedTime">
+            <summary>
+            <para>
+            <para>The last time that you updated this budget.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.HistoricalOptions_LookBackAvailablePeriod">
+            <summary>
+            <para>
+            <para>The integer that describes how many budget periods in your <code>BudgetAdjustmentPeriod</code>
+            are included in the calculation of your current <code>BudgetLimit</code>. If the first
+            budget period in your <code>BudgetAdjustmentPeriod</code> has no cost data, then that
+            budget period isn’t included in the average that determines your budget limit. </para><para>For example, if you set <code>BudgetAdjustmentPeriod</code> as <code>4</code> quarters,
+            but your account had no cost data in the first quarter, then only the last three quarters
+            are included in the calculation. In this scenario, <code>LookBackAvailablePeriods</code>
+            returns <code>3</code>. </para><para>You can’t set your own <code>LookBackAvailablePeriods</code>. The value is automatically
+            calculated from the <code>BudgetAdjustmentPeriod</code> and your historical cost data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.NotificationsWithSubscriber">
+            <summary>
+            <para>
+            <para>A notification that you want to associate with a budget. A budget can have up to five
+            notifications, and each notification can have one SNS subscriber and up to 10 email
+            subscribers. If you include notifications and subscribers in your <code>CreateBudget</code>
+            call, Amazon Web Services creates the notifications and subscribers for you.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.Budget_PlannedBudgetLimit">
+            <summary>
+            <para>
+            <para>A map containing multiple <code>BudgetLimit</code>, including current or future limits.</para><para><code>PlannedBudgetLimits</code> is available for cost or usage budget and supports
+            both monthly and quarterly <code>TimeUnit</code>. </para><para>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code> values.
+            This must start from the current month and include the next 11 months. The <code>key</code>
+            is the start of the month, <code>UTC</code> in epoch seconds. </para><para>For quarterly budgets, provide four quarters of <code>PlannedBudgetLimits</code> value
+            entries in standard calendar quarter increments. This must start from the current
+            quarter and include the next three quarters. The <code>key</code> is the start of
+            the quarter, <code>UTC</code> in epoch seconds. </para><para>If the planned budget expires before 12 months for monthly or four quarters for quarterly,
+            provide the <code>PlannedBudgetLimits</code> values only for the remaining periods.</para><para>If the budget begins at a date in the future, provide <code>PlannedBudgetLimits</code>
+            values from the start date of the budget. </para><para>After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code>
+            are used, the budget continues to use the last limit as the <code>BudgetLimit</code>.
+            At that point, the planned budget provides the same experience as a fixed budget.
+            </para><para><code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
+            <code>PlannedBudgetLimits</code> also contain <code>BudgetLimit</code> representing
+            the current month or quarter limit present in <code>PlannedBudgetLimits</code>. This
+            only applies to budgets that are created with <code>PlannedBudgetLimits</code>. Budgets
+            that are created without <code>PlannedBudgetLimits</code> only contain <code>BudgetLimit</code>.
+            They don't contain <code>PlannedBudgetLimits</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.TimePeriod_Start">
+            <summary>
+            <para>
+            <para>The start date for a budget. If you created your budget and didn't specify a start
+            date, Amazon Web Services defaults to the start of your chosen time period (DAILY,
+            MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January
+            24, 2018, chose <code>DAILY</code>, and didn't set a start date, Amazon Web Services
+            set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>,
+            Amazon Web Services set your start date to <code>01/01/18 00:00 UTC</code>. The defaults
+            are the same for the Billing and Cost Management console and the API.</para><para>You can change your start date with the <code>UpdateBudget</code> operation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.Budget_TimeUnit">
+            <summary>
+            <para>
+            <para>The length of time until a budget resets the actual and forecasted spend.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.BudgetLimit_Unit">
+            <summary>
+            <para>
+            <para>The unit of measurement that's used for the budget forecast, actual spend, or budget
+            threshold, such as USD or GBP.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.ActualSpend_Unit">
+            <summary>
+            <para>
+            <para>The unit of measurement that's used for the budget forecast, actual spend, or budget
+            threshold, such as USD or GBP.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.ForecastedSpend_Unit">
+            <summary>
+            <para>
+            <para>The unit of measurement that's used for the budget forecast, actual spend, or budget
+            threshold, such as USD or GBP.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.CostTypes_UseAmortized">
+            <summary>
+            <para>
+            <para>Specifies whether a budget uses the amortized rate.</para><para>The default value is <code>false</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.CostTypes_UseBlended">
+            <summary>
+            <para>
+            <para>Specifies whether a budget uses a blended rate.</para><para>The default value is <code>false</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Budgets.Model.CreateBudgetResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AccountId parameter.
+            The -PassThru parameter is deprecated, use -Select '^AccountId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetActionCmdlet">
+            <summary>
+            Creates a budget action.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetActionCmdlet.AccountId">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetActionCmdlet.SsmActionDefinition_ActionSubType">
+            <summary>
+            <para>
+            <para>The action subType. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetActionCmdlet.ActionThreshold_ActionThresholdType">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetActionCmdlet.ActionThreshold_ActionThresholdValue">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetActionCmdlet.ActionType">
+            <summary>
+            <para>
+            <para> The type of action. This defines the type of tasks that can be carried out by this
+            action. This field also determines the format for definition. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetActionCmdlet.ApprovalModel">
+            <summary>
+            <para>
+            <para> This specifies if the action needs manual or automatic approval. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetActionCmdlet.BudgetName">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetActionCmdlet.ExecutionRoleArn">
+            <summary>
+            <para>
+            <para> The role passed for action execution and reversion. Roles and actions must be in
+            the same account. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetActionCmdlet.IamActionDefinition_Group">
+            <summary>
+            <para>
+            <para>A list of groups to be attached. There must be at least one group. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetActionCmdlet.SsmActionDefinition_InstanceId">
+            <summary>
+            <para>
+            <para>The EC2 and RDS instance IDs. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetActionCmdlet.NotificationType">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetActionCmdlet.IamActionDefinition_PolicyArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the policy to be attached. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetActionCmdlet.ScpActionDefinition_PolicyId">
+            <summary>
+            <para>
+            <para>The policy ID attached. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetActionCmdlet.SsmActionDefinition_Region">
+            <summary>
+            <para>
+            <para>The Region to run the SSM document. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetActionCmdlet.IamActionDefinition_Role">
+            <summary>
+            <para>
+            <para>A list of roles to be attached. There must be at least one role. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetActionCmdlet.Subscriber">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetActionCmdlet.ScpActionDefinition_TargetId">
+            <summary>
+            <para>
+            <para>A list of target IDs. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetActionCmdlet.IamActionDefinition_User">
+            <summary>
+            <para>
+            <para>A list of users to be attached. There must be at least one user. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetActionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Budgets.Model.CreateBudgetActionResponse).
+            Specifying the name of a property of type Amazon.Budgets.Model.CreateBudgetActionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetActionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BudgetName parameter.
+            The -PassThru parameter is deprecated, use -Select '^BudgetName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTBudgetActionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BGT.NewBGTNotificationCmdlet">
+            <summary>
+            Creates a notification. You must create the budget before you create the associated
+            notification.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTNotificationCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>accountId</code> that is associated with the budget that you want to create
+            a notification for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTNotificationCmdlet.BudgetName">
+            <summary>
+            <para>
+            <para>The name of the budget that you want Amazon Web Services to notify you about. Budget
+            names must be unique within an account.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTNotificationCmdlet.Notification_ComparisonOperator">
+            <summary>
+            <para>
+            <para>The comparison that's used for this notification.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTNotificationCmdlet.Notification_NotificationState">
+            <summary>
+            <para>
+            <para>Specifies whether this notification is in alarm. If a budget notification is in the
+            <code>ALARM</code> state, you passed the set threshold for the budget.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTNotificationCmdlet.Notification_NotificationType">
+            <summary>
+            <para>
+            <para>Specifies whether the notification is for how much you have spent (<code>ACTUAL</code>)
+            or for how much that you're forecasted to spend (<code>FORECASTED</code>).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTNotificationCmdlet.Subscriber">
+            <summary>
+            <para>
+            <para>A list of subscribers that you want to associate with the notification. Each notification
+            can have one SNS subscriber and up to 10 email subscribers.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTNotificationCmdlet.Notification_Threshold">
+            <summary>
+            <para>
+            <para>The threshold that's associated with a notification. Thresholds are always a percentage,
+            and many customers find value being alerted between 50% - 200% of the budgeted amount.
+            The maximum limit for your threshold is 1,000,000% above the budgeted amount.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTNotificationCmdlet.Notification_ThresholdType">
+            <summary>
+            <para>
+            <para>The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds,
+            Amazon Web Services notifies you when you go over or are forecasted to go over your
+            total cost threshold. For <code>PERCENTAGE</code> thresholds, Amazon Web Services
+            notifies you when you go over or are forecasted to go over a certain percentage of
+            your forecasted spend. For example, if you have a budget for 200 dollars and you have
+            a <code>PERCENTAGE</code> threshold of 80%, Amazon Web Services notifies you when
+            you go over 160 dollars.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTNotificationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Budgets.Model.CreateNotificationResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTNotificationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BudgetName parameter.
+            The -PassThru parameter is deprecated, use -Select '^BudgetName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTNotificationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BGT.NewBGTSubscriberCmdlet">
+            <summary>
+            Creates a subscriber. You must create the associated budget and notification before
+            you create the subscriber.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTSubscriberCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>accountId</code> that is associated with the budget that you want to create
+            a subscriber for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTSubscriberCmdlet.Subscriber_Address">
+            <summary>
+            <para>
+            <para>The address that Amazon Web Services sends budget notifications to, either an SNS
+            topic or an email.</para><para>When you create a subscriber, the value of <code>Address</code> can't contain line
+            breaks.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTSubscriberCmdlet.BudgetName">
+            <summary>
+            <para>
+            <para>The name of the budget that you want to subscribe to. Budget names must be unique
+            within an account.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTSubscriberCmdlet.Notification_ComparisonOperator">
+            <summary>
+            <para>
+            <para>The comparison that's used for this notification.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTSubscriberCmdlet.Notification_NotificationState">
+            <summary>
+            <para>
+            <para>Specifies whether this notification is in alarm. If a budget notification is in the
+            <code>ALARM</code> state, you passed the set threshold for the budget.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTSubscriberCmdlet.Notification_NotificationType">
+            <summary>
+            <para>
+            <para>Specifies whether the notification is for how much you have spent (<code>ACTUAL</code>)
+            or for how much that you're forecasted to spend (<code>FORECASTED</code>).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTSubscriberCmdlet.Subscriber_SubscriptionType">
+            <summary>
+            <para>
+            <para>The type of notification that Amazon Web Services sends to a subscriber.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTSubscriberCmdlet.Notification_Threshold">
+            <summary>
+            <para>
+            <para>The threshold that's associated with a notification. Thresholds are always a percentage,
+            and many customers find value being alerted between 50% - 200% of the budgeted amount.
+            The maximum limit for your threshold is 1,000,000% above the budgeted amount.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTSubscriberCmdlet.Notification_ThresholdType">
+            <summary>
+            <para>
+            <para>The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds,
+            Amazon Web Services notifies you when you go over or are forecasted to go over your
+            total cost threshold. For <code>PERCENTAGE</code> thresholds, Amazon Web Services
+            notifies you when you go over or are forecasted to go over a certain percentage of
+            your forecasted spend. For example, if you have a budget for 200 dollars and you have
+            a <code>PERCENTAGE</code> threshold of 80%, Amazon Web Services notifies you when
+            you go over 160 dollars.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTSubscriberCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Budgets.Model.CreateSubscriberResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTSubscriberCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BudgetName parameter.
+            The -PassThru parameter is deprecated, use -Select '^BudgetName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.NewBGTSubscriberCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTBudgetCmdlet">
+            <summary>
+            Deletes a budget. You can delete your budget at any time.
+            
+             <important><para>
+            Deleting a budget also deletes the notifications and subscribers that are associated
+            with that budget.
+            </para></important>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTBudgetCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>accountId</code> that is associated with the budget that you want to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTBudgetCmdlet.BudgetName">
+            <summary>
+            <para>
+            <para>The name of the budget that you want to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTBudgetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Budgets.Model.DeleteBudgetResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTBudgetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BudgetName parameter.
+            The -PassThru parameter is deprecated, use -Select '^BudgetName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTBudgetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTBudgetActionCmdlet">
+            <summary>
+            Deletes a budget action.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTBudgetActionCmdlet.AccountId">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTBudgetActionCmdlet.ActionId">
+            <summary>
+            <para>
+            <para> A system-generated universally unique identifier (UUID) for the action. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTBudgetActionCmdlet.BudgetName">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTBudgetActionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Budgets.Model.DeleteBudgetActionResponse).
+            Specifying the name of a property of type Amazon.Budgets.Model.DeleteBudgetActionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTBudgetActionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BudgetName parameter.
+            The -PassThru parameter is deprecated, use -Select '^BudgetName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTBudgetActionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTNotificationCmdlet">
+            <summary>
+            Deletes a notification.
+            
+             <important><para>
+            Deleting a notification also deletes the subscribers that are associated with the
+            notification.
+            </para></important>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTNotificationCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>accountId</code> that is associated with the budget whose notification you
+            want to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTNotificationCmdlet.BudgetName">
+            <summary>
+            <para>
+            <para>The name of the budget whose notification you want to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTNotificationCmdlet.Notification_ComparisonOperator">
+            <summary>
+            <para>
+            <para>The comparison that's used for this notification.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTNotificationCmdlet.Notification_NotificationState">
+            <summary>
+            <para>
+            <para>Specifies whether this notification is in alarm. If a budget notification is in the
+            <code>ALARM</code> state, you passed the set threshold for the budget.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTNotificationCmdlet.Notification_NotificationType">
+            <summary>
+            <para>
+            <para>Specifies whether the notification is for how much you have spent (<code>ACTUAL</code>)
+            or for how much that you're forecasted to spend (<code>FORECASTED</code>).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTNotificationCmdlet.Notification_Threshold">
+            <summary>
+            <para>
+            <para>The threshold that's associated with a notification. Thresholds are always a percentage,
+            and many customers find value being alerted between 50% - 200% of the budgeted amount.
+            The maximum limit for your threshold is 1,000,000% above the budgeted amount.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTNotificationCmdlet.Notification_ThresholdType">
+            <summary>
+            <para>
+            <para>The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds,
+            Amazon Web Services notifies you when you go over or are forecasted to go over your
+            total cost threshold. For <code>PERCENTAGE</code> thresholds, Amazon Web Services
+            notifies you when you go over or are forecasted to go over a certain percentage of
+            your forecasted spend. For example, if you have a budget for 200 dollars and you have
+            a <code>PERCENTAGE</code> threshold of 80%, Amazon Web Services notifies you when
+            you go over 160 dollars.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTNotificationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Budgets.Model.DeleteNotificationResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTNotificationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BudgetName parameter.
+            The -PassThru parameter is deprecated, use -Select '^BudgetName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTNotificationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTSubscriberCmdlet">
+            <summary>
+            Deletes a subscriber.
+            
+             <important><para>
+            Deleting the last subscriber to a notification also deletes the notification.
+            </para></important>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTSubscriberCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>accountId</code> that is associated with the budget whose subscriber you
+            want to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTSubscriberCmdlet.Subscriber_Address">
+            <summary>
+            <para>
+            <para>The address that Amazon Web Services sends budget notifications to, either an SNS
+            topic or an email.</para><para>When you create a subscriber, the value of <code>Address</code> can't contain line
+            breaks.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTSubscriberCmdlet.BudgetName">
+            <summary>
+            <para>
+            <para>The name of the budget whose subscriber you want to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTSubscriberCmdlet.Notification_ComparisonOperator">
+            <summary>
+            <para>
+            <para>The comparison that's used for this notification.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTSubscriberCmdlet.Notification_NotificationState">
+            <summary>
+            <para>
+            <para>Specifies whether this notification is in alarm. If a budget notification is in the
+            <code>ALARM</code> state, you passed the set threshold for the budget.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTSubscriberCmdlet.Notification_NotificationType">
+            <summary>
+            <para>
+            <para>Specifies whether the notification is for how much you have spent (<code>ACTUAL</code>)
+            or for how much that you're forecasted to spend (<code>FORECASTED</code>).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTSubscriberCmdlet.Subscriber_SubscriptionType">
+            <summary>
+            <para>
+            <para>The type of notification that Amazon Web Services sends to a subscriber.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTSubscriberCmdlet.Notification_Threshold">
+            <summary>
+            <para>
+            <para>The threshold that's associated with a notification. Thresholds are always a percentage,
+            and many customers find value being alerted between 50% - 200% of the budgeted amount.
+            The maximum limit for your threshold is 1,000,000% above the budgeted amount.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTSubscriberCmdlet.Notification_ThresholdType">
+            <summary>
+            <para>
+            <para>The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds,
+            Amazon Web Services notifies you when you go over or are forecasted to go over your
+            total cost threshold. For <code>PERCENTAGE</code> thresholds, Amazon Web Services
+            notifies you when you go over or are forecasted to go over a certain percentage of
+            your forecasted spend. For example, if you have a budget for 200 dollars and you have
+            a <code>PERCENTAGE</code> threshold of 80%, Amazon Web Services notifies you when
+            you go over 160 dollars.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTSubscriberCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Budgets.Model.DeleteSubscriberResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTSubscriberCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BudgetName parameter.
+            The -PassThru parameter is deprecated, use -Select '^BudgetName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.RemoveBGTSubscriberCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet">
+            <summary>
+            Updates a budget. You can change every part of a budget except for the <code>budgetName</code>
+            and the <code>calculatedSpend</code>. When you modify a budget, the <code>calculatedSpend</code>
+            drops to zero until Amazon Web Services has new usage data to use for forecasting.
+            
+             <important><para>
+            Only one of <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present
+            in the syntax at one time. Use the syntax that matches your case. The Request Syntax
+            section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>,
+            see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_UpdateBudget.html#API_UpdateBudget_Examples">Examples</a>
+            section. 
+            </para></important>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>accountId</code> that is associated with the budget that you want to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.BudgetLimit_Amount">
+            <summary>
+            <para>
+            <para>The cost or usage amount that's associated with a budget forecast, actual spend, or
+            budget threshold.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.ActualSpend_Amount">
+            <summary>
+            <para>
+            <para>The cost or usage amount that's associated with a budget forecast, actual spend, or
+            budget threshold.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.ForecastedSpend_Amount">
+            <summary>
+            <para>
+            <para>The cost or usage amount that's associated with a budget forecast, actual spend, or
+            budget threshold.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.AutoAdjustData_AutoAdjustType">
+            <summary>
+            <para>
+            <para>The string that defines whether your budget auto-adjusts based on historical or forecasted
+            data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.HistoricalOptions_BudgetAdjustmentPeriod">
+            <summary>
+            <para>
+            <para>The number of budget periods included in the moving-average calculation that determines
+            your auto-adjusted budget amount. The maximum value depends on the <code>TimeUnit</code>
+            granularity of the budget:</para><ul><li><para>For the <code>DAILY</code> granularity, the maximum value is <code>60</code>.</para></li><li><para>For the <code>MONTHLY</code> granularity, the maximum value is <code>12</code>.</para></li><li><para>For the <code>QUARTERLY</code> granularity, the maximum value is <code>4</code>.</para></li><li><para>For the <code>ANNUALLY</code> granularity, the maximum value is <code>1</code>.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.NewBudget_BudgetName">
+            <summary>
+            <para>
+            <para>The name of a budget. The name must be unique within an account. The <code>:</code>
+            and <code>\</code> characters aren't allowed in <code>BudgetName</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.NewBudget_BudgetType">
+            <summary>
+            <para>
+            <para>Specifies whether this budget tracks costs, usage, RI utilization, RI coverage, Savings
+            Plans utilization, or Savings Plans coverage.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.NewBudget_CostFilter">
+            <summary>
+            <para>
+            <para>The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member
+            account</code>, <code>Tag</code>, or <code>Cost Category</code>, that are applied
+            to a budget.</para><para>Amazon Web Services Budgets supports the following services as a <code>Service</code>
+            filter for RI budgets:</para><ul><li><para>Amazon EC2</para></li><li><para>Amazon Redshift</para></li><li><para>Amazon Relational Database Service</para></li><li><para>Amazon ElastiCache</para></li><li><para>Amazon OpenSearch Service</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.TimePeriod_End">
+            <summary>
+            <para>
+            <para>The end date for a budget. If you didn't specify an end date, Amazon Web Services
+            set your end date to <code>06/15/87 00:00 UTC</code>. The defaults are the same for
+            the Billing and Cost Management console and the API.</para><para>After the end date, Amazon Web Services deletes the budget and all the associated
+            notifications and subscribers. You can change your end date with the <code>UpdateBudget</code>
+            operation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.CostTypes_IncludeCredit">
+            <summary>
+            <para>
+            <para>Specifies whether a budget includes credits.</para><para>The default value is <code>true</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.CostTypes_IncludeDiscount">
+            <summary>
+            <para>
+            <para>Specifies whether a budget includes discounts.</para><para>The default value is <code>true</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.CostTypes_IncludeOtherSubscription">
+            <summary>
+            <para>
+            <para>Specifies whether a budget includes non-RI subscription costs.</para><para>The default value is <code>true</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.CostTypes_IncludeRecurring">
+            <summary>
+            <para>
+            <para>Specifies whether a budget includes recurring fees such as monthly RI fees.</para><para>The default value is <code>true</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.CostTypes_IncludeRefund">
+            <summary>
+            <para>
+            <para>Specifies whether a budget includes refunds.</para><para>The default value is <code>true</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.CostTypes_IncludeSubscription">
+            <summary>
+            <para>
+            <para>Specifies whether a budget includes subscriptions.</para><para>The default value is <code>true</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.CostTypes_IncludeSupport">
+            <summary>
+            <para>
+            <para>Specifies whether a budget includes support subscription fees.</para><para>The default value is <code>true</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.CostTypes_IncludeTax">
+            <summary>
+            <para>
+            <para>Specifies whether a budget includes taxes.</para><para>The default value is <code>true</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.CostTypes_IncludeUpfront">
+            <summary>
+            <para>
+            <para>Specifies whether a budget includes upfront RI costs.</para><para>The default value is <code>true</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.AutoAdjustData_LastAutoAdjustTime">
+            <summary>
+            <para>
+            <para>The last time that your budget was auto-adjusted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.NewBudget_LastUpdatedTime">
+            <summary>
+            <para>
+            <para>The last time that you updated this budget.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.HistoricalOptions_LookBackAvailablePeriod">
+            <summary>
+            <para>
+            <para>The integer that describes how many budget periods in your <code>BudgetAdjustmentPeriod</code>
+            are included in the calculation of your current <code>BudgetLimit</code>. If the first
+            budget period in your <code>BudgetAdjustmentPeriod</code> has no cost data, then that
+            budget period isn’t included in the average that determines your budget limit. </para><para>For example, if you set <code>BudgetAdjustmentPeriod</code> as <code>4</code> quarters,
+            but your account had no cost data in the first quarter, then only the last three quarters
+            are included in the calculation. In this scenario, <code>LookBackAvailablePeriods</code>
+            returns <code>3</code>. </para><para>You can’t set your own <code>LookBackAvailablePeriods</code>. The value is automatically
+            calculated from the <code>BudgetAdjustmentPeriod</code> and your historical cost data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.NewBudget_PlannedBudgetLimit">
+            <summary>
+            <para>
+            <para>A map containing multiple <code>BudgetLimit</code>, including current or future limits.</para><para><code>PlannedBudgetLimits</code> is available for cost or usage budget and supports
+            both monthly and quarterly <code>TimeUnit</code>. </para><para>For monthly budgets, provide 12 months of <code>PlannedBudgetLimits</code> values.
+            This must start from the current month and include the next 11 months. The <code>key</code>
+            is the start of the month, <code>UTC</code> in epoch seconds. </para><para>For quarterly budgets, provide four quarters of <code>PlannedBudgetLimits</code> value
+            entries in standard calendar quarter increments. This must start from the current
+            quarter and include the next three quarters. The <code>key</code> is the start of
+            the quarter, <code>UTC</code> in epoch seconds. </para><para>If the planned budget expires before 12 months for monthly or four quarters for quarterly,
+            provide the <code>PlannedBudgetLimits</code> values only for the remaining periods.</para><para>If the budget begins at a date in the future, provide <code>PlannedBudgetLimits</code>
+            values from the start date of the budget. </para><para>After all of the <code>BudgetLimit</code> values in <code>PlannedBudgetLimits</code>
+            are used, the budget continues to use the last limit as the <code>BudgetLimit</code>.
+            At that point, the planned budget provides the same experience as a fixed budget.
+            </para><para><code>DescribeBudget</code> and <code>DescribeBudgets</code> response along with
+            <code>PlannedBudgetLimits</code> also contain <code>BudgetLimit</code> representing
+            the current month or quarter limit present in <code>PlannedBudgetLimits</code>. This
+            only applies to budgets that are created with <code>PlannedBudgetLimits</code>. Budgets
+            that are created without <code>PlannedBudgetLimits</code> only contain <code>BudgetLimit</code>.
+            They don't contain <code>PlannedBudgetLimits</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.TimePeriod_Start">
+            <summary>
+            <para>
+            <para>The start date for a budget. If you created your budget and didn't specify a start
+            date, Amazon Web Services defaults to the start of your chosen time period (DAILY,
+            MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created your budget on January
+            24, 2018, chose <code>DAILY</code>, and didn't set a start date, Amazon Web Services
+            set your start date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>,
+            Amazon Web Services set your start date to <code>01/01/18 00:00 UTC</code>. The defaults
+            are the same for the Billing and Cost Management console and the API.</para><para>You can change your start date with the <code>UpdateBudget</code> operation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.NewBudget_TimeUnit">
+            <summary>
+            <para>
+            <para>The length of time until a budget resets the actual and forecasted spend.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.BudgetLimit_Unit">
+            <summary>
+            <para>
+            <para>The unit of measurement that's used for the budget forecast, actual spend, or budget
+            threshold, such as USD or GBP.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.ActualSpend_Unit">
+            <summary>
+            <para>
+            <para>The unit of measurement that's used for the budget forecast, actual spend, or budget
+            threshold, such as USD or GBP.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.ForecastedSpend_Unit">
+            <summary>
+            <para>
+            <para>The unit of measurement that's used for the budget forecast, actual spend, or budget
+            threshold, such as USD or GBP.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.CostTypes_UseAmortized">
+            <summary>
+            <para>
+            <para>Specifies whether a budget uses the amortized rate.</para><para>The default value is <code>false</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.CostTypes_UseBlended">
+            <summary>
+            <para>
+            <para>Specifies whether a budget uses a blended rate.</para><para>The default value is <code>false</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Budgets.Model.UpdateBudgetResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AccountId parameter.
+            The -PassThru parameter is deprecated, use -Select '^AccountId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetActionCmdlet">
+            <summary>
+            Updates a budget action.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetActionCmdlet.AccountId">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetActionCmdlet.ActionId">
+            <summary>
+            <para>
+            <para> A system-generated universally unique identifier (UUID) for the action. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetActionCmdlet.SsmActionDefinition_ActionSubType">
+            <summary>
+            <para>
+            <para>The action subType. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetActionCmdlet.ActionThreshold_ActionThresholdType">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetActionCmdlet.ActionThreshold_ActionThresholdValue">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetActionCmdlet.ApprovalModel">
+            <summary>
+            <para>
+            <para> This specifies if the action needs manual or automatic approval. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetActionCmdlet.BudgetName">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetActionCmdlet.ExecutionRoleArn">
+            <summary>
+            <para>
+            <para> The role passed for action execution and reversion. Roles and actions must be in
+            the same account. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetActionCmdlet.IamActionDefinition_Group">
+            <summary>
+            <para>
+            <para>A list of groups to be attached. There must be at least one group. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetActionCmdlet.SsmActionDefinition_InstanceId">
+            <summary>
+            <para>
+            <para>The EC2 and RDS instance IDs. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetActionCmdlet.NotificationType">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetActionCmdlet.IamActionDefinition_PolicyArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the policy to be attached. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetActionCmdlet.ScpActionDefinition_PolicyId">
+            <summary>
+            <para>
+            <para>The policy ID attached. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetActionCmdlet.SsmActionDefinition_Region">
+            <summary>
+            <para>
+            <para>The Region to run the SSM document. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetActionCmdlet.IamActionDefinition_Role">
+            <summary>
+            <para>
+            <para>A list of roles to be attached. There must be at least one role. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetActionCmdlet.Subscriber">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetActionCmdlet.ScpActionDefinition_TargetId">
+            <summary>
+            <para>
+            <para>A list of target IDs. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetActionCmdlet.IamActionDefinition_User">
+            <summary>
+            <para>
+            <para>A list of users to be attached. There must be at least one user. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetActionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Budgets.Model.UpdateBudgetActionResponse).
+            Specifying the name of a property of type Amazon.Budgets.Model.UpdateBudgetActionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetActionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BudgetName parameter.
+            The -PassThru parameter is deprecated, use -Select '^BudgetName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTBudgetActionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTNotificationCmdlet">
+            <summary>
+            Updates a notification.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTNotificationCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>accountId</code> that is associated with the budget whose notification you
+            want to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTNotificationCmdlet.BudgetName">
+            <summary>
+            <para>
+            <para>The name of the budget whose notification you want to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTNotificationCmdlet.NewNotification_ComparisonOperator">
+            <summary>
+            <para>
+            <para>The comparison that's used for this notification.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTNotificationCmdlet.OldNotification_ComparisonOperator">
+            <summary>
+            <para>
+            <para>The comparison that's used for this notification.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTNotificationCmdlet.NewNotification_NotificationState">
+            <summary>
+            <para>
+            <para>Specifies whether this notification is in alarm. If a budget notification is in the
+            <code>ALARM</code> state, you passed the set threshold for the budget.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTNotificationCmdlet.OldNotification_NotificationState">
+            <summary>
+            <para>
+            <para>Specifies whether this notification is in alarm. If a budget notification is in the
+            <code>ALARM</code> state, you passed the set threshold for the budget.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTNotificationCmdlet.NewNotification_NotificationType">
+            <summary>
+            <para>
+            <para>Specifies whether the notification is for how much you have spent (<code>ACTUAL</code>)
+            or for how much that you're forecasted to spend (<code>FORECASTED</code>).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTNotificationCmdlet.OldNotification_NotificationType">
+            <summary>
+            <para>
+            <para>Specifies whether the notification is for how much you have spent (<code>ACTUAL</code>)
+            or for how much that you're forecasted to spend (<code>FORECASTED</code>).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTNotificationCmdlet.NewNotification_Threshold">
+            <summary>
+            <para>
+            <para>The threshold that's associated with a notification. Thresholds are always a percentage,
+            and many customers find value being alerted between 50% - 200% of the budgeted amount.
+            The maximum limit for your threshold is 1,000,000% above the budgeted amount.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTNotificationCmdlet.OldNotification_Threshold">
+            <summary>
+            <para>
+            <para>The threshold that's associated with a notification. Thresholds are always a percentage,
+            and many customers find value being alerted between 50% - 200% of the budgeted amount.
+            The maximum limit for your threshold is 1,000,000% above the budgeted amount.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTNotificationCmdlet.NewNotification_ThresholdType">
+            <summary>
+            <para>
+            <para>The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds,
+            Amazon Web Services notifies you when you go over or are forecasted to go over your
+            total cost threshold. For <code>PERCENTAGE</code> thresholds, Amazon Web Services
+            notifies you when you go over or are forecasted to go over a certain percentage of
+            your forecasted spend. For example, if you have a budget for 200 dollars and you have
+            a <code>PERCENTAGE</code> threshold of 80%, Amazon Web Services notifies you when
+            you go over 160 dollars.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTNotificationCmdlet.OldNotification_ThresholdType">
+            <summary>
+            <para>
+            <para>The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds,
+            Amazon Web Services notifies you when you go over or are forecasted to go over your
+            total cost threshold. For <code>PERCENTAGE</code> thresholds, Amazon Web Services
+            notifies you when you go over or are forecasted to go over a certain percentage of
+            your forecasted spend. For example, if you have a budget for 200 dollars and you have
+            a <code>PERCENTAGE</code> threshold of 80%, Amazon Web Services notifies you when
+            you go over 160 dollars.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTNotificationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Budgets.Model.UpdateNotificationResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTNotificationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BudgetName parameter.
+            The -PassThru parameter is deprecated, use -Select '^BudgetName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTNotificationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTSubscriberCmdlet">
+            <summary>
+            Updates a subscriber.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTSubscriberCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>accountId</code> that is associated with the budget whose subscriber you
+            want to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTSubscriberCmdlet.NewSubscriber_Address">
+            <summary>
+            <para>
+            <para>The address that Amazon Web Services sends budget notifications to, either an SNS
+            topic or an email.</para><para>When you create a subscriber, the value of <code>Address</code> can't contain line
+            breaks.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTSubscriberCmdlet.OldSubscriber_Address">
+            <summary>
+            <para>
+            <para>The address that Amazon Web Services sends budget notifications to, either an SNS
+            topic or an email.</para><para>When you create a subscriber, the value of <code>Address</code> can't contain line
+            breaks.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTSubscriberCmdlet.BudgetName">
+            <summary>
+            <para>
+            <para>The name of the budget whose subscriber you want to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTSubscriberCmdlet.Notification_ComparisonOperator">
+            <summary>
+            <para>
+            <para>The comparison that's used for this notification.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTSubscriberCmdlet.Notification_NotificationState">
+            <summary>
+            <para>
+            <para>Specifies whether this notification is in alarm. If a budget notification is in the
+            <code>ALARM</code> state, you passed the set threshold for the budget.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTSubscriberCmdlet.Notification_NotificationType">
+            <summary>
+            <para>
+            <para>Specifies whether the notification is for how much you have spent (<code>ACTUAL</code>)
+            or for how much that you're forecasted to spend (<code>FORECASTED</code>).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTSubscriberCmdlet.NewSubscriber_SubscriptionType">
+            <summary>
+            <para>
+            <para>The type of notification that Amazon Web Services sends to a subscriber.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTSubscriberCmdlet.OldSubscriber_SubscriptionType">
+            <summary>
+            <para>
+            <para>The type of notification that Amazon Web Services sends to a subscriber.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTSubscriberCmdlet.Notification_Threshold">
+            <summary>
+            <para>
+            <para>The threshold that's associated with a notification. Thresholds are always a percentage,
+            and many customers find value being alerted between 50% - 200% of the budgeted amount.
+            The maximum limit for your threshold is 1,000,000% above the budgeted amount.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTSubscriberCmdlet.Notification_ThresholdType">
+            <summary>
+            <para>
+            <para>The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds,
+            Amazon Web Services notifies you when you go over or are forecasted to go over your
+            total cost threshold. For <code>PERCENTAGE</code> thresholds, Amazon Web Services
+            notifies you when you go over or are forecasted to go over a certain percentage of
+            your forecasted spend. For example, if you have a budget for 200 dollars and you have
+            a <code>PERCENTAGE</code> threshold of 80%, Amazon Web Services notifies you when
+            you go over 160 dollars.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTSubscriberCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Budgets.Model.UpdateSubscriberResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTSubscriberCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BudgetName parameter.
+            The -PassThru parameter is deprecated, use -Select '^BudgetName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.BGT.UpdateBGTSubscriberCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

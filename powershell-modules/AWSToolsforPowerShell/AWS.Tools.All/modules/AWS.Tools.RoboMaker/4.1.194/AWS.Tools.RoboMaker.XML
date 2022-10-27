@@ -1,0 +1,2794 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.RoboMaker</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.AddROBOResourceTagCmdlet">
+            <summary>
+            Adds or edits tags for a AWS RoboMaker resource.
+            
+             
+            <para>
+            Each tag consists of a tag key and a tag value. Tag keys and tag values are both required,
+            but tag values can be empty strings. 
+            </para><para>
+            For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
+            Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.AddROBOResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are tagging.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.AddROBOResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A map that contains tag keys and tag values that are attached to the resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.AddROBOResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.AddROBOResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.AddROBOResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.GetROBODeploymentJobCmdlet">
+            <summary>
+            Describes a deployment job.
+            
+             <important><para>
+            This API will no longer be supported as of May 2, 2022. Use it to remove resources
+            that were created for Deployment Service.
+            </para></important><br/><br/>This operation is deprecated.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBODeploymentJobCmdlet.Job">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the deployment job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBODeploymentJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.DescribeDeploymentJobResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.DescribeDeploymentJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBODeploymentJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Job parameter.
+            The -PassThru parameter is deprecated, use -Select '^Job' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.GetROBODeploymentJobListCmdlet">
+            <summary>
+            Returns a list of deployment jobs for a fleet. You can optionally provide filters
+            to retrieve specific deployment jobs.
+            
+             <important><para>
+            This API will no longer be supported as of May 2, 2022. Use it to remove resources
+            that were created for Deployment Service.
+            </para></important><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.<br/><br/>This operation is deprecated.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBODeploymentJobListCmdlet.Filter">
+            <summary>
+            <para>
+            <para>Optional filters to limit results.</para><para>The filter names <code>status</code> and <code>fleetName</code> are supported. When
+            filtering, you must use the complete value of the filtered item. You can use up to
+            three filters, but they must be for the same named item. For example, if you are looking
+            for items with the status <code>InProgress</code> or the status <code>Pending</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBODeploymentJobListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>When this parameter is used, <code>ListDeploymentJobs</code> only returns <code>maxResults</code>
+            results in a single page along with a <code>nextToken</code> response element. The
+            remaining results of the initial request can be seen by sending another <code>ListDeploymentJobs</code>
+            request with the returned <code>nextToken</code> value. This value can be between
+            1 and 200. If this parameter is not used, then <code>ListDeploymentJobs</code> returns
+            up to 200 results and a <code>nextToken</code> value if applicable. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>100</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBODeploymentJobListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If the previous paginated request did not return all of the remaining results, the
+            response object's <code>nextToken</code> parameter value is set to a token. To retrieve
+            the next set of results, call <code>ListDeploymentJobs</code> again and assign that
+            token to the request object's <code>nextToken</code> parameter. If there are no remaining
+            results, the previous response object's NextToken parameter is set to null. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBODeploymentJobListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'DeploymentJobs'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.ListDeploymentJobsResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.ListDeploymentJobsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBODeploymentJobListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.GetROBOFleetCmdlet">
+            <summary>
+            Describes a fleet.
+            
+             <important><para>
+            This API will no longer be supported as of May 2, 2022. Use it to remove resources
+            that were created for Deployment Service.
+            </para></important><br/><br/>This operation is deprecated.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOFleetCmdlet.Fleet">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the fleet.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOFleetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.DescribeFleetResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.DescribeFleetResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOFleetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Fleet parameter.
+            The -PassThru parameter is deprecated, use -Select '^Fleet' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.GetROBOFleetListCmdlet">
+            <summary>
+            Returns a list of fleets. You can optionally provide filters to retrieve specific
+            fleets.
+            
+             <important><para>
+            This API will no longer be supported as of May 2, 2022. Use it to remove resources
+            that were created for Deployment Service.
+            </para></important><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.<br/><br/>This operation is deprecated.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOFleetListCmdlet.Filter">
+            <summary>
+            <para>
+            <para>Optional filters to limit results.</para><para>The filter name <code>name</code> is supported. When filtering, you must use the complete
+            value of the filtered item. You can use up to three filters.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOFleetListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code>
+            results in a single page along with a <code>nextToken</code> response element. The
+            remaining results of the initial request can be seen by sending another <code>ListFleets</code>
+            request with the returned <code>nextToken</code> value. This value can be between
+            1 and 200. If this parameter is not used, then <code>ListFleets</code> returns up
+            to 200 results and a <code>nextToken</code> value if applicable. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>100</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOFleetListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If the previous paginated request did not return all of the remaining results, the
+            response object's <code>nextToken</code> parameter value is set to a token. To retrieve
+            the next set of results, call <code>ListFleets</code> again and assign that token
+            to the request object's <code>nextToken</code> parameter. If there are no remaining
+            results, the previous response object's NextToken parameter is set to null. </para><note><para>This token should be treated as an opaque identifier that is only used to retrieve
+            the next items in a list and not for other programmatic purposes.</para></note>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOFleetListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'FleetDetails'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.ListFleetsResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.ListFleetsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOFleetListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.GetROBOResourceTagCmdlet">
+            <summary>
+            Lists all tags on a AWS RoboMaker resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The AWS RoboMaker Amazon Resource Name (ARN) with tags to be listed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.GetROBORobotCmdlet">
+            <summary>
+            Describes a robot.
+            
+             <important><para>
+            This API will no longer be supported as of May 2, 2022. Use it to remove resources
+            that were created for Deployment Service.
+            </para></important><br/><br/>This operation is deprecated.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBORobotCmdlet.Robot">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the robot to be described.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBORobotCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.DescribeRobotResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.DescribeRobotResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBORobotCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Robot parameter.
+            The -PassThru parameter is deprecated, use -Select '^Robot' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.GetROBORobotApplicationCmdlet">
+            <summary>
+            Describes a robot application.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBORobotApplicationCmdlet.Application">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the robot application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBORobotApplicationCmdlet.ApplicationVersion">
+            <summary>
+            <para>
+            <para>The version of the robot application to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBORobotApplicationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.DescribeRobotApplicationResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.DescribeRobotApplicationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBORobotApplicationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Application parameter.
+            The -PassThru parameter is deprecated, use -Select '^Application' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.GetROBORobotApplicationListCmdlet">
+            <summary>
+            Returns a list of robot application. You can optionally provide filters to retrieve
+            specific robot applications.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBORobotApplicationListCmdlet.Filter">
+            <summary>
+            <para>
+            <para>Optional filters to limit results.</para><para>The filter name <code>name</code> is supported. When filtering, you must use the complete
+            value of the filtered item. You can use up to three filters.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBORobotApplicationListCmdlet.VersionQualifier">
+            <summary>
+            <para>
+            <para>The version qualifier of the robot application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBORobotApplicationListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>When this parameter is used, <code>ListRobotApplications</code> only returns <code>maxResults</code>
+            results in a single page along with a <code>nextToken</code> response element. The
+            remaining results of the initial request can be seen by sending another <code>ListRobotApplications</code>
+            request with the returned <code>nextToken</code> value. This value can be between
+            1 and 100. If this parameter is not used, then <code>ListRobotApplications</code>
+            returns up to 100 results and a <code>nextToken</code> value if applicable. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>100</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBORobotApplicationListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If the previous paginated request did not return all of the remaining results, the
+            response object's <code>nextToken</code> parameter value is set to a token. To retrieve
+            the next set of results, call <code>ListRobotApplications</code> again and assign
+            that token to the request object's <code>nextToken</code> parameter. If there are
+            no remaining results, the previous response object's NextToken parameter is set to
+            null. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBORobotApplicationListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'RobotApplicationSummaries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.ListRobotApplicationsResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.ListRobotApplicationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBORobotApplicationListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.GetROBORobotListCmdlet">
+            <summary>
+            Returns a list of robots. You can optionally provide filters to retrieve specific
+            robots.
+            
+             <important><para>
+            This API will no longer be supported as of May 2, 2022. Use it to remove resources
+            that were created for Deployment Service.
+            </para></important><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.<br/><br/>This operation is deprecated.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBORobotListCmdlet.Filter">
+            <summary>
+            <para>
+            <para>Optional filters to limit results.</para><para>The filter names <code>status</code> and <code>fleetName</code> are supported. When
+            filtering, you must use the complete value of the filtered item. You can use up to
+            three filters, but they must be for the same named item. For example, if you are looking
+            for items with the status <code>Registered</code> or the status <code>Available</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBORobotListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>When this parameter is used, <code>ListRobots</code> only returns <code>maxResults</code>
+            results in a single page along with a <code>nextToken</code> response element. The
+            remaining results of the initial request can be seen by sending another <code>ListRobots</code>
+            request with the returned <code>nextToken</code> value. This value can be between
+            1 and 200. If this parameter is not used, then <code>ListRobots</code> returns up
+            to 200 results and a <code>nextToken</code> value if applicable. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>100</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBORobotListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If the previous paginated request did not return all of the remaining results, the
+            response object's <code>nextToken</code> parameter value is set to a token. To retrieve
+            the next set of results, call <code>ListRobots</code> again and assign that token
+            to the request object's <code>nextToken</code> parameter. If there are no remaining
+            results, the previous response object's NextToken parameter is set to null. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBORobotListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Robots'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.ListRobotsResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.ListRobotsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBORobotListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationApplicationCmdlet">
+            <summary>
+            Describes a simulation application.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationApplicationCmdlet.Application">
+            <summary>
+            <para>
+            <para>The application information for the simulation application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationApplicationCmdlet.ApplicationVersion">
+            <summary>
+            <para>
+            <para>The version of the simulation application to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationApplicationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.DescribeSimulationApplicationResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.DescribeSimulationApplicationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationApplicationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Application parameter.
+            The -PassThru parameter is deprecated, use -Select '^Application' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationApplicationListCmdlet">
+            <summary>
+            Returns a list of simulation applications. You can optionally provide filters to retrieve
+            specific simulation applications.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationApplicationListCmdlet.Filter">
+            <summary>
+            <para>
+            <para>Optional list of filters to limit results.</para><para>The filter name <code>name</code> is supported. When filtering, you must use the complete
+            value of the filtered item. You can use up to three filters.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationApplicationListCmdlet.VersionQualifier">
+            <summary>
+            <para>
+            <para>The version qualifier of the simulation application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationApplicationListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>When this parameter is used, <code>ListSimulationApplications</code> only returns
+            <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+            response element. The remaining results of the initial request can be seen by sending
+            another <code>ListSimulationApplications</code> request with the returned <code>nextToken</code>
+            value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code>
+            returns up to 100 results and a <code>nextToken</code> value if applicable. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>100</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationApplicationListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If the previous paginated request did not return all of the remaining results, the
+            response object's <code>nextToken</code> parameter value is set to a token. To retrieve
+            the next set of results, call <code>ListSimulationApplications</code> again and assign
+            that token to the request object's <code>nextToken</code> parameter. If there are
+            no remaining results, the previous response object's NextToken parameter is set to
+            null. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationApplicationListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SimulationApplicationSummaries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.ListSimulationApplicationsResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.ListSimulationApplicationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationApplicationListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationJobCmdlet">
+            <summary>
+            Describes a simulation job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationJobCmdlet.Job">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the simulation job to be described.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.DescribeSimulationJobResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.DescribeSimulationJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Job parameter.
+            The -PassThru parameter is deprecated, use -Select '^Job' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationJobBatchCmdlet">
+            <summary>
+            Describes a simulation job batch.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationJobBatchCmdlet.Batch">
+            <summary>
+            <para>
+            <para>The id of the batch to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationJobBatchCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.DescribeSimulationJobBatchResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.DescribeSimulationJobBatchResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationJobBatchCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Batch parameter.
+            The -PassThru parameter is deprecated, use -Select '^Batch' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationJobBatchListCmdlet">
+            <summary>
+            Returns a list simulation job batches. You can optionally provide filters to retrieve
+            specific simulation batch jobs.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationJobBatchListCmdlet.Filter">
+            <summary>
+            <para>
+            <para>Optional filters to limit results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationJobBatchListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>When this parameter is used, <code>ListSimulationJobBatches</code> only returns <code>maxResults</code>
+            results in a single page along with a <code>nextToken</code> response element. The
+            remaining results of the initial request can be seen by sending another <code>ListSimulationJobBatches</code>
+            request with the returned <code>nextToken</code> value. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationJobBatchListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If the previous paginated request did not return all of the remaining results, the
+            response object's <code>nextToken</code> parameter value is set to a token. To retrieve
+            the next set of results, call <code>ListSimulationJobBatches</code> again and assign
+            that token to the request object's <code>nextToken</code> parameter. If there are
+            no remaining results, the previous response object's NextToken parameter is set to
+            null. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationJobBatchListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SimulationJobBatchSummaries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.ListSimulationJobBatchesResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.ListSimulationJobBatchesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationJobBatchListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationJobListCmdlet">
+            <summary>
+            Describes one or more simulation jobs.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationJobListCmdlet.Job">
+            <summary>
+            <para>
+            <para>A list of Amazon Resource Names (ARNs) of simulation jobs to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationJobListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.BatchDescribeSimulationJobResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.BatchDescribeSimulationJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationJobListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Job parameter.
+            The -PassThru parameter is deprecated, use -Select '^Job' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationJobSummaryCmdlet">
+            <summary>
+            Returns a list of simulation jobs. You can optionally provide filters to retrieve
+            specific simulation jobs.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationJobSummaryCmdlet.Filter">
+            <summary>
+            <para>
+            <para>Optional filters to limit results.</para><para>The filter names <code>status</code> and <code>simulationApplicationName</code> and
+            <code>robotApplicationName</code> are supported. When filtering, you must use the
+            complete value of the filtered item. You can use up to three filters, but they must
+            be for the same named item. For example, if you are looking for items with the status
+            <code>Preparing</code> or the status <code>Running</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationJobSummaryCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code>
+            results in a single page along with a <code>nextToken</code> response element. The
+            remaining results of the initial request can be seen by sending another <code>ListSimulationJobs</code>
+            request with the returned <code>nextToken</code> value. This value can be between
+            1 and 1000. If this parameter is not used, then <code>ListSimulationJobs</code> returns
+            up to 1000 results and a <code>nextToken</code> value if applicable. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>100</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationJobSummaryCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If the previous paginated request did not return all of the remaining results, the
+            response object's <code>nextToken</code> parameter value is set to a token. To retrieve
+            the next set of results, call <code>ListSimulationJobs</code> again and assign that
+            token to the request object's <code>nextToken</code> parameter. If there are no remaining
+            results, the previous response object's NextToken parameter is set to null. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationJobSummaryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SimulationJobSummaries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.ListSimulationJobsResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.ListSimulationJobsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOSimulationJobSummaryCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldCmdlet">
+            <summary>
+            Describes a world.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldCmdlet.World">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (arn) of the world you want to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.DescribeWorldResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.DescribeWorldResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the World parameter.
+            The -PassThru parameter is deprecated, use -Select '^World' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldExportJobCmdlet">
+            <summary>
+            Describes a world export job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldExportJobCmdlet.Job">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (arn) of the world export job to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldExportJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.DescribeWorldExportJobResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.DescribeWorldExportJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldExportJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Job parameter.
+            The -PassThru parameter is deprecated, use -Select '^Job' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldExportJobListCmdlet">
+            <summary>
+            Lists world export jobs.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldExportJobListCmdlet.Filter">
+            <summary>
+            <para>
+            <para>Optional filters to limit results. You can use <code>generationJobId</code> and <code>templateId</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldExportJobListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>When this parameter is used, <code>ListWorldExportJobs</code> only returns <code>maxResults</code>
+            results in a single page along with a <code>nextToken</code> response element. The
+            remaining results of the initial request can be seen by sending another <code>ListWorldExportJobs</code>
+            request with the returned <code>nextToken</code> value. This value can be between
+            1 and 100. If this parameter is not used, then <code>ListWorldExportJobs</code> returns
+            up to 100 results and a <code>nextToken</code> value if applicable. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>100</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldExportJobListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If the previous paginated request did not return all of the remaining results, the
+            response object's <code>nextToken</code> parameter value is set to a token. To retrieve
+            the next set of results, call <code>ListWorldExportJobs</code> again and assign that
+            token to the request object's <code>nextToken</code> parameter. If there are no remaining
+            results, the previous response object's NextToken parameter is set to null. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldExportJobListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'WorldExportJobSummaries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.ListWorldExportJobsResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.ListWorldExportJobsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldExportJobListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldGenerationJobCmdlet">
+            <summary>
+            Describes a world generation job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldGenerationJobCmdlet.Job">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (arn) of the world generation job to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldGenerationJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.DescribeWorldGenerationJobResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.DescribeWorldGenerationJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldGenerationJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Job parameter.
+            The -PassThru parameter is deprecated, use -Select '^Job' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldGenerationJobListCmdlet">
+            <summary>
+            Lists world generator jobs.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldGenerationJobListCmdlet.Filter">
+            <summary>
+            <para>
+            <para>Optional filters to limit results. You can use <code>status</code> and <code>templateId</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldGenerationJobListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns <code>maxResults</code>
+            results in a single page along with a <code>nextToken</code> response element. The
+            remaining results of the initial request can be seen by sending another <code>ListWorldGeneratorJobs</code>
+            request with the returned <code>nextToken</code> value. This value can be between
+            1 and 100. If this parameter is not used, then <code>ListWorldGeneratorJobs</code>
+            returns up to 100 results and a <code>nextToken</code> value if applicable. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>100</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldGenerationJobListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If the previous paginated request did not return all of the remaining results, the
+            response object's <code>nextToken</code> parameter value is set to a token. To retrieve
+            the next set of results, call <code>ListWorldGenerationJobsRequest</code> again and
+            assign that token to the request object's <code>nextToken</code> parameter. If there
+            are no remaining results, the previous response object's NextToken parameter is set
+            to null. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldGenerationJobListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'WorldGenerationJobSummaries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.ListWorldGenerationJobsResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.ListWorldGenerationJobsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldGenerationJobListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldListCmdlet">
+            <summary>
+            Lists worlds.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldListCmdlet.Filter">
+            <summary>
+            <para>
+            <para>Optional filters to limit results. You can use <code>status</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>When this parameter is used, <code>ListWorlds</code> only returns <code>maxResults</code>
+            results in a single page along with a <code>nextToken</code> response element. The
+            remaining results of the initial request can be seen by sending another <code>ListWorlds</code>
+            request with the returned <code>nextToken</code> value. This value can be between
+            1 and 100. If this parameter is not used, then <code>ListWorlds</code> returns up
+            to 100 results and a <code>nextToken</code> value if applicable. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>100</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If the previous paginated request did not return all of the remaining results, the
+            response object's <code>nextToken</code> parameter value is set to a token. To retrieve
+            the next set of results, call <code>ListWorlds</code> again and assign that token
+            to the request object's <code>nextToken</code> parameter. If there are no remaining
+            results, the previous response object's NextToken parameter is set to null. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'WorldSummaries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.ListWorldsResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.ListWorldsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldTemplateCmdlet">
+            <summary>
+            Describes a world template.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldTemplateCmdlet.Template">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (arn) of the world template you want to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.DescribeWorldTemplateResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.DescribeWorldTemplateResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldTemplateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Template parameter.
+            The -PassThru parameter is deprecated, use -Select '^Template' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldTemplateBodyCmdlet">
+            <summary>
+            Gets the world template body.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldTemplateBodyCmdlet.GenerationJob">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (arn) of the world generator job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldTemplateBodyCmdlet.Template">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (arn) of the world template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldTemplateBodyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TemplateBody'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.GetWorldTemplateBodyResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.GetWorldTemplateBodyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldTemplateListCmdlet">
+            <summary>
+            Lists world templates.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldTemplateListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>When this parameter is used, <code>ListWorldTemplates</code> only returns <code>maxResults</code>
+            results in a single page along with a <code>nextToken</code> response element. The
+            remaining results of the initial request can be seen by sending another <code>ListWorldTemplates</code>
+            request with the returned <code>nextToken</code> value. This value can be between
+            1 and 100. If this parameter is not used, then <code>ListWorldTemplates</code> returns
+            up to 100 results and a <code>nextToken</code> value if applicable. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>100</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldTemplateListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If the previous paginated request did not return all of the remaining results, the
+            response object's <code>nextToken</code> parameter value is set to a token. To retrieve
+            the next set of results, call <code>ListWorldTemplates</code> again and assign that
+            token to the request object's <code>nextToken</code> parameter. If there are no remaining
+            results, the previous response object's NextToken parameter is set to null. </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldTemplateListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TemplateSummaries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.ListWorldTemplatesResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.ListWorldTemplatesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.GetROBOWorldTemplateListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.NewROBODeploymentJobCmdlet">
+            <summary>
+            Deploys a specific version of a robot application to robots in a fleet.
+            
+             <important><para>
+            This API is no longer supported and will throw an error if used.
+            </para></important><para>
+            The robot application must have a numbered <code>applicationVersion</code> for consistency
+            reasons. To create a new version, use <code>CreateRobotApplicationVersion</code> or
+            see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating
+            a Robot Application Version</a>. 
+            </para><note><para>
+            After 90 days, deployment jobs expire and will be deleted. They will no longer be
+            accessible. 
+            </para></note><br/><br/>This operation is deprecated.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBODeploymentJobCmdlet.ClientRequestToken">
+            <summary>
+            <para>
+            <para>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+            request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBODeploymentJobCmdlet.DeploymentApplicationConfig">
+            <summary>
+            <para>
+            <para>The deployment application configuration.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBODeploymentJobCmdlet.DeploymentConfig">
+            <summary>
+            <para>
+            <para>The requested deployment configuration.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBODeploymentJobCmdlet.Fleet">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the fleet to deploy.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBODeploymentJobCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A map that contains tag keys and tag values that are attached to the deployment job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBODeploymentJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.CreateDeploymentJobResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.CreateDeploymentJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBODeploymentJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Fleet parameter.
+            The -PassThru parameter is deprecated, use -Select '^Fleet' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBODeploymentJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.NewROBOFleetCmdlet">
+            <summary>
+            Creates a fleet, a logical group of robots running the same robot application.
+            
+             <important><para>
+            This API is no longer supported and will throw an error if used.
+            </para></important><br/><br/>This operation is deprecated.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOFleetCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the fleet.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOFleetCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A map that contains tag keys and tag values that are attached to the fleet.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOFleetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.CreateFleetResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.CreateFleetResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOFleetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOFleetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.NewROBORobotCmdlet">
+            <summary>
+            Creates a robot.
+            
+             <important><para>
+            This API is no longer supported and will throw an error if used.
+            </para></important><br/><br/>This operation is deprecated.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBORobotCmdlet.Architecture">
+            <summary>
+            <para>
+            <para>The target architecture of the robot.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBORobotCmdlet.GreengrassGroupId">
+            <summary>
+            <para>
+            <para>The Greengrass group id.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBORobotCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name for the robot.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBORobotCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A map that contains tag keys and tag values that are attached to the robot.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBORobotCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.CreateRobotResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.CreateRobotResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBORobotCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBORobotCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.NewROBORobotApplicationCmdlet">
+            <summary>
+            Creates a robot application.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBORobotApplicationCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the robot application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBORobotApplicationCmdlet.RobotSoftwareSuite">
+            <summary>
+            <para>
+            <para>The robot software suite (ROS distribuition) used by the robot application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBORobotApplicationCmdlet.Source">
+            <summary>
+            <para>
+            <para>The sources of the robot application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBORobotApplicationCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A map that contains tag keys and tag values that are attached to the robot application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBORobotApplicationCmdlet.Environment_Uri">
+            <summary>
+            <para>
+            <para>The Docker image URI for either your robot or simulation applications.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBORobotApplicationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.CreateRobotApplicationResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.CreateRobotApplicationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBORobotApplicationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBORobotApplicationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.NewROBORobotApplicationVersionCmdlet">
+            <summary>
+            Creates a version of a robot application.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBORobotApplicationVersionCmdlet.Application">
+            <summary>
+            <para>
+            <para>The application information for the robot application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBORobotApplicationVersionCmdlet.CurrentRevisionId">
+            <summary>
+            <para>
+            <para>The current revision id for the robot application. If you provide a value and it matches
+            the latest revision ID, a new version will be created.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBORobotApplicationVersionCmdlet.ImageDigest">
+            <summary>
+            <para>
+            <para>A SHA256 identifier for the Docker image that you use for your robot application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBORobotApplicationVersionCmdlet.S3Etag">
+            <summary>
+            <para>
+            <para>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBORobotApplicationVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.CreateRobotApplicationVersionResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.CreateRobotApplicationVersionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBORobotApplicationVersionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Application parameter.
+            The -PassThru parameter is deprecated, use -Select '^Application' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBORobotApplicationVersionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationApplicationCmdlet">
+            <summary>
+            Creates a simulation application.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationApplicationCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the simulation application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationApplicationCmdlet.RenderingEngine_Name">
+            <summary>
+            <para>
+            <para>The name of the rendering engine.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationApplicationCmdlet.RobotSoftwareSuite">
+            <summary>
+            <para>
+            <para>The robot software suite (ROS distribution) used by the simulation application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationApplicationCmdlet.SimulationSoftwareSuite">
+            <summary>
+            <para>
+            <para>The simulation software suite used by the simulation application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationApplicationCmdlet.Source">
+            <summary>
+            <para>
+            <para>The sources of the simulation application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationApplicationCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A map that contains tag keys and tag values that are attached to the simulation application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationApplicationCmdlet.Environment_Uri">
+            <summary>
+            <para>
+            <para>The Docker image URI for either your robot or simulation applications.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationApplicationCmdlet.RenderingEngine_Version">
+            <summary>
+            <para>
+            <para>The version of the rendering engine.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationApplicationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.CreateSimulationApplicationResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.CreateSimulationApplicationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationApplicationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationApplicationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationApplicationVersionCmdlet">
+            <summary>
+            Creates a simulation application with a specific revision id.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationApplicationVersionCmdlet.Application">
+            <summary>
+            <para>
+            <para>The application information for the simulation application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationApplicationVersionCmdlet.CurrentRevisionId">
+            <summary>
+            <para>
+            <para>The current revision id for the simulation application. If you provide a value and
+            it matches the latest revision ID, a new version will be created.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationApplicationVersionCmdlet.ImageDigest">
+            <summary>
+            <para>
+            <para>The SHA256 digest used to identify the Docker image URI used to created the simulation
+            application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationApplicationVersionCmdlet.S3Etag">
+            <summary>
+            <para>
+            <para>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation
+            application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationApplicationVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.CreateSimulationApplicationVersionResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.CreateSimulationApplicationVersionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationApplicationVersionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Application parameter.
+            The -PassThru parameter is deprecated, use -Select '^Application' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationApplicationVersionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationJobCmdlet">
+            <summary>
+            Creates a simulation job.
+            
+             <note><para>
+            After 90 days, simulation jobs expire and will be deleted. They will no longer be
+            accessible. 
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationJobCmdlet.ClientRequestToken">
+            <summary>
+            <para>
+            <para>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+            request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationJobCmdlet.Compute_ComputeType">
+            <summary>
+            <para>
+            <para>Compute type information for the simulation job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationJobCmdlet.DataSource">
+            <summary>
+            <para>
+            <para>Specify data sources to mount read-only files from S3 into your simulation. These
+            files are available under <code>/opt/robomaker/datasources/data_source_name</code>.
+            </para><note><para>There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code>
+            objects. </para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationJobCmdlet.FailureBehavior">
+            <summary>
+            <para>
+            <para>The failure behavior the simulation job.</para><dl><dt>Continue</dt><dd><para>Leaves the instance running for its maximum timeout duration after a <code>4XX</code>
+            error code.</para></dd><dt>Fail</dt><dd><para>Stop the simulation job and terminate the instance.</para></dd></dl>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationJobCmdlet.Compute_GpuUnitLimit">
+            <summary>
+            <para>
+            <para>Compute GPU unit limit for the simulation job. It is the same as the number of GPUs
+            allocated to the SimulationJob.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationJobCmdlet.IamRole">
+            <summary>
+            <para>
+            <para>The IAM role name that allows the simulation instance to call the AWS APIs that are
+            specified in its associated policies on your behalf. This is how credentials are passed
+            in to your simulation job. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationJobCmdlet.MaxJobDurationInSecond">
+            <summary>
+            <para>
+            <para>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds.
+            When <code>maxJobDurationInSeconds</code> is reached, the simulation job will status
+            will transition to <code>Completed</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationJobCmdlet.OutputLocation">
+            <summary>
+            <para>
+            <para>Location for output files generated by the simulation job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationJobCmdlet.RobotApplication">
+            <summary>
+            <para>
+            <para>The robot application to use in the simulation job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationJobCmdlet.SimulationApplication">
+            <summary>
+            <para>
+            <para>The simulation application to use in the simulation job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationJobCmdlet.Compute_SimulationUnitLimit">
+            <summary>
+            <para>
+            <para>The simulation unit limit. Your simulation is allocated CPU and memory proportional
+            to the supplied simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory.
+            You are only billed for the SU utilization you consume up to the maximum value provided.
+            The default is 15. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationJobCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A map that contains tag keys and tag values that are attached to the simulation job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationJobCmdlet.VpcConfig">
+            <summary>
+            <para>
+            <para>If your simulation job accesses resources in a VPC, you provide this parameter identifying
+            the list of security group IDs and subnet IDs. These must belong to the same VPC.
+            You must provide at least one security group and one subnet ID. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationJobCmdlet.LoggingConfig_RecordAllRosTopic">
+            <summary>
+            <para>
+            <para>A boolean indicating whether to record all ROS topics.</para><important><para>This API is no longer supported and will throw an error if used.</para></important>
+            </para>
+            <para>This parameter is deprecated.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.CreateSimulationJobResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.CreateSimulationJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the IamRole parameter.
+            The -PassThru parameter is deprecated, use -Select '^IamRole' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOSimulationJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldExportJobCmdlet">
+            <summary>
+            Creates a world export job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldExportJobCmdlet.ClientRequestToken">
+            <summary>
+            <para>
+            <para>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+            request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldExportJobCmdlet.IamRole">
+            <summary>
+            <para>
+            <para>The IAM role that the world export process uses to access the Amazon S3 bucket and
+            put the export.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldExportJobCmdlet.OutputLocation">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldExportJobCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A map that contains tag keys and tag values that are attached to the world export
+            job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldExportJobCmdlet.World">
+            <summary>
+            <para>
+            <para>A list of Amazon Resource Names (arns) that correspond to worlds to export.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldExportJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.CreateWorldExportJobResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.CreateWorldExportJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldExportJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the IamRole parameter.
+            The -PassThru parameter is deprecated, use -Select '^IamRole' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldExportJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldGenerationJobCmdlet">
+            <summary>
+            Creates worlds using the specified template.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldGenerationJobCmdlet.ClientRequestToken">
+            <summary>
+            <para>
+            <para>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+            request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldGenerationJobCmdlet.WorldCount_FloorplanCount">
+            <summary>
+            <para>
+            <para>The number of unique floorplans.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldGenerationJobCmdlet.WorldCount_InteriorCountPerFloorplan">
+            <summary>
+            <para>
+            <para>The number of unique interiors per floorplan.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldGenerationJobCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A map that contains tag keys and tag values that are attached to the world generator
+            job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldGenerationJobCmdlet.Template">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (arn) of the world template describing the worlds you want
+            to create.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldGenerationJobCmdlet.WorldTag">
+            <summary>
+            <para>
+            <para>A map that contains tag keys and tag values that are attached to the generated worlds.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldGenerationJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.CreateWorldGenerationJobResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.CreateWorldGenerationJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldGenerationJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Template parameter.
+            The -PassThru parameter is deprecated, use -Select '^Template' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldGenerationJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldTemplateCmdlet">
+            <summary>
+            Creates a world template.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldTemplateCmdlet.ClientRequestToken">
+            <summary>
+            <para>
+            <para>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+            request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldTemplateCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the world template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldTemplateCmdlet.TemplateLocation_S3Bucket">
+            <summary>
+            <para>
+            <para>The Amazon S3 bucket name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldTemplateCmdlet.TemplateLocation_S3Key">
+            <summary>
+            <para>
+            <para>The list of S3 keys identifying the data source files.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldTemplateCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A map that contains tag keys and tag values that are attached to the world template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldTemplateCmdlet.TemplateBody">
+            <summary>
+            <para>
+            <para>The world template body.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.CreateWorldTemplateResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.CreateWorldTemplateResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldTemplateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.NewROBOWorldTemplateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.RegisterROBORobotCmdlet">
+            <summary>
+            Registers a robot with a fleet.
+            
+             <important><para>
+            This API is no longer supported and will throw an error if used.
+            </para></important><br/><br/>This operation is deprecated.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RegisterROBORobotCmdlet.Fleet">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the fleet.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RegisterROBORobotCmdlet.Robot">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the robot.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RegisterROBORobotCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.RegisterRobotResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.RegisterRobotResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RegisterROBORobotCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Robot parameter.
+            The -PassThru parameter is deprecated, use -Select '^Robot' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RegisterROBORobotCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBODeleteWorldCmdlet">
+            <summary>
+            Deletes one or more worlds in a batch operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBODeleteWorldCmdlet.World">
+            <summary>
+            <para>
+            <para>A list of Amazon Resource Names (arns) that correspond to worlds to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBODeleteWorldCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'UnprocessedWorlds'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.BatchDeleteWorldsResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.BatchDeleteWorldsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBODeleteWorldCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBOFleetCmdlet">
+            <summary>
+            Deletes a fleet.
+            
+             <important><para>
+            This API will no longer be supported as of May 2, 2022. Use it to remove resources
+            that were created for Deployment Service.
+            </para></important><br/><br/>This operation is deprecated.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBOFleetCmdlet.Fleet">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the fleet.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBOFleetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.DeleteFleetResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBOFleetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Fleet parameter.
+            The -PassThru parameter is deprecated, use -Select '^Fleet' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBOFleetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBOResourceTagCmdlet">
+            <summary>
+            Removes the specified tags from the specified AWS RoboMaker resource.
+            
+             
+            <para>
+            To remove a tag, specify the tag key. To change the tag value of an existing tag key,
+            use <a href="https://docs.aws.amazon.com/robomaker/latest/dg/API_TagResource.html"><code>TagResource</code></a>. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBOResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing tags.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBOResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>A map that contains tag keys and tag values that will be unattached from the resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBOResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBOResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBOResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBORobotCmdlet">
+            <summary>
+            Deletes a robot.
+            
+             <important><para>
+            This API will no longer be supported as of May 2, 2022. Use it to remove resources
+            that were created for Deployment Service.
+            </para></important><br/><br/>This operation is deprecated.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBORobotCmdlet.Robot">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the robot.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBORobotCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.DeleteRobotResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBORobotCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Robot parameter.
+            The -PassThru parameter is deprecated, use -Select '^Robot' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBORobotCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBORobotApplicationCmdlet">
+            <summary>
+            Deletes a robot application.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBORobotApplicationCmdlet.Application">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the the robot application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBORobotApplicationCmdlet.ApplicationVersion">
+            <summary>
+            <para>
+            <para>The version of the robot application to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBORobotApplicationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.DeleteRobotApplicationResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBORobotApplicationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Application parameter.
+            The -PassThru parameter is deprecated, use -Select '^Application' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBORobotApplicationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBOSimulationApplicationCmdlet">
+            <summary>
+            Deletes a simulation application.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBOSimulationApplicationCmdlet.Application">
+            <summary>
+            <para>
+            <para>The application information for the simulation application to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBOSimulationApplicationCmdlet.ApplicationVersion">
+            <summary>
+            <para>
+            <para>The version of the simulation application to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBOSimulationApplicationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.DeleteSimulationApplicationResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBOSimulationApplicationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Application parameter.
+            The -PassThru parameter is deprecated, use -Select '^Application' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBOSimulationApplicationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBOWorldTemplateCmdlet">
+            <summary>
+            Deletes a world template.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBOWorldTemplateCmdlet.Template">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (arn) of the world template you want to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBOWorldTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.DeleteWorldTemplateResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBOWorldTemplateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Template parameter.
+            The -PassThru parameter is deprecated, use -Select '^Template' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RemoveROBOWorldTemplateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.RestartROBOSimulationJobCmdlet">
+            <summary>
+            Restarts a running simulation job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RestartROBOSimulationJobCmdlet.Job">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the simulation job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RestartROBOSimulationJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.RestartSimulationJobResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RestartROBOSimulationJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Job parameter.
+            The -PassThru parameter is deprecated, use -Select '^Job' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.RestartROBOSimulationJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.StartROBOSimulationJobBatchCmdlet">
+            <summary>
+            Starts a new simulation job batch. The batch is defined using one or more <code>SimulationJobRequest</code>
+            objects.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StartROBOSimulationJobBatchCmdlet.ClientRequestToken">
+            <summary>
+            <para>
+            <para>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+            request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StartROBOSimulationJobBatchCmdlet.CreateSimulationJobRequest">
+            <summary>
+            <para>
+            <para>A list of simulation job requests to create in the batch.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StartROBOSimulationJobBatchCmdlet.BatchPolicy_MaxConcurrency">
+            <summary>
+            <para>
+            <para>The number of active simulation jobs create as part of the batch that can be in an
+            active state at the same time. </para><para>Active states include: <code>Pending</code>,<code>Preparing</code>, <code>Running</code>,
+            <code>Restarting</code>, <code>RunningFailed</code> and <code>Terminating</code>.
+            All other states are terminal states. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StartROBOSimulationJobBatchCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A map that contains tag keys and tag values that are attached to the deployment job
+            batch.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StartROBOSimulationJobBatchCmdlet.BatchPolicy_TimeoutInSecond">
+            <summary>
+            <para>
+            <para>The amount of time, in seconds, to wait for the batch to complete. </para><para>If a batch times out, and there are pending requests that were failing due to an internal
+            failure (like <code>InternalServiceError</code>), they will be moved to the failed
+            list and the batch status will be <code>Failed</code>. If the pending requests were
+            failing for any other reason, the failed pending requests will be moved to the failed
+            list and the batch status will be <code>TimedOut</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StartROBOSimulationJobBatchCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.StartSimulationJobBatchResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.StartSimulationJobBatchResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StartROBOSimulationJobBatchCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClientRequestToken parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClientRequestToken' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StartROBOSimulationJobBatchCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.StopROBODeploymentJobCmdlet">
+            <summary>
+            Cancels the specified deployment job.
+            
+             <important><para>
+            This API will no longer be supported as of May 2, 2022. Use it to remove resources
+            that were created for Deployment Service.
+            </para></important><br/><br/>This operation is deprecated.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StopROBODeploymentJobCmdlet.Job">
+            <summary>
+            <para>
+            <para>The deployment job ARN to cancel.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StopROBODeploymentJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.CancelDeploymentJobResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StopROBODeploymentJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Job parameter.
+            The -PassThru parameter is deprecated, use -Select '^Job' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StopROBODeploymentJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.StopROBOSimulationJobCmdlet">
+            <summary>
+            Cancels the specified simulation job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StopROBOSimulationJobCmdlet.Job">
+            <summary>
+            <para>
+            <para>The simulation job ARN to cancel.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StopROBOSimulationJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.CancelSimulationJobResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StopROBOSimulationJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Job parameter.
+            The -PassThru parameter is deprecated, use -Select '^Job' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StopROBOSimulationJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.StopROBOSimulationJobBatchCmdlet">
+            <summary>
+            Cancels a simulation job batch. When you cancel a simulation job batch, you are also
+            cancelling all of the active simulation jobs created as part of the batch.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StopROBOSimulationJobBatchCmdlet.Batch">
+            <summary>
+            <para>
+            <para>The id of the batch to cancel.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StopROBOSimulationJobBatchCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.CancelSimulationJobBatchResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StopROBOSimulationJobBatchCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Batch parameter.
+            The -PassThru parameter is deprecated, use -Select '^Batch' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StopROBOSimulationJobBatchCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.StopROBOWorldExportJobCmdlet">
+            <summary>
+            Cancels the specified export job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StopROBOWorldExportJobCmdlet.Job">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (arn) of the world export job to cancel.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StopROBOWorldExportJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.CancelWorldExportJobResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StopROBOWorldExportJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Job parameter.
+            The -PassThru parameter is deprecated, use -Select '^Job' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StopROBOWorldExportJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.StopROBOWorldGenerationJobCmdlet">
+            <summary>
+            Cancels the specified world generator job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StopROBOWorldGenerationJobCmdlet.Job">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (arn) of the world generator job to cancel.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StopROBOWorldGenerationJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.CancelWorldGenerationJobResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StopROBOWorldGenerationJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Job parameter.
+            The -PassThru parameter is deprecated, use -Select '^Job' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.StopROBOWorldGenerationJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.SyncROBODeploymentJobCmdlet">
+            <summary>
+            Syncrhonizes robots in a fleet to the latest deployment. This is helpful if robots
+            were added after a deployment.
+            
+             <important><para>
+            This API will no longer be supported as of May 2, 2022. Use it to remove resources
+            that were created for Deployment Service.
+            </para></important><br/><br/>This operation is deprecated.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.SyncROBODeploymentJobCmdlet.ClientRequestToken">
+            <summary>
+            <para>
+            <para>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+            request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.SyncROBODeploymentJobCmdlet.Fleet">
+            <summary>
+            <para>
+            <para>The target fleet for the synchronization.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.SyncROBODeploymentJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.SyncDeploymentJobResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.SyncDeploymentJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.SyncROBODeploymentJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Fleet parameter.
+            The -PassThru parameter is deprecated, use -Select '^Fleet' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.SyncROBODeploymentJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.UnregisterROBORobotCmdlet">
+            <summary>
+            Deregisters a robot.
+            
+             <important><para>
+            This API will no longer be supported as of May 2, 2022. Use it to remove resources
+            that were created for Deployment Service.
+            </para></important><br/><br/>This operation is deprecated.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UnregisterROBORobotCmdlet.Fleet">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the fleet.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UnregisterROBORobotCmdlet.Robot">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the robot.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UnregisterROBORobotCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.DeregisterRobotResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.DeregisterRobotResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UnregisterROBORobotCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Robot parameter.
+            The -PassThru parameter is deprecated, use -Select '^Robot' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UnregisterROBORobotCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBORobotApplicationCmdlet">
+            <summary>
+            Updates a robot application.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBORobotApplicationCmdlet.Application">
+            <summary>
+            <para>
+            <para>The application information for the robot application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBORobotApplicationCmdlet.CurrentRevisionId">
+            <summary>
+            <para>
+            <para>The revision id for the robot application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBORobotApplicationCmdlet.RobotSoftwareSuite">
+            <summary>
+            <para>
+            <para>The robot software suite (ROS distribution) used by the robot application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBORobotApplicationCmdlet.Source">
+            <summary>
+            <para>
+            <para>The sources of the robot application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBORobotApplicationCmdlet.Environment_Uri">
+            <summary>
+            <para>
+            <para>The Docker image URI for either your robot or simulation applications.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBORobotApplicationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.UpdateRobotApplicationResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.UpdateRobotApplicationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBORobotApplicationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Application parameter.
+            The -PassThru parameter is deprecated, use -Select '^Application' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBORobotApplicationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBOSimulationApplicationCmdlet">
+            <summary>
+            Updates a simulation application.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBOSimulationApplicationCmdlet.Application">
+            <summary>
+            <para>
+            <para>The application information for the simulation application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBOSimulationApplicationCmdlet.CurrentRevisionId">
+            <summary>
+            <para>
+            <para>The revision id for the robot application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBOSimulationApplicationCmdlet.RenderingEngine_Name">
+            <summary>
+            <para>
+            <para>The name of the rendering engine.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBOSimulationApplicationCmdlet.RobotSoftwareSuite">
+            <summary>
+            <para>
+            <para>Information about the robot software suite (ROS distribution).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBOSimulationApplicationCmdlet.SimulationSoftwareSuite">
+            <summary>
+            <para>
+            <para>The simulation software suite used by the simulation application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBOSimulationApplicationCmdlet.Source">
+            <summary>
+            <para>
+            <para>The sources of the simulation application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBOSimulationApplicationCmdlet.Environment_Uri">
+            <summary>
+            <para>
+            <para>The Docker image URI for either your robot or simulation applications.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBOSimulationApplicationCmdlet.RenderingEngine_Version">
+            <summary>
+            <para>
+            <para>The version of the rendering engine.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBOSimulationApplicationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.UpdateSimulationApplicationResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.UpdateSimulationApplicationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBOSimulationApplicationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Application parameter.
+            The -PassThru parameter is deprecated, use -Select '^Application' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBOSimulationApplicationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBOWorldTemplateCmdlet">
+            <summary>
+            Updates a world template.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBOWorldTemplateCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBOWorldTemplateCmdlet.TemplateLocation_S3Bucket">
+            <summary>
+            <para>
+            <para>The Amazon S3 bucket name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBOWorldTemplateCmdlet.TemplateLocation_S3Key">
+            <summary>
+            <para>
+            <para>The list of S3 keys identifying the data source files.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBOWorldTemplateCmdlet.Template">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (arn) of the world template to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBOWorldTemplateCmdlet.TemplateBody">
+            <summary>
+            <para>
+            <para>The world template body.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBOWorldTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RoboMaker.Model.UpdateWorldTemplateResponse).
+            Specifying the name of a property of type Amazon.RoboMaker.Model.UpdateWorldTemplateResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBOWorldTemplateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Template parameter.
+            The -PassThru parameter is deprecated, use -Select '^Template' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ROBO.UpdateROBOWorldTemplateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,2606 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.CostExplorer</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.AddCEResourceTagCmdlet">
+            <summary>
+            An API operation for adding one or more tags (key-value pairs) to a resource.
+            
+             
+            <para>
+            You can use the <code>TagResource</code> operation with a resource that already has
+            tags. If you specify a new tag key for the resource, this tag is appended to the list
+            of tags associated with the resource. If you specify a tag key that is already associated
+            with the resource, the new tag value you specify replaces the previous value for that
+            tag.
+            </para><para>
+            Although the maximum number of array members is 200, user-tag maximum is 50. The remaining
+            are reserved for Amazon Web Services use.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.AddCEResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource. For a list of supported resources,
+            see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.AddCEResourceTagCmdlet.ResourceTag">
+            <summary>
+            <para>
+            <para> A list of tag key-value pairs to be added to the resource.</para><para>Each tag consists of a key and a value, and each key must be unique for the resource.
+            The following restrictions apply to resource tags:</para><ul><li><para>Although the maximum number of array members is 200, you can assign a maximum of 50
+            user-tags to one resource. The remaining are reserved for Amazon Web Services use</para></li><li><para>The maximum length of a key is 128 characters</para></li><li><para>The maximum length of a value is 256 characters</para></li><li><para>Keys and values can only contain alphanumeric characters, spaces, and any of the following:
+            <code>_.:/=+@-</code></para></li><li><para>Keys and values are case sensitive</para></li><li><para>Keys and values are trimmed for any leading or trailing whitespaces</para></li><li><para>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for
+            Amazon Web Services use</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.AddCEResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.AddCEResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.AddCEResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalyCmdlet">
+            <summary>
+            Retrieves all of the cost anomalies detected on your account during the time period
+            that's specified by the <code>DateInterval</code> object.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalyCmdlet.DateInterval_EndDate">
+            <summary>
+            <para>
+            <para>The last date an anomaly was observed. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalyCmdlet.TotalImpact_EndValue">
+            <summary>
+            <para>
+            <para>The upper bound dollar value that's used in the filter. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalyCmdlet.Feedback">
+            <summary>
+            <para>
+            <para>Filters anomaly results by the feedback field on the anomaly object. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalyCmdlet.MonitorArn">
+            <summary>
+            <para>
+            <para>Retrieves all of the cost anomalies detected for a specific cost anomaly monitor Amazon
+            Resource Name (ARN). </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalyCmdlet.TotalImpact_NumericOperator">
+            <summary>
+            <para>
+            <para>The comparing value that's used in the filter. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalyCmdlet.DateInterval_StartDate">
+            <summary>
+            <para>
+            <para>The first date an anomaly was observed. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalyCmdlet.TotalImpact_StartValue">
+            <summary>
+            <para>
+            <para>The lower bound dollar value that's used in the filter. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalyCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The number of entries a paginated response contains. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalyCmdlet.NextPageToken">
+            <summary>
+            <para>
+            <para>The token to retrieve the next set of results. Amazon Web Services provides the token
+            when the response from a previous call has more results than the maximum page size.
+            </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextPageToken $null' for the first call and '-NextPageToken $AWSHistory.LastServiceResponse.NextPageToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Anomalies'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.GetAnomaliesResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.GetAnomaliesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DateInterval_StartDate parameter.
+            The -PassThru parameter is deprecated, use -Select '^DateInterval_StartDate' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalyCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextPageToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalyMonitorCmdlet">
+            <summary>
+            Retrieves the cost anomaly monitor definitions for your account. You can filter using
+            a list of cost anomaly monitor Amazon Resource Names (ARNs).<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalyMonitorCmdlet.MonitorArnList">
+            <summary>
+            <para>
+            <para>A list of cost anomaly monitor ARNs. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalyMonitorCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The number of entries that a paginated response contains. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalyMonitorCmdlet.NextPageToken">
+            <summary>
+            <para>
+            <para>The token to retrieve the next set of results. Amazon Web Services provides the token
+            when the response from a previous call has more results than the maximum page size.
+            </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextPageToken $null' for the first call and '-NextPageToken $AWSHistory.LastServiceResponse.NextPageToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalyMonitorCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AnomalyMonitors'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.GetAnomalyMonitorsResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.GetAnomalyMonitorsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalyMonitorCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextPageToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalySubscriptionCmdlet">
+            <summary>
+            Retrieves the cost anomaly subscription objects for your account. You can filter using
+            a list of cost anomaly monitor Amazon Resource Names (ARNs).<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalySubscriptionCmdlet.MonitorArn">
+            <summary>
+            <para>
+            <para>Cost anomaly monitor ARNs. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalySubscriptionCmdlet.SubscriptionArnList">
+            <summary>
+            <para>
+            <para>A list of cost anomaly subscription ARNs. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalySubscriptionCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The number of entries a paginated response contains. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalySubscriptionCmdlet.NextPageToken">
+            <summary>
+            <para>
+            <para>The token to retrieve the next set of results. Amazon Web Services provides the token
+            when the response from a previous call has more results than the maximum page size.
+            </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextPageToken $null' for the first call and '-NextPageToken $AWSHistory.LastServiceResponse.NextPageToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalySubscriptionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AnomalySubscriptions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.GetAnomalySubscriptionsResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.GetAnomalySubscriptionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalySubscriptionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the MonitorArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^MonitorArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEAnomalySubscriptionCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextPageToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.GetCECostAllocationTagListCmdlet">
+            <summary>
+            Get a list of cost allocation tags. All inputs in the API are optional and serve as
+            filters. By default, all cost allocation tags are returned.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostAllocationTagListCmdlet.Status">
+            <summary>
+            <para>
+            <para>The status of cost allocation tag keys that are returned for this request. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostAllocationTagListCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>The list of cost allocation tag keys that are returned for this request. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostAllocationTagListCmdlet.Type">
+            <summary>
+            <para>
+            <para>The type of <code>CostAllocationTag</code> object that are returned for this request.
+            The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines
+            and applies to support Amazon Web Services resources for cost allocation purposes.
+            The <code>UserDefined</code> type tags are tags that you define, create, and apply
+            to resources. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostAllocationTagListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of objects that are returned for this request. By default, the
+            request returns 100 results. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostAllocationTagListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to retrieve the next set of results. Amazon Web Services provides the token
+            when the response from a previous call has more results than the maximum page size.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostAllocationTagListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'CostAllocationTags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.ListCostAllocationTagsResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.ListCostAllocationTagsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.GetCECostAndUsageCmdlet">
+            <summary>
+            Retrieves cost and usage metrics for your account. You can specify which cost and
+            usage-related metric that you want the request to return. For example, you can specify
+            <code>BlendedCosts</code> or <code>UsageQuantity</code>. You can also filter and group
+            your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>,
+            in a specific time range. For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
+            operation. Management account in an organization in Organizations have access to all
+            member accounts.
+            
+             
+            <para>
+            For information about filter limitations, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-limits.html">Quotas
+            and restrictions</a> in the <i>Billing and Cost Management User Guide</i>.
+            </para><br/><br/>In the AWS.Tools.CostExplorer module, this cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostAndUsageCmdlet.Filter">
+            <summary>
+            <para>
+            <para>Filters Amazon Web Services costs by different dimensions. For example, you can specify
+            <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated
+            with that account's usage of that service. You can nest <code>Expression</code> objects
+            to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+            </para><para>Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code>
+            and <code>CASE_SENSITIVE</code>.</para><para>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code>
+            are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default
+            values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostAndUsageCmdlet.Granularity">
+            <summary>
+            <para>
+            <para>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code> or <code>DAILY</code>,
+            or <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object
+            doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>,
+            or <code>HOURLY</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostAndUsageCmdlet.GroupBy">
+            <summary>
+            <para>
+            <para>You can group Amazon Web Services costs using up to two different groups, either dimensions,
+            tag keys, cost categories, or any two group by types.</para><para>Valid values for the <code>DIMENSION</code> type are <code>AZ</code>, <code>INSTANCE_TYPE</code>,
+            <code>LEGAL_ENTITY_NAME</code>, <code>INVOICING_ENTITY</code>, <code>LINKED_ACCOUNT</code>,
+            <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
+            <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</para><para>When you group by the <code>TAG</code> type and include a valid tag key, you get all
+            tag values, including empty strings.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostAndUsageCmdlet.Metric">
+            <summary>
+            <para>
+            <para>Which metrics are returned in the query. For more information about blended and unblended
+            rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+            does the "blended" annotation appear on some line items in my bill?</a>. </para><para>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>,
+            <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>,
+            and <code>UsageQuantity</code>. </para><note><para>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage
+            numbers without taking into account the units. For example, if you aggregate <code>usageQuantity</code>
+            across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute
+            hours and data transfer are measured in different units (for example, hours and GB).
+            To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code>
+            or <code>UsageTypeGroups</code>. </para></note><para><code>Metrics</code> is required for <code>GetCostAndUsage</code> requests.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostAndUsageCmdlet.TimePeriod">
+            <summary>
+            <para>
+            <para>Sets the start date and end date for retrieving Amazon Web Services costs. The start
+            date is inclusive, but the end date is exclusive. For example, if <code>start</code>
+            is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the
+            cost and usage data is retrieved from <code>2017-01-01</code> up to and including
+            <code>2017-04-30</code> but not including <code>2017-05-01</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostAndUsageCmdlet.NextPageToken">
+            <summary>
+            <para>
+            <para>The token to retrieve the next set of results. Amazon Web Services provides the token
+            when the response from a previous call has more results than the maximum page size.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In the AWS.Tools.CostExplorer module, this parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextPageToken $null' for the first call and '-NextPageToken $AWSHistory.LastServiceResponse.NextPageToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostAndUsageCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.GetCostAndUsageResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.GetCostAndUsageResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostAndUsageCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TimePeriod parameter.
+            The -PassThru parameter is deprecated, use -Select '^TimePeriod' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostAndUsageCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextPageToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.GetCECostAndUsageWithResourceCmdlet">
+            <summary>
+            Retrieves cost and usage metrics with resources for your account. You can specify
+            which cost and usage-related metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>,
+            that you want the request to return. You can also filter and group your data by various
+            dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range.
+            For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
+            operation. Management account in an organization in Organizations have access to all
+            member accounts. This API is currently available for the Amazon Elastic Compute Cloud
+            – Compute service only.
+            
+             <note><para>
+            This is an opt-in only feature. You can enable this feature from the Cost Explorer
+            Settings page. For information about how to access the Settings page, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling
+            Access for Cost Explorer</a> in the <i>Billing and Cost Management User Guide</i>.
+            </para></note><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostAndUsageWithResourceCmdlet.Filter">
+            <summary>
+            <para>
+            <para>Filters Amazon Web Services costs by different dimensions. For example, you can specify
+            <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated
+            with that account's usage of that service. You can nest <code>Expression</code> objects
+            to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+            </para><para>The <code>GetCostAndUsageWithResources</code> operation requires that you either group
+            by or filter by a <code>ResourceId</code>. It requires the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a><code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.</para><para>Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code>
+            and <code>CASE_SENSITIVE</code>.</para><para>Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code>
+            are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default
+            values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostAndUsageWithResourceCmdlet.Granularity">
+            <summary>
+            <para>
+            <para>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>, <code>DAILY</code>,
+            or <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object
+            doesn't include the <code>Granularity</code>, <code>MONTHLY</code>, <code>DAILY</code>,
+            or <code>HOURLY</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostAndUsageWithResourceCmdlet.GroupBy">
+            <summary>
+            <para>
+            <para>You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>,
+            <code>TAG</code>, <code>COST_CATEGORY</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostAndUsageWithResourceCmdlet.Metric">
+            <summary>
+            <para>
+            <para>Which metrics are returned in the query. For more information about blended and unblended
+            rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+            does the "blended" annotation appear on some line items in my bill?</a>. </para><para>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>,
+            <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>,
+            and <code>UsageQuantity</code>. </para><note><para>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage
+            numbers without taking the units into account. For example, if you aggregate <code>usageQuantity</code>
+            across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute
+            hours and data transfer are measured in different units (for example, hour or GB).
+            To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code>
+            or <code>UsageTypeGroups</code>. </para></note><para><code>Metrics</code> is required for <code>GetCostAndUsageWithResources</code> requests.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostAndUsageWithResourceCmdlet.TimePeriod">
+            <summary>
+            <para>
+            <para>Sets the start and end dates for retrieving Amazon Web Services costs. The range must
+            be within the last 14 days (the start date cannot be earlier than 14 days ago). The
+            start date is inclusive, but the end date is exclusive. For example, if <code>start</code>
+            is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the
+            cost and usage data is retrieved from <code>2017-01-01</code> up to and including
+            <code>2017-04-30</code> but not including <code>2017-05-01</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostAndUsageWithResourceCmdlet.NextPageToken">
+            <summary>
+            <para>
+            <para>The token to retrieve the next set of results. Amazon Web Services provides the token
+            when the response from a previous call has more results than the maximum page size.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextPageToken $null' for the first call and '-NextPageToken $AWSHistory.LastServiceResponse.NextPageToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostAndUsageWithResourceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.GetCostAndUsageWithResourcesResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.GetCostAndUsageWithResourcesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostAndUsageWithResourceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TimePeriod parameter.
+            The -PassThru parameter is deprecated, use -Select '^TimePeriod' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostAndUsageWithResourceCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextPageToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.GetCECostCategoryCmdlet">
+            <summary>
+            Retrieves an array of Cost Category names and values incurred cost.
+            
+             <note><para>
+            If some Cost Category names and values are not associated with any cost, they will
+            not be returned by this API.
+            </para></note><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostCategoryCmdlet.CostCategoryName">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostCategoryCmdlet.Filter">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostCategoryCmdlet.SearchString">
+            <summary>
+            <para>
+            <para>The value that you want to search the filter values for.</para><para>If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is
+            used to filter Cost Category names that match the <code>SearchString</code> pattern.
+            If you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used
+            to filter Cost Category values that match the <code>SearchString</code> pattern.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostCategoryCmdlet.SortBy">
+            <summary>
+            <para>
+            <para>The value that you sort the data by.</para><para>The key represents the cost and usage metrics. The following values are supported:</para><ul><li><para><code>BlendedCost</code></para></li><li><para><code>UnblendedCost</code></para></li><li><para><code>AmortizedCost</code></para></li><li><para><code>NetAmortizedCost</code></para></li><li><para><code>NetUnblendedCost</code></para></li><li><para><code>UsageQuantity</code></para></li><li><para><code>NormalizedUsageAmount</code></para></li></ul><para>The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code>
+            and <code>DESCENDING</code>.</para><para>When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code>
+            key values aren't supported.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostCategoryCmdlet.TimePeriod">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostCategoryCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>This field is only used when the <code>SortBy</code> value is provided in the request.</para><para>The maximum number of objects that are returned for this request. If <code>MaxResults</code>
+            isn't specified with the <code>SortBy</code> value, the request returns 1000 results
+            as the default value for this parameter.</para><para>For <code>GetCostCategories</code>, MaxResults has an upper quota of 1000.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostCategoryCmdlet.NextPageToken">
+            <summary>
+            <para>
+            <para>If the number of objects that are still available for retrieval exceeds the quota,
+            Amazon Web Services returns a NextPageToken value in the response. To retrieve the
+            next batch of objects, provide the NextPageToken from the previous call in your next
+            request.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextPageToken $null' for the first call and '-NextPageToken $AWSHistory.LastServiceResponse.NextPageToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostCategoryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.GetCostCategoriesResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.GetCostCategoriesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostCategoryCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TimePeriod parameter.
+            The -PassThru parameter is deprecated, use -Select '^TimePeriod' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostCategoryCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextPageToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.GetCECostCategoryDefinitionCmdlet">
+            <summary>
+            Returns the name, Amazon Resource Name (ARN), rules, definition, and effective dates
+            of a Cost Category that's defined in the account.
+            
+             
+            <para>
+            You have the option to use <code>EffectiveOn</code> to return a Cost Category that's
+            active on a specific date. If there's no <code>EffectiveOn</code> specified, you see
+            a Cost Category that's effective on the current date. If Cost Category is still effective,
+            <code>EffectiveEnd</code> is omitted in the response. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostCategoryDefinitionCmdlet.CostCategoryArn">
+            <summary>
+            <para>
+            <para>The unique identifier for your Cost Category. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostCategoryDefinitionCmdlet.EffectiveOn">
+            <summary>
+            <para>
+            <para>The date when the Cost Category was effective. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostCategoryDefinitionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'CostCategory'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.DescribeCostCategoryDefinitionResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.DescribeCostCategoryDefinitionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostCategoryDefinitionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the CostCategoryArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^CostCategoryArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.GetCECostCategoryDefinitionListCmdlet">
+            <summary>
+            Returns the name, Amazon Resource Name (ARN), <code>NumberOfRules</code> and effective
+            dates of all Cost Categories defined in the account. You have the option to use <code>EffectiveOn</code>
+            to return a list of Cost Categories that were active on a specific date. If there
+            is no <code>EffectiveOn</code> specified, you’ll see Cost Categories that are effective
+            on the current date. If Cost Category is still effective, <code>EffectiveEnd</code>
+            is omitted in the response. <code>ListCostCategoryDefinitions</code> supports pagination.
+            The request can have a <code>MaxResults</code> range up to 100.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostCategoryDefinitionListCmdlet.EffectiveOn">
+            <summary>
+            <para>
+            <para>The date when the Cost Category was effective. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostCategoryDefinitionListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The number of entries a paginated response contains. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostCategoryDefinitionListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to retrieve the next set of results. Amazon Web Services provides the token
+            when the response from a previous call has more results than the maximum page size.
+            </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostCategoryDefinitionListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'CostCategoryReferences'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.ListCostCategoryDefinitionsResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.ListCostCategoryDefinitionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostCategoryDefinitionListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.GetCECostForecastCmdlet">
+            <summary>
+            Retrieves a forecast for how much Amazon Web Services predicts that you will spend
+            over the forecast time period that you select, based on your past costs.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostForecastCmdlet.Filter">
+            <summary>
+            <para>
+            <para>The filters that you want to use to filter your forecast. The <code>GetCostForecast</code>
+            API supports filtering by the following dimensions:</para><ul><li><para><code>AZ</code></para></li><li><para><code>INSTANCE_TYPE</code></para></li><li><para><code>LINKED_ACCOUNT</code></para></li><li><para><code>LINKED_ACCOUNT_NAME</code></para></li><li><para><code>OPERATION</code></para></li><li><para><code>PURCHASE_TYPE</code></para></li><li><para><code>REGION</code></para></li><li><para><code>SERVICE</code></para></li><li><para><code>USAGE_TYPE</code></para></li><li><para><code>USAGE_TYPE_GROUP</code></para></li><li><para><code>RECORD_TYPE</code></para></li><li><para><code>OPERATING_SYSTEM</code></para></li><li><para><code>TENANCY</code></para></li><li><para><code>SCOPE</code></para></li><li><para><code>PLATFORM</code></para></li><li><para><code>SUBSCRIPTION_ID</code></para></li><li><para><code>LEGAL_ENTITY_NAME</code></para></li><li><para><code>DEPLOYMENT_OPTION</code></para></li><li><para><code>DATABASE_ENGINE</code></para></li><li><para><code>INSTANCE_TYPE_FAMILY</code></para></li><li><para><code>BILLING_ENTITY</code></para></li><li><para><code>RESERVATION_ID</code></para></li><li><para><code>SAVINGS_PLAN_ARN</code></para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostForecastCmdlet.Granularity">
+            <summary>
+            <para>
+            <para>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code>
+            forecasts or 12 months of <code>MONTHLY</code> forecasts.</para><para>The <code>GetCostForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
+            granularities.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostForecastCmdlet.Metric">
+            <summary>
+            <para>
+            <para>Which metric Cost Explorer uses to create your forecast. For more information about
+            blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+            does the "blended" annotation appear on some line items in my bill?</a>. </para><para>Valid values for a <code>GetCostForecast</code> call are the following:</para><ul><li><para>AMORTIZED_COST</para></li><li><para>BLENDED_COST</para></li><li><para>NET_AMORTIZED_COST</para></li><li><para>NET_UNBLENDED_COST</para></li><li><para>UNBLENDED_COST</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostForecastCmdlet.PredictionIntervalLevel">
+            <summary>
+            <para>
+            <para>Cost Explorer always returns the mean forecast as a single point. You can request
+            a prediction interval around the mean by specifying a confidence level. The higher
+            the confidence level, the more confident Cost Explorer is about the actual value falling
+            in the prediction interval. Higher confidence levels result in wider prediction intervals.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostForecastCmdlet.TimePeriod">
+            <summary>
+            <para>
+            <para>The period of time that you want the forecast to cover. The start date must be equal
+            to or no later than the current date to avoid a validation error.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostForecastCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.GetCostForecastResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.GetCostForecastResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCECostForecastCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TimePeriod parameter.
+            The -PassThru parameter is deprecated, use -Select '^TimePeriod' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.GetCEDimensionValueCmdlet">
+            <summary>
+            Retrieves all available filter values for a specified filter over a period of time.
+            You can search the dimension values for an arbitrary string.<br/><br/>In the AWS.Tools.CostExplorer module, this cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEDimensionValueCmdlet.Context">
+            <summary>
+            <para>
+            <para>The context for the call to <code>GetDimensionValues</code>. This can be <code>RESERVATIONS</code>
+            or <code>COST_AND_USAGE</code>. The default value is <code>COST_AND_USAGE</code>.
+            If the context is set to <code>RESERVATIONS</code>, the resulting dimension values
+            can be used in the <code>GetReservationUtilization</code> operation. If the context
+            is set to <code>COST_AND_USAGE</code>, the resulting dimension values can be used
+            in the <code>GetCostAndUsage</code> operation.</para><para>If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions
+            for searching:</para><ul><li><para>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</para></li><li><para>BILLING_ENTITY - The Amazon Web Services seller that your account is with. Possible
+            values are the following:</para><para>- Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services.</para><para>- AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting
+            reseller for Amazon Web Services in India.</para><para>- Amazon Web Services Marketplace: The entity that supports the sale of solutions
+            that are built on Amazon Web Services by third-party software providers.</para></li><li><para>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</para></li><li><para>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid
+            values are <code>SingleAZ</code> and <code>MultiAZ</code>.</para></li><li><para>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora
+            or MySQL.</para></li><li><para>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</para></li><li><para>INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different use cases.
+            Examples are <code>Compute Optimized</code> (for example, <code>C4</code>, <code>C5</code>,
+            <code>C6g</code>, and <code>C7g</code>), <code>Memory Optimization</code> (for example,
+            <code>R4</code>, <code>R5n</code>, <code>R5b</code>, and <code>R6g</code>).</para></li><li><para>INVOICING_ENTITY - The name of the entity that issues the Amazon Web Services invoice.</para></li><li><para>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services
+            services, such as Amazon Web Services.</para></li><li><para>LINKED_ACCOUNT - The description in the attribute map that includes the full name
+            of the member account. The value field contains the Amazon Web Services ID of the
+            member account.</para></li><li><para>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</para></li><li><para>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</para></li><li><para>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</para></li><li><para>PURCHASE_TYPE - The reservation type of the purchase that this usage is related to.
+            Examples include On-Demand Instances and Standard Reserved Instances.</para></li><li><para>RESERVATION_ID - The unique identifier for an Amazon Web Services Reservation Instance.</para></li><li><para>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</para></li><li><para>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute).</para></li><li><para>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</para></li><li><para>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</para></li><li><para>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response
+            for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples
+            include GB and Hrs.</para></li><li><para>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch
+            – Alarms. The response for this operation includes a unit attribute.</para></li><li><para>REGION - The Amazon Web Services Region.</para></li><li><para>RECORD_TYPE - The different types of charges such as Reserved Instance (RI) fees,
+            usage costs, tax refunds, and credits.</para></li><li><para>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature
+            only available for last 14 days for EC2-Compute Service.</para></li></ul><para>If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions
+            for searching:</para><ul><li><para>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</para></li><li><para>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</para></li><li><para>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid
+            values are <code>SingleAZ</code> and <code>MultiAZ</code>.</para></li><li><para>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</para></li><li><para>LINKED_ACCOUNT - The description in the attribute map that includes the full name
+            of the member account. The value field contains the Amazon Web Services ID of the
+            member account.</para></li><li><para>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</para></li><li><para>REGION - The Amazon Web Services Region.</para></li><li><para>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional
+            or a single Availability Zone.</para></li><li><para>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</para></li><li><para>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</para></li></ul><para>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions
+            for searching:</para><ul><li><para>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</para></li><li><para>PAYMENT_OPTION - The payment option for the given Savings Plans (for example, All
+            Upfront)</para></li><li><para>REGION - The Amazon Web Services Region.</para></li><li><para>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</para></li><li><para>LINKED_ACCOUNT - The description in the attribute map that includes the full name
+            of the member account. The value field contains the Amazon Web Services ID of the
+            member account.</para></li><li><para>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plans.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEDimensionValueCmdlet.Dimension">
+            <summary>
+            <para>
+            <para>The name of the dimension. Each <code>Dimension</code> is available for a different
+            <code>Context</code>. For more information, see <code>Context</code>. <code>LINK_ACCOUNT_NAME</code>
+            and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEDimensionValueCmdlet.Filter">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEDimensionValueCmdlet.SearchString">
+            <summary>
+            <para>
+            <para>The value that you want to search the filter values for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEDimensionValueCmdlet.SortBy">
+            <summary>
+            <para>
+            <para>The value that you want to sort the data by.</para><para>The key represents cost and usage metrics. The following values are supported:</para><ul><li><para><code>BlendedCost</code></para></li><li><para><code>UnblendedCost</code></para></li><li><para><code>AmortizedCost</code></para></li><li><para><code>NetAmortizedCost</code></para></li><li><para><code>NetUnblendedCost</code></para></li><li><para><code>UsageQuantity</code></para></li><li><para><code>NormalizedUsageAmount</code></para></li></ul><para>The supported values for the <code>SortOrder</code> key are <code>ASCENDING</code>
+            or <code>DESCENDING</code>.</para><para>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>.
+            Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code>
+            aren't supported.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEDimensionValueCmdlet.TimePeriod">
+            <summary>
+            <para>
+            <para>The start date and end date for retrieving the dimension values. The start date is
+            inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code>
+            and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved
+            from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
+            <code>2017-05-01</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEDimensionValueCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>This field is only used when SortBy is provided in the request. The maximum number
+            of objects that are returned for this request. If MaxResults isn't specified with
+            SortBy, the request returns 1000 results as the default value for this parameter.</para><para>For <code>GetDimensionValues</code>, MaxResults has an upper limit of 1000.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEDimensionValueCmdlet.NextPageToken">
+            <summary>
+            <para>
+            <para>The token to retrieve the next set of results. Amazon Web Services provides the token
+            when the response from a previous call has more results than the maximum page size.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In the AWS.Tools.CostExplorer module, this parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextPageToken $null' for the first call and '-NextPageToken $AWSHistory.LastServiceResponse.NextPageToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEDimensionValueCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.GetDimensionValuesResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.GetDimensionValuesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEDimensionValueCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TimePeriod parameter.
+            The -PassThru parameter is deprecated, use -Select '^TimePeriod' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEDimensionValueCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextPageToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.GetCEReservationCoverageCmdlet">
+            <summary>
+            Retrieves the reservation coverage for your account, which you can use to see how
+            much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon Relational Database
+            Service, or Amazon Redshift usage is covered by a reservation. An organization's management
+            account can see the coverage of the associated member accounts. This supports dimensions,
+            Cost Categories, and nested expressions. For any time period, you can filter data
+            about reservation usage by the following dimensions:
+            
+             <ul><li><para>
+            AZ
+            </para></li><li><para>
+            CACHE_ENGINE
+            </para></li><li><para>
+            DATABASE_ENGINE
+            </para></li><li><para>
+            DEPLOYMENT_OPTION
+            </para></li><li><para>
+            INSTANCE_TYPE
+            </para></li><li><para>
+            LINKED_ACCOUNT
+            </para></li><li><para>
+            OPERATING_SYSTEM
+            </para></li><li><para>
+            PLATFORM
+            </para></li><li><para>
+            REGION
+            </para></li><li><para>
+            SERVICE
+            </para></li><li><para>
+            TAG
+            </para></li><li><para>
+            TENANCY
+            </para></li></ul><para>
+            To determine valid values for a dimension, use the <code>GetDimensionValues</code>
+            operation. 
+            </para><br/><br/>In the AWS.Tools.CostExplorer module, this cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationCoverageCmdlet.Filter">
+            <summary>
+            <para>
+            <para>Filters utilization data by dimensions. You can filter by the following dimensions:</para><ul><li><para>AZ</para></li><li><para>CACHE_ENGINE</para></li><li><para>DATABASE_ENGINE</para></li><li><para>DEPLOYMENT_OPTION</para></li><li><para>INSTANCE_TYPE</para></li><li><para>LINKED_ACCOUNT</para></li><li><para>OPERATING_SYSTEM</para></li><li><para>PLATFORM</para></li><li><para>REGION</para></li><li><para>SERVICE</para></li><li><para>TAG</para></li><li><para>TENANCY</para></li></ul><para><code>GetReservationCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+            object as the other operations, but only <code>AND</code> is supported among each
+            dimension. You can nest only one level deep. If there are multiple values for a dimension,
+            they are OR'd together.</para><para>If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</para><para>Cost category is also supported.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationCoverageCmdlet.Granularity">
+            <summary>
+            <para>
+            <para>The granularity of the Amazon Web Services cost data for the reservation. Valid values
+            are <code>MONTHLY</code> and <code>DAILY</code>.</para><para>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code>
+            isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code>
+            or <code>DAILY</code>.</para><para>The <code>GetReservationCoverage</code> operation supports only <code>DAILY</code>
+            and <code>MONTHLY</code> granularities.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationCoverageCmdlet.GroupBy">
+            <summary>
+            <para>
+            <para>You can group the data by the following attributes:</para><ul><li><para>AZ</para></li><li><para>CACHE_ENGINE</para></li><li><para>DATABASE_ENGINE</para></li><li><para>DEPLOYMENT_OPTION</para></li><li><para>INSTANCE_TYPE</para></li><li><para>INVOICING_ENTITY</para></li><li><para>LINKED_ACCOUNT</para></li><li><para>OPERATING_SYSTEM</para></li><li><para>PLATFORM</para></li><li><para>REGION</para></li><li><para>TENANCY</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationCoverageCmdlet.SortBy_Key">
+            <summary>
+            <para>
+            <para>The key that's used to sort the data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationCoverageCmdlet.Metric">
+            <summary>
+            <para>
+            <para>The measurement that you want your reservation coverage reported in.</para><para>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>. You
+            can use multiple values in a request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationCoverageCmdlet.SortBy_SortOrder">
+            <summary>
+            <para>
+            <para>The order that's used to sort the data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationCoverageCmdlet.TimePeriod">
+            <summary>
+            <para>
+            <para>The start and end dates of the period that you want to retrieve data about reservation
+            coverage for. You can retrieve data for a maximum of 13 months: the last 12 months
+            and the current month. The start date is inclusive, but the end date is exclusive.
+            For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
+            is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code>
+            up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationCoverageCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of objects that you returned for this request. If more objects
+            are available, in the response, Amazon Web Services provides a NextPageToken value
+            that you can use in a subsequent call to get the next batch of objects.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationCoverageCmdlet.NextPageToken">
+            <summary>
+            <para>
+            <para>The token to retrieve the next set of results. Amazon Web Services provides the token
+            when the response from a previous call has more results than the maximum page size.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In the AWS.Tools.CostExplorer module, this parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextPageToken $null' for the first call and '-NextPageToken $AWSHistory.LastServiceResponse.NextPageToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationCoverageCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.GetReservationCoverageResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.GetReservationCoverageResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationCoverageCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextPageToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.GetCEReservationPurchaseRecommendationCmdlet">
+            <summary>
+            Gets recommendations for reservation purchases. These recommendations might help you
+            to reduce your costs. Reservations provide a discounted hourly rate (up to 75%) compared
+            to On-Demand pricing.
+            
+             
+            <para>
+            Amazon Web Services generates your recommendations by identifying your On-Demand usage
+            during a specific time period and collecting your usage into categories that are eligible
+            for a reservation. After Amazon Web Services has these categories, it simulates every
+            combination of reservations in each category of usage to identify the best number
+            of each type of Reserved Instance (RI) to purchase to maximize your estimated savings.
+            
+            </para><para>
+            For example, Amazon Web Services automatically aggregates your Amazon EC2 Linux, shared
+            tenancy, and c4 family usage in the US West (Oregon) Region and recommends that you
+            buy size-flexible regional reservations to apply to the c4 family usage. Amazon Web
+            Services recommends the smallest size instance in an instance family. This makes it
+            easier to purchase a size-flexible Reserved Instance (RI). Amazon Web Services also
+            shows the equal number of normalized units. This way, you can purchase any instance
+            size that you want. For this example, your RI recommendation is for <code>c4.large</code>
+            because that is the smallest size instance in the c4 instance family.
+            </para><br/><br/>In the AWS.Tools.CostExplorer module, this cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationPurchaseRecommendationCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The account ID that's associated with the recommendation. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationPurchaseRecommendationCmdlet.AccountScope">
+            <summary>
+            <para>
+            <para>The account scope that you want your recommendations for. Amazon Web Services calculates
+            recommendations including the management account and member accounts if the value
+            is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations
+            are calculated for individual member accounts only.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationPurchaseRecommendationCmdlet.Filter">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationPurchaseRecommendationCmdlet.LookbackPeriodInDay">
+            <summary>
+            <para>
+            <para>The number of previous days that you want Amazon Web Services to consider when it
+            calculates your recommendations.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationPurchaseRecommendationCmdlet.EC2Specification_OfferingClass">
+            <summary>
+            <para>
+            <para>Indicates whether you want a recommendation for standard or convertible reservations.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationPurchaseRecommendationCmdlet.PaymentOption">
+            <summary>
+            <para>
+            <para>The reservation purchase option that you want recommendations for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationPurchaseRecommendationCmdlet.Service">
+            <summary>
+            <para>
+            <para>The specific service that you want recommendations for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationPurchaseRecommendationCmdlet.TermInYear">
+            <summary>
+            <para>
+            <para>The reservation term that you want recommendations for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationPurchaseRecommendationCmdlet.NextPageToken">
+            <summary>
+            <para>
+            <para>The pagination token that indicates the next set of results that you want to retrieve.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In the AWS.Tools.CostExplorer module, this parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextPageToken $null' for the first call and '-NextPageToken $AWSHistory.LastServiceResponse.NextPageToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationPurchaseRecommendationCmdlet.PageSize">
+            <summary>
+            <para>
+            <para>The number of recommendations that you want returned in a single response object.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationPurchaseRecommendationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.GetReservationPurchaseRecommendationResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.GetReservationPurchaseRecommendationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationPurchaseRecommendationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Service parameter.
+            The -PassThru parameter is deprecated, use -Select '^Service' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationPurchaseRecommendationCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextPageToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.GetCEReservationUtilizationCmdlet">
+            <summary>
+            Retrieves the reservation utilization for your account. Management account in an organization
+            have access to member accounts. You can filter data by dimensions in a time period.
+            You can use <code>GetDimensionValues</code> to determine the possible dimension values.
+            Currently, you can group only by <code>SUBSCRIPTION_ID</code>.<br/><br/>In the AWS.Tools.CostExplorer module, this cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationUtilizationCmdlet.Filter">
+            <summary>
+            <para>
+            <para>Filters utilization data by dimensions. You can filter by the following dimensions:</para><ul><li><para>AZ</para></li><li><para>CACHE_ENGINE</para></li><li><para>DEPLOYMENT_OPTION</para></li><li><para>INSTANCE_TYPE</para></li><li><para>LINKED_ACCOUNT</para></li><li><para>OPERATING_SYSTEM</para></li><li><para>PLATFORM</para></li><li><para>REGION</para></li><li><para>SERVICE</para></li><li><para>SCOPE</para></li><li><para>TENANCY</para></li></ul><para><code>GetReservationUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+            object as the other operations, but only <code>AND</code> is supported among each
+            dimension, and nesting is supported up to only one level deep. If there are multiple
+            values for a dimension, they are OR'd together.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationUtilizationCmdlet.Granularity">
+            <summary>
+            <para>
+            <para>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code>
+            isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code>
+            or <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't
+            set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</para><para>The <code>GetReservationUtilization</code> operation supports only <code>DAILY</code>
+            and <code>MONTHLY</code> granularities.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationUtilizationCmdlet.GroupBy">
+            <summary>
+            <para>
+            <para>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationUtilizationCmdlet.SortBy_Key">
+            <summary>
+            <para>
+            <para>The key that's used to sort the data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationUtilizationCmdlet.SortBy_SortOrder">
+            <summary>
+            <para>
+            <para>The order that's used to sort the data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationUtilizationCmdlet.TimePeriod">
+            <summary>
+            <para>
+            <para>Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The
+            start date is inclusive, but the end date is exclusive. For example, if <code>start</code>
+            is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the
+            cost and usage data is retrieved from <code>2017-01-01</code> up to and including
+            <code>2017-04-30</code> but not including <code>2017-05-01</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationUtilizationCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of objects that you returned for this request. If more objects
+            are available, in the response, Amazon Web Services provides a NextPageToken value
+            that you can use in a subsequent call to get the next batch of objects.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationUtilizationCmdlet.NextPageToken">
+            <summary>
+            <para>
+            <para>The token to retrieve the next set of results. Amazon Web Services provides the token
+            when the response from a previous call has more results than the maximum page size.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In the AWS.Tools.CostExplorer module, this parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextPageToken $null' for the first call and '-NextPageToken $AWSHistory.LastServiceResponse.NextPageToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationUtilizationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.GetReservationUtilizationResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.GetReservationUtilizationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationUtilizationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TimePeriod parameter.
+            The -PassThru parameter is deprecated, use -Select '^TimePeriod' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEReservationUtilizationCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextPageToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.GetCEResourceTagCmdlet">
+            <summary>
+            Returns a list of resource tags associated with the resource specified by the Amazon
+            Resource Name (ARN).
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource. For a list of supported resources,
+            see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ResourceTags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.GetCERightsizingRecommendationCmdlet">
+            <summary>
+            Creates recommendations that help you save cost by identifying idle and underutilized
+            Amazon EC2 instances.
+            
+             
+            <para>
+            Recommendations are generated to either downsize or terminate instances, along with
+            providing savings detail and metrics. For more information about calculation and function,
+            see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing
+            Your Cost with Rightsizing Recommendations</a> in the <i>Billing and Cost Management
+            User Guide</i>.
+            </para><br/><br/>In the AWS.Tools.CostExplorer module, this cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCERightsizingRecommendationCmdlet.Configuration_BenefitsConsidered">
+            <summary>
+            <para>
+            <para>The option to consider RI or Savings Plans discount benefits in your savings calculation.
+            The default value is <code>TRUE</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCERightsizingRecommendationCmdlet.Filter">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCERightsizingRecommendationCmdlet.Configuration_RecommendationTarget">
+            <summary>
+            <para>
+            <para>The option to see recommendations within the same instance family or recommendations
+            for instances across other families. The default value is <code>SAME_INSTANCE_FAMILY</code>.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCERightsizingRecommendationCmdlet.Service">
+            <summary>
+            <para>
+            <para>The specific service that you want recommendations for. The only valid value for <code>GetRightsizingRecommendation</code>
+            is "<code>AmazonEC2</code>".</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCERightsizingRecommendationCmdlet.NextPageToken">
+            <summary>
+            <para>
+            <para>The pagination token that indicates the next set of results that you want to retrieve.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In the AWS.Tools.CostExplorer module, this parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextPageToken $null' for the first call and '-NextPageToken $AWSHistory.LastServiceResponse.NextPageToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCERightsizingRecommendationCmdlet.PageSize">
+            <summary>
+            <para>
+            <para>The number of recommendations that you want returned in a single response object.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCERightsizingRecommendationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.GetRightsizingRecommendationResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.GetRightsizingRecommendationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCERightsizingRecommendationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Service parameter.
+            The -PassThru parameter is deprecated, use -Select '^Service' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCERightsizingRecommendationCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextPageToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansCoverageCmdlet">
+            <summary>
+            Retrieves the Savings Plans covered for your account. This enables you to see how
+            much of your cost is covered by a Savings Plan. An organization’s management account
+            can see the coverage of the associated member accounts. This supports dimensions,
+            Cost Categories, and nested expressions. For any time period, you can filter data
+            for Savings Plans usage with the following dimensions:
+            
+             <ul><li><para><code>LINKED_ACCOUNT</code></para></li><li><para><code>REGION</code></para></li><li><para><code>SERVICE</code></para></li><li><para><code>INSTANCE_FAMILY</code></para></li></ul><para>
+            To determine valid values for a dimension, use the <code>GetDimensionValues</code>
+            operation.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansCoverageCmdlet.Filter">
+            <summary>
+            <para>
+            <para>Filters Savings Plans coverage data by dimensions. You can filter data for Savings
+            Plans usage with the following dimensions:</para><ul><li><para><code>LINKED_ACCOUNT</code></para></li><li><para><code>REGION</code></para></li><li><para><code>SERVICE</code></para></li><li><para><code>INSTANCE_FAMILY</code></para></li></ul><para><code>GetSavingsPlansCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+            object as the other operations, but only <code>AND</code> is supported among each
+            dimension. If there are multiple values for a dimension, they are OR'd together.</para><para>Cost category is also supported.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansCoverageCmdlet.Granularity">
+            <summary>
+            <para>
+            <para>The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code>
+            can't be set if <code>GroupBy</code> is set.</para><para>The <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code>
+            and <code>MONTHLY</code> granularities.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansCoverageCmdlet.GroupBy">
+            <summary>
+            <para>
+            <para>You can group the data using the attributes <code>INSTANCE_FAMILY</code>, <code>REGION</code>,
+            or <code>SERVICE</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansCoverageCmdlet.SortBy_Key">
+            <summary>
+            <para>
+            <para>The key that's used to sort the data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansCoverageCmdlet.Metric">
+            <summary>
+            <para>
+            <para>The measurement that you want your Savings Plans coverage reported in. The only valid
+            value is <code>SpendCoveredBySavingsPlans</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansCoverageCmdlet.SortBy_SortOrder">
+            <summary>
+            <para>
+            <para>The order that's used to sort the data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansCoverageCmdlet.TimePeriod">
+            <summary>
+            <para>
+            <para>The time period that you want the usage and costs for. The <code>Start</code> date
+            must be within 13 months. The <code>End</code> date must be after the <code>Start</code>
+            date, and before the current date. Future dates can't be used as an <code>End</code>
+            date.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansCoverageCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The number of items to be returned in a response. The default is <code>20</code>,
+            with a minimum value of <code>1</code>.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansCoverageCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to retrieve the next set of results. Amazon Web Services provides the token
+            when the response from a previous call has more results than the maximum page size.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansCoverageCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SavingsPlansCoverages'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.GetSavingsPlansCoverageResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.GetSavingsPlansCoverageResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansCoverageCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TimePeriod parameter.
+            The -PassThru parameter is deprecated, use -Select '^TimePeriod' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansCoverageCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansPurchaseRecommendationCmdlet">
+            <summary>
+            Retrieves your request parameters, Savings Plan Recommendations Summary and Details.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansPurchaseRecommendationCmdlet.AccountScope">
+            <summary>
+            <para>
+            <para>The account scope that you want your recommendations for. Amazon Web Services calculates
+            recommendations including the management account and member accounts if the value
+            is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations
+            are calculated for individual member accounts only.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansPurchaseRecommendationCmdlet.Filter">
+            <summary>
+            <para>
+            <para>You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code>
+            dimension. To filter your recommendations by Account ID, specify <code>Key</code>
+            as <code>LINKED_ACCOUNT</code> and <code>Value</code> as the comma-separated Acount
+            ID(s) that you want to see Savings Plans purchase recommendations for.</para><para>For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> doesn't include
+            <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>.
+            With <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code>
+            and <code>Value</code> can be a single Account ID or multiple comma-separated Account
+            IDs that you want to see Savings Plans Purchase Recommendations for. <code>AND</code>
+            and <code>OR</code> operators are not supported.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansPurchaseRecommendationCmdlet.LookbackPeriodInDay">
+            <summary>
+            <para>
+            <para>The lookback period that's used to generate the recommendation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansPurchaseRecommendationCmdlet.PaymentOption">
+            <summary>
+            <para>
+            <para>The payment option that's used to generate these recommendations.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansPurchaseRecommendationCmdlet.SavingsPlansType">
+            <summary>
+            <para>
+            <para>The Savings Plans recommendation type that's requested.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansPurchaseRecommendationCmdlet.TermInYear">
+            <summary>
+            <para>
+            <para>The savings plan recommendation term that's used to generate these recommendations.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansPurchaseRecommendationCmdlet.NextPageToken">
+            <summary>
+            <para>
+            <para>The token to retrieve the next set of results. Amazon Web Services provides the token
+            when the response from a previous call has more results than the maximum page size.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextPageToken $null' for the first call and '-NextPageToken $AWSHistory.LastServiceResponse.NextPageToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansPurchaseRecommendationCmdlet.PageSize">
+            <summary>
+            <para>
+            <para>The number of recommendations that you want returned in a single response object.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansPurchaseRecommendationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.GetSavingsPlansPurchaseRecommendationResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.GetSavingsPlansPurchaseRecommendationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansPurchaseRecommendationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PaymentOption parameter.
+            The -PassThru parameter is deprecated, use -Select '^PaymentOption' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansPurchaseRecommendationCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextPageToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansUtilizationCmdlet">
+            <summary>
+            Retrieves the Savings Plans utilization for your account across date ranges with daily
+            or monthly granularity. Management account in an organization have access to member
+            accounts. You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code>
+            to determine the possible dimension values.
+            
+             <note><para>
+            You can't group by any dimension values for <code>GetSavingsPlansUtilization</code>.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansUtilizationCmdlet.Filter">
+            <summary>
+            <para>
+            <para>Filters Savings Plans utilization coverage data for active Savings Plans dimensions.
+            You can filter data with the following dimensions:</para><ul><li><para><code>LINKED_ACCOUNT</code></para></li><li><para><code>SAVINGS_PLAN_ARN</code></para></li><li><para><code>SAVINGS_PLANS_TYPE</code></para></li><li><para><code>REGION</code></para></li><li><para><code>PAYMENT_OPTION</code></para></li><li><para><code>INSTANCE_TYPE_FAMILY</code></para></li></ul><para><code>GetSavingsPlansUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+            object as the other operations, but only <code>AND</code> is supported among each
+            dimension.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansUtilizationCmdlet.Granularity">
+            <summary>
+            <para>
+            <para>The granularity of the Amazon Web Services utillization data for your Savings Plans.</para><para>The <code>GetSavingsPlansUtilization</code> operation supports only <code>DAILY</code>
+            and <code>MONTHLY</code> granularities.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansUtilizationCmdlet.SortBy_Key">
+            <summary>
+            <para>
+            <para>The key that's used to sort the data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansUtilizationCmdlet.SortBy_SortOrder">
+            <summary>
+            <para>
+            <para>The order that's used to sort the data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansUtilizationCmdlet.TimePeriod">
+            <summary>
+            <para>
+            <para>The time period that you want the usage and costs for. The <code>Start</code> date
+            must be within 13 months. The <code>End</code> date must be after the <code>Start</code>
+            date, and before the current date. Future dates can't be used as an <code>End</code>
+            date.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansUtilizationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.GetSavingsPlansUtilizationResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.GetSavingsPlansUtilizationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansUtilizationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TimePeriod parameter.
+            The -PassThru parameter is deprecated, use -Select '^TimePeriod' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansUtilizationDetailCmdlet">
+            <summary>
+            Retrieves attribute data along with aggregate utilization and savings data for a given
+            time period. This doesn't support granular or grouped data (daily/monthly) in response.
+            You can't retrieve data by dates in a single response similar to <code>GetSavingsPlanUtilization</code>,
+            but you have the option to make multiple calls to <code>GetSavingsPlanUtilizationDetails</code>
+            by providing individual dates. You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code>
+            to determine the possible dimension values.
+            
+             <note><para><code>GetSavingsPlanUtilizationDetails</code> internally groups data by <code>SavingsPlansArn</code>.
+            </para></note><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansUtilizationDetailCmdlet.DataType">
+            <summary>
+            <para>
+            <para>The data type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansUtilizationDetailCmdlet.Filter">
+            <summary>
+            <para>
+            <para>Filters Savings Plans utilization coverage data for active Savings Plans dimensions.
+            You can filter data with the following dimensions:</para><ul><li><para><code>LINKED_ACCOUNT</code></para></li><li><para><code>SAVINGS_PLAN_ARN</code></para></li><li><para><code>REGION</code></para></li><li><para><code>PAYMENT_OPTION</code></para></li><li><para><code>INSTANCE_TYPE_FAMILY</code></para></li></ul><para><code>GetSavingsPlansUtilizationDetails</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+            object as the other operations, but only <code>AND</code> is supported among each
+            dimension.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansUtilizationDetailCmdlet.SortBy_Key">
+            <summary>
+            <para>
+            <para>The key that's used to sort the data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansUtilizationDetailCmdlet.SortBy_SortOrder">
+            <summary>
+            <para>
+            <para>The order that's used to sort the data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansUtilizationDetailCmdlet.TimePeriod">
+            <summary>
+            <para>
+            <para>The time period that you want the usage and costs for. The <code>Start</code> date
+            must be within 13 months. The <code>End</code> date must be after the <code>Start</code>
+            date, and before the current date. Future dates can't be used as an <code>End</code>
+            date.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansUtilizationDetailCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The number of items to be returned in a response. The default is <code>20</code>,
+            with a minimum value of <code>1</code>.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansUtilizationDetailCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to retrieve the next set of results. Amazon Web Services provides the token
+            when the response from a previous call has more results than the maximum page size.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansUtilizationDetailCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SavingsPlansUtilizationDetails'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.GetSavingsPlansUtilizationDetailsResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.GetSavingsPlansUtilizationDetailsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCESavingsPlansUtilizationDetailCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.GetCETagCmdlet">
+            <summary>
+            Queries for available tag keys and tag values for a specified period. You can search
+            the tag values for an arbitrary string.<br/><br/>In the AWS.Tools.CostExplorer module, this cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCETagCmdlet.Filter">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCETagCmdlet.SearchString">
+            <summary>
+            <para>
+            <para>The value that you want to search for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCETagCmdlet.SortBy">
+            <summary>
+            <para>
+            <para>The value that you want to sort the data by.</para><para>The key represents cost and usage metrics. The following values are supported:</para><ul><li><para><code>BlendedCost</code></para></li><li><para><code>UnblendedCost</code></para></li><li><para><code>AmortizedCost</code></para></li><li><para><code>NetAmortizedCost</code></para></li><li><para><code>NetUnblendedCost</code></para></li><li><para><code>UsageQuantity</code></para></li><li><para><code>NormalizedUsageAmount</code></para></li></ul><para>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</para><para>When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code>
+            aren't supported.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCETagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>The key of the tag that you want to return values for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCETagCmdlet.TimePeriod">
+            <summary>
+            <para>
+            <para>The start and end dates for retrieving the dimension values. The start date is inclusive,
+            but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code>
+            and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved
+            from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
+            <code>2017-05-01</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCETagCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>This field is only used when SortBy is provided in the request. The maximum number
+            of objects that are returned for this request. If MaxResults isn't specified with
+            SortBy, the request returns 1000 results as the default value for this parameter.</para><para>For <code>GetTags</code>, MaxResults has an upper quota of 1000.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCETagCmdlet.NextPageToken">
+            <summary>
+            <para>
+            <para>The token to retrieve the next set of results. Amazon Web Services provides the token
+            when the response from a previous call has more results than the maximum page size.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In the AWS.Tools.CostExplorer module, this parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextPageToken $null' for the first call and '-NextPageToken $AWSHistory.LastServiceResponse.NextPageToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCETagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.GetTagsResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.GetTagsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCETagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TimePeriod parameter.
+            The -PassThru parameter is deprecated, use -Select '^TimePeriod' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCETagCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextPageToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.GetCEUsageForecastCmdlet">
+            <summary>
+            Retrieves a forecast for how much Amazon Web Services predicts that you will use over
+            the forecast time period that you select, based on your past usage.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEUsageForecastCmdlet.Filter">
+            <summary>
+            <para>
+            <para>The filters that you want to use to filter your forecast. The <code>GetUsageForecast</code>
+            API supports filtering by the following dimensions:</para><ul><li><para><code>AZ</code></para></li><li><para><code>INSTANCE_TYPE</code></para></li><li><para><code>LINKED_ACCOUNT</code></para></li><li><para><code>LINKED_ACCOUNT_NAME</code></para></li><li><para><code>OPERATION</code></para></li><li><para><code>PURCHASE_TYPE</code></para></li><li><para><code>REGION</code></para></li><li><para><code>SERVICE</code></para></li><li><para><code>USAGE_TYPE</code></para></li><li><para><code>USAGE_TYPE_GROUP</code></para></li><li><para><code>RECORD_TYPE</code></para></li><li><para><code>OPERATING_SYSTEM</code></para></li><li><para><code>TENANCY</code></para></li><li><para><code>SCOPE</code></para></li><li><para><code>PLATFORM</code></para></li><li><para><code>SUBSCRIPTION_ID</code></para></li><li><para><code>LEGAL_ENTITY_NAME</code></para></li><li><para><code>DEPLOYMENT_OPTION</code></para></li><li><para><code>DATABASE_ENGINE</code></para></li><li><para><code>INSTANCE_TYPE_FAMILY</code></para></li><li><para><code>BILLING_ENTITY</code></para></li><li><para><code>RESERVATION_ID</code></para></li><li><para><code>SAVINGS_PLAN_ARN</code></para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEUsageForecastCmdlet.Granularity">
+            <summary>
+            <para>
+            <para>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code>
+            forecasts or 12 months of <code>MONTHLY</code> forecasts.</para><para>The <code>GetUsageForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
+            granularities.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEUsageForecastCmdlet.Metric">
+            <summary>
+            <para>
+            <para>Which metric Cost Explorer uses to create your forecast.</para><para>Valid values for a <code>GetUsageForecast</code> call are the following:</para><ul><li><para>USAGE_QUANTITY</para></li><li><para>NORMALIZED_USAGE_AMOUNT</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEUsageForecastCmdlet.PredictionIntervalLevel">
+            <summary>
+            <para>
+            <para>Amazon Web Services Cost Explorer always returns the mean forecast as a single point.
+            You can request a prediction interval around the mean by specifying a confidence level.
+            The higher the confidence level, the more confident Cost Explorer is about the actual
+            value falling in the prediction interval. Higher confidence levels result in wider
+            prediction intervals.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEUsageForecastCmdlet.TimePeriod">
+            <summary>
+            <para>
+            <para>The start and end dates of the period that you want to retrieve usage forecast for.
+            The start date is included in the period, but the end date isn't included in the period.
+            For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
+            is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code>
+            up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
+            The start date must be equal to or later than the current date to avoid a validation
+            error.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEUsageForecastCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.GetUsageForecastResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.GetUsageForecastResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.GetCEUsageForecastCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Metric parameter.
+            The -PassThru parameter is deprecated, use -Select '^Metric' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.NewCEAnomalyMonitorCmdlet">
+            <summary>
+            Creates a new cost anomaly detection monitor with the requested type and monitor specification.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCEAnomalyMonitorCmdlet.AnomalyMonitor_CreationDate">
+            <summary>
+            <para>
+            <para>The date when the monitor was created. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCEAnomalyMonitorCmdlet.AnomalyMonitor_DimensionalValueCount">
+            <summary>
+            <para>
+            <para>The value for evaluated dimensions. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCEAnomalyMonitorCmdlet.AnomalyMonitor_LastEvaluatedDate">
+            <summary>
+            <para>
+            <para>The date when the monitor last evaluated for anomalies. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCEAnomalyMonitorCmdlet.AnomalyMonitor_LastUpdatedDate">
+            <summary>
+            <para>
+            <para>The date when the monitor was last updated. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCEAnomalyMonitorCmdlet.AnomalyMonitor_MonitorArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) value. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCEAnomalyMonitorCmdlet.AnomalyMonitor_MonitorDimension">
+            <summary>
+            <para>
+            <para>The dimensions to evaluate. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCEAnomalyMonitorCmdlet.AnomalyMonitor_MonitorName">
+            <summary>
+            <para>
+            <para>The name of the monitor. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCEAnomalyMonitorCmdlet.AnomalyMonitor_MonitorSpecification">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCEAnomalyMonitorCmdlet.AnomalyMonitor_MonitorType">
+            <summary>
+            <para>
+            <para>The possible type values. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCEAnomalyMonitorCmdlet.ResourceTag">
+            <summary>
+            <para>
+            <para>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html"><code>AnomalyMonitor</code></a>. You can use resource tags to control access to your
+            <code>monitor</code> using IAM policies.</para><para>Each tag consists of a key and a value, and each key must be unique for the resource.
+            The following restrictions apply to resource tags:</para><ul><li><para>Although the maximum number of array members is 200, you can assign a maximum of 50
+            user-tags to one resource. The remaining are reserved for Amazon Web Services use</para></li><li><para>The maximum length of a key is 128 characters</para></li><li><para>The maximum length of a value is 256 characters</para></li><li><para>Keys and values can only contain alphanumeric characters, spaces, and any of the following:
+            <code>_.:/=+@-</code></para></li><li><para>Keys and values are case sensitive</para></li><li><para>Keys and values are trimmed for any leading or trailing whitespaces</para></li><li><para>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for
+            Amazon Web Services use</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCEAnomalyMonitorCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'MonitorArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.CreateAnomalyMonitorResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.CreateAnomalyMonitorResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCEAnomalyMonitorCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.NewCEAnomalySubscriptionCmdlet">
+            <summary>
+            Adds a subscription to a cost anomaly detection monitor. You can use each subscription
+            to define subscribers with email or SNS notifications. Email subscribers can set a
+            dollar threshold and a time frequency for receiving notifications.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCEAnomalySubscriptionCmdlet.AnomalySubscription_AccountId">
+            <summary>
+            <para>
+            <para>Your unique account identifier. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCEAnomalySubscriptionCmdlet.AnomalySubscription_Frequency">
+            <summary>
+            <para>
+            <para>The frequency that anomaly reports are sent over email. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCEAnomalySubscriptionCmdlet.AnomalySubscription_MonitorArnList">
+            <summary>
+            <para>
+            <para>A list of cost anomaly monitors. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCEAnomalySubscriptionCmdlet.ResourceTag">
+            <summary>
+            <para>
+            <para>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"><code>AnomalySubscription</code></a>. You can use resource tags to control access
+            to your <code>subscription</code> using IAM policies.</para><para>Each tag consists of a key and a value, and each key must be unique for the resource.
+            The following restrictions apply to resource tags:</para><ul><li><para>Although the maximum number of array members is 200, you can assign a maximum of 50
+            user-tags to one resource. The remaining are reserved for Amazon Web Services use</para></li><li><para>The maximum length of a key is 128 characters</para></li><li><para>The maximum length of a value is 256 characters</para></li><li><para>Keys and values can only contain alphanumeric characters, spaces, and any of the following:
+            <code>_.:/=+@-</code></para></li><li><para>Keys and values are case sensitive</para></li><li><para>Keys and values are trimmed for any leading or trailing whitespaces</para></li><li><para>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for
+            Amazon Web Services use</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCEAnomalySubscriptionCmdlet.AnomalySubscription_Subscriber">
+            <summary>
+            <para>
+            <para>A list of subscribers to notify. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCEAnomalySubscriptionCmdlet.AnomalySubscription_SubscriptionArn">
+            <summary>
+            <para>
+            <para>The <code>AnomalySubscription</code> Amazon Resource Name (ARN). </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCEAnomalySubscriptionCmdlet.AnomalySubscription_SubscriptionName">
+            <summary>
+            <para>
+            <para>The name for the subscription. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCEAnomalySubscriptionCmdlet.AnomalySubscription_Threshold">
+            <summary>
+            <para>
+            <para>The dollar value that triggers a notification if the threshold is exceeded. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCEAnomalySubscriptionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SubscriptionArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.CreateAnomalySubscriptionResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.CreateAnomalySubscriptionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCEAnomalySubscriptionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.NewCECostCategoryDefinitionCmdlet">
+            <summary>
+            Creates a new Cost Category with the requested name and rules.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCECostCategoryDefinitionCmdlet.DefaultValue">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCECostCategoryDefinitionCmdlet.EffectiveStart">
+            <summary>
+            <para>
+            <para>The Cost Category's effective start date. It can only be a billing start date (first
+            day of the month). If the date isn't provided, it's the first day of the current month.
+            Dates can't be before the previous twelve months, or in the future.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCECostCategoryDefinitionCmdlet.Name">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCECostCategoryDefinitionCmdlet.ResourceTag">
+            <summary>
+            <para>
+            <para>An optional list of tags to associate with the specified <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategory.html"><code>CostCategory</code></a>. You can use resource tags to control access to your
+            <code>cost category</code> using IAM policies.</para><para>Each tag consists of a key and a value, and each key must be unique for the resource.
+            The following restrictions apply to resource tags:</para><ul><li><para>Although the maximum number of array members is 200, you can assign a maximum of 50
+            user-tags to one resource. The remaining are reserved for Amazon Web Services use</para></li><li><para>The maximum length of a key is 128 characters</para></li><li><para>The maximum length of a value is 256 characters</para></li><li><para>Keys and values can only contain alphanumeric characters, spaces, and any of the following:
+            <code>_.:/=+@-</code></para></li><li><para>Keys and values are case sensitive</para></li><li><para>Keys and values are trimmed for any leading or trailing whitespaces</para></li><li><para>Don’t use <code>aws:</code> as a prefix for your keys. This prefix is reserved for
+            Amazon Web Services use</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCECostCategoryDefinitionCmdlet.Rule">
+            <summary>
+            <para>
+            <para>The Cost Category rules used to categorize costs. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCECostCategoryDefinitionCmdlet.RuleVersion">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCECostCategoryDefinitionCmdlet.SplitChargeRule">
+            <summary>
+            <para>
+            <para> The split charge rules used to allocate your charges between your Cost Category values.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCECostCategoryDefinitionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.CreateCostCategoryDefinitionResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.CreateCostCategoryDefinitionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCECostCategoryDefinitionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.NewCECostCategoryDefinitionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.RemoveCEAnomalyMonitorCmdlet">
+            <summary>
+            Deletes a cost anomaly monitor.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.RemoveCEAnomalyMonitorCmdlet.MonitorArn">
+            <summary>
+            <para>
+            <para>The unique identifier of the cost anomaly monitor that you want to delete. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.RemoveCEAnomalyMonitorCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.DeleteAnomalyMonitorResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.RemoveCEAnomalyMonitorCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the MonitorArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^MonitorArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.RemoveCEAnomalyMonitorCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.RemoveCEAnomalySubscriptionCmdlet">
+            <summary>
+            Deletes a cost anomaly subscription.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.RemoveCEAnomalySubscriptionCmdlet.SubscriptionArn">
+            <summary>
+            <para>
+            <para>The unique identifier of the cost anomaly subscription that you want to delete. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.RemoveCEAnomalySubscriptionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.DeleteAnomalySubscriptionResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.RemoveCEAnomalySubscriptionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SubscriptionArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^SubscriptionArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.RemoveCEAnomalySubscriptionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.RemoveCECostCategoryDefinitionCmdlet">
+            <summary>
+            Deletes a Cost Category. Expenses from this month going forward will no longer be
+            categorized with this Cost Category.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.RemoveCECostCategoryDefinitionCmdlet.CostCategoryArn">
+            <summary>
+            <para>
+            <para>The unique identifier for your Cost Category. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.RemoveCECostCategoryDefinitionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.DeleteCostCategoryDefinitionResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.DeleteCostCategoryDefinitionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.RemoveCECostCategoryDefinitionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the CostCategoryArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^CostCategoryArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.RemoveCECostCategoryDefinitionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.RemoveCEResourceTagCmdlet">
+            <summary>
+            Removes one or more tags from a resource. Specify only tag keys in your request. Don't
+            specify the value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.RemoveCEResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource. For a list of supported resources,
+            see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.RemoveCEResourceTagCmdlet.ResourceTagKey">
+            <summary>
+            <para>
+            <para>A list of tag keys associated with tags that need to be removed from the resource.
+            If you specify a tag key that doesn't exist, it's ignored. Although the maximum number
+            of array members is 200, user-tag maximum is 50. The remaining are reserved for Amazon
+            Web Services use. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.RemoveCEResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.RemoveCEResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.RemoveCEResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.SetCEAnomalyFeedbackCmdlet">
+            <summary>
+            Modifies the feedback property of a given cost anomaly.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.SetCEAnomalyFeedbackCmdlet.AnomalyId">
+            <summary>
+            <para>
+            <para>A cost anomaly ID. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.SetCEAnomalyFeedbackCmdlet.Feedback">
+            <summary>
+            <para>
+            <para>Describes whether the cost anomaly was a planned activity or you considered it an
+            anomaly. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.SetCEAnomalyFeedbackCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AnomalyId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.ProvideAnomalyFeedbackResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.ProvideAnomalyFeedbackResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.SetCEAnomalyFeedbackCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.UpdateCEAnomalyMonitorCmdlet">
+            <summary>
+            Updates an existing cost anomaly monitor. The changes made are applied going forward,
+            and doesn't change anomalies detected in the past.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCEAnomalyMonitorCmdlet.MonitorArn">
+            <summary>
+            <para>
+            <para>Cost anomaly monitor Amazon Resource Names (ARNs). </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCEAnomalyMonitorCmdlet.MonitorName">
+            <summary>
+            <para>
+            <para>The new name for the cost anomaly monitor. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCEAnomalyMonitorCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'MonitorArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.UpdateAnomalyMonitorResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.UpdateAnomalyMonitorResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCEAnomalyMonitorCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the MonitorArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^MonitorArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCEAnomalyMonitorCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.UpdateCEAnomalySubscriptionCmdlet">
+            <summary>
+            Updates an existing cost anomaly monitor subscription.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCEAnomalySubscriptionCmdlet.Frequency">
+            <summary>
+            <para>
+            <para>The update to the frequency value that subscribers receive notifications. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCEAnomalySubscriptionCmdlet.MonitorArnList">
+            <summary>
+            <para>
+            <para>A list of cost anomaly monitor ARNs. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCEAnomalySubscriptionCmdlet.Subscriber">
+            <summary>
+            <para>
+            <para>The update to the subscriber list. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCEAnomalySubscriptionCmdlet.SubscriptionArn">
+            <summary>
+            <para>
+            <para>A cost anomaly subscription Amazon Resource Name (ARN). </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCEAnomalySubscriptionCmdlet.SubscriptionName">
+            <summary>
+            <para>
+            <para>The new name of the subscription. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCEAnomalySubscriptionCmdlet.Threshold">
+            <summary>
+            <para>
+            <para>The update to the threshold value for receiving notifications. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCEAnomalySubscriptionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SubscriptionArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.UpdateAnomalySubscriptionResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.UpdateAnomalySubscriptionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCEAnomalySubscriptionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SubscriptionArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^SubscriptionArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCEAnomalySubscriptionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.UpdateCECostAllocationTagsStatusCmdlet">
+            <summary>
+            Updates status for cost allocation tags in bulk, with maximum batch size of 20. If
+            the tag status that's updated is the same as the existing tag status, the request
+            doesn't fail. Instead, it doesn't have any effect on the tag status (for example,
+            activating the active tag).
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCECostAllocationTagsStatusCmdlet.CostAllocationTagsStatus">
+            <summary>
+            <para>
+            <para>The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update
+            cost allocation tags status for this request. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCECostAllocationTagsStatusCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Errors'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.UpdateCostAllocationTagsStatusResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.UpdateCostAllocationTagsStatusResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCECostAllocationTagsStatusCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CE.UpdateCECostCategoryDefinitionCmdlet">
+            <summary>
+            Updates an existing Cost Category. Changes made to the Cost Category rules will be
+            used to categorize the current month’s expenses and future expenses. This won’t change
+            categorization for the previous months.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCECostCategoryDefinitionCmdlet.CostCategoryArn">
+            <summary>
+            <para>
+            <para>The unique identifier for your Cost Category.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCECostCategoryDefinitionCmdlet.DefaultValue">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCECostCategoryDefinitionCmdlet.EffectiveStart">
+            <summary>
+            <para>
+            <para>The Cost Category's effective start date. It can only be a billing start date (first
+            day of the month). If the date isn't provided, it's the first day of the current month.
+            Dates can't be before the previous twelve months, or in the future.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCECostCategoryDefinitionCmdlet.Rule">
+            <summary>
+            <para>
+            <para>The <code>Expression</code> object used to categorize costs. For more information,
+            see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule
+            </a>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCECostCategoryDefinitionCmdlet.RuleVersion">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCECostCategoryDefinitionCmdlet.SplitChargeRule">
+            <summary>
+            <para>
+            <para> The split charge rules used to allocate your charges between your Cost Category values.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCECostCategoryDefinitionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CostExplorer.Model.UpdateCostCategoryDefinitionResponse).
+            Specifying the name of a property of type Amazon.CostExplorer.Model.UpdateCostCategoryDefinitionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCECostCategoryDefinitionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the CostCategoryArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^CostCategoryArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CE.UpdateCECostCategoryDefinitionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

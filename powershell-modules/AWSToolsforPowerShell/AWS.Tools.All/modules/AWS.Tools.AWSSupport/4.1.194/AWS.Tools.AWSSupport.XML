@@ -1,0 +1,921 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.AWSSupport</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.ASA.AddASAAttachmentsToSetCmdlet">
+            <summary>
+            Adds one or more attachments to an attachment set. 
+            
+             
+            <para>
+            An attachment set is a temporary container for attachments that you add to a case
+            or case communication. The set is available for 1 hour after it's created. The <code>expiryTime</code>
+            returned in the response is when the set expires. 
+            </para><note><ul><li><para>
+            You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
+            Amazon Web Services Support API. 
+            </para></li><li><para>
+            If you call the Amazon Web Services Support API from an account that does not have
+            a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
+            error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
+            Web Services Support</a>.
+            </para></li></ul></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.AddASAAttachmentsToSetCmdlet.Attachment">
+            <summary>
+            <para>
+            <para>One or more attachments to add to the set. You can add up to three attachments per
+            set. The size limit is 5 MB per attachment.</para><para>In the <code>Attachment</code> object, use the <code>data</code> parameter to specify
+            the contents of the attachment file. In the previous request syntax, the value for
+            <code>data</code> appear as <code>blob</code>, which is represented as a base64-encoded
+            string. The value for <code>fileName</code> is the name of the attachment, such as
+            <code>troubleshoot-screenshot.png</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.AddASAAttachmentsToSetCmdlet.AttachmentSetId">
+            <summary>
+            <para>
+            <para>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified,
+            a new attachment set is created, and the ID of the set is returned in the response.
+            If an <code>attachmentSetId</code> is specified, the attachments are added to the
+            specified set, if it exists.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.AddASAAttachmentsToSetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSSupport.Model.AddAttachmentsToSetResponse).
+            Specifying the name of a property of type Amazon.AWSSupport.Model.AddAttachmentsToSetResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.AddASAAttachmentsToSetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AttachmentSetId parameter.
+            The -PassThru parameter is deprecated, use -Select '^AttachmentSetId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.AddASAAttachmentsToSetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ASA.AddASACommunicationToCaseCmdlet">
+            <summary>
+            Adds additional customer communication to an Amazon Web Services Support case. Use
+            the <code>caseId</code> parameter to identify the case to which to add communication.
+            You can list a set of email addresses to copy on the communication by using the <code>ccEmailAddresses</code>
+            parameter. The <code>communicationBody</code> value contains the text of the communication.
+            
+             <note><ul><li><para>
+            You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
+            Amazon Web Services Support API. 
+            </para></li><li><para>
+            If you call the Amazon Web Services Support API from an account that does not have
+            a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
+            error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
+            Web Services Support</a>.
+            </para></li></ul></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.AddASACommunicationToCaseCmdlet.AttachmentSetId">
+            <summary>
+            <para>
+            <para>The ID of a set of one or more attachments for the communication to add to the case.
+            Create the set by calling <a>AddAttachmentsToSet</a></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.AddASACommunicationToCaseCmdlet.CaseId">
+            <summary>
+            <para>
+            <para>The support case ID requested or returned in the call. The case ID is an alphanumeric
+            string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.AddASACommunicationToCaseCmdlet.CcEmailAddress">
+            <summary>
+            <para>
+            <para>The email addresses in the CC line of an email to be added to the support case.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.AddASACommunicationToCaseCmdlet.CommunicationBody">
+            <summary>
+            <para>
+            <para>The body of an email communication to add to the support case.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.AddASACommunicationToCaseCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Result'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSSupport.Model.AddCommunicationToCaseResponse).
+            Specifying the name of a property of type Amazon.AWSSupport.Model.AddCommunicationToCaseResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.AddASACommunicationToCaseCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the CaseId parameter.
+            The -PassThru parameter is deprecated, use -Select '^CaseId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.AddASACommunicationToCaseCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ASA.GetASAAttachmentCmdlet">
+            <summary>
+            Returns the attachment that has the specified ID. Attachments can include screenshots,
+            error logs, or other files that describe your issue. Attachment IDs are generated
+            by the case management system when you add an attachment to a case or case communication.
+            Attachment IDs are returned in the <a>AttachmentDetails</a> objects that are returned
+            by the <a>DescribeCommunications</a> operation.
+            
+             <note><ul><li><para>
+            You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
+            Amazon Web Services Support API. 
+            </para></li><li><para>
+            If you call the Amazon Web Services Support API from an account that does not have
+            a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
+            error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
+            Web Services Support</a>.
+            </para></li></ul></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASAAttachmentCmdlet.AttachmentId">
+            <summary>
+            <para>
+            <para>The ID of the attachment to return. Attachment IDs are returned by the <a>DescribeCommunications</a>
+            operation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASAAttachmentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Attachment'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSSupport.Model.DescribeAttachmentResponse).
+            Specifying the name of a property of type Amazon.AWSSupport.Model.DescribeAttachmentResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASAAttachmentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AttachmentId parameter.
+            The -PassThru parameter is deprecated, use -Select '^AttachmentId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ASA.GetASACaseCmdlet">
+            <summary>
+            Returns a list of cases that you specify by passing one or more case IDs. You can
+            use the <code>afterTime</code> and <code>beforeTime</code> parameters to filter the
+            cases by date. You can set values for the <code>includeResolvedCases</code> and <code>includeCommunications</code>
+            parameters to specify how much information to return.
+            
+             
+            <para>
+            The response returns the following in JSON format:
+            </para><ul><li><para>
+            One or more <a href="https://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html">CaseDetails</a>
+            data types.
+            </para></li><li><para>
+            One or more <code>nextToken</code> values, which specify where to paginate the returned
+            records represented by the <code>CaseDetails</code> objects.
+            </para></li></ul><para>
+            Case data is available for 12 months after creation. If a case was created more than
+            12 months ago, a request might return an error.
+            </para><note><ul><li><para>
+            You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
+            Amazon Web Services Support API. 
+            </para></li><li><para>
+            If you call the Amazon Web Services Support API from an account that does not have
+            a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
+            error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
+            Web Services Support</a>.
+            </para></li></ul></note><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASACaseCmdlet.AfterTime">
+            <summary>
+            <para>
+            <para>The start date for a filtered date search on support case communications. Case communications
+            are available for 12 months after creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASACaseCmdlet.BeforeTime">
+            <summary>
+            <para>
+            <para>The end date for a filtered date search on support case communications. Case communications
+            are available for 12 months after creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASACaseCmdlet.CaseIdList">
+            <summary>
+            <para>
+            <para>A list of ID numbers of the support cases you want returned. The maximum number of
+            cases is 100.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASACaseCmdlet.DisplayId">
+            <summary>
+            <para>
+            <para>The ID displayed for a case in the Amazon Web Services Support Center user interface.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASACaseCmdlet.IncludeCommunication">
+            <summary>
+            <para>
+            <para>Specifies whether to include communications in the <code>DescribeCases</code> response.
+            By default, communications are included.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASACaseCmdlet.IncludeResolvedCase">
+            <summary>
+            <para>
+            <para>Specifies whether to include resolved support cases in the <code>DescribeCases</code>
+            response. By default, resolved cases aren't included.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASACaseCmdlet.Language">
+            <summary>
+            <para>
+            <para>The ISO 639-1 code for the language in which Amazon Web Services provides support.
+            Amazon Web Services Support currently supports English ("en") and Japanese ("ja").
+            Language parameters must be passed explicitly for operations that take them.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASACaseCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return before paginating.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASACaseCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>A resumption point for pagination.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASACaseCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Cases'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSSupport.Model.DescribeCasesResponse).
+            Specifying the name of a property of type Amazon.AWSSupport.Model.DescribeCasesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASACaseCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the CaseIdList parameter.
+            The -PassThru parameter is deprecated, use -Select '^CaseIdList' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASACaseCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ASA.GetASACommunicationCmdlet">
+            <summary>
+            Returns communications and attachments for one or more support cases. Use the <code>afterTime</code>
+            and <code>beforeTime</code> parameters to filter by date. You can use the <code>caseId</code>
+            parameter to restrict the results to a specific case.
+            
+             
+            <para>
+            Case data is available for 12 months after creation. If a case was created more than
+            12 months ago, a request for data might cause an error.
+            </para><para>
+            You can use the <code>maxResults</code> and <code>nextToken</code> parameters to control
+            the pagination of the results. Set <code>maxResults</code> to the number of cases
+            that you want to display on each page, and use <code>nextToken</code> to specify the
+            resumption of pagination.
+            </para><note><ul><li><para>
+            You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
+            Amazon Web Services Support API. 
+            </para></li><li><para>
+            If you call the Amazon Web Services Support API from an account that does not have
+            a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
+            error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
+            Web Services Support</a>.
+            </para></li></ul></note><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASACommunicationCmdlet.AfterTime">
+            <summary>
+            <para>
+            <para>The start date for a filtered date search on support case communications. Case communications
+            are available for 12 months after creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASACommunicationCmdlet.BeforeTime">
+            <summary>
+            <para>
+            <para>The end date for a filtered date search on support case communications. Case communications
+            are available for 12 months after creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASACommunicationCmdlet.CaseId">
+            <summary>
+            <para>
+            <para>The support case ID requested or returned in the call. The case ID is an alphanumeric
+            string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASACommunicationCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return before paginating.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASACommunicationCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>A resumption point for pagination.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASACommunicationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Communications'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSSupport.Model.DescribeCommunicationsResponse).
+            Specifying the name of a property of type Amazon.AWSSupport.Model.DescribeCommunicationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASACommunicationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the CaseId parameter.
+            The -PassThru parameter is deprecated, use -Select '^CaseId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASACommunicationCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ASA.GetASAServiceCmdlet">
+            <summary>
+            Returns the current list of Amazon Web Services services and a list of service categories
+            for each service. You then use service names and categories in your <a>CreateCase</a>
+            requests. Each Amazon Web Services service has its own set of categories.
+            
+             
+            <para>
+            The service codes and category codes correspond to the values that appear in the <b>Service</b>
+            and <b>Category</b> lists on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
+            Case</a> page. The values in those fields don't necessarily match the service codes
+            and categories returned by the <code>DescribeServices</code> operation. Always use
+            the service codes and categories that the <code>DescribeServices</code> operation
+            returns, so that you have the most recent set of service and category codes.
+            </para><note><ul><li><para>
+            You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
+            Amazon Web Services Support API. 
+            </para></li><li><para>
+            If you call the Amazon Web Services Support API from an account that does not have
+            a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
+            error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
+            Web Services Support</a>.
+            </para></li></ul></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASAServiceCmdlet.Language">
+            <summary>
+            <para>
+            <para>The ISO 639-1 code for the language in which Amazon Web Services provides support.
+            Amazon Web Services Support currently supports English ("en") and Japanese ("ja").
+            Language parameters must be passed explicitly for operations that take them.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASAServiceCmdlet.ServiceCodeList">
+            <summary>
+            <para>
+            <para>A JSON-formatted list of service codes available for Amazon Web Services services.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASAServiceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Services'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSSupport.Model.DescribeServicesResponse).
+            Specifying the name of a property of type Amazon.AWSSupport.Model.DescribeServicesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASAServiceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ServiceCodeList parameter.
+            The -PassThru parameter is deprecated, use -Select '^ServiceCodeList' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ASA.GetASASeverityLevelCmdlet">
+            <summary>
+            Returns the list of severity levels that you can assign to a support case. The severity
+            level for a case is also a field in the <a>CaseDetails</a> data type that you include
+            for a <a>CreateCase</a> request.
+            
+             <note><ul><li><para>
+            You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
+            Amazon Web Services Support API. 
+            </para></li><li><para>
+            If you call the Amazon Web Services Support API from an account that does not have
+            a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
+            error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
+            Web Services Support</a>.
+            </para></li></ul></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASASeverityLevelCmdlet.Language">
+            <summary>
+            <para>
+            <para>The ISO 639-1 code for the language in which Amazon Web Services provides support.
+            Amazon Web Services Support currently supports English ("en") and Japanese ("ja").
+            Language parameters must be passed explicitly for operations that take them.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASASeverityLevelCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SeverityLevels'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSSupport.Model.DescribeSeverityLevelsResponse).
+            Specifying the name of a property of type Amazon.AWSSupport.Model.DescribeSeverityLevelsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASASeverityLevelCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Language parameter.
+            The -PassThru parameter is deprecated, use -Select '^Language' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ASA.GetASATrustedAdvisorCheckCmdlet">
+            <summary>
+            Returns information about all available Trusted Advisor checks, including the name,
+            ID, category, description, and metadata. You must specify a language code. The Amazon
+            Web Services Support API currently supports English ("en") and Japanese ("ja"). The
+            response contains a <a>TrustedAdvisorCheckDescription</a> object for each check. You
+            must set the Amazon Web Services Region to us-east-1.
+            
+             <note><ul><li><para>
+            You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
+            Amazon Web Services Support API. 
+            </para></li><li><para>
+            If you call the Amazon Web Services Support API from an account that does not have
+            a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
+            error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
+            Web Services Support</a>.
+            </para></li><li><para>
+            The names and descriptions for Trusted Advisor checks are subject to change. We recommend
+            that you specify the check ID in your code to uniquely identify a check.
+            </para></li></ul></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASATrustedAdvisorCheckCmdlet.Language">
+            <summary>
+            <para>
+            <para>The ISO 639-1 code for the language in which Amazon Web Services provides support.
+            Amazon Web Services Support currently supports English ("en") and Japanese ("ja").
+            Language parameters must be passed explicitly for operations that take them.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASATrustedAdvisorCheckCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Checks'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSSupport.Model.DescribeTrustedAdvisorChecksResponse).
+            Specifying the name of a property of type Amazon.AWSSupport.Model.DescribeTrustedAdvisorChecksResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASATrustedAdvisorCheckCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Language parameter.
+            The -PassThru parameter is deprecated, use -Select '^Language' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ASA.GetASATrustedAdvisorCheckRefreshStatusCmdlet">
+            <summary>
+            Returns the refresh status of the Trusted Advisor checks that have the specified check
+            IDs. You can get the check IDs by calling the <a>DescribeTrustedAdvisorChecks</a>
+            operation.
+            
+             
+            <para>
+            Some checks are refreshed automatically, and you can't return their refresh statuses
+            by using the <code>DescribeTrustedAdvisorCheckRefreshStatuses</code> operation. If
+            you call this operation for these checks, you might see an <code>InvalidParameterValue</code>
+            error.
+            </para><note><ul><li><para>
+            You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
+            Amazon Web Services Support API. 
+            </para></li><li><para>
+            If you call the Amazon Web Services Support API from an account that does not have
+            a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
+            error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
+            Web Services Support</a>.
+            </para></li></ul></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASATrustedAdvisorCheckRefreshStatusCmdlet.CheckId">
+            <summary>
+            <para>
+            <para>The IDs of the Trusted Advisor checks to get the status.</para><note><para>If you specify the check ID of a check that is automatically refreshed, you might
+            see an <code>InvalidParameterValue</code> error.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASATrustedAdvisorCheckRefreshStatusCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Statuses'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSSupport.Model.DescribeTrustedAdvisorCheckRefreshStatusesResponse).
+            Specifying the name of a property of type Amazon.AWSSupport.Model.DescribeTrustedAdvisorCheckRefreshStatusesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASATrustedAdvisorCheckRefreshStatusCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the CheckId parameter.
+            The -PassThru parameter is deprecated, use -Select '^CheckId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ASA.GetASATrustedAdvisorCheckResultCmdlet">
+            <summary>
+            Returns the results of the Trusted Advisor check that has the specified check ID.
+            You can get the check IDs by calling the <a>DescribeTrustedAdvisorChecks</a> operation.
+            
+             
+            <para>
+            The response contains a <a>TrustedAdvisorCheckResult</a> object, which contains these
+            three objects:
+            </para><ul><li><para><a>TrustedAdvisorCategorySpecificSummary</a></para></li><li><para><a>TrustedAdvisorResourceDetail</a></para></li><li><para><a>TrustedAdvisorResourcesSummary</a></para></li></ul><para>
+            In addition, the response contains these fields:
+            </para><ul><li><para><b>status</b> - The alert status of the check can be <code>ok</code> (green), <code>warning</code>
+            (yellow), <code>error</code> (red), or <code>not_available</code>.
+            </para></li><li><para><b>timestamp</b> - The time of the last refresh of the check.
+            </para></li><li><para><b>checkId</b> - The unique identifier for the check.
+            </para></li></ul><note><ul><li><para>
+            You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
+            Amazon Web Services Support API. 
+            </para></li><li><para>
+            If you call the Amazon Web Services Support API from an account that does not have
+            a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
+            error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
+            Web Services Support</a>.
+            </para></li></ul></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASATrustedAdvisorCheckResultCmdlet.CheckId">
+            <summary>
+            <para>
+            <para>The unique identifier for the Trusted Advisor check.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASATrustedAdvisorCheckResultCmdlet.Language">
+            <summary>
+            <para>
+            <para>The ISO 639-1 code for the language in which Amazon Web Services provides support.
+            Amazon Web Services Support currently supports English ("en") and Japanese ("ja").
+            Language parameters must be passed explicitly for operations that take them.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASATrustedAdvisorCheckResultCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Result'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSSupport.Model.DescribeTrustedAdvisorCheckResultResponse).
+            Specifying the name of a property of type Amazon.AWSSupport.Model.DescribeTrustedAdvisorCheckResultResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASATrustedAdvisorCheckResultCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the CheckId parameter.
+            The -PassThru parameter is deprecated, use -Select '^CheckId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ASA.GetASATrustedAdvisorCheckSummaryCmdlet">
+            <summary>
+            Returns the results for the Trusted Advisor check summaries for the check IDs that
+            you specified. You can get the check IDs by calling the <a>DescribeTrustedAdvisorChecks</a>
+            operation.
+            
+             
+            <para>
+            The response contains an array of <a>TrustedAdvisorCheckSummary</a> objects.
+            </para><note><ul><li><para>
+            You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
+            Amazon Web Services Support API. 
+            </para></li><li><para>
+            If you call the Amazon Web Services Support API from an account that does not have
+            a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
+            error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
+            Web Services Support</a>.
+            </para></li></ul></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASATrustedAdvisorCheckSummaryCmdlet.CheckId">
+            <summary>
+            <para>
+            <para>The IDs of the Trusted Advisor checks.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASATrustedAdvisorCheckSummaryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Summaries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSSupport.Model.DescribeTrustedAdvisorCheckSummariesResponse).
+            Specifying the name of a property of type Amazon.AWSSupport.Model.DescribeTrustedAdvisorCheckSummariesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.GetASATrustedAdvisorCheckSummaryCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the CheckId parameter.
+            The -PassThru parameter is deprecated, use -Select '^CheckId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ASA.NewASACaseCmdlet">
+            <summary>
+            Creates a case in the Amazon Web Services Support Center. This operation is similar
+            to how you create a case in the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
+            Case</a> page.
+            
+             
+            <para>
+            The Amazon Web Services Support API doesn't support requesting service limit increases.
+            You can submit a service limit increase in the following ways: 
+            </para><ul><li><para>
+            Submit a request from the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
+            Case</a> page.
+            </para></li><li><para>
+            Use the Service Quotas <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_RequestServiceQuotaIncrease.html">RequestServiceQuotaIncrease</a>
+            operation.
+            </para></li></ul><para>
+            A successful <code>CreateCase</code> request returns an Amazon Web Services Support
+            case number. You can use the <a>DescribeCases</a> operation and specify the case number
+            to get existing Amazon Web Services Support cases. After you create a case, use the
+            <a>AddCommunicationToCase</a> operation to add additional communication or attachments
+            to an existing case.
+            </para><para>
+            The <code>caseId</code> is separate from the <code>displayId</code> that appears in
+            the <a href="https://console.aws.amazon.com/support">Amazon Web Services Support Center</a>.
+            Use the <a>DescribeCases</a> operation to get the <code>displayId</code>.
+            </para><note><ul><li><para>
+            You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
+            Amazon Web Services Support API. 
+            </para></li><li><para>
+            If you call the Amazon Web Services Support API from an account that does not have
+            a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
+            error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
+            Web Services Support</a>.
+            </para></li></ul></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.NewASACaseCmdlet.AttachmentSetId">
+            <summary>
+            <para>
+            <para>The ID of a set of one or more attachments for the case. Create the set by using the
+            <a>AddAttachmentsToSet</a> operation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.NewASACaseCmdlet.CategoryCode">
+            <summary>
+            <para>
+            <para>The category of problem for the support case. You also use the <a>DescribeServices</a>
+            operation to get the category code for a service. Each Amazon Web Services service
+            defines its own set of category codes.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.NewASACaseCmdlet.CcEmailAddress">
+            <summary>
+            <para>
+            <para>A list of email addresses that Amazon Web Services Support copies on case correspondence.
+            Amazon Web Services Support identifies the account that creates the case when you
+            specify your Amazon Web Services credentials in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.NewASACaseCmdlet.CommunicationBody">
+            <summary>
+            <para>
+            <para>The communication body text that describes the issue. This text appears in the <b>Description</b>
+            field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
+            Case</a> page.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.NewASACaseCmdlet.IssueType">
+            <summary>
+            <para>
+            <para>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>.
+            If you don't specify a value, the default is <code>technical</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.NewASACaseCmdlet.Language">
+            <summary>
+            <para>
+            <para>The language in which Amazon Web Services Support handles the case. You must specify
+            the ISO 639-1 code for the <code>language</code> parameter if you want support in
+            that language. Currently, English ("en") and Japanese ("ja") are supported.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.NewASACaseCmdlet.ServiceCode">
+            <summary>
+            <para>
+            <para>The code for the Amazon Web Services service. You can use the <a>DescribeServices</a>
+            operation to get the possible <code>serviceCode</code> values.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.NewASACaseCmdlet.SeverityCode">
+            <summary>
+            <para>
+            <para>A value that indicates the urgency of the case. This value determines the response
+            time according to your service level agreement with Amazon Web Services Support. You
+            can use the <a>DescribeSeverityLevels</a> operation to get the possible values for
+            <code>severityCode</code>. </para><para>For more information, see <a>SeverityLevel</a> and <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing
+            a Severity</a> in the <i>Amazon Web Services Support User Guide</i>.</para><note><para>The availability of severity levels depends on the support plan for the Amazon Web
+            Services account.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.NewASACaseCmdlet.Subject">
+            <summary>
+            <para>
+            <para>The title of the support case. The title appears in the <b>Subject</b> field on the
+            Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
+            Case</a> page.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.NewASACaseCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'CaseId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSSupport.Model.CreateCaseResponse).
+            Specifying the name of a property of type Amazon.AWSSupport.Model.CreateCaseResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.NewASACaseCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Subject parameter.
+            The -PassThru parameter is deprecated, use -Select '^Subject' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.NewASACaseCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ASA.RequestASATrustedAdvisorCheckRefreshCmdlet">
+            <summary>
+            Refreshes the Trusted Advisor check that you specify using the check ID. You can get
+            the check IDs by calling the <a>DescribeTrustedAdvisorChecks</a> operation.
+            
+             <note><para>
+            Some checks are refreshed automatically. If you call the <code>RefreshTrustedAdvisorCheck</code>
+            operation to refresh them, you might see the <code>InvalidParameterValue</code> error.
+            </para></note><para>
+            The response contains a <a>TrustedAdvisorCheckRefreshStatus</a> object.
+            </para><note><ul><li><para>
+            You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
+            Amazon Web Services Support API. 
+            </para></li><li><para>
+            If you call the Amazon Web Services Support API from an account that does not have
+            a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
+            error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
+            Web Services Support</a>.
+            </para></li></ul></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.RequestASATrustedAdvisorCheckRefreshCmdlet.CheckId">
+            <summary>
+            <para>
+            <para>The unique identifier for the Trusted Advisor check to refresh.</para><note><para>Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code>
+            error.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.RequestASATrustedAdvisorCheckRefreshCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Status'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSSupport.Model.RefreshTrustedAdvisorCheckResponse).
+            Specifying the name of a property of type Amazon.AWSSupport.Model.RefreshTrustedAdvisorCheckResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.RequestASATrustedAdvisorCheckRefreshCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the CheckId parameter.
+            The -PassThru parameter is deprecated, use -Select '^CheckId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.RequestASATrustedAdvisorCheckRefreshCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ASA.ResolveASACaseCmdlet">
+            <summary>
+            Resolves a support case. This operation takes a <code>caseId</code> and returns the
+            initial and final state of the case.
+            
+             <note><ul><li><para>
+            You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
+            Amazon Web Services Support API. 
+            </para></li><li><para>
+            If you call the Amazon Web Services Support API from an account that does not have
+            a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
+            error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
+            Web Services Support</a>.
+            </para></li></ul></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.ResolveASACaseCmdlet.CaseId">
+            <summary>
+            <para>
+            <para>The support case ID requested or returned in the call. The case ID is an alphanumeric
+            string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.ResolveASACaseCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSSupport.Model.ResolveCaseResponse).
+            Specifying the name of a property of type Amazon.AWSSupport.Model.ResolveCaseResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.ResolveASACaseCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the CaseId parameter.
+            The -PassThru parameter is deprecated, use -Select '^CaseId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ASA.ResolveASACaseCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

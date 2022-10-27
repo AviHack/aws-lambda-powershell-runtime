@@ -1,0 +1,1944 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.MemoryDB</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.AddMDBResourceTagCmdlet">
+            <summary>
+            A tag is a key-value pair where the key and value are case-sensitive. You can use
+            tags to categorize and track all your MemoryDB resources. When you add or remove tags
+            on clusters, those actions will be replicated to all nodes in the cluster. For more
+            information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/iam.resourcelevelpermissions.html">Resource-level
+            permissions</a>.
+            
+             
+            <para>
+            For example, you can use cost-allocation tags to your MemoryDB resources, Amazon generates
+            a cost allocation report as a comma-separated value (CSV) file with your usage and
+            costs aggregated by your tags. You can apply tags that represent business categories
+            (such as cost centers, application names, or owners) to organize your costs across
+            multiple services. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/tagging.html">Using
+            Cost Allocation Tags</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.AddMDBResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource to which the tags are to be added</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.AddMDBResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of tags to be added to this resource. A tag is a key-value pair. A tag key
+            must be accompanied by a tag value, although null is accepted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.AddMDBResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TagList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.TagResourceResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.TagResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.AddMDBResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.AddMDBResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.CopyMDBSnapshotCmdlet">
+            <summary>
+            Makes a copy of an existing snapshot.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.CopyMDBSnapshotCmdlet.KmsKeyId">
+            <summary>
+            <para>
+            <para>The ID of the KMS key used to encrypt the target snapshot.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.CopyMDBSnapshotCmdlet.SourceSnapshotName">
+            <summary>
+            <para>
+            <para>The name of an existing snapshot from which to make a copy.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.CopyMDBSnapshotCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of tags to be added to this resource. A tag is a key-value pair. A tag key
+            must be accompanied by a tag value, although null is accepted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.CopyMDBSnapshotCmdlet.TargetBucket">
+            <summary>
+            <para>
+            <para>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only
+            when exporting a snapshot for external access. When using this parameter to export
+            a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more
+            information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step
+            2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.CopyMDBSnapshotCmdlet.TargetSnapshotName">
+            <summary>
+            <para>
+            <para>A name for the snapshot copy. MemoryDB does not permit overwriting a snapshot, therefore
+            this name must be unique within its context - MemoryDB or an Amazon S3 bucket if exporting.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.CopyMDBSnapshotCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Snapshot'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.CopySnapshotResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.CopySnapshotResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.CopyMDBSnapshotCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.GetMDBACLsCmdlet">
+            <summary>
+            Returns a list of ACLs
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBACLsCmdlet.ACLName">
+            <summary>
+            <para>
+            <para>The name of the ACL</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBACLsCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of records to include in the response. If more records exist than
+            the specified MaxResults value, a token is included in the response so that the remaining
+            results can be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBACLsCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>An optional argument to pass in case the total number of records exceeds the value
+            of MaxResults. If nextToken is returned, there are more results available. The value
+            of nextToken is a unique pagination token for each page. Make the call again using
+            the returned token to retrieve the next page. Keep all other arguments unchanged.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBACLsCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ACLs'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.DescribeACLsResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.DescribeACLsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBACLsCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ACLName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ACLName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.GetMDBAllowedNodeTypeUpdateListCmdlet">
+            <summary>
+            Lists all available node types that you can scale to from your cluster's current node
+            type. When you use the UpdateCluster operation to scale your cluster, the value of
+            the NodeType parameter must be one of the node types returned by this operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBAllowedNodeTypeUpdateListCmdlet.ClusterName">
+            <summary>
+            <para>
+            <para>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify
+            the current node type being used by this cluster, and from that to create a list of
+            node types you can scale up to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBAllowedNodeTypeUpdateListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.ListAllowedNodeTypeUpdatesResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.ListAllowedNodeTypeUpdatesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBAllowedNodeTypeUpdateListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.GetMDBClusterCmdlet">
+            <summary>
+            Returns information about all provisioned clusters if no cluster identifier is specified,
+            or about a specific cluster if a cluster name is supplied.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBClusterCmdlet.ClusterName">
+            <summary>
+            <para>
+            <para>The name of the cluster</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBClusterCmdlet.ShowShardDetail">
+            <summary>
+            <para>
+            <para>An optional flag that can be included in the request to retrieve information about
+            the individual shard(s).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBClusterCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of records to include in the response. If more records exist than
+            the specified MaxResults value, a token is included in the response so that the remaining
+            results can be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBClusterCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>An optional argument to pass in case the total number of records exceeds the value
+            of MaxResults. If nextToken is returned, there are more results available. The value
+            of nextToken is a unique pagination token for each page. Make the call again using
+            the returned token to retrieve the next page. Keep all other arguments unchanged.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBClusterCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Clusters'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.DescribeClustersResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.DescribeClustersResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBClusterCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.GetMDBEngineVersionCmdlet">
+            <summary>
+            Returns a list of the available Redis engine versions.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBEngineVersionCmdlet.DefaultOnly">
+            <summary>
+            <para>
+            <para>If true, specifies that only the default version of the specified engine or engine
+            and major version combination is to be returned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBEngineVersionCmdlet.EngineVersion">
+            <summary>
+            <para>
+            <para>The Redis engine version</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBEngineVersionCmdlet.ParameterGroupFamily">
+            <summary>
+            <para>
+            <para>The name of a specific parameter group family to return details for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBEngineVersionCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of records to include in the response. If more records exist than
+            the specified MaxResults value, a token is included in the response so that the remaining
+            results can be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBEngineVersionCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>An optional argument to pass in case the total number of records exceeds the value
+            of MaxResults. If nextToken is returned, there are more results available. The value
+            of nextToken is a unique pagination token for each page. Make the call again using
+            the returned token to retrieve the next page. Keep all other arguments unchanged.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBEngineVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EngineVersions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.DescribeEngineVersionsResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.DescribeEngineVersionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBEngineVersionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EngineVersion parameter.
+            The -PassThru parameter is deprecated, use -Select '^EngineVersion' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.GetMDBEventCmdlet">
+            <summary>
+            Returns events related to clusters, security groups, and parameter groups. You can
+            obtain events specific to a particular cluster, security group, or parameter group
+            by providing the name as a parameter. By default, only the events occurring within
+            the last hour are returned; however, you can retrieve up to 14 days' worth of events
+            if necessary.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBEventCmdlet.Duration">
+            <summary>
+            <para>
+            <para>The number of minutes worth of events to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBEventCmdlet.EndTime">
+            <summary>
+            <para>
+            <para>The end of the time interval for which to retrieve events, specified in ISO 8601 format.
+            Example: 2017-03-30T07:03:49.555Z</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBEventCmdlet.SourceName">
+            <summary>
+            <para>
+            <para>The identifier of the event source for which events are returned. If not specified,
+            all sources are included in the response.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBEventCmdlet.SourceType">
+            <summary>
+            <para>
+            <para>The event source to retrieve events for. If no value is specified, all events are
+            returned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBEventCmdlet.StartTime">
+            <summary>
+            <para>
+            <para>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
+            Example: 2017-03-30T07:03:49.555Z</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBEventCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of records to include in the response. If more records exist than
+            the specified MaxResults value, a token is included in the response so that the remaining
+            results can be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBEventCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>An optional argument to pass in case the total number of records exceeds the value
+            of MaxResults. If nextToken is returned, there are more results available. The value
+            of nextToken is a unique pagination token for each page. Make the call again using
+            the returned token to retrieve the next page. Keep all other arguments unchanged.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBEventCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Events'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.DescribeEventsResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.DescribeEventsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBEventCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SourceName parameter.
+            The -PassThru parameter is deprecated, use -Select '^SourceName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.GetMDBParameterCmdlet">
+            <summary>
+            Returns the detailed parameter list for a particular parameter group.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBParameterCmdlet.ParameterGroupName">
+            <summary>
+            <para>
+            <para>he name of a specific parameter group to return details for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBParameterCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of records to include in the response. If more records exist than
+            the specified MaxResults value, a token is included in the response so that the remaining
+            results can be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBParameterCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>An optional argument to pass in case the total number of records exceeds the value
+            of MaxResults. If nextToken is returned, there are more results available. The value
+            of nextToken is a unique pagination token for each page. Make the call again using
+            the returned token to retrieve the next page. Keep all other arguments unchanged.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBParameterCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Parameters'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.DescribeParametersResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.DescribeParametersResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBParameterCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ParameterGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ParameterGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.GetMDBParameterGroupCmdlet">
+            <summary>
+            Returns a list of parameter group descriptions. If a parameter group name is specified,
+            the list contains only the descriptions for that group.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBParameterGroupCmdlet.ParameterGroupName">
+            <summary>
+            <para>
+            <para>The name of a specific parameter group to return details for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBParameterGroupCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of records to include in the response. If more records exist than
+            the specified MaxResults value, a token is included in the response so that the remaining
+            results can be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBParameterGroupCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>An optional argument to pass in case the total number of records exceeds the value
+            of MaxResults. If nextToken is returned, there are more results available. The value
+            of nextToken is a unique pagination token for each page. Make the call again using
+            the returned token to retrieve the next page. Keep all other arguments unchanged.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBParameterGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ParameterGroups'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.DescribeParameterGroupsResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.DescribeParameterGroupsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBParameterGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ParameterGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ParameterGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.GetMDBServiceUpdateCmdlet">
+            <summary>
+            Returns details of the service updates
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBServiceUpdateCmdlet.ClusterName">
+            <summary>
+            <para>
+            <para>The list of cluster names to identify service updates to apply</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBServiceUpdateCmdlet.ServiceUpdateName">
+            <summary>
+            <para>
+            <para>The unique ID of the service update to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBServiceUpdateCmdlet.Status">
+            <summary>
+            <para>
+            <para>The status(es) of the service updates to filter on</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBServiceUpdateCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of records to include in the response. If more records exist than
+            the specified MaxResults value, a token is included in the response so that the remaining
+            results can be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBServiceUpdateCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>An optional argument to pass in case the total number of records exceeds the value
+            of MaxResults. If nextToken is returned, there are more results available. The value
+            of nextToken is a unique pagination token for each page. Make the call again using
+            the returned token to retrieve the next page. Keep all other arguments unchanged.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBServiceUpdateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ServiceUpdates'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.DescribeServiceUpdatesResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.DescribeServiceUpdatesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBServiceUpdateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ServiceUpdateName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ServiceUpdateName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.GetMDBSnapshotCmdlet">
+            <summary>
+            Returns information about cluster snapshots. By default, DescribeSnapshots lists all
+            of your snapshots; it can optionally describe a single snapshot, or just the snapshots
+            associated with a particular cluster.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBSnapshotCmdlet.ClusterName">
+            <summary>
+            <para>
+            <para>A user-supplied cluster identifier. If this parameter is specified, only snapshots
+            associated with that specific cluster are described.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBSnapshotCmdlet.ShowDetail">
+            <summary>
+            <para>
+            <para>A Boolean value which if true, the shard configuration is included in the snapshot
+            description.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBSnapshotCmdlet.SnapshotName">
+            <summary>
+            <para>
+            <para>A user-supplied name of the snapshot. If this parameter is specified, only this named
+            snapshot is described.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBSnapshotCmdlet.Source">
+            <summary>
+            <para>
+            <para>If set to system, the output shows snapshots that were automatically created by MemoryDB.
+            If set to user the output shows snapshots that were manually created. If omitted,
+            the output shows both automatically and manually created snapshots.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBSnapshotCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of records to include in the response. If more records exist than
+            the specified MaxResults value, a token is included in the response so that the remaining
+            results can be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBSnapshotCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>An optional argument to pass in case the total number of records exceeds the value
+            of MaxResults. If nextToken is returned, there are more results available. The value
+            of nextToken is a unique pagination token for each page. Make the call again using
+            the returned token to retrieve the next page. Keep all other arguments unchanged.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBSnapshotCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Snapshots'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.DescribeSnapshotsResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.DescribeSnapshotsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBSnapshotCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SnapshotName parameter.
+            The -PassThru parameter is deprecated, use -Select '^SnapshotName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.GetMDBSubnetGroupCmdlet">
+            <summary>
+            Returns a list of subnet group descriptions. If a subnet group name is specified,
+            the list contains only the description of that group.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBSubnetGroupCmdlet.SubnetGroupName">
+            <summary>
+            <para>
+            <para>The name of the subnet group to return details for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBSubnetGroupCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of records to include in the response. If more records exist than
+            the specified MaxResults value, a token is included in the response so that the remaining
+            results can be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBSubnetGroupCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>An optional argument to pass in case the total number of records exceeds the value
+            of MaxResults. If nextToken is returned, there are more results available. The value
+            of nextToken is a unique pagination token for each page. Make the call again using
+            the returned token to retrieve the next page. Keep all other arguments unchanged.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBSubnetGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SubnetGroups'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.DescribeSubnetGroupsResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.DescribeSubnetGroupsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBSubnetGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SubnetGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^SubnetGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.GetMDBTagCmdlet">
+            <summary>
+            Lists all tags currently on a named resource. A tag is a key-value pair where the
+            key and value are case-sensitive. You can use tags to categorize and track your MemoryDB
+            resources. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging
+            your MemoryDB resources</a>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource for which you want the list of tags</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TagList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.ListTagsResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.ListTagsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.GetMDBUserCmdlet">
+            <summary>
+            Returns a list of users.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBUserCmdlet.Filter">
+            <summary>
+            <para>
+            <para>Filter to determine the list of users to return.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBUserCmdlet.UserName">
+            <summary>
+            <para>
+            <para>The name of the user</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBUserCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of records to include in the response. If more records exist than
+            the specified MaxResults value, a token is included in the response so that the remaining
+            results can be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBUserCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>An optional argument to pass in case the total number of records exceeds the value
+            of MaxResults. If nextToken is returned, there are more results available. The value
+            of nextToken is a unique pagination token for each page. Make the call again using
+            the returned token to retrieve the next page. Keep all other arguments unchanged.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBUserCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Users'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.DescribeUsersResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.DescribeUsersResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.GetMDBUserCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the UserName parameter.
+            The -PassThru parameter is deprecated, use -Select '^UserName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.NewMDBACLCmdlet">
+            <summary>
+            Creates an Access Control List. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/clusters.acls.html">Authenticating
+            users with Access Contol Lists (ACLs)</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBACLCmdlet.ACLName">
+            <summary>
+            <para>
+            <para>The name of the Access Control List.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBACLCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of tags to be added to this resource. A tag is a key-value pair. A tag key
+            must be accompanied by a tag value, although null is accepted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBACLCmdlet.UserName">
+            <summary>
+            <para>
+            <para>The list of users that belong to the Access Control List.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBACLCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ACL'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.CreateACLResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.CreateACLResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBACLCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ACLName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ACLName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBACLCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.NewMDBClusterCmdlet">
+            <summary>
+            Creates a cluster. All nodes in the cluster run the same protocol-compliant engine
+            software.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBClusterCmdlet.ACLName">
+            <summary>
+            <para>
+            <para>The name of the Access Control List to associate with the cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBClusterCmdlet.AutoMinorVersionUpgrade">
+            <summary>
+            <para>
+            <para>When set to true, the cluster will automatically receive minor engine version upgrades
+            after launch.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBClusterCmdlet.ClusterName">
+            <summary>
+            <para>
+            <para>The name of the cluster. This value must be unique as it also serves as the cluster
+            identifier.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBClusterCmdlet.Description">
+            <summary>
+            <para>
+            <para>An optional description of the cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBClusterCmdlet.EngineVersion">
+            <summary>
+            <para>
+            <para>The version number of the Redis engine to be used for the cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBClusterCmdlet.KmsKeyId">
+            <summary>
+            <para>
+            <para>The ID of the KMS key used to encrypt the cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBClusterCmdlet.MaintenanceWindow">
+            <summary>
+            <para>
+            <para>Specifies the weekly time range during which maintenance on the cluster is performed.
+            It is specified as a range in the format <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H
+            Clock UTC). The minimum maintenance window is a 60 minute period.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBClusterCmdlet.NodeType">
+            <summary>
+            <para>
+            <para>The compute and memory capacity of the nodes in the cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBClusterCmdlet.NumReplicasPerShard">
+            <summary>
+            <para>
+            <para>The number of replicas to apply to each shard. The default value is 1. The maximum
+            is 5. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBClusterCmdlet.NumShard">
+            <summary>
+            <para>
+            <para>The number of shards the cluster will contain. The default value is 1. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBClusterCmdlet.ParameterGroupName">
+            <summary>
+            <para>
+            <para>The name of the parameter group associated with the cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBClusterCmdlet.Port">
+            <summary>
+            <para>
+            <para>The port number on which each of the nodes accepts connections.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBClusterCmdlet.SecurityGroupId">
+            <summary>
+            <para>
+            <para>A list of security group names to associate with this cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBClusterCmdlet.SnapshotArn">
+            <summary>
+            <para>
+            <para>A list of Amazon Resource Names (ARN) that uniquely identify the RDB snapshot files
+            stored in Amazon S3. The snapshot files are used to populate the new cluster. The
+            Amazon S3 object name in the ARN cannot contain any commas.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBClusterCmdlet.SnapshotName">
+            <summary>
+            <para>
+            <para>The name of a snapshot from which to restore data into the new cluster. The snapshot
+            status changes to restoring while the new cluster is being created.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBClusterCmdlet.SnapshotRetentionLimit">
+            <summary>
+            <para>
+            <para>The number of days for which MemoryDB retains automatic snapshots before deleting
+            them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken
+            today is retained for 5 days before being deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBClusterCmdlet.SnapshotWindow">
+            <summary>
+            <para>
+            <para>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot
+            of your shard.</para><para> Example: 05:00-09:00</para><para> If you do not specify this parameter, MemoryDB automatically chooses an appropriate
+            time range.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBClusterCmdlet.SnsTopicArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic
+            to which notifications are sent.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBClusterCmdlet.SubnetGroupName">
+            <summary>
+            <para>
+            <para>The name of the subnet group to be used for the cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBClusterCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of tags to be added to this resource. Tags are comma-separated key,value pairs
+            (e.g. Key=myKey, Value=myKeyValue. You can include multiple tags as shown following:
+            Key=myKey, Value=myKeyValue Key=mySecondKey, Value=mySecondKeyValue.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBClusterCmdlet.TLSEnabled">
+            <summary>
+            <para>
+            <para>A flag to enable in-transit encryption on the cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBClusterCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Cluster'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.CreateClusterResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.CreateClusterResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBClusterCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBClusterCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.NewMDBParameterGroupCmdlet">
+            <summary>
+            Creates a new MemoryDB parameter group. A parameter group is a collection of parameters
+            and their values that are applied to all of the nodes in any cluster. For more information,
+            see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/parametergroups.html">Configuring
+            engine parameters using parameter groups</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBParameterGroupCmdlet.Description">
+            <summary>
+            <para>
+            <para>An optional description of the parameter group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBParameterGroupCmdlet.Family">
+            <summary>
+            <para>
+            <para>The name of the parameter group family that the parameter group can be used with.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBParameterGroupCmdlet.ParameterGroupName">
+            <summary>
+            <para>
+            <para>The name of the parameter group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBParameterGroupCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of tags to be added to this resource. A tag is a key-value pair. A tag key
+            must be accompanied by a tag value, although null is accepted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBParameterGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ParameterGroup'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.CreateParameterGroupResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.CreateParameterGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBParameterGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ParameterGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ParameterGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBParameterGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.NewMDBSnapshotCmdlet">
+            <summary>
+            Creates a copy of an entire cluster at a specific moment in time.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBSnapshotCmdlet.ClusterName">
+            <summary>
+            <para>
+            <para>The snapshot is created from this cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBSnapshotCmdlet.KmsKeyId">
+            <summary>
+            <para>
+            <para>The ID of the KMS key used to encrypt the snapshot.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBSnapshotCmdlet.SnapshotName">
+            <summary>
+            <para>
+            <para>A name for the snapshot being created.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBSnapshotCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of tags to be added to this resource. A tag is a key-value pair. A tag key
+            must be accompanied by a tag value, although null is accepted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBSnapshotCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Snapshot'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.CreateSnapshotResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.CreateSnapshotResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBSnapshotCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SnapshotName parameter.
+            The -PassThru parameter is deprecated, use -Select '^SnapshotName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBSnapshotCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.NewMDBSubnetGroupCmdlet">
+            <summary>
+            Creates a subnet group. A subnet group is a collection of subnets (typically private)
+            that you can designate for your clusters running in an Amazon Virtual Private Cloud
+            (VPC) environment. When you create a cluster in an Amazon VPC, you must specify a
+            subnet group. MemoryDB uses that subnet group to choose a subnet and IP addresses
+            within that subnet to associate with your nodes. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/subnetgroups.html">Subnets
+            and subnet groups</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBSubnetGroupCmdlet.Description">
+            <summary>
+            <para>
+            <para>A description for the subnet group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBSubnetGroupCmdlet.SubnetGroupName">
+            <summary>
+            <para>
+            <para>The name of the subnet group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBSubnetGroupCmdlet.SubnetId">
+            <summary>
+            <para>
+            <para>A list of VPC subnet IDs for the subnet group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBSubnetGroupCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of tags to be added to this resource. A tag is a key-value pair. A tag key
+            must be accompanied by a tag value, although null is accepted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBSubnetGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SubnetGroup'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.CreateSubnetGroupResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.CreateSubnetGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBSubnetGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SubnetGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^SubnetGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBSubnetGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.NewMDBUserCmdlet">
+            <summary>
+            Creates a MemoryDB user. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/clusters.acls.html">Authenticating
+            users with Access Contol Lists (ACLs)</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBUserCmdlet.AccessString">
+            <summary>
+            <para>
+            <para>Access permissions string used for this user.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBUserCmdlet.AuthenticationMode_Password">
+            <summary>
+            <para>
+            <para>The password(s) used for authentication</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBUserCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of tags to be added to this resource. A tag is a key-value pair. A tag key
+            must be accompanied by a tag value, although null is accepted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBUserCmdlet.AuthenticationMode_Type">
+            <summary>
+            <para>
+            <para>Indicates whether the user requires a password to authenticate. All newly-created
+            users require a password.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBUserCmdlet.UserName">
+            <summary>
+            <para>
+            <para>The name of the user. This value must be unique as it also serves as the user identifier.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBUserCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'User'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.CreateUserResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.CreateUserResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBUserCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the UserName parameter.
+            The -PassThru parameter is deprecated, use -Select '^UserName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.NewMDBUserCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBACLCmdlet">
+            <summary>
+            Deletes an Access Control List. The ACL must first be disassociated from the cluster
+            before it can be deleted. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/clusters.acls.html">Authenticating
+            users with Access Contol Lists (ACLs)</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBACLCmdlet.ACLName">
+            <summary>
+            <para>
+            <para>The name of the Access Control List to delete</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBACLCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ACL'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.DeleteACLResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.DeleteACLResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBACLCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ACLName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ACLName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBACLCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBClusterCmdlet">
+            <summary>
+            Deletes a cluster. It also deletes all associated nodes and node endpoints
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBClusterCmdlet.ClusterName">
+            <summary>
+            <para>
+            <para>The name of the cluster to be deleted</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBClusterCmdlet.FinalSnapshotName">
+            <summary>
+            <para>
+            <para>The user-supplied name of a final cluster snapshot. This is the unique name that identifies
+            the snapshot. MemoryDB creates the snapshot, and then deletes the cluster immediately
+            afterward.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBClusterCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Cluster'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.DeleteClusterResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.DeleteClusterResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBClusterCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBClusterCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBParameterGroupCmdlet">
+            <summary>
+            Deletes the specified parameter group. You cannot delete a parameter group if it is
+            associated with any clusters. You cannot delete the default parameter groups in your
+            account.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBParameterGroupCmdlet.ParameterGroupName">
+            <summary>
+            <para>
+            <para>The name of the parameter group to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBParameterGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ParameterGroup'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.DeleteParameterGroupResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.DeleteParameterGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBParameterGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ParameterGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ParameterGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBParameterGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBResourceTagCmdlet">
+            <summary>
+            Use this operation to remove tags on a resource
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource to which the tags are to be removed</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>The list of keys of the tags that are to be removed</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TagList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.UntagResourceResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.UntagResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBSnapshotCmdlet">
+            <summary>
+            Deletes an existing snapshot. When you receive a successful response from this operation,
+            MemoryDB immediately begins deleting the snapshot; you cannot cancel or revert this
+            operation.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBSnapshotCmdlet.SnapshotName">
+            <summary>
+            <para>
+            <para>The name of the snapshot to delete</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBSnapshotCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Snapshot'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.DeleteSnapshotResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.DeleteSnapshotResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBSnapshotCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SnapshotName parameter.
+            The -PassThru parameter is deprecated, use -Select '^SnapshotName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBSnapshotCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBSubnetGroupCmdlet">
+            <summary>
+            Deletes a subnet group. You cannot delete a default subnet group or one that is associated
+            with any clusters.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBSubnetGroupCmdlet.SubnetGroupName">
+            <summary>
+            <para>
+            <para>The name of the subnet group to delete</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBSubnetGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SubnetGroup'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.DeleteSubnetGroupResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.DeleteSubnetGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBSubnetGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SubnetGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^SubnetGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBSubnetGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBUserCmdlet">
+            <summary>
+            Deletes a user. The user will be removed from all ACLs and in turn removed from all
+            clusters.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBUserCmdlet.UserName">
+            <summary>
+            <para>
+            <para>The name of the user to delete</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBUserCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'User'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.DeleteUserResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.DeleteUserResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBUserCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the UserName parameter.
+            The -PassThru parameter is deprecated, use -Select '^UserName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.RemoveMDBUserCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.ResetMDBParameterGroupCmdlet">
+            <summary>
+            Modifies the parameters of a parameter group to the engine or system default value.
+            You can reset specific parameters by submitting a list of parameter names. To reset
+            the entire parameter group, specify the AllParameters and ParameterGroupName parameters.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.ResetMDBParameterGroupCmdlet.AllParameter">
+            <summary>
+            <para>
+            <para>If true, all parameters in the parameter group are reset to their default values.
+            If false, only the parameters listed by ParameterNames are reset to their default
+            values.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.ResetMDBParameterGroupCmdlet.ParameterGroupName">
+            <summary>
+            <para>
+            <para>The name of the parameter group to reset.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.ResetMDBParameterGroupCmdlet.ParameterName">
+            <summary>
+            <para>
+            <para>An array of parameter names to reset to their default values. If AllParameters is
+            true, do not use ParameterNames. If AllParameters is false, you must specify the name
+            of at least one parameter to reset.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.ResetMDBParameterGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ParameterGroup'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.ResetParameterGroupResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.ResetParameterGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.ResetMDBParameterGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ParameterGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ParameterGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.ResetMDBParameterGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.StartMDBFailoverShardCmdlet">
+            <summary>
+            Used to failover a shard
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.StartMDBFailoverShardCmdlet.ClusterName">
+            <summary>
+            <para>
+            <para>The cluster being failed over</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.StartMDBFailoverShardCmdlet.ShardName">
+            <summary>
+            <para>
+            <para>The name of the shard</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.StartMDBFailoverShardCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Cluster'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.FailoverShardResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.FailoverShardResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.StartMDBFailoverShardCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.StartMDBFailoverShardCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBACLCmdlet">
+            <summary>
+            Changes the list of users that belong to the Access Control List.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBACLCmdlet.ACLName">
+            <summary>
+            <para>
+            <para>The name of the Access Control List</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBACLCmdlet.UserNamesToAdd">
+            <summary>
+            <para>
+            <para>The list of users to add to the Access Control List</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBACLCmdlet.UserNamesToRemove">
+            <summary>
+            <para>
+            <para>The list of users to remove from the Access Control List</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBACLCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ACL'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.UpdateACLResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.UpdateACLResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBACLCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ACLName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ACLName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBACLCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBClusterCmdlet">
+            <summary>
+            Modifies the settings for a cluster. You can use this operation to change one or more
+            cluster configuration settings by specifying the settings and the new values.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBClusterCmdlet.ACLName">
+            <summary>
+            <para>
+            <para>The Access Control List that is associated with the cluster</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBClusterCmdlet.ClusterName">
+            <summary>
+            <para>
+            <para>The name of the cluster to update</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBClusterCmdlet.Description">
+            <summary>
+            <para>
+            <para>The description of the cluster to update</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBClusterCmdlet.EngineVersion">
+            <summary>
+            <para>
+            <para>The upgraded version of the engine to be run on the nodes. You can upgrade to a newer
+            engine version, but you cannot downgrade to an earlier engine version. If you want
+            to use an earlier engine version, you must delete the existing cluster and create
+            it anew with the earlier engine version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBClusterCmdlet.MaintenanceWindow">
+            <summary>
+            <para>
+            <para>The maintenance window to update</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBClusterCmdlet.NodeType">
+            <summary>
+            <para>
+            <para>A valid node type that you want to scale this cluster up or down to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBClusterCmdlet.ParameterGroupName">
+            <summary>
+            <para>
+            <para>The name of the parameter group to update</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBClusterCmdlet.ReplicaConfiguration_ReplicaCount">
+            <summary>
+            <para>
+            <para>The number of replicas to scale up or down to</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBClusterCmdlet.SecurityGroupId">
+            <summary>
+            <para>
+            <para>The SecurityGroupIds to update</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBClusterCmdlet.ShardConfiguration_ShardCount">
+            <summary>
+            <para>
+            <para>The number of shards in the cluster</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBClusterCmdlet.SnapshotRetentionLimit">
+            <summary>
+            <para>
+            <para>The number of days for which MemoryDB retains automatic cluster snapshots before deleting
+            them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken
+            today is retained for 5 days before being deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBClusterCmdlet.SnapshotWindow">
+            <summary>
+            <para>
+            <para>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot
+            of your cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBClusterCmdlet.SnsTopicArn">
+            <summary>
+            <para>
+            <para>The SNS topic ARN to update</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBClusterCmdlet.SnsTopicStatus">
+            <summary>
+            <para>
+            <para>The status of the Amazon SNS notification topic. Notifications are sent only if the
+            status is active.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBClusterCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Cluster'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.UpdateClusterResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.UpdateClusterResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBClusterCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBClusterCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBParameterGroupCmdlet">
+            <summary>
+            Updates the parameters of a parameter group. You can modify up to 20 parameters in
+            a single request by submitting a list parameter name and value pairs.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBParameterGroupCmdlet.ParameterGroupName">
+            <summary>
+            <para>
+            <para>The name of the parameter group to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBParameterGroupCmdlet.ParameterNameValue">
+            <summary>
+            <para>
+            <para>An array of parameter names and values for the parameter update. You must supply at
+            least one parameter name and value; subsequent arguments are optional. A maximum of
+            20 parameters may be updated per request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBParameterGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ParameterGroup'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.UpdateParameterGroupResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.UpdateParameterGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBParameterGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ParameterGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ParameterGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBParameterGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBSubnetGroupCmdlet">
+            <summary>
+            Updates a subnet group. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/ubnetGroups.Modifying.html">Updating
+            a subnet group</a>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBSubnetGroupCmdlet.Description">
+            <summary>
+            <para>
+            <para>A description of the subnet group</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBSubnetGroupCmdlet.SubnetGroupName">
+            <summary>
+            <para>
+            <para>The name of the subnet group</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBSubnetGroupCmdlet.SubnetId">
+            <summary>
+            <para>
+            <para>The EC2 subnet IDs for the subnet group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBSubnetGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SubnetGroup'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.UpdateSubnetGroupResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.UpdateSubnetGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBSubnetGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SubnetGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^SubnetGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBSubnetGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBUpdateClusterBatchCmdlet">
+            <summary>
+            Apply the service update to a list of clusters supplied. For more information on service
+            updates and applying them, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/managing-updates.html#applying-updates">Applying
+            the service updates</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBUpdateClusterBatchCmdlet.ClusterName">
+            <summary>
+            <para>
+            <para>The cluster names to apply the updates.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBUpdateClusterBatchCmdlet.ServiceUpdate_ServiceUpdateNameToApply">
+            <summary>
+            <para>
+            <para>The unique ID of the service update</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBUpdateClusterBatchCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.BatchUpdateClusterResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.BatchUpdateClusterResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBUpdateClusterBatchCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ServiceUpdate_ServiceUpdateNameToApply parameter.
+            The -PassThru parameter is deprecated, use -Select '^ServiceUpdate_ServiceUpdateNameToApply' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBUpdateClusterBatchCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBUserCmdlet">
+            <summary>
+            Changes user password(s) and/or access string.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBUserCmdlet.AccessString">
+            <summary>
+            <para>
+            <para>Access permissions string used for this user.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBUserCmdlet.AuthenticationMode_Password">
+            <summary>
+            <para>
+            <para>The password(s) used for authentication</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBUserCmdlet.AuthenticationMode_Type">
+            <summary>
+            <para>
+            <para>Indicates whether the user requires a password to authenticate. All newly-created
+            users require a password.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBUserCmdlet.UserName">
+            <summary>
+            <para>
+            <para>The name of the user</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBUserCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'User'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MemoryDB.Model.UpdateUserResponse).
+            Specifying the name of a property of type Amazon.MemoryDB.Model.UpdateUserResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBUserCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the UserName parameter.
+            The -PassThru parameter is deprecated, use -Select '^UserName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MDB.UpdateMDBUserCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

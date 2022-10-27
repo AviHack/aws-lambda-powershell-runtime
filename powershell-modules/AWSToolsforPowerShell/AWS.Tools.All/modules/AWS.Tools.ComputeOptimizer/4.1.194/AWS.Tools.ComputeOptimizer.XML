@@ -1,0 +1,1325 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.ComputeOptimizer</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.CO.ExportCOAutoScalingGroupRecommendationCmdlet">
+            <summary>
+            Exports optimization recommendations for Auto Scaling groups.
+            
+             
+            <para>
+            Recommendations are exported in a comma-separated values (.csv) file, and its metadata
+            in a JavaScript Object Notation (JSON) (.json) file, to an existing Amazon Simple
+            Storage Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+            Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+            </para><para>
+            You can have only one Auto Scaling group export job in progress per Amazon Web Services
+            Region.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOAutoScalingGroupRecommendationCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The IDs of the Amazon Web Services accounts for which to export Auto Scaling group
+            recommendations.</para><para>If your account is the management account of an organization, use this parameter to
+            specify the member account for which you want to export recommendations.</para><para>This parameter cannot be specified together with the include member accounts parameter.
+            The parameters are mutually exclusive.</para><para>Recommendations for member accounts are not included in the export if this parameter,
+            or the include member accounts parameter, is omitted.</para><para>You can specify multiple account IDs per request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOAutoScalingGroupRecommendationCmdlet.S3DestinationConfig_Bucket">
+            <summary>
+            <para>
+            <para>The name of the Amazon S3 bucket to use as the destination for an export job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOAutoScalingGroupRecommendationCmdlet.RecommendationPreferences_CpuVendorArchitecture">
+            <summary>
+            <para>
+            <para>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling
+            group recommendations.</para><para>For example, when you specify <code>AWS_ARM64</code> with:</para><ul><li><para>A <a>GetEC2InstanceRecommendations</a> or <a>GetAutoScalingGroupRecommendations</a>
+            request, Compute Optimizer returns recommendations that consist of Graviton2 instance
+            types only.</para></li><li><para>A <a>GetEC2RecommendationProjectedMetrics</a> request, Compute Optimizer returns projected
+            utilization metrics for Graviton2 instance type recommendations only.</para></li><li><para>A <a>ExportEC2InstanceRecommendations</a> or <a>ExportAutoScalingGroupRecommendations</a>
+            request, Compute Optimizer exports recommendations that consist of Graviton2 instance
+            types only.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOAutoScalingGroupRecommendationCmdlet.FieldsToExport">
+            <summary>
+            <para>
+            <para>The recommendations data to include in the export file. For more information about
+            the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported
+            files</a> in the <i>Compute Optimizer User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOAutoScalingGroupRecommendationCmdlet.FileFormat">
+            <summary>
+            <para>
+            <para>The format of the export file.</para><para>The only export file format currently supported is <code>Csv</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOAutoScalingGroupRecommendationCmdlet.Filter">
+            <summary>
+            <para>
+            <para>An array of objects to specify a filter that exports a more specific set of Auto Scaling
+            group recommendations.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOAutoScalingGroupRecommendationCmdlet.IncludeMemberAccount">
+            <summary>
+            <para>
+            <para>Indicates whether to include recommendations for resources in all member accounts
+            of the organization if your account is the management account of an organization.</para><para>The member accounts must also be opted in to Compute Optimizer, and trusted access
+            for Compute Optimizer must be enabled in the organization account. For more information,
+            see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute
+            Optimizer and Amazon Web Services Organizations trusted access</a> in the <i>Compute
+            Optimizer User Guide</i>.</para><para>Recommendations for member accounts of the organization are not included in the export
+            file if this parameter is omitted.</para><para>This parameter cannot be specified together with the account IDs parameter. The parameters
+            are mutually exclusive.</para><para>Recommendations for member accounts are not included in the export if this parameter,
+            or the account IDs parameter, is omitted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOAutoScalingGroupRecommendationCmdlet.S3DestinationConfig_KeyPrefix">
+            <summary>
+            <para>
+            <para>The Amazon S3 bucket prefix for an export job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOAutoScalingGroupRecommendationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComputeOptimizer.Model.ExportAutoScalingGroupRecommendationsResponse).
+            Specifying the name of a property of type Amazon.ComputeOptimizer.Model.ExportAutoScalingGroupRecommendationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOAutoScalingGroupRecommendationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CO.ExportCOEBSVolumeRecommendationCmdlet">
+            <summary>
+            Exports optimization recommendations for Amazon EBS volumes.
+            
+             
+            <para>
+            Recommendations are exported in a comma-separated values (.csv) file, and its metadata
+            in a JavaScript Object Notation (JSON) (.json) file, to an existing Amazon Simple
+            Storage Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+            Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+            </para><para>
+            You can have only one Amazon EBS volume export job in progress per Amazon Web Services
+            Region.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOEBSVolumeRecommendationCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The IDs of the Amazon Web Services accounts for which to export Amazon EBS volume
+            recommendations.</para><para>If your account is the management account of an organization, use this parameter to
+            specify the member account for which you want to export recommendations.</para><para>This parameter cannot be specified together with the include member accounts parameter.
+            The parameters are mutually exclusive.</para><para>Recommendations for member accounts are not included in the export if this parameter,
+            or the include member accounts parameter, is omitted.</para><para>You can specify multiple account IDs per request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOEBSVolumeRecommendationCmdlet.S3DestinationConfig_Bucket">
+            <summary>
+            <para>
+            <para>The name of the Amazon S3 bucket to use as the destination for an export job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOEBSVolumeRecommendationCmdlet.FieldsToExport">
+            <summary>
+            <para>
+            <para>The recommendations data to include in the export file. For more information about
+            the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported
+            files</a> in the <i>Compute Optimizer User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOEBSVolumeRecommendationCmdlet.FileFormat">
+            <summary>
+            <para>
+            <para>The format of the export file.</para><para>The only export file format currently supported is <code>Csv</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOEBSVolumeRecommendationCmdlet.Filter">
+            <summary>
+            <para>
+            <para>An array of objects to specify a filter that exports a more specific set of Amazon
+            EBS volume recommendations.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOEBSVolumeRecommendationCmdlet.IncludeMemberAccount">
+            <summary>
+            <para>
+            <para>Indicates whether to include recommendations for resources in all member accounts
+            of the organization if your account is the management account of an organization.</para><para>The member accounts must also be opted in to Compute Optimizer, and trusted access
+            for Compute Optimizer must be enabled in the organization account. For more information,
+            see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute
+            Optimizer and Amazon Web Services Organizations trusted access</a> in the <i>Compute
+            Optimizer User Guide</i>.</para><para>Recommendations for member accounts of the organization are not included in the export
+            file if this parameter is omitted.</para><para>This parameter cannot be specified together with the account IDs parameter. The parameters
+            are mutually exclusive.</para><para>Recommendations for member accounts are not included in the export if this parameter,
+            or the account IDs parameter, is omitted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOEBSVolumeRecommendationCmdlet.S3DestinationConfig_KeyPrefix">
+            <summary>
+            <para>
+            <para>The Amazon S3 bucket prefix for an export job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOEBSVolumeRecommendationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComputeOptimizer.Model.ExportEBSVolumeRecommendationsResponse).
+            Specifying the name of a property of type Amazon.ComputeOptimizer.Model.ExportEBSVolumeRecommendationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOEBSVolumeRecommendationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CO.ExportCOEC2InstanceRecommendationCmdlet">
+            <summary>
+            Exports optimization recommendations for Amazon EC2 instances.
+            
+             
+            <para>
+            Recommendations are exported in a comma-separated values (.csv) file, and its metadata
+            in a JavaScript Object Notation (JSON) (.json) file, to an existing Amazon Simple
+            Storage Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+            Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+            </para><para>
+            You can have only one Amazon EC2 instance export job in progress per Amazon Web Services
+            Region.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOEC2InstanceRecommendationCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The IDs of the Amazon Web Services accounts for which to export instance recommendations.</para><para>If your account is the management account of an organization, use this parameter to
+            specify the member account for which you want to export recommendations.</para><para>This parameter cannot be specified together with the include member accounts parameter.
+            The parameters are mutually exclusive.</para><para>Recommendations for member accounts are not included in the export if this parameter,
+            or the include member accounts parameter, is omitted.</para><para>You can specify multiple account IDs per request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOEC2InstanceRecommendationCmdlet.S3DestinationConfig_Bucket">
+            <summary>
+            <para>
+            <para>The name of the Amazon S3 bucket to use as the destination for an export job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOEC2InstanceRecommendationCmdlet.RecommendationPreferences_CpuVendorArchitecture">
+            <summary>
+            <para>
+            <para>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling
+            group recommendations.</para><para>For example, when you specify <code>AWS_ARM64</code> with:</para><ul><li><para>A <a>GetEC2InstanceRecommendations</a> or <a>GetAutoScalingGroupRecommendations</a>
+            request, Compute Optimizer returns recommendations that consist of Graviton2 instance
+            types only.</para></li><li><para>A <a>GetEC2RecommendationProjectedMetrics</a> request, Compute Optimizer returns projected
+            utilization metrics for Graviton2 instance type recommendations only.</para></li><li><para>A <a>ExportEC2InstanceRecommendations</a> or <a>ExportAutoScalingGroupRecommendations</a>
+            request, Compute Optimizer exports recommendations that consist of Graviton2 instance
+            types only.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOEC2InstanceRecommendationCmdlet.FieldsToExport">
+            <summary>
+            <para>
+            <para>The recommendations data to include in the export file. For more information about
+            the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported
+            files</a> in the <i>Compute Optimizer User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOEC2InstanceRecommendationCmdlet.FileFormat">
+            <summary>
+            <para>
+            <para>The format of the export file.</para><para>The only export file format currently supported is <code>Csv</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOEC2InstanceRecommendationCmdlet.Filter">
+            <summary>
+            <para>
+            <para>An array of objects to specify a filter that exports a more specific set of instance
+            recommendations.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOEC2InstanceRecommendationCmdlet.IncludeMemberAccount">
+            <summary>
+            <para>
+            <para>Indicates whether to include recommendations for resources in all member accounts
+            of the organization if your account is the management account of an organization.</para><para>The member accounts must also be opted in to Compute Optimizer, and trusted access
+            for Compute Optimizer must be enabled in the organization account. For more information,
+            see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute
+            Optimizer and Amazon Web Services Organizations trusted access</a> in the <i>Compute
+            Optimizer User Guide</i>.</para><para>Recommendations for member accounts of the organization are not included in the export
+            file if this parameter is omitted.</para><para>Recommendations for member accounts are not included in the export if this parameter,
+            or the account IDs parameter, is omitted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOEC2InstanceRecommendationCmdlet.S3DestinationConfig_KeyPrefix">
+            <summary>
+            <para>
+            <para>The Amazon S3 bucket prefix for an export job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOEC2InstanceRecommendationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComputeOptimizer.Model.ExportEC2InstanceRecommendationsResponse).
+            Specifying the name of a property of type Amazon.ComputeOptimizer.Model.ExportEC2InstanceRecommendationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOEC2InstanceRecommendationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CO.ExportCOLambdaFunctionRecommendationCmdlet">
+            <summary>
+            Exports optimization recommendations for Lambda functions.
+            
+             
+            <para>
+            Recommendations are exported in a comma-separated values (.csv) file, and its metadata
+            in a JavaScript Object Notation (JSON) (.json) file, to an existing Amazon Simple
+            Storage Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+            Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+            </para><para>
+            You can have only one Lambda function export job in progress per Amazon Web Services
+            Region.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOLambdaFunctionRecommendationCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The IDs of the Amazon Web Services accounts for which to export Lambda function recommendations.</para><para>If your account is the management account of an organization, use this parameter to
+            specify the member account for which you want to export recommendations.</para><para>This parameter cannot be specified together with the include member accounts parameter.
+            The parameters are mutually exclusive.</para><para>Recommendations for member accounts are not included in the export if this parameter,
+            or the include member accounts parameter, is omitted.</para><para>You can specify multiple account IDs per request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOLambdaFunctionRecommendationCmdlet.S3DestinationConfig_Bucket">
+            <summary>
+            <para>
+            <para>The name of the Amazon S3 bucket to use as the destination for an export job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOLambdaFunctionRecommendationCmdlet.FieldsToExport">
+            <summary>
+            <para>
+            <para>The recommendations data to include in the export file. For more information about
+            the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported
+            files</a> in the <i>Compute Optimizer User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOLambdaFunctionRecommendationCmdlet.FileFormat">
+            <summary>
+            <para>
+            <para>The format of the export file.</para><para>The only export file format currently supported is <code>Csv</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOLambdaFunctionRecommendationCmdlet.Filter">
+            <summary>
+            <para>
+            <para>An array of objects to specify a filter that exports a more specific set of Lambda
+            function recommendations.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOLambdaFunctionRecommendationCmdlet.IncludeMemberAccount">
+            <summary>
+            <para>
+            <para>Indicates whether to include recommendations for resources in all member accounts
+            of the organization if your account is the management account of an organization.</para><para>The member accounts must also be opted in to Compute Optimizer, and trusted access
+            for Compute Optimizer must be enabled in the organization account. For more information,
+            see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute
+            Optimizer and Amazon Web Services Organizations trusted access</a> in the <i>Compute
+            Optimizer User Guide</i>.</para><para>Recommendations for member accounts of the organization are not included in the export
+            file if this parameter is omitted.</para><para>This parameter cannot be specified together with the account IDs parameter. The parameters
+            are mutually exclusive.</para><para>Recommendations for member accounts are not included in the export if this parameter,
+            or the account IDs parameter, is omitted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOLambdaFunctionRecommendationCmdlet.S3DestinationConfig_KeyPrefix">
+            <summary>
+            <para>
+            <para>The Amazon S3 bucket prefix for an export job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOLambdaFunctionRecommendationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComputeOptimizer.Model.ExportLambdaFunctionRecommendationsResponse).
+            Specifying the name of a property of type Amazon.ComputeOptimizer.Model.ExportLambdaFunctionRecommendationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.ExportCOLambdaFunctionRecommendationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CO.GetCOAutoScalingGroupRecommendationCmdlet">
+            <summary>
+            Returns Auto Scaling group recommendations.
+            
+             
+            <para>
+            Compute Optimizer generates recommendations for Amazon EC2 Auto Scaling groups that
+            meet a specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+            resources and requirements</a> in the <i>Compute Optimizer User Guide</i>.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOAutoScalingGroupRecommendationCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Web Services account for which to return Auto Scaling group recommendations.</para><para>If your account is the management account of an organization, use this parameter to
+            specify the member account for which you want to return Auto Scaling group recommendations.</para><para>Only one account ID can be specified per request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOAutoScalingGroupRecommendationCmdlet.AutoScalingGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Auto Scaling groups for which to return recommendations.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOAutoScalingGroupRecommendationCmdlet.RecommendationPreferences_CpuVendorArchitecture">
+            <summary>
+            <para>
+            <para>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling
+            group recommendations.</para><para>For example, when you specify <code>AWS_ARM64</code> with:</para><ul><li><para>A <a>GetEC2InstanceRecommendations</a> or <a>GetAutoScalingGroupRecommendations</a>
+            request, Compute Optimizer returns recommendations that consist of Graviton2 instance
+            types only.</para></li><li><para>A <a>GetEC2RecommendationProjectedMetrics</a> request, Compute Optimizer returns projected
+            utilization metrics for Graviton2 instance type recommendations only.</para></li><li><para>A <a>ExportEC2InstanceRecommendations</a> or <a>ExportAutoScalingGroupRecommendations</a>
+            request, Compute Optimizer exports recommendations that consist of Graviton2 instance
+            types only.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOAutoScalingGroupRecommendationCmdlet.Filter">
+            <summary>
+            <para>
+            <para>An array of objects to specify a filter that returns a more specific list of Auto
+            Scaling group recommendations.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOAutoScalingGroupRecommendationCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of Auto Scaling group recommendations to return with a single request.</para><para>To retrieve the remaining results, make another request with the returned <code>nextToken</code>
+            value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOAutoScalingGroupRecommendationCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to advance to the next page of Auto Scaling group recommendations.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOAutoScalingGroupRecommendationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AutoScalingGroupRecommendations'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComputeOptimizer.Model.GetAutoScalingGroupRecommendationsResponse).
+            Specifying the name of a property of type Amazon.ComputeOptimizer.Model.GetAutoScalingGroupRecommendationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOAutoScalingGroupRecommendationCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CO.GetCOEBSVolumeRecommendationCmdlet">
+            <summary>
+            Returns Amazon Elastic Block Store (Amazon EBS) volume recommendations.
+            
+             
+            <para>
+            Compute Optimizer generates recommendations for Amazon EBS volumes that meet a specific
+            set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+            resources and requirements</a> in the <i>Compute Optimizer User Guide</i>.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEBSVolumeRecommendationCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Web Services account for which to return volume recommendations.</para><para>If your account is the management account of an organization, use this parameter to
+            specify the member account for which you want to return volume recommendations.</para><para>Only one account ID can be specified per request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEBSVolumeRecommendationCmdlet.Filter">
+            <summary>
+            <para>
+            <para>An array of objects to specify a filter that returns a more specific list of volume
+            recommendations.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEBSVolumeRecommendationCmdlet.VolumeArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the volumes for which to return recommendations.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEBSVolumeRecommendationCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of volume recommendations to return with a single request.</para><para>To retrieve the remaining results, make another request with the returned <code>nextToken</code>
+            value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEBSVolumeRecommendationCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to advance to the next page of volume recommendations.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEBSVolumeRecommendationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComputeOptimizer.Model.GetEBSVolumeRecommendationsResponse).
+            Specifying the name of a property of type Amazon.ComputeOptimizer.Model.GetEBSVolumeRecommendationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEBSVolumeRecommendationCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CO.GetCOEC2InstanceRecommendationCmdlet">
+            <summary>
+            Returns Amazon EC2 instance recommendations.
+            
+             
+            <para>
+            Compute Optimizer generates recommendations for Amazon Elastic Compute Cloud (Amazon
+            EC2) instances that meet a specific set of requirements. For more information, see
+            the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+            resources and requirements</a> in the <i>Compute Optimizer User Guide</i>.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEC2InstanceRecommendationCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Web Services account for which to return instance recommendations.</para><para>If your account is the management account of an organization, use this parameter to
+            specify the member account for which you want to return instance recommendations.</para><para>Only one account ID can be specified per request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEC2InstanceRecommendationCmdlet.RecommendationPreferences_CpuVendorArchitecture">
+            <summary>
+            <para>
+            <para>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling
+            group recommendations.</para><para>For example, when you specify <code>AWS_ARM64</code> with:</para><ul><li><para>A <a>GetEC2InstanceRecommendations</a> or <a>GetAutoScalingGroupRecommendations</a>
+            request, Compute Optimizer returns recommendations that consist of Graviton2 instance
+            types only.</para></li><li><para>A <a>GetEC2RecommendationProjectedMetrics</a> request, Compute Optimizer returns projected
+            utilization metrics for Graviton2 instance type recommendations only.</para></li><li><para>A <a>ExportEC2InstanceRecommendations</a> or <a>ExportAutoScalingGroupRecommendations</a>
+            request, Compute Optimizer exports recommendations that consist of Graviton2 instance
+            types only.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEC2InstanceRecommendationCmdlet.Filter">
+            <summary>
+            <para>
+            <para>An array of objects to specify a filter that returns a more specific list of instance
+            recommendations.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEC2InstanceRecommendationCmdlet.InstanceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the instances for which to return recommendations.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEC2InstanceRecommendationCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of instance recommendations to return with a single request.</para><para>To retrieve the remaining results, make another request with the returned <code>nextToken</code>
+            value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEC2InstanceRecommendationCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to advance to the next page of instance recommendations.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEC2InstanceRecommendationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComputeOptimizer.Model.GetEC2InstanceRecommendationsResponse).
+            Specifying the name of a property of type Amazon.ComputeOptimizer.Model.GetEC2InstanceRecommendationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEC2InstanceRecommendationCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CO.GetCOEC2RecommendationProjectedMetricCmdlet">
+            <summary>
+            Returns the projected utilization metrics of Amazon EC2 instance recommendations.
+            
+             <note><para>
+            The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization
+            metrics returned when you run this action. Additionally, the <code>Memory</code> metric
+            is returned only for resources that have the unified CloudWatch agent installed on
+            them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
+            Memory Utilization with the CloudWatch Agent</a>.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEC2RecommendationProjectedMetricCmdlet.RecommendationPreferences_CpuVendorArchitecture">
+            <summary>
+            <para>
+            <para>Specifies the CPU vendor and architecture for Amazon EC2 instance and Auto Scaling
+            group recommendations.</para><para>For example, when you specify <code>AWS_ARM64</code> with:</para><ul><li><para>A <a>GetEC2InstanceRecommendations</a> or <a>GetAutoScalingGroupRecommendations</a>
+            request, Compute Optimizer returns recommendations that consist of Graviton2 instance
+            types only.</para></li><li><para>A <a>GetEC2RecommendationProjectedMetrics</a> request, Compute Optimizer returns projected
+            utilization metrics for Graviton2 instance type recommendations only.</para></li><li><para>A <a>ExportEC2InstanceRecommendations</a> or <a>ExportAutoScalingGroupRecommendations</a>
+            request, Compute Optimizer exports recommendations that consist of Graviton2 instance
+            types only.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEC2RecommendationProjectedMetricCmdlet.EndTime">
+            <summary>
+            <para>
+            <para>The timestamp of the last projected metrics data point to return.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEC2RecommendationProjectedMetricCmdlet.InstanceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the instances for which to return recommendation
+            projected metrics.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEC2RecommendationProjectedMetricCmdlet.Period">
+            <summary>
+            <para>
+            <para>The granularity, in seconds, of the projected metrics data points.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEC2RecommendationProjectedMetricCmdlet.StartTime">
+            <summary>
+            <para>
+            <para>The timestamp of the first projected metrics data point to return.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEC2RecommendationProjectedMetricCmdlet.Stat">
+            <summary>
+            <para>
+            <para>The statistic of the projected metrics.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEC2RecommendationProjectedMetricCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'RecommendedOptionProjectedMetrics'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComputeOptimizer.Model.GetEC2RecommendationProjectedMetricsResponse).
+            Specifying the name of a property of type Amazon.ComputeOptimizer.Model.GetEC2RecommendationProjectedMetricsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEC2RecommendationProjectedMetricCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the InstanceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^InstanceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CO.GetCOEffectiveRecommendationPreferenceCmdlet">
+            <summary>
+            Returns the recommendation preferences that are in effect for a given resource, such
+            as enhanced infrastructure metrics. Considers all applicable preferences that you
+            might have set at the resource, account, and organization level.
+            
+             
+            <para>
+            When you create a recommendation preference, you can set its status to <code>Active</code>
+            or <code>Inactive</code>. Use this action to view the recommendation preferences that
+            are in effect, or <code>Active</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEffectiveRecommendationPreferenceCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource for which to confirm effective recommendation
+            preferences. Only EC2 instance and Auto Scaling group ARNs are currently supported.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEffectiveRecommendationPreferenceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EnhancedInfrastructureMetrics'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComputeOptimizer.Model.GetEffectiveRecommendationPreferencesResponse).
+            Specifying the name of a property of type Amazon.ComputeOptimizer.Model.GetEffectiveRecommendationPreferencesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEffectiveRecommendationPreferenceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CO.GetCOEnrollmentStatusCmdlet">
+            <summary>
+            Returns the enrollment (opt in) status of an account to the Compute Optimizer service.
+            
+             
+            <para>
+            If the account is the management account of an organization, this action also confirms
+            the enrollment status of member accounts of the organization. Use the <a>GetEnrollmentStatusesForOrganization</a>
+            action to get detailed information about the enrollment status of member accounts
+            of an organization.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEnrollmentStatusCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComputeOptimizer.Model.GetEnrollmentStatusResponse).
+            Specifying the name of a property of type Amazon.ComputeOptimizer.Model.GetEnrollmentStatusResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CO.GetCOEnrollmentStatusesForOrganizationCmdlet">
+            <summary>
+            Returns the Compute Optimizer enrollment (opt-in) status of organization member accounts,
+            if your account is an organization management account.
+            
+             
+            <para>
+            To get the enrollment status of standalone accounts, use the <a>GetEnrollmentStatus</a>
+            action.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEnrollmentStatusesForOrganizationCmdlet.Filter">
+            <summary>
+            <para>
+            <para>An array of objects to specify a filter that returns a more specific list of account
+            enrollment statuses.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEnrollmentStatusesForOrganizationCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of account enrollment statuses to return with a single request.
+            You can specify up to 100 statuses to return with each request.</para><para>To retrieve the remaining results, make another request with the returned <code>nextToken</code>
+            value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEnrollmentStatusesForOrganizationCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to advance to the next page of account enrollment statuses.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEnrollmentStatusesForOrganizationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AccountEnrollmentStatuses'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComputeOptimizer.Model.GetEnrollmentStatusesForOrganizationResponse).
+            Specifying the name of a property of type Amazon.ComputeOptimizer.Model.GetEnrollmentStatusesForOrganizationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOEnrollmentStatusesForOrganizationCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CO.GetCOLambdaFunctionRecommendationCmdlet">
+            <summary>
+            Returns Lambda function recommendations.
+            
+             
+            <para>
+            Compute Optimizer generates recommendations for functions that meet a specific set
+            of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+            resources and requirements</a> in the <i>Compute Optimizer User Guide</i>.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOLambdaFunctionRecommendationCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Web Services account for which to return function recommendations.</para><para>If your account is the management account of an organization, use this parameter to
+            specify the member account for which you want to return function recommendations.</para><para>Only one account ID can be specified per request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOLambdaFunctionRecommendationCmdlet.Filter">
+            <summary>
+            <para>
+            <para>An array of objects to specify a filter that returns a more specific list of function
+            recommendations.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOLambdaFunctionRecommendationCmdlet.FunctionArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the functions for which to return recommendations.</para><para>You can specify a qualified or unqualified ARN. If you specify an unqualified ARN
+            without a function version suffix, Compute Optimizer will return recommendations for
+            the latest (<code>$LATEST</code>) version of the function. If you specify a qualified
+            ARN with a version suffix, Compute Optimizer will return recommendations for the specified
+            function version. For more information about using function versions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using
+            versions</a> in the <i>Lambda Developer Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOLambdaFunctionRecommendationCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of function recommendations to return with a single request.</para><para>To retrieve the remaining results, make another request with the returned <code>nextToken</code>
+            value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOLambdaFunctionRecommendationCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to advance to the next page of function recommendations.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOLambdaFunctionRecommendationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'LambdaFunctionRecommendations'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComputeOptimizer.Model.GetLambdaFunctionRecommendationsResponse).
+            Specifying the name of a property of type Amazon.ComputeOptimizer.Model.GetLambdaFunctionRecommendationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCOLambdaFunctionRecommendationCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CO.GetCORecommendationExportJobCmdlet">
+            <summary>
+            Describes recommendation export jobs created in the last seven days.
+            
+             
+            <para>
+            Use the <a>ExportAutoScalingGroupRecommendations</a> or <a>ExportEC2InstanceRecommendations</a>
+            actions to request an export of your recommendations. Then use the <a>DescribeRecommendationExportJobs</a>
+            action to view your export jobs.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCORecommendationExportJobCmdlet.Filter">
+            <summary>
+            <para>
+            <para>An array of objects to specify a filter that returns a more specific list of export
+            jobs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCORecommendationExportJobCmdlet.JobId">
+            <summary>
+            <para>
+            <para>The identification numbers of the export jobs to return.</para><para>An export job ID is returned when you create an export using the <a>ExportAutoScalingGroupRecommendations</a>
+            or <a>ExportEC2InstanceRecommendations</a> actions.</para><para>All export jobs created in the last seven days are returned if this parameter is omitted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCORecommendationExportJobCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of export jobs to return with a single request.</para><para>To retrieve the remaining results, make another request with the returned <code>nextToken</code>
+            value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCORecommendationExportJobCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to advance to the next page of export jobs.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCORecommendationExportJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'RecommendationExportJobs'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComputeOptimizer.Model.DescribeRecommendationExportJobsResponse).
+            Specifying the name of a property of type Amazon.ComputeOptimizer.Model.DescribeRecommendationExportJobsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCORecommendationExportJobCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CO.GetCORecommendationPreferenceCmdlet">
+            <summary>
+            Returns existing recommendation preferences, such as enhanced infrastructure metrics.
+            
+             
+            <para>
+            Use the <code>scope</code> parameter to specify which preferences to return. You can
+            specify to return preferences for an organization, a specific account ID, or a specific
+            EC2 instance or Auto Scaling group Amazon Resource Name (ARN).
+            </para><para>
+            For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+            enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCORecommendationPreferenceCmdlet.Scope_Name">
+            <summary>
+            <para>
+            <para>The name of the scope.</para><para>The following scopes are possible:</para><ul><li><para><code>Organization</code> - Specifies that the recommendation preference applies
+            at the organization level, for all member accounts of an organization.</para></li><li><para><code>AccountId</code> - Specifies that the recommendation preference applies at
+            the account level, for all resources of a given resource type in an account.</para></li><li><para><code>ResourceArn</code> - Specifies that the recommendation preference applies at
+            the individual resource level.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCORecommendationPreferenceCmdlet.ResourceType">
+            <summary>
+            <para>
+            <para>The target resource type of the recommendation preference for which to return preferences.</para><para>The <code>Ec2Instance</code> option encompasses standalone instances and instances
+            that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses
+            only instances that are part of an Auto Scaling group.</para><note><para>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCORecommendationPreferenceCmdlet.Scope_Value">
+            <summary>
+            <para>
+            <para>The value of the scope.</para><para>If you specified the <code>name</code> of the scope as:</para><ul><li><para><code>Organization</code> - The <code>value</code> must be <code>ALL_ACCOUNTS</code>.</para></li><li><para><code>AccountId</code> - The <code>value</code> must be a 12-digit Amazon Web Services
+            account ID.</para></li><li><para><code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name
+            (ARN) of an EC2 instance or an Auto Scaling group.</para></li></ul><para>Only EC2 instance and Auto Scaling group ARNs are currently supported.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCORecommendationPreferenceCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of recommendation preferences to return with a single request.</para><para>To retrieve the remaining results, make another request with the returned <code>nextToken</code>
+            value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCORecommendationPreferenceCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to advance to the next page of recommendation preferences.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCORecommendationPreferenceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'RecommendationPreferencesDetails'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComputeOptimizer.Model.GetRecommendationPreferencesResponse).
+            Specifying the name of a property of type Amazon.ComputeOptimizer.Model.GetRecommendationPreferencesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCORecommendationPreferenceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceType parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceType' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCORecommendationPreferenceCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CO.GetCORecommendationSummaryCmdlet">
+            <summary>
+            Returns the optimization findings for an account.
+            
+             
+            <para>
+            It returns the number of:
+            </para><ul><li><para>
+            Amazon EC2 instances in an account that are <code>Underprovisioned</code>, <code>Overprovisioned</code>,
+            or <code>Optimized</code>.
+            </para></li><li><para>
+            Auto Scaling groups in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.
+            </para></li><li><para>
+            Amazon EBS volumes in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.
+            </para></li><li><para>
+            Lambda functions in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.
+            </para></li></ul><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCORecommendationSummaryCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Web Services account for which to return recommendation summaries.</para><para>If your account is the management account of an organization, use this parameter to
+            specify the member account for which you want to return recommendation summaries.</para><para>Only one account ID can be specified per request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCORecommendationSummaryCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of recommendation summaries to return with a single request.</para><para>To retrieve the remaining results, make another request with the returned <code>nextToken</code>
+            value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCORecommendationSummaryCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to advance to the next page of recommendation summaries.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCORecommendationSummaryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'RecommendationSummaries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComputeOptimizer.Model.GetRecommendationSummariesResponse).
+            Specifying the name of a property of type Amazon.ComputeOptimizer.Model.GetRecommendationSummariesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.GetCORecommendationSummaryCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CO.RemoveCORecommendationPreferenceCmdlet">
+            <summary>
+            Deletes a recommendation preference, such as enhanced infrastructure metrics.
+            
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+            enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.RemoveCORecommendationPreferenceCmdlet.Scope_Name">
+            <summary>
+            <para>
+            <para>The name of the scope.</para><para>The following scopes are possible:</para><ul><li><para><code>Organization</code> - Specifies that the recommendation preference applies
+            at the organization level, for all member accounts of an organization.</para></li><li><para><code>AccountId</code> - Specifies that the recommendation preference applies at
+            the account level, for all resources of a given resource type in an account.</para></li><li><para><code>ResourceArn</code> - Specifies that the recommendation preference applies at
+            the individual resource level.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.RemoveCORecommendationPreferenceCmdlet.RecommendationPreferenceName">
+            <summary>
+            <para>
+            <para>The name of the recommendation preference to delete.</para><para>Enhanced infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the
+            only feature that can be activated through preferences. Therefore, it is also the
+            only recommendation preference that can be deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.RemoveCORecommendationPreferenceCmdlet.ResourceType">
+            <summary>
+            <para>
+            <para>The target resource type of the recommendation preference to delete.</para><para>The <code>Ec2Instance</code> option encompasses standalone instances and instances
+            that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses
+            only instances that are part of an Auto Scaling group.</para><note><para>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.RemoveCORecommendationPreferenceCmdlet.Scope_Value">
+            <summary>
+            <para>
+            <para>The value of the scope.</para><para>If you specified the <code>name</code> of the scope as:</para><ul><li><para><code>Organization</code> - The <code>value</code> must be <code>ALL_ACCOUNTS</code>.</para></li><li><para><code>AccountId</code> - The <code>value</code> must be a 12-digit Amazon Web Services
+            account ID.</para></li><li><para><code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name
+            (ARN) of an EC2 instance or an Auto Scaling group.</para></li></ul><para>Only EC2 instance and Auto Scaling group ARNs are currently supported.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.RemoveCORecommendationPreferenceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComputeOptimizer.Model.DeleteRecommendationPreferencesResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.RemoveCORecommendationPreferenceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceType parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceType' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.RemoveCORecommendationPreferenceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CO.UpdateCOEnrollmentStatusCmdlet">
+            <summary>
+            Updates the enrollment (opt in and opt out) status of an account to the Compute Optimizer
+            service.
+            
+             
+            <para>
+            If the account is a management account of an organization, this action can also be
+            used to enroll member accounts of the organization.
+            </para><para>
+            You must have the appropriate permissions to opt in to Compute Optimizer, to view
+            its recommendations, and to opt out. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html">Controlling
+            access with Amazon Web Services Identity and Access Management</a> in the <i>Compute
+            Optimizer User Guide</i>.
+            </para><para>
+            When you opt in, Compute Optimizer automatically creates a service-linked role in
+            your account to access its data. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/using-service-linked-roles.html">Using
+            Service-Linked Roles for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.UpdateCOEnrollmentStatusCmdlet.IncludeMemberAccount">
+            <summary>
+            <para>
+            <para>Indicates whether to enroll member accounts of the organization if the account is
+            the management account of an organization.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.UpdateCOEnrollmentStatusCmdlet.Status">
+            <summary>
+            <para>
+            <para>The new enrollment status of the account.</para><para>The following status options are available:</para><ul><li><para><code>Active</code> - Opts in your account to the Compute Optimizer service. Compute
+            Optimizer begins analyzing the configuration and utilization metrics of your Amazon
+            Web Services resources after you opt in. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics
+            analyzed by Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</para></li><li><para><code>Inactive</code> - Opts out your account from the Compute Optimizer service.
+            Your account's recommendations and related metrics data will be deleted from Compute
+            Optimizer after you opt out.</para></li></ul><note><para>The <code>Pending</code> and <code>Failed</code> options cannot be used to update
+            the enrollment status of an account. They are returned in the response of a request
+            to update the enrollment status of an account.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.UpdateCOEnrollmentStatusCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComputeOptimizer.Model.UpdateEnrollmentStatusResponse).
+            Specifying the name of a property of type Amazon.ComputeOptimizer.Model.UpdateEnrollmentStatusResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.UpdateCOEnrollmentStatusCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Status parameter.
+            The -PassThru parameter is deprecated, use -Select '^Status' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.UpdateCOEnrollmentStatusCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CO.WriteCORecommendationPreferenceCmdlet">
+            <summary>
+            Creates a new recommendation preference or updates an existing recommendation preference,
+            such as enhanced infrastructure metrics.
+            
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
+            enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.WriteCORecommendationPreferenceCmdlet.EnhancedInfrastructureMetric">
+            <summary>
+            <para>
+            <para>The status of the enhanced infrastructure metrics recommendation preference to create
+            or update.</para><para>Specify the <code>Active</code> status to activate the preference, or specify <code>Inactive</code>
+            to deactivate the preference.</para><para>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced
+            infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.WriteCORecommendationPreferenceCmdlet.InferredWorkloadType">
+            <summary>
+            <para>
+            <para>The status of the inferred workload types recommendation preference to create or update.</para><note><para>The inferred workload type feature is active by default. To deactivate it, create
+            a recommendation preference.</para></note><para>Specify the <code>Inactive</code> status to deactivate the feature, or specify <code>Active</code>
+            to activate it.</para><para>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/inferred-workload-types.html">Inferred
+            workload types</a> in the <i>Compute Optimizer User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.WriteCORecommendationPreferenceCmdlet.Scope_Name">
+            <summary>
+            <para>
+            <para>The name of the scope.</para><para>The following scopes are possible:</para><ul><li><para><code>Organization</code> - Specifies that the recommendation preference applies
+            at the organization level, for all member accounts of an organization.</para></li><li><para><code>AccountId</code> - Specifies that the recommendation preference applies at
+            the account level, for all resources of a given resource type in an account.</para></li><li><para><code>ResourceArn</code> - Specifies that the recommendation preference applies at
+            the individual resource level.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.WriteCORecommendationPreferenceCmdlet.ResourceType">
+            <summary>
+            <para>
+            <para>The target resource type of the recommendation preference to create.</para><para>The <code>Ec2Instance</code> option encompasses standalone instances and instances
+            that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses
+            only instances that are part of an Auto Scaling group.</para><note><para>The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.WriteCORecommendationPreferenceCmdlet.Scope_Value">
+            <summary>
+            <para>
+            <para>The value of the scope.</para><para>If you specified the <code>name</code> of the scope as:</para><ul><li><para><code>Organization</code> - The <code>value</code> must be <code>ALL_ACCOUNTS</code>.</para></li><li><para><code>AccountId</code> - The <code>value</code> must be a 12-digit Amazon Web Services
+            account ID.</para></li><li><para><code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name
+            (ARN) of an EC2 instance or an Auto Scaling group.</para></li></ul><para>Only EC2 instance and Auto Scaling group ARNs are currently supported.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.WriteCORecommendationPreferenceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComputeOptimizer.Model.PutRecommendationPreferencesResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.WriteCORecommendationPreferenceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceType parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceType' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CO.WriteCORecommendationPreferenceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

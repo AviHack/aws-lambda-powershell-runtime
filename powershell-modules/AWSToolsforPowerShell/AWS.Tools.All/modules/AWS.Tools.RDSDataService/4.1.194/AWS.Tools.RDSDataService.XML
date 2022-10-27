@@ -1,0 +1,476 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.RDSDataService</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.RDSD.ConfirmRDSDTransactionCmdlet">
+            <summary>
+            Ends a SQL transaction started with the <code>BeginTransaction</code> operation and
+            commits the changes.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.ConfirmRDSDTransactionCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.ConfirmRDSDTransactionCmdlet.SecretArn">
+            <summary>
+            <para>
+            <para>The name or ARN of the secret that enables access to the DB cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.ConfirmRDSDTransactionCmdlet.TransactionId">
+            <summary>
+            <para>
+            <para>The identifier of the transaction to end and commit.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.ConfirmRDSDTransactionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TransactionStatus'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RDSDataService.Model.CommitTransactionResponse).
+            Specifying the name of a property of type Amazon.RDSDataService.Model.CommitTransactionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.ConfirmRDSDTransactionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TransactionId parameter.
+            The -PassThru parameter is deprecated, use -Select '^TransactionId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.ConfirmRDSDTransactionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDSqlStatementCmdlet">
+            <summary>
+            Runs one or more SQL statements.
+            
+             <note><para>
+            This operation is deprecated. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code>
+            operation.
+            </para></note><br/><br/>This operation is deprecated.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDSqlStatementCmdlet.AwsSecretStoreArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.
+            Enter the database user name and password for the credentials in the secret.</para><para>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create
+            a database secret</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDSqlStatementCmdlet.Database">
+            <summary>
+            <para>
+            <para>The name of the database.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDSqlStatementCmdlet.DbClusterOrInstanceArn">
+            <summary>
+            <para>
+            <para>The ARN of the Aurora Serverless DB cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDSqlStatementCmdlet.Schema">
+            <summary>
+            <para>
+            <para>The name of the database schema.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDSqlStatementCmdlet.SqlStatement">
+            <summary>
+            <para>
+            <para>One or more SQL statements to run on the DB cluster.</para><para>You can separate SQL statements from each other with a semicolon (;). Any valid SQL
+            statement is permitted, including data definition, data manipulation, and commit statements.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDSqlStatementCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SqlStatementResults'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RDSDataService.Model.ExecuteSqlResponse).
+            Specifying the name of a property of type Amazon.RDSDataService.Model.ExecuteSqlResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDSqlStatementCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SqlStatement parameter.
+            The -PassThru parameter is deprecated, use -Select '^SqlStatement' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDSqlStatementCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementCmdlet">
+            <summary>
+            Runs a SQL statement against a database.
+            
+             <note><para>
+            If a call isn't part of a transaction because it doesn't include the <code>transactionID</code>
+            parameter, changes that result from the call are committed automatically.
+            </para><para>
+            If the binary response data from the database is more than 1 MB, the call is terminated.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementCmdlet.ContinueAfterTimeout">
+            <summary>
+            <para>
+            <para>A value that indicates whether to continue running the statement after the call times
+            out. By default, the statement stops running when the call times out.</para><note><para>For DDL statements, we recommend continuing to run the statement after the call times
+            out. When a DDL statement terminates before it is finished running, it can result
+            in errors and possibly corrupted data structures.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementCmdlet.Database">
+            <summary>
+            <para>
+            <para>The name of the database.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementCmdlet.ResultSetOptions_DecimalReturnType">
+            <summary>
+            <para>
+            <para>A value that indicates how a field of <code>DECIMAL</code> type is represented in
+            the response. The value of <code>STRING</code>, the default, specifies that it is
+            converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that
+            it is converted to a Long value if its scale is 0, or to a Double value otherwise.</para><note><para>Conversion to Double or Long can result in roundoff errors due to precision loss.
+            We recommend converting to String, especially when working with currency values.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementCmdlet.FormatRecordsAs">
+            <summary>
+            <para>
+            <para>A value that indicates whether to format the result set as a single JSON string. This
+            parameter only applies to <code>SELECT</code> statements and is ignored for other
+            types of statements. Allowed values are <code>NONE</code> and <code>JSON</code>. The
+            default value is <code>NONE</code>. The result is returned in the <code>formattedRecords</code>
+            field.</para><para>For usage information about the JSON format for result sets, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
+            the Data API</a> in the <i>Amazon Aurora User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementCmdlet.IncludeResultMetadata">
+            <summary>
+            <para>
+            <para>A value that indicates whether to include metadata in the results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementCmdlet.ResultSetOptions_LongReturnType">
+            <summary>
+            <para>
+            <para>A value that indicates how a field of <code>LONG</code> type is represented. Allowed
+            values are <code>LONG</code> and <code>STRING</code>. The default is <code>LONG</code>.
+            Specify <code>STRING</code> if the length or precision of numeric values might cause
+            truncation or rounding errors. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementCmdlet.Parameter">
+            <summary>
+            <para>
+            <para>The parameters for the SQL statement.</para><note><para>Array parameters are not supported.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementCmdlet.Schema">
+            <summary>
+            <para>
+            <para>The name of the database schema.</para><note><para>Currently, the <code>schema</code> parameter isn't supported.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementCmdlet.SecretArn">
+            <summary>
+            <para>
+            <para>The ARN of the secret that enables access to the DB cluster. Enter the database user
+            name and password for the credentials in the secret.</para><para>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create
+            a database secret</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementCmdlet.Sql">
+            <summary>
+            <para>
+            <para>The SQL statement to run.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementCmdlet.TransactionId">
+            <summary>
+            <para>
+            <para>The identifier of a transaction that was started by using the <code>BeginTransaction</code>
+            operation. Specify the transaction ID of the transaction that you want to include
+            the SQL statement in.</para><para>If the SQL statement is not part of a transaction, don't set this parameter.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RDSDataService.Model.ExecuteStatementResponse).
+            Specifying the name of a property of type Amazon.RDSDataService.Model.ExecuteStatementResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Sql parameter.
+            The -PassThru parameter is deprecated, use -Select '^Sql' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementBatchCmdlet">
+            <summary>
+            Runs a batch SQL statement over an array of data.
+            
+             
+            <para>
+            You can run bulk update and insert operations for multiple records using a DML statement
+            with different parameter sets. Bulk operations can provide a significant performance
+            improvement over individual insert and update operations.
+            </para><note><para>
+            If a call isn't part of a transaction because it doesn't include the <code>transactionID</code>
+            parameter, changes that result from the call are committed automatically.
+            </para><para>
+            There isn't a fixed upper limit on the number of parameter sets. However, the maximum
+            size of the HTTP request submitted through the Data API is 4 MiB. If the request exceeds
+            this limit, the Data API returns an error and doesn't process the request. This 4-MiB
+            limit includes the size of the HTTP headers and the JSON notation in the request.
+            Thus, the number of parameter sets that you can include depends on a combination of
+            factors, such as the size of the SQL statement and the size of each parameter set.
+            </para><para>
+            The response size limit is 1 MiB. If the call returns more than 1 MiB of response
+            data, the call is terminated.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementBatchCmdlet.Database">
+            <summary>
+            <para>
+            <para>The name of the database.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementBatchCmdlet.ParameterSet">
+            <summary>
+            <para>
+            <para>The parameter set for the batch operation.</para><para>The SQL statement is executed as many times as the number of parameter sets provided.
+            To execute a SQL statement with no parameters, use one of the following options:</para><ul><li><para>Specify one or more empty parameter sets.</para></li><li><para>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code>
+            operation.</para></li></ul><note><para>Array parameters are not supported.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementBatchCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementBatchCmdlet.Schema">
+            <summary>
+            <para>
+            <para>The name of the database schema.</para><note><para>Currently, the <code>schema</code> parameter isn't supported.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementBatchCmdlet.SecretArn">
+            <summary>
+            <para>
+            <para>The ARN of the secret that enables access to the DB cluster. Enter the database user
+            name and password for the credentials in the secret.</para><para>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create
+            a database secret</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementBatchCmdlet.Sql">
+            <summary>
+            <para>
+            <para>The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementBatchCmdlet.TransactionId">
+            <summary>
+            <para>
+            <para>The identifier of a transaction that was started by using the <code>BeginTransaction</code>
+            operation. Specify the transaction ID of the transaction that you want to include
+            the SQL statement in.</para><para>If the SQL statement is not part of a transaction, don't set this parameter.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementBatchCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'UpdateResults'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RDSDataService.Model.BatchExecuteStatementResponse).
+            Specifying the name of a property of type Amazon.RDSDataService.Model.BatchExecuteStatementResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementBatchCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Sql parameter.
+            The -PassThru parameter is deprecated, use -Select '^Sql' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.InvokeRDSDStatementBatchCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RDSD.ResetRDSDTransactionCmdlet">
+            <summary>
+            Performs a rollback of a transaction. Rolling back a transaction cancels its changes.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.ResetRDSDTransactionCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.ResetRDSDTransactionCmdlet.SecretArn">
+            <summary>
+            <para>
+            <para>The name or ARN of the secret that enables access to the DB cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.ResetRDSDTransactionCmdlet.TransactionId">
+            <summary>
+            <para>
+            <para>The identifier of the transaction to roll back.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.ResetRDSDTransactionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TransactionStatus'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RDSDataService.Model.RollbackTransactionResponse).
+            Specifying the name of a property of type Amazon.RDSDataService.Model.RollbackTransactionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.ResetRDSDTransactionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TransactionId parameter.
+            The -PassThru parameter is deprecated, use -Select '^TransactionId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.ResetRDSDTransactionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.RDSD.StartRDSDTransactionCmdlet">
+            <summary>
+            Starts a SQL transaction.
+            
+             <note><para>
+            A transaction can run for a maximum of 24 hours. A transaction is terminated and rolled
+            back automatically after 24 hours.
+            </para><para>
+            A transaction times out if no calls use its transaction ID in three minutes. If a
+            transaction times out before it's committed, it's rolled back automatically.
+            </para><para>
+            DDL statements inside a transaction cause an implicit commit. We recommend that you
+            run each DDL statement in a separate <code>ExecuteStatement</code> call with <code>continueAfterTimeout</code>
+            enabled.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.StartRDSDTransactionCmdlet.Database">
+            <summary>
+            <para>
+            <para>The name of the database.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.StartRDSDTransactionCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.StartRDSDTransactionCmdlet.Schema">
+            <summary>
+            <para>
+            <para>The name of the database schema.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.StartRDSDTransactionCmdlet.SecretArn">
+            <summary>
+            <para>
+            <para>The name or ARN of the secret that enables access to the DB cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.StartRDSDTransactionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TransactionId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.RDSDataService.Model.BeginTransactionResponse).
+            Specifying the name of a property of type Amazon.RDSDataService.Model.BeginTransactionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.StartRDSDTransactionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.RDSD.StartRDSDTransactionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

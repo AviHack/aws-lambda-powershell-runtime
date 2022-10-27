@@ -1,0 +1,997 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.MigrationHub</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.MH.AddMHCreatedArtifactCmdlet">
+            <summary>
+            Associates a created artifact of an AWS cloud resource, the target receiving the migration,
+            with the migration task performed by a migration tool. This API has the following
+            traits:
+            
+             <ul><li><para>
+            Migration tools can call the <code>AssociateCreatedArtifact</code> operation to indicate
+            which AWS artifact is associated with a migration task.
+            </para></li><li><para>
+            The created artifact name must be provided in ARN (Amazon Resource Name) format which
+            will contain information about type and region; for example: <code>arn:aws:ec2:us-east-1:488216288981:image/ami-6d0ba87b</code>.
+            </para></li><li><para>
+            Examples of the AWS resource behind the created artifact are, AMI's, EC2 instance,
+            or DMS endpoint, etc.
+            </para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.AddMHCreatedArtifactCmdlet.CreatedArtifact">
+            <summary>
+            <para>
+            <para>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS
+            instance, etc.) </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.AddMHCreatedArtifactCmdlet.DryRun">
+            <summary>
+            <para>
+            <para>Optional boolean flag to indicate whether any effect should take place. Used to test
+            if the caller has permission to make the call.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.AddMHCreatedArtifactCmdlet.MigrationTaskName">
+            <summary>
+            <para>
+            <para>Unique identifier that references the migration task. <i>Do not store personal data
+            in this field.</i></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.AddMHCreatedArtifactCmdlet.ProgressUpdateStream">
+            <summary>
+            <para>
+            <para>The name of the ProgressUpdateStream. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.AddMHCreatedArtifactCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MigrationHub.Model.AssociateCreatedArtifactResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.AddMHCreatedArtifactCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the CreatedArtifact parameter.
+            The -PassThru parameter is deprecated, use -Select '^CreatedArtifact' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.AddMHCreatedArtifactCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MH.AddMHDiscoveredResourceCmdlet">
+            <summary>
+            Associates a discovered resource ID from Application Discovery Service with a migration
+            task.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.AddMHDiscoveredResourceCmdlet.DiscoveredResource">
+            <summary>
+            <para>
+            <para>Object representing a Resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.AddMHDiscoveredResourceCmdlet.DryRun">
+            <summary>
+            <para>
+            <para>Optional boolean flag to indicate whether any effect should take place. Used to test
+            if the caller has permission to make the call.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.AddMHDiscoveredResourceCmdlet.MigrationTaskName">
+            <summary>
+            <para>
+            <para>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.AddMHDiscoveredResourceCmdlet.ProgressUpdateStream">
+            <summary>
+            <para>
+            <para>The name of the ProgressUpdateStream.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.AddMHDiscoveredResourceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MigrationHub.Model.AssociateDiscoveredResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.AddMHDiscoveredResourceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DiscoveredResource parameter.
+            The -PassThru parameter is deprecated, use -Select '^DiscoveredResource' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.AddMHDiscoveredResourceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MH.GetMHApplicationStateCmdlet">
+            <summary>
+            Gets the migration status of an application.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHApplicationStateCmdlet.ApplicationId">
+            <summary>
+            <para>
+            <para>The configurationId in Application Discovery Service that uniquely identifies the
+            grouped application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHApplicationStateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MigrationHub.Model.DescribeApplicationStateResponse).
+            Specifying the name of a property of type Amazon.MigrationHub.Model.DescribeApplicationStateResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHApplicationStateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ApplicationId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ApplicationId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MH.GetMHApplicationStateListCmdlet">
+            <summary>
+            Lists all the migration statuses for your applications. If you use the optional <code>ApplicationIds</code>
+            parameter, only the migration statuses for those applications will be returned.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHApplicationStateListCmdlet.ApplicationId">
+            <summary>
+            <para>
+            <para>The configurationIds from the Application Discovery Service that uniquely identifies
+            your applications.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHApplicationStateListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Maximum number of results to be returned per page.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHApplicationStateListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If a <code>NextToken</code> was returned by a previous call, there are more results
+            available. To retrieve the next page of results, make the call again using the returned
+            token in <code>NextToken</code>.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHApplicationStateListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ApplicationStateList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MigrationHub.Model.ListApplicationStatesResponse).
+            Specifying the name of a property of type Amazon.MigrationHub.Model.ListApplicationStatesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHApplicationStateListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MH.GetMHCreatedArtifactListCmdlet">
+            <summary>
+            Lists the created artifacts attached to a given migration task in an update stream.
+            This API has the following traits:
+            
+             <ul><li><para>
+            Gets the list of the created artifacts while migration is taking place.
+            </para></li><li><para>
+            Shows the artifacts created by the migration tool that was associated by the <code>AssociateCreatedArtifact</code>
+            API. 
+            </para></li><li><para>
+            Lists created artifacts in a paginated interface. 
+            </para></li></ul><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHCreatedArtifactListCmdlet.MigrationTaskName">
+            <summary>
+            <para>
+            <para>Unique identifier that references the migration task. <i>Do not store personal data
+            in this field.</i></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHCreatedArtifactListCmdlet.ProgressUpdateStream">
+            <summary>
+            <para>
+            <para>The name of the ProgressUpdateStream. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHCreatedArtifactListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Maximum number of results to be returned per page.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHCreatedArtifactListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If a <code>NextToken</code> was returned by a previous call, there are more results
+            available. To retrieve the next page of results, make the call again using the returned
+            token in <code>NextToken</code>.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHCreatedArtifactListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'CreatedArtifactList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MigrationHub.Model.ListCreatedArtifactsResponse).
+            Specifying the name of a property of type Amazon.MigrationHub.Model.ListCreatedArtifactsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHCreatedArtifactListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the MigrationTaskName parameter.
+            The -PassThru parameter is deprecated, use -Select '^MigrationTaskName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHCreatedArtifactListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MH.GetMHDiscoveredResourceListCmdlet">
+            <summary>
+            Lists discovered resources associated with the given <code>MigrationTask</code>.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHDiscoveredResourceListCmdlet.MigrationTaskName">
+            <summary>
+            <para>
+            <para>The name of the MigrationTask. <i>Do not store personal data in this field.</i></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHDiscoveredResourceListCmdlet.ProgressUpdateStream">
+            <summary>
+            <para>
+            <para>The name of the ProgressUpdateStream.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHDiscoveredResourceListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results returned per page.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHDiscoveredResourceListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If a <code>NextToken</code> was returned by a previous call, there are more results
+            available. To retrieve the next page of results, make the call again using the returned
+            token in <code>NextToken</code>.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHDiscoveredResourceListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'DiscoveredResourceList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MigrationHub.Model.ListDiscoveredResourcesResponse).
+            Specifying the name of a property of type Amazon.MigrationHub.Model.ListDiscoveredResourcesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHDiscoveredResourceListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the MigrationTaskName parameter.
+            The -PassThru parameter is deprecated, use -Select '^MigrationTaskName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHDiscoveredResourceListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MH.GetMHMigrationTaskCmdlet">
+            <summary>
+            Retrieves a list of all attributes associated with a specific migration task.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHMigrationTaskCmdlet.MigrationTaskName">
+            <summary>
+            <para>
+            <para>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHMigrationTaskCmdlet.ProgressUpdateStream">
+            <summary>
+            <para>
+            <para>The name of the ProgressUpdateStream. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHMigrationTaskCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'MigrationTask'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MigrationHub.Model.DescribeMigrationTaskResponse).
+            Specifying the name of a property of type Amazon.MigrationHub.Model.DescribeMigrationTaskResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHMigrationTaskCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the MigrationTaskName parameter.
+            The -PassThru parameter is deprecated, use -Select '^MigrationTaskName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MH.GetMHMigrationTaskListCmdlet">
+            <summary>
+            Lists all, or filtered by resource name, migration tasks associated with the user
+            account making this call. This API has the following traits:
+            
+             <ul><li><para>
+            Can show a summary list of the most recent migration tasks.
+            </para></li><li><para>
+            Can show a summary list of migration tasks associated with a given discovered resource.
+            </para></li><li><para>
+            Lists migration tasks in a paginated interface.
+            </para></li></ul><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHMigrationTaskListCmdlet.ResourceName">
+            <summary>
+            <para>
+            <para>Filter migration tasks by discovered resource name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHMigrationTaskListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Value to specify how many results are returned per page.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHMigrationTaskListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If a <code>NextToken</code> was returned by a previous call, there are more results
+            available. To retrieve the next page of results, make the call again using the returned
+            token in <code>NextToken</code>.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHMigrationTaskListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'MigrationTaskSummaryList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MigrationHub.Model.ListMigrationTasksResponse).
+            Specifying the name of a property of type Amazon.MigrationHub.Model.ListMigrationTasksResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHMigrationTaskListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHMigrationTaskListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MH.GetMHProgressUpdateStreamCmdlet">
+            <summary>
+            Lists progress update streams associated with the user account making this call.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHProgressUpdateStreamCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Filter to limit the maximum number of results to list per page.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHProgressUpdateStreamCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If a <code>NextToken</code> was returned by a previous call, there are more results
+            available. To retrieve the next page of results, make the call again using the returned
+            token in <code>NextToken</code>.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHProgressUpdateStreamCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ProgressUpdateStreamSummaryList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MigrationHub.Model.ListProgressUpdateStreamsResponse).
+            Specifying the name of a property of type Amazon.MigrationHub.Model.ListProgressUpdateStreamsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.GetMHProgressUpdateStreamCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MH.ImportMHMigrationTaskCmdlet">
+            <summary>
+            Registers a new migration task which represents a server, database, etc., being migrated
+            to AWS by a migration tool.
+            
+             
+            <para>
+            This API is a prerequisite to calling the <code>NotifyMigrationTaskState</code> API
+            as the migration tool must first register the migration task with Migration Hub.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.ImportMHMigrationTaskCmdlet.DryRun">
+            <summary>
+            <para>
+            <para>Optional boolean flag to indicate whether any effect should take place. Used to test
+            if the caller has permission to make the call.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.ImportMHMigrationTaskCmdlet.MigrationTaskName">
+            <summary>
+            <para>
+            <para>Unique identifier that references the migration task. <i>Do not store personal data
+            in this field.</i></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.ImportMHMigrationTaskCmdlet.ProgressUpdateStream">
+            <summary>
+            <para>
+            <para>The name of the ProgressUpdateStream. &gt;</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.ImportMHMigrationTaskCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MigrationHub.Model.ImportMigrationTaskResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.ImportMHMigrationTaskCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the MigrationTaskName parameter.
+            The -PassThru parameter is deprecated, use -Select '^MigrationTaskName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.ImportMHMigrationTaskCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MH.NewMHProgressUpdateStreamCmdlet">
+            <summary>
+            Creates a progress update stream which is an AWS resource used for access control
+            as well as a namespace for migration task names that is implicitly linked to your
+            AWS account. It must uniquely identify the migration tool as it is used for all updates
+            made by the tool; however, it does not need to be unique for each AWS account because
+            it is scoped to the AWS account.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.NewMHProgressUpdateStreamCmdlet.DryRun">
+            <summary>
+            <para>
+            <para>Optional boolean flag to indicate whether any effect should take place. Used to test
+            if the caller has permission to make the call.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.NewMHProgressUpdateStreamCmdlet.ProgressUpdateStreamName">
+            <summary>
+            <para>
+            <para>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.NewMHProgressUpdateStreamCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MigrationHub.Model.CreateProgressUpdateStreamResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.NewMHProgressUpdateStreamCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ProgressUpdateStreamName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ProgressUpdateStreamName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.NewMHProgressUpdateStreamCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MH.RemoveMHCreatedArtifactCmdlet">
+            <summary>
+            Disassociates a created artifact of an AWS resource with a migration task performed
+            by a migration tool that was previously associated. This API has the following traits:
+            
+             <ul><li><para>
+            A migration user can call the <code>DisassociateCreatedArtifacts</code> operation
+            to disassociate a created AWS Artifact from a migration task.
+            </para></li><li><para>
+            The created artifact name must be provided in ARN (Amazon Resource Name) format which
+            will contain information about type and region; for example: <code>arn:aws:ec2:us-east-1:488216288981:image/ami-6d0ba87b</code>.
+            </para></li><li><para>
+            Examples of the AWS resource behind the created artifact are, AMI's, EC2 instance,
+            or RDS instance, etc.
+            </para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.RemoveMHCreatedArtifactCmdlet.CreatedArtifactName">
+            <summary>
+            <para>
+            <para>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS
+            instance, etc.)</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.RemoveMHCreatedArtifactCmdlet.DryRun">
+            <summary>
+            <para>
+            <para>Optional boolean flag to indicate whether any effect should take place. Used to test
+            if the caller has permission to make the call.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.RemoveMHCreatedArtifactCmdlet.MigrationTaskName">
+            <summary>
+            <para>
+            <para>Unique identifier that references the migration task to be disassociated with the
+            artifact. <i>Do not store personal data in this field.</i></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.RemoveMHCreatedArtifactCmdlet.ProgressUpdateStream">
+            <summary>
+            <para>
+            <para>The name of the ProgressUpdateStream. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.RemoveMHCreatedArtifactCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MigrationHub.Model.DisassociateCreatedArtifactResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.RemoveMHCreatedArtifactCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the CreatedArtifactName parameter.
+            The -PassThru parameter is deprecated, use -Select '^CreatedArtifactName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.RemoveMHCreatedArtifactCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MH.RemoveMHDiscoveredResourceCmdlet">
+            <summary>
+            Disassociate an Application Discovery Service discovered resource from a migration
+            task.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.RemoveMHDiscoveredResourceCmdlet.ConfigurationId">
+            <summary>
+            <para>
+            <para>ConfigurationId of the Application Discovery Service resource to be disassociated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.RemoveMHDiscoveredResourceCmdlet.DryRun">
+            <summary>
+            <para>
+            <para>Optional boolean flag to indicate whether any effect should take place. Used to test
+            if the caller has permission to make the call.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.RemoveMHDiscoveredResourceCmdlet.MigrationTaskName">
+            <summary>
+            <para>
+            <para>The identifier given to the MigrationTask. <i>Do not store personal data in this field.</i></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.RemoveMHDiscoveredResourceCmdlet.ProgressUpdateStream">
+            <summary>
+            <para>
+            <para>The name of the ProgressUpdateStream.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.RemoveMHDiscoveredResourceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MigrationHub.Model.DisassociateDiscoveredResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.RemoveMHDiscoveredResourceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ConfigurationId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ConfigurationId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.RemoveMHDiscoveredResourceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MH.RemoveMHProgressUpdateStreamCmdlet">
+            <summary>
+            Deletes a progress update stream, including all of its tasks, which was previously
+            created as an AWS resource used for access control. This API has the following traits:
+            
+             <ul><li><para>
+            The only parameter needed for <code>DeleteProgressUpdateStream</code> is the stream
+            name (same as a <code>CreateProgressUpdateStream</code> call).
+            </para></li><li><para>
+            The call will return, and a background process will asynchronously delete the stream
+            and all of its resources (tasks, associated resources, resource attributes, created
+            artifacts).
+            </para></li><li><para>
+            If the stream takes time to be deleted, it might still show up on a <code>ListProgressUpdateStreams</code>
+            call.
+            </para></li><li><para><code>CreateProgressUpdateStream</code>, <code>ImportMigrationTask</code>, <code>NotifyMigrationTaskState</code>,
+            and all Associate[*] APIs related to the tasks belonging to the stream will throw
+            "InvalidInputException" if the stream of the same name is in the process of being
+            deleted.
+            </para></li><li><para>
+            Once the stream and all of its resources are deleted, <code>CreateProgressUpdateStream</code>
+            for a stream of the same name will succeed, and that stream will be an entirely new
+            logical resource (without any resources associated with the old stream).
+            </para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.RemoveMHProgressUpdateStreamCmdlet.DryRun">
+            <summary>
+            <para>
+            <para>Optional boolean flag to indicate whether any effect should take place. Used to test
+            if the caller has permission to make the call.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.RemoveMHProgressUpdateStreamCmdlet.ProgressUpdateStreamName">
+            <summary>
+            <para>
+            <para>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.RemoveMHProgressUpdateStreamCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MigrationHub.Model.DeleteProgressUpdateStreamResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.RemoveMHProgressUpdateStreamCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ProgressUpdateStreamName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ProgressUpdateStreamName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.RemoveMHProgressUpdateStreamCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MH.SendMHApplicationStateNotificationCmdlet">
+            <summary>
+            Sets the migration state of an application. For a given application identified by
+            the value passed to <code>ApplicationId</code>, its status is set or updated by passing
+            one of three values to <code>Status</code>: <code>NOT_STARTED | IN_PROGRESS | COMPLETED</code>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.SendMHApplicationStateNotificationCmdlet.ApplicationId">
+            <summary>
+            <para>
+            <para>The configurationId in Application Discovery Service that uniquely identifies the
+            grouped application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.SendMHApplicationStateNotificationCmdlet.DryRun">
+            <summary>
+            <para>
+            <para>Optional boolean flag to indicate whether any effect should take place. Used to test
+            if the caller has permission to make the call.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.SendMHApplicationStateNotificationCmdlet.Status">
+            <summary>
+            <para>
+            <para>Status of the application - Not Started, In-Progress, Complete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.SendMHApplicationStateNotificationCmdlet.UpdateDateTime">
+            <summary>
+            <para>
+            <para>The timestamp when the application state changed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.SendMHApplicationStateNotificationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MigrationHub.Model.NotifyApplicationStateResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.SendMHApplicationStateNotificationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ApplicationId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ApplicationId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.SendMHApplicationStateNotificationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MH.SendMHMigrationTaskStateNotificationCmdlet">
+            <summary>
+            Notifies Migration Hub of the current status, progress, or other detail regarding
+            a migration task. This API has the following traits:
+            
+             <ul><li><para>
+            Migration tools will call the <code>NotifyMigrationTaskState</code> API to share the
+            latest progress and status.
+            </para></li><li><para><code>MigrationTaskName</code> is used for addressing updates to the correct target.
+            </para></li><li><para><code>ProgressUpdateStream</code> is used for access control and to provide a namespace
+            for each migration tool.
+            </para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.SendMHMigrationTaskStateNotificationCmdlet.DryRun">
+            <summary>
+            <para>
+            <para>Optional boolean flag to indicate whether any effect should take place. Used to test
+            if the caller has permission to make the call.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.SendMHMigrationTaskStateNotificationCmdlet.MigrationTaskName">
+            <summary>
+            <para>
+            <para>Unique identifier that references the migration task. <i>Do not store personal data
+            in this field.</i></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.SendMHMigrationTaskStateNotificationCmdlet.NextUpdateSecond">
+            <summary>
+            <para>
+            <para>Number of seconds after the UpdateDateTime within which the Migration Hub can expect
+            an update. If Migration Hub does not receive an update within the specified interval,
+            then the migration task will be considered stale.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.SendMHMigrationTaskStateNotificationCmdlet.ProgressUpdateStream">
+            <summary>
+            <para>
+            <para>The name of the ProgressUpdateStream. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.SendMHMigrationTaskStateNotificationCmdlet.Task">
+            <summary>
+            <para>
+            <para>Information about the task's progress and status.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.SendMHMigrationTaskStateNotificationCmdlet.UpdateDateTime">
+            <summary>
+            <para>
+            <para>The timestamp when the task was gathered.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.SendMHMigrationTaskStateNotificationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MigrationHub.Model.NotifyMigrationTaskStateResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.SendMHMigrationTaskStateNotificationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Task parameter.
+            The -PassThru parameter is deprecated, use -Select '^Task' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.SendMHMigrationTaskStateNotificationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MH.SetMHResourceAttributeCmdlet">
+            <summary>
+            Provides identifying details of the resource being migrated so that it can be associated
+            in the Application Discovery Service repository. This association occurs asynchronously
+            after <code>PutResourceAttributes</code> returns.
+            
+             <important><ul><li><para>
+            Keep in mind that subsequent calls to PutResourceAttributes will override previously
+            stored attributes. For example, if it is first called with a MAC address, but later,
+            it is desired to <i>add</i> an IP address, it will then be required to call it with
+            <i>both</i> the IP and MAC addresses to prevent overriding the MAC address.
+            </para></li><li><para>
+            Note the instructions regarding the special use case of the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#migrationhub-PutResourceAttributes-request-ResourceAttributeList"><code>ResourceAttributeList</code></a> parameter when specifying any "VM" related
+            value.
+            </para></li></ul></important><note><para>
+            Because this is an asynchronous call, it will always return 200, whether an association
+            occurs or not. To confirm if an association was found based on the provided details,
+            call <code>ListDiscoveredResources</code>.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.SetMHResourceAttributeCmdlet.DryRun">
+            <summary>
+            <para>
+            <para>Optional boolean flag to indicate whether any effect should take place. Used to test
+            if the caller has permission to make the call.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.SetMHResourceAttributeCmdlet.MigrationTaskName">
+            <summary>
+            <para>
+            <para>Unique identifier that references the migration task. <i>Do not store personal data
+            in this field.</i></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.SetMHResourceAttributeCmdlet.ProgressUpdateStream">
+            <summary>
+            <para>
+            <para>The name of the ProgressUpdateStream. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.SetMHResourceAttributeCmdlet.ResourceAttributeList">
+            <summary>
+            <para>
+            <para>Information about the resource that is being migrated. This data will be used to map
+            the task to a resource in the Application Discovery Service repository.</para><note><para>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code>
+            field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS
+            | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH | BIOS_ID
+            | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a string up
+            to 256 characters.</para></note><important><ul><li><para>If any "VM" related value is set for a <code>ResourceAttribute</code> object, it is
+            required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If <code>VM_MANAGER_ID</code>
+            is not set, then all "VM" fields will be discarded and "VM" fields will not be used
+            for matching the migration task to a server in Application Discovery Service repository.
+            See the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a>
+            section below for a use case of specifying "VM" related values.</para></li><li><para> If a server you are trying to match has multiple IP or MAC addresses, you should
+            provide as many as you know in separate type/value pairs passed to the <code>ResourceAttributeList</code>
+            parameter to maximize the chances of matching.</para></li></ul></important>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.SetMHResourceAttributeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MigrationHub.Model.PutResourceAttributesResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.SetMHResourceAttributeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the MigrationTaskName parameter.
+            The -PassThru parameter is deprecated, use -Select '^MigrationTaskName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MH.SetMHResourceAttributeCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

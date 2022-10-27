@@ -1,0 +1,2087 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.MachineLearning</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.AddMLResourceTagCmdlet">
+            <summary>
+            Adds one or more tags to an object, up to a limit of 10. Each tag consists of a key
+            and an optional value. If you add a tag using a key that is already associated with
+            the ML object, <code>AddTags</code> updates the tag's value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.AddMLResourceTagCmdlet.ResourceId">
+            <summary>
+            <para>
+            <para>The ID of the ML object to tag. For example, <code>exampleModelId</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.AddMLResourceTagCmdlet.ResourceType">
+            <summary>
+            <para>
+            <para>The type of the ML object to tag.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.AddMLResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The key-value pairs to use to create tags. If you specify a key without specifying
+            a value, Amazon ML creates a tag with the specified key and a value of null.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.AddMLResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.AddTagsResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.AddTagsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.AddMLResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.AddMLResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.GetMLBatchPredictionCmdlet">
+            <summary>
+            Returns a <code>BatchPrediction</code> that includes detailed metadata, status, and
+            data file information for a <code>Batch Prediction</code> request.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLBatchPredictionCmdlet.BatchPredictionId">
+            <summary>
+            <para>
+            <para>An ID assigned to the <code>BatchPrediction</code> at creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLBatchPredictionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.GetBatchPredictionResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.GetBatchPredictionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLBatchPredictionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BatchPredictionId parameter.
+            The -PassThru parameter is deprecated, use -Select '^BatchPredictionId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.GetMLBatchPredictionListCmdlet">
+            <summary>
+            Returns a list of <code>BatchPrediction</code> operations that match the search criteria
+            in the request.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLBatchPredictionListCmdlet.EQ">
+            <summary>
+            <para>
+            <para>The equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code>
+            values that exactly match the value specified with <code>EQ</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLBatchPredictionListCmdlet.FilterVariable">
+            <summary>
+            <para>
+            <para>Use one of the following variables to filter a list of <code>BatchPrediction</code>:</para><ul><li><para><code>CreatedAt</code> - Sets the search criteria to the <code>BatchPrediction</code>
+            creation date.</para></li><li><para><code>Status</code> - Sets the search criteria to the <code>BatchPrediction</code>
+            status.</para></li><li><para><code>Name</code> - Sets the search criteria to the contents of the <code>BatchPrediction</code><b></b><code>Name</code>.</para></li><li><para><code>IAMUser</code> - Sets the search criteria to the user account that invoked
+            the <code>BatchPrediction</code> creation.</para></li><li><para><code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used
+            in the <code>BatchPrediction</code>.</para></li><li><para><code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code>
+            used in the <code>BatchPrediction</code>.</para></li><li><para><code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>.
+            The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3)
+            bucket or directory.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLBatchPredictionListCmdlet.GE">
+            <summary>
+            <para>
+            <para>The greater than or equal to operator. The <code>BatchPrediction</code> results will
+            have <code>FilterVariable</code> values that are greater than or equal to the value
+            specified with <code>GE</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLBatchPredictionListCmdlet.GT">
+            <summary>
+            <para>
+            <para>The greater than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code>
+            values that are greater than the value specified with <code>GT</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLBatchPredictionListCmdlet.LE">
+            <summary>
+            <para>
+            <para>The less than or equal to operator. The <code>BatchPrediction</code> results will
+            have <code>FilterVariable</code> values that are less than or equal to the value specified
+            with <code>LE</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLBatchPredictionListCmdlet.LT">
+            <summary>
+            <para>
+            <para>The less than operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code>
+            values that are less than the value specified with <code>LT</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLBatchPredictionListCmdlet.NE">
+            <summary>
+            <para>
+            <para>The not equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code>
+            values not equal to the value specified with <code>NE</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLBatchPredictionListCmdlet.Prefix">
+            <summary>
+            <para>
+            <para>A string that is found at the beginning of a variable, such as <code>Name</code> or
+            <code>Id</code>.</para><para>For example, a <code>Batch Prediction</code> operation could have the <code>Name</code><code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>BatchPrediction</code>,
+            select <code>Name</code> for the <code>FilterVariable</code> and any of the following
+            strings for the <code>Prefix</code>: </para><ul><li><para>2014-09</para></li><li><para>2014-09-09</para></li><li><para>2014-09-09-Holiday</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLBatchPredictionListCmdlet.SortOrder">
+            <summary>
+            <para>
+            <para>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>s.</para><ul><li><para><code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</para></li><li><para><code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</para></li></ul><para>Results are sorted by <code>FilterVariable</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLBatchPredictionListCmdlet.Limit">
+            <summary>
+            <para>
+            <para>The number of pages of information to include in the result. The range of acceptable
+            values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>100</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLBatchPredictionListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>An ID of the page in the paginated results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLBatchPredictionListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Results'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.DescribeBatchPredictionsResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.DescribeBatchPredictionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLBatchPredictionListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.GetMLDataSourceCmdlet">
+            <summary>
+            Returns a <code>DataSource</code> that includes metadata and data file information,
+            as well as the current status of the <code>DataSource</code>.
+            
+             
+            <para><code>GetDataSource</code> provides results in normal or verbose format. The verbose
+            format adds the schema description and the list of files pointed to by the DataSource
+            to the normal format.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLDataSourceCmdlet.DataSourceId">
+            <summary>
+            <para>
+            <para>The ID assigned to the <code>DataSource</code> at creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLDataSourceCmdlet.VerboseResponse">
+            <summary>
+            <para>
+            <para>Specifies whether the <code>GetDataSource</code> operation should return <code>DataSourceSchema</code>.</para><para>If true, <code>DataSourceSchema</code> is returned.</para><para>If false, <code>DataSourceSchema</code> is not returned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLDataSourceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.GetDataSourceResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.GetDataSourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.GetMLDataSourceListCmdlet">
+            <summary>
+            Returns a list of <code>DataSource</code> that match the search criteria in the request.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLDataSourceListCmdlet.EQ">
+            <summary>
+            <para>
+            <para>The equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code>
+            values that exactly match the value specified with <code>EQ</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLDataSourceListCmdlet.FilterVariable">
+            <summary>
+            <para>
+            <para>Use one of the following variables to filter a list of <code>DataSource</code>:</para><ul><li><para><code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation
+            dates.</para></li><li><para><code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</para></li><li><para><code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code><code>Name</code>.</para></li><li><para><code>DataUri</code> - Sets the search criteria to the URI of data files used to
+            create the <code>DataSource</code>. The URI can identify either a file or an Amazon
+            Simple Storage Service (Amazon S3) bucket or directory.</para></li><li><para><code>IAMUser</code> - Sets the search criteria to the user account that invoked
+            the <code>DataSource</code> creation.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLDataSourceListCmdlet.GE">
+            <summary>
+            <para>
+            <para>The greater than or equal to operator. The <code>DataSource</code> results will have
+            <code>FilterVariable</code> values that are greater than or equal to the value specified
+            with <code>GE</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLDataSourceListCmdlet.GT">
+            <summary>
+            <para>
+            <para>The greater than operator. The <code>DataSource</code> results will have <code>FilterVariable</code>
+            values that are greater than the value specified with <code>GT</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLDataSourceListCmdlet.LE">
+            <summary>
+            <para>
+            <para>The less than or equal to operator. The <code>DataSource</code> results will have
+            <code>FilterVariable</code> values that are less than or equal to the value specified
+            with <code>LE</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLDataSourceListCmdlet.LT">
+            <summary>
+            <para>
+            <para>The less than operator. The <code>DataSource</code> results will have <code>FilterVariable</code>
+            values that are less than the value specified with <code>LT</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLDataSourceListCmdlet.NE">
+            <summary>
+            <para>
+            <para>The not equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code>
+            values not equal to the value specified with <code>NE</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLDataSourceListCmdlet.Prefix">
+            <summary>
+            <para>
+            <para>A string that is found at the beginning of a variable, such as <code>Name</code> or
+            <code>Id</code>.</para><para>For example, a <code>DataSource</code> could have the <code>Name</code><code>2014-09-09-HolidayGiftMailer</code>.
+            To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code>
+            and any of the following strings for the <code>Prefix</code>: </para><ul><li><para>2014-09</para></li><li><para>2014-09-09</para></li><li><para>2014-09-09-Holiday</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLDataSourceListCmdlet.SortOrder">
+            <summary>
+            <para>
+            <para>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</para><ul><li><para><code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</para></li><li><para><code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</para></li></ul><para>Results are sorted by <code>FilterVariable</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLDataSourceListCmdlet.Limit">
+            <summary>
+            <para>
+            <para> The maximum number of <code>DataSource</code> to include in the result.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>100</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLDataSourceListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The ID of the page in the paginated results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLDataSourceListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Results'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.DescribeDataSourcesResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.DescribeDataSourcesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLDataSourceListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.GetMLEvaluationCmdlet">
+            <summary>
+            Returns an <code>Evaluation</code> that includes metadata as well as the current status
+            of the <code>Evaluation</code>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLEvaluationCmdlet.EvaluationId">
+            <summary>
+            <para>
+            <para>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each <code>MLModel</code>
+            is recorded and cataloged. The ID provides the means to access the information. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLEvaluationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.GetEvaluationResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.GetEvaluationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLEvaluationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EvaluationId parameter.
+            The -PassThru parameter is deprecated, use -Select '^EvaluationId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.GetMLEvaluationListCmdlet">
+            <summary>
+            Returns a list of <code>DescribeEvaluations</code> that match the search criteria
+            in the request.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLEvaluationListCmdlet.EQ">
+            <summary>
+            <para>
+            <para>The equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code>
+            values that exactly match the value specified with <code>EQ</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLEvaluationListCmdlet.FilterVariable">
+            <summary>
+            <para>
+            <para>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</para><ul><li><para><code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code>
+            creation date.</para></li><li><para><code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</para></li><li><para><code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code><b></b><code>Name</code>.</para></li><li><para><code>IAMUser</code> - Sets the search criteria to the user account that invoked
+            an <code>Evaluation</code>.</para></li><li><para><code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that
+            was evaluated.</para></li><li><para><code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code>
+            used in <code>Evaluation</code>.</para></li><li><para><code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>.
+            The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3)
+            bucket or directory.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLEvaluationListCmdlet.GE">
+            <summary>
+            <para>
+            <para>The greater than or equal to operator. The <code>Evaluation</code> results will have
+            <code>FilterVariable</code> values that are greater than or equal to the value specified
+            with <code>GE</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLEvaluationListCmdlet.GT">
+            <summary>
+            <para>
+            <para>The greater than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code>
+            values that are greater than the value specified with <code>GT</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLEvaluationListCmdlet.LE">
+            <summary>
+            <para>
+            <para>The less than or equal to operator. The <code>Evaluation</code> results will have
+            <code>FilterVariable</code> values that are less than or equal to the value specified
+            with <code>LE</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLEvaluationListCmdlet.LT">
+            <summary>
+            <para>
+            <para>The less than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code>
+            values that are less than the value specified with <code>LT</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLEvaluationListCmdlet.NE">
+            <summary>
+            <para>
+            <para>The not equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code>
+            values not equal to the value specified with <code>NE</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLEvaluationListCmdlet.Prefix">
+            <summary>
+            <para>
+            <para>A string that is found at the beginning of a variable, such as <code>Name</code> or
+            <code>Id</code>.</para><para>For example, an <code>Evaluation</code> could have the <code>Name</code><code>2014-09-09-HolidayGiftMailer</code>.
+            To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code>
+            and any of the following strings for the <code>Prefix</code>: </para><ul><li><para>2014-09</para></li><li><para>2014-09-09</para></li><li><para>2014-09-09-Holiday</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLEvaluationListCmdlet.SortOrder">
+            <summary>
+            <para>
+            <para>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</para><ul><li><para><code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</para></li><li><para><code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</para></li></ul><para>Results are sorted by <code>FilterVariable</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLEvaluationListCmdlet.Limit">
+            <summary>
+            <para>
+            <para> The maximum number of <code>Evaluation</code> to include in the result.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>100</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLEvaluationListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The ID of the page in the paginated results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLEvaluationListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Results'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.DescribeEvaluationsResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.DescribeEvaluationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLEvaluationListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.GetMLModelCmdlet">
+            <summary>
+            Returns an <code>MLModel</code> that includes detailed metadata, data source information,
+            and the current status of the <code>MLModel</code>.
+            
+             
+            <para><code>GetMLModel</code> provides results in normal or verbose format. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLModelCmdlet.MLModelId">
+            <summary>
+            <para>
+            <para>The ID assigned to the <code>MLModel</code> at creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLModelCmdlet.VerboseResponse">
+            <summary>
+            <para>
+            <para>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</para><para>If true, <code>Recipe</code> is returned.</para><para>If false, <code>Recipe</code> is not returned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLModelCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.GetMLModelResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.GetMLModelResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLModelCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the MLModelId parameter.
+            The -PassThru parameter is deprecated, use -Select '^MLModelId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.GetMLModelListCmdlet">
+            <summary>
+            Returns a list of <code>MLModel</code> that match the search criteria in the request.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLModelListCmdlet.EQ">
+            <summary>
+            <para>
+            <para>The equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code>
+            values that exactly match the value specified with <code>EQ</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLModelListCmdlet.FilterVariable">
+            <summary>
+            <para>
+            <para>Use one of the following variables to filter a list of <code>MLModel</code>:</para><ul><li><para><code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation
+            date.</para></li><li><para><code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</para></li><li><para><code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code><b></b><code>Name</code>.</para></li><li><para><code>IAMUser</code> - Sets the search criteria to the user account that invoked
+            the <code>MLModel</code> creation.</para></li><li><para><code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code>
+            used to train one or more <code>MLModel</code>.</para></li><li><para><code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code>
+            real-time endpoint status.</para></li><li><para><code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type:
+            binary, regression, or multi-class.</para></li><li><para><code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code>
+            uses.</para></li><li><para><code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used
+            in training a <code>MLModel</code>. The URL can identify either a file or an Amazon
+            Simple Storage Service (Amazon S3) bucket or directory.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLModelListCmdlet.GE">
+            <summary>
+            <para>
+            <para>The greater than or equal to operator. The <code>MLModel</code> results will have
+            <code>FilterVariable</code> values that are greater than or equal to the value specified
+            with <code>GE</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLModelListCmdlet.GT">
+            <summary>
+            <para>
+            <para>The greater than operator. The <code>MLModel</code> results will have <code>FilterVariable</code>
+            values that are greater than the value specified with <code>GT</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLModelListCmdlet.LE">
+            <summary>
+            <para>
+            <para>The less than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code>
+            values that are less than or equal to the value specified with <code>LE</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLModelListCmdlet.LT">
+            <summary>
+            <para>
+            <para>The less than operator. The <code>MLModel</code> results will have <code>FilterVariable</code>
+            values that are less than the value specified with <code>LT</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLModelListCmdlet.NE">
+            <summary>
+            <para>
+            <para>The not equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code>
+            values not equal to the value specified with <code>NE</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLModelListCmdlet.Prefix">
+            <summary>
+            <para>
+            <para>A string that is found at the beginning of a variable, such as <code>Name</code> or
+            <code>Id</code>.</para><para>For example, an <code>MLModel</code> could have the <code>Name</code><code>2014-09-09-HolidayGiftMailer</code>.
+            To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code>
+            and any of the following strings for the <code>Prefix</code>: </para><ul><li><para>2014-09</para></li><li><para>2014-09-09</para></li><li><para>2014-09-09-Holiday</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLModelListCmdlet.SortOrder">
+            <summary>
+            <para>
+            <para>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</para><ul><li><para><code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</para></li><li><para><code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</para></li></ul><para>Results are sorted by <code>FilterVariable</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLModelListCmdlet.Limit">
+            <summary>
+            <para>
+            <para>The number of pages of information to include in the result. The range of acceptable
+            values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>100</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLModelListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The ID of the page in the paginated results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLModelListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Results'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.DescribeMLModelsResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.DescribeMLModelsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLModelListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.GetMLPredictionCmdlet">
+            <summary>
+            Generates a prediction for the observation using the specified <code>ML Model</code>.
+            
+             
+            <para><b>Note:</b> Not all response parameters will be populated. Whether a response parameter
+            is populated depends on the type of model requested.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLPredictionCmdlet.MLModelId">
+            <summary>
+            <para>
+            <para>A unique identifier of the <code>MLModel</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLPredictionCmdlet.PredictEndpoint">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLPredictionCmdlet.Record">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLPredictionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Prediction'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.PredictResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.PredictResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLPredictionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the MLModelId parameter.
+            The -PassThru parameter is deprecated, use -Select '^MLModelId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.GetMLResourceTagCmdlet">
+            <summary>
+            Describes one or more of the tags for your Amazon ML object.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLResourceTagCmdlet.ResourceId">
+            <summary>
+            <para>
+            <para>The ID of the ML object. For example, <code>exampleModelId</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLResourceTagCmdlet.ResourceType">
+            <summary>
+            <para>
+            <para>The type of the ML object.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.DescribeTagsResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.DescribeTagsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.GetMLResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.NewMLBatchPredictionCmdlet">
+            <summary>
+            Generates predictions for a group of observations. The observations to process exist
+            in one or more data files referenced by a <code>DataSource</code>. This operation
+            creates a new <code>BatchPrediction</code>, and uses an <code>MLModel</code> and the
+            data files referenced by the <code>DataSource</code> as information sources. 
+            
+             
+            <para><code>CreateBatchPrediction</code> is an asynchronous operation. In response to <code>CreateBatchPrediction</code>,
+            Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>BatchPrediction</code>
+            status to <code>PENDING</code>. After the <code>BatchPrediction</code> completes,
+            Amazon ML sets the status to <code>COMPLETED</code>. 
+            </para><para>
+            You can poll for status updates by using the <a>GetBatchPrediction</a> operation and
+            checking the <code>Status</code> parameter of the result. After the <code>COMPLETED</code>
+            status appears, the results are available in the location specified by the <code>OutputUri</code>
+            parameter.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLBatchPredictionCmdlet.BatchPredictionDataSourceId">
+            <summary>
+            <para>
+            <para>The ID of the <code>DataSource</code> that points to the group of observations to
+            predict.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLBatchPredictionCmdlet.BatchPredictionId">
+            <summary>
+            <para>
+            <para>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLBatchPredictionCmdlet.BatchPredictionName">
+            <summary>
+            <para>
+            <para>A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code>
+            can only use the UTF-8 character set.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLBatchPredictionCmdlet.MLModelId">
+            <summary>
+            <para>
+            <para>The ID of the <code>MLModel</code> that will generate predictions for the group of
+            observations. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLBatchPredictionCmdlet.OutputUri">
+            <summary>
+            <para>
+            <para>The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to
+            store the batch prediction results. The following substrings are not allowed in the
+            <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./',
+            '/../'.</para><para>Amazon ML needs permissions to store and retrieve the logs on your behalf. For information
+            about how to set permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+            Machine Learning Developer Guide</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLBatchPredictionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'BatchPredictionId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.CreateBatchPredictionResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.CreateBatchPredictionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLBatchPredictionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the MLModelId parameter.
+            The -PassThru parameter is deprecated, use -Select '^MLModelId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLBatchPredictionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRDSCmdlet">
+            <summary>
+            Creates a <code>DataSource</code> object from an <a href="http://aws.amazon.com/rds/">
+            Amazon Relational Database Service</a> (Amazon RDS). A <code>DataSource</code> references
+            data that can be used to perform <code>CreateMLModel</code>, <code>CreateEvaluation</code>,
+            or <code>CreateBatchPrediction</code> operations.
+            
+             
+            <para><code>CreateDataSourceFromRDS</code> is an asynchronous operation. In response to
+            <code>CreateDataSourceFromRDS</code>, Amazon Machine Learning (Amazon ML) immediately
+            returns and sets the <code>DataSource</code> status to <code>PENDING</code>. After
+            the <code>DataSource</code> is created and ready for use, Amazon ML sets the <code>Status</code>
+            parameter to <code>COMPLETED</code>. <code>DataSource</code> in the <code>COMPLETED</code>
+            or <code>PENDING</code> state can be used only to perform <code>&gt;CreateMLModel</code>&gt;,
+            <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code> operations. 
+            </para><para>
+             If Amazon ML cannot accept the input source, it sets the <code>Status</code> parameter
+            to <code>FAILED</code> and includes an error message in the <code>Message</code> attribute
+            of the <code>GetDataSource</code> operation response. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRDSCmdlet.ComputeStatistic">
+            <summary>
+            <para>
+            <para>The compute statistics for a <code>DataSource</code>. The statistics are generated
+            from the observation data referenced by a <code>DataSource</code>. Amazon ML uses
+            the statistics internally during <code>MLModel</code> training. This parameter must
+            be set to <code>true</code> if the <code />DataSource<code /> needs to be used for <code>MLModel</code>
+            training. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRDSCmdlet.DatabaseInformation_DatabaseName">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRDSCmdlet.RDSData_DataRearrangement">
+            <summary>
+            <para>
+            <para>A JSON string that represents the splitting and rearrangement processing to be applied
+            to a <code>DataSource</code>. If the <code>DataRearrangement</code> parameter is not
+            provided, all of the input data is used to create the <code>Datasource</code>.</para><para>There are multiple parameters that control what data is used to create a datasource:</para><ul><li><para><b><code>percentBegin</code></b></para><para>Use <code>percentBegin</code> to indicate the beginning of the range of the data used
+            to create the Datasource. If you do not include <code>percentBegin</code> and <code>percentEnd</code>,
+            Amazon ML includes all of the data when creating the datasource.</para></li><li><para><b><code>percentEnd</code></b></para><para>Use <code>percentEnd</code> to indicate the end of the range of the data used to create
+            the Datasource. If you do not include <code>percentBegin</code> and <code>percentEnd</code>,
+            Amazon ML includes all of the data when creating the datasource.</para></li><li><para><b><code>complement</code></b></para><para>The <code>complement</code> parameter instructs Amazon ML to use the data that is
+            not included in the range of <code>percentBegin</code> to <code>percentEnd</code>
+            to create a datasource. The <code>complement</code> parameter is useful if you need
+            to create complementary datasources for training and evaluation. To create a complementary
+            datasource, use the same values for <code>percentBegin</code> and <code>percentEnd</code>,
+            along with the <code>complement</code> parameter.</para><para>For example, the following two datasources do not share any data, and can be used
+            to train and evaluate a model. The first datasource has 25 percent of the data, and
+            the second one has 75 percent of the data.</para><para>Datasource for evaluation: <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code></para><para>Datasource for training: <code>{"splitting":{"percentBegin":0, "percentEnd":25, "complement":"true"}}</code></para></li><li><para><b><code>strategy</code></b></para><para>To change how Amazon ML splits the data for a datasource, use the <code>strategy</code>
+            parameter.</para><para>The default value for the <code>strategy</code> parameter is <code>sequential</code>,
+            meaning that Amazon ML takes all of the data records between the <code>percentBegin</code>
+            and <code>percentEnd</code> parameters for the datasource, in the order that the records
+            appear in the input data.</para><para>The following two <code>DataRearrangement</code> lines are examples of sequentially
+            ordered training and evaluation datasources:</para><para>Datasource for evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
+            "strategy":"sequential"}}</code></para><para>Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
+            "strategy":"sequential", "complement":"true"}}</code></para><para>To randomly split the input data into the proportions indicated by the percentBegin
+            and percentEnd parameters, set the <code>strategy</code> parameter to <code>random</code>
+            and provide a string that is used as the seed value for the random data splitting
+            (for example, you can use the S3 path to your data as the random seed string). If
+            you choose the random split strategy, Amazon ML assigns each row of data a pseudo-random
+            number between 0 and 100, and then selects the rows that have an assigned number between
+            <code>percentBegin</code> and <code>percentEnd</code>. Pseudo-random numbers are assigned
+            using both the input seed string value and the byte offset as a seed, so changing
+            the data results in a different split. Any existing ordering is preserved. The random
+            splitting strategy ensures that variables in the training and evaluation data are
+            distributed similarly. It is useful in the cases where the input data may have an
+            implicit sort order, which would otherwise result in training and evaluation datasources
+            containing non-similar data records.</para><para>The following two <code>DataRearrangement</code> lines are examples of non-sequentially
+            ordered training and evaluation datasources:</para><para>Datasource for evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
+            "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code></para><para>Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
+            "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv", "complement":"true"}}</code></para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRDSCmdlet.RDSData_DataSchema">
+            <summary>
+            <para>
+            <para>A JSON string that represents the schema for an Amazon RDS <code>DataSource</code>.
+            The <code>DataSchema</code> defines the structure of the observation data in the data
+            file(s) referenced in the <code>DataSource</code>.</para><para>A <code>DataSchema</code> is not required if you specify a <code>DataSchemaUri</code></para><para>Define your <code>DataSchema</code> as a series of key-value pairs. <code>attributes</code>
+            and <code>excludedVariableNames</code> have an array of key-value pairs for their
+            value. Use the following format to define your <code>DataSchema</code>.</para><para>{ "version": "1.0",</para><para>"recordAnnotationFieldName": "F1",</para><para>"recordWeightFieldName": "F2",</para><para>"targetFieldName": "F3",</para><para>"dataFormat": "CSV",</para><para>"dataFileContainsHeader": true,</para><para>"attributes": [</para><para>{ "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC"
+            }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType":
+            "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6",
+            "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" },
+            { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</para><para>"excludedVariableNames": [ "F6" ] }</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRDSCmdlet.RDSData_DataSchemaUri">
+            <summary>
+            <para>
+            <para>The Amazon S3 location of the <code>DataSchema</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRDSCmdlet.DataSourceId">
+            <summary>
+            <para>
+            <para>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically,
+            an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRDSCmdlet.DataSourceName">
+            <summary>
+            <para>
+            <para>A user-supplied name or description of the <code>DataSource</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRDSCmdlet.DatabaseInformation_InstanceIdentifier">
+            <summary>
+            <para>
+            <para>The ID of an RDS DB instance.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRDSCmdlet.DatabaseCredentials_Password">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRDSCmdlet.RDSData_ResourceRole">
+            <summary>
+            <para>
+            <para>The role (DataPipelineDefaultResourceRole) assumed by an Amazon Elastic Compute Cloud
+            (Amazon EC2) instance to carry out the copy operation from Amazon RDS to an Amazon
+            S3 task. For more information, see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+            templates</a> for data pipelines.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRDSCmdlet.RoleARN">
+            <summary>
+            <para>
+            <para>The role that Amazon ML assumes on behalf of the user to create and activate a data
+            pipeline in the user's account and copy data using the <code>SelectSqlQuery</code>
+            query from Amazon RDS to Amazon S3.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRDSCmdlet.RDSData_S3StagingLocation">
+            <summary>
+            <para>
+            <para>The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon
+            RDS using <code>SelectSqlQuery</code> is stored in this location.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRDSCmdlet.RDSData_SecurityGroupId">
+            <summary>
+            <para>
+            <para>The security group IDs to be used to access a VPC-based RDS DB instance. Ensure that
+            there are appropriate ingress rules set up to allow access to the RDS DB instance.
+            This attribute is used by Data Pipeline to carry out the copy operation from Amazon
+            RDS to an Amazon S3 task.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRDSCmdlet.RDSData_SelectSqlQuery">
+            <summary>
+            <para>
+            <para>The query that is used to retrieve the observation data for the <code>DataSource</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRDSCmdlet.RDSData_ServiceRole">
+            <summary>
+            <para>
+            <para>The role (DataPipelineDefaultRole) assumed by AWS Data Pipeline service to monitor
+            the progress of the copy task from Amazon RDS to Amazon S3. For more information,
+            see <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+            templates</a> for data pipelines.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRDSCmdlet.RDSData_SubnetId">
+            <summary>
+            <para>
+            <para>The subnet ID to be used to access a VPC-based RDS DB instance. This attribute is
+            used by Data Pipeline to carry out the copy task from Amazon RDS to Amazon S3.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRDSCmdlet.DatabaseCredentials_Username">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRDSCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'DataSourceId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.CreateDataSourceFromRDSResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.CreateDataSourceFromRDSResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRDSCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRedshiftCmdlet">
+            <summary>
+            Creates a <code>DataSource</code> from a database hosted on an Amazon Redshift cluster.
+            A <code>DataSource</code> references data that can be used to perform either <code>CreateMLModel</code>,
+            <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code> operations.
+            
+             
+            <para><code>CreateDataSourceFromRedshift</code> is an asynchronous operation. In response
+            to <code>CreateDataSourceFromRedshift</code>, Amazon Machine Learning (Amazon ML)
+            immediately returns and sets the <code>DataSource</code> status to <code>PENDING</code>.
+            After the <code>DataSource</code> is created and ready for use, Amazon ML sets the
+            <code>Status</code> parameter to <code>COMPLETED</code>. <code>DataSource</code> in
+            <code>COMPLETED</code> or <code>PENDING</code> states can be used to perform only
+            <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code>
+            operations. 
+            </para><para>
+             If Amazon ML can't accept the input source, it sets the <code>Status</code> parameter
+            to <code>FAILED</code> and includes an error message in the <code>Message</code> attribute
+            of the <code>GetDataSource</code> operation response. 
+            </para><para>
+            The observations should be contained in the database hosted on an Amazon Redshift
+            cluster and should be specified by a <code>SelectSqlQuery</code> query. Amazon ML
+            executes an <code>Unload</code> command in Amazon Redshift to transfer the result
+            set of the <code>SelectSqlQuery</code> query to <code>S3StagingLocation</code>.
+            </para><para>
+            After the <code>DataSource</code> has been created, it's ready for use in evaluations
+            and batch predictions. If you plan to use the <code>DataSource</code> to train an
+            <code>MLModel</code>, the <code>DataSource</code> also requires a recipe. A recipe
+            describes how each input variable will be used in training an <code>MLModel</code>.
+            Will the variable be included or excluded from training? Will the variable be manipulated;
+            for example, will it be combined with another variable or will it be split apart into
+            word combinations? The recipe provides answers to these questions.
+            </para><para>
+            You can't change an existing datasource, but you can copy and modify the settings
+            from an existing Amazon Redshift datasource to create a new datasource. To do so,
+            call <code>GetDataSource</code> for an existing datasource and copy the values to
+            a <code>CreateDataSource</code> call. Change the settings that you want to change
+            and make sure that all required fields have the appropriate values.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRedshiftCmdlet.DatabaseInformation_ClusterIdentifier">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRedshiftCmdlet.ComputeStatistic">
+            <summary>
+            <para>
+            <para>The compute statistics for a <code>DataSource</code>. The statistics are generated
+            from the observation data referenced by a <code>DataSource</code>. Amazon ML uses
+            the statistics internally during <code>MLModel</code> training. This parameter must
+            be set to <code>true</code> if the <code>DataSource</code> needs to be used for <code>MLModel</code>
+            training.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRedshiftCmdlet.DatabaseInformation_DatabaseName">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRedshiftCmdlet.DataSpec_DataRearrangement">
+            <summary>
+            <para>
+            <para>A JSON string that represents the splitting and rearrangement processing to be applied
+            to a <code>DataSource</code>. If the <code>DataRearrangement</code> parameter is not
+            provided, all of the input data is used to create the <code>Datasource</code>.</para><para>There are multiple parameters that control what data is used to create a datasource:</para><ul><li><para><b><code>percentBegin</code></b></para><para>Use <code>percentBegin</code> to indicate the beginning of the range of the data used
+            to create the Datasource. If you do not include <code>percentBegin</code> and <code>percentEnd</code>,
+            Amazon ML includes all of the data when creating the datasource.</para></li><li><para><b><code>percentEnd</code></b></para><para>Use <code>percentEnd</code> to indicate the end of the range of the data used to create
+            the Datasource. If you do not include <code>percentBegin</code> and <code>percentEnd</code>,
+            Amazon ML includes all of the data when creating the datasource.</para></li><li><para><b><code>complement</code></b></para><para>The <code>complement</code> parameter instructs Amazon ML to use the data that is
+            not included in the range of <code>percentBegin</code> to <code>percentEnd</code>
+            to create a datasource. The <code>complement</code> parameter is useful if you need
+            to create complementary datasources for training and evaluation. To create a complementary
+            datasource, use the same values for <code>percentBegin</code> and <code>percentEnd</code>,
+            along with the <code>complement</code> parameter.</para><para>For example, the following two datasources do not share any data, and can be used
+            to train and evaluate a model. The first datasource has 25 percent of the data, and
+            the second one has 75 percent of the data.</para><para>Datasource for evaluation: <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code></para><para>Datasource for training: <code>{"splitting":{"percentBegin":0, "percentEnd":25, "complement":"true"}}</code></para></li><li><para><b><code>strategy</code></b></para><para>To change how Amazon ML splits the data for a datasource, use the <code>strategy</code>
+            parameter.</para><para>The default value for the <code>strategy</code> parameter is <code>sequential</code>,
+            meaning that Amazon ML takes all of the data records between the <code>percentBegin</code>
+            and <code>percentEnd</code> parameters for the datasource, in the order that the records
+            appear in the input data.</para><para>The following two <code>DataRearrangement</code> lines are examples of sequentially
+            ordered training and evaluation datasources:</para><para>Datasource for evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
+            "strategy":"sequential"}}</code></para><para>Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
+            "strategy":"sequential", "complement":"true"}}</code></para><para>To randomly split the input data into the proportions indicated by the percentBegin
+            and percentEnd parameters, set the <code>strategy</code> parameter to <code>random</code>
+            and provide a string that is used as the seed value for the random data splitting
+            (for example, you can use the S3 path to your data as the random seed string). If
+            you choose the random split strategy, Amazon ML assigns each row of data a pseudo-random
+            number between 0 and 100, and then selects the rows that have an assigned number between
+            <code>percentBegin</code> and <code>percentEnd</code>. Pseudo-random numbers are assigned
+            using both the input seed string value and the byte offset as a seed, so changing
+            the data results in a different split. Any existing ordering is preserved. The random
+            splitting strategy ensures that variables in the training and evaluation data are
+            distributed similarly. It is useful in the cases where the input data may have an
+            implicit sort order, which would otherwise result in training and evaluation datasources
+            containing non-similar data records.</para><para>The following two <code>DataRearrangement</code> lines are examples of non-sequentially
+            ordered training and evaluation datasources:</para><para>Datasource for evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
+            "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code></para><para>Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
+            "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv", "complement":"true"}}</code></para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRedshiftCmdlet.DataSpec_DataSchema">
+            <summary>
+            <para>
+            <para>A JSON string that represents the schema for an Amazon Redshift <code>DataSource</code>.
+            The <code>DataSchema</code> defines the structure of the observation data in the data
+            file(s) referenced in the <code>DataSource</code>.</para><para>A <code>DataSchema</code> is not required if you specify a <code>DataSchemaUri</code>.</para><para>Define your <code>DataSchema</code> as a series of key-value pairs. <code>attributes</code>
+            and <code>excludedVariableNames</code> have an array of key-value pairs for their
+            value. Use the following format to define your <code>DataSchema</code>.</para><para>{ "version": "1.0",</para><para>"recordAnnotationFieldName": "F1",</para><para>"recordWeightFieldName": "F2",</para><para>"targetFieldName": "F3",</para><para>"dataFormat": "CSV",</para><para>"dataFileContainsHeader": true,</para><para>"attributes": [</para><para>{ "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC"
+            }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType":
+            "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6",
+            "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" },
+            { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</para><para>"excludedVariableNames": [ "F6" ] }</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRedshiftCmdlet.DataSpec_DataSchemaUri">
+            <summary>
+            <para>
+            <para>Describes the schema location for an Amazon Redshift <code>DataSource</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRedshiftCmdlet.DataSourceId">
+            <summary>
+            <para>
+            <para>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRedshiftCmdlet.DataSourceName">
+            <summary>
+            <para>
+            <para>A user-supplied name or description of the <code>DataSource</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRedshiftCmdlet.DatabaseCredentials_Password">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRedshiftCmdlet.RoleARN">
+            <summary>
+            <para>
+            <para>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf
+            of the user to create the following:</para><ul><li><para>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query
+            on an Amazon Redshift cluster</para></li><li><para>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code></para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRedshiftCmdlet.DataSpec_S3StagingLocation">
+            <summary>
+            <para>
+            <para>Describes an Amazon S3 location to store the result set of the <code>SelectSqlQuery</code>
+            query.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRedshiftCmdlet.DataSpec_SelectSqlQuery">
+            <summary>
+            <para>
+            <para>Describes the SQL Query to execute on an Amazon Redshift database for an Amazon Redshift
+            <code>DataSource</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRedshiftCmdlet.DatabaseCredentials_Username">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRedshiftCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'DataSourceId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.CreateDataSourceFromRedshiftResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.CreateDataSourceFromRedshiftResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromRedshiftCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromS3Cmdlet">
+            <summary>
+            Creates a <code>DataSource</code> object. A <code>DataSource</code> references data
+            that can be used to perform <code>CreateMLModel</code>, <code>CreateEvaluation</code>,
+            or <code>CreateBatchPrediction</code> operations.
+            
+             
+            <para><code>CreateDataSourceFromS3</code> is an asynchronous operation. In response to
+            <code>CreateDataSourceFromS3</code>, Amazon Machine Learning (Amazon ML) immediately
+            returns and sets the <code>DataSource</code> status to <code>PENDING</code>. After
+            the <code>DataSource</code> has been created and is ready for use, Amazon ML sets
+            the <code>Status</code> parameter to <code>COMPLETED</code>. <code>DataSource</code>
+            in the <code>COMPLETED</code> or <code>PENDING</code> state can be used to perform
+            only <code>CreateMLModel</code>, <code>CreateEvaluation</code> or <code>CreateBatchPrediction</code>
+            operations. 
+            </para><para>
+             If Amazon ML can't accept the input source, it sets the <code>Status</code> parameter
+            to <code>FAILED</code> and includes an error message in the <code>Message</code> attribute
+            of the <code>GetDataSource</code> operation response. 
+            </para><para>
+            The observation data used in a <code>DataSource</code> should be ready to use; that
+            is, it should have a consistent structure, and missing data values should be kept
+            to a minimum. The observation data must reside in one or more .csv files in an Amazon
+            Simple Storage Service (Amazon S3) location, along with a schema that describes the
+            data items by name and type. The same schema must be used for all of the data files
+            referenced by the <code>DataSource</code>. 
+            </para><para>
+            After the <code>DataSource</code> has been created, it's ready to use in evaluations
+            and batch predictions. If you plan to use the <code>DataSource</code> to train an
+            <code>MLModel</code>, the <code>DataSource</code> also needs a recipe. A recipe describes
+            how each input variable will be used in training an <code>MLModel</code>. Will the
+            variable be included or excluded from training? Will the variable be manipulated;
+            for example, will it be combined with another variable or will it be split apart into
+            word combinations? The recipe provides answers to these questions.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromS3Cmdlet.ComputeStatistic">
+            <summary>
+            <para>
+            <para>The compute statistics for a <code>DataSource</code>. The statistics are generated
+            from the observation data referenced by a <code>DataSource</code>. Amazon ML uses
+            the statistics internally during <code>MLModel</code> training. This parameter must
+            be set to <code>true</code> if the <code />DataSource<code /> needs to be used for <code>MLModel</code>
+            training.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromS3Cmdlet.DataSpec_DataLocationS3">
+            <summary>
+            <para>
+            <para>The location of the data file(s) used by a <code>DataSource</code>. The URI specifies
+            a data file or an Amazon Simple Storage Service (Amazon S3) directory or bucket containing
+            data files.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromS3Cmdlet.DataSpec_DataRearrangement">
+            <summary>
+            <para>
+            <para>A JSON string that represents the splitting and rearrangement processing to be applied
+            to a <code>DataSource</code>. If the <code>DataRearrangement</code> parameter is not
+            provided, all of the input data is used to create the <code>Datasource</code>.</para><para>There are multiple parameters that control what data is used to create a datasource:</para><ul><li><para><b><code>percentBegin</code></b></para><para>Use <code>percentBegin</code> to indicate the beginning of the range of the data used
+            to create the Datasource. If you do not include <code>percentBegin</code> and <code>percentEnd</code>,
+            Amazon ML includes all of the data when creating the datasource.</para></li><li><para><b><code>percentEnd</code></b></para><para>Use <code>percentEnd</code> to indicate the end of the range of the data used to create
+            the Datasource. If you do not include <code>percentBegin</code> and <code>percentEnd</code>,
+            Amazon ML includes all of the data when creating the datasource.</para></li><li><para><b><code>complement</code></b></para><para>The <code>complement</code> parameter instructs Amazon ML to use the data that is
+            not included in the range of <code>percentBegin</code> to <code>percentEnd</code>
+            to create a datasource. The <code>complement</code> parameter is useful if you need
+            to create complementary datasources for training and evaluation. To create a complementary
+            datasource, use the same values for <code>percentBegin</code> and <code>percentEnd</code>,
+            along with the <code>complement</code> parameter.</para><para>For example, the following two datasources do not share any data, and can be used
+            to train and evaluate a model. The first datasource has 25 percent of the data, and
+            the second one has 75 percent of the data.</para><para>Datasource for evaluation: <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code></para><para>Datasource for training: <code>{"splitting":{"percentBegin":0, "percentEnd":25, "complement":"true"}}</code></para></li><li><para><b><code>strategy</code></b></para><para>To change how Amazon ML splits the data for a datasource, use the <code>strategy</code>
+            parameter.</para><para>The default value for the <code>strategy</code> parameter is <code>sequential</code>,
+            meaning that Amazon ML takes all of the data records between the <code>percentBegin</code>
+            and <code>percentEnd</code> parameters for the datasource, in the order that the records
+            appear in the input data.</para><para>The following two <code>DataRearrangement</code> lines are examples of sequentially
+            ordered training and evaluation datasources:</para><para>Datasource for evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
+            "strategy":"sequential"}}</code></para><para>Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
+            "strategy":"sequential", "complement":"true"}}</code></para><para>To randomly split the input data into the proportions indicated by the percentBegin
+            and percentEnd parameters, set the <code>strategy</code> parameter to <code>random</code>
+            and provide a string that is used as the seed value for the random data splitting
+            (for example, you can use the S3 path to your data as the random seed string). If
+            you choose the random split strategy, Amazon ML assigns each row of data a pseudo-random
+            number between 0 and 100, and then selects the rows that have an assigned number between
+            <code>percentBegin</code> and <code>percentEnd</code>. Pseudo-random numbers are assigned
+            using both the input seed string value and the byte offset as a seed, so changing
+            the data results in a different split. Any existing ordering is preserved. The random
+            splitting strategy ensures that variables in the training and evaluation data are
+            distributed similarly. It is useful in the cases where the input data may have an
+            implicit sort order, which would otherwise result in training and evaluation datasources
+            containing non-similar data records.</para><para>The following two <code>DataRearrangement</code> lines are examples of non-sequentially
+            ordered training and evaluation datasources:</para><para>Datasource for evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
+            "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code></para><para>Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
+            "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv", "complement":"true"}}</code></para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromS3Cmdlet.DataSpec_DataSchema">
+            <summary>
+            <para>
+            <para> A JSON string that represents the schema for an Amazon S3 <code>DataSource</code>.
+            The <code>DataSchema</code> defines the structure of the observation data in the data
+            file(s) referenced in the <code>DataSource</code>.</para><para>You must provide either the <code>DataSchema</code> or the <code>DataSchemaLocationS3</code>.</para><para>Define your <code>DataSchema</code> as a series of key-value pairs. <code>attributes</code>
+            and <code>excludedVariableNames</code> have an array of key-value pairs for their
+            value. Use the following format to define your <code>DataSchema</code>.</para><para>{ "version": "1.0",</para><para>"recordAnnotationFieldName": "F1",</para><para>"recordWeightFieldName": "F2",</para><para>"targetFieldName": "F3",</para><para>"dataFormat": "CSV",</para><para>"dataFileContainsHeader": true,</para><para>"attributes": [</para><para>{ "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC"
+            }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType":
+            "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6",
+            "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" },
+            { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</para><para>"excludedVariableNames": [ "F6" ] }</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromS3Cmdlet.DataSpec_DataSchemaLocationS3">
+            <summary>
+            <para>
+            <para>Describes the schema location in Amazon S3. You must provide either the <code>DataSchema</code>
+            or the <code>DataSchemaLocationS3</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromS3Cmdlet.DataSourceId">
+            <summary>
+            <para>
+            <para>A user-supplied identifier that uniquely identifies the <code>DataSource</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromS3Cmdlet.DataSourceName">
+            <summary>
+            <para>
+            <para>A user-supplied name or description of the <code>DataSource</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromS3Cmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'DataSourceId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.CreateDataSourceFromS3Response).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.CreateDataSourceFromS3Response will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLDataSourceFromS3Cmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.NewMLEvaluationCmdlet">
+            <summary>
+            Creates a new <code>Evaluation</code> of an <code>MLModel</code>. An <code>MLModel</code>
+            is evaluated on a set of observations associated to a <code>DataSource</code>. Like
+            a <code>DataSource</code> for an <code>MLModel</code>, the <code>DataSource</code>
+            for an <code>Evaluation</code> contains values for the <code>Target Variable</code>.
+            The <code>Evaluation</code> compares the predicted result for each observation to
+            the actual outcome and provides a summary so that you know how effective the <code>MLModel</code>
+            functions on the test data. Evaluation generates a relevant performance metric, such
+            as BinaryAUC, RegressionRMSE or MulticlassAvgFScore based on the corresponding <code>MLModelType</code>:
+            <code>BINARY</code>, <code>REGRESSION</code> or <code>MULTICLASS</code>. 
+            
+             
+            <para><code>CreateEvaluation</code> is an asynchronous operation. In response to <code>CreateEvaluation</code>,
+            Amazon Machine Learning (Amazon ML) immediately returns and sets the evaluation status
+            to <code>PENDING</code>. After the <code>Evaluation</code> is created and ready for
+            use, Amazon ML sets the status to <code>COMPLETED</code>. 
+            </para><para>
+            You can use the <code>GetEvaluation</code> operation to check progress of the evaluation
+            during the creation operation.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLEvaluationCmdlet.EvaluationDataSourceId">
+            <summary>
+            <para>
+            <para>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code>
+            must match the schema used to create the <code>MLModel</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLEvaluationCmdlet.EvaluationId">
+            <summary>
+            <para>
+            <para>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLEvaluationCmdlet.EvaluationName">
+            <summary>
+            <para>
+            <para>A user-supplied name or description of the <code>Evaluation</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLEvaluationCmdlet.MLModelId">
+            <summary>
+            <para>
+            <para>The ID of the <code>MLModel</code> to evaluate.</para><para>The schema used in creating the <code>MLModel</code> must match the schema of the
+            <code>DataSource</code> used in the <code>Evaluation</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLEvaluationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EvaluationId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.CreateEvaluationResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.CreateEvaluationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLEvaluationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the MLModelId parameter.
+            The -PassThru parameter is deprecated, use -Select '^MLModelId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLEvaluationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.NewMLModelCmdlet">
+            <summary>
+            Creates a new <code>MLModel</code> using the <code>DataSource</code> and the recipe
+            as information sources. 
+            
+             
+            <para>
+            An <code>MLModel</code> is nearly immutable. Users can update only the <code>MLModelName</code>
+            and the <code>ScoreThreshold</code> in an <code>MLModel</code> without creating a
+            new <code>MLModel</code>. 
+            </para><para><code>CreateMLModel</code> is an asynchronous operation. In response to <code>CreateMLModel</code>,
+            Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>MLModel</code>
+            status to <code>PENDING</code>. After the <code>MLModel</code> has been created and
+            ready is for use, Amazon ML sets the status to <code>COMPLETED</code>. 
+            </para><para>
+            You can use the <code>GetMLModel</code> operation to check the progress of the <code>MLModel</code>
+            during the creation operation.
+            </para><para><code>CreateMLModel</code> requires a <code>DataSource</code> with computed statistics,
+            which can be created by setting <code>ComputeStatistics</code> to <code>true</code>
+            in <code>CreateDataSourceFromRDS</code>, <code>CreateDataSourceFromS3</code>, or <code>CreateDataSourceFromRedshift</code>
+            operations. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLModelCmdlet.MLModelId">
+            <summary>
+            <para>
+            <para>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLModelCmdlet.MLModelName">
+            <summary>
+            <para>
+            <para>A user-supplied name or description of the <code>MLModel</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLModelCmdlet.MLModelType">
+            <summary>
+            <para>
+            <para>The category of supervised learning that this <code>MLModel</code> will address. Choose
+            from the following types:</para><ul><li><para>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict
+            a numeric value.</para></li><li><para>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</para></li><li><para>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number
+            of values.</para></li></ul><para> For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+            Machine Learning Developer Guide</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLModelCmdlet.Parameter">
+            <summary>
+            <para>
+            <para>A list of the training parameters in the <code>MLModel</code>. The list is implemented
+            as a map of key-value pairs.</para><para>The following is the current set of training parameters:</para><ul><li><para><code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending
+            on the input data, the size of the model might affect its performance.</para><para> The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>.
+            The default value is <code>33554432</code>.</para></li><li><para><code>sgd.maxPasses</code> - The number of times that the training process traverses
+            the observations to build the <code>MLModel</code>. The value is an integer that ranges
+            from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.</para></li><li><para><code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling
+            the data improves a model's ability to find the optimal solution for a variety of
+            data types. The valid values are <code>auto</code> and <code>none</code>. The default
+            value is <code>none</code>. We strongly recommend that you shuffle your data.</para></li><li><para><code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm.
+            It controls overfitting the data by penalizing large coefficients. This tends to drive
+            coefficients to zero, resulting in a sparse feature set. If you use this parameter,
+            start by specifying a small value, such as <code>1.0E-08</code>.</para><para>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
+            The default is to not use L1 normalization. This parameter can't be used when <code>L2</code>
+            is specified. Use this parameter sparingly.</para></li><li><para><code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm.
+            It controls overfitting the data by penalizing large coefficients. This tends to drive
+            coefficients to small, nonzero values. If you use this parameter, start by specifying
+            a small value, such as <code>1.0E-08</code>.</para><para>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
+            The default is to not use L2 normalization. This parameter can't be used when <code>L1</code>
+            is specified. Use this parameter sparingly.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLModelCmdlet.Recipe">
+            <summary>
+            <para>
+            <para>The data recipe for creating the <code>MLModel</code>. You must specify either the
+            recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLModelCmdlet.RecipeUri">
+            <summary>
+            <para>
+            <para>The Amazon Simple Storage Service (Amazon S3) location and file name that contains
+            the <code>MLModel</code> recipe. You must specify either the recipe or its URI. If
+            you don't specify a recipe or its URI, Amazon ML creates a default.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLModelCmdlet.TrainingDataSourceId">
+            <summary>
+            <para>
+            <para>The <code>DataSource</code> that points to the training data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLModelCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'MLModelId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.CreateMLModelResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.CreateMLModelResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLModelCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the MLModelId parameter.
+            The -PassThru parameter is deprecated, use -Select '^MLModelId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLModelCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.NewMLRealtimeEndpointCmdlet">
+            <summary>
+            Creates a real-time endpoint for the <code>MLModel</code>. The endpoint contains the
+            URI of the <code>MLModel</code>; that is, the location to send real-time prediction
+            requests for the specified <code>MLModel</code>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLRealtimeEndpointCmdlet.MLModelId">
+            <summary>
+            <para>
+            <para>The ID assigned to the <code>MLModel</code> during creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLRealtimeEndpointCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.CreateRealtimeEndpointResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.CreateRealtimeEndpointResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLRealtimeEndpointCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the MLModelId parameter.
+            The -PassThru parameter is deprecated, use -Select '^MLModelId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.NewMLRealtimeEndpointCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.RemoveMLBatchPredictionCmdlet">
+            <summary>
+            Assigns the DELETED status to a <code>BatchPrediction</code>, rendering it unusable.
+            
+             
+            <para>
+            After using the <code>DeleteBatchPrediction</code> operation, you can use the <a>GetBatchPrediction</a>
+            operation to verify that the status of the <code>BatchPrediction</code> changed to
+            DELETED.
+            </para><para><b>Caution:</b> The result of the <code>DeleteBatchPrediction</code> operation is
+            irreversible.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLBatchPredictionCmdlet.BatchPredictionId">
+            <summary>
+            <para>
+            <para>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLBatchPredictionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'BatchPredictionId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.DeleteBatchPredictionResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.DeleteBatchPredictionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLBatchPredictionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BatchPredictionId parameter.
+            The -PassThru parameter is deprecated, use -Select '^BatchPredictionId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLBatchPredictionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.RemoveMLDataSourceCmdlet">
+            <summary>
+            Assigns the DELETED status to a <code>DataSource</code>, rendering it unusable.
+            
+             
+            <para>
+            After using the <code>DeleteDataSource</code> operation, you can use the <a>GetDataSource</a>
+            operation to verify that the status of the <code>DataSource</code> changed to DELETED.
+            </para><para><b>Caution:</b> The results of the <code>DeleteDataSource</code> operation are irreversible.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLDataSourceCmdlet.DataSourceId">
+            <summary>
+            <para>
+            <para>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLDataSourceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'DataSourceId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.DeleteDataSourceResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.DeleteDataSourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLDataSourceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DataSourceId parameter.
+            The -PassThru parameter is deprecated, use -Select '^DataSourceId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLDataSourceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.RemoveMLEvaluationCmdlet">
+            <summary>
+            Assigns the <code>DELETED</code> status to an <code>Evaluation</code>, rendering it
+            unusable.
+            
+             
+            <para>
+            After invoking the <code>DeleteEvaluation</code> operation, you can use the <code>GetEvaluation</code>
+            operation to verify that the status of the <code>Evaluation</code> changed to <code>DELETED</code>.
+            </para><para><b>Caution:</b> The results of the <code>DeleteEvaluation</code> operation are irreversible.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLEvaluationCmdlet.EvaluationId">
+            <summary>
+            <para>
+            <para>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLEvaluationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EvaluationId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.DeleteEvaluationResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.DeleteEvaluationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLEvaluationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EvaluationId parameter.
+            The -PassThru parameter is deprecated, use -Select '^EvaluationId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLEvaluationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.RemoveMLModelCmdlet">
+            <summary>
+            Assigns the <code>DELETED</code> status to an <code>MLModel</code>, rendering it unusable.
+            
+             
+            <para>
+            After using the <code>DeleteMLModel</code> operation, you can use the <code>GetMLModel</code>
+            operation to verify that the status of the <code>MLModel</code> changed to DELETED.
+            </para><para><b>Caution:</b> The result of the <code>DeleteMLModel</code> operation is irreversible.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLModelCmdlet.MLModelId">
+            <summary>
+            <para>
+            <para>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLModelCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'MLModelId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.DeleteMLModelResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.DeleteMLModelResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLModelCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the MLModelId parameter.
+            The -PassThru parameter is deprecated, use -Select '^MLModelId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLModelCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.RemoveMLRealtimeEndpointCmdlet">
+            <summary>
+            Deletes a real time endpoint of an <code>MLModel</code>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLRealtimeEndpointCmdlet.MLModelId">
+            <summary>
+            <para>
+            <para>The ID assigned to the <code>MLModel</code> during creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLRealtimeEndpointCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.DeleteRealtimeEndpointResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.DeleteRealtimeEndpointResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLRealtimeEndpointCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the MLModelId parameter.
+            The -PassThru parameter is deprecated, use -Select '^MLModelId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLRealtimeEndpointCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.RemoveMLResourceTagCmdlet">
+            <summary>
+            Deletes the specified tags associated with an ML object. After this operation is complete,
+            you can't recover deleted tags.
+            
+             
+            <para>
+            If you specify a tag that doesn't exist, Amazon ML ignores it.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLResourceTagCmdlet.ResourceId">
+            <summary>
+            <para>
+            <para>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLResourceTagCmdlet.ResourceType">
+            <summary>
+            <para>
+            <para>The type of the tagged ML object.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>One or more tags to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.DeleteTagsResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.DeleteTagsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.RemoveMLResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.UpdateMLBatchPredictionCmdlet">
+            <summary>
+            Updates the <code>BatchPredictionName</code> of a <code>BatchPrediction</code>.
+            
+             
+            <para>
+            You can use the <code>GetBatchPrediction</code> operation to view the contents of
+            the updated data element.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.UpdateMLBatchPredictionCmdlet.BatchPredictionId">
+            <summary>
+            <para>
+            <para>The ID assigned to the <code>BatchPrediction</code> during creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.UpdateMLBatchPredictionCmdlet.BatchPredictionName">
+            <summary>
+            <para>
+            <para>A new user-supplied name or description of the <code>BatchPrediction</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.UpdateMLBatchPredictionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'BatchPredictionId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.UpdateBatchPredictionResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.UpdateBatchPredictionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.UpdateMLBatchPredictionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BatchPredictionName parameter.
+            The -PassThru parameter is deprecated, use -Select '^BatchPredictionName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.UpdateMLBatchPredictionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.UpdateMLDataSourceCmdlet">
+            <summary>
+            Updates the <code>DataSourceName</code> of a <code>DataSource</code>.
+            
+             
+            <para>
+            You can use the <code>GetDataSource</code> operation to view the contents of the updated
+            data element.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.UpdateMLDataSourceCmdlet.DataSourceId">
+            <summary>
+            <para>
+            <para>The ID assigned to the <code>DataSource</code> during creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.UpdateMLDataSourceCmdlet.DataSourceName">
+            <summary>
+            <para>
+            <para>A new user-supplied name or description of the <code>DataSource</code> that will replace
+            the current description. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.UpdateMLDataSourceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'DataSourceId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.UpdateDataSourceResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.UpdateDataSourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.UpdateMLDataSourceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DataSourceName parameter.
+            The -PassThru parameter is deprecated, use -Select '^DataSourceName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.UpdateMLDataSourceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.UpdateMLEvaluationCmdlet">
+            <summary>
+            Updates the <code>EvaluationName</code> of an <code>Evaluation</code>.
+            
+             
+            <para>
+            You can use the <code>GetEvaluation</code> operation to view the contents of the updated
+            data element.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.UpdateMLEvaluationCmdlet.EvaluationId">
+            <summary>
+            <para>
+            <para>The ID assigned to the <code>Evaluation</code> during creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.UpdateMLEvaluationCmdlet.EvaluationName">
+            <summary>
+            <para>
+            <para>A new user-supplied name or description of the <code>Evaluation</code> that will replace
+            the current content. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.UpdateMLEvaluationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EvaluationId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.UpdateEvaluationResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.UpdateEvaluationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.UpdateMLEvaluationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EvaluationName parameter.
+            The -PassThru parameter is deprecated, use -Select '^EvaluationName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.UpdateMLEvaluationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ML.UpdateMLMLModelCmdlet">
+            <summary>
+            Updates the <code>MLModelName</code> and the <code>ScoreThreshold</code> of an <code>MLModel</code>.
+            
+             
+            <para>
+            You can use the <code>GetMLModel</code> operation to view the contents of the updated
+            data element.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.UpdateMLMLModelCmdlet.MLModelId">
+            <summary>
+            <para>
+            <para>The ID assigned to the <code>MLModel</code> during creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.UpdateMLMLModelCmdlet.MLModelName">
+            <summary>
+            <para>
+            <para>A user-supplied name or description of the <code>MLModel</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.UpdateMLMLModelCmdlet.ScoreThreshold">
+            <summary>
+            <para>
+            <para>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code>
+            that marks the boundary between a positive prediction and a negative prediction.</para><para>Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive
+            result from the <code>MLModel</code>, such as <code>true</code>. Output values less
+            than the <code>ScoreThreshold</code> receive a negative response from the <code>MLModel</code>,
+            such as <code>false</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.UpdateMLMLModelCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'MLModelId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MachineLearning.Model.UpdateMLModelResponse).
+            Specifying the name of a property of type Amazon.MachineLearning.Model.UpdateMLModelResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.UpdateMLMLModelCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the MLModelId parameter.
+            The -PassThru parameter is deprecated, use -Select '^MLModelId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ML.UpdateMLMLModelCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

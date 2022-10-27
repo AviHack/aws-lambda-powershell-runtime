@@ -1,0 +1,2235 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.CodeArtifact</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.AddCAResourceTagCmdlet">
+            <summary>
+            Adds or updates tags for a resource in CodeArtifact.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.AddCAResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource that you want to add or update tags
+            for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.AddCAResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags you want to modify or add to the resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.AddCAResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.AddCAResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.AddCAResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.ConnectCAExternalConnectionCmdlet">
+            <summary>
+            Adds an existing external connection to a repository. One external connection is allowed
+            per repository.
+            
+             <note><para>
+            A repository can have one or more upstream repositories, or an external connection.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.ConnectCAExternalConnectionCmdlet.Domain">
+            <summary>
+            <para>
+            <para>The name of the domain that contains the repository.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.ConnectCAExternalConnectionCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.ConnectCAExternalConnectionCmdlet.ExternalConnection">
+            <summary>
+            <para>
+            <para> The name of the external connection to add to the repository. The following values
+            are supported: </para><ul><li><para><code>public:npmjs</code> - for the npm public repository. </para></li><li><para><code>public:pypi</code> - for the Python Package Index. </para></li><li><para><code>public:maven-central</code> - for Maven Central. </para></li><li><para><code>public:maven-googleandroid</code> - for the Google Android repository. </para></li><li><para><code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </para></li><li><para><code>public:maven-commonsware</code> - for the CommonsWare Android repository. </para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.ConnectCAExternalConnectionCmdlet.Repository">
+            <summary>
+            <para>
+            <para> The name of the repository to which the external connection is added. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.ConnectCAExternalConnectionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Repository'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.AssociateExternalConnectionResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.AssociateExternalConnectionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.ConnectCAExternalConnectionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.CopyCAPackageVersionCmdlet">
+            <summary>
+            Copies package versions from one repository to another repository in the same domain.
+            
+            
+             <note><para>
+             You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot
+            specify both. 
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.CopyCAPackageVersionCmdlet.AllowOverwrite">
+            <summary>
+            <para>
+            <para> Set to true to overwrite a package version that already exists in the destination
+            repository. If set to false and the package version already exists in the destination
+            repository, the package version is returned in the <code>failedVersions</code> field
+            of the response with an <code>ALREADY_EXISTS</code> error code. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.CopyCAPackageVersionCmdlet.DestinationRepository">
+            <summary>
+            <para>
+            <para> The name of the repository into which package versions are copied. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.CopyCAPackageVersionCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain that contains the source and destination repositories. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.CopyCAPackageVersionCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.CopyCAPackageVersionCmdlet.Format">
+            <summary>
+            <para>
+            <para> The format of the package versions to be copied. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.CopyCAPackageVersionCmdlet.IncludeFromUpstream">
+            <summary>
+            <para>
+            <para> Set to true to copy packages from repositories that are upstream from the source
+            repository to the destination repository. The default setting is false. For more information,
+            see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
+            with upstream repositories</a>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.CopyCAPackageVersionCmdlet.Namespace">
+            <summary>
+            <para>
+            <para>The namespace of the package versions to be copied. The package version component
+            that specifies its namespace depends on its type. For example:</para><ul><li><para> The namespace of a Maven package version is its <code>groupId</code>. The namespace
+            is required when copying Maven package versions. </para></li><li><para> The namespace of an npm package version is its <code>scope</code>. </para></li><li><para> Python and NuGet package versions do not contain a corresponding component, package
+            versions of those formats do not have a namespace. </para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.CopyCAPackageVersionCmdlet.Package">
+            <summary>
+            <para>
+            <para> The name of the package that contains the versions to be copied. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.CopyCAPackageVersionCmdlet.SourceRepository">
+            <summary>
+            <para>
+            <para> The name of the repository that contains the package versions to be copied. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.CopyCAPackageVersionCmdlet.VersionRevision">
+            <summary>
+            <para>
+            <para> A list of key-value pairs. The keys are package versions and the values are package
+            version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified
+            versions in the source repository match the specified package version revision. </para><note><para> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot
+            specify both. </para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.CopyCAPackageVersionCmdlet.Version">
+            <summary>
+            <para>
+            <para> The versions of the package to be copied. </para><note><para> You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot
+            specify both. </para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.CopyCAPackageVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.CopyPackageVersionsResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.CopyPackageVersionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.CopyCAPackageVersionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.DisconnectCAExternalConnectionCmdlet">
+            <summary>
+            Removes an existing external connection from a repository.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.DisconnectCAExternalConnectionCmdlet.Domain">
+            <summary>
+            <para>
+            <para>The name of the domain that contains the repository from which to remove the external
+            repository. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.DisconnectCAExternalConnectionCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.DisconnectCAExternalConnectionCmdlet.ExternalConnection">
+            <summary>
+            <para>
+            <para>The name of the external connection to be removed from the repository. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.DisconnectCAExternalConnectionCmdlet.Repository">
+            <summary>
+            <para>
+            <para>The name of the repository from which the external connection will be removed. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.DisconnectCAExternalConnectionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Repository'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.DisassociateExternalConnectionResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.DisassociateExternalConnectionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.DisconnectCAExternalConnectionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.GetCAAuthorizationTokenCmdlet">
+            <summary>
+            Generates a temporary authorization token for accessing repositories in the domain.
+            This API requires the <code>codeartifact:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code>
+            permissions. For more information about authorization tokens, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">CodeArtifact
+            authentication and tokens</a>. 
+            
+             <note><para>
+            CodeArtifact authorization tokens are valid for a period of 12 hours when created
+            with the <code>login</code> command. You can call <code>login</code> periodically
+            to refresh the token. When you create an authorization token with the <code>GetAuthorizationToken</code>
+            API, you can set a custom authorization period, up to a maximum of 12 hours, with
+            the <code>durationSeconds</code> parameter.
+            </para><para>
+            The authorization period begins after <code>login</code> or <code>GetAuthorizationToken</code>
+            is called. If <code>login</code> or <code>GetAuthorizationToken</code> is called while
+            assuming a role, the token lifetime is independent of the maximum session duration
+            of the role. For example, if you call <code>sts assume-role</code> and specify a session
+            duration of 15 minutes, then generate a CodeArtifact authorization token, the token
+            will be valid for the full authorization period even though this is longer than the
+            15-minute session duration.
+            </para><para>
+            See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+            IAM Roles</a> for more information on controlling session duration. 
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAAuthorizationTokenCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain that is in scope for the generated authorization token. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAAuthorizationTokenCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAAuthorizationTokenCmdlet.DurationSecond">
+            <summary>
+            <para>
+            <para>The time, in seconds, that the generated authorization token is valid. Valid values
+            are <code>0</code> and any number between <code>900</code> (15 minutes) and <code>43200</code>
+            (12 hours). A value of <code>0</code> will set the expiration of the authorization
+            token to the same expiration of the user's role's temporary credentials.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAAuthorizationTokenCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.GetAuthorizationTokenResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.GetAuthorizationTokenResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.GetCADomainCmdlet">
+            <summary>
+            Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainDescription.html">DomainDescription</a>
+            object that contains information about the requested domain.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCADomainCmdlet.Domain">
+            <summary>
+            <para>
+            <para> A string that specifies the name of the requested domain. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCADomainCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCADomainCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Domain'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.DescribeDomainResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.DescribeDomainResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.GetCADomainListCmdlet">
+            <summary>
+            Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">DomainSummary</a>
+            objects for all domains owned by the Amazon Web Services account that makes this call.
+            Each returned <code>DomainSummary</code> object contains information about a domain.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCADomainListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para> The maximum number of results to return per page. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCADomainListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para> The token for the next set of results. Use the value returned in the previous response
+            in the next request to retrieve the next set of results. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCADomainListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Domains'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.ListDomainsResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.ListDomainsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.GetCADomainPermissionsPolicyCmdlet">
+            <summary>
+            Returns the resource policy attached to the specified domain. 
+            
+             <note><para>
+             The policy is a resource-based policy, not an identity-based policy. For more information,
+            see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based
+            policies and resource-based policies </a> in the <i>IAM User Guide</i>. 
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCADomainPermissionsPolicyCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain to which the resource policy is attached. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCADomainPermissionsPolicyCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCADomainPermissionsPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Policy'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.GetDomainPermissionsPolicyResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.GetDomainPermissionsPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.GetCAPackageCmdlet">
+            <summary>
+            Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a>
+            object that contains information about the requested package.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageCmdlet.Domain">
+            <summary>
+            <para>
+            <para>The name of the domain that contains the repository that contains the package.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageCmdlet.Format">
+            <summary>
+            <para>
+            <para>A format that specifies the type of the requested package.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageCmdlet.Namespace">
+            <summary>
+            <para>
+            <para>The namespace of the requested package. The package component that specifies its namespace
+            depends on its type. For example:</para><ul><li><para> The namespace of a Maven package is its <code>groupId</code>. The namespace is required
+            when requesting Maven packages. </para></li><li><para> The namespace of an npm package is its <code>scope</code>. </para></li><li><para> Python and NuGet packages do not contain a corresponding component, packages of those
+            formats do not have a namespace. </para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageCmdlet.Package">
+            <summary>
+            <para>
+            <para>The name of the requested package.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageCmdlet.Repository">
+            <summary>
+            <para>
+            <para>The name of the repository that contains the requested package. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Package'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.DescribePackageResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.DescribePackageResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.GetCAPackageListCmdlet">
+            <summary>
+            Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
+            objects for packages in a repository that match the request parameters.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageListCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain that contains the repository that contains the requested packages.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageListCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageListCmdlet.Format">
+            <summary>
+            <para>
+            <para>The format used to filter requested packages. Only packages from the provided format
+            will be returned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageListCmdlet.Namespace">
+            <summary>
+            <para>
+            <para>The namespace used to filter requested packages. Only packages with the provided namespace
+            will be returned. The package component that specifies its namespace depends on its
+            type. For example:</para><ul><li><para> The namespace of a Maven package is its <code>groupId</code>. </para></li><li><para> The namespace of an npm package is its <code>scope</code>. </para></li><li><para> Python and NuGet packages do not contain a corresponding component, packages of those
+            formats do not have a namespace. </para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageListCmdlet.PackagePrefix">
+            <summary>
+            <para>
+            <para> A prefix used to filter requested packages. Only packages with names that start with
+            <code>packagePrefix</code> are returned. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageListCmdlet.Publish">
+            <summary>
+            <para>
+            <para>The value of the <code>Publish</code> package origin control restriction used to filter
+            requested packages. Only packages with the provided restriction are returned. For
+            more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageListCmdlet.Repository">
+            <summary>
+            <para>
+            <para> The name of the repository that contains the requested packages. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageListCmdlet.Upstream">
+            <summary>
+            <para>
+            <para>The value of the <code>Upstream</code> package origin control restriction used to
+            filter requested packages. Only packages with the provided restriction are returned.
+            For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para> The maximum number of results to return per page. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para> The token for the next set of results. Use the value returned in the previous response
+            in the next request to retrieve the next set of results. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Packages'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.ListPackagesResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.ListPackagesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionCmdlet">
+            <summary>
+            Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
+            object that contains information about the requested package version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain that contains the repository that contains the package version.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionCmdlet.Format">
+            <summary>
+            <para>
+            <para> A format that specifies the type of the requested package version. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionCmdlet.Namespace">
+            <summary>
+            <para>
+            <para>The namespace of the requested package version. The package version component that
+            specifies its namespace depends on its type. For example:</para><ul><li><para> The namespace of a Maven package version is its <code>groupId</code>. </para></li><li><para> The namespace of an npm package version is its <code>scope</code>. </para></li><li><para> Python and NuGet package versions do not contain a corresponding component, package
+            versions of those formats do not have a namespace. </para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionCmdlet.Package">
+            <summary>
+            <para>
+            <para> The name of the requested package version. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionCmdlet.PackageVersion">
+            <summary>
+            <para>
+            <para> A string that contains the package version (for example, <code>3.5.2</code>). </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionCmdlet.Repository">
+            <summary>
+            <para>
+            <para> The name of the repository that contains the package version. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'PackageVersion'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.DescribePackageVersionResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.DescribePackageVersionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionAssetCmdlet">
+            <summary>
+            Returns an asset (or file) that is in a package. For example, for a Maven package
+            version, use <code>GetPackageVersionAsset</code> to download a <code>JAR</code> file,
+            a <code>POM</code> file, or any other assets in the package version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionAssetCmdlet.Asset">
+            <summary>
+            <para>
+            <para> The name of the requested asset. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionAssetCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain that contains the repository that contains the package version
+            with the requested asset. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionAssetCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionAssetCmdlet.Format">
+            <summary>
+            <para>
+            <para> A format that specifies the type of the package version with the requested asset
+            file. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionAssetCmdlet.Namespace">
+            <summary>
+            <para>
+            <para>The namespace of the package version with the requested asset file. The package version
+            component that specifies its namespace depends on its type. For example:</para><ul><li><para> The namespace of a Maven package version is its <code>groupId</code>. </para></li><li><para> The namespace of an npm package version is its <code>scope</code>. </para></li><li><para> Python and NuGet package versions do not contain a corresponding component, package
+            versions of those formats do not have a namespace. </para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionAssetCmdlet.Package">
+            <summary>
+            <para>
+            <para> The name of the package that contains the requested asset. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionAssetCmdlet.PackageVersion">
+            <summary>
+            <para>
+            <para> A string that contains the package version (for example, <code>3.5.2</code>). </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionAssetCmdlet.PackageVersionRevision">
+            <summary>
+            <para>
+            <para> The name of the package version revision that contains the requested asset. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionAssetCmdlet.Repository">
+            <summary>
+            <para>
+            <para> The repository that contains the package version with the requested asset. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionAssetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.GetPackageVersionAssetResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.GetPackageVersionAssetResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionAssetListCmdlet">
+            <summary>
+            Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a>
+            objects for assets in a package version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionAssetListCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain that contains the repository associated with the package version
+            assets. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionAssetListCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionAssetListCmdlet.Format">
+            <summary>
+            <para>
+            <para> The format of the package that contains the requested package version assets. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionAssetListCmdlet.Namespace">
+            <summary>
+            <para>
+            <para>The namespace of the package version that contains the requested package version assets.
+            The package version component that specifies its namespace depends on its type. For
+            example:</para><ul><li><para> The namespace of a Maven package version is its <code>groupId</code>. </para></li><li><para> The namespace of an npm package version is its <code>scope</code>. </para></li><li><para> Python and NuGet package versions do not contain a corresponding component, package
+            versions of those formats do not have a namespace. </para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionAssetListCmdlet.Package">
+            <summary>
+            <para>
+            <para> The name of the package that contains the requested package version assets. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionAssetListCmdlet.PackageVersion">
+            <summary>
+            <para>
+            <para> A string that contains the package version (for example, <code>3.5.2</code>). </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionAssetListCmdlet.Repository">
+            <summary>
+            <para>
+            <para> The name of the repository that contains the package that contains the requested
+            package version assets. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionAssetListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para> The maximum number of results to return per page. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionAssetListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para> The token for the next set of results. Use the value returned in the previous response
+            in the next request to retrieve the next set of results. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionAssetListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.ListPackageVersionAssetsResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.ListPackageVersionAssetsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionDependencyListCmdlet">
+            <summary>
+            Returns the direct dependencies for a package version. The dependencies are returned
+            as <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a>
+            objects. CodeArtifact extracts the dependencies for a package version from the metadata
+            file for the package format (for example, the <code>package.json</code> file for npm
+            packages and the <code>pom.xml</code> file for Maven). Any package version dependencies
+            that are not listed in the configuration file are not returned.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionDependencyListCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain that contains the repository that contains the requested package
+            version dependencies. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionDependencyListCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionDependencyListCmdlet.Format">
+            <summary>
+            <para>
+            <para> The format of the package with the requested dependencies. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionDependencyListCmdlet.Namespace">
+            <summary>
+            <para>
+            <para>The namespace of the package version with the requested dependencies. The package
+            version component that specifies its namespace depends on its type. For example:</para><ul><li><para> The namespace of a Maven package version is its <code>groupId</code>. </para></li><li><para> The namespace of an npm package version is its <code>scope</code>. </para></li><li><para> Python and NuGet package versions do not contain a corresponding component, package
+            versions of those formats do not have a namespace. </para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionDependencyListCmdlet.Package">
+            <summary>
+            <para>
+            <para> The name of the package versions' package. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionDependencyListCmdlet.PackageVersion">
+            <summary>
+            <para>
+            <para> A string that contains the package version (for example, <code>3.5.2</code>). </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionDependencyListCmdlet.Repository">
+            <summary>
+            <para>
+            <para> The name of the repository that contains the requested package version. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionDependencyListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para> The token for the next set of results. Use the value returned in the previous response
+            in the next request to retrieve the next set of results. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionDependencyListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.ListPackageVersionDependenciesResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.ListPackageVersionDependenciesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionListCmdlet">
+            <summary>
+            Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
+            objects for package versions in a repository that match the request parameters.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionListCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain that contains the repository that contains the requested package
+            versions. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionListCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionListCmdlet.Format">
+            <summary>
+            <para>
+            <para> The format of the returned package versions. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionListCmdlet.Namespace">
+            <summary>
+            <para>
+            <para>The namespace of the package that contains the requested package versions. The package
+            component that specifies its namespace depends on its type. For example:</para><ul><li><para> The namespace of a Maven package is its <code>groupId</code>. </para></li><li><para> The namespace of an npm package is its <code>scope</code>. </para></li><li><para> Python and NuGet packages do not contain a corresponding component, packages of those
+            formats do not have a namespace. </para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionListCmdlet.OriginType">
+            <summary>
+            <para>
+            <para>The <code>originType</code> used to filter package versions. Only package versions
+            with the provided <code>originType</code> will be returned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionListCmdlet.Package">
+            <summary>
+            <para>
+            <para> The name of the package for which you want to request package versions. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionListCmdlet.Repository">
+            <summary>
+            <para>
+            <para> The name of the repository that contains the requested package versions. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionListCmdlet.SortBy">
+            <summary>
+            <para>
+            <para> How to sort the requested list of package versions. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionListCmdlet.Status">
+            <summary>
+            <para>
+            <para> A string that filters the requested package versions by status. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para> The maximum number of results to return per page. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para> The token for the next set of results. Use the value returned in the previous response
+            in the next request to retrieve the next set of results. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.ListPackageVersionsResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.ListPackageVersionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionReadmeCmdlet">
+            <summary>
+            Gets the readme file or descriptive text for a package version. For packages that
+            do not contain a readme file, CodeArtifact extracts a description from a metadata
+            file. For example, from the <code>&lt;description&gt;</code> element in the <code>pom.xml</code>
+            file of a Maven package. 
+            
+             
+            <para>
+             The returned text might contain formatting. For example, it might contain formatting
+            for Markdown or reStructuredText. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionReadmeCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain that contains the repository that contains the package version
+            with the requested readme file. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionReadmeCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionReadmeCmdlet.Format">
+            <summary>
+            <para>
+            <para> A format that specifies the type of the package version with the requested readme
+            file. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionReadmeCmdlet.Namespace">
+            <summary>
+            <para>
+            <para>The namespace of the package version with the requested readme file. The package version
+            component that specifies its namespace depends on its type. For example:</para><ul><li><para> The namespace of a Maven package version is its <code>groupId</code>. </para></li><li><para> The namespace of an npm package version is its <code>scope</code>. </para></li><li><para> Python and NuGet package versions do not contain a corresponding component, package
+            versions of those formats do not have a namespace. </para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionReadmeCmdlet.Package">
+            <summary>
+            <para>
+            <para> The name of the package version that contains the requested readme file. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionReadmeCmdlet.PackageVersion">
+            <summary>
+            <para>
+            <para> A string that contains the package version (for example, <code>3.5.2</code>). </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionReadmeCmdlet.Repository">
+            <summary>
+            <para>
+            <para> The repository that contains the package with the requested readme file. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAPackageVersionReadmeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.GetPackageVersionReadmeResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.GetPackageVersionReadmeResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.GetCARepositoriesInDomainListCmdlet">
+            <summary>
+            Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
+            objects. Each <code>RepositorySummary</code> contains information about a repository
+            in the specified domain and that matches the input parameters.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCARepositoriesInDomainListCmdlet.AdministratorAccount">
+            <summary>
+            <para>
+            <para> Filter the list of repositories to only include those that are managed by the Amazon
+            Web Services account ID. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCARepositoriesInDomainListCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain that contains the returned list of repositories. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCARepositoriesInDomainListCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCARepositoriesInDomainListCmdlet.RepositoryPrefix">
+            <summary>
+            <para>
+            <para> A prefix used to filter returned repositories. Only repositories with names that
+            start with <code>repositoryPrefix</code> are returned. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCARepositoriesInDomainListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para> The maximum number of results to return per page. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCARepositoriesInDomainListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para> The token for the next set of results. Use the value returned in the previous response
+            in the next request to retrieve the next set of results. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCARepositoriesInDomainListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Repositories'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.ListRepositoriesInDomainResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.ListRepositoriesInDomainResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.GetCARepositoryCmdlet">
+            <summary>
+            Returns a <code>RepositoryDescription</code> object that contains detailed information
+            about the requested repository.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCARepositoryCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain that contains the repository to describe. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCARepositoryCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCARepositoryCmdlet.Repository">
+            <summary>
+            <para>
+            <para> A string that specifies the name of the requested repository. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCARepositoryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Repository'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.DescribeRepositoryResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.DescribeRepositoryResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.GetCARepositoryEndpointCmdlet">
+            <summary>
+            Returns the endpoint of a repository for a specific package format. A repository
+            has one endpoint for each package format: 
+            
+             <ul><li><para><code>maven</code></para></li><li><para><code>npm</code></para></li><li><para><code>nuget</code></para></li><li><para><code>pypi</code></para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCARepositoryEndpointCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain that contains the repository. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCARepositoryEndpointCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain
+            that contains the repository. It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCARepositoryEndpointCmdlet.Format">
+            <summary>
+            <para>
+            <para> Returns which endpoint of a repository to return. A repository has one endpoint for
+            each package format. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCARepositoryEndpointCmdlet.Repository">
+            <summary>
+            <para>
+            <para> The name of the repository. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCARepositoryEndpointCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'RepositoryEndpoint'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.GetRepositoryEndpointResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.GetRepositoryEndpointResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.GetCARepositoryListCmdlet">
+            <summary>
+            Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
+            objects. Each <code>RepositorySummary</code> contains information about a repository
+            in the specified Amazon Web Services account and that matches the input parameters.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCARepositoryListCmdlet.RepositoryPrefix">
+            <summary>
+            <para>
+            <para> A prefix used to filter returned repositories. Only repositories with names that
+            start with <code>repositoryPrefix</code> are returned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCARepositoryListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para> The maximum number of results to return per page. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCARepositoryListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para> The token for the next set of results. Use the value returned in the previous response
+            in the next request to retrieve the next set of results. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCARepositoryListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Repositories'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.ListRepositoriesResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.ListRepositoriesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.GetCARepositoryPermissionsPolicyCmdlet">
+            <summary>
+            Returns the resource policy that is set on a repository.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCARepositoryPermissionsPolicyCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain containing the repository whose associated resource policy
+            is to be retrieved. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCARepositoryPermissionsPolicyCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCARepositoryPermissionsPolicyCmdlet.Repository">
+            <summary>
+            <para>
+            <para> The name of the repository whose associated resource policy is to be retrieved. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCARepositoryPermissionsPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Policy'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.GetRepositoryPermissionsPolicyResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.GetRepositoryPermissionsPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.GetCAResourceTagCmdlet">
+            <summary>
+            Gets information about Amazon Web Services tags for a specified Amazon Resource Name
+            (ARN) in CodeArtifact.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource to get tags for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.GetCAResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.NewCADomainCmdlet">
+            <summary>
+            Creates a domain. CodeArtifact <i>domains</i> make it easier to manage multiple repositories
+            across an organization. You can use a domain to apply permissions across many repositories
+            owned by different Amazon Web Services accounts. An asset is stored only once in a
+            domain, even if it's in multiple repositories. 
+            
+             
+            <para>
+            Although you can have multiple domains, we recommend a single production domain that
+            contains all published artifacts so that your development teams can find and share
+            packages. You can use a second pre-production domain to test changes to the production
+            domain configuration. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.NewCADomainCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain to create. All domain names in an Amazon Web Services Region
+            that are in the same Amazon Web Services account must be unique. The domain name is
+            used as the prefix in DNS hostnames. Do not use sensitive information in a domain
+            name because it is publicly discoverable. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.NewCADomainCmdlet.EncryptionKey">
+            <summary>
+            <para>
+            <para> The encryption key for the domain. This is used to encrypt content stored in a domain.
+            An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias,
+            or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have
+            <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption
+            key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a>
+            in the <i>Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key
+            Management Service API Permissions Reference</a> in the <i>Key Management Service
+            Developer Guide</i>. </para><important><para> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with
+            your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+            symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>.
+            </para></important>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.NewCADomainCmdlet.Tag">
+            <summary>
+            <para>
+            <para>One or more tag key-value pairs for the domain.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.NewCADomainCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Domain'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.CreateDomainResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.CreateDomainResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.NewCADomainCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.NewCARepositoryCmdlet">
+            <summary>
+            Creates a repository.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.NewCARepositoryCmdlet.Description">
+            <summary>
+            <para>
+            <para> A description of the created repository. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.NewCARepositoryCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain that contains the created repository. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.NewCARepositoryCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.NewCARepositoryCmdlet.Repository">
+            <summary>
+            <para>
+            <para> The name of the repository to create. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.NewCARepositoryCmdlet.Tag">
+            <summary>
+            <para>
+            <para>One or more tag key-value pairs for the repository.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.NewCARepositoryCmdlet.Upstream">
+            <summary>
+            <para>
+            <para> A list of upstream repositories to associate with the repository. The order of the
+            upstream repositories in the list determines their priority order when CodeArtifact
+            looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
+            with upstream repositories</a>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.NewCARepositoryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Repository'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.CreateRepositoryResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.CreateRepositoryResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.NewCARepositoryCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.RemoveCADomainCmdlet">
+            <summary>
+            Deletes a domain. You cannot delete a domain that contains repositories. If you want
+            to delete a domain with repositories, first delete its repositories.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCADomainCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain to delete. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCADomainCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCADomainCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Domain'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.DeleteDomainResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.DeleteDomainResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCADomainCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.RemoveCADomainPermissionsPolicyCmdlet">
+            <summary>
+            Deletes the resource policy set on a domain.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCADomainPermissionsPolicyCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain associated with the resource policy to be deleted. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCADomainPermissionsPolicyCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCADomainPermissionsPolicyCmdlet.PolicyRevision">
+            <summary>
+            <para>
+            <para> The current revision of the resource policy to be deleted. This revision is used
+            for optimistic locking, which prevents others from overwriting your changes to the
+            domain's resource policy. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCADomainPermissionsPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Policy'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.DeleteDomainPermissionsPolicyResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.DeleteDomainPermissionsPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCADomainPermissionsPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.RemoveCAPackageVersionCmdlet">
+            <summary>
+            Deletes one or more versions of a package. A deleted package version cannot be restored
+            in your repository. If you want to remove a package version from your repository and
+            be able to restore it later, set its status to <code>Archived</code>. Archived packages
+            cannot be downloaded from a repository and don't show up with list package APIs (for
+            example, <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListackageVersions</a>),
+            but you can restore them using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionsStatus</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCAPackageVersionCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain that contains the package to delete. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCAPackageVersionCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCAPackageVersionCmdlet.ExpectedStatus">
+            <summary>
+            <para>
+            <para> The expected status of the package version to delete. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCAPackageVersionCmdlet.Format">
+            <summary>
+            <para>
+            <para> The format of the package versions to delete. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCAPackageVersionCmdlet.Namespace">
+            <summary>
+            <para>
+            <para>The namespace of the package versions to be deleted. The package version component
+            that specifies its namespace depends on its type. For example:</para><ul><li><para> The namespace of a Maven package version is its <code>groupId</code>. The namespace
+            is required when deleting Maven package versions. </para></li><li><para> The namespace of an npm package version is its <code>scope</code>. </para></li><li><para> Python and NuGet package versions do not contain a corresponding component, package
+            versions of those formats do not have a namespace. </para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCAPackageVersionCmdlet.Package">
+            <summary>
+            <para>
+            <para> The name of the package with the versions to delete. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCAPackageVersionCmdlet.Repository">
+            <summary>
+            <para>
+            <para> The name of the repository that contains the package versions to delete. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCAPackageVersionCmdlet.Version">
+            <summary>
+            <para>
+            <para> An array of strings that specify the versions of the package to delete. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCAPackageVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.DeletePackageVersionsResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.DeletePackageVersionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCAPackageVersionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.RemoveCARepositoryCmdlet">
+            <summary>
+            Deletes a repository.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCARepositoryCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain that contains the repository to delete. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCARepositoryCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCARepositoryCmdlet.Repository">
+            <summary>
+            <para>
+            <para> The name of the repository to delete. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCARepositoryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Repository'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.DeleteRepositoryResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.DeleteRepositoryResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCARepositoryCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.RemoveCARepositoryPermissionsPolicyCmdlet">
+            <summary>
+            Deletes the resource policy that is set on a repository. After a resource policy
+            is deleted, the permissions allowed and denied by the deleted policy are removed.
+            The effect of deleting a resource policy might not be immediate. 
+            
+             <important><para>
+             Use <code>DeleteRepositoryPermissionsPolicy</code> with caution. After a policy is
+            deleted, Amazon Web Services users, roles, and accounts lose permissions to perform
+            the repository actions granted by the deleted policy. 
+            </para></important>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCARepositoryPermissionsPolicyCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain that contains the repository associated with the resource
+            policy to be deleted. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCARepositoryPermissionsPolicyCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCARepositoryPermissionsPolicyCmdlet.PolicyRevision">
+            <summary>
+            <para>
+            <para> The revision of the repository's resource policy to be deleted. This revision is
+            used for optimistic locking, which prevents others from accidentally overwriting your
+            changes to the repository's resource policy. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCARepositoryPermissionsPolicyCmdlet.Repository">
+            <summary>
+            <para>
+            <para> The name of the repository that is associated with the resource policy to be deleted
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCARepositoryPermissionsPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Policy'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.DeleteRepositoryPermissionsPolicyResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.DeleteRepositoryPermissionsPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCARepositoryPermissionsPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.RemoveCAResourceTagCmdlet">
+            <summary>
+            Removes tags from a resource in CodeArtifact.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCAResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCAResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>The tag key for each tag that you want to remove from the resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCAResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCAResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.RemoveCAResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.UnpublishCAPackageVersionCmdlet">
+            <summary>
+            Deletes the assets in package versions and sets the package versions' status to <code>Disposed</code>.
+            A disposed package version cannot be restored in your repository because its assets
+            are deleted. 
+            
+             
+            <para>
+             To view all disposed package versions in a repository, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>
+            and set the <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">status</a>
+            parameter to <code>Disposed</code>. 
+            </para><para>
+             To view information about a disposed package version, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">DescribePackageVersion</a>.
+            
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UnpublishCAPackageVersionCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain that contains the repository you want to dispose. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UnpublishCAPackageVersionCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UnpublishCAPackageVersionCmdlet.ExpectedStatus">
+            <summary>
+            <para>
+            <para> The expected status of the package version to dispose. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UnpublishCAPackageVersionCmdlet.Format">
+            <summary>
+            <para>
+            <para> A format that specifies the type of package versions you want to dispose. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UnpublishCAPackageVersionCmdlet.Namespace">
+            <summary>
+            <para>
+            <para>The namespace of the package versions to be disposed. The package version component
+            that specifies its namespace depends on its type. For example:</para><ul><li><para> The namespace of a Maven package version is its <code>groupId</code>. </para></li><li><para> The namespace of an npm package version is its <code>scope</code>. </para></li><li><para> Python and NuGet package versions do not contain a corresponding component, package
+            versions of those formats do not have a namespace. </para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UnpublishCAPackageVersionCmdlet.Package">
+            <summary>
+            <para>
+            <para> The name of the package with the versions you want to dispose. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UnpublishCAPackageVersionCmdlet.Repository">
+            <summary>
+            <para>
+            <para> The name of the repository that contains the package versions you want to dispose.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UnpublishCAPackageVersionCmdlet.VersionRevision">
+            <summary>
+            <para>
+            <para> The revisions of the package versions you want to dispose. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UnpublishCAPackageVersionCmdlet.Version">
+            <summary>
+            <para>
+            <para> The versions of the package you want to dispose. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UnpublishCAPackageVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.DisposePackageVersionsResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.DisposePackageVersionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UnpublishCAPackageVersionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.UpdateCAPackageVersionsStatusCmdlet">
+            <summary>
+            Updates the status of one or more versions of a package. Using <code>UpdatePackageVersionsStatus</code>,
+            you can update the status of package versions to <code>Archived</code>, <code>Published</code>,
+            or <code>Unlisted</code>. To set the status of a package version to <code>Disposed</code>,
+            use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DisposePackageVersions.html">DisposePackageVersions</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UpdateCAPackageVersionsStatusCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain that contains the repository that contains the package versions
+            with a status to be updated. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UpdateCAPackageVersionsStatusCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UpdateCAPackageVersionsStatusCmdlet.ExpectedStatus">
+            <summary>
+            <para>
+            <para> The package version’s expected status before it is updated. If <code>expectedStatus</code>
+            is provided, the package version's status is updated only if its status at the time
+            <code>UpdatePackageVersionsStatus</code> is called matches <code>expectedStatus</code>.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UpdateCAPackageVersionsStatusCmdlet.Format">
+            <summary>
+            <para>
+            <para> A format that specifies the type of the package with the statuses to update. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UpdateCAPackageVersionsStatusCmdlet.Namespace">
+            <summary>
+            <para>
+            <para>The namespace of the package version to be updated. The package version component
+            that specifies its namespace depends on its type. For example:</para><ul><li><para> The namespace of a Maven package version is its <code>groupId</code>. </para></li><li><para> The namespace of an npm package version is its <code>scope</code>. </para></li><li><para> Python and NuGet package versions do not contain a corresponding component, package
+            versions of those formats do not have a namespace. </para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UpdateCAPackageVersionsStatusCmdlet.Package">
+            <summary>
+            <para>
+            <para> The name of the package with the version statuses to update. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UpdateCAPackageVersionsStatusCmdlet.Repository">
+            <summary>
+            <para>
+            <para> The repository that contains the package versions with the status you want to update.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UpdateCAPackageVersionsStatusCmdlet.TargetStatus">
+            <summary>
+            <para>
+            <para> The status you want to change the package version status to. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UpdateCAPackageVersionsStatusCmdlet.VersionRevision">
+            <summary>
+            <para>
+            <para> A map of package versions and package version revisions. The map <code>key</code>
+            is the package version (for example, <code>3.5.2</code>), and the map <code>value</code>
+            is the package version revision. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UpdateCAPackageVersionsStatusCmdlet.Version">
+            <summary>
+            <para>
+            <para> An array of strings that specify the versions of the package with the statuses to
+            update. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UpdateCAPackageVersionsStatusCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.UpdatePackageVersionsStatusResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.UpdatePackageVersionsStatusResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UpdateCAPackageVersionsStatusCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.UpdateCARepositoryCmdlet">
+            <summary>
+            Update the properties of a repository.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UpdateCARepositoryCmdlet.Description">
+            <summary>
+            <para>
+            <para> An updated repository description. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UpdateCARepositoryCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain associated with the repository to update. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UpdateCARepositoryCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UpdateCARepositoryCmdlet.Repository">
+            <summary>
+            <para>
+            <para> The name of the repository to update. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UpdateCARepositoryCmdlet.Upstream">
+            <summary>
+            <para>
+            <para> A list of upstream repositories to associate with the repository. The order of the
+            upstream repositories in the list determines their priority order when CodeArtifact
+            looks for a requested package version. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html">Working
+            with upstream repositories</a>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UpdateCARepositoryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Repository'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.UpdateRepositoryResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.UpdateRepositoryResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.UpdateCARepositoryCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.WriteCADomainPermissionsPolicyCmdlet">
+            <summary>
+            Sets a resource policy on a domain that specifies permissions to access it. 
+            
+             
+            <para>
+             When you call <code>PutDomainPermissionsPolicy</code>, the resource policy on the
+            domain is ignored when evaluting permissions. This ensures that the owner of a domain
+            cannot lock themselves out of the domain, which would prevent them from being able
+            to update the resource policy. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.WriteCADomainPermissionsPolicyCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain on which to set the resource policy. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.WriteCADomainPermissionsPolicyCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.WriteCADomainPermissionsPolicyCmdlet.PolicyDocument">
+            <summary>
+            <para>
+            <para> A valid displayable JSON Aspen policy string to be set as the access control resource
+            policy on the provided domain. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.WriteCADomainPermissionsPolicyCmdlet.PolicyRevision">
+            <summary>
+            <para>
+            <para> The current revision of the resource policy to be set. This revision is used for
+            optimistic locking, which prevents others from overwriting your changes to the domain's
+            resource policy. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.WriteCADomainPermissionsPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Policy'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.PutDomainPermissionsPolicyResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.PutDomainPermissionsPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.WriteCADomainPermissionsPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.WriteCAPackageOriginConfigurationCmdlet">
+            <summary>
+            Sets the package origin configuration for a package.
+            
+             
+            <para>
+            The package origin configuration determines how new versions of a package can be added
+            to a repository. You can allow or block direct publishing of new package versions,
+            or ingestion and retaining of new package versions from an external connection or
+            upstream source. For more information about package origin controls and configuration,
+            see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-origin-controls.html">Editing
+            package origin controls</a> in the <i>CodeArtifact User Guide</i>.
+            </para><para><code>PutPackageOriginConfiguration</code> can be called on a package that doesn't
+            yet exist in the repository. When called on a package that does not exist, a package
+            is created in the repository with no versions and the requested restrictions are set
+            on the package. This can be used to preemptively block ingesting or retaining any
+            versions from external connections or upstream repositories, or to block publishing
+            any versions of the package into the repository before connecting any package managers
+            or publishers to the repository.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.WriteCAPackageOriginConfigurationCmdlet.Domain">
+            <summary>
+            <para>
+            <para>The name of the domain that contains the repository that contains the package.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.WriteCAPackageOriginConfigurationCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.WriteCAPackageOriginConfigurationCmdlet.Format">
+            <summary>
+            <para>
+            <para>A format that specifies the type of the package to be updated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.WriteCAPackageOriginConfigurationCmdlet.Namespace">
+            <summary>
+            <para>
+            <para>The namespace of the package to be updated. The package component that specifies its
+            namespace depends on its type. For example:</para><ul><li><para> The namespace of a Maven package is its <code>groupId</code>. </para></li><li><para> The namespace of an npm package is its <code>scope</code>. </para></li><li><para> Python and NuGet packages do not contain a corresponding component, packages of those
+            formats do not have a namespace. </para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.WriteCAPackageOriginConfigurationCmdlet.Package">
+            <summary>
+            <para>
+            <para>The name of the package to be updated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.WriteCAPackageOriginConfigurationCmdlet.Restrictions_Publish">
+            <summary>
+            <para>
+            <para>The package origin configuration that determines if new versions of the package can
+            be published directly to the repository.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.WriteCAPackageOriginConfigurationCmdlet.Repository">
+            <summary>
+            <para>
+            <para>The name of the repository that contains the package.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.WriteCAPackageOriginConfigurationCmdlet.Restrictions_Upstream">
+            <summary>
+            <para>
+            <para>The package origin configuration that determines if new versions of the package can
+            be added to the repository from an external connection or upstream source.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.WriteCAPackageOriginConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'OriginConfiguration'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.PutPackageOriginConfigurationResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.PutPackageOriginConfigurationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.WriteCAPackageOriginConfigurationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CA.WriteCARepositoryPermissionsPolicyCmdlet">
+            <summary>
+            Sets the resource policy on a repository that specifies permissions to access it.
+            
+            
+             
+            <para>
+             When you call <code>PutRepositoryPermissionsPolicy</code>, the resource policy on
+            the repository is ignored when evaluting permissions. This ensures that the owner
+            of a repository cannot lock themselves out of the repository, which would prevent
+            them from being able to update the resource policy. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.WriteCARepositoryPermissionsPolicyCmdlet.Domain">
+            <summary>
+            <para>
+            <para> The name of the domain containing the repository to set the resource policy on. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.WriteCARepositoryPermissionsPolicyCmdlet.DomainOwner">
+            <summary>
+            <para>
+            <para> The 12-digit account number of the Amazon Web Services account that owns the domain.
+            It does not include dashes or spaces. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.WriteCARepositoryPermissionsPolicyCmdlet.PolicyDocument">
+            <summary>
+            <para>
+            <para> A valid displayable JSON Aspen policy string to be set as the access control resource
+            policy on the provided repository. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.WriteCARepositoryPermissionsPolicyCmdlet.PolicyRevision">
+            <summary>
+            <para>
+            <para> Sets the revision of the resource policy that specifies permissions to access the
+            repository. This revision is used for optimistic locking, which prevents others from
+            overwriting your changes to the repository's resource policy. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.WriteCARepositoryPermissionsPolicyCmdlet.Repository">
+            <summary>
+            <para>
+            <para> The name of the repository to set the resource policy on. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.WriteCARepositoryPermissionsPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Policy'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CodeArtifact.Model.PutRepositoryPermissionsPolicyResponse).
+            Specifying the name of a property of type Amazon.CodeArtifact.Model.PutRepositoryPermissionsPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CA.WriteCARepositoryPermissionsPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

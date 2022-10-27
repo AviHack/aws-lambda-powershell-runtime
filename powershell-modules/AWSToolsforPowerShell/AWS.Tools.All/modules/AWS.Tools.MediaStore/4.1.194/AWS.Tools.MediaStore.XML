@@ -1,0 +1,819 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.MediaStore</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMS.AddEMSResourceTagCmdlet">
+            <summary>
+            Adds tags to the specified AWS Elemental MediaStore container. Tags are key:value
+            pairs that you can associate with AWS resources. For example, the tag key might be
+            "customer" and the tag value might be "companyA." You can specify one or more tags
+            to add to each container. You can add up to 50 tags to each container. For more information
+            about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging
+            Resources in MediaStore</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.AddEMSResourceTagCmdlet.Resource">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) for the container. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.AddEMSResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>An array of key:value pairs that you want to add to the container. You need to specify
+            only the tags that you want to add or update. For example, suppose a container already
+            has two tags (customer:CompanyA and priority:High). You want to change the priority
+            tag and also add a third tag (type:Contract). For TagResource, you specify the following
+            tags: priority:Medium, type:Contract. The result is that your container has three
+            tags: customer:CompanyA, priority:Medium, and type:Contract.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.AddEMSResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStore.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.AddEMSResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Resource parameter.
+            The -PassThru parameter is deprecated, use -Select '^Resource' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.AddEMSResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMS.GetEMSContainerCmdlet">
+            <summary>
+            Retrieves the properties of the requested container. This request is commonly used
+            to retrieve the endpoint of a container. An endpoint is a value assigned by the service
+            when a new container is created. A container's endpoint does not change after it has
+            been assigned. The <code>DescribeContainer</code> request returns a single <code>Container</code>
+            object based on <code>ContainerName</code>. To return all <code>Container</code> objects
+            that are associated with a specified AWS account, use <a>ListContainers</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.GetEMSContainerCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the container to query.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.GetEMSContainerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Container'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStore.Model.DescribeContainerResponse).
+            Specifying the name of a property of type Amazon.MediaStore.Model.DescribeContainerResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.GetEMSContainerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMS.GetEMSContainerListCmdlet">
+            <summary>
+            Lists the properties of all containers in AWS Elemental MediaStore. 
+            
+             
+            <para>
+            You can query to receive all the containers in one response. Or you can include the
+            <code>MaxResults</code> parameter to receive a limited number of containers in each
+            response. In this case, the response includes a token. To get the next set of containers,
+            send the command again, this time with the <code>NextToken</code> parameter (with
+            the returned token as its value). The next set of responses appears, with a token
+            if there are still more containers to receive. 
+            </para><para>
+            See also <a>DescribeContainer</a>, which gets the properties of one container. 
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.GetEMSContainerListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Enter the maximum number of containers in the response. Use from 1 to 255 characters.
+            </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.GetEMSContainerListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Only if you used <code>MaxResults</code> in the first command, enter the token (which
+            was included in the previous response) to obtain the next set of containers. This
+            token is included in a response only if there actually are more containers to list.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.GetEMSContainerListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Containers'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStore.Model.ListContainersResponse).
+            Specifying the name of a property of type Amazon.MediaStore.Model.ListContainersResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.GetEMSContainerListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMS.GetEMSContainerPolicyCmdlet">
+            <summary>
+            Retrieves the access policy for the specified container. For information about the
+            data that is included in an access policy, see the <a href="https://aws.amazon.com/documentation/iam/">AWS
+            Identity and Access Management User Guide</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.GetEMSContainerPolicyCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the container. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.GetEMSContainerPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Policy'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStore.Model.GetContainerPolicyResponse).
+            Specifying the name of a property of type Amazon.MediaStore.Model.GetContainerPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.GetEMSContainerPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMS.GetEMSCorsPolicyCmdlet">
+            <summary>
+            Returns the cross-origin resource sharing (CORS) configuration information that is
+            set for the container.
+            
+             
+            <para>
+            To use this operation, you must have permission to perform the <code>MediaStore:GetCorsPolicy</code>
+            action. By default, the container owner has this permission and can grant it to others.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.GetEMSCorsPolicyCmdlet.ContainerName">
+            <summary>
+            <para>
+            <para>The name of the container that the policy is assigned to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.GetEMSCorsPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'CorsPolicy'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStore.Model.GetCorsPolicyResponse).
+            Specifying the name of a property of type Amazon.MediaStore.Model.GetCorsPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.GetEMSCorsPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ContainerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ContainerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMS.GetEMSLifecyclePolicyCmdlet">
+            <summary>
+            Retrieves the object lifecycle policy that is assigned to a container.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.GetEMSLifecyclePolicyCmdlet.ContainerName">
+            <summary>
+            <para>
+            <para>The name of the container that the object lifecycle policy is assigned to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.GetEMSLifecyclePolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'LifecyclePolicy'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStore.Model.GetLifecyclePolicyResponse).
+            Specifying the name of a property of type Amazon.MediaStore.Model.GetLifecyclePolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.GetEMSLifecyclePolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ContainerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ContainerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMS.GetEMSMetricPolicyCmdlet">
+            <summary>
+            Returns the metric policy for the specified container.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.GetEMSMetricPolicyCmdlet.ContainerName">
+            <summary>
+            <para>
+            <para>The name of the container that is associated with the metric policy.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.GetEMSMetricPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'MetricPolicy'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStore.Model.GetMetricPolicyResponse).
+            Specifying the name of a property of type Amazon.MediaStore.Model.GetMetricPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.GetEMSMetricPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ContainerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ContainerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMS.GetEMSResourceTagCmdlet">
+            <summary>
+            Returns a list of the tags assigned to the specified container.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.GetEMSResourceTagCmdlet.Resource">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) for the container.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.GetEMSResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStore.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.MediaStore.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.GetEMSResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Resource parameter.
+            The -PassThru parameter is deprecated, use -Select '^Resource' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMS.NewEMSContainerCmdlet">
+            <summary>
+            Creates a storage container to hold objects. A container is similar to a bucket in
+            the Amazon S3 service.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.NewEMSContainerCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name for the container. The name must be from 1 to 255 characters. Container names
+            must be unique to your AWS account within a specific region. As an example, you could
+            create a container named <code>movies</code> in every region, as long as you don’t
+            have an existing container with that name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.NewEMSContainerCmdlet.Tag">
+            <summary>
+            <para>
+            <para>An array of key:value pairs that you define. These values can be anything that you
+            want. Typically, the tag key represents a category (such as "environment") and the
+            tag value represents a specific value within that category (such as "test," "development,"
+            or "production"). You can add up to 50 tags to each container. For more information
+            about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging
+            Resources in MediaStore</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.NewEMSContainerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Container'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStore.Model.CreateContainerResponse).
+            Specifying the name of a property of type Amazon.MediaStore.Model.CreateContainerResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.NewEMSContainerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.NewEMSContainerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSContainerCmdlet">
+            <summary>
+            Deletes the specified container. Before you make a <code>DeleteContainer</code> request,
+            delete any objects in the container or in any folders in the container. You can delete
+            only empty containers.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSContainerCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the container to delete. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSContainerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStore.Model.DeleteContainerResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSContainerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSContainerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSContainerPolicyCmdlet">
+            <summary>
+            Deletes the access policy that is associated with the specified container.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSContainerPolicyCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the container that holds the policy.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSContainerPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStore.Model.DeleteContainerPolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSContainerPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSContainerPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSCorsPolicyCmdlet">
+            <summary>
+            Deletes the cross-origin resource sharing (CORS) configuration information that is
+            set for the container.
+            
+             
+            <para>
+            To use this operation, you must have permission to perform the <code>MediaStore:DeleteCorsPolicy</code>
+            action. The container owner has this permission by default and can grant this permission
+            to others.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSCorsPolicyCmdlet.ContainerName">
+            <summary>
+            <para>
+            <para>The name of the container to remove the policy from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSCorsPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStore.Model.DeleteCorsPolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSCorsPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ContainerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ContainerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSCorsPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSLifecyclePolicyCmdlet">
+            <summary>
+            Removes an object lifecycle policy from a container. It takes up to 20 minutes for
+            the change to take effect.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSLifecyclePolicyCmdlet.ContainerName">
+            <summary>
+            <para>
+            <para>The name of the container that holds the object lifecycle policy.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSLifecyclePolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStore.Model.DeleteLifecyclePolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSLifecyclePolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ContainerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ContainerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSLifecyclePolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSMetricPolicyCmdlet">
+            <summary>
+            Deletes the metric policy that is associated with the specified container. If there
+            is no metric policy associated with the container, MediaStore doesn't send metrics
+            to CloudWatch.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSMetricPolicyCmdlet.ContainerName">
+            <summary>
+            <para>
+            <para>The name of the container that is associated with the metric policy that you want
+            to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSMetricPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStore.Model.DeleteMetricPolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSMetricPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ContainerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ContainerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSMetricPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSResourceTagCmdlet">
+            <summary>
+            Removes tags from the specified container. You can specify one or more tags to remove.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSResourceTagCmdlet.Resource">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) for the container.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>A comma-separated list of keys for tags that you want to remove from the container.
+            For example, if your container has two tags (customer:CompanyA and priority:High)
+            and you want to remove one of the tags (priority:High), you specify the key for the
+            tag that you want to remove (priority).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStore.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Resource parameter.
+            The -PassThru parameter is deprecated, use -Select '^Resource' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.RemoveEMSResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMS.StartEMSAccessLoggingCmdlet">
+            <summary>
+            Starts access logging on the specified container. When you enable access logging on
+            a container, MediaStore delivers access logs for objects stored in that container
+            to Amazon CloudWatch Logs.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.StartEMSAccessLoggingCmdlet.ContainerName">
+            <summary>
+            <para>
+            <para>The name of the container that you want to start access logging on.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.StartEMSAccessLoggingCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStore.Model.StartAccessLoggingResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.StartEMSAccessLoggingCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ContainerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ContainerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.StartEMSAccessLoggingCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMS.StopEMSAccessLoggingCmdlet">
+            <summary>
+            Stops access logging on the specified container. When you stop access logging on a
+            container, MediaStore stops sending access logs to Amazon CloudWatch Logs. These access
+            logs are not saved and are not retrievable.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.StopEMSAccessLoggingCmdlet.ContainerName">
+            <summary>
+            <para>
+            <para>The name of the container that you want to stop access logging on.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.StopEMSAccessLoggingCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStore.Model.StopAccessLoggingResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.StopEMSAccessLoggingCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ContainerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ContainerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.StopEMSAccessLoggingCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMS.WriteEMSContainerPolicyCmdlet">
+            <summary>
+            Creates an access policy for the specified container to restrict the users and clients
+            that can access it. For information about the data that is included in an access policy,
+            see the <a href="https://aws.amazon.com/documentation/iam/">AWS Identity and Access
+            Management User Guide</a>.
+            
+             
+            <para>
+            For this release of the REST API, you can create only one policy for a container.
+            If you enter <code>PutContainerPolicy</code> twice, the second command modifies the
+            existing policy. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.WriteEMSContainerPolicyCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the container.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.WriteEMSContainerPolicyCmdlet.Policy">
+            <summary>
+            <para>
+            <para>The contents of the policy, which includes the following: </para><ul><li><para>One <code>Version</code> tag</para></li><li><para>One <code>Statement</code> tag that contains the standard tags for the policy.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.WriteEMSContainerPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStore.Model.PutContainerPolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.WriteEMSContainerPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Policy parameter.
+            The -PassThru parameter is deprecated, use -Select '^Policy' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.WriteEMSContainerPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMS.WriteEMSCorsPolicyCmdlet">
+            <summary>
+            Sets the cross-origin resource sharing (CORS) configuration on a container so that
+            the container can service cross-origin requests. For example, you might want to enable
+            a request whose origin is http://www.example.com to access your AWS Elemental MediaStore
+            container at my.example.container.com by using the browser's XMLHttpRequest capability.
+            
+             
+            <para>
+            To enable CORS on a container, you attach a CORS policy to the container. In the CORS
+            policy, you configure rules that identify origins and the HTTP methods that can be
+            executed on your container. The policy can contain up to 398,000 characters. You can
+            add up to 100 rules to a CORS policy. If more than one rule applies, the service uses
+            the first applicable rule listed.
+            </para><para>
+            To learn more about CORS, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/cors-policy.html">Cross-Origin
+            Resource Sharing (CORS) in AWS Elemental MediaStore</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.WriteEMSCorsPolicyCmdlet.ContainerName">
+            <summary>
+            <para>
+            <para>The name of the container that you want to assign the CORS policy to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.WriteEMSCorsPolicyCmdlet.CorsPolicy">
+            <summary>
+            <para>
+            <para>The CORS policy to apply to the container. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.WriteEMSCorsPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStore.Model.PutCorsPolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.WriteEMSCorsPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ContainerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ContainerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.WriteEMSCorsPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMS.WriteEMSLifecyclePolicyCmdlet">
+            <summary>
+            Writes an object lifecycle policy to a container. If the container already has an
+            object lifecycle policy, the service replaces the existing policy with the new policy.
+            It takes up to 20 minutes for the change to take effect.
+            
+             
+            <para>
+            For information about how to construct an object lifecycle policy, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-object-lifecycle-components.html">Components
+            of an Object Lifecycle Policy</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.WriteEMSLifecyclePolicyCmdlet.ContainerName">
+            <summary>
+            <para>
+            <para>The name of the container that you want to assign the object lifecycle policy to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.WriteEMSLifecyclePolicyCmdlet.LifecyclePolicy">
+            <summary>
+            <para>
+            <para>The object lifecycle policy to apply to the container.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.WriteEMSLifecyclePolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStore.Model.PutLifecyclePolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.WriteEMSLifecyclePolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LifecyclePolicy parameter.
+            The -PassThru parameter is deprecated, use -Select '^LifecyclePolicy' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.WriteEMSLifecyclePolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EMS.WriteEMSMetricPolicyCmdlet">
+            <summary>
+            The metric policy that you want to add to the container. A metric policy allows AWS
+            Elemental MediaStore to send metrics to Amazon CloudWatch. It takes up to 20 minutes
+            for the new policy to take effect.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.WriteEMSMetricPolicyCmdlet.MetricPolicy_ContainerLevelMetric">
+            <summary>
+            <para>
+            <para>A setting to enable or disable metrics at the container level.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.WriteEMSMetricPolicyCmdlet.ContainerName">
+            <summary>
+            <para>
+            <para>The name of the container that you want to add the metric policy to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.WriteEMSMetricPolicyCmdlet.MetricPolicy_MetricPolicyRule">
+            <summary>
+            <para>
+            <para>A parameter that holds an array of rules that enable metrics at the object level.
+            This parameter is optional, but if you choose to include it, you must also include
+            at least one rule. By default, you can include up to five rules. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request
+            a quota increase</a> to allow up to 300 rules per policy.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.WriteEMSMetricPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.MediaStore.Model.PutMetricPolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.WriteEMSMetricPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ContainerName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ContainerName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EMS.WriteEMSMetricPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

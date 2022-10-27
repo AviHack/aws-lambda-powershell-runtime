@@ -1,0 +1,3107 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.DynamoDBv2</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.AddDDBIndexSchemaCmdlet">
+            <summary>
+            <para>
+            Adds a new Amazon DynamoDB local or global secondary index schema property to the supplied object, 
+            or returns a new object initialized with the index schema. 
+            </para>
+            <para>
+            The default behavior of this cmdlet is to create a local secondary index. To specify that the index
+            is global, use the -Global switch and also add the ReadCapacity and WriteCapacity parameters to
+            indicate the required throughput for the index.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.AddDDBIndexSchemaCmdlet.Schema">
+            <summary>
+            A previously constructed TableSchema object to which the new index schema element will be added.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.AddDDBIndexSchemaCmdlet.IndexName">
+            <summary>
+            The name of the secondary index. Must be unique only for this table that will be created.
+            If an index with the same name already exists on the pipelined object an error is thrown.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.AddDDBIndexSchemaCmdlet.RangeKeyName">
+            <summary>
+            The name of the range key to add to the secondary index. This is a mandatory parameter for
+            local indexes. Global indexes can be defined with either a range key or a hash key, either
+            of which can be any attribute in the table.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.AddDDBIndexSchemaCmdlet.RangeKeyDataType">
+            <summary>
+            The data type of the range key as specified by the Amazon DynamoDB api. 
+            This is a mandatory parameter for local indexes. Global indexes can be defined with either 
+            a range key or a hash key, either of which can be any attribute in the table.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.AddDDBIndexSchemaCmdlet.ProjectionType">
+            <summary>
+            Specifies attributes that are copied (projected) from the table into the index. These are in addition 
+            to the primary key attributes and index key attributes, which are automatically projected. 
+            Valid values:
+            KEYS_ONLY - Only the index and primary keys are projected into the index.
+            INCLUDE   - Only the specified table attributes are projected into the index. The list of projected attributes
+                        are specified with the -NonKeyAttribute parameter.
+            ALL       - All of the table attributes are projected into the index.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.AddDDBIndexSchemaCmdlet.NonKeyAttribute">
+            <summary>
+            A collection of one or more non-key attribute names that are projected into the index. The total count of attributes 
+            specified in NonKeyAttributes, summed across all of the secondary indexes, must not exceed 20. If you project the same 
+            attribute into two different indexes, this counts as two distinct attributes when determining the total.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.AddDDBIndexSchemaCmdlet.Global">
+            <summary>
+            If set, specifies that the index components described by the parameters should be
+            added as a global secondary index entry. The ReadCapacity and WriteCapacity parameters 
+            are also required when defining a global index.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.AddDDBIndexSchemaCmdlet.HashKeyName">
+            <summary>
+            The name of the hash key for the global secondary index.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.AddDDBIndexSchemaCmdlet.HashKeyDataType">
+            <summary>
+            The data type of the hash key for the global index, as specified by the Amazon DynamoDB api. 
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.AddDDBIndexSchemaCmdlet.ReadCapacity">
+            <summary>
+            The provisioned throughput setting for read operations on the secondary index if the index is global (the -Global
+            switch is specified). Ignored for local secondary indexes (the default).
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.AddDDBIndexSchemaCmdlet.WriteCapacity">
+            <summary>
+            The provisioned throughput setting for write operations on the secondary index if the index is global (the -Global
+            switch is specified). Ignored for local secondary indexes (the default).
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.AddDDBKeySchemaCmdlet">
+            <summary>
+            Adds a new Amazon DynamoDB KeySchemaElement instance to the supplied TableSchema object.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.AddDDBKeySchemaCmdlet.Schema">
+            <summary>
+            A previously constructed object to which the new key schema element will be added to any
+            attached KeySchema property collection.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.AddDDBKeySchemaCmdlet.KeyName">
+            <summary>
+            The name of the key to be applied to the schema. If a key with the specified name already exists 
+            an error is thrown.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.AddDDBKeySchemaCmdlet.KeyType">
+            <summary>
+            The key type. Valid values are "HASH" or "RANGE". If not specified, "HASH" is assumed. 
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.AddDDBKeySchemaCmdlet.KeyDataType">
+            <summary>
+            <para>
+            The data type of the key as specified by the Amazon DynamoDB api. If an attribute 
+            entry for the key already exists in the attribute definitions of the supplied schema 
+            object, this parameter can be omitted otherwise an attribute will be added and defined 
+            as the declared type.
+            </para>
+            <para>
+            Valid values for data type: "S" string, "N" number or "B" binary.
+            </para>
+            </summary>
+        </member>
+        <member name="M:Amazon.PowerShell.Cmdlets.DDB.DDBSchemaCmdletHelper.TableSchemaFromParameter(System.Object)">
+            <summary>
+            Returns the schema object to manipulate.
+            </summary>
+            <param name="inputObjectParameter">
+            The pipeline object supplied as the value of the -Schema parameter 
+            or piped into cmdlet.
+            </param>
+            <returns>
+            The supplied object as TableSchema.
+            </returns>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.NewDDBTableCmdlet">
+            <summary>
+            <para>The <i>CreateTable</i> operation adds a new table to your account. In an AWS account, table names must be unique within each region.
+            That is, you can have two tables with same name if you create the tables in different regions.</para><para><i>CreateTable</i> is an
+            asynchronous operation. Upon receiving a <i>CreateTable</i> request, Amazon DynamoDB immediately returns a response with a
+            <i>TableStatus</i> of <c>CREATING</c> . After the table is created, Amazon DynamoDB sets the <i>TableStatus</i> to <c>ACTIVE</c> . You can
+            perform read and write operations only on an <c>ACTIVE</c> table. </para><para>If you want to create multiple tables with local secondary
+            indexes on them, you must create them sequentially. Only one table with local secondary indexes can be in the <c>CREATING</c> state at any
+            given time.</para><para>You can use the <i>DescribeTable</i> API to check the table status.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.NewDDBTableCmdlet.TableName">
+            <summary>
+            <para>
+            The name of the table to create.
+            </para> 
+            <para>
+            <b>Constraints:</b><list type="definition"><item><term>Length</term><description>3 - 255</description></item><item><term>Pattern</term><description>[a-zA-Z0-9_.-]+</description></item></list>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.NewDDBTableCmdlet.Schema">
+            <summary>
+            TableSchema object containing the attribute and key schema information for the new
+            table using the Write-DDBKeySchema and Write-DDBIndexSchema cmdlets.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.NewDDBTableCmdlet.ReadCapacity">
+            <summary>
+            <para>
+            The maximum number of strongly consistent reads consumed per second before Amazon DynamoDB returns a <i>ThrottlingException</i>. For more
+            information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying Read and
+            Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+            </para> 
+            <para>
+            <b>Constraints:</b><list type="definition"><item><term>Range</term><description>1 - </description></item></list>
+            </para>
+            <para>
+            The settings can be modified using the <i>Update-DDBTable</i> cmdlet. For current minimum and maximum provisioned throughput values, see Limits in the <i>Amazon DynamoDB Developer
+            Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.NewDDBTableCmdlet.WriteCapacity">
+            <summary>
+            <para>
+            The maximum number of strongly consistent writes consumed per second before Amazon DynamoDB returns a <i>ThrottlingException</i>. For more
+            information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying Read and
+            Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+            </para> 
+            <para>
+            <b>Constraints:</b><list type="definition"><item><term>Range</term><description>1 - </description></item></list>
+            </para>
+            <para>
+            The settings can be modified using the <i>Update-DDBTable</i> cmdlet. For current minimum and maximum provisioned throughput values, see Limits in the <i>Amazon DynamoDB Developer
+            Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.NewDDBTableCmdlet.BillingMode">
+            <summary>
+            <para>
+            <para>Controls how you are charged for read and write throughput and how you manage capacity. 
+            This setting can be changed later.</para><ul><li><para><code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable
+            workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned
+            Mode</a>.</para></li><li><para><code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for
+            unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand
+            Mode</a>. </para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.NewDDBTableCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.NewDDBTableCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TableDescription'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.CreateTableResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.CreateTableResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.NewDDBTableSchemaCmdlet">
+            <summary>
+            Returns a new TableSchema object for constructing an Amazon DynamoDB key schema for use with New-DDBTable.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.AddDDBResourceTagCmdlet">
+            <summary>
+            Associate a set of tags with an Amazon DynamoDB resource. You can then activate these
+            user-defined tags so that they appear on the Billing and Cost Management console for
+            cost allocation tracking. You can call TagResource up to five times per second, per
+            account. 
+            
+             
+            <para>
+            For an overview on tagging DynamoDB resources, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
+            for DynamoDB</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.AddDDBResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>Identifies the Amazon DynamoDB resource to which tags should be added. This value
+            is an Amazon Resource Name (ARN).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.AddDDBResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags to be assigned to the Amazon DynamoDB resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.AddDDBResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.AddDDBResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.AddDDBResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.DisableDDBKinesisStreamingDestinationCmdlet">
+            <summary>
+            Stops replication from the DynamoDB table to the Kinesis data stream. This is done
+            without deleting either of the resources.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.DisableDDBKinesisStreamingDestinationCmdlet.StreamArn">
+            <summary>
+            <para>
+            <para>The ARN for a Kinesis data stream.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.DisableDDBKinesisStreamingDestinationCmdlet.TableName">
+            <summary>
+            <para>
+            <para>The name of the DynamoDB table.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.DisableDDBKinesisStreamingDestinationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.DisableKinesisStreamingDestinationResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.DisableKinesisStreamingDestinationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.DisableDDBKinesisStreamingDestinationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^TableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.DisableDDBKinesisStreamingDestinationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.EnableDDBKinesisStreamingDestinationCmdlet">
+            <summary>
+            Starts table data replication to the specified Kinesis data stream at a timestamp
+            chosen during the enable workflow. If this operation doesn't return results immediately,
+            use DescribeKinesisStreamingDestination to check if streaming to the Kinesis data
+            stream is ACTIVE.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.EnableDDBKinesisStreamingDestinationCmdlet.StreamArn">
+            <summary>
+            <para>
+            <para>The ARN for a Kinesis data stream.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.EnableDDBKinesisStreamingDestinationCmdlet.TableName">
+            <summary>
+            <para>
+            <para>The name of the DynamoDB table.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.EnableDDBKinesisStreamingDestinationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.EnableKinesisStreamingDestinationResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.EnableKinesisStreamingDestinationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.EnableDDBKinesisStreamingDestinationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^TableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.EnableDDBKinesisStreamingDestinationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.ExportDDBTableToPointInTimeCmdlet">
+            <summary>
+            Exports table data to an S3 bucket. The table must have point in time recovery enabled,
+            and you can export data from any time within the point in time recovery window.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ExportDDBTableToPointInTimeCmdlet.ExportFormat">
+            <summary>
+            <para>
+            <para>The format for the exported data. Valid values for <code>ExportFormat</code> are <code>DYNAMODB_JSON</code>
+            or <code>ION</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ExportDDBTableToPointInTimeCmdlet.ExportTime">
+            <summary>
+            <para>
+            <para>Time in the past from which to export table data, counted in seconds from the start
+            of the Unix epoch. The table export will be a snapshot of the table's state at this
+            point in time.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ExportDDBTableToPointInTimeCmdlet.S3Bucket">
+            <summary>
+            <para>
+            <para>The name of the Amazon S3 bucket to export the snapshot to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ExportDDBTableToPointInTimeCmdlet.S3BucketOwner">
+            <summary>
+            <para>
+            <para>The ID of the Amazon Web Services account that owns the bucket the export will be
+            stored in.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ExportDDBTableToPointInTimeCmdlet.S3Prefix">
+            <summary>
+            <para>
+            <para>The Amazon S3 bucket prefix to use as the file name and path of the exported snapshot.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ExportDDBTableToPointInTimeCmdlet.S3SseAlgorithm">
+            <summary>
+            <para>
+            <para>Type of encryption used on the bucket where export data will be stored. Valid values
+            for <code>S3SseAlgorithm</code> are:</para><ul><li><para><code>AES256</code> - server-side encryption with Amazon S3 managed keys</para></li><li><para><code>KMS</code> - server-side encryption with KMS managed keys</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ExportDDBTableToPointInTimeCmdlet.S3SseKmsKeyId">
+            <summary>
+            <para>
+            <para>The ID of the KMS managed key used to encrypt the S3 bucket where export data will
+            be stored (if applicable).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ExportDDBTableToPointInTimeCmdlet.TableArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) associated with the table to export.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ExportDDBTableToPointInTimeCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>Providing a <code>ClientToken</code> makes the call to <code>ExportTableToPointInTimeInput</code>
+            idempotent, meaning that multiple identical calls have the same effect as one single
+            call.</para><para>A client token is valid for 8 hours after the first request that uses it is completed.
+            After 8 hours, any request with the same client token is treated as a new request.
+            Do not resubmit the same request with the same client token for more than 8 hours,
+            or the result might not be idempotent.</para><para>If you submit a request with the same client token but a change in other parameters
+            within the 8-hour idempotency window, DynamoDB returns an <code>ImportConflictException</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ExportDDBTableToPointInTimeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ExportDescription'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.ExportTableToPointInTimeResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.ExportTableToPointInTimeResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ExportDDBTableToPointInTimeCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.GetDDBBackupCmdlet">
+            <summary>
+            Describes an existing backup of a table.
+            
+             
+            <para>
+            You can call <code>DescribeBackup</code> at a maximum rate of 10 times per second.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBBackupCmdlet.BackupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) associated with the backup.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBBackupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'BackupDescription'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.DescribeBackupResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.DescribeBackupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBBackupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BackupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^BackupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.GetDDBBackupListCmdlet">
+            <summary>
+            List backups associated with an Amazon Web Services account. To list backups for a
+            given table, specify <code>TableName</code>. <code>ListBackups</code> returns a paginated
+            list of results with at most 1 MB worth of items in a page. You can also specify a
+            maximum number of entries to be returned in a page.
+            
+             
+            <para>
+            In the request, start time is inclusive, but end time is exclusive. Note that these
+            boundaries are for the time at which the original backup was requested.
+            </para><para>
+            You can call <code>ListBackups</code> a maximum of five times per second.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBBackupListCmdlet.BackupType">
+            <summary>
+            <para>
+            <para>The backups from the table specified by <code>BackupType</code> are listed.</para><para>Where <code>BackupType</code> can be:</para><ul><li><para><code>USER</code> - On-demand backup created by you. (The default setting if no other
+            backup types are specified.)</para></li><li><para><code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</para></li><li><para><code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBBackupListCmdlet.TableName">
+            <summary>
+            <para>
+            <para>The backups from the table specified by <code>TableName</code> are listed. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBBackupListCmdlet.TimeRangeLowerBound">
+            <summary>
+            <para>
+            <para>Only backups created after this time are listed. <code>TimeRangeLowerBound</code>
+            is inclusive.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBBackupListCmdlet.TimeRangeUpperBound">
+            <summary>
+            <para>
+            <para>Only backups created before this time are listed. <code>TimeRangeUpperBound</code>
+            is exclusive. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBBackupListCmdlet.ExclusiveStartBackupArn">
+            <summary>
+            <para>
+            <para><code>LastEvaluatedBackupArn</code> is the Amazon Resource Name (ARN) of the backup
+            last evaluated when the current page of results was returned, inclusive of the current
+            page of results. This value may be specified as the <code>ExclusiveStartBackupArn</code>
+            of a new <code>ListBackups</code> operation in order to fetch the next page of results.
+            </para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-ExclusiveStartBackupArn $null' for the first call and '-ExclusiveStartBackupArn $AWSHistory.LastServiceResponse.LastEvaluatedBackupArn' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBBackupListCmdlet.Limit">
+            <summary>
+            <para>
+            <para>Maximum number of backups to return at once.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBBackupListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'BackupSummaries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.ListBackupsResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.ListBackupsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBBackupListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^TableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBBackupListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of ExclusiveStartBackupArn
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.GetDDBContinuousBackupCmdlet">
+            <summary>
+            Checks the status of continuous backups and point in time recovery on the specified
+            table. Continuous backups are <code>ENABLED</code> on all tables at table creation.
+            If point in time recovery is enabled, <code>PointInTimeRecoveryStatus</code> will
+            be set to ENABLED.
+            
+             
+            <para>
+             After continuous backups and point in time recovery are enabled, you can restore
+            to any point in time within <code>EarliestRestorableDateTime</code> and <code>LatestRestorableDateTime</code>.
+            
+            </para><para><code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.
+            You can restore your table to any point in time during the last 35 days. 
+            </para><para>
+            You can call <code>DescribeContinuousBackups</code> at a maximum rate of 10 times
+            per second.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBContinuousBackupCmdlet.TableName">
+            <summary>
+            <para>
+            <para>Name of the table for which the customer wants to check the continuous backups and
+            point in time recovery settings.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBContinuousBackupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ContinuousBackupsDescription'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.DescribeContinuousBackupsResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.DescribeContinuousBackupsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBContinuousBackupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^TableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.GetDDBContributorInsightCmdlet">
+            <summary>
+            Returns information about contributor insights, for a given table or global secondary
+            index.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBContributorInsightCmdlet.IndexName">
+            <summary>
+            <para>
+            <para>The name of the global secondary index to describe, if applicable.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBContributorInsightCmdlet.TableName">
+            <summary>
+            <para>
+            <para>The name of the table to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBContributorInsightCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.DescribeContributorInsightsResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.DescribeContributorInsightsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBContributorInsightCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^TableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.GetDDBContributorInsightListCmdlet">
+            <summary>
+            Returns a list of ContributorInsightsSummary for a table and all its global secondary
+            indexes.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBContributorInsightListCmdlet.TableName">
+            <summary>
+            <para>
+            <para>The name of the table.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBContributorInsightListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Maximum number of results to return per page.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBContributorInsightListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>A token to for the desired page, if there is one.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBContributorInsightListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ContributorInsightsSummaries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.ListContributorInsightsResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.ListContributorInsightsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBContributorInsightListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^TableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBContributorInsightListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.GetDDBEndpointCmdlet">
+            <summary>
+            Returns the regional endpoint information.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBEndpointCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Endpoints'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.DescribeEndpointsResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.DescribeEndpointsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.GetDDBExportCmdlet">
+            <summary>
+            Describes an existing table export.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBExportCmdlet.ExportArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) associated with the export.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBExportCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ExportDescription'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.DescribeExportResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.DescribeExportResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBExportCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ExportArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ExportArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.GetDDBExportListCmdlet">
+            <summary>
+            Lists completed exports within the past 90 days.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBExportListCmdlet.TableArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) associated with the exported table.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBExportListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Maximum number of results to return per page.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBExportListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>An optional string that, if supplied, must be copied from the output of a previous
+            call to <code>ListExports</code>. When provided in this manner, the API fetches the
+            next page of results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBExportListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ExportSummaries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.ListExportsResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.ListExportsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBExportListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TableArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^TableArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.GetDDBGlobalTableCmdlet">
+            <summary>
+            Returns information about the specified global table.
+            
+             <note><para>
+            This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+            2017.11.29</a> of global tables. If you are using global tables <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+            2019.11.21</a> you can use <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html">DescribeTable</a>
+            instead.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBGlobalTableCmdlet.GlobalTableName">
+            <summary>
+            <para>
+            <para>The name of the global table.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBGlobalTableCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'GlobalTableDescription'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.DescribeGlobalTableResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.DescribeGlobalTableResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBGlobalTableCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the GlobalTableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^GlobalTableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.GetDDBGlobalTableListCmdlet">
+            <summary>
+            Lists all global tables that have a replica in the specified Region.
+            
+             <note><para>
+            This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+            2017.11.29</a> of global tables.
+            </para></note><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBGlobalTableListCmdlet.RegionName">
+            <summary>
+            <para>
+            <para>Lists the global tables in a specific Region.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBGlobalTableListCmdlet.ExclusiveStartGlobalTableName">
+            <summary>
+            <para>
+            <para>The first global table name that this operation will evaluate.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-ExclusiveStartGlobalTableName $null' for the first call and '-ExclusiveStartGlobalTableName $AWSHistory.LastServiceResponse.LastEvaluatedGlobalTableName' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBGlobalTableListCmdlet.Limit">
+            <summary>
+            <para>
+            <para>The maximum number of table names to return, if the parameter is not specified DynamoDB
+            defaults to 100.</para><para>If the number of global tables DynamoDB finds reaches this limit, it stops the operation
+            and returns the table names collected up to that point, with a table name in the <code>LastEvaluatedGlobalTableName</code>
+            to apply in a subsequent operation to the <code>ExclusiveStartGlobalTableName</code>
+            parameter.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBGlobalTableListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'GlobalTables'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.ListGlobalTablesResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.ListGlobalTablesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBGlobalTableListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of ExclusiveStartGlobalTableName
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.GetDDBGlobalTableSettingCmdlet">
+            <summary>
+            Describes Region-specific settings for a global table.
+            
+             <note><para>
+            This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+            2017.11.29</a> of global tables.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBGlobalTableSettingCmdlet.GlobalTableName">
+            <summary>
+            <para>
+            <para>The name of the global table to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBGlobalTableSettingCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.DescribeGlobalTableSettingsResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.DescribeGlobalTableSettingsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBGlobalTableSettingCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the GlobalTableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^GlobalTableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.GetDDBImportCmdlet">
+            <summary>
+            Represents the properties of the import.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBImportCmdlet.ImportArn">
+            <summary>
+            <para>
+            <para> The Amazon Resource Name (ARN) associated with the table you're importing to. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBImportCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ImportTableDescription'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.DescribeImportResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.DescribeImportResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBImportCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ImportArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ImportArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.GetDDBImportListCmdlet">
+            <summary>
+            Lists completed imports within the past 90 days.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBImportListCmdlet.TableArn">
+            <summary>
+            <para>
+            <para> The Amazon Resource Name (ARN) associated with the table that was imported to. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBImportListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para> An optional string that, if supplied, must be copied from the output of a previous
+            call to <code>ListImports</code>. When provided in this manner, the API fetches the
+            next page of results. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBImportListCmdlet.PageSize">
+            <summary>
+            <para>
+            <para> The number of <code>ImportSummary </code>objects returned in a single page. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBImportListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ImportSummaryList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.ListImportsResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.ListImportsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBImportListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TableArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^TableArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.GetDDBItemTransactionallyCmdlet">
+            <summary>
+            <code>TransactGetItems</code> is a synchronous operation that atomically retrieves
+            multiple items from one or more tables (but not from indexes) in a single account
+            and Region. A <code>TransactGetItems</code> call can contain up to 100 <code>TransactGetItem</code>
+            objects, each of which contains a <code>Get</code> structure that specifies an item
+            to retrieve from a table in the account and Region. A call to <code>TransactGetItems</code>
+            cannot retrieve items from tables in more than one Amazon Web Services account or
+            Region. The aggregate size of the items in the transaction cannot exceed 4 MB.
+            
+             
+            <para>
+            DynamoDB rejects the entire <code>TransactGetItems</code> request if any of the following
+            is true:
+            </para><ul><li><para>
+            A conflicting operation is in the process of updating an item to be read.
+            </para></li><li><para>
+            There is insufficient provisioned capacity for the transaction to be completed.
+            </para></li><li><para>
+            There is a user error, such as an invalid data format.
+            </para></li><li><para>
+            The aggregate size of the items in the transaction cannot exceed 4 MB.
+            </para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBItemTransactionallyCmdlet.ReturnConsumedCapacity">
+            <summary>
+            <para>
+            <para>A value of <code>TOTAL</code> causes consumed capacity information to be returned,
+            and a value of <code>NONE</code> prevents that information from being returned. No
+            other value is valid.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBItemTransactionallyCmdlet.TransactItem">
+            <summary>
+            <para>
+            <para>An ordered array of up to 100 <code>TransactGetItem</code> objects, each of which
+            contains a <code>Get</code> structure.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBItemTransactionallyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.TransactGetItemsResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.TransactGetItemsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.GetDDBKinesisStreamingDestinationCmdlet">
+            <summary>
+            Returns information about the status of Kinesis streaming.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBKinesisStreamingDestinationCmdlet.TableName">
+            <summary>
+            <para>
+            <para>The name of the table being described.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBKinesisStreamingDestinationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.DescribeKinesisStreamingDestinationResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.DescribeKinesisStreamingDestinationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBKinesisStreamingDestinationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^TableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.GetDDBProvisionLimitCmdlet">
+            <summary>
+            Returns the current provisioned-capacity quotas for your Amazon Web Services account
+            in a Region, both for the Region as a whole and for any one DynamoDB table that you
+            create there.
+            
+             
+            <para>
+            When you establish an Amazon Web Services account, the account has initial quotas
+            on the maximum read capacity units and write capacity units that you can provision
+            across all of your DynamoDB tables in a given Region. Also, there are per-table quotas
+            that apply when you create a table there. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
+            Account, and Table Quotas</a> page in the <i>Amazon DynamoDB Developer Guide</i>.
+            </para><para>
+            Although you can increase these quotas by filing a case at <a href="https://console.aws.amazon.com/support/home#/">Amazon
+            Web Services Support Center</a>, obtaining the increase is not instantaneous. The
+            <code>DescribeLimits</code> action lets you write code to compare the capacity you
+            are currently using to those quotas imposed by your account so that you have enough
+            time to apply for an increase before you hit a quota.
+            </para><para>
+            For example, you could use one of the Amazon Web Services SDKs to do the following:
+            </para><ol><li><para>
+            Call <code>DescribeLimits</code> for a particular Region to obtain your current account
+            quotas on provisioned capacity there.
+            </para></li><li><para>
+            Create a variable to hold the aggregate read capacity units provisioned for all your
+            tables in that Region, and one to hold the aggregate write capacity units. Zero them
+            both.
+            </para></li><li><para>
+            Call <code>ListTables</code> to obtain a list of all your DynamoDB tables.
+            </para></li><li><para>
+            For each table name listed by <code>ListTables</code>, do the following:
+            </para><ul><li><para>
+            Call <code>DescribeTable</code> with the table name.
+            </para></li><li><para>
+            Use the data returned by <code>DescribeTable</code> to add the read capacity units
+            and write capacity units provisioned for the table itself to your variables.
+            </para></li><li><para>
+            If the table has one or more global secondary indexes (GSIs), loop over these GSIs
+            and add their provisioned capacity values to your variables as well.
+            </para></li></ul></li><li><para>
+            Report the account quotas for that Region returned by <code>DescribeLimits</code>,
+            along with the total current provisioned capacity levels you have calculated.
+            </para></li></ol><para>
+            This will let you see whether you are getting close to your account-level quotas.
+            </para><para>
+            The per-table quotas apply only when you are creating a new table. They restrict the
+            sum of the provisioned capacity of the new table itself and all its global secondary
+            indexes.
+            </para><para>
+            For existing tables and their GSIs, DynamoDB doesn't let you increase provisioned
+            capacity extremely rapidly, but the only quota that applies is that the aggregate
+            provisioned capacity over all your tables and GSIs cannot exceed either of the per-account
+            quotas.
+            </para><note><para><code>DescribeLimits</code> should only be called periodically. You can expect throttling
+            errors if you call it more than once in a minute.
+            </para></note><para>
+            The <code>DescribeLimits</code> Request element has no content.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBProvisionLimitCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.DescribeLimitsResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.DescribeLimitsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.GetDDBResourceTagCmdlet">
+            <summary>
+            List all tags on an Amazon DynamoDB resource. You can call ListTagsOfResource up to
+            10 times per second, per account.
+            
+             
+            <para>
+            For an overview on tagging DynamoDB resources, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
+            for DynamoDB</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon Resource
+            Name (ARN).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBResourceTagCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>An optional string that, if supplied, must be copied from the output of a previous
+            call to ListTagOfResource. When provided in this manner, this API fetches the next
+            page of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.ListTagsOfResourceResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.ListTagsOfResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBResourceTagCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.GetDDBStreamCmdlet">
+            <summary>
+            Returns information about a stream, including the current status of the stream, its
+            Amazon Resource Name (ARN), the composition of its shards, and its corresponding DynamoDB
+            table.
+            
+             <note><para>
+            You can call <code>DescribeStream</code> at a maximum rate of 10 times per second.
+            </para></note><para>
+            Each shard in the stream has a <code>SequenceNumberRange</code> associated with it.
+            If the <code>SequenceNumberRange</code> has a <code>StartingSequenceNumber</code>
+            but no <code>EndingSequenceNumber</code>, then the shard is still open (able to receive
+            more stream records). If both <code>StartingSequenceNumber</code> and <code>EndingSequenceNumber</code>
+            are present, then that shard is closed and can no longer receive more data.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBStreamCmdlet.ExclusiveStartShardId">
+            <summary>
+            <para>
+            <para>The shard ID of the first item that this operation will evaluate. Use the value that
+            was returned for <code>LastEvaluatedShardId</code> in the previous operation. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBStreamCmdlet.StreamArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) for the stream.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBStreamCmdlet.Limit">
+            <summary>
+            <para>
+            <para>The maximum number of shard objects to return. The upper limit is 100.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBStreamCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'StreamDescription'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.DescribeStreamResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.DescribeStreamResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBStreamCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the StreamArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^StreamArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.GetDDBStreamListCmdlet">
+            <summary>
+            Returns an array of stream ARNs associated with the current account and endpoint.
+            If the <code>TableName</code> parameter is present, then <code>ListStreams</code>
+            will return only the streams ARNs for that table.
+            
+             <note><para>
+            You can call <code>ListStreams</code> at a maximum rate of 5 times per second.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBStreamListCmdlet.ExclusiveStartStreamArn">
+            <summary>
+            <para>
+            <para>The ARN (Amazon Resource Name) of the first item that this operation will evaluate.
+            Use the value that was returned for <code>LastEvaluatedStreamArn</code> in the previous
+            operation. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBStreamListCmdlet.TableName">
+            <summary>
+            <para>
+            <para>If this parameter is provided, then only the streams associated with this table name
+            are returned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBStreamListCmdlet.Limit">
+            <summary>
+            <para>
+            <para>The maximum number of streams to return. The upper limit is 100.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBStreamListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.ListStreamsResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.ListStreamsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBStreamListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^TableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.GetDDBTableCmdlet">
+            <summary>
+            Returns information about the table, including the current status of the table, when
+            it was created, the primary key schema, and any indexes on the table.
+            
+             <note><para>
+            If you issue a <code>DescribeTable</code> request immediately after a <code>CreateTable</code>
+            request, DynamoDB might return a <code>ResourceNotFoundException</code>. This is because
+            <code>DescribeTable</code> uses an eventually consistent query, and the metadata for
+            your table might not be available at that moment. Wait for a few seconds, and then
+            try the <code>DescribeTable</code> request again.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBTableCmdlet.TableName">
+            <summary>
+            <para>
+            <para>The name of the table to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBTableCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Table'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.DescribeTableResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.DescribeTableResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBTableCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^TableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.GetDDBTableListCmdlet">
+            <summary>
+            Returns an array of table names associated with the current account and endpoint.
+            The output from <code>ListTables</code> is paginated, with each page returning a maximum
+            of 100 table names.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBTableListCmdlet.ExclusiveStartTableName">
+            <summary>
+            <para>
+            <para>The first table name that this operation will evaluate. Use the value that was returned
+            for <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain
+            the next page of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-ExclusiveStartTableName $null' for the first call and '-ExclusiveStartTableName $AWSHistory.LastServiceResponse.LastEvaluatedTableName' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBTableListCmdlet.Limit">
+            <summary>
+            <para>
+            <para>A maximum number of table names to return. If this parameter is not specified, the
+            limit is 100.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBTableListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TableNames'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.ListTablesResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.ListTablesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBTableListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of ExclusiveStartTableName
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.GetDDBTableReplicaAutoScalingCmdlet">
+            <summary>
+            Describes auto scaling settings across replicas of the global table at once.
+            
+             <note><para>
+            This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+            2019.11.21</a> of global tables.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBTableReplicaAutoScalingCmdlet.TableName">
+            <summary>
+            <para>
+            <para>The name of the table.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBTableReplicaAutoScalingCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TableAutoScalingDescription'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.DescribeTableReplicaAutoScalingResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.DescribeTableReplicaAutoScalingResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBTableReplicaAutoScalingCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^TableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.GetDDBTimeToLiveCmdlet">
+            <summary>
+            Gives a description of the Time to Live (TTL) status on the specified table.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBTimeToLiveCmdlet.TableName">
+            <summary>
+            <para>
+            <para>The name of the table to be described.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBTimeToLiveCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TimeToLiveDescription'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.DescribeTimeToLiveResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.DescribeTimeToLiveResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.GetDDBTimeToLiveCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^TableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.ImportDDBTableCmdlet">
+            <summary>
+            Imports table data from an S3 bucket.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ImportDDBTableCmdlet.TableCreationParameters_AttributeDefinition">
+            <summary>
+            <para>
+            <para> The attributes of the table created as part of the import operation. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ImportDDBTableCmdlet.TableCreationParameters_BillingMode">
+            <summary>
+            <para>
+            <para> The billing mode for provisioning the table created as part of the import operation.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ImportDDBTableCmdlet.Csv_Delimiter">
+            <summary>
+            <para>
+            <para> The delimiter used for separating items in the CSV file being imported. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ImportDDBTableCmdlet.SSESpecification_Enabled">
+            <summary>
+            <para>
+            <para>Indicates whether server-side encryption is done using an Amazon Web Services managed
+            key or an Amazon Web Services owned key. If enabled (true), server-side encryption
+            type is set to <code>KMS</code> and an Amazon Web Services managed key is used (KMS
+            charges apply). If disabled (false) or not specified, server-side encryption is set
+            to Amazon Web Services owned key.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ImportDDBTableCmdlet.TableCreationParameters_GlobalSecondaryIndex">
+            <summary>
+            <para>
+            <para> The Global Secondary Indexes (GSI) of the table to be created as part of the import
+            operation. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ImportDDBTableCmdlet.Csv_HeaderList">
+            <summary>
+            <para>
+            <para> List of the headers used to specify a common header for all source CSV files being
+            imported. If this field is specified then the first line of each CSV file is treated
+            as data instead of the header. If this field is not specified the the first line of
+            each CSV file is treated as the header. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ImportDDBTableCmdlet.InputCompressionType">
+            <summary>
+            <para>
+            <para> Type of compression to be used on the input coming from the imported table. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ImportDDBTableCmdlet.InputFormat">
+            <summary>
+            <para>
+            <para> The format of the source data. Valid values for <code>ImportFormat</code> are <code>CSV</code>,
+            <code>DYNAMODB_JSON</code> or <code>ION</code>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ImportDDBTableCmdlet.TableCreationParameters_KeySchema">
+            <summary>
+            <para>
+            <para> The primary key and option sort key of the table created as part of the import operation.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ImportDDBTableCmdlet.SSESpecification_KMSMasterKeyId">
+            <summary>
+            <para>
+            <para>The KMS key that should be used for the KMS encryption. To specify a key, use its
+            key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should
+            only provide this parameter if the key is different from the default DynamoDB key
+            <code>alias/aws/dynamodb</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ImportDDBTableCmdlet.ProvisionedThroughput_ReadCapacityUnit">
+            <summary>
+            <para>
+            <para>The maximum number of strongly consistent reads consumed per second before DynamoDB
+            returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
+            Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</para><para>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ImportDDBTableCmdlet.S3BucketSource_S3Bucket">
+            <summary>
+            <para>
+            <para> The S3 bucket that is being imported from. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ImportDDBTableCmdlet.S3BucketSource_S3BucketOwner">
+            <summary>
+            <para>
+            <para> The account number of the S3 bucket that is being imported from. If the bucket is
+            owned by the requester this is optional. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ImportDDBTableCmdlet.S3BucketSource_S3KeyPrefix">
+            <summary>
+            <para>
+            <para> The key prefix shared by all S3 Objects that are being imported. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ImportDDBTableCmdlet.SSESpecification_SSEType">
+            <summary>
+            <para>
+            <para>Server-side encryption type. The only supported value is:</para><ul><li><para><code>KMS</code> - Server-side encryption that uses Key Management Service. The key
+            is stored in your account and is managed by KMS (KMS charges apply).</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ImportDDBTableCmdlet.TableCreationParameters_TableName">
+            <summary>
+            <para>
+            <para> The name of the table created as part of the import operation. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ImportDDBTableCmdlet.ProvisionedThroughput_WriteCapacityUnit">
+            <summary>
+            <para>
+            <para>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
+            For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
+            Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</para><para>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ImportDDBTableCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>Providing a <code>ClientToken</code> makes the call to <code>ImportTableInput</code>
+            idempotent, meaning that multiple identical calls have the same effect as one single
+            call.</para><para>A client token is valid for 8 hours after the first request that uses it is completed.
+            After 8 hours, any request with the same client token is treated as a new request.
+            Do not resubmit the same request with the same client token for more than 8 hours,
+            or the result might not be idempotent.</para><para>If you submit a request with the same client token but a change in other parameters
+            within the 8-hour idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code>
+            exception.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ImportDDBTableCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ImportTableDescription'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.ImportTableResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.ImportTableResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ImportDDBTableCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the InputFormat parameter.
+            The -PassThru parameter is deprecated, use -Select '^InputFormat' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.ImportDDBTableCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.InvokeDDBDDBBatchExecuteStatementCmdlet">
+            <summary>
+            This operation allows you to perform batch reads or writes on data stored in DynamoDB,
+            using PartiQL. Each read statement in a <code>BatchExecuteStatement</code> must specify
+            an equality condition on all key attributes. This enforces that each <code>SELECT</code>
+            statement in a batch returns at most a single item.
+            
+             <note><para>
+            The entire batch must consist of either read statements or write statements, you cannot
+            mix both in one batch.
+            </para></note><important><para>
+            A HTTP 200 response does not mean that all statements in the BatchExecuteStatement
+            succeeded. Error details for individual statements can be found under the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchStatementResponse.html#DDB-Type-BatchStatementResponse-Error">Error</a>
+            field of the <code>BatchStatementResponse</code> for each statement.
+            </para></important>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.InvokeDDBDDBBatchExecuteStatementCmdlet.ReturnConsumedCapacity">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.InvokeDDBDDBBatchExecuteStatementCmdlet.Statement">
+            <summary>
+            <para>
+            <para>The list of PartiQL statements representing the batch to run.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.InvokeDDBDDBBatchExecuteStatementCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Responses'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.BatchExecuteStatementResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.BatchExecuteStatementResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.InvokeDDBDDBBatchExecuteStatementCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ReturnConsumedCapacity parameter.
+            The -PassThru parameter is deprecated, use -Select '^ReturnConsumedCapacity' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.InvokeDDBDDBBatchExecuteStatementCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.InvokeDDBDDBExecuteStatementCmdlet">
+            <summary>
+            This operation allows you to perform reads and singleton writes on data stored in
+            DynamoDB, using PartiQL.
+            
+             
+            <para>
+            For PartiQL reads (<code>SELECT</code> statement), if the total number of processed
+            items exceeds the maximum dataset size limit of 1 MB, the read stops and results are
+            returned to the user as a <code>LastEvaluatedKey</code> value to continue the read
+            in a subsequent operation. If the filter criteria in <code>WHERE</code> clause does
+            not match any data, the read will return an empty result set.
+            </para><para>
+            A single <code>SELECT</code> statement response can return up to the maximum number
+            of items (if using the Limit parameter) or a maximum of 1 MB of data (and then apply
+            any filtering to the results using <code>WHERE</code> clause). If <code>LastEvaluatedKey</code>
+            is present in the response, you need to paginate the result set.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.InvokeDDBDDBExecuteStatementCmdlet.ConsistentRead">
+            <summary>
+            <para>
+            <para>The consistency of a read operation. If set to <code>true</code>, then a strongly
+            consistent read is used; otherwise, an eventually consistent read is used.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.InvokeDDBDDBExecuteStatementCmdlet.Parameter">
+            <summary>
+            <para>
+            <para>The parameters for the PartiQL statement, if any.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.InvokeDDBDDBExecuteStatementCmdlet.ReturnConsumedCapacity">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.InvokeDDBDDBExecuteStatementCmdlet.Statement">
+            <summary>
+            <para>
+            <para>The PartiQL statement representing the operation to run.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.InvokeDDBDDBExecuteStatementCmdlet.Limit">
+            <summary>
+            <para>
+            <para>The maximum number of items to evaluate (not necessarily the number of matching items).
+            If DynamoDB processes the number of items up to the limit while processing the results,
+            it stops the operation and returns the matching values up to that point, along with
+            a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation so you can
+            pick up where you left off. Also, if the processed dataset size exceeds 1 MB before
+            DynamoDB reaches this limit, it stops the operation and returns the matching values
+            up to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent
+            operation to continue the operation. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.InvokeDDBDDBExecuteStatementCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Set this value to get remaining results, if <code>NextToken</code> was returned in
+            the statement response.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.InvokeDDBDDBExecuteStatementCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Items'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.ExecuteStatementResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.ExecuteStatementResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.InvokeDDBDDBExecuteStatementCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Statement parameter.
+            The -PassThru parameter is deprecated, use -Select '^Statement' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.InvokeDDBDDBExecuteStatementCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.InvokeDDBDDBExecuteTransactionCmdlet">
+            <summary>
+            This operation allows you to perform transactional reads or writes on data stored
+            in DynamoDB, using PartiQL.
+            
+             <note><para>
+            The entire transaction must consist of either read statements or write statements,
+            you cannot mix both in one transaction. The EXISTS function is an exception and can
+            be used to check the condition of specific attributes of the item in a similar manner
+            to <code>ConditionCheck</code> in the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transaction-apis.html#transaction-apis-txwriteitems">TransactWriteItems</a>
+            API.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.InvokeDDBDDBExecuteTransactionCmdlet.ClientRequestToken">
+            <summary>
+            <para>
+            <para>Set this value to get remaining results, if <code>NextToken</code> was returned in
+            the statement response.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.InvokeDDBDDBExecuteTransactionCmdlet.ReturnConsumedCapacity">
+            <summary>
+            <para>
+            <para>Determines the level of detail about either provisioned or on-demand throughput consumption
+            that is returned in the response. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a>
+            and <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.InvokeDDBDDBExecuteTransactionCmdlet.TransactStatement">
+            <summary>
+            <para>
+            <para>The list of PartiQL statements representing the transaction to run.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.InvokeDDBDDBExecuteTransactionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Responses'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.ExecuteTransactionResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.ExecuteTransactionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.InvokeDDBDDBExecuteTransactionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClientRequestToken parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClientRequestToken' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.InvokeDDBDDBExecuteTransactionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.NewDDBBackupCmdlet">
+            <summary>
+            Creates a backup for an existing table.
+            
+             
+            <para>
+             Each time you create an on-demand backup, the entire table data is backed up. There
+            is no limit to the number of on-demand backups that can be taken. 
+            </para><para>
+             When you create an on-demand backup, a time marker of the request is cataloged, and
+            the backup is created asynchronously, by applying all changes until the time of the
+            request to the last full table snapshot. Backup requests are processed instantaneously
+            and become available for restore within minutes. 
+            </para><para>
+            You can call <code>CreateBackup</code> at a maximum rate of 50 times per second.
+            </para><para>
+            All backups in DynamoDB work without consuming any provisioned throughput on the table.
+            </para><para>
+             If you submit a backup request on 2018-12-14 at 14:25:00, the backup is guaranteed
+            to contain all data committed to the table up to 14:24:00, and data committed after
+            14:26:00 will not be. The backup might contain data modifications made between 14:24:00
+            and 14:26:00. On-demand backup does not support causal consistency. 
+            </para><para>
+             Along with data, the following are also included on the backups: 
+            </para><ul><li><para>
+            Global secondary indexes (GSIs)
+            </para></li><li><para>
+            Local secondary indexes (LSIs)
+            </para></li><li><para>
+            Streams
+            </para></li><li><para>
+            Provisioned read and write capacity
+            </para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.NewDDBBackupCmdlet.BackupName">
+            <summary>
+            <para>
+            <para>Specified name for the backup.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.NewDDBBackupCmdlet.TableName">
+            <summary>
+            <para>
+            <para>The name of the table.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.NewDDBBackupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'BackupDetails'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.CreateBackupResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.CreateBackupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.NewDDBBackupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^TableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.NewDDBBackupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.NewDDBGlobalTableCmdlet">
+            <summary>
+            Creates a global table from an existing table. A global table creates a replication
+            relationship between two or more DynamoDB tables with the same table name in the provided
+            Regions. 
+            
+             <note><para>
+            This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+            2017.11.29</a> of global tables.
+            </para></note><para>
+            If you want to add a new replica table to a global table, each of the following conditions
+            must be true:
+            </para><ul><li><para>
+            The table must have the same primary key as all of the other replicas.
+            </para></li><li><para>
+            The table must have the same name as all of the other replicas.
+            </para></li><li><para>
+            The table must have DynamoDB Streams enabled, with the stream containing both the
+            new and the old images of the item.
+            </para></li><li><para>
+            None of the replica tables in the global table can contain any data.
+            </para></li></ul><para>
+             If global secondary indexes are specified, then the following conditions must also
+            be met: 
+            </para><ul><li><para>
+             The global secondary indexes must have the same name. 
+            </para></li><li><para>
+             The global secondary indexes must have the same hash key and sort key (if present).
+            
+            </para></li></ul><para>
+             If local secondary indexes are specified, then the following conditions must also
+            be met: 
+            </para><ul><li><para>
+             The local secondary indexes must have the same name. 
+            </para></li><li><para>
+             The local secondary indexes must have the same hash key and sort key (if present).
+            
+            </para></li></ul><important><para>
+             Write capacity settings should be set consistently across your replica tables and
+            secondary indexes. DynamoDB strongly recommends enabling auto scaling to manage the
+            write capacity settings for all of your global tables replicas and indexes. 
+            </para><para>
+             If you prefer to manage write capacity settings manually, you should provision equal
+            replicated write capacity units to your replica tables. You should also provision
+            equal replicated write capacity units to matching secondary indexes across your global
+            table. 
+            </para></important>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.NewDDBGlobalTableCmdlet.GlobalTableName">
+            <summary>
+            <para>
+            <para>The global table name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.NewDDBGlobalTableCmdlet.ReplicationGroup">
+            <summary>
+            <para>
+            <para>The Regions where the global table needs to be created.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.NewDDBGlobalTableCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'GlobalTableDescription'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.CreateGlobalTableResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.CreateGlobalTableResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.NewDDBGlobalTableCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the GlobalTableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^GlobalTableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.NewDDBGlobalTableCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.RemoveDDBBackupCmdlet">
+            <summary>
+            Deletes an existing backup of a table.
+            
+             
+            <para>
+            You can call <code>DeleteBackup</code> at a maximum rate of 10 times per second.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RemoveDDBBackupCmdlet.BackupArn">
+            <summary>
+            <para>
+            <para>The ARN associated with the backup.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RemoveDDBBackupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'BackupDescription'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.DeleteBackupResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.DeleteBackupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RemoveDDBBackupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BackupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^BackupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RemoveDDBBackupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.RemoveDDBResourceTagCmdlet">
+            <summary>
+            Removes the association of tags from an Amazon DynamoDB resource. You can call <code>UntagResource</code>
+            up to five times per second, per account. 
+            
+             
+            <para>
+            For an overview on tagging DynamoDB resources, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging
+            for DynamoDB</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RemoveDDBResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The DynamoDB resource that the tags will be removed from. This value is an Amazon
+            Resource Name (ARN).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RemoveDDBResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>A list of tag keys. Existing tags of the resource whose keys are members of this list
+            will be removed from the DynamoDB resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RemoveDDBResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RemoveDDBResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RemoveDDBResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.RemoveDDBTableCmdlet">
+            <summary>
+            The <code>DeleteTable</code> operation deletes a table and all of its items. After
+            a <code>DeleteTable</code> request, the specified table is in the <code>DELETING</code>
+            state until DynamoDB completes the deletion. If the table is in the <code>ACTIVE</code>
+            state, you can delete it. If a table is in <code>CREATING</code> or <code>UPDATING</code>
+            states, then DynamoDB returns a <code>ResourceInUseException</code>. If the specified
+            table does not exist, DynamoDB returns a <code>ResourceNotFoundException</code>. If
+            table is already in the <code>DELETING</code> state, no error is returned. 
+            
+             <note><para>
+            DynamoDB might continue to accept data read and write operations, such as <code>GetItem</code>
+            and <code>PutItem</code>, on a table in the <code>DELETING</code> state until the
+            table deletion is complete.
+            </para></note><para>
+            When you delete a table, any indexes on that table are also deleted.
+            </para><para>
+            If you have DynamoDB Streams enabled on the table, then the corresponding stream on
+            that table goes into the <code>DISABLED</code> state, and the stream is automatically
+            deleted after 24 hours.
+            </para><para>
+            Use the <code>DescribeTable</code> action to check the status of the table. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RemoveDDBTableCmdlet.TableName">
+            <summary>
+            <para>
+            <para>The name of the table to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RemoveDDBTableCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TableDescription'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.DeleteTableResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.DeleteTableResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RemoveDDBTableCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^TableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RemoveDDBTableCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableFromBackupCmdlet">
+            <summary>
+            Creates a new table from an existing backup. Any number of users can execute up to
+            4 concurrent restores (any type of restore) in a given account. 
+            
+             
+            <para>
+            You can call <code>RestoreTableFromBackup</code> at a maximum rate of 10 times per
+            second.
+            </para><para>
+            You must manually set up the following on the restored table:
+            </para><ul><li><para>
+            Auto scaling policies
+            </para></li><li><para>
+            IAM policies
+            </para></li><li><para>
+            Amazon CloudWatch metrics and alarms
+            </para></li><li><para>
+            Tags
+            </para></li><li><para>
+            Stream settings
+            </para></li><li><para>
+            Time to Live (TTL) settings
+            </para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableFromBackupCmdlet.BackupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) associated with the backup.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableFromBackupCmdlet.BillingModeOverride">
+            <summary>
+            <para>
+            <para>The billing mode of the restored table.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableFromBackupCmdlet.SSESpecificationOverride_Enabled">
+            <summary>
+            <para>
+            <para>Indicates whether server-side encryption is done using an Amazon Web Services managed
+            key or an Amazon Web Services owned key. If enabled (true), server-side encryption
+            type is set to <code>KMS</code> and an Amazon Web Services managed key is used (KMS
+            charges apply). If disabled (false) or not specified, server-side encryption is set
+            to Amazon Web Services owned key.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableFromBackupCmdlet.GlobalSecondaryIndexOverride">
+            <summary>
+            <para>
+            <para>List of global secondary indexes for the restored table. The indexes provided should
+            match existing secondary indexes. You can choose to exclude some or all of the indexes
+            at the time of restore.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableFromBackupCmdlet.SSESpecificationOverride_KMSMasterKeyId">
+            <summary>
+            <para>
+            <para>The KMS key that should be used for the KMS encryption. To specify a key, use its
+            key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should
+            only provide this parameter if the key is different from the default DynamoDB key
+            <code>alias/aws/dynamodb</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableFromBackupCmdlet.LocalSecondaryIndexOverride">
+            <summary>
+            <para>
+            <para>List of local secondary indexes for the restored table. The indexes provided should
+            match existing secondary indexes. You can choose to exclude some or all of the indexes
+            at the time of restore.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableFromBackupCmdlet.ProvisionedThroughputOverride_ReadCapacityUnit">
+            <summary>
+            <para>
+            <para>The maximum number of strongly consistent reads consumed per second before DynamoDB
+            returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
+            Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</para><para>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableFromBackupCmdlet.SSESpecificationOverride_SSEType">
+            <summary>
+            <para>
+            <para>Server-side encryption type. The only supported value is:</para><ul><li><para><code>KMS</code> - Server-side encryption that uses Key Management Service. The key
+            is stored in your account and is managed by KMS (KMS charges apply).</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableFromBackupCmdlet.TargetTableName">
+            <summary>
+            <para>
+            <para>The name of the new table to which the backup must be restored.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableFromBackupCmdlet.ProvisionedThroughputOverride_WriteCapacityUnit">
+            <summary>
+            <para>
+            <para>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
+            For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
+            Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</para><para>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableFromBackupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TableDescription'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.RestoreTableFromBackupResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.RestoreTableFromBackupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableFromBackupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TargetTableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^TargetTableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableFromBackupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableToPointInTimeCmdlet">
+            <summary>
+            Restores the specified table to the specified point in time within <code>EarliestRestorableDateTime</code>
+            and <code>LatestRestorableDateTime</code>. You can restore your table to any point
+            in time during the last 35 days. Any number of users can execute up to 4 concurrent
+            restores (any type of restore) in a given account. 
+            
+             
+            <para>
+             When you restore using point in time recovery, DynamoDB restores your table data
+            to the state based on the selected date and time (day:hour:minute:second) to a new
+            table. 
+            </para><para>
+             Along with data, the following are also included on the new restored table using
+            point in time recovery: 
+            </para><ul><li><para>
+            Global secondary indexes (GSIs)
+            </para></li><li><para>
+            Local secondary indexes (LSIs)
+            </para></li><li><para>
+            Provisioned read and write capacity
+            </para></li><li><para>
+            Encryption settings
+            </para><important><para>
+             All these settings come from the current settings of the source table at the time
+            of restore. 
+            </para></important></li></ul><para>
+            You must manually set up the following on the restored table:
+            </para><ul><li><para>
+            Auto scaling policies
+            </para></li><li><para>
+            IAM policies
+            </para></li><li><para>
+            Amazon CloudWatch metrics and alarms
+            </para></li><li><para>
+            Tags
+            </para></li><li><para>
+            Stream settings
+            </para></li><li><para>
+            Time to Live (TTL) settings
+            </para></li><li><para>
+            Point in time recovery settings
+            </para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableToPointInTimeCmdlet.BillingModeOverride">
+            <summary>
+            <para>
+            <para>The billing mode of the restored table.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableToPointInTimeCmdlet.SSESpecificationOverride_Enabled">
+            <summary>
+            <para>
+            <para>Indicates whether server-side encryption is done using an Amazon Web Services managed
+            key or an Amazon Web Services owned key. If enabled (true), server-side encryption
+            type is set to <code>KMS</code> and an Amazon Web Services managed key is used (KMS
+            charges apply). If disabled (false) or not specified, server-side encryption is set
+            to Amazon Web Services owned key.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableToPointInTimeCmdlet.GlobalSecondaryIndexOverride">
+            <summary>
+            <para>
+            <para>List of global secondary indexes for the restored table. The indexes provided should
+            match existing secondary indexes. You can choose to exclude some or all of the indexes
+            at the time of restore.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableToPointInTimeCmdlet.SSESpecificationOverride_KMSMasterKeyId">
+            <summary>
+            <para>
+            <para>The KMS key that should be used for the KMS encryption. To specify a key, use its
+            key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should
+            only provide this parameter if the key is different from the default DynamoDB key
+            <code>alias/aws/dynamodb</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableToPointInTimeCmdlet.LocalSecondaryIndexOverride">
+            <summary>
+            <para>
+            <para>List of local secondary indexes for the restored table. The indexes provided should
+            match existing secondary indexes. You can choose to exclude some or all of the indexes
+            at the time of restore.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableToPointInTimeCmdlet.ProvisionedThroughputOverride_ReadCapacityUnit">
+            <summary>
+            <para>
+            <para>The maximum number of strongly consistent reads consumed per second before DynamoDB
+            returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
+            Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</para><para>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableToPointInTimeCmdlet.RestoreDateTime">
+            <summary>
+            <para>
+            <para>Time in the past to restore the table to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableToPointInTimeCmdlet.SourceTableArn">
+            <summary>
+            <para>
+            <para>The DynamoDB table that will be restored. This value is an Amazon Resource Name (ARN).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableToPointInTimeCmdlet.SourceTableName">
+            <summary>
+            <para>
+            <para>Name of the source table that is being restored.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableToPointInTimeCmdlet.SSESpecificationOverride_SSEType">
+            <summary>
+            <para>
+            <para>Server-side encryption type. The only supported value is:</para><ul><li><para><code>KMS</code> - Server-side encryption that uses Key Management Service. The key
+            is stored in your account and is managed by KMS (KMS charges apply).</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableToPointInTimeCmdlet.TargetTableName">
+            <summary>
+            <para>
+            <para>The name of the new table to which it must be restored to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableToPointInTimeCmdlet.UseLatestRestorableTime">
+            <summary>
+            <para>
+            <para>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code>
+            is typically 5 minutes before the current time. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableToPointInTimeCmdlet.ProvisionedThroughputOverride_WriteCapacityUnit">
+            <summary>
+            <para>
+            <para>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
+            For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
+            Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</para><para>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableToPointInTimeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TableDescription'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.RestoreTableToPointInTimeResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.RestoreTableToPointInTimeResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableToPointInTimeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TargetTableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^TargetTableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.RestoreDDBTableToPointInTimeCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBContinuousBackupCmdlet">
+            <summary>
+            <code>UpdateContinuousBackups</code> enables or disables point in time recovery for
+            the specified table. A successful <code>UpdateContinuousBackups</code> call returns
+            the current <code>ContinuousBackupsDescription</code>. Continuous backups are <code>ENABLED</code>
+            on all tables at table creation. If point in time recovery is enabled, <code>PointInTimeRecoveryStatus</code>
+            will be set to ENABLED.
+            
+             
+            <para>
+             Once continuous backups and point in time recovery are enabled, you can restore to
+            any point in time within <code>EarliestRestorableDateTime</code> and <code>LatestRestorableDateTime</code>.
+            
+            </para><para><code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.
+            You can restore your table to any point in time during the last 35 days. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBContinuousBackupCmdlet.PointInTimeRecoverySpecification_PointInTimeRecoveryEnabled">
+            <summary>
+            <para>
+            <para>Indicates whether point in time recovery is enabled (true) or disabled (false) on
+            the table.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBContinuousBackupCmdlet.TableName">
+            <summary>
+            <para>
+            <para>The name of the table.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBContinuousBackupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ContinuousBackupsDescription'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.UpdateContinuousBackupsResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.UpdateContinuousBackupsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBContinuousBackupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^TableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBContinuousBackupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBContributorInsightCmdlet">
+            <summary>
+            Updates the status for contributor insights for a specific table or index. CloudWatch
+            Contributor Insights for DynamoDB graphs display the partition key and (if applicable)
+            sort key of frequently accessed items and frequently throttled items in plaintext.
+            If you require the use of Amazon Web Services Key Management Service (KMS) to encrypt
+            this table’s partition key and sort key data with an Amazon Web Services managed key
+            or customer managed key, you should not enable CloudWatch Contributor Insights for
+            DynamoDB for this table.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBContributorInsightCmdlet.ContributorInsightsAction">
+            <summary>
+            <para>
+            <para>Represents the contributor insights action.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBContributorInsightCmdlet.IndexName">
+            <summary>
+            <para>
+            <para>The global secondary index name, if applicable.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBContributorInsightCmdlet.TableName">
+            <summary>
+            <para>
+            <para>The name of the table.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBContributorInsightCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.UpdateContributorInsightsResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.UpdateContributorInsightsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBContributorInsightCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^TableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBContributorInsightCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBGlobalTableCmdlet">
+            <summary>
+            Adds or removes replicas in the specified global table. The global table must already
+            exist to be able to use this operation. Any replica to be added must be empty, have
+            the same name as the global table, have the same key schema, have DynamoDB Streams
+            enabled, and have the same provisioned and maximum write capacity units.
+            
+             <note><para>
+            Although you can use <code>UpdateGlobalTable</code> to add replicas and remove replicas
+            in a single request, for simplicity we recommend that you issue separate requests
+            for adding or removing replicas.
+            </para></note><para>
+             If global secondary indexes are specified, then the following conditions must also
+            be met: 
+            </para><ul><li><para>
+             The global secondary indexes must have the same name. 
+            </para></li><li><para>
+             The global secondary indexes must have the same hash key and sort key (if present).
+            
+            </para></li><li><para>
+             The global secondary indexes must have the same provisioned and maximum write capacity
+            units. 
+            </para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBGlobalTableCmdlet.GlobalTableName">
+            <summary>
+            <para>
+            <para>The global table name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBGlobalTableCmdlet.ReplicaUpdate">
+            <summary>
+            <para>
+            <para>A list of Regions that should be added or removed from the global table.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBGlobalTableCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'GlobalTableDescription'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.UpdateGlobalTableResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.UpdateGlobalTableResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBGlobalTableCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the GlobalTableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^GlobalTableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBGlobalTableCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBGlobalTableSettingCmdlet">
+            <summary>
+            Updates settings for a global table.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBGlobalTableSettingCmdlet.GlobalTableBillingMode">
+            <summary>
+            <para>
+            <para>The billing mode of the global table. If <code>GlobalTableBillingMode</code> is not
+            specified, the global table defaults to <code>PROVISIONED</code> capacity billing
+            mode.</para><ul><li><para><code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable
+            workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned
+            Mode</a>.</para></li><li><para><code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for
+            unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand
+            Mode</a>. </para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBGlobalTableSettingCmdlet.GlobalTableGlobalSecondaryIndexSettingsUpdate">
+            <summary>
+            <para>
+            <para>Represents the settings of a global secondary index for a global table that will be
+            modified.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBGlobalTableSettingCmdlet.GlobalTableName">
+            <summary>
+            <para>
+            <para>The name of the global table</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBGlobalTableSettingCmdlet.GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate">
+            <summary>
+            <para>
+            <para>Auto scaling settings for managing provisioned write capacity for the global table.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBGlobalTableSettingCmdlet.GlobalTableProvisionedWriteCapacityUnit">
+            <summary>
+            <para>
+            <para>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBGlobalTableSettingCmdlet.ReplicaSettingsUpdate">
+            <summary>
+            <para>
+            <para>Represents the settings for a global table in a Region that will be modified.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBGlobalTableSettingCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.UpdateGlobalTableSettingsResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.UpdateGlobalTableSettingsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBGlobalTableSettingCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the GlobalTableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^GlobalTableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBGlobalTableSettingCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTableCmdlet">
+            <summary>
+            Modifies the provisioned throughput settings, global secondary indexes, or DynamoDB
+            Streams settings for a given table.
+            
+             
+            <para>
+            You can only perform one of the following operations at once:
+            </para><ul><li><para>
+            Modify the provisioned throughput settings of the table.
+            </para></li><li><para>
+            Remove a global secondary index from the table.
+            </para></li><li><para>
+            Create a new global secondary index on the table. After the index begins backfilling,
+            you can use <code>UpdateTable</code> to perform other operations.
+            </para></li></ul><para><code>UpdateTable</code> is an asynchronous operation; while it is executing, the
+            table status changes from <code>ACTIVE</code> to <code>UPDATING</code>. While it is
+            <code>UPDATING</code>, you cannot issue another <code>UpdateTable</code> request.
+            When the table returns to the <code>ACTIVE</code> state, the <code>UpdateTable</code>
+            operation is complete.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTableCmdlet.AttributeDefinition">
+            <summary>
+            <para>
+            <para>An array of attributes that describe the key schema for the table and indexes. If
+            you are adding a new global secondary index to the table, <code>AttributeDefinitions</code>
+            must include the key element(s) of the new index.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTableCmdlet.BillingMode">
+            <summary>
+            <para>
+            <para>Controls how you are charged for read and write throughput and how you manage capacity.
+            When switching from pay-per-request to provisioned capacity, initial provisioned capacity
+            values must be set. The initial provisioned capacity values are estimated based on
+            the consumed read and write capacity of your table and global secondary indexes over
+            the past 30 minutes.</para><ul><li><para><code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable
+            workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned
+            Mode</a>.</para></li><li><para><code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for
+            unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand
+            Mode</a>. </para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTableCmdlet.SSESpecification_Enabled">
+            <summary>
+            <para>
+            <para>Indicates whether server-side encryption is done using an Amazon Web Services managed
+            key or an Amazon Web Services owned key. If enabled (true), server-side encryption
+            type is set to <code>KMS</code> and an Amazon Web Services managed key is used (KMS
+            charges apply). If disabled (false) or not specified, server-side encryption is set
+            to Amazon Web Services owned key.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTableCmdlet.GlobalSecondaryIndexUpdate">
+            <summary>
+            <para>
+            <para>An array of one or more global secondary indexes for the table. For each index in
+            the array, you can request one action:</para><ul><li><para><code>Create</code> - add a new global secondary index to the table.</para></li><li><para><code>Update</code> - modify the provisioned throughput settings of an existing global
+            secondary index.</para></li><li><para><code>Delete</code> - remove a global secondary index from the table.</para></li></ul><para>You can create or delete only one global secondary index per <code>UpdateTable</code>
+            operation.</para><para>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html">Managing
+            Global Secondary Indexes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTableCmdlet.SSESpecification_KMSMasterKeyId">
+            <summary>
+            <para>
+            <para>The KMS key that should be used for the KMS encryption. To specify a key, use its
+            key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should
+            only provide this parameter if the key is different from the default DynamoDB key
+            <code>alias/aws/dynamodb</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTableCmdlet.ReadCapacity">
+            <summary>
+            <para>
+            <para>The maximum number of strongly consistent reads consumed per second before DynamoDB
+            returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
+            Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</para><para>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTableCmdlet.ReplicaUpdate">
+            <summary>
+            <para>
+            <para>A list of replica update actions (create, delete, or update) for the table.</para><note><para>This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+            2019.11.21</a> of global tables.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTableCmdlet.SSESpecification_SSEType">
+            <summary>
+            <para>
+            <para>Server-side encryption type. The only supported value is:</para><ul><li><para><code>KMS</code> - Server-side encryption that uses Key Management Service. The key
+            is stored in your account and is managed by KMS (KMS charges apply).</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTableCmdlet.StreamSpecification_StreamEnabled">
+            <summary>
+            <para>
+            <para>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on the table.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTableCmdlet.StreamSpecification_StreamViewType">
+            <summary>
+            <para>
+            <para> When an item in the table is modified, <code>StreamViewType</code> determines what
+            information is written to the stream for this table. Valid values for <code>StreamViewType</code>
+            are:</para><ul><li><para><code>KEYS_ONLY</code> - Only the key attributes of the modified item are written
+            to the stream.</para></li><li><para><code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is
+            written to the stream.</para></li><li><para><code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified,
+            is written to the stream.</para></li><li><para><code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item
+            are written to the stream.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTableCmdlet.TableClass">
+            <summary>
+            <para>
+            <para>The table class of the table to be updated. Valid values are <code>STANDARD</code>
+            and <code>STANDARD_INFREQUENT_ACCESS</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTableCmdlet.TableName">
+            <summary>
+            <para>
+            <para>The name of the table to be updated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTableCmdlet.WriteCapacity">
+            <summary>
+            <para>
+            <para>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
+            For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
+            Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</para><para>If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTableCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TableDescription'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.UpdateTableResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.UpdateTableResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTableCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^TableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTableCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTableReplicaAutoScalingCmdlet">
+            <summary>
+            Updates auto scaling settings on your global tables at once.
+            
+             <note><para>
+            This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+            2019.11.21</a> of global tables.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTableReplicaAutoScalingCmdlet.GlobalSecondaryIndexUpdate">
+            <summary>
+            <para>
+            <para>Represents the auto scaling settings of the global secondary indexes of the replica
+            to be updated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTableReplicaAutoScalingCmdlet.ProvisionedWriteCapacityAutoScalingUpdate">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTableReplicaAutoScalingCmdlet.ReplicaUpdate">
+            <summary>
+            <para>
+            <para>Represents the auto scaling settings of replicas of the table that will be modified.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTableReplicaAutoScalingCmdlet.TableName">
+            <summary>
+            <para>
+            <para>The name of the global table to be updated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTableReplicaAutoScalingCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TableAutoScalingDescription'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.UpdateTableReplicaAutoScalingResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.UpdateTableReplicaAutoScalingResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTableReplicaAutoScalingCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^TableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTableReplicaAutoScalingCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTimeToLiveCmdlet">
+            <summary>
+            The <code>UpdateTimeToLive</code> method enables or disables Time to Live (TTL) for
+            the specified table. A successful <code>UpdateTimeToLive</code> call returns the current
+            <code>TimeToLiveSpecification</code>. It can take up to one hour for the change to
+            fully process. Any additional <code>UpdateTimeToLive</code> calls for the same table
+            during this one hour duration result in a <code>ValidationException</code>. 
+            
+             
+            <para>
+            TTL compares the current time in epoch time format to the time stored in the TTL attribute
+            of an item. If the epoch time value stored in the attribute is less than the current
+            time, the item is marked as expired and subsequently deleted.
+            </para><note><para>
+             The epoch time format is the number of seconds elapsed since 12:00:00 AM January
+            1, 1970 UTC. 
+            </para></note><para>
+            DynamoDB deletes expired items on a best-effort basis to ensure availability of throughput
+            for other data operations. 
+            </para><important><para>
+            DynamoDB typically deletes expired items within two days of expiration. The exact
+            duration within which an item gets deleted after expiration is specific to the nature
+            of the workload. Items that have expired and not been deleted will still show up in
+            reads, queries, and scans.
+            </para></important><para>
+            As items are deleted, they are removed from any local secondary index and global secondary
+            index immediately in the same eventually consistent way as a standard delete operation.
+            </para><para>
+            For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html">Time
+            To Live</a> in the Amazon DynamoDB Developer Guide. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTimeToLiveCmdlet.TimeToLiveSpecification_AttributeName">
+            <summary>
+            <para>
+            <para>The name of the TTL attribute used to store the expiration time for items in the table.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTimeToLiveCmdlet.TimeToLiveSpecification_Enabled">
+            <summary>
+            <para>
+            <para>Indicates whether TTL is to be enabled (true) or disabled (false) on the table.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTimeToLiveCmdlet.TableName">
+            <summary>
+            <para>
+            <para>The name of the table to be configured.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTimeToLiveCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TimeToLiveSpecification'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.UpdateTimeToLiveResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.UpdateTimeToLiveResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTimeToLiveCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TableName parameter.
+            The -PassThru parameter is deprecated, use -Select '^TableName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.UpdateDDBTimeToLiveCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.WriteDDBItemTransactionallyCmdlet">
+            <summary>
+            <code>TransactWriteItems</code> is a synchronous write operation that groups up to
+            100 action requests. These actions can target items in different tables, but not in
+            different Amazon Web Services accounts or Regions, and no two actions can target the
+            same item. For example, you cannot both <code>ConditionCheck</code> and <code>Update</code>
+            the same item. The aggregate size of the items in the transaction cannot exceed 4
+            MB.
+            
+             
+            <para>
+            The actions are completed atomically so that either all of them succeed, or all of
+            them fail. They are defined by the following objects:
+            </para><ul><li><para><code>Put</code>  —   Initiates a <code>PutItem</code> operation to write a new item.
+            This structure specifies the primary key of the item to be written, the name of the
+            table to write it in, an optional condition expression that must be satisfied for
+            the write to succeed, a list of the item's attributes, and a field indicating whether
+            to retrieve the item's attributes if the condition is not met.
+            </para></li><li><para><code>Update</code>  —   Initiates an <code>UpdateItem</code> operation to update
+            an existing item. This structure specifies the primary key of the item to be updated,
+            the name of the table where it resides, an optional condition expression that must
+            be satisfied for the update to succeed, an expression that defines one or more attributes
+            to be updated, and a field indicating whether to retrieve the item's attributes if
+            the condition is not met.
+            </para></li><li><para><code>Delete</code>  —   Initiates a <code>DeleteItem</code> operation to delete
+            an existing item. This structure specifies the primary key of the item to be deleted,
+            the name of the table where it resides, an optional condition expression that must
+            be satisfied for the deletion to succeed, and a field indicating whether to retrieve
+            the item's attributes if the condition is not met.
+            </para></li><li><para><code>ConditionCheck</code>  —   Applies a condition to an item that is not being
+            modified by the transaction. This structure specifies the primary key of the item
+            to be checked, the name of the table where it resides, a condition expression that
+            must be satisfied for the transaction to succeed, and a field indicating whether to
+            retrieve the item's attributes if the condition is not met.
+            </para></li></ul><para>
+            DynamoDB rejects the entire <code>TransactWriteItems</code> request if any of the
+            following is true:
+            </para><ul><li><para>
+            A condition in one of the condition expressions is not met.
+            </para></li><li><para>
+            An ongoing operation is in the process of updating the same item.
+            </para></li><li><para>
+            There is insufficient provisioned capacity for the transaction to be completed.
+            </para></li><li><para>
+            An item size becomes too large (bigger than 400 KB), a local secondary index (LSI)
+            becomes too large, or a similar validation error occurs because of changes made by
+            the transaction.
+            </para></li><li><para>
+            The aggregate size of the items in the transaction exceeds 4 MB.
+            </para></li><li><para>
+            There is a user error, such as an invalid data format.
+            </para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.WriteDDBItemTransactionallyCmdlet.ClientRequestToken">
+            <summary>
+            <para>
+            <para>Providing a <code>ClientRequestToken</code> makes the call to <code>TransactWriteItems</code>
+            idempotent, meaning that multiple identical calls have the same effect as one single
+            call.</para><para>Although multiple identical calls using the same client request token produce the
+            same result on the server (no side effects), the responses to the calls might not
+            be the same. If the <code>ReturnConsumedCapacity&gt;</code> parameter is set, then
+            the initial <code>TransactWriteItems</code> call returns the amount of write capacity
+            units consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls
+            with the same client token return the number of read capacity units consumed in reading
+            the item.</para><para>A client request token is valid for 10 minutes after the first request that uses it
+            is completed. After 10 minutes, any request with the same client token is treated
+            as a new request. Do not resubmit the same request with the same client token for
+            more than 10 minutes, or the result might not be idempotent.</para><para>If you submit a request with the same client token but a change in other parameters
+            within the 10-minute idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code>
+            exception.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.WriteDDBItemTransactionallyCmdlet.ReturnConsumedCapacity">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.WriteDDBItemTransactionallyCmdlet.ReturnItemCollectionMetric">
+            <summary>
+            <para>
+            <para>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
+            the response includes statistics about item collections (if any), that were modified
+            during the operation and are returned in the response. If set to <code>NONE</code>
+            (the default), no statistics are returned. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.WriteDDBItemTransactionallyCmdlet.TransactItem">
+            <summary>
+            <para>
+            <para>An ordered array of up to 100 <code>TransactWriteItem</code> objects, each of which
+            contains a <code>ConditionCheck</code>, <code>Put</code>, <code>Update</code>, or
+            <code>Delete</code> object. These can operate on items in different tables, but the
+            tables must reside in the same Amazon Web Services account and Region, and no two
+            of them can operate on the same item. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.WriteDDBItemTransactionallyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DynamoDBv2.Model.TransactWriteItemsResponse).
+            Specifying the name of a property of type Amazon.DynamoDBv2.Model.TransactWriteItemsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DDB.WriteDDBItemTransactionallyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DDB.Model.TableSchema">
+            <summary>
+            Model class carrying details of an Amazon DynamoDB table schema under
+            construction for use with the New-DDBTable cmdlet. This class is accepted
+            as pipeline input by the schema builder cmdlets (Write-DDBAttributeSchema,
+            Write-DDBKeySchema and Write-DDBIndexSchema).
+            </summary>
+        </member>
+        <member name="M:Amazon.PowerShell.Cmdlets.DDB.Model.TableSchema.#ctor(Amazon.PowerShell.Cmdlets.DDB.Model.TableSchema)">
+            <summary>
+            Constructs a new table schema from a deep copy of the suppled object.
+            Note that ICloneable is not supported on the coreclr platform, so we
+            chose not to make the type derive from ICloneable but retained the 
+            Clone method.
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="M:Amazon.PowerShell.Cmdlets.DDB.Model.TableSchema.SetLocalSecondaryIndex(System.String,System.String,System.String,System.String,System.String[])">
+            <summary>
+            Adds a new local secondary index or updates an index if it has been defined already
+            </summary>
+            <param name="indexName"></param>
+            <param name="rangeKeyName"></param>
+            <param name="rangeKeyDataType"></param>
+            <param name="projectionType"></param>
+            <param name="nonKeyAttributes"></param>
+        </member>
+        <member name="M:Amazon.PowerShell.Cmdlets.DDB.Model.TableSchema.SetGlobalSecondaryIndex(System.String,System.String,System.String,System.String,System.String,System.Int64,System.Int64,System.String,System.String[])">
+            <summary>
+            Adds a new global secondary index or updates an index if it has been defined already.
+            </summary>
+            <param name="indexName"></param>
+            <param name="hashKeyName"></param>
+            <param name="hashKeyDataType"></param>
+            <param name="rangeKeyName"></param>
+            <param name="rangeKeyDataType"></param>
+            <param name="readCapacityUnits"></param>
+            <param name="writeCapacityUnits"></param>
+            <param name="projectionType"></param>
+            <param name="nonKeyAttributes"></param>
+        </member>
+    </members>
+</doc>

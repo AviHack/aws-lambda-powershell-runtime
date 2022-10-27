@@ -1,0 +1,2492 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.CloudWatchLogs</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.AddCWLLogGroupTagCmdlet">
+            <summary>
+            Adds or updates the specified tags for the specified log group.
+            
+             
+            <para>
+            To list the tags for a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html">ListTagsLogGroup</a>.
+            To remove tags, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagLogGroup.html">UntagLogGroup</a>.
+            </para><para>
+            For more information about tags, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html#log-group-tagging">Tag
+            Log Groups in Amazon CloudWatch Logs</a> in the <i>Amazon CloudWatch Logs User Guide</i>.
+            </para><para>
+            CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified
+            tags to log groups using the <code>aws:Resource/<i>key-name</i></code> or <code>aws:TagKeys</code>
+            condition keys. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+            access to Amazon Web Services resources using tags</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.AddCWLLogGroupTagCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>The name of the log group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.AddCWLLogGroupTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The key-value pairs to use for the tags.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.AddCWLLogGroupTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.TagLogGroupResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.AddCWLLogGroupTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LogGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LogGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.AddCWLLogGroupTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.GetCWLDestinationCmdlet">
+            <summary>
+            Lists all your destinations. The results are ASCII-sorted by destination name.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLDestinationCmdlet.DestinationNamePrefix">
+            <summary>
+            <para>
+            <para>The prefix to match. If you don't specify a value, no prefix filter is applied.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLDestinationCmdlet.Limit">
+            <summary>
+            <para>
+            <para>The maximum number of items returned. If you don't specify a value, the default is
+            up to 50 items.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLDestinationCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token for the next set of items to return. (You received this token from a previous
+            call.)</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLDestinationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Destinations'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.DescribeDestinationsResponse).
+            Specifying the name of a property of type Amazon.CloudWatchLogs.Model.DescribeDestinationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLDestinationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DestinationNamePrefix parameter.
+            The -PassThru parameter is deprecated, use -Select '^DestinationNamePrefix' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLDestinationCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.GetCWLExportTaskCmdlet">
+            <summary>
+            Lists the specified export tasks. You can list all your export tasks or filter the
+            results based on task ID or task status.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLExportTaskCmdlet.StatusCode">
+            <summary>
+            <para>
+            <para>The status code of the export task. Specifying a status code filters the results to
+            zero or more export tasks.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLExportTaskCmdlet.TaskId">
+            <summary>
+            <para>
+            <para>The ID of the export task. Specifying a task ID filters the results to zero or one
+            export tasks.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLExportTaskCmdlet.Limit">
+            <summary>
+            <para>
+            <para>The maximum number of items returned. If you don't specify a value, the default is
+            up to 50 items.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLExportTaskCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token for the next set of items to return. (You received this token from a previous
+            call.)</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLExportTaskCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ExportTasks'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.DescribeExportTasksResponse).
+            Specifying the name of a property of type Amazon.CloudWatchLogs.Model.DescribeExportTasksResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLExportTaskCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TaskId parameter.
+            The -PassThru parameter is deprecated, use -Select '^TaskId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLExportTaskCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.GetCWLFilteredLogEventCmdlet">
+            <summary>
+            Lists log events from the specified log group. You can list all the log events or
+            filter the results using a filter pattern, a time range, and the name of the log stream.
+            
+             
+            <para>
+            By default, this operation returns as many log events as can fit in 1 MB (up to 10,000
+            log events) or all the events found within the time range that you specify. If the
+            results include a token, then there are more log events available, and you can get
+            additional results by specifying the token in a subsequent call. This operation can
+            return empty results while there are more log events available through the token.
+            </para><para>
+            The returned log events are sorted by event timestamp, the timestamp when the event
+            was ingested by CloudWatch Logs, and the ID of the <code>PutLogEvents</code> request.
+            </para><br/><br/>In the AWS.Tools.CloudWatchLogs module, this cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLFilteredLogEventCmdlet.EndTime">
+            <summary>
+            <para>
+            <para>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970
+            00:00:00 UTC. Events with a timestamp later than this time are not returned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLFilteredLogEventCmdlet.FilterPattern">
+            <summary>
+            <para>
+            <para>The filter pattern to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
+            and Pattern Syntax</a>.</para><para>If not provided, all the events are matched.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLFilteredLogEventCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>The name of the log group to search.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLFilteredLogEventCmdlet.LogStreamNamePrefix">
+            <summary>
+            <para>
+            <para>Filters the results to include only events from log streams that have names starting
+            with this prefix.</para><para>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>,
+            but the value for <code>logStreamNamePrefix</code> does not match any log stream names
+            specified in <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code>
+            error.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLFilteredLogEventCmdlet.LogStreamName">
+            <summary>
+            <para>
+            <para>Filters the results to only logs from the log streams in this list.</para><para>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>,
+            the action returns an <code>InvalidParameterException</code> error.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLFilteredLogEventCmdlet.StartTime">
+            <summary>
+            <para>
+            <para>The start of the time range, expressed as the number of milliseconds after Jan 1,
+            1970 00:00:00 UTC. Events with a timestamp before this time are not returned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLFilteredLogEventCmdlet.Interleaved">
+            <summary>
+            <para>
+            <para>If the value is true, the operation makes a best effort to provide responses that
+            contain events from multiple log streams within the log group, interleaved in a single
+            response. If the value is false, all the matched log events in the first log stream
+            are searched first, then those in the next log stream, and so on. The default is false.</para><para><b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value
+            is assumed to be true. The response from this operation always interleaves events
+            from multiple log streams within a log group.</para>
+            </para>
+            <para>This parameter is deprecated.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLFilteredLogEventCmdlet.Limit">
+            <summary>
+            <para>
+            <para>The maximum number of events to return. The default is 10,000 events.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLFilteredLogEventCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token for the next set of events to return. (You received this token from a previous
+            call.)</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In the AWS.Tools.CloudWatchLogs module, this parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLFilteredLogEventCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.FilterLogEventsResponse).
+            Specifying the name of a property of type Amazon.CloudWatchLogs.Model.FilterLogEventsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLFilteredLogEventCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LogGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LogGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLFilteredLogEventCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogEventCmdlet">
+            <summary>
+            Lists log events from the specified log stream. You can list all of the log events
+            or filter using a time range.
+            
+             
+            <para>
+            By default, this operation returns as many log events as can fit in a response size
+            of 1MB (up to 10,000 log events). You can get additional log events by specifying
+            one of the tokens in a subsequent call. This operation can return empty results while
+            there are more log events available through the token.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogEventCmdlet.EndTime">
+            <summary>
+            <para>
+            <para>The end of the time range, expressed as the number of milliseconds after Jan 1, 1970
+            00:00:00 UTC. Events with a timestamp equal to or later than this time are not included.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogEventCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>The name of the log group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogEventCmdlet.LogStreamName">
+            <summary>
+            <para>
+            <para>The name of the log stream.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogEventCmdlet.StartFromHead">
+            <summary>
+            <para>
+            <para>If the value is true, the earliest log events are returned first. If the value is
+            false, the latest log events are returned first. The default value is false.</para><para>If you are using a previous <code>nextForwardToken</code> value as the <code>nextToken</code>
+            in this operation, you must specify <code>true</code> for <code>startFromHead</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogEventCmdlet.StartTime">
+            <summary>
+            <para>
+            <para>The start of the time range, expressed as the number of milliseconds after Jan 1,
+            1970 00:00:00 UTC. Events with a timestamp equal to this time or later than this time
+            are included. Events with a timestamp earlier than this time are not included.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogEventCmdlet.Limit">
+            <summary>
+            <para>
+            <para>The maximum number of log events returned. If you don't specify a value, the maximum
+            is as many log events as can fit in a response size of 1 MB, up to 10,000 log events.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogEventCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token for the next set of items to return. (You received this token from a previous
+            call.)</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogEventCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.GetLogEventsResponse).
+            Specifying the name of a property of type Amazon.CloudWatchLogs.Model.GetLogEventsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogEventCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LogStreamName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LogStreamName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogGroupCmdlet">
+            <summary>
+            Lists the specified log groups. You can list all your log groups or filter the results
+            by prefix. The results are ASCII-sorted by log group name.
+            
+             
+            <para>
+            CloudWatch Logs doesn’t support IAM policies that control access to the <code>DescribeLogGroups</code>
+            action by using the <code>aws:ResourceTag/<i>key-name</i></code> condition key. Other
+            CloudWatch Logs actions do support the use of the <code>aws:ResourceTag/<i>key-name</i></code> condition key to control access. For more information about using tags to
+            control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+            access to Amazon Web Services resources using tags</a>.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogGroupCmdlet.LogGroupNamePrefix">
+            <summary>
+            <para>
+            <para>The prefix to match.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogGroupCmdlet.Limit">
+            <summary>
+            <para>
+            <para>The maximum number of items returned. If you don't specify a value, the default is
+            up to 50 items.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogGroupCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token for the next set of items to return. (You received this token from a previous
+            call.)</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'LogGroups'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.DescribeLogGroupsResponse).
+            Specifying the name of a property of type Amazon.CloudWatchLogs.Model.DescribeLogGroupsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LogGroupNamePrefix parameter.
+            The -PassThru parameter is deprecated, use -Select '^LogGroupNamePrefix' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogGroupCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogGroupFieldCmdlet">
+            <summary>
+            Returns a list of the fields that are included in log events in the specified log
+            group, along with the percentage of log events that contain each field. The search
+            is limited to a time period that you specify.
+            
+             
+            <para>
+            In the results, fields that start with @ are fields generated by CloudWatch Logs.
+            For example, <code>@timestamp</code> is the timestamp of each log event. For more
+            information about the fields that are generated by CloudWatch logs, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html">Supported
+            Logs and Discovered Fields</a>.
+            </para><para>
+            The response results are sorted by the frequency percentage, starting with the highest
+            percentage.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogGroupFieldCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>The name of the log group to search.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogGroupFieldCmdlet.Time">
+            <summary>
+            <para>
+            <para>The time to set as the center of the query. If you specify <code>time</code>, the
+            15 minutes before this time are queries. If you omit <code>time</code> the 8 minutes
+            before and 8 minutes after this time are searched.</para><para>The <code>time</code> value is specified as epoch time, the number of seconds since
+            January 1, 1970, 00:00:00 UTC.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogGroupFieldCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'LogGroupFields'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.GetLogGroupFieldsResponse).
+            Specifying the name of a property of type Amazon.CloudWatchLogs.Model.GetLogGroupFieldsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogGroupFieldCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LogGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LogGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogGroupTagCmdlet">
+            <summary>
+            Lists the tags for the specified log group.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogGroupTagCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>The name of the log group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogGroupTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.ListTagsLogGroupResponse).
+            Specifying the name of a property of type Amazon.CloudWatchLogs.Model.ListTagsLogGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogGroupTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LogGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LogGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogRecordCmdlet">
+            <summary>
+            Retrieves all of the fields and values of a single log event. All fields are retrieved,
+            even if the original query that produced the <code>logRecordPointer</code> retrieved
+            only a subset of fields. Fields are returned as field name/field value pairs.
+            
+             
+            <para>
+            The full unparsed log event is returned within <code>@message</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogRecordCmdlet.LogRecordPointer">
+            <summary>
+            <para>
+            <para>The pointer corresponding to the log event record you want to retrieve. You get this
+            from the response of a <code>GetQueryResults</code> operation. In that response, the
+            value of the <code>@ptr</code> field for a log event is the value to use as <code>logRecordPointer</code>
+            to retrieve that complete log event record.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogRecordCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'LogRecord'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.GetLogRecordResponse).
+            Specifying the name of a property of type Amazon.CloudWatchLogs.Model.GetLogRecordResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogRecordCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LogRecordPointer parameter.
+            The -PassThru parameter is deprecated, use -Select '^LogRecordPointer' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogStreamCmdlet">
+            <summary>
+            Lists the log streams for the specified log group. You can list all the log streams
+            or filter the results by prefix. You can also control how the results are ordered.
+            
+             
+            <para>
+            This operation has a limit of five transactions per second, after which transactions
+            are throttled.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogStreamCmdlet.Descending">
+            <summary>
+            <para>
+            <para>If the value is true, results are returned in descending order. If the value is to
+            false, results are returned in ascending order. The default value is false.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogStreamCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>The name of the log group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogStreamCmdlet.LogStreamNamePrefix">
+            <summary>
+            <para>
+            <para>The prefix to match.</para><para>If <code>orderBy</code> is <code>LastEventTime</code>, you cannot specify this parameter.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogStreamCmdlet.OrderBy">
+            <summary>
+            <para>
+            <para>If the value is <code>LogStreamName</code>, the results are ordered by log stream
+            name. If the value is <code>LastEventTime</code>, the results are ordered by the event
+            time. The default value is <code>LogStreamName</code>.</para><para>If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code>
+            parameter.</para><para><code>lastEventTimestamp</code> represents the time of the most recent log event
+            in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds
+            after Jan 1, 1970 00:00:00 UTC. <code>lastEventTimestamp</code> updates on an eventual
+            consistency basis. It typically updates in less than an hour from ingestion, but in
+            rare situations might take longer.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogStreamCmdlet.Limit">
+            <summary>
+            <para>
+            <para>The maximum number of items returned. If you don't specify a value, the default is
+            up to 50 items.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogStreamCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token for the next set of items to return. (You received this token from a previous
+            call.)</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogStreamCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'LogStreams'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.DescribeLogStreamsResponse).
+            Specifying the name of a property of type Amazon.CloudWatchLogs.Model.DescribeLogStreamsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogStreamCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LogGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LogGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLLogStreamCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.GetCWLMetricFilterCmdlet">
+            <summary>
+            Lists the specified metric filters. You can list all of the metric filters or filter
+            the results by log name, prefix, metric name, or metric namespace. The results are
+            ASCII-sorted by filter name.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLMetricFilterCmdlet.FilterNamePrefix">
+            <summary>
+            <para>
+            <para>The prefix to match. CloudWatch Logs uses the value you set here only if you also
+            include the <code>logGroupName</code> parameter in your request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLMetricFilterCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>The name of the log group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLMetricFilterCmdlet.MetricName">
+            <summary>
+            <para>
+            <para>Filters results to include only those with the specified metric name. If you include
+            this parameter in your request, you must also include the <code>metricNamespace</code>
+            parameter.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLMetricFilterCmdlet.MetricNamespace">
+            <summary>
+            <para>
+            <para>Filters results to include only those in the specified namespace. If you include this
+            parameter in your request, you must also include the <code>metricName</code> parameter.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLMetricFilterCmdlet.Limit">
+            <summary>
+            <para>
+            <para>The maximum number of items returned. If you don't specify a value, the default is
+            up to 50 items.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLMetricFilterCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token for the next set of items to return. (You received this token from a previous
+            call.)</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLMetricFilterCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'MetricFilters'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.DescribeMetricFiltersResponse).
+            Specifying the name of a property of type Amazon.CloudWatchLogs.Model.DescribeMetricFiltersResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLMetricFilterCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LogGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LogGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLMetricFilterCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.GetCWLQueryCmdlet">
+            <summary>
+            Returns a list of CloudWatch Logs Insights queries that are scheduled, executing,
+            or have been executed recently in this account. You can request all queries or limit
+            it to queries of a specific log group or queries with a certain status.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLQueryCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>Limits the returned queries to only those for the specified log group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLQueryCmdlet.Status">
+            <summary>
+            <para>
+            <para>Limits the returned queries to only those that have the specified status. Valid values
+            are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>,
+            and <code>Scheduled</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLQueryCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Limits the number of returned queries to the specified number.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLQueryCmdlet.NextToken">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLQueryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Queries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.DescribeQueriesResponse).
+            Specifying the name of a property of type Amazon.CloudWatchLogs.Model.DescribeQueriesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLQueryCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LogGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LogGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLQueryCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.GetCWLQueryDefinitionCmdlet">
+            <summary>
+            This operation returns a paginated list of your saved CloudWatch Logs Insights query
+            definitions.
+            
+             
+            <para>
+            You can use the <code>queryDefinitionNamePrefix</code> parameter to limit the results
+            to only the query definitions that have names that start with a certain string.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLQueryDefinitionCmdlet.QueryDefinitionNamePrefix">
+            <summary>
+            <para>
+            <para>Use this parameter to filter your results to only the query definitions that have
+            names that start with the prefix you specify.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLQueryDefinitionCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Limits the number of returned query definitions to the specified number.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLQueryDefinitionCmdlet.NextToken">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLQueryDefinitionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'QueryDefinitions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.DescribeQueryDefinitionsResponse).
+            Specifying the name of a property of type Amazon.CloudWatchLogs.Model.DescribeQueryDefinitionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLQueryDefinitionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the QueryDefinitionNamePrefix parameter.
+            The -PassThru parameter is deprecated, use -Select '^QueryDefinitionNamePrefix' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLQueryDefinitionCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.GetCWLQueryResultCmdlet">
+            <summary>
+            Returns the results from the specified query.
+            
+             
+            <para>
+            Only the fields requested in the query are returned, along with a <code>@ptr</code>
+            field, which is the identifier for the log record. You can use the value of <code>@ptr</code>
+            in a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogRecord.html">GetLogRecord</a>
+            operation to get the full log record.
+            </para><para><code>GetQueryResults</code> does not start a query execution. To run a query, use
+            <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>.
+            </para><para>
+            If the value of the <code>Status</code> field in the output is <code>Running</code>,
+            this operation returns only partial results. If you see a value of <code>Scheduled</code>
+            or <code>Running</code> for the status, you can retry the operation later to see the
+            final results. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLQueryResultCmdlet.QueryId">
+            <summary>
+            <para>
+            <para>The ID number of the query.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLQueryResultCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.GetQueryResultsResponse).
+            Specifying the name of a property of type Amazon.CloudWatchLogs.Model.GetQueryResultsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLQueryResultCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the QueryId parameter.
+            The -PassThru parameter is deprecated, use -Select '^QueryId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.GetCWLResourcePolicyCmdlet">
+            <summary>
+            Lists the resource policies in this account.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLResourcePolicyCmdlet.Limit">
+            <summary>
+            <para>
+            <para>The maximum number of resource policies to be displayed with one call of this API.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLResourcePolicyCmdlet.NextToken">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLResourcePolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ResourcePolicies'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.DescribeResourcePoliciesResponse).
+            Specifying the name of a property of type Amazon.CloudWatchLogs.Model.DescribeResourcePoliciesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLResourcePolicyCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.GetCWLSubscriptionFilterCmdlet">
+            <summary>
+            Lists the subscription filters for the specified log group. You can list all the subscription
+            filters or filter the results by prefix. The results are ASCII-sorted by filter name.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLSubscriptionFilterCmdlet.FilterNamePrefix">
+            <summary>
+            <para>
+            <para>The prefix to match. If you don't specify a value, no prefix filter is applied.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLSubscriptionFilterCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>The name of the log group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLSubscriptionFilterCmdlet.Limit">
+            <summary>
+            <para>
+            <para>The maximum number of items returned. If you don't specify a value, the default is
+            up to 50 items.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLSubscriptionFilterCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token for the next set of items to return. (You received this token from a previous
+            call.)</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLSubscriptionFilterCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SubscriptionFilters'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.DescribeSubscriptionFiltersResponse).
+            Specifying the name of a property of type Amazon.CloudWatchLogs.Model.DescribeSubscriptionFiltersResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLSubscriptionFilterCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LogGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LogGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.GetCWLSubscriptionFilterCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.NewCWLExportTaskCmdlet">
+            <summary>
+            Creates an export task, which allows you to efficiently export data from a log group
+            to an Amazon S3 bucket. When you perform a <code>CreateExportTask</code> operation,
+            you must use credentials that have permission to write to the S3 bucket that you specify
+            as the destination.
+            
+             <important><para>
+            Exporting log data to Amazon S3 buckets that are encrypted by KMS is not supported.
+            Exporting log data to Amazon S3 buckets that have S3 Object Lock enabled with a retention
+            period is not supported.
+            </para><para>
+            Exporting to S3 buckets that are encrypted with AES-256 is supported. 
+            </para></important><para>
+            This is an asynchronous call. If all the required information is provided, this operation
+            initiates an export task and responds with the ID of the task. After the task has
+            started, you can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeExportTasks.html">DescribeExportTasks</a>
+            to get the status of the export task. Each account can only have one active (<code>RUNNING</code>
+            or <code>PENDING</code>) export task at a time. To cancel an export task, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelExportTask.html">CancelExportTask</a>.
+            </para><para>
+            You can export logs from multiple log groups or multiple time ranges to the same S3
+            bucket. To separate out log data for each export task, you can specify a prefix to
+            be used as the Amazon S3 key prefix for all exported objects.
+            </para><note><para>
+            Time-based sorting on chunks of log data inside an exported file is not guaranteed.
+            You can sort the exported log fild data by using Linux utilities.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.NewCWLExportTaskCmdlet.Destination">
+            <summary>
+            <para>
+            <para>The name of S3 bucket for the exported log data. The bucket must be in the same Amazon
+            Web Services region.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.NewCWLExportTaskCmdlet.DestinationPrefix">
+            <summary>
+            <para>
+            <para>The prefix used as the start of the key for every object exported. If you don't specify
+            a value, the default is <code>exportedlogs</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.NewCWLExportTaskCmdlet.From">
+            <summary>
+            <para>
+            <para>The start time of the range for the request, expressed as the number of milliseconds
+            after Jan 1, 1970 00:00:00 UTC. Events with a timestamp earlier than this time are
+            not exported.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.NewCWLExportTaskCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>The name of the log group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.NewCWLExportTaskCmdlet.LogStreamNamePrefix">
+            <summary>
+            <para>
+            <para>Export only log streams that match the provided prefix. If you don't specify a value,
+            no prefix filter is applied.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.NewCWLExportTaskCmdlet.TaskName">
+            <summary>
+            <para>
+            <para>The name of the export task.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.NewCWLExportTaskCmdlet.To">
+            <summary>
+            <para>
+            <para>The end time of the range for the request, expressed as the number of milliseconds
+            after Jan 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
+            exported.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.NewCWLExportTaskCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TaskId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.CreateExportTaskResponse).
+            Specifying the name of a property of type Amazon.CloudWatchLogs.Model.CreateExportTaskResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.NewCWLExportTaskCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LogGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LogGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.NewCWLExportTaskCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.NewCWLLogGroupCmdlet">
+            <summary>
+            Creates a log group with the specified name. You can create up to 20,000 log groups
+            per account.
+            
+             
+            <para>
+            You must use the following guidelines when naming a log group:
+            </para><ul><li><para>
+            Log group names must be unique within a region for an Amazon Web Services account.
+            </para></li><li><para>
+            Log group names can be between 1 and 512 characters long.
+            </para></li><li><para>
+            Log group names consist of the following characters: a-z, A-Z, 0-9, '_' (underscore),
+            '-' (hyphen), '/' (forward slash), '.' (period), and '#' (number sign)
+            </para></li></ul><para>
+            When you create a log group, by default the log events in the log group never expire.
+            To set a retention policy so that events expire and are deleted after a specified
+            time, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutRetentionPolicy.html">PutRetentionPolicy</a>.
+            </para><para>
+            If you associate a Key Management Service customer master key (CMK) with the log group,
+            ingested data is encrypted using the CMK. This association is stored as long as the
+            data encrypted with the CMK is still within CloudWatch Logs. This enables CloudWatch
+            Logs to decrypt this data whenever it is requested.
+            </para><para>
+            If you attempt to associate a CMK with the log group but the CMK does not exist or
+            the CMK is disabled, you receive an <code>InvalidParameterException</code> error.
+            
+            </para><important><para>
+            CloudWatch Logs supports only symmetric CMKs. Do not associate an asymmetric CMK with
+            your log group. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+            Symmetric and Asymmetric Keys</a>.
+            </para></important>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.NewCWLLogGroupCmdlet.KmsKeyId">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more
+            information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+            Resource Names - Key Management Service</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.NewCWLLogGroupCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>The name of the log group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.NewCWLLogGroupCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The key-value pairs to use for the tags.</para><para>CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified
+            tags to log groups using the <code>aws:Resource/<i>key-name</i></code> or <code>aws:TagKeys</code>
+            condition keys. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+            access to Amazon Web Services resources using tags</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.NewCWLLogGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.CreateLogGroupResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.NewCWLLogGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LogGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LogGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.NewCWLLogGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.NewCWLLogStreamCmdlet">
+            <summary>
+            Creates a log stream for the specified log group. A log stream is a sequence of log
+            events that originate from a single source, such as an application instance or a resource
+            that is being monitored.
+            
+             
+            <para>
+            There is no limit on the number of log streams that you can create for a log group.
+            There is a limit of 50 TPS on <code>CreateLogStream</code> operations, after which
+            transactions are throttled.
+            </para><para>
+            You must use the following guidelines when naming a log stream:
+            </para><ul><li><para>
+            Log stream names must be unique within the log group.
+            </para></li><li><para>
+            Log stream names can be between 1 and 512 characters long.
+            </para></li><li><para>
+            The ':' (colon) and '*' (asterisk) characters are not allowed.
+            </para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.NewCWLLogStreamCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>The name of the log group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.NewCWLLogStreamCmdlet.LogStreamName">
+            <summary>
+            <para>
+            <para>The name of the log stream.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.NewCWLLogStreamCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.CreateLogStreamResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.NewCWLLogStreamCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LogGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LogGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.NewCWLLogStreamCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.RegisterCWLKmsKeyCmdlet">
+            <summary>
+            Associates the specified Key Management Service customer master key (CMK) with the
+            specified log group.
+            
+             
+            <para>
+            Associating an KMS CMK with a log group overrides any existing associations between
+            the log group and a CMK. After a CMK is associated with a log group, all newly ingested
+            data for the log group is encrypted using the CMK. This association is stored as long
+            as the data encrypted with the CMK is still within CloudWatch Logs. This enables CloudWatch
+            Logs to decrypt this data whenever it is requested.
+            </para><important><para>
+            CloudWatch Logs supports only symmetric CMKs. Do not use an associate an asymmetric
+            CMK with your log group. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+            Symmetric and Asymmetric Keys</a>.
+            </para></important><para>
+            It can take up to 5 minutes for this operation to take effect.
+            </para><para>
+            If you attempt to associate a CMK with a log group but the CMK does not exist or the
+            CMK is disabled, you receive an <code>InvalidParameterException</code> error. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RegisterCWLKmsKeyCmdlet.KmsKeyId">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. This must
+            be a symmetric CMK. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+            Resource Names - Key Management Service</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+            Symmetric and Asymmetric Keys</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RegisterCWLKmsKeyCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>The name of the log group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RegisterCWLKmsKeyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.AssociateKmsKeyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RegisterCWLKmsKeyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the KmsKeyId parameter.
+            The -PassThru parameter is deprecated, use -Select '^KmsKeyId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RegisterCWLKmsKeyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLDestinationCmdlet">
+            <summary>
+            Deletes the specified destination, and eventually disables all the subscription filters
+            that publish to it. This operation does not delete the physical resource encapsulated
+            by the destination.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLDestinationCmdlet.DestinationName">
+            <summary>
+            <para>
+            <para>The name of the destination.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLDestinationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.DeleteDestinationResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLDestinationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DestinationName parameter.
+            The -PassThru parameter is deprecated, use -Select '^DestinationName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLDestinationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLLogGroupCmdlet">
+            <summary>
+            Deletes the specified log group and permanently deletes all the archived log events
+            associated with the log group.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLLogGroupCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>The name of the log group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLLogGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.DeleteLogGroupResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLLogGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LogGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LogGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLLogGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLLogGroupTagCmdlet">
+            <summary>
+            Removes the specified tags from the specified log group.
+            
+             
+            <para>
+            To list the tags for a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html">ListTagsLogGroup</a>.
+            To add tags, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagLogGroup.html">TagLogGroup</a>.
+            </para><para>
+            CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified
+            tags to log groups using the <code>aws:Resource/<i>key-name</i></code> or <code>aws:TagKeys</code>
+            condition keys. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLLogGroupTagCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>The name of the log group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLLogGroupTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tag keys. The corresponding tags are removed from the log group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLLogGroupTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.UntagLogGroupResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLLogGroupTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LogGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LogGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLLogGroupTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLLogStreamCmdlet">
+            <summary>
+            Deletes the specified log stream and permanently deletes all the archived log events
+            associated with the log stream.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLLogStreamCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>The name of the log group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLLogStreamCmdlet.LogStreamName">
+            <summary>
+            <para>
+            <para>The name of the log stream.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLLogStreamCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.DeleteLogStreamResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLLogStreamCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LogStreamName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LogStreamName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLLogStreamCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLMetricFilterCmdlet">
+            <summary>
+            Deletes the specified metric filter.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLMetricFilterCmdlet.FilterName">
+            <summary>
+            <para>
+            <para>The name of the metric filter.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLMetricFilterCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>The name of the log group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLMetricFilterCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.DeleteMetricFilterResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLMetricFilterCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FilterName parameter.
+            The -PassThru parameter is deprecated, use -Select '^FilterName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLMetricFilterCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLQueryDefinitionCmdlet">
+            <summary>
+            Deletes a saved CloudWatch Logs Insights query definition. A query definition contains
+            details about a saved CloudWatch Logs Insights query.
+            
+             
+            <para>
+            Each <code>DeleteQueryDefinition</code> operation can delete one query definition.
+            </para><para>
+            You must have the <code>logs:DeleteQueryDefinition</code> permission to be able to
+            perform this operation.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLQueryDefinitionCmdlet.QueryDefinitionId">
+            <summary>
+            <para>
+            <para>The ID of the query definition that you want to delete. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>
+            to retrieve the IDs of your saved query definitions.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLQueryDefinitionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Success'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.DeleteQueryDefinitionResponse).
+            Specifying the name of a property of type Amazon.CloudWatchLogs.Model.DeleteQueryDefinitionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLQueryDefinitionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the QueryDefinitionId parameter.
+            The -PassThru parameter is deprecated, use -Select '^QueryDefinitionId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLQueryDefinitionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLResourcePolicyCmdlet">
+            <summary>
+            Deletes a resource policy from this account. This revokes the access of the identities
+            in that policy to put log events to this account.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLResourcePolicyCmdlet.PolicyName">
+            <summary>
+            <para>
+            <para>The name of the policy to be revoked. This parameter is required.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLResourcePolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.DeleteResourcePolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLResourcePolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PolicyName parameter.
+            The -PassThru parameter is deprecated, use -Select '^PolicyName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLResourcePolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLRetentionPolicyCmdlet">
+            <summary>
+            Deletes the specified retention policy.
+            
+             
+            <para>
+            Log events do not expire if they belong to log groups without a retention policy.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLRetentionPolicyCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>The name of the log group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLRetentionPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.DeleteRetentionPolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLRetentionPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LogGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LogGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLRetentionPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLSubscriptionFilterCmdlet">
+            <summary>
+            Deletes the specified subscription filter.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLSubscriptionFilterCmdlet.FilterName">
+            <summary>
+            <para>
+            <para>The name of the subscription filter.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLSubscriptionFilterCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>The name of the log group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLSubscriptionFilterCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.DeleteSubscriptionFilterResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLSubscriptionFilterCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FilterName parameter.
+            The -PassThru parameter is deprecated, use -Select '^FilterName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.RemoveCWLSubscriptionFilterCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.StartCWLQueryCmdlet">
+            <summary>
+            Schedules a query of a log group using CloudWatch Logs Insights. You specify the log
+            group and time range to query and the query string to use.
+            
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
+            Logs Insights Query Syntax</a>.
+            </para><para>
+            Queries time out after 15 minutes of execution. If your queries are timing out, reduce
+            the time range being searched or partition your query into a number of queries.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.StartCWLQueryCmdlet.EndTime">
+            <summary>
+            <para>
+            <para>The end of the time range to query. The range is inclusive, so the specified end time
+            is included in the query. Specified as epoch time, the number of seconds since January
+            1, 1970, 00:00:00 UTC.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.StartCWLQueryCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>The log group on which to perform the query.</para><para>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a
+            <code>logGroupName</code> parameter, but not both.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.StartCWLQueryCmdlet.LogGroupNameList">
+            <summary>
+            <para>
+            <para>The list of log groups to be queried. You can include up to 20 log groups.</para><para>A <code>StartQuery</code> operation must include a <code>logGroupNames</code> or a
+            <code>logGroupName</code> parameter, but not both.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.StartCWLQueryCmdlet.QueryString">
+            <summary>
+            <para>
+            <para>The query string to use. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
+            Logs Insights Query Syntax</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.StartCWLQueryCmdlet.StartTime">
+            <summary>
+            <para>
+            <para>The beginning of the time range to query. The range is inclusive, so the specified
+            start time is included in the query. Specified as epoch time, the number of seconds
+            since January 1, 1970, 00:00:00 UTC.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.StartCWLQueryCmdlet.Limit">
+            <summary>
+            <para>
+            <para>The maximum number of log events to return in the query. If the query string uses
+            the <code>fields</code> command, only the specified fields and their values are returned.
+            The default is 1000.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.StartCWLQueryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'QueryId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.StartQueryResponse).
+            Specifying the name of a property of type Amazon.CloudWatchLogs.Model.StartQueryResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.StartCWLQueryCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the QueryString parameter.
+            The -PassThru parameter is deprecated, use -Select '^QueryString' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.StartCWLQueryCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.StopCWLExportTaskCmdlet">
+            <summary>
+            Cancels the specified export task.
+            
+             
+            <para>
+            The task must be in the <code>PENDING</code> or <code>RUNNING</code> state.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.StopCWLExportTaskCmdlet.TaskId">
+            <summary>
+            <para>
+            <para>The ID of the export task.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.StopCWLExportTaskCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.CancelExportTaskResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.StopCWLExportTaskCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TaskId parameter.
+            The -PassThru parameter is deprecated, use -Select '^TaskId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.StopCWLExportTaskCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.StopCWLQueryCmdlet">
+            <summary>
+            Stops a CloudWatch Logs Insights query that is in progress. If the query has already
+            ended, the operation returns an error indicating that the specified query is not running.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.StopCWLQueryCmdlet.QueryId">
+            <summary>
+            <para>
+            <para>The ID number of the query to stop. To find this ID number, use <code>DescribeQueries</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.StopCWLQueryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Success'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.StopQueryResponse).
+            Specifying the name of a property of type Amazon.CloudWatchLogs.Model.StopQueryResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.StopCWLQueryCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the QueryId parameter.
+            The -PassThru parameter is deprecated, use -Select '^QueryId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.StopCWLQueryCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.TestCWLMetricFilterCmdlet">
+            <summary>
+            Tests the filter pattern of a metric filter against a sample of log event messages.
+            You can use this operation to validate the correctness of a metric filter pattern.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.TestCWLMetricFilterCmdlet.FilterPattern">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.TestCWLMetricFilterCmdlet.LogEventMessage">
+            <summary>
+            <para>
+            <para>The log event messages to test.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.TestCWLMetricFilterCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Matches'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.TestMetricFilterResponse).
+            Specifying the name of a property of type Amazon.CloudWatchLogs.Model.TestMetricFilterResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.TestCWLMetricFilterCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FilterPattern parameter.
+            The -PassThru parameter is deprecated, use -Select '^FilterPattern' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.UnregisterCWLKmsKeyCmdlet">
+            <summary>
+            Disassociates the associated Key Management Service customer master key (CMK) from
+            the specified log group.
+            
+             
+            <para>
+            After the KMS CMK is disassociated from the log group, CloudWatch Logs stops encrypting
+            newly ingested data for the log group. All previously ingested data remains encrypted,
+            and CloudWatch Logs requires permissions for the CMK whenever the encrypted data is
+            requested.
+            </para><para>
+            Note that it can take up to 5 minutes for this operation to take effect.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.UnregisterCWLKmsKeyCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>The name of the log group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.UnregisterCWLKmsKeyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.DisassociateKmsKeyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.UnregisterCWLKmsKeyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LogGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LogGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.UnregisterCWLKmsKeyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.WriteCWLDestinationCmdlet">
+            <summary>
+            Creates or updates a destination. This operation is used only to create destinations
+            for cross-account subscriptions.
+            
+             
+            <para>
+            A destination encapsulates a physical resource (such as an Amazon Kinesis stream)
+            and enables you to subscribe to a real-time stream of log events for a different account,
+            ingested using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.
+            </para><para>
+            Through an access policy, a destination controls what is written to it. By default,
+            <code>PutDestination</code> does not set any access policy with the destination, which
+            means a cross-account user cannot call <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutSubscriptionFilter.html">PutSubscriptionFilter</a>
+            against this destination. To enable this, the destination owner must call <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>
+            after <code>PutDestination</code>.
+            </para><para>
+            To perform a <code>PutDestination</code> operation, you must also have the <code>iam:PassRole</code>
+            permission.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLDestinationCmdlet.DestinationName">
+            <summary>
+            <para>
+            <para>A name for the destination.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLDestinationCmdlet.RoleArn">
+            <summary>
+            <para>
+            <para>The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon
+            Kinesis <code>PutRecord</code> operation on the destination stream.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLDestinationCmdlet.TargetArn">
+            <summary>
+            <para>
+            <para>The ARN of an Amazon Kinesis stream to which to deliver matching log events.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLDestinationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Destination'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.PutDestinationResponse).
+            Specifying the name of a property of type Amazon.CloudWatchLogs.Model.PutDestinationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLDestinationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DestinationName parameter.
+            The -PassThru parameter is deprecated, use -Select '^DestinationName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLDestinationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.WriteCWLDestinationPolicyCmdlet">
+            <summary>
+            Creates or updates an access policy associated with an existing destination. An access
+            policy is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html">IAM
+            policy document</a> that is used to authorize claims to register a subscription filter
+            against a given destination.
+            
+             
+            <para>
+            If multiple Amazon Web Services accounts are sending logs to this destination, each
+            sender account must be listed separately in the policy. The policy does not support
+            specifying <code>*</code> as the Principal or the use of the <code>aws:PrincipalOrgId</code>
+            global key.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLDestinationPolicyCmdlet.AccessPolicy">
+            <summary>
+            <para>
+            <para>An IAM policy document that authorizes cross-account users to deliver their log events
+            to the associated destination. This can be up to 5120 bytes.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLDestinationPolicyCmdlet.DestinationName">
+            <summary>
+            <para>
+            <para>A name for an existing destination.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLDestinationPolicyCmdlet.ForceUpdate">
+            <summary>
+            <para>
+            <para>Specify true if you are updating an existing destination policy to grant permission
+            to an organization ID instead of granting permission to individual AWS accounts. Before
+            you update a destination policy this way, you must first update the subscription filters
+            in the accounts that send logs to this destination. If you do not, the subscription
+            filters might stop working. By specifying <code>true</code> for <code>forceUpdate</code>,
+            you are affirming that you have already updated the subscription filters. For more
+            information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Cross-Account-Log_Subscription-Update.html">
+            Updating an existing cross-account subscription</a></para><para>If you omit this parameter, the default of <code>false</code> is used.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLDestinationPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.PutDestinationPolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLDestinationPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DestinationName parameter.
+            The -PassThru parameter is deprecated, use -Select '^DestinationName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLDestinationPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.WriteCWLLogEventCmdlet">
+            <summary>
+            Uploads a batch of log events to the specified log stream.
+            
+             
+            <para>
+            You must include the sequence token obtained from the response of the previous call.
+            An upload in a newly created log stream does not require a sequence token. You can
+            also get the sequence token in the <code>expectedSequenceToken</code> field from <code>InvalidSequenceTokenException</code>.
+            If you call <code>PutLogEvents</code> twice within a narrow time period using the
+            same value for <code>sequenceToken</code>, both calls might be successful or one might
+            be rejected.
+            </para><para>
+            The batch of events must satisfy the following constraints:
+            </para><ul><li><para>
+            The maximum batch size is 1,048,576 bytes. This size is calculated as the sum of all
+            event messages in UTF-8, plus 26 bytes for each log event.
+            </para></li><li><para>
+            None of the log events in the batch can be more than 2 hours in the future.
+            </para></li><li><para>
+            None of the log events in the batch can be older than 14 days or older than the retention
+            period of the log group.
+            </para></li><li><para>
+            The log events in the batch must be in chronological order by their timestamp. The
+            timestamp is the time the event occurred, expressed as the number of milliseconds
+            after Jan 1, 1970 00:00:00 UTC. (In Amazon Web Services Tools for PowerShell and the
+            Amazon Web Services SDK for .NET, the timestamp is specified in .NET format: yyyy-mm-ddThh:mm:ss.
+            For example, 2017-09-15T13:45:30.) 
+            </para></li><li><para>
+            A batch of log events in a single request cannot span more than 24 hours. Otherwise,
+            the operation fails.
+            </para></li><li><para>
+            The maximum number of log events in a batch is 10,000.
+            </para></li><li><para>
+            There is a quota of 5 requests per second per log stream. Additional requests are
+            throttled. This quota can't be changed.
+            </para></li></ul><para>
+            If a call to <code>PutLogEvents</code> returns "UnrecognizedClientException" the most
+            likely cause is an invalid Amazon Web Services access key ID or secret key. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLLogEventCmdlet.LogEvent">
+            <summary>
+            <para>
+            <para>The log events.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLLogEventCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>The name of the log group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLLogEventCmdlet.LogStreamName">
+            <summary>
+            <para>
+            <para>The name of the log stream.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLLogEventCmdlet.SequenceToken">
+            <summary>
+            <para>
+            <para>The sequence token obtained from the response of the previous <code>PutLogEvents</code>
+            call. An upload in a newly created log stream does not require a sequence token. You
+            can also get the sequence token using <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html">DescribeLogStreams</a>.
+            If you call <code>PutLogEvents</code> twice within a narrow time period using the
+            same value for <code>sequenceToken</code>, both calls might be successful or one might
+            be rejected.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLLogEventCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'NextSequenceToken'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.PutLogEventsResponse).
+            Specifying the name of a property of type Amazon.CloudWatchLogs.Model.PutLogEventsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLLogEventCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SequenceToken parameter.
+            The -PassThru parameter is deprecated, use -Select '^SequenceToken' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLLogEventCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.WriteCWLMetricFilterCmdlet">
+            <summary>
+            Creates or updates a metric filter and associates it with the specified log group.
+            Metric filters allow you to configure rules to extract metric data from log events
+            ingested through <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.
+            
+             
+            <para>
+            The maximum number of metric filters that can be associated with a log group is 100.
+            </para><para>
+            When you create a metric filter, you can also optionally assign a unit and dimensions
+            to the metric that is created.
+            </para><important><para>
+            Metrics extracted from log events are charged as custom metrics. To prevent unexpected
+            high charges, do not specify high-cardinality fields such as <code>IPAddress</code>
+            or <code>requestID</code> as dimensions. Each different value found for a dimension
+            is treated as a separate metric and accrues charges as a separate custom metric. 
+            </para><para>
+            To help prevent accidental high charges, Amazon disables a metric filter if it generates
+            1000 different name/value pairs for the dimensions that you have specified within
+            a certain amount of time.
+            </para><para>
+            You can also set up a billing alarm to alert you if your charges are higher than expected.
+            For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
+            Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>.
+            
+            </para></important>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLMetricFilterCmdlet.FilterName">
+            <summary>
+            <para>
+            <para>A name for the metric filter.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLMetricFilterCmdlet.FilterPattern">
+            <summary>
+            <para>
+            <para>A filter pattern for extracting metric data out of ingested log events.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLMetricFilterCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>The name of the log group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLMetricFilterCmdlet.MetricTransformation">
+            <summary>
+            <para>
+            <para>A collection of information that defines how metric data gets emitted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLMetricFilterCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.PutMetricFilterResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLMetricFilterCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LogGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LogGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLMetricFilterCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.WriteCWLQueryDefinitionCmdlet">
+            <summary>
+            Creates or updates a query definition for CloudWatch Logs Insights. For more information,
+            see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html">Analyzing
+            Log Data with CloudWatch Logs Insights</a>.
+            
+             
+            <para>
+            To update a query definition, specify its <code>queryDefinitionId</code> in your request.
+            The values of <code>name</code>, <code>queryString</code>, and <code>logGroupNames</code>
+            are changed to the values that you specify in your update operation. No current values
+            are retained from the current query definition. For example, if you update a current
+            query definition that includes log groups, and you don't specify the <code>logGroupNames</code>
+            parameter in your update operation, the query definition changes to contain no log
+            groups.
+            </para><para>
+            You must have the <code>logs:PutQueryDefinition</code> permission to be able to perform
+            this operation.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLQueryDefinitionCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>Use this parameter to include specific log groups as part of your query definition.</para><para>If you are updating a query definition and you omit this parameter, then the updated
+            definition will contain no log groups.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLQueryDefinitionCmdlet.Name">
+            <summary>
+            <para>
+            <para>A name for the query definition. If you are saving a lot of query definitions, we
+            recommend that you name them so that you can easily find the ones you want by using
+            the first part of the name as a filter in the <code>queryDefinitionNamePrefix</code>
+            parameter of <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLQueryDefinitionCmdlet.QueryDefinitionId">
+            <summary>
+            <para>
+            <para>If you are updating a query definition, use this parameter to specify the ID of the
+            query definition that you want to update. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html">DescribeQueryDefinitions</a>
+            to retrieve the IDs of your saved query definitions.</para><para>If you are creating a query definition, do not specify this parameter. CloudWatch
+            generates a unique ID for the new query definition and include it in the response
+            to this operation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLQueryDefinitionCmdlet.QueryString">
+            <summary>
+            <para>
+            <para>The query string to use for this definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
+            Logs Insights Query Syntax</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLQueryDefinitionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'QueryDefinitionId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.PutQueryDefinitionResponse).
+            Specifying the name of a property of type Amazon.CloudWatchLogs.Model.PutQueryDefinitionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLQueryDefinitionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLQueryDefinitionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.WriteCWLResourcePolicyCmdlet">
+            <summary>
+            Creates or updates a resource policy allowing other Amazon Web Services services to
+            put log events to this account, such as Amazon Route 53. An account can have up to
+            10 resource policies per Amazon Web Services Region.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLResourcePolicyCmdlet.PolicyDocument">
+            <summary>
+            <para>
+            <para>Details of the new policy, including the identity of the principal that is enabled
+            to put logs to this account. This is formatted as a JSON string. This parameter is
+            required.</para><para>The following example creates a resource policy enabling the Route 53 service to put
+            DNS query logs in to the specified log group. Replace <code>"logArn"</code> with the
+            ARN of your CloudWatch Logs resource, such as a log group or log stream.</para><para>CloudWatch Logs also supports <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn">aws:SourceArn</a>
+            and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount">aws:SourceAccount</a>
+            condition context keys.</para><para>In the example resource policy, you would replace the value of <code>SourceArn</code>
+            with the resource making the call from Route 53 to CloudWatch Logs and replace the
+            value of <code>SourceAccount</code> with the Amazon Web Services account ID making
+            that call.</para><para><code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs",
+            "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action":
+            "logs:PutLogEvents", "Resource": "logArn", "Condition": { "ArnLike": { "aws:SourceArn":
+            "myRoute53ResourceArn" }, "StringEquals": { "aws:SourceAccount": "myAwsAccountId"
+            } } } ] }</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLResourcePolicyCmdlet.PolicyName">
+            <summary>
+            <para>
+            <para>Name of the new policy. This parameter is required.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLResourcePolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ResourcePolicy'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.PutResourcePolicyResponse).
+            Specifying the name of a property of type Amazon.CloudWatchLogs.Model.PutResourcePolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLResourcePolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PolicyName parameter.
+            The -PassThru parameter is deprecated, use -Select '^PolicyName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLResourcePolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.WriteCWLRetentionPolicyCmdlet">
+            <summary>
+            Sets the retention of the specified log group. A retention policy allows you to configure
+            the number of days for which to retain log events in the specified log group.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLRetentionPolicyCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>The name of the log group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLRetentionPolicyCmdlet.RetentionInDays">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLRetentionPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.PutRetentionPolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLRetentionPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LogGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LogGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLRetentionPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWL.WriteCWLSubscriptionFilterCmdlet">
+            <summary>
+            Creates or updates a subscription filter and associates it with the specified log
+            group. Subscription filters allow you to subscribe to a real-time stream of log events
+            ingested through <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>
+            and have them delivered to a specific destination. When log events are sent to the
+            receiving service, they are Base64 encoded and compressed with the gzip format.
+            
+             
+            <para>
+            The following destinations are supported for subscription filters:
+            </para><ul><li><para>
+            An Amazon Kinesis stream belonging to the same account as the subscription filter,
+            for same-account delivery.
+            </para></li><li><para>
+            A logical destination that belongs to a different account, for cross-account delivery.
+            </para></li><li><para>
+            An Amazon Kinesis Firehose delivery stream that belongs to the same account as the
+            subscription filter, for same-account delivery.
+            </para></li><li><para>
+            An Lambda function that belongs to the same account as the subscription filter, for
+            same-account delivery.
+            </para></li></ul><para>
+            Each log group can have up to two subscription filters associated with it. If you
+            are updating an existing filter, you must specify the correct name in <code>filterName</code>.
+            
+            </para><para>
+            To perform a <code>PutSubscriptionFilter</code> operation, you must also have the
+            <code>iam:PassRole</code> permission.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLSubscriptionFilterCmdlet.DestinationArn">
+            <summary>
+            <para>
+            <para>The ARN of the destination to deliver matching log events to. Currently, the supported
+            destinations are:</para><ul><li><para>An Amazon Kinesis stream belonging to the same account as the subscription filter,
+            for same-account delivery.</para></li><li><para>A logical destination (specified using an ARN) belonging to a different account, for
+            cross-account delivery.</para><para>If you are setting up a cross-account subscription, the destination must have an IAM
+            policy associated with it that allows the sender to send logs to the destination.
+            For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</para></li><li><para>An Amazon Kinesis Firehose delivery stream belonging to the same account as the subscription
+            filter, for same-account delivery.</para></li><li><para>A Lambda function belonging to the same account as the subscription filter, for same-account
+            delivery.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLSubscriptionFilterCmdlet.Distribution">
+            <summary>
+            <para>
+            <para>The method used to distribute log data to the destination. By default, log data is
+            grouped by log stream, but the grouping can be set to random for a more even distribution.
+            This property is only applicable when the destination is an Amazon Kinesis stream.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLSubscriptionFilterCmdlet.FilterName">
+            <summary>
+            <para>
+            <para>A name for the subscription filter. If you are updating an existing filter, you must
+            specify the correct name in <code>filterName</code>. To find the name of the filter
+            currently associated with a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLSubscriptionFilterCmdlet.FilterPattern">
+            <summary>
+            <para>
+            <para>A filter pattern for subscribing to a filtered stream of log events.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLSubscriptionFilterCmdlet.LogGroupName">
+            <summary>
+            <para>
+            <para>The name of the log group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLSubscriptionFilterCmdlet.RoleArn">
+            <summary>
+            <para>
+            <para>The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested
+            log events to the destination stream. You don't need to provide the ARN when you are
+            working with a logical destination for cross-account delivery.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLSubscriptionFilterCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchLogs.Model.PutSubscriptionFilterResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLSubscriptionFilterCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LogGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^LogGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWL.WriteCWLSubscriptionFilterCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,1602 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.BillingConductor</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.AddABCResourceTagCmdlet">
+            <summary>
+            Associates the specified tags to a resource with the specified <code>resourceArn</code>.
+            If existing tags on a resource are not specified in the request parameters, they are
+            not changed.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.AddABCResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para> The Amazon Resource Name (ARN) of the resource to which to add tags. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.AddABCResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para> The tags to add to the resource as a list of key-value pairs. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.AddABCResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.AddABCResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.AddABCResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.GetABCAccountAssociationListCmdlet">
+            <summary>
+            <i><b>Amazon Web Services Billing Conductor is in beta release and is subject to
+            change. Your use of Amazon Web Services Billing Conductor is subject to the Beta Service
+            Participation terms of the <a href="https://aws.amazon.com/service-terms/">Amazon
+            Web Services Service Terms</a> (Section 1.10).</b></i><para>
+             This is a paginated call to list linked accounts that are linked to the payer account
+            for the specified time period. If no information is provided, the current billing
+            period is used. The response will optionally include the billing group associated
+            with the linked account.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCAccountAssociationListCmdlet.Filters_AccountId">
+            <summary>
+            <para>
+            <para> The Amazon Web Services account ID to filter on. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCAccountAssociationListCmdlet.Filters_Association">
+            <summary>
+            <para>
+            <para><code>MONITORED</code>: linked accounts that are associated to billing groups.</para><para><code>UNMONITORED</code>: linked accounts that are not associated to billing groups.</para><para><code>Billing Group Arn</code>: linked accounts that are associated to the provided
+            Billing Group Arn. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCAccountAssociationListCmdlet.BillingPeriod">
+            <summary>
+            <para>
+            <para> The preferred billing period to get account associations. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCAccountAssociationListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para> The pagination token used on subsequent calls to retrieve accounts. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCAccountAssociationListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'LinkedAccounts'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.ListAccountAssociationsResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.ListAccountAssociationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCAccountAssociationListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BillingPeriod parameter.
+            The -PassThru parameter is deprecated, use -Select '^BillingPeriod' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.GetABCBillingGroupCostReportListCmdlet">
+            <summary>
+            A paginated call to retrieve a summary report of actual Amazon Web Services charges
+            and the calculated Amazon Web Services charges based on the associated pricing plan
+            of a billing group.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCBillingGroupCostReportListCmdlet.Filters_BillingGroupArn">
+            <summary>
+            <para>
+            <para>The list of Amazon Resource Names (ARNs) used to filter billing groups to retrieve
+            reports. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCBillingGroupCostReportListCmdlet.BillingPeriod">
+            <summary>
+            <para>
+            <para>The preferred billing period for your report. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCBillingGroupCostReportListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of reports to retrieve. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCBillingGroupCostReportListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token used on subsequent calls to get reports. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCBillingGroupCostReportListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'BillingGroupCostReports'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.ListBillingGroupCostReportsResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.ListBillingGroupCostReportsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCBillingGroupCostReportListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BillingPeriod parameter.
+            The -PassThru parameter is deprecated, use -Select '^BillingPeriod' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.GetABCBillingGroupListCmdlet">
+            <summary>
+            A paginated call to retrieve a list of billing groups for the given billing period.
+            If you don't provide a billing group, the current billing period is used.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCBillingGroupListCmdlet.Filters_Arn">
+            <summary>
+            <para>
+            <para>The list of billing group Amazon Resource Names (ARNs) to retrieve information. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCBillingGroupListCmdlet.BillingPeriod">
+            <summary>
+            <para>
+            <para>The preferred billing period to get billing groups. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCBillingGroupListCmdlet.Filters_PricingPlan">
+            <summary>
+            <para>
+            <para>The pricing plan Amazon Resource Names (ARNs) to retrieve information. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCBillingGroupListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of billing groups to retrieve. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCBillingGroupListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token used on subsequent calls to get billing groups. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCBillingGroupListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'BillingGroups'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.ListBillingGroupsResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.ListBillingGroupsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCBillingGroupListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BillingPeriod parameter.
+            The -PassThru parameter is deprecated, use -Select '^BillingPeriod' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.GetABCCustomLineItemListCmdlet">
+            <summary>
+            A paginated call to get a list of all custom line items (FFLIs) for the given billing
+            period. If you don't provide a billing period, the current billing period is used.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCCustomLineItemListCmdlet.Filters_Arn">
+            <summary>
+            <para>
+            <para> A list of custom line item ARNs to retrieve information. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCCustomLineItemListCmdlet.Filters_BillingGroup">
+            <summary>
+            <para>
+            <para> The billing group Amazon Resource Names (ARNs) to retrieve information. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCCustomLineItemListCmdlet.BillingPeriod">
+            <summary>
+            <para>
+            <para> The preferred billing period to get custom line items (FFLIs). </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCCustomLineItemListCmdlet.Filters_Name">
+            <summary>
+            <para>
+            <para> A list of custom line items to retrieve information. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCCustomLineItemListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para> The maximum number of billing groups to retrieve. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCCustomLineItemListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para> The pagination token used on subsequent calls to get custom line items (FFLIs). </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCCustomLineItemListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'CustomLineItems'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.ListCustomLineItemsResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.ListCustomLineItemsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCCustomLineItemListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BillingPeriod parameter.
+            The -PassThru parameter is deprecated, use -Select '^BillingPeriod' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingPlanListCmdlet">
+            <summary>
+            A paginated call to get pricing plans for the given billing period. If you don't provide
+            a billing period, the current billing period is used.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingPlanListCmdlet.Filters_Arn">
+            <summary>
+            <para>
+            <para>A list of pricing plan Amazon Resource Names (ARNs) to retrieve information. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingPlanListCmdlet.BillingPeriod">
+            <summary>
+            <para>
+            <para>The preferred billing period to get pricing plan. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingPlanListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of pricing plans to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingPlanListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The pagination token used on subsequent call to get pricing plans. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingPlanListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.ListPricingPlansResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.ListPricingPlansResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingPlanListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BillingPeriod parameter.
+            The -PassThru parameter is deprecated, use -Select '^BillingPeriod' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingPlansAssociatedWithPricingRuleListCmdlet">
+            <summary>
+            A list of the pricing plans associated with a pricing rule.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingPlansAssociatedWithPricingRuleListCmdlet.BillingPeriod">
+            <summary>
+            <para>
+            <para> The pricing plan billing period for which associations will be listed. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingPlansAssociatedWithPricingRuleListCmdlet.PricingRuleArn">
+            <summary>
+            <para>
+            <para> The pricing rule Amazon Resource Name (ARN) for which associations will be listed.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingPlansAssociatedWithPricingRuleListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para> The optional maximum number of pricing rule associations to retrieve. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingPlansAssociatedWithPricingRuleListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para> The optional pagination token returned by a previous call. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingPlansAssociatedWithPricingRuleListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.ListPricingPlansAssociatedWithPricingRuleResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.ListPricingPlansAssociatedWithPricingRuleResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingPlansAssociatedWithPricingRuleListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PricingRuleArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^PricingRuleArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingRuleListCmdlet">
+            <summary>
+            Describes a pricing rule that can be associated to a pricing plan, or set of pricing
+            plans.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingRuleListCmdlet.Filters_Arn">
+            <summary>
+            <para>
+            <para> A list containing the pricing rule Amazon Resource Names (ARNs) to include in the
+            API response. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingRuleListCmdlet.BillingPeriod">
+            <summary>
+            <para>
+            <para> The preferred billing period to get the pricing plan. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingRuleListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para> The maximum number of pricing rules to retrieve. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingRuleListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para> The pagination token used on subsequent call to get pricing rules. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingRuleListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.ListPricingRulesResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.ListPricingRulesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingRuleListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BillingPeriod parameter.
+            The -PassThru parameter is deprecated, use -Select '^BillingPeriod' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingRulesAssociatedToPricingPlanListCmdlet">
+            <summary>
+            Lists the pricing rules associated with a pricing plan.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingRulesAssociatedToPricingPlanListCmdlet.BillingPeriod">
+            <summary>
+            <para>
+            <para> The billing period for which the pricing rule associations are to be listed. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingRulesAssociatedToPricingPlanListCmdlet.PricingPlanArn">
+            <summary>
+            <para>
+            <para> The Amazon Resource Name (ARN) of the pricing plan for which associations are to
+            be listed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingRulesAssociatedToPricingPlanListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The optional maximum number of pricing rule associations to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingRulesAssociatedToPricingPlanListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para> The optional pagination token returned by a previous call. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingRulesAssociatedToPricingPlanListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.ListPricingRulesAssociatedToPricingPlanResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.ListPricingRulesAssociatedToPricingPlanResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCPricingRulesAssociatedToPricingPlanListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PricingPlanArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^PricingPlanArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.GetABCResourcesAssociatedToCustomLineItemListCmdlet">
+            <summary>
+            List the resources associated to a custom line item.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCResourcesAssociatedToCustomLineItemListCmdlet.Arn">
+            <summary>
+            <para>
+            <para> The ARN of the custom line item for which the resource associations will be listed.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCResourcesAssociatedToCustomLineItemListCmdlet.BillingPeriod">
+            <summary>
+            <para>
+            <para> The billing period for which the resource associations will be listed. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCResourcesAssociatedToCustomLineItemListCmdlet.Filters_Relationship">
+            <summary>
+            <para>
+            <para> The type of relationship between the custom line item and the associated resource.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCResourcesAssociatedToCustomLineItemListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para> (Optional) The maximum number of resource associations to be retrieved. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCResourcesAssociatedToCustomLineItemListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para> (Optional) The pagination token returned by a previous request. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCResourcesAssociatedToCustomLineItemListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.ListResourcesAssociatedToCustomLineItemResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.ListResourcesAssociatedToCustomLineItemResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCResourcesAssociatedToCustomLineItemListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.GetABCResourceTagCmdlet">
+            <summary>
+            A list the tags for a resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para> The Amazon Resource Name (ARN) that identifies the resource to list the tags. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.GetABCResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.NewABCBillingGroupCmdlet">
+            <summary>
+            Creates a billing group that resembles a consolidated billing family that Amazon
+            Web Services charges, based off of the predefined pricing plan computation.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCBillingGroupCmdlet.Description">
+            <summary>
+            <para>
+            <para>The billing group description. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCBillingGroupCmdlet.AccountGrouping_LinkedAccountId">
+            <summary>
+            <para>
+            <para> The account IDs that make up the billing group. Account IDs must be a part of the
+            consolidated billing family, and not associated with another billing group. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCBillingGroupCmdlet.Name">
+            <summary>
+            <para>
+            <para> The billing group name. The names must be unique. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCBillingGroupCmdlet.ComputationPreference_PricingPlanArn">
+            <summary>
+            <para>
+            <para> The Amazon Resource Name (ARN) of the pricing plan used to compute the Amazon Web
+            Services charges for a billing group. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCBillingGroupCmdlet.PrimaryAccountId">
+            <summary>
+            <para>
+            <para> The account ID that serves as the main account in a billing group. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCBillingGroupCmdlet.Tag">
+            <summary>
+            <para>
+            <para> A map that contains tag keys and tag values that are attached to a billing group.
+            This feature isn't available during the beta. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCBillingGroupCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para> The token that is needed to support idempotency. Idempotency isn't currently supported,
+            but will be implemented in a future update. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCBillingGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Arn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.CreateBillingGroupResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.CreateBillingGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCBillingGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCBillingGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.NewABCCustomLineItemCmdlet">
+            <summary>
+            Creates a custom line item that can be used to create a one-time fixed charge that
+            can be applied to a single billing group for the current or previous billing period.
+            The one-time fixed charge is either a fee or discount.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCCustomLineItemCmdlet.Percentage_AssociatedValue">
+            <summary>
+            <para>
+            <para> A list of resource ARNs to associate to the percentage custom line item. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCCustomLineItemCmdlet.BillingGroupArn">
+            <summary>
+            <para>
+            <para> The Amazon Resource Name (ARN) that references the billing group where the custom
+            line item applies to. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCCustomLineItemCmdlet.Flat_ChargeValue">
+            <summary>
+            <para>
+            <para> The custom line item's fixed charge value in USD. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCCustomLineItemCmdlet.Description">
+            <summary>
+            <para>
+            <para> The description of the custom line item. This is shown on the Bills page in association
+            with the charge value. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCCustomLineItemCmdlet.BillingPeriodRange_ExclusiveEndBillingPeriod">
+            <summary>
+            <para>
+            <para> The inclusive end billing period that defines a billing period range where a custom
+            line is applied. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCCustomLineItemCmdlet.BillingPeriodRange_InclusiveStartBillingPeriod">
+            <summary>
+            <para>
+            <para> The inclusive start billing period that defines a billing period range where a custom
+            line is applied. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCCustomLineItemCmdlet.Name">
+            <summary>
+            <para>
+            <para> The name of the custom line item. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCCustomLineItemCmdlet.Percentage_PercentageValue">
+            <summary>
+            <para>
+            <para> The custom line item's percentage value. This will be multiplied against the combined
+            value of its associated resources to determine its charge value. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCCustomLineItemCmdlet.Tag">
+            <summary>
+            <para>
+            <para> A map that contains tag keys and tag values that are attached to a custom line item.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCCustomLineItemCmdlet.ChargeDetails_Type">
+            <summary>
+            <para>
+            <para> The type of the custom line item that indicates whether the charge is a fee or credit.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCCustomLineItemCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para> The token that is needed to support idempotency. Idempotency isn't currently supported,
+            but will be implemented in a future update. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCCustomLineItemCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Arn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.CreateCustomLineItemResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.CreateCustomLineItemResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCCustomLineItemCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BillingGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^BillingGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCCustomLineItemCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.NewABCPricingPlanCmdlet">
+            <summary>
+            Creates a pricing plan that is used for computing Amazon Web Services charges for
+            billing groups.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCPricingPlanCmdlet.Description">
+            <summary>
+            <para>
+            <para>The pricing plan description. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCPricingPlanCmdlet.Name">
+            <summary>
+            <para>
+            <para>The pricing plan name. The names must be unique to each pricing plan. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCPricingPlanCmdlet.PricingRuleArn">
+            <summary>
+            <para>
+            <para> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCPricingPlanCmdlet.Tag">
+            <summary>
+            <para>
+            <para> A map that contains tag keys and tag values that are attached to a pricing plan.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCPricingPlanCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para> The token that is needed to support idempotency. Idempotency isn't currently supported,
+            but will be implemented in a future update. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCPricingPlanCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Arn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.CreatePricingPlanResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.CreatePricingPlanResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCPricingPlanCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCPricingPlanCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.NewABCPricingRuleCmdlet">
+            <summary>
+            Creates a pricing rule can be associated to a pricing plan, or a set of pricing plans.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCPricingRuleCmdlet.Description">
+            <summary>
+            <para>
+            <para> The pricing rule description. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCPricingRuleCmdlet.ModifierPercentage">
+            <summary>
+            <para>
+            <para> A percentage modifier applied on the public pricing rates. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCPricingRuleCmdlet.Name">
+            <summary>
+            <para>
+            <para> The pricing rule name. The names must be unique to each pricing rule. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCPricingRuleCmdlet.Scope">
+            <summary>
+            <para>
+            <para> The scope of pricing rule that indicates if it is globally applicable, or is service-specific.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCPricingRuleCmdlet.Service">
+            <summary>
+            <para>
+            <para> If the <code>Scope</code> attribute is set to <code>SERVICE</code>, the attribute
+            indicates which service the <code>PricingRule</code> is applicable for. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCPricingRuleCmdlet.Tag">
+            <summary>
+            <para>
+            <para> A map that contains tag keys and tag values that are attached to a pricing rule.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCPricingRuleCmdlet.Type">
+            <summary>
+            <para>
+            <para> The type of pricing rule. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCPricingRuleCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para> The token that is needed to support idempotency. Idempotency isn't currently supported,
+            but will be implemented in a future update. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCPricingRuleCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Arn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.CreatePricingRuleResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.CreatePricingRuleResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.NewABCPricingRuleCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.RegisterABCAccountCmdlet">
+            <summary>
+            Connects an array of account IDs in a consolidated billing family to a predefined
+            billing group. The account IDs must be a part of the consolidated billing family during
+            the current month, and not already associated with another billing group. The maximum
+            number of accounts that can be associated in one call is 30.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RegisterABCAccountCmdlet.AccountId">
+            <summary>
+            <para>
+            <para> The associating array of account IDs. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RegisterABCAccountCmdlet.Arn">
+            <summary>
+            <para>
+            <para> The Amazon Resource Name (ARN) of the billing group that associates the array of
+            account IDs. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RegisterABCAccountCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Arn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.AssociateAccountsResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.AssociateAccountsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RegisterABCAccountCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RegisterABCAccountCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.RegisterABCPricingRuleCmdlet">
+            <summary>
+            Connects an array of <code>PricingRuleArns</code> to a defined <code>PricingPlan</code>.
+            The maximum number <code>PricingRuleArn</code> that can be associated in one call
+            is 30.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RegisterABCPricingRuleCmdlet.Arn">
+            <summary>
+            <para>
+            <para> The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated
+            with. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RegisterABCPricingRuleCmdlet.PricingRuleArn">
+            <summary>
+            <para>
+            <para> The <code>PricingRuleArns</code> that are associated with the Pricing Plan. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RegisterABCPricingRuleCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Arn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.AssociatePricingRulesResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.AssociatePricingRulesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RegisterABCPricingRuleCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RegisterABCPricingRuleCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.RegisterABCResourceBatchToCustomLineItemCmdlet">
+            <summary>
+            Associates a batch of resources to a percentage custom line item.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RegisterABCResourceBatchToCustomLineItemCmdlet.BillingPeriodRange_ExclusiveEndBillingPeriod">
+            <summary>
+            <para>
+            <para> The inclusive end billing period that defines a billing period range where a custom
+            line is applied. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RegisterABCResourceBatchToCustomLineItemCmdlet.BillingPeriodRange_InclusiveStartBillingPeriod">
+            <summary>
+            <para>
+            <para> The inclusive start billing period that defines a billing period range where a custom
+            line is applied. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RegisterABCResourceBatchToCustomLineItemCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para> A list containing the ARNs of the resources to be associated. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RegisterABCResourceBatchToCustomLineItemCmdlet.TargetArn">
+            <summary>
+            <para>
+            <para> A percentage custom line item ARN to associate the resources to. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RegisterABCResourceBatchToCustomLineItemCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.BatchAssociateResourcesToCustomLineItemResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.BatchAssociateResourcesToCustomLineItemResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RegisterABCResourceBatchToCustomLineItemCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TargetArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^TargetArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RegisterABCResourceBatchToCustomLineItemCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.RemoveABCBillingGroupCmdlet">
+            <summary>
+            Deletes a billing group.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RemoveABCBillingGroupCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the billing group you're deleting.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RemoveABCBillingGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Arn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.DeleteBillingGroupResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.DeleteBillingGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RemoveABCBillingGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RemoveABCBillingGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.RemoveABCCustomLineItemCmdlet">
+            <summary>
+            Deletes the custom line item identified by the given ARN in the current, or previous
+            billing period.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RemoveABCCustomLineItemCmdlet.Arn">
+            <summary>
+            <para>
+            <para> The ARN of the custom line item to be deleted. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RemoveABCCustomLineItemCmdlet.BillingPeriodRange_ExclusiveEndBillingPeriod">
+            <summary>
+            <para>
+            <para> The inclusive end billing period that defines a billing period range where a custom
+            line is applied. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RemoveABCCustomLineItemCmdlet.BillingPeriodRange_InclusiveStartBillingPeriod">
+            <summary>
+            <para>
+            <para> The inclusive start billing period that defines a billing period range where a custom
+            line is applied. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RemoveABCCustomLineItemCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Arn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.DeleteCustomLineItemResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.DeleteCustomLineItemResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RemoveABCCustomLineItemCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RemoveABCCustomLineItemCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.RemoveABCPricingPlanCmdlet">
+            <summary>
+            Deletes a pricing plan. The pricing plan must not be associated with any billing groups
+            to delete successfully.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RemoveABCPricingPlanCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the pricing plan you're deleting. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RemoveABCPricingPlanCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Arn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.DeletePricingPlanResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.DeletePricingPlanResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RemoveABCPricingPlanCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RemoveABCPricingPlanCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.RemoveABCPricingRuleCmdlet">
+            <summary>
+            Deletes the pricing rule identified by the input Amazon Resource Name (ARN).
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RemoveABCPricingRuleCmdlet.Arn">
+            <summary>
+            <para>
+            <para> The Amazon Resource Name (ARN) of the pricing rule you are deleting. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RemoveABCPricingRuleCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Arn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.DeletePricingRuleResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.DeletePricingRuleResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RemoveABCPricingRuleCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RemoveABCPricingRuleCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.RemoveABCResourceTagCmdlet">
+            <summary>
+            Deletes specified tags from a resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RemoveABCResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para> The Amazon Resource Name (ARN) of the resource to which to delete tags. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RemoveABCResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para> The tags to delete from the resource as a list of key-value pairs. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RemoveABCResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RemoveABCResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.RemoveABCResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.UnregisterABCAccountCmdlet">
+            <summary>
+            Removes the specified list of account IDs from the given billing group.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UnregisterABCAccountCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The array of account IDs to disassociate. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UnregisterABCAccountCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the billing group that the array of account IDs
+            will disassociate from. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UnregisterABCAccountCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Arn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.DisassociateAccountsResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.DisassociateAccountsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UnregisterABCAccountCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UnregisterABCAccountCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.UnregisterABCPricingRuleCmdlet">
+            <summary>
+            Disassociates a list of pricing rules from a pricing plan.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UnregisterABCPricingRuleCmdlet.Arn">
+            <summary>
+            <para>
+            <para> The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UnregisterABCPricingRuleCmdlet.PricingRuleArn">
+            <summary>
+            <para>
+            <para> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be
+            disassociated. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UnregisterABCPricingRuleCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Arn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.DisassociatePricingRulesResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.DisassociatePricingRulesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UnregisterABCPricingRuleCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UnregisterABCPricingRuleCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.UnregisterABCResourceBatchFromCustomLineItemCmdlet">
+            <summary>
+            Disassociates a batch of resources from a percentage custom line item.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UnregisterABCResourceBatchFromCustomLineItemCmdlet.BillingPeriodRange_ExclusiveEndBillingPeriod">
+            <summary>
+            <para>
+            <para> The inclusive end billing period that defines a billing period range where a custom
+            line is applied. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UnregisterABCResourceBatchFromCustomLineItemCmdlet.BillingPeriodRange_InclusiveStartBillingPeriod">
+            <summary>
+            <para>
+            <para> The inclusive start billing period that defines a billing period range where a custom
+            line is applied. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UnregisterABCResourceBatchFromCustomLineItemCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para> A list containing the ARNs of resources to be disassociated. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UnregisterABCResourceBatchFromCustomLineItemCmdlet.TargetArn">
+            <summary>
+            <para>
+            <para> A percentage custom line item ARN to disassociate the resources from. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UnregisterABCResourceBatchFromCustomLineItemCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.BatchDisassociateResourcesFromCustomLineItemResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.BatchDisassociateResourcesFromCustomLineItemResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UnregisterABCResourceBatchFromCustomLineItemCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TargetArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^TargetArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UnregisterABCResourceBatchFromCustomLineItemCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.UpdateABCBillingGroupCmdlet">
+            <summary>
+            This updates an existing billing group.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCBillingGroupCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the billing group being updated. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCBillingGroupCmdlet.Description">
+            <summary>
+            <para>
+            <para>A description of the billing group. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCBillingGroupCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the billing group. The names must be unique to each billing group. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCBillingGroupCmdlet.ComputationPreference_PricingPlanArn">
+            <summary>
+            <para>
+            <para> The Amazon Resource Name (ARN) of the pricing plan used to compute the Amazon Web
+            Services charges for a billing group. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCBillingGroupCmdlet.Status">
+            <summary>
+            <para>
+            <para>The status of the billing group. Only one of the valid values can be used. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCBillingGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.UpdateBillingGroupResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.UpdateBillingGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCBillingGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCBillingGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.UpdateABCCustomLineItemCmdlet">
+            <summary>
+            Update an existing custom line item in the current or previous billing period.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCCustomLineItemCmdlet.Arn">
+            <summary>
+            <para>
+            <para> The ARN of the custom line item to be updated. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCCustomLineItemCmdlet.Flat_ChargeValue">
+            <summary>
+            <para>
+            <para> The custom line item's new fixed charge value in USD. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCCustomLineItemCmdlet.Description">
+            <summary>
+            <para>
+            <para> The new line item description of the custom line item. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCCustomLineItemCmdlet.BillingPeriodRange_ExclusiveEndBillingPeriod">
+            <summary>
+            <para>
+            <para> The inclusive end billing period that defines a billing period range where a custom
+            line is applied. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCCustomLineItemCmdlet.BillingPeriodRange_InclusiveStartBillingPeriod">
+            <summary>
+            <para>
+            <para> The inclusive start billing period that defines a billing period range where a custom
+            line is applied. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCCustomLineItemCmdlet.Name">
+            <summary>
+            <para>
+            <para> The new name for the custom line item. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCCustomLineItemCmdlet.Percentage_PercentageValue">
+            <summary>
+            <para>
+            <para> The custom line item's new percentage value. This will be multiplied against the
+            combined value of its associated resources to determine its charge value. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCCustomLineItemCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.UpdateCustomLineItemResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.UpdateCustomLineItemResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCCustomLineItemCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCCustomLineItemCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.UpdateABCPricingPlanCmdlet">
+            <summary>
+            This updates an existing pricing plan.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCPricingPlanCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the pricing plan you're updating. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCPricingPlanCmdlet.Description">
+            <summary>
+            <para>
+            <para>The pricing plan description. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCPricingPlanCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the pricing plan. The name must be unique to each pricing plan. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCPricingPlanCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.UpdatePricingPlanResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.UpdatePricingPlanResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCPricingPlanCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCPricingPlanCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.ABC.UpdateABCPricingRuleCmdlet">
+            <summary>
+            Updates an existing pricing rule.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCPricingRuleCmdlet.Arn">
+            <summary>
+            <para>
+            <para> The Amazon Resource Name (ARN) of the pricing rule to update. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCPricingRuleCmdlet.Description">
+            <summary>
+            <para>
+            <para> The new description for the pricing rule. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCPricingRuleCmdlet.ModifierPercentage">
+            <summary>
+            <para>
+            <para> The new modifier to show pricing plan rates as a percentage. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCPricingRuleCmdlet.Name">
+            <summary>
+            <para>
+            <para> The new name of the pricing rule. The name must be unique to each pricing rule. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCPricingRuleCmdlet.Type">
+            <summary>
+            <para>
+            <para> The new pricing rule type. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCPricingRuleCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.BillingConductor.Model.UpdatePricingRuleResponse).
+            Specifying the name of a property of type Amazon.BillingConductor.Model.UpdatePricingRuleResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCPricingRuleCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.ABC.UpdateABCPricingRuleCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

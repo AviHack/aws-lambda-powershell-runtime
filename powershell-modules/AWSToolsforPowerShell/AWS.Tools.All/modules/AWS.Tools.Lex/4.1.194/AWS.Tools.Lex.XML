@@ -1,0 +1,550 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.Lex</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.LEX.GetLEXSessionCmdlet">
+            <summary>
+            Returns session information for a specified bot, alias, and user ID.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.GetLEXSessionCmdlet.BotAlias">
+            <summary>
+            <para>
+            <para>The alias in use for the bot that contains the session data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.GetLEXSessionCmdlet.BotName">
+            <summary>
+            <para>
+            <para>The name of the bot that contains the session data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.GetLEXSessionCmdlet.CheckpointLabelFilter">
+            <summary>
+            <para>
+            <para>A string used to filter the intents returned in the <code>recentIntentSummaryView</code>
+            structure. </para><para>When you specify a filter, only intents with their <code>checkpointLabel</code> field
+            set to that string are returned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.GetLEXSessionCmdlet.UserId">
+            <summary>
+            <para>
+            <para>The ID of the client application user. Amazon Lex uses this to identify a user's conversation
+            with your bot. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.GetLEXSessionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Lex.Model.GetSessionResponse).
+            Specifying the name of a property of type Amazon.Lex.Model.GetSessionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.GetLEXSessionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BotName parameter.
+            The -PassThru parameter is deprecated, use -Select '^BotName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.LEX.RemoveLEXSessionCmdlet">
+            <summary>
+            Removes session information for a specified bot, alias, and user ID.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.RemoveLEXSessionCmdlet.BotAlias">
+            <summary>
+            <para>
+            <para>The alias in use for the bot that contains the session data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.RemoveLEXSessionCmdlet.BotName">
+            <summary>
+            <para>
+            <para>The name of the bot that contains the session data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.RemoveLEXSessionCmdlet.UserId">
+            <summary>
+            <para>
+            <para>The identifier of the user associated with the session data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.RemoveLEXSessionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Lex.Model.DeleteSessionResponse).
+            Specifying the name of a property of type Amazon.Lex.Model.DeleteSessionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.RemoveLEXSessionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BotName parameter.
+            The -PassThru parameter is deprecated, use -Select '^BotName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.RemoveLEXSessionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.LEX.SendLEXContentCmdlet">
+            <summary>
+            Sends user input (text or speech) to Amazon Lex. Clients use this API to send text
+            and audio requests to Amazon Lex at runtime. Amazon Lex interprets the user input
+            using the machine learning model that it built for the bot. 
+            
+             
+            <para>
+            The <code>PostContent</code> operation supports audio input at 8kHz and 16kHz. You
+            can use 8kHz audio to achieve higher speech recognition accuracy in telephone audio
+            applications. 
+            </para><para>
+             In response, Amazon Lex returns the next message to convey to the user. Consider
+            the following example messages: 
+            </para><ul><li><para>
+             For a user input "I would like a pizza," Amazon Lex might return a response with
+            a message eliciting slot data (for example, <code>PizzaSize</code>): "What size pizza
+            would you like?". 
+            </para></li><li><para>
+             After the user provides all of the pizza order information, Amazon Lex might return
+            a response with a message to get user confirmation: "Order the pizza?". 
+            </para></li><li><para>
+             After the user replies "Yes" to the confirmation prompt, Amazon Lex might return
+            a conclusion statement: "Thank you, your cheese pizza has been ordered.". 
+            </para></li></ul><para>
+             Not all Amazon Lex messages require a response from the user. For example, conclusion
+            statements do not require a response. Some messages require only a yes or no response.
+            In addition to the <code>message</code>, Amazon Lex provides additional context about
+            the message in the response that you can use to enhance client behavior, such as displaying
+            the appropriate client user interface. Consider the following examples: 
+            </para><ul><li><para>
+             If the message is to elicit slot data, Amazon Lex returns the following context information:
+            
+            </para><ul><li><para><code>x-amz-lex-dialog-state</code> header set to <code>ElicitSlot</code></para></li><li><para><code>x-amz-lex-intent-name</code> header set to the intent name in the current context
+            
+            </para></li><li><para><code>x-amz-lex-slot-to-elicit</code> header set to the slot name for which the <code>message</code>
+            is eliciting information 
+            </para></li><li><para><code>x-amz-lex-slots</code> header set to a map of slots configured for the intent
+            with their current values 
+            </para></li></ul></li><li><para>
+             If the message is a confirmation prompt, the <code>x-amz-lex-dialog-state</code>
+            header is set to <code>Confirmation</code> and the <code>x-amz-lex-slot-to-elicit</code>
+            header is omitted. 
+            </para></li><li><para>
+             If the message is a clarification prompt configured for the intent, indicating that
+            the user intent is not understood, the <code>x-amz-dialog-state</code> header is set
+            to <code>ElicitIntent</code> and the <code>x-amz-slot-to-elicit</code> header is omitted.
+            
+            </para></li></ul><para>
+             In addition, Amazon Lex also returns your application-specific <code>sessionAttributes</code>.
+            For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
+            Conversation Context</a>. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.SendLEXContentCmdlet.Accept">
+            <summary>
+            <para>
+            <para> You pass this value as the <code>Accept</code> HTTP header. </para><para> The message Amazon Lex returns in the response can be either text or speech based
+            on the <code>Accept</code> HTTP header value in the request. </para><ul><li><para> If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in
+            the response. </para></li><li><para> If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response.
+            Amazon Lex uses Amazon Polly to generate the speech (using the configuration you specified
+            in the <code>Accept</code> header). For example, if you specify <code>audio/mpeg</code>
+            as the value, Amazon Lex returns speech in the MPEG format.</para></li><li><para>If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code>
+            in 16-bit, little endian format. </para></li><li><para>The following are the accepted values:</para><ul><li><para>audio/mpeg</para></li><li><para>audio/ogg</para></li><li><para>audio/pcm</para></li><li><para>text/plain; charset=utf-8</para></li><li><para>audio/* (defaults to mpeg)</para></li></ul></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.SendLEXContentCmdlet.ActiveContext">
+            <summary>
+            <para>
+            <para>A list of contexts active for the request. A context can be activated when a previous
+            intent is fulfilled, or by including the context in the request,</para><para>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts
+            for the session. If you specify an empty list, all contexts for the session are cleared.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.SendLEXContentCmdlet.BotAlias">
+            <summary>
+            <para>
+            <para>Alias of the Amazon Lex bot.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.SendLEXContentCmdlet.BotName">
+            <summary>
+            <para>
+            <para>Name of the Amazon Lex bot.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.SendLEXContentCmdlet.ContentType">
+            <summary>
+            <para>
+            <para> You pass this value as the <code>Content-Type</code> HTTP header. </para><para> Indicates the audio format or text. The header value must start with one of the following
+            prefixes: </para><ul><li><para>PCM format, audio data must be in little-endian byte order.</para><ul><li><para>audio/l16; rate=16000; channels=1</para></li><li><para>audio/x-l16; sample-rate=16000; channel-count=1</para></li><li><para>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false
+            </para></li></ul></li><li><para>Opus format</para><ul><li><para>audio/x-cbr-opus-with-preamble; preamble-size=0; bit-rate=256000; frame-size-milliseconds=4</para></li></ul></li><li><para>Text format</para><ul><li><para>text/plain; charset=utf-8</para></li></ul></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.SendLEXContentCmdlet.InputStream">
+            <summary>
+            <para>
+            <para> User input in PCM or Opus audio format or text format as described in the <code>Content-Type</code>
+            HTTP header. </para><para>You can stream audio data to Amazon Lex or you can create a local buffer that captures
+            all of the audio data before sending. In general, you get better performance if you
+            stream audio data rather than buffering the data locally.</para>
+            </para>
+            <para>The cmdlet accepts a parameter of type string, string[], System.IO.FileInfo or System.IO.Stream.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.SendLEXContentCmdlet.RequestAttribute">
+            <summary>
+            <para>
+            <para>You pass this value as the <code>x-amz-lex-request-attributes</code> HTTP header.</para><para>Request-specific information passed between Amazon Lex and a client application. The
+            value must be a JSON serialized and base64 encoded map with string keys and values.
+            The total size of the <code>requestAttributes</code> and <code>sessionAttributes</code>
+            headers is limited to 12 KB.</para><para>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create
+            any request attributes with the prefix <code>x-amz-lex:</code>.</para><para>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
+            Request Attributes</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.SendLEXContentCmdlet.SessionAttribute">
+            <summary>
+            <para>
+            <para>You pass this value as the <code>x-amz-lex-session-attributes</code> HTTP header.</para><para>Application-specific information passed between Amazon Lex and a client application.
+            The value must be a JSON serialized and base64 encoded map with string keys and values.
+            The total size of the <code>sessionAttributes</code> and <code>requestAttributes</code>
+            headers is limited to 12 KB.</para><para>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
+            Session Attributes</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.SendLEXContentCmdlet.UserId">
+            <summary>
+            <para>
+            <para>The ID of the client application user. Amazon Lex uses this to identify a user's conversation
+            with your bot. At runtime, each request must contain the <code>userID</code> field.</para><para>To decide the user ID to use for your application, consider the following factors.</para><ul><li><para>The <code>userID</code> field must not contain any personally identifiable information
+            of the user, for example, name, personal identification numbers, or other end user
+            personal information.</para></li><li><para>If you want a user to start a conversation on one device and continue on another device,
+            use a user-specific identifier.</para></li><li><para>If you want the same user to be able to have two independent conversations on two
+            different devices, choose a device-specific identifier.</para></li><li><para>A user can't have two independent conversations with two different versions of the
+            same bot. For example, a user can't have a conversation with the PROD and BETA versions
+            of the same bot. If you anticipate that a user will need to have conversation with
+            two different versions, for example, while testing, include the bot alias in the user
+            ID to separate the two conversations.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.SendLEXContentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Lex.Model.PostContentResponse).
+            Specifying the name of a property of type Amazon.Lex.Model.PostContentResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.LEX.SendLEXTextCmdlet">
+            <summary>
+            Sends user input to Amazon Lex. Client applications can use this API to send requests
+            to Amazon Lex at runtime. Amazon Lex then interprets the user input using the machine
+            learning model it built for the bot. 
+            
+             
+            <para>
+             In response, Amazon Lex returns the next <code>message</code> to convey to the user
+            an optional <code>responseCard</code> to display. Consider the following example messages:
+            
+            </para><ul><li><para>
+             For a user input "I would like a pizza", Amazon Lex might return a response with
+            a message eliciting slot data (for example, PizzaSize): "What size pizza would you
+            like?" 
+            </para></li><li><para>
+             After the user provides all of the pizza order information, Amazon Lex might return
+            a response with a message to obtain user confirmation "Proceed with the pizza order?".
+            
+            </para></li><li><para>
+             After the user replies to a confirmation prompt with a "yes", Amazon Lex might return
+            a conclusion statement: "Thank you, your cheese pizza has been ordered.". 
+            </para></li></ul><para>
+             Not all Amazon Lex messages require a user response. For example, a conclusion statement
+            does not require a response. Some messages require only a "yes" or "no" user response.
+            In addition to the <code>message</code>, Amazon Lex provides additional context about
+            the message in the response that you might use to enhance client behavior, for example,
+            to display the appropriate client user interface. These are the <code>slotToElicit</code>,
+            <code>dialogState</code>, <code>intentName</code>, and <code>slots</code> fields in
+            the response. Consider the following examples: 
+            </para><ul><li><para>
+            If the message is to elicit slot data, Amazon Lex returns the following context information:
+            </para><ul><li><para><code>dialogState</code> set to ElicitSlot 
+            </para></li><li><para><code>intentName</code> set to the intent name in the current context 
+            </para></li><li><para><code>slotToElicit</code> set to the slot name for which the <code>message</code>
+            is eliciting information 
+            </para></li><li><para><code>slots</code> set to a map of slots, configured for the intent, with currently
+            known values 
+            </para></li></ul></li><li><para>
+             If the message is a confirmation prompt, the <code>dialogState</code> is set to ConfirmIntent
+            and <code>SlotToElicit</code> is set to null. 
+            </para></li><li><para>
+            If the message is a clarification prompt (configured for the intent) that indicates
+            that user intent is not understood, the <code>dialogState</code> is set to ElicitIntent
+            and <code>slotToElicit</code> is set to null. 
+            </para></li></ul><para>
+             In addition, Amazon Lex also returns your application-specific <code>sessionAttributes</code>.
+            For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
+            Conversation Context</a>. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.SendLEXTextCmdlet.ActiveContext">
+            <summary>
+            <para>
+            <para>A list of contexts active for the request. A context can be activated when a previous
+            intent is fulfilled, or by including the context in the request,</para><para>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts
+            for the session. If you specify an empty list, all contexts for the session are cleared.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.SendLEXTextCmdlet.BotAlias">
+            <summary>
+            <para>
+            <para>The alias of the Amazon Lex bot.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.SendLEXTextCmdlet.BotName">
+            <summary>
+            <para>
+            <para>The name of the Amazon Lex bot.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.SendLEXTextCmdlet.InputText">
+            <summary>
+            <para>
+            <para>The text that the user entered (Amazon Lex interprets this text).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.SendLEXTextCmdlet.RequestAttribute">
+            <summary>
+            <para>
+            <para>Request-specific information passed between Amazon Lex and a client application.</para><para>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create
+            any request attributes with the prefix <code>x-amz-lex:</code>.</para><para>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
+            Request Attributes</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.SendLEXTextCmdlet.SessionAttribute">
+            <summary>
+            <para>
+            <para>Application-specific information passed between Amazon Lex and a client application.</para><para>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
+            Session Attributes</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.SendLEXTextCmdlet.UserId">
+            <summary>
+            <para>
+            <para>The ID of the client application user. Amazon Lex uses this to identify a user's conversation
+            with your bot. At runtime, each request must contain the <code>userID</code> field.</para><para>To decide the user ID to use for your application, consider the following factors.</para><ul><li><para>The <code>userID</code> field must not contain any personally identifiable information
+            of the user, for example, name, personal identification numbers, or other end user
+            personal information.</para></li><li><para>If you want a user to start a conversation on one device and continue on another device,
+            use a user-specific identifier.</para></li><li><para>If you want the same user to be able to have two independent conversations on two
+            different devices, choose a device-specific identifier.</para></li><li><para>A user can't have two independent conversations with two different versions of the
+            same bot. For example, a user can't have a conversation with the PROD and BETA versions
+            of the same bot. If you anticipate that a user will need to have conversation with
+            two different versions, for example, while testing, include the bot alias in the user
+            ID to separate the two conversations.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.SendLEXTextCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Lex.Model.PostTextResponse).
+            Specifying the name of a property of type Amazon.Lex.Model.PostTextResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.SendLEXTextCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the InputText parameter.
+            The -PassThru parameter is deprecated, use -Select '^InputText' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.LEX.WriteLEXSessionCmdlet">
+            <summary>
+            Creates a new session or modifies an existing session with an Amazon Lex bot. Use
+            this operation to enable your application to set the state of the bot.
+            
+             
+            <para>
+            For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/how-session-api.html">Managing
+            Sessions</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.WriteLEXSessionCmdlet.Accept">
+            <summary>
+            <para>
+            <para>The message that Amazon Lex returns in the response can be either text or speech based
+            depending on the value of this field.</para><ul><li><para>If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in
+            the response.</para></li><li><para>If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response.
+            Amazon Lex uses Amazon Polly to generate the speech in the configuration that you
+            specify. For example, if you specify <code>audio/mpeg</code> as the value, Amazon
+            Lex returns speech in the MPEG format.</para></li><li><para>If the value is <code>audio/pcm</code>, the speech is returned as <code>audio/pcm</code>
+            in 16-bit, little endian format.</para></li><li><para>The following are the accepted values:</para><ul><li><para><code>audio/mpeg</code></para></li><li><para><code>audio/ogg</code></para></li><li><para><code>audio/pcm</code></para></li><li><para><code>audio/*</code> (defaults to mpeg)</para></li><li><para><code>text/plain; charset=utf-8</code></para></li></ul></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.WriteLEXSessionCmdlet.ActiveContext">
+            <summary>
+            <para>
+            <para>A list of contexts active for the request. A context can be activated when a previous
+            intent is fulfilled, or by including the context in the request,</para><para>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts
+            for the session. If you specify an empty list, all contexts for the session are cleared.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.WriteLEXSessionCmdlet.BotAlias">
+            <summary>
+            <para>
+            <para>The alias in use for the bot that contains the session data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.WriteLEXSessionCmdlet.BotName">
+            <summary>
+            <para>
+            <para>The name of the bot that contains the session data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.WriteLEXSessionCmdlet.DialogAction_FulfillmentState">
+            <summary>
+            <para>
+            <para>The fulfillment state of the intent. The possible values are:</para><ul><li><para><code>Failed</code> - The Lambda function associated with the intent failed to fulfill
+            the intent.</para></li><li><para><code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated
+            with the intent. </para></li><li><para><code>ReadyForFulfillment</code> - All of the information necessary for the intent
+            is present and the intent ready to be fulfilled by the client application.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.WriteLEXSessionCmdlet.DialogAction_IntentName">
+            <summary>
+            <para>
+            <para>The name of the intent.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.WriteLEXSessionCmdlet.DialogAction_Message">
+            <summary>
+            <para>
+            <para>The message that should be shown to the user. If you don't specify a message, Amazon
+            Lex will use the message configured for the intent.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.WriteLEXSessionCmdlet.DialogAction_MessageFormat">
+            <summary>
+            <para>
+            <ul><li><para><code>PlainText</code> - The message contains plain UTF-8 text.</para></li><li><para><code>CustomPayload</code> - The message is a custom format for the client.</para></li><li><para><code>SSML</code> - The message contains text formatted for voice output.</para></li><li><para><code>Composite</code> - The message contains an escaped JSON object containing one
+            or more messages. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message
+            Groups</a>. </para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.WriteLEXSessionCmdlet.RecentIntentSummaryView">
+            <summary>
+            <para>
+            <para>A summary of the recent intents for the bot. You can use the intent summary view to
+            set a checkpoint label on an intent and modify attributes of intents. You can also
+            use it to remove or add intent summary objects to the list.</para><para>An intent that you modify or add to the list must make sense for the bot. For example,
+            the intent name must be valid for the bot. You must provide valid values for:</para><ul><li><para><code>intentName</code></para></li><li><para>slot names</para></li><li><para><code>slotToElict</code></para></li></ul><para>If you send the <code>recentIntentSummaryView</code> parameter in a <code>PutSession</code>
+            request, the contents of the new summary view replaces the old summary view. For example,
+            if a <code>GetSession</code> request returns three intents in the summary view and
+            you call <code>PutSession</code> with one intent in the summary view, the next call
+            to <code>GetSession</code> will only return one intent.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.WriteLEXSessionCmdlet.SessionAttribute">
+            <summary>
+            <para>
+            <para>Map of key/value pairs representing the session-specific context information. It contains
+            application information passed between Amazon Lex and a client application.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.WriteLEXSessionCmdlet.DialogAction_Slot">
+            <summary>
+            <para>
+            <para>Map of the slots that have been gathered and their values. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.WriteLEXSessionCmdlet.DialogAction_SlotToElicit">
+            <summary>
+            <para>
+            <para>The name of the slot that should be elicited from the user.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.WriteLEXSessionCmdlet.DialogAction_Type">
+            <summary>
+            <para>
+            <para>The next action that the bot should take in its interaction with the user. The possible
+            values are:</para><ul><li><para><code>ConfirmIntent</code> - The next action is asking the user if the intent is
+            complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</para></li><li><para><code>Close</code> - Indicates that the there will not be a response from the user.
+            For example, the statement "Your order has been placed" does not require a response.</para></li><li><para><code>Delegate</code> - The next action is determined by Amazon Lex.</para></li><li><para><code>ElicitIntent</code> - The next action is to determine the intent that the user
+            wants to fulfill.</para></li><li><para><code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.WriteLEXSessionCmdlet.UserId">
+            <summary>
+            <para>
+            <para>The ID of the client application user. Amazon Lex uses this to identify a user's conversation
+            with your bot. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.WriteLEXSessionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Lex.Model.PutSessionResponse).
+            Specifying the name of a property of type Amazon.Lex.Model.PutSessionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.WriteLEXSessionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BotName parameter.
+            The -PassThru parameter is deprecated, use -Select '^BotName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.LEX.WriteLEXSessionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

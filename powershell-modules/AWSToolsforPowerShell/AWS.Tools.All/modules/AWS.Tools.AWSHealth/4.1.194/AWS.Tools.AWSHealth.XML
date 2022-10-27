@@ -1,0 +1,1125 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.AWSHealth</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.HLTH.DisableHLTHHealthServiceAccessForOrganizationCmdlet">
+            <summary>
+            Disables Health from working with Organizations. To call this operation, you must
+            sign in as an Identity and Access Management (IAM) user, assume an IAM role, or sign
+            in as the root user (not recommended) in the organization's management account. For
+            more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating
+            Health events</a> in the <i>Health User Guide</i>.
+            
+             
+            <para>
+            This operation doesn't remove the service-linked role from the management account
+            in your organization. You must use the IAM console, API, or Command Line Interface
+            (CLI) to remove the service-linked role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#delete-service-linked-role">Deleting
+            a Service-Linked Role</a> in the <i>IAM User Guide</i>.
+            </para><note><para>
+            You can also disable the organizational feature by using the Organizations <a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_DisableAWSServiceAccess.html">DisableAWSServiceAccess</a>
+            API operation. After you call this operation, Health stops aggregating events for
+            all other Amazon Web Services accounts in your organization. If you call the Health
+            API operations for organizational view, Health returns an error. Health continues
+            to aggregate health events for your Amazon Web Services account.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.DisableHLTHHealthServiceAccessForOrganizationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSHealth.Model.DisableHealthServiceAccessForOrganizationResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.DisableHLTHHealthServiceAccessForOrganizationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.HLTH.EnableHLTHHealthServiceAccessForOrganizationCmdlet">
+            <summary>
+            Enables Health to work with Organizations. You can use the organizational view feature
+            to aggregate events from all Amazon Web Services accounts in your organization in
+            a centralized location. 
+            
+             
+            <para>
+            This operation also creates a service-linked role for the management account in the
+            organization. 
+            </para><note><para>
+            To call this operation, you must meet the following requirements:
+            </para><ul><li><para>
+            You must have a Business, Enterprise On-Ramp, or Enterprise Support plan from <a href="http://aws.amazon.com/premiumsupport/">Amazon
+            Web Services Support</a> to use the Health API. If you call the Health API from an
+            Amazon Web Services account that doesn't have a Business, Enterprise On-Ramp, or Enterprise
+            Support plan, you receive a <code>SubscriptionRequiredException</code> error.
+            </para></li><li><para>
+            You must have permission to call this operation from the organization's management
+            account. For example IAM policies, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html">Health
+            identity-based policy examples</a>.
+            </para></li></ul></note><para>
+            If you don't have the required support plan, you can instead use the Health console
+            to enable the organizational view feature. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating
+            Health events</a> in the <i>Health User Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.EnableHLTHHealthServiceAccessForOrganizationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSHealth.Model.EnableHealthServiceAccessForOrganizationResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.EnableHLTHHealthServiceAccessForOrganizationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedAccountsForOrganizationCmdlet">
+            <summary>
+            Returns a list of accounts in the organization from Organizations that are affected
+            by the provided event. For more information about the different types of Health events,
+            see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>.
+            
+            
+             
+            <para>
+            Before you can call this operation, you must first enable Health to work with Organizations.
+            To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a>
+            operation from your organization's management account.
+            </para><note><para>
+            This API operation uses pagination. Specify the <code>nextToken</code> parameter in
+            the next request to return more results.
+            </para></note><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedAccountsForOrganizationCmdlet.EventArn">
+            <summary>
+            <para>
+            <para>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i></code> format.</para><para>For example, an event ARN might look like the following:</para><para><code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedAccountsForOrganizationCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of items to return in one batch, between 10 and 100, inclusive.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedAccountsForOrganizationCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If the results of a search are large, only a portion of the results are returned,
+            and a <code>nextToken</code> pagination token is returned in the response. To retrieve
+            the next batch of results, reissue the search request and include the returned token.
+            When all results have been returned, the response does not contain a pagination token
+            value.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedAccountsForOrganizationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AffectedAccounts'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSHealth.Model.DescribeAffectedAccountsForOrganizationResponse).
+            Specifying the name of a property of type Amazon.AWSHealth.Model.DescribeAffectedAccountsForOrganizationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedAccountsForOrganizationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EventArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^EventArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedAccountsForOrganizationCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedEntitiesForOrganizationCmdlet">
+            <summary>
+            Returns a list of entities that have been affected by one or more events for one or
+            more accounts in your organization in Organizations, based on the filter criteria.
+            Entities can refer to individual customer resources, groups of customer resources,
+            or any other construct, depending on the Amazon Web Services service.
+            
+             
+            <para>
+            At least one event Amazon Resource Name (ARN) and account ID are required.
+            </para><para>
+            Before you can call this operation, you must first enable Health to work with Organizations.
+            To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a>
+            operation from your organization's management account.
+            </para><note><ul><li><para>
+            This API operation uses pagination. Specify the <code>nextToken</code> parameter in
+            the next request to return more results.
+            </para></li><li><para>
+            This operation doesn't support resource-level permissions. You can't use this operation
+            to allow or deny access to specific Health events. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource-
+            and action-based conditions</a> in the <i>Health User Guide</i>.
+            </para></li></ul></note><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedEntitiesForOrganizationCmdlet.Locale">
+            <summary>
+            <para>
+            <para>The locale (language) to return information in. English (en) is the default and the
+            only supported value at this time.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedEntitiesForOrganizationCmdlet.OrganizationEntityFilter">
+            <summary>
+            <para>
+            <para>A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedEntitiesForOrganizationCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of items to return in one batch, between 10 and 100, inclusive.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedEntitiesForOrganizationCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If the results of a search are large, only a portion of the results are returned,
+            and a <code>nextToken</code> pagination token is returned in the response. To retrieve
+            the next batch of results, reissue the search request and include the returned token.
+            When all results have been returned, the response does not contain a pagination token
+            value.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedEntitiesForOrganizationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSHealth.Model.DescribeAffectedEntitiesForOrganizationResponse).
+            Specifying the name of a property of type Amazon.AWSHealth.Model.DescribeAffectedEntitiesForOrganizationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedEntitiesForOrganizationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Locale parameter.
+            The -PassThru parameter is deprecated, use -Select '^Locale' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedEntitiesForOrganizationCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedEntityCmdlet">
+            <summary>
+            Returns a list of entities that have been affected by the specified events, based
+            on the specified filter criteria. Entities can refer to individual customer resources,
+            groups of customer resources, or any other construct, depending on the Amazon Web
+            Services service. Events that have impact beyond that of the affected entities, or
+            where the extent of impact is unknown, include at least one entity indicating this.
+            
+             
+            <para>
+            At least one event ARN is required.
+            </para><note><ul><li><para>
+            This API operation uses pagination. Specify the <code>nextToken</code> parameter in
+            the next request to return more results.
+            </para></li><li><para>
+            This operation supports resource-level permissions. You can use this operation to
+            allow or deny access to specific Health events. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource-
+            and action-based conditions</a> in the <i>Health User Guide</i>.
+            </para></li></ul></note><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedEntityCmdlet.Filter_EntityArn">
+            <summary>
+            <para>
+            <para>A list of entity ARNs (unique identifiers).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedEntityCmdlet.Filter_EntityValue">
+            <summary>
+            <para>
+            <para>A list of IDs for affected entities.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedEntityCmdlet.Filter_EventArn">
+            <summary>
+            <para>
+            <para>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456",
+            "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedEntityCmdlet.Filter_LastUpdatedTime">
+            <summary>
+            <para>
+            <para>A list of the most recent dates and times that the entity was updated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedEntityCmdlet.Locale">
+            <summary>
+            <para>
+            <para>The locale (language) to return information in. English (en) is the default and the
+            only supported value at this time.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedEntityCmdlet.Filter_StatusCode">
+            <summary>
+            <para>
+            <para>A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or
+            <code>UNKNOWN</code>).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedEntityCmdlet.Filter_Tag">
+            <summary>
+            <para>
+            <para>A map of entity tags attached to the affected entity.</para><note><para>Currently, the <code>tags</code> property isn't supported.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedEntityCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of items to return in one batch, between 10 and 100, inclusive.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedEntityCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If the results of a search are large, only a portion of the results are returned,
+            and a <code>nextToken</code> pagination token is returned in the response. To retrieve
+            the next batch of results, reissue the search request and include the returned token.
+            When all results have been returned, the response does not contain a pagination token
+            value.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedEntityCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Entities'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSHealth.Model.DescribeAffectedEntitiesResponse).
+            Specifying the name of a property of type Amazon.AWSHealth.Model.DescribeAffectedEntitiesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHAffectedEntityCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEntityAggregateCmdlet">
+            <summary>
+            Returns the number of entities that are affected by each of the specified events.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEntityAggregateCmdlet.EventArn">
+            <summary>
+            <para>
+            <para>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456",
+            "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEntityAggregateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EntityAggregates'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSHealth.Model.DescribeEntityAggregatesResponse).
+            Specifying the name of a property of type Amazon.AWSHealth.Model.DescribeEntityAggregatesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEntityAggregateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EventArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^EventArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventCmdlet">
+            <summary>
+            Returns information about events that meet the specified filter criteria. Events
+            are returned in a summary form and do not include the detailed description, any additional
+            metadata that depends on the event type, or any affected resources. To retrieve that
+            information, use the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a>
+            and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntities.html">DescribeAffectedEntities</a>
+            operations.
+            
+             
+            <para>
+            If no filter criteria are specified, all events are returned. Results are sorted by
+            <code>lastModifiedTime</code>, starting with the most recent event.
+            </para><note><ul><li><para>
+            When you call the <code>DescribeEvents</code> operation and specify an entity for
+            the <code>entityValues</code> parameter, Health might return public events that aren't
+            specific to that resource. For example, if you call <code>DescribeEvents</code> and
+            specify an ID for an Amazon Elastic Compute Cloud (Amazon EC2) instance, Health might
+            return events that aren't specific to that resource or service. To get events that
+            are specific to a service, use the <code>services</code> parameter in the <code>filter</code>
+            object. For more information, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>.
+            </para></li><li><para>
+            This API operation uses pagination. Specify the <code>nextToken</code> parameter in
+            the next request to return more results.
+            </para></li></ul></note><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventCmdlet.Filter_AvailabilityZone">
+            <summary>
+            <para>
+            <para>A list of Amazon Web Services Availability Zones.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventCmdlet.Filter_EndTime">
+            <summary>
+            <para>
+            <para>A list of dates and times that the event ended.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventCmdlet.Filter_EntityArn">
+            <summary>
+            <para>
+            <para>A list of entity ARNs (unique identifiers).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventCmdlet.Filter_EntityValue">
+            <summary>
+            <para>
+            <para>A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or
+            EBS volumes (<code>vol-426ab23e</code>).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventCmdlet.Filter_EventArn">
+            <summary>
+            <para>
+            <para>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456",
+            "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventCmdlet.Filter_EventStatusCode">
+            <summary>
+            <para>
+            <para>A list of event status codes.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventCmdlet.Filter_EventTypeCategory">
+            <summary>
+            <para>
+            <para>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>,
+            or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't
+            supported at this time.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventCmdlet.Filter_EventTypeCode">
+            <summary>
+            <para>
+            <para>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventCmdlet.Filter_LastUpdatedTime">
+            <summary>
+            <para>
+            <para>A list of dates and times that the event was last updated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventCmdlet.Locale">
+            <summary>
+            <para>
+            <para>The locale (language) to return information in. English (en) is the default and the
+            only supported value at this time.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventCmdlet.Filter_Region">
+            <summary>
+            <para>
+            <para>A list of Amazon Web Services Regions.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventCmdlet.Filter_Service">
+            <summary>
+            <para>
+            <para>The Amazon Web Services services associated with the event. For example, <code>EC2</code>,
+            <code>RDS</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventCmdlet.Filter_StartTime">
+            <summary>
+            <para>
+            <para>A list of dates and times that the event began.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventCmdlet.Filter_Tag">
+            <summary>
+            <para>
+            <para>A map of entity tags attached to the affected entity.</para><note><para>Currently, the <code>tags</code> property isn't supported.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of items to return in one batch, between 10 and 100, inclusive.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If the results of a search are large, only a portion of the results are returned,
+            and a <code>nextToken</code> pagination token is returned in the response. To retrieve
+            the next batch of results, reissue the search request and include the returned token.
+            When all results have been returned, the response does not contain a pagination token
+            value.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Events'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSHealth.Model.DescribeEventsResponse).
+            Specifying the name of a property of type Amazon.AWSHealth.Model.DescribeEventsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventAggregateCmdlet">
+            <summary>
+            Returns the number of events of each event type (issue, scheduled change, and account
+            notification). If no filter is specified, the counts of all events in each category
+            are returned.
+            
+             <note><para>
+            This API operation uses pagination. Specify the <code>nextToken</code> parameter in
+            the next request to return more results.
+            </para></note><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventAggregateCmdlet.AggregateField">
+            <summary>
+            <para>
+            <para>The only currently supported value is <code>eventTypeCategory</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventAggregateCmdlet.Filter_AvailabilityZone">
+            <summary>
+            <para>
+            <para>A list of Amazon Web Services Availability Zones.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventAggregateCmdlet.Filter_EndTime">
+            <summary>
+            <para>
+            <para>A list of dates and times that the event ended.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventAggregateCmdlet.Filter_EntityArn">
+            <summary>
+            <para>
+            <para>A list of entity ARNs (unique identifiers).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventAggregateCmdlet.Filter_EntityValue">
+            <summary>
+            <para>
+            <para>A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or
+            EBS volumes (<code>vol-426ab23e</code>).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventAggregateCmdlet.Filter_EventArn">
+            <summary>
+            <para>
+            <para>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456",
+            "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventAggregateCmdlet.Filter_EventStatusCode">
+            <summary>
+            <para>
+            <para>A list of event status codes.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventAggregateCmdlet.Filter_EventTypeCategory">
+            <summary>
+            <para>
+            <para>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>,
+            or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't
+            supported at this time.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventAggregateCmdlet.Filter_EventTypeCode">
+            <summary>
+            <para>
+            <para>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventAggregateCmdlet.Filter_LastUpdatedTime">
+            <summary>
+            <para>
+            <para>A list of dates and times that the event was last updated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventAggregateCmdlet.Filter_Region">
+            <summary>
+            <para>
+            <para>A list of Amazon Web Services Regions.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventAggregateCmdlet.Filter_Service">
+            <summary>
+            <para>
+            <para>The Amazon Web Services services associated with the event. For example, <code>EC2</code>,
+            <code>RDS</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventAggregateCmdlet.Filter_StartTime">
+            <summary>
+            <para>
+            <para>A list of dates and times that the event began.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventAggregateCmdlet.Filter_Tag">
+            <summary>
+            <para>
+            <para>A map of entity tags attached to the affected entity.</para><note><para>Currently, the <code>tags</code> property isn't supported.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventAggregateCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of items to return in one batch, between 10 and 100, inclusive.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventAggregateCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If the results of a search are large, only a portion of the results are returned,
+            and a <code>nextToken</code> pagination token is returned in the response. To retrieve
+            the next batch of results, reissue the search request and include the returned token.
+            When all results have been returned, the response does not contain a pagination token
+            value.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventAggregateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EventAggregates'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSHealth.Model.DescribeEventAggregatesResponse).
+            Specifying the name of a property of type Amazon.AWSHealth.Model.DescribeEventAggregatesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventAggregateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AggregateField parameter.
+            The -PassThru parameter is deprecated, use -Select '^AggregateField' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventAggregateCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventDetailCmdlet">
+            <summary>
+            Returns detailed information about one or more specified events. Information includes
+            standard event data (Amazon Web Services Region, service, and so on, as returned by
+            <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a>),
+            a detailed event description, and possible additional metadata that depends upon the
+            nature of the event. Affected entities are not included. To retrieve the entities,
+            use the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntities.html">DescribeAffectedEntities</a>
+            operation.
+            
+             
+            <para>
+            If a specified event can't be retrieved, an error message is returned for that event.
+            </para><note><para>
+            This operation supports resource-level permissions. You can use this operation to
+            allow or deny access to specific Health events. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource-
+            and action-based conditions</a> in the <i>Health User Guide</i>.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventDetailCmdlet.EventArn">
+            <summary>
+            <para>
+            <para>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456",
+            "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventDetailCmdlet.Locale">
+            <summary>
+            <para>
+            <para>The locale (language) to return information in. English (en) is the default and the
+            only supported value at this time.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventDetailCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSHealth.Model.DescribeEventDetailsResponse).
+            Specifying the name of a property of type Amazon.AWSHealth.Model.DescribeEventDetailsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventDetailCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EventArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^EventArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventDetailsForOrganizationCmdlet">
+            <summary>
+            Returns detailed information about one or more specified events for one or more Amazon
+            Web Services accounts in your organization. This information includes standard event
+            data (such as the Amazon Web Services Region and service), an event description, and
+            (depending on the event) possible metadata. This operation doesn't return affected
+            entities, such as the resources related to the event. To return affected entities,
+            use the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html">DescribeAffectedEntitiesForOrganization</a>
+            operation.
+            
+             <note><para>
+            Before you can call this operation, you must first enable Health to work with Organizations.
+            To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a>
+            operation from your organization's management account.
+            </para></note><para>
+            When you call the <code>DescribeEventDetailsForOrganization</code> operation, specify
+            the <code>organizationEventDetailFilters</code> object in the request. Depending on
+            the Health event type, note the following differences:
+            </para><ul><li><para>
+            To return event details for a public event, you must specify a null value for the
+            <code>awsAccountId</code> parameter. If you specify an account ID for a public event,
+            Health returns an error message because public events aren't specific to an account.
+            </para></li><li><para>
+            To return event details for an event that is specific to an account in your organization,
+            you must specify the <code>awsAccountId</code> parameter in the request. If you don't
+            specify an account ID, Health returns an error message because the event is specific
+            to an account in your organization. 
+            </para></li></ul><para>
+            For more information, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>.
+            </para><note><para>
+            This operation doesn't support resource-level permissions. You can't use this operation
+            to allow or deny access to specific Health events. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/security_iam_id-based-policy-examples.html#resource-action-based-conditions">Resource-
+            and action-based conditions</a> in the <i>Health User Guide</i>.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventDetailsForOrganizationCmdlet.Locale">
+            <summary>
+            <para>
+            <para>The locale (language) to return information in. English (en) is the default and the
+            only supported value at this time.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventDetailsForOrganizationCmdlet.OrganizationEventDetailFilter">
+            <summary>
+            <para>
+            <para>A set of JSON elements that includes the <code>awsAccountId</code> and the <code>eventArn</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventDetailsForOrganizationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSHealth.Model.DescribeEventDetailsForOrganizationResponse).
+            Specifying the name of a property of type Amazon.AWSHealth.Model.DescribeEventDetailsForOrganizationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventDetailsForOrganizationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Locale parameter.
+            The -PassThru parameter is deprecated, use -Select '^Locale' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventsForOrganizationCmdlet">
+            <summary>
+            Returns information about events across your organization in Organizations. You can
+            use the<code>filters</code> parameter to specify the events that you want to return.
+            Events are returned in a summary form and don't include the affected accounts, detailed
+            description, any additional metadata that depends on the event type, or any affected
+            resources. To retrieve that information, use the following operations:
+            
+             <ul><li><para><a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedAccountsForOrganization.html">DescribeAffectedAccountsForOrganization</a></para></li><li><para><a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a></para></li><li><para><a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html">DescribeAffectedEntitiesForOrganization</a></para></li></ul><para>
+            If you don't specify a <code>filter</code>, the <code>DescribeEventsForOrganizations</code>
+            returns all events across your organization. Results are sorted by <code>lastModifiedTime</code>,
+            starting with the most recent event. 
+            </para><para>
+            For more information about the different types of Health events, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>.
+            </para><para>
+            Before you can call this operation, you must first enable Health to work with Organizations.
+            To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a>
+            operation from your organization's management account.
+            </para><note><para>
+            This API operation uses pagination. Specify the <code>nextToken</code> parameter in
+            the next request to return more results.
+            </para></note><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventsForOrganizationCmdlet.Filter_AwsAccountId">
+            <summary>
+            <para>
+            <para>A list of 12-digit Amazon Web Services account numbers that contains the affected
+            entities.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventsForOrganizationCmdlet.Filter_EntityArn">
+            <summary>
+            <para>
+            <para>A list of entity ARNs (unique identifiers).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventsForOrganizationCmdlet.Filter_EntityValue">
+            <summary>
+            <para>
+            <para>A list of entity identifiers, such as EC2 instance IDs (i-34ab692e) or EBS volumes
+            (vol-426ab23e).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventsForOrganizationCmdlet.Filter_EventStatusCode">
+            <summary>
+            <para>
+            <para>A list of event status codes.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventsForOrganizationCmdlet.Filter_EventTypeCategory">
+            <summary>
+            <para>
+            <para>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>,
+            or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't
+            supported at this time.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventsForOrganizationCmdlet.Filter_EventTypeCode">
+            <summary>
+            <para>
+            <para>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventsForOrganizationCmdlet.EndTime_From">
+            <summary>
+            <para>
+            <para>The starting date and time of a time range.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventsForOrganizationCmdlet.LastUpdatedTime_From">
+            <summary>
+            <para>
+            <para>The starting date and time of a time range.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventsForOrganizationCmdlet.StartTime_From">
+            <summary>
+            <para>
+            <para>The starting date and time of a time range.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventsForOrganizationCmdlet.Locale">
+            <summary>
+            <para>
+            <para>The locale (language) to return information in. English (en) is the default and the
+            only supported value at this time.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventsForOrganizationCmdlet.Filter_Region">
+            <summary>
+            <para>
+            <para>A list of Amazon Web Services Regions.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventsForOrganizationCmdlet.Filter_Service">
+            <summary>
+            <para>
+            <para>The Amazon Web Services services associated with the event. For example, <code>EC2</code>,
+            <code>RDS</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventsForOrganizationCmdlet.EndTime_To">
+            <summary>
+            <para>
+            <para>The ending date and time of a time range.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventsForOrganizationCmdlet.LastUpdatedTime_To">
+            <summary>
+            <para>
+            <para>The ending date and time of a time range.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventsForOrganizationCmdlet.StartTime_To">
+            <summary>
+            <para>
+            <para>The ending date and time of a time range.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventsForOrganizationCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of items to return in one batch, between 10 and 100, inclusive.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventsForOrganizationCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If the results of a search are large, only a portion of the results are returned,
+            and a <code>nextToken</code> pagination token is returned in the response. To retrieve
+            the next batch of results, reissue the search request and include the returned token.
+            When all results have been returned, the response does not contain a pagination token
+            value.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventsForOrganizationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Events'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSHealth.Model.DescribeEventsForOrganizationResponse).
+            Specifying the name of a property of type Amazon.AWSHealth.Model.DescribeEventsForOrganizationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventsForOrganizationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Locale parameter.
+            The -PassThru parameter is deprecated, use -Select '^Locale' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventsForOrganizationCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventTypeCmdlet">
+            <summary>
+            Returns the event types that meet the specified filter criteria. You can use this
+            API operation to find information about the Health event, such as the category, Amazon
+            Web Services service, and event code. The metadata for each event appears in the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventType.html">EventType</a>
+            object. 
+            
+             
+            <para>
+            If you don't specify a filter criteria, the API operation returns all event types,
+            in no particular order. 
+            </para><note><para>
+            This API operation uses pagination. Specify the <code>nextToken</code> parameter in
+            the next request to return more results.
+            </para></note><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventTypeCmdlet.Filter_EventTypeCategory">
+            <summary>
+            <para>
+            <para>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>,
+            or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't
+            supported at this time.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventTypeCmdlet.Filter_EventTypeCode">
+            <summary>
+            <para>
+            <para>A list of event type codes.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventTypeCmdlet.Locale">
+            <summary>
+            <para>
+            <para>The locale (language) to return information in. English (en) is the default and the
+            only supported value at this time.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventTypeCmdlet.Filter_Service">
+            <summary>
+            <para>
+            <para>The Amazon Web Services services associated with the event. For example, <code>EC2</code>,
+            <code>RDS</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventTypeCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of items to return in one batch, between 10 and 100, inclusive.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventTypeCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If the results of a search are large, only a portion of the results are returned,
+            and a <code>nextToken</code> pagination token is returned in the response. To retrieve
+            the next batch of results, reissue the search request and include the returned token.
+            When all results have been returned, the response does not contain a pagination token
+            value.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventTypeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EventTypes'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSHealth.Model.DescribeEventTypesResponse).
+            Specifying the name of a property of type Amazon.AWSHealth.Model.DescribeEventTypesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHEventTypeCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHHealthServiceStatusForOrganizationCmdlet">
+            <summary>
+            This operation provides status information on enabling or disabling Health to work
+            with your organization. To call this operation, you must sign in as an IAM user, assume
+            an IAM role, or sign in as the root user (not recommended) in the organization's management
+            account.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.HLTH.GetHLTHHealthServiceStatusForOrganizationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'HealthServiceAccessStatusForOrganization'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.AWSHealth.Model.DescribeHealthServiceStatusForOrganizationResponse).
+            Specifying the name of a property of type Amazon.AWSHealth.Model.DescribeHealthServiceStatusForOrganizationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+    </members>
+</doc>

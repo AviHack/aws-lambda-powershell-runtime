@@ -1,0 +1,1917 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.Glacier</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.ReadGLCOutputCmdlet">
+            <summary>
+            <para>
+            Downloads the output of a completed job and stores it in a file.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.ReadGLCOutputCmdlet.VaultName">
+            <summary>
+            The name of the vault that will hold the uploaded content.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.ReadGLCOutputCmdlet.AccountId">
+            <summary>
+            <para>
+            AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen),
+            in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+            account ID, do not include any hyphens ('-') in the ID.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.ReadGLCOutputCmdlet.JobId">
+            <summary>
+            The ID of the previously submitted job that has completed, signalling that the output
+            of the job is ready to be retrieved.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.ReadGLCOutputCmdlet.FilePath">
+            <summary>
+            The full path to the local file that will contain the archive contents.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.FileUploadResult">
+            <summary>
+            Output object carrying the file we uploaded, the corresponding archive id (needed for later retrieval) and
+            the upload checksum.
+            </summary>
+            <remarks>
+            We could use a PSObject wrapping the UploadResult and adding a note property for the filename, but the note
+            property doesn't get displayed by default. Using a concrete class solves this problem.
+            </remarks>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.WriteGLCArchiveCmdlet">
+            <summary>
+            <para>
+            Uploads a single file, or collection of files in a folder hierarchy, to a vault in Amazon Glacier.
+            </para>
+            <para>
+            The cmdlet will automatically attempt to use multipart upload to fulfill the request depending on the size of
+            each file being uploaded. If a multipart upload is interrupted the cmdlet will attempt to abort the multipart
+            upload on your behalf. Under certain circumstances (network outage, power failure, etc.) the cmdlet may not be
+            able to abort the multipart upload.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.WriteGLCArchiveCmdlet.VaultName">
+            <summary>
+            The name of the vault that will hold the uploaded content.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.WriteGLCArchiveCmdlet.AccountId">
+            <summary>
+            <para>
+            AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '-' (hyphen),
+            in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an
+            account ID, do not include any hyphens ('-') in the ID.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.WriteGLCArchiveCmdlet.FilePath">
+            <summary>
+            The full path to the local file to be uploaded.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.WriteGLCArchiveCmdlet.Description">
+            <summary>
+            Optional description to apply to the uploaded archive.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.WriteGLCArchiveCmdlet.FolderPath">
+            <summary>
+            The full path to a local folder. All files in the folder will be uploaded to the
+            specified vault. Files contained in sub-folders of the specified folder will only
+            be uploaded if the -Recurse switch is specified.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.WriteGLCArchiveCmdlet.Recurse">
+            <summary>
+            If set, all sub-folders beneath the folder specified in -Folder will also be uploaded.
+            Defaults off [false].
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.WriteGLCArchiveCmdlet.SearchPattern">
+            <summary>
+            Optional search pattern to control which files in the specified folder path are uploaded
+            to the vault. By default all files are processed.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.WriteGLCArchiveCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.AddGLCTagsToVaultCmdlet">
+            <summary>
+            This operation adds the specified tags to a vault. Each tag is composed of a key and
+            a value. Each vault can have up to 10 tags. If your request would cause the tag limit
+            for the vault to be exceeded, the operation throws the <code>LimitExceededException</code>
+            error. If a tag already exists on the vault under a specified key, the existing key
+            value will be overwritten. For more information about tags, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
+            Amazon S3 Glacier Resources</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.AddGLCTagsToVaultCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+            vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+            (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
+            the credentials used to sign the request. If you use an account ID, do not include
+            any hyphens ('-') in the ID.</para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.AddGLCTagsToVaultCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags to add to the vault. Each tag is composed of a key and a value. The value
+            can be an empty string.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.AddGLCTagsToVaultCmdlet.VaultName">
+            <summary>
+            <para>
+            <para>The name of the vault.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.AddGLCTagsToVaultCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.AddTagsToVaultResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.AddGLCTagsToVaultCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the VaultName parameter.
+            The -PassThru parameter is deprecated, use -Select '^VaultName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.AddGLCTagsToVaultCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.CompleteGLCVaultLockCmdlet">
+            <summary>
+            This operation completes the vault locking process by transitioning the vault lock
+            from the <code>InProgress</code> state to the <code>Locked</code> state, which causes
+            the vault lock policy to become unchangeable. A vault lock is put into the <code>InProgress</code>
+            state by calling <a>InitiateVaultLock</a>. You can obtain the state of the vault lock
+            by calling <a>GetVaultLock</a>. For more information about the vault locking process,
+            <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html">Amazon
+            Glacier Vault Lock</a>. 
+            
+             
+            <para>
+            This operation is idempotent. This request is always successful if the vault lock
+            is in the <code>Locked</code> state and the provided lock ID matches the lock ID originally
+            used to lock the vault.
+            </para><para>
+            If an invalid lock ID is passed in the request when the vault lock is in the <code>Locked</code>
+            state, the operation returns an <code>AccessDeniedException</code> error. If an invalid
+            lock ID is passed in the request when the vault lock is in the <code>InProgress</code>
+            state, the operation throws an <code>InvalidParameter</code> error.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.CompleteGLCVaultLockCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>AccountId</code> value is the AWS account ID. This value must match the
+            AWS account ID associated with the credentials used to sign the request. You can either
+            specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which
+            case Amazon Glacier uses the AWS account ID associated with the credentials used to
+            sign the request. If you specify your account ID, do not include any hyphens ('-')
+            in the ID.</para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.CompleteGLCVaultLockCmdlet.LockId">
+            <summary>
+            <para>
+            <para>The <code>lockId</code> value is the lock ID obtained from a <a>InitiateVaultLock</a>
+            request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.CompleteGLCVaultLockCmdlet.VaultName">
+            <summary>
+            <para>
+            <para>The name of the vault.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.CompleteGLCVaultLockCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.CompleteVaultLockResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.CompleteGLCVaultLockCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LockId parameter.
+            The -PassThru parameter is deprecated, use -Select '^LockId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.CompleteGLCVaultLockCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.GetGLCDataRetrievalPolicyCmdlet">
+            <summary>
+            This operation returns the current data retrieval policy for the account and region
+            specified in the GET request. For more information about data retrieval policies,
+            see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html">Amazon
+            Glacier Data Retrieval Policies</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCDataRetrievalPolicyCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>AccountId</code> value is the AWS account ID. This value must match the
+            AWS account ID associated with the credentials used to sign the request. You can either
+            specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which
+            case Amazon Glacier uses the AWS account ID associated with the credentials used to
+            sign the request. If you specify your account ID, do not include any hyphens ('-')
+            in the ID. </para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCDataRetrievalPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Policy'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.GetDataRetrievalPolicyResponse).
+            Specifying the name of a property of type Amazon.Glacier.Model.GetDataRetrievalPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCDataRetrievalPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AccountId parameter.
+            The -PassThru parameter is deprecated, use -Select '^AccountId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.GetGLCJobCmdlet">
+            <summary>
+            This operation returns information about a job you previously initiated, including
+            the job initiation date, the user who initiated the job, the job status code/message
+            and the Amazon SNS topic to notify after Amazon S3 Glacier (Glacier) completes the
+            job. For more information about initiating a job, see <a>InitiateJob</a>. 
+            
+             <note><para>
+            This operation enables you to check the status of your job. However, it is strongly
+            recommended that you set up an Amazon SNS topic and specify it in your initiate job
+            request so that Glacier can notify the topic after it completes the job.
+            </para></note><para>
+            A job ID will not expire for at least 24 hours after Glacier completes the job.
+            </para><para>
+            An AWS account has full permission to perform all operations (actions). However, AWS
+            Identity and Access Management (IAM) users don't have any permissions by default.
+            You must grant them explicit permission to perform specific actions. For more information,
+            see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
+            Control Using AWS Identity and Access Management (IAM)</a>.
+            </para><para>
+             For more information about using this operation, see the documentation for the underlying
+            REST API <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-describe-job-get.html">Describe
+            Job</a> in the <i>Amazon Glacier Developer Guide</i>. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCJobCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+            vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+            (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
+            the credentials used to sign the request. If you use an account ID, do not include
+            any hyphens ('-') in the ID. </para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCJobCmdlet.JobId">
+            <summary>
+            <para>
+            <para>The ID of the job to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCJobCmdlet.VaultName">
+            <summary>
+            <para>
+            <para>The name of the vault.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.DescribeJobResponse).
+            Specifying the name of a property of type Amazon.Glacier.Model.DescribeJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.GetGLCJobListCmdlet">
+            <summary>
+            This operation lists jobs for a vault, including jobs that are in-progress and jobs
+            that have recently finished. The List Job operation returns a list of these jobs sorted
+            by job initiation time.
+            
+             <note><para>
+            Amazon Glacier retains recently completed jobs for a period before deleting them;
+            however, it eventually removes completed jobs. The output of completed jobs can be
+            retrieved. Retaining completed jobs for a period of time after they have completed
+            enables you to get a job output in the event you miss the job completion notification
+            or your first attempt to download it fails. For example, suppose you start an archive
+            retrieval job to download an archive. After the job completes, you start to download
+            the archive but encounter a network error. In this scenario, you can retry and download
+            the archive while the job exists.
+            </para></note><para>
+            The List Jobs operation supports pagination. You should always check the response
+            <code>Marker</code> field. If there are no more jobs to list, the <code>Marker</code>
+            field is set to <code>null</code>. If there are more jobs to list, the <code>Marker</code>
+            field is set to a non-null value, which you can use to continue the pagination of
+            the list. To return a list of jobs that begins at a specific job, set the marker request
+            parameter to the <code>Marker</code> value for that job that you obtained from a previous
+            List Jobs request.
+            </para><para>
+            You can set a maximum limit for the number of jobs returned in the response by specifying
+            the <code>limit</code> parameter in the request. The default limit is 50. The number
+            of jobs returned might be fewer than the limit, but the number of returned jobs never
+            exceeds the limit.
+            </para><para>
+            Additionally, you can filter the jobs list returned by specifying the optional <code>statuscode</code>
+            parameter or <code>completed</code> parameter, or both. Using the <code>statuscode</code>
+            parameter, you can specify to return only jobs that match either the <code>InProgress</code>,
+            <code>Succeeded</code>, or <code>Failed</code> status. Using the <code>completed</code>
+            parameter, you can specify to return only jobs that were completed (<code>true</code>)
+            or jobs that were not completed (<code>false</code>).
+            </para><para>
+            For more information about using this operation, see the documentation for the underlying
+            REST API <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-jobs-get.html">List
+            Jobs</a>. 
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCJobListCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+            vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+            (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
+            the credentials used to sign the request. If you use an account ID, do not include
+            any hyphens ('-') in the ID. </para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCJobListCmdlet.Completed">
+            <summary>
+            <para>
+            <para>The state of the jobs to return. You can specify <code>true</code> or <code>false</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCJobListCmdlet.Statuscode">
+            <summary>
+            <para>
+            <para>The type of job status to return. You can specify the following values: <code>InProgress</code>,
+            <code>Succeeded</code>, or <code>Failed</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCJobListCmdlet.VaultName">
+            <summary>
+            <para>
+            <para>The name of the vault.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCJobListCmdlet.Limit">
+            <summary>
+            <para>
+            <para>The maximum number of jobs to be returned. The default limit is 50. The number of
+            jobs returned might be fewer than the specified limit, but the number of returned
+            jobs never exceeds the limit.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>50</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCJobListCmdlet.Marker">
+            <summary>
+            <para>
+            <para>An opaque string used for pagination. This value specifies the job at which the listing
+            of jobs should begin. Get the marker value from a previous List Jobs response. You
+            only need to include the marker if you are continuing the pagination of results started
+            in a previous List Jobs request.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-Marker $null' for the first call and '-Marker $AWSHistory.LastServiceResponse.Marker' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCJobListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'JobList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.ListJobsResponse).
+            Specifying the name of a property of type Amazon.Glacier.Model.ListJobsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCJobListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the VaultName parameter.
+            The -PassThru parameter is deprecated, use -Select '^VaultName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCJobListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of Marker
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.GetGLCMultipartUploadListCmdlet">
+            <summary>
+            This operation lists in-progress multipart uploads for the specified vault. An in-progress
+            multipart upload is a multipart upload that has been initiated by an <a>InitiateMultipartUpload</a>
+            request, but has not yet been completed or aborted. The list returned in the List
+            Multipart Upload response has no guaranteed order. 
+            
+             
+            <para>
+            The List Multipart Uploads operation supports pagination. By default, this operation
+            returns up to 50 multipart uploads in the response. You should always check the response
+            for a <code>marker</code> at which to continue the list; if there are no more items
+            the <code>marker</code> is <code>null</code>. To return a list of multipart uploads
+            that begins at a specific upload, set the <code>marker</code> request parameter to
+            the value you obtained from a previous List Multipart Upload request. You can also
+            limit the number of uploads returned in the response by specifying the <code>limit</code>
+            parameter in the request.
+            </para><para>
+            Note the difference between this operation and listing parts (<a>ListParts</a>). The
+            List Multipart Uploads operation lists all multipart uploads for a vault and does
+            not require a multipart upload ID. The List Parts operation requires a multipart upload
+            ID since parts are associated with a single upload.
+            </para><para>
+            An AWS account has full permission to perform all operations (actions). However, AWS
+            Identity and Access Management (IAM) users don't have any permissions by default.
+            You must grant them explicit permission to perform specific actions. For more information,
+            see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
+            Control Using AWS Identity and Access Management (IAM)</a>.
+            </para><para>
+            For conceptual information and the underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
+            with Archives in Amazon S3 Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-uploads.html">List
+            Multipart Uploads </a> in the <i>Amazon Glacier Developer Guide</i>.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCMultipartUploadListCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+            vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+            (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
+            the credentials used to sign the request. If you use an account ID, do not include
+            any hyphens ('-') in the ID. </para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCMultipartUploadListCmdlet.VaultName">
+            <summary>
+            <para>
+            <para>The name of the vault.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCMultipartUploadListCmdlet.Limit">
+            <summary>
+            <para>
+            <para>Specifies the maximum number of uploads returned in the response body. If this value
+            is not specified, the List Uploads operation returns up to 50 uploads.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>50</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCMultipartUploadListCmdlet.UploadIdMarker">
+            <summary>
+            <para>
+            <para>An opaque string used for pagination. This value specifies the upload at which the
+            listing of uploads should begin. Get the marker value from a previous List Uploads
+            response. You need only include the marker if you are continuing the pagination of
+            results started in a previous List Uploads request.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-UploadIdMarker $null' for the first call and '-UploadIdMarker $AWSHistory.LastServiceResponse.Marker' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCMultipartUploadListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'UploadsList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.ListMultipartUploadsResponse).
+            Specifying the name of a property of type Amazon.Glacier.Model.ListMultipartUploadsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCMultipartUploadListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the VaultName parameter.
+            The -PassThru parameter is deprecated, use -Select '^VaultName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCMultipartUploadListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of UploadIdMarker
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.GetGLCProvisionedCapacityListCmdlet">
+            <summary>
+            This operation lists the provisioned capacity units for the specified AWS account.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCProvisionedCapacityListCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The AWS account ID of the account that owns the vault. You can either specify an AWS
+            account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses
+            the AWS account ID associated with the credentials used to sign the request. If you
+            use an account ID, don't include any hyphens ('-') in the ID. </para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCProvisionedCapacityListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ProvisionedCapacityList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.ListProvisionedCapacityResponse).
+            Specifying the name of a property of type Amazon.Glacier.Model.ListProvisionedCapacityResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCProvisionedCapacityListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AccountId parameter.
+            The -PassThru parameter is deprecated, use -Select '^AccountId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultCmdlet">
+            <summary>
+            This operation returns information about a vault, including the vault's Amazon Resource
+            Name (ARN), the date the vault was created, the number of archives it contains, and
+            the total size of all the archives in the vault. The number of archives and their
+            total size are as of the last inventory generation. This means that if you add or
+            remove an archive from a vault, and then immediately use Describe Vault, the change
+            in contents will not be immediately reflected. If you want to retrieve the latest
+            inventory of the vault, use <a>InitiateJob</a>. Amazon S3 Glacier generates vault
+            inventories approximately daily. For more information, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-inventory.html">Downloading
+            a Vault Inventory in Amazon S3 Glacier</a>. 
+            
+             
+            <para>
+            An AWS account has full permission to perform all operations (actions). However, AWS
+            Identity and Access Management (IAM) users don't have any permissions by default.
+            You must grant them explicit permission to perform specific actions. For more information,
+            see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
+            Control Using AWS Identity and Access Management (IAM)</a>.
+            </para><para>
+            For conceptual information and underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
+            Vault Metadata in Amazon S3 Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-get.html">Describe
+            Vault </a> in the <i>Amazon Glacier Developer Guide</i>. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+            vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+            (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
+            the credentials used to sign the request. If you use an account ID, do not include
+            any hyphens ('-') in the ID. </para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultCmdlet.VaultName">
+            <summary>
+            <para>
+            <para>The name of the vault.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.DescribeVaultResponse).
+            Specifying the name of a property of type Amazon.Glacier.Model.DescribeVaultResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the VaultName parameter.
+            The -PassThru parameter is deprecated, use -Select '^VaultName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultAccessPolicyCmdlet">
+            <summary>
+            This operation retrieves the <code>access-policy</code> subresource set on the vault;
+            for more information on setting this subresource, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetVaultAccessPolicy.html">Set
+            Vault Access Policy (PUT access-policy)</a>. If there is no access policy set on the
+            vault, the operation returns a <code>404 Not found</code> error. For more information
+            about vault access policies, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
+            Glacier Access Control with Vault Access Policies</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultAccessPolicyCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+            vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+            (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
+            the credentials used to sign the request. If you use an account ID, do not include
+            any hyphens ('-') in the ID.</para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultAccessPolicyCmdlet.VaultName">
+            <summary>
+            <para>
+            <para>The name of the vault.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultAccessPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Policy'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.GetVaultAccessPolicyResponse).
+            Specifying the name of a property of type Amazon.Glacier.Model.GetVaultAccessPolicyResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultAccessPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the VaultName parameter.
+            The -PassThru parameter is deprecated, use -Select '^VaultName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultListCmdlet">
+            <summary>
+            This operation lists all vaults owned by the calling user's account. The list returned
+            in the response is ASCII-sorted by vault name.
+            
+             
+            <para>
+            By default, this operation returns up to 10 items. If there are more vaults to list,
+            the response <code>marker</code> field contains the vault Amazon Resource Name (ARN)
+            at which to continue the list with a new List Vaults request; otherwise, the <code>marker</code>
+            field is <code>null</code>. To return a list of vaults that begins at a specific vault,
+            set the <code>marker</code> request parameter to the vault ARN you obtained from a
+            previous List Vaults request. You can also limit the number of vaults returned in
+            the response by specifying the <code>limit</code> parameter in the request. 
+            </para><para>
+            An AWS account has full permission to perform all operations (actions). However, AWS
+            Identity and Access Management (IAM) users don't have any permissions by default.
+            You must grant them explicit permission to perform specific actions. For more information,
+            see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
+            Control Using AWS Identity and Access Management (IAM)</a>.
+            </para><para>
+            For conceptual information and underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/retrieving-vault-info.html">Retrieving
+            Vault Metadata in Amazon S3 Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vaults-get.html">List
+            Vaults </a> in the <i>Amazon Glacier Developer Guide</i>. 
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultListCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>AccountId</code> value is the AWS account ID. This value must match the
+            AWS account ID associated with the credentials used to sign the request. You can either
+            specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which
+            case Amazon Glacier uses the AWS account ID associated with the credentials used to
+            sign the request. If you specify your account ID, do not include any hyphens ('-')
+            in the ID.</para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultListCmdlet.Limit">
+            <summary>
+            <para>
+            <para>The maximum number of vaults to be returned. The default limit is 10. The number of
+            vaults returned might be fewer than the specified limit, but the number of returned
+            vaults never exceeds the limit.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>50</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultListCmdlet.Marker">
+            <summary>
+            <para>
+            <para>A string used for pagination. The marker specifies the vault ARN after which the listing
+            of vaults should begin.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-Marker $null' for the first call and '-Marker $AWSHistory.LastServiceResponse.Marker' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'VaultList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.ListVaultsResponse).
+            Specifying the name of a property of type Amazon.Glacier.Model.ListVaultsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AccountId parameter.
+            The -PassThru parameter is deprecated, use -Select '^AccountId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of Marker
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultLockCmdlet">
+            <summary>
+            This operation retrieves the following attributes from the <code>lock-policy</code>
+            subresource set on the specified vault: 
+            
+             <ul><li><para>
+            The vault lock policy set on the vault.
+            </para></li><li><para>
+            The state of the vault lock, which is either <code>InProgess</code> or <code>Locked</code>.
+            </para></li><li><para>
+            When the lock ID expires. The lock ID is used to complete the vault locking process.
+            </para></li><li><para>
+            When the vault lock was initiated and put into the <code>InProgress</code> state.
+            </para></li></ul><para>
+            A vault lock is put into the <code>InProgress</code> state by calling <a>InitiateVaultLock</a>.
+            A vault lock is put into the <code>Locked</code> state by calling <a>CompleteVaultLock</a>.
+            You can abort the vault locking process by calling <a>AbortVaultLock</a>. For more
+            information about the vault locking process, <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html">Amazon
+            Glacier Vault Lock</a>. 
+            </para><para>
+            If there is no vault lock policy set on the vault, the operation returns a <code>404
+            Not found</code> error. For more information about vault lock policies, <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html">Amazon
+            Glacier Access Control with Vault Lock Policies</a>. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultLockCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+            vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+            (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
+            the credentials used to sign the request. If you use an account ID, do not include
+            any hyphens ('-') in the ID.</para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultLockCmdlet.VaultName">
+            <summary>
+            <para>
+            <para>The name of the vault.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultLockCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.GetVaultLockResponse).
+            Specifying the name of a property of type Amazon.Glacier.Model.GetVaultLockResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultLockCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the VaultName parameter.
+            The -PassThru parameter is deprecated, use -Select '^VaultName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultNotificationCmdlet">
+            <summary>
+            This operation retrieves the <code>notification-configuration</code> subresource of
+            the specified vault.
+            
+             
+            <para>
+            For information about setting a notification configuration on a vault, see <a>SetVaultNotifications</a>.
+            If a notification configuration for a vault is not set, the operation returns a <code>404
+            Not Found</code> error. For more information about vault notifications, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
+            Vault Notifications in Amazon S3 Glacier</a>. 
+            </para><para>
+            An AWS account has full permission to perform all operations (actions). However, AWS
+            Identity and Access Management (IAM) users don't have any permissions by default.
+            You must grant them explicit permission to perform specific actions. For more information,
+            see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
+            Control Using AWS Identity and Access Management (IAM)</a>.
+            </para><para>
+            For conceptual information and underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
+            Vault Notifications in Amazon S3 Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-get.html">Get
+            Vault Notification Configuration </a> in the <i>Amazon Glacier Developer Guide</i>.
+            
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultNotificationCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+            vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+            (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
+            the credentials used to sign the request. If you use an account ID, do not include
+            any hyphens ('-') in the ID.</para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultNotificationCmdlet.VaultName">
+            <summary>
+            <para>
+            <para>The name of the vault.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultNotificationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'VaultNotificationConfig'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.GetVaultNotificationsResponse).
+            Specifying the name of a property of type Amazon.Glacier.Model.GetVaultNotificationsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultNotificationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the VaultName parameter.
+            The -PassThru parameter is deprecated, use -Select '^VaultName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultTagListCmdlet">
+            <summary>
+            This operation lists all the tags attached to a vault. The operation returns an empty
+            map if there are no tags. For more information about tags, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
+            Amazon S3 Glacier Resources</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultTagListCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+            vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+            (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
+            the credentials used to sign the request. If you use an account ID, do not include
+            any hyphens ('-') in the ID.</para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultTagListCmdlet.VaultName">
+            <summary>
+            <para>
+            <para>The name of the vault.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultTagListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.ListTagsForVaultResponse).
+            Specifying the name of a property of type Amazon.Glacier.Model.ListTagsForVaultResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.GetGLCVaultTagListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the VaultName parameter.
+            The -PassThru parameter is deprecated, use -Select '^VaultName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.NewGLCProvisionedCapacityPurchaseCmdlet">
+            <summary>
+            This operation purchases a provisioned capacity unit for an AWS account.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.NewGLCProvisionedCapacityPurchaseCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The AWS account ID of the account that owns the vault. You can either specify an AWS
+            account ID or optionally a single '-' (hyphen), in which case Amazon S3 Glacier uses
+            the AWS account ID associated with the credentials used to sign the request. If you
+            use an account ID, don't include any hyphens ('-') in the ID. </para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.NewGLCProvisionedCapacityPurchaseCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'CapacityId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.PurchaseProvisionedCapacityResponse).
+            Specifying the name of a property of type Amazon.Glacier.Model.PurchaseProvisionedCapacityResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.NewGLCProvisionedCapacityPurchaseCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AccountId parameter.
+            The -PassThru parameter is deprecated, use -Select '^AccountId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.NewGLCProvisionedCapacityPurchaseCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.NewGLCVaultCmdlet">
+            <summary>
+            This operation creates a new vault with the specified name. The name of the vault
+            must be unique within a region for an AWS account. You can create up to 1,000 vaults
+            per account. If you need to create more vaults, contact Amazon S3 Glacier.
+            
+             
+            <para>
+            You must use the following guidelines when naming a vault.
+            </para><ul><li><para>
+            Names can be between 1 and 255 characters long.
+            </para></li><li><para>
+            Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), and '.' (period).
+            </para></li></ul><para>
+            This operation is idempotent.
+            </para><para>
+            An AWS account has full permission to perform all operations (actions). However, AWS
+            Identity and Access Management (IAM) users don't have any permissions by default.
+            You must grant them explicit permission to perform specific actions. For more information,
+            see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
+            Control Using AWS Identity and Access Management (IAM)</a>.
+            </para><para>
+             For conceptual information and underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/creating-vaults.html">Creating
+            a Vault in Amazon Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-put.html">Create
+            Vault </a> in the <i>Amazon Glacier Developer Guide</i>. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.NewGLCVaultCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>AccountId</code> value is the AWS account ID. This value must match the
+            AWS account ID associated with the credentials used to sign the request. You can either
+            specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which
+            case Amazon S3 Glacier uses the AWS account ID associated with the credentials used
+            to sign the request. If you specify your account ID, do not include any hyphens ('-')
+            in the ID.</para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.NewGLCVaultCmdlet.VaultName">
+            <summary>
+            <para>
+            <para>The name of the vault.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.NewGLCVaultCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Location'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.CreateVaultResponse).
+            Specifying the name of a property of type Amazon.Glacier.Model.CreateVaultResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.NewGLCVaultCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the VaultName parameter.
+            The -PassThru parameter is deprecated, use -Select '^VaultName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.NewGLCVaultCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCArchiveCmdlet">
+            <summary>
+            This operation deletes an archive from a vault. Subsequent requests to initiate a
+            retrieval of this archive will fail. Archive retrievals that are in progress for this
+            archive ID may or may not succeed according to the following scenarios:
+            
+             <ul><li><para>
+            If the archive retrieval job is actively preparing the data for download when Amazon
+            S3 Glacier receives the delete archive request, the archival retrieval operation might
+            fail.
+            </para></li><li><para>
+            If the archive retrieval job has successfully prepared the archive for download when
+            Amazon S3 Glacier receives the delete archive request, you will be able to download
+            the output.
+            </para></li></ul><para>
+            This operation is idempotent. Attempting to delete an already-deleted archive does
+            not result in an error.
+            </para><para>
+            An AWS account has full permission to perform all operations (actions). However, AWS
+            Identity and Access Management (IAM) users don't have any permissions by default.
+            You must grant them explicit permission to perform specific actions. For more information,
+            see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
+            Control Using AWS Identity and Access Management (IAM)</a>.
+            </para><para>
+             For conceptual information and underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-an-archive.html">Deleting
+            an Archive in Amazon Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html">Delete
+            Archive</a> in the <i>Amazon Glacier Developer Guide</i>. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCArchiveCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+            vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+            (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
+            the credentials used to sign the request. If you use an account ID, do not include
+            any hyphens ('-') in the ID.</para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCArchiveCmdlet.ArchiveId">
+            <summary>
+            <para>
+            <para>The ID of the archive to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCArchiveCmdlet.VaultName">
+            <summary>
+            <para>
+            <para>The name of the vault.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCArchiveCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.DeleteArchiveResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCArchiveCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ArchiveId parameter.
+            The -PassThru parameter is deprecated, use -Select '^ArchiveId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCArchiveCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCMultipartUploadCmdlet">
+            <summary>
+            This operation aborts a multipart upload identified by the upload ID.
+            
+             
+            <para>
+            After the Abort Multipart Upload request succeeds, you cannot upload any more parts
+            to the multipart upload or complete the multipart upload. Aborting a completed upload
+            fails. However, aborting an already-aborted upload will succeed, for a short time.
+            For more information about uploading a part and completing a multipart upload, see
+            <a>UploadMultipartPart</a> and <a>CompleteMultipartUpload</a>.
+            </para><para>
+            This operation is idempotent.
+            </para><para>
+            An AWS account has full permission to perform all operations (actions). However, AWS
+            Identity and Access Management (IAM) users don't have any permissions by default.
+            You must grant them explicit permission to perform specific actions. For more information,
+            see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
+            Control Using AWS Identity and Access Management (IAM)</a>.
+            </para><para>
+             For conceptual information and underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
+            with Archives in Amazon S3 Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-abort-upload.html">Abort
+            Multipart Upload</a> in the <i>Amazon Glacier Developer Guide</i>. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCMultipartUploadCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+            vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+            (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
+            the credentials used to sign the request. If you use an account ID, do not include
+            any hyphens ('-') in the ID.</para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCMultipartUploadCmdlet.UploadId">
+            <summary>
+            <para>
+            <para>The upload ID of the multipart upload to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCMultipartUploadCmdlet.VaultName">
+            <summary>
+            <para>
+            <para>The name of the vault.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCMultipartUploadCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.AbortMultipartUploadResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCMultipartUploadCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the UploadId parameter.
+            The -PassThru parameter is deprecated, use -Select '^UploadId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCMultipartUploadCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCTagsFromVaultCmdlet">
+            <summary>
+            This operation removes one or more tags from the set of tags attached to a vault.
+            For more information about tags, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
+            Amazon S3 Glacier Resources</a>. This operation is idempotent. The operation will
+            be successful, even if there are no tags attached to the vault.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCTagsFromVaultCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+            vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+            (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
+            the credentials used to sign the request. If you use an account ID, do not include
+            any hyphens ('-') in the ID.</para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCTagsFromVaultCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>A list of tag keys. Each corresponding tag is removed from the vault.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCTagsFromVaultCmdlet.VaultName">
+            <summary>
+            <para>
+            <para>The name of the vault.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCTagsFromVaultCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.RemoveTagsFromVaultResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCTagsFromVaultCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the VaultName parameter.
+            The -PassThru parameter is deprecated, use -Select '^VaultName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCTagsFromVaultCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCVaultCmdlet">
+            <summary>
+            This operation deletes a vault. Amazon S3 Glacier will delete a vault only if there
+            are no archives in the vault as of the last inventory and there have been no writes
+            to the vault since the last inventory. If either of these conditions is not satisfied,
+            the vault deletion fails (that is, the vault is not removed) and Amazon S3 Glacier
+            returns an error. You can use <a>DescribeVault</a> to return the number of archives
+            in a vault, and you can use <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html">Initiate
+            a Job (POST jobs)</a> to initiate a new inventory retrieval for a vault. The inventory
+            contains the archive IDs you use to delete archives using <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-delete.html">Delete
+            Archive (DELETE archive)</a>.
+            
+             
+            <para>
+            This operation is idempotent.
+            </para><para>
+            An AWS account has full permission to perform all operations (actions). However, AWS
+            Identity and Access Management (IAM) users don't have any permissions by default.
+            You must grant them explicit permission to perform specific actions. For more information,
+            see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
+            Control Using AWS Identity and Access Management (IAM)</a>.
+            </para><para>
+             For conceptual information and underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/deleting-vaults.html">Deleting
+            a Vault in Amazon Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-delete.html">Delete
+            Vault </a> in the <i>Amazon S3 Glacier Developer Guide</i>. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCVaultCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+            vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+            (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
+            the credentials used to sign the request. If you use an account ID, do not include
+            any hyphens ('-') in the ID.</para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCVaultCmdlet.VaultName">
+            <summary>
+            <para>
+            <para>The name of the vault.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCVaultCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.DeleteVaultResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCVaultCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the VaultName parameter.
+            The -PassThru parameter is deprecated, use -Select '^VaultName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCVaultCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCVaultAccessPolicyCmdlet">
+            <summary>
+            This operation deletes the access policy associated with the specified vault. The
+            operation is eventually consistent; that is, it might take some time for Amazon S3
+            Glacier to completely remove the access policy, and you might still see the effect
+            of the policy for a short time after you send the delete request.
+            
+             
+            <para>
+            This operation is idempotent. You can invoke delete multiple times, even if there
+            is no policy associated with the vault. For more information about vault access policies,
+            see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
+            Glacier Access Control with Vault Access Policies</a>. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCVaultAccessPolicyCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+            vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+            (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
+            the credentials used to sign the request. If you use an account ID, do not include
+            any hyphens ('-') in the ID. </para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCVaultAccessPolicyCmdlet.VaultName">
+            <summary>
+            <para>
+            <para>The name of the vault.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCVaultAccessPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.DeleteVaultAccessPolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCVaultAccessPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the VaultName parameter.
+            The -PassThru parameter is deprecated, use -Select '^VaultName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCVaultAccessPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCVaultNotificationCmdlet">
+            <summary>
+            This operation deletes the notification configuration set for a vault. The operation
+            is eventually consistent; that is, it might take some time for Amazon S3 Glacier to
+            completely disable the notifications and you might still receive some notifications
+            for a short time after you send the delete request.
+            
+             
+            <para>
+            An AWS account has full permission to perform all operations (actions). However, AWS
+            Identity and Access Management (IAM) users don't have any permissions by default.
+            You must grant them explicit permission to perform specific actions. For more information,
+            see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
+            Control Using AWS Identity and Access Management (IAM)</a>.
+            </para><para>
+             For conceptual information and underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
+            Vault Notifications in Amazon S3 Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-delete.html">Delete
+            Vault Notification Configuration </a> in the Amazon S3 Glacier Developer Guide. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCVaultNotificationCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+            vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+            (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
+            the credentials used to sign the request. If you use an account ID, do not include
+            any hyphens ('-') in the ID. </para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCVaultNotificationCmdlet.VaultName">
+            <summary>
+            <para>
+            <para>The name of the vault.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCVaultNotificationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.DeleteVaultNotificationsResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCVaultNotificationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the VaultName parameter.
+            The -PassThru parameter is deprecated, use -Select '^VaultName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.RemoveGLCVaultNotificationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.SetGLCDataRetrievalPolicyCmdlet">
+            <summary>
+            This operation sets and then enacts a data retrieval policy in the region specified
+            in the PUT request. You can set one policy per region for an AWS account. The policy
+            is enacted within a few minutes of a successful PUT operation.
+            
+             
+            <para>
+            The set policy operation does not affect retrieval jobs that were in progress before
+            the policy was enacted. For more information about data retrieval policies, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html">Amazon
+            Glacier Data Retrieval Policies</a>. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.SetGLCDataRetrievalPolicyCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>AccountId</code> value is the AWS account ID. This value must match the
+            AWS account ID associated with the credentials used to sign the request. You can either
+            specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which
+            case Amazon Glacier uses the AWS account ID associated with the credentials used to
+            sign the request. If you specify your account ID, do not include any hyphens ('-')
+            in the ID.</para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.SetGLCDataRetrievalPolicyCmdlet.Policy">
+            <summary>
+            <para>
+            <para>The data retrieval policy in JSON format.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.SetGLCDataRetrievalPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.SetDataRetrievalPolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.SetGLCDataRetrievalPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AccountId parameter.
+            The -PassThru parameter is deprecated, use -Select '^AccountId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.SetGLCDataRetrievalPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.SetGLCVaultAccessPolicyCmdlet">
+            <summary>
+            This operation configures an access policy for a vault and will overwrite an existing
+            policy. To configure a vault access policy, send a PUT request to the <code>access-policy</code>
+            subresource of the vault. An access policy is specific to a vault and is also called
+            a vault subresource. You can set one access policy per vault and the policy can be
+            up to 20 KB in size. For more information about vault access policies, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
+            Glacier Access Control with Vault Access Policies</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.SetGLCVaultAccessPolicyCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+            vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+            (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
+            the credentials used to sign the request. If you use an account ID, do not include
+            any hyphens ('-') in the ID.</para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.SetGLCVaultAccessPolicyCmdlet.Policy">
+            <summary>
+            <para>
+            <para>The vault access policy as a JSON string.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.SetGLCVaultAccessPolicyCmdlet.VaultName">
+            <summary>
+            <para>
+            <para>The name of the vault.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.SetGLCVaultAccessPolicyCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.SetVaultAccessPolicyResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.SetGLCVaultAccessPolicyCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the VaultName parameter.
+            The -PassThru parameter is deprecated, use -Select '^VaultName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.SetGLCVaultAccessPolicyCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.SetGLCVaultNotificationCmdlet">
+            <summary>
+            This operation configures notifications that will be sent when specific events happen
+            to a vault. By default, you don't get any notifications.
+            
+             
+            <para>
+            To configure vault notifications, send a PUT request to the <code>notification-configuration</code>
+            subresource of the vault. The request should include a JSON document that provides
+            an Amazon SNS topic and specific events for which you want Amazon S3 Glacier to send
+            notifications to the topic.
+            </para><para>
+            Amazon SNS topics must grant permission to the vault to be allowed to publish notifications
+            to the topic. You can configure a vault to publish a notification for the following
+            vault events:
+            </para><ul><li><para><b>ArchiveRetrievalCompleted</b> This event occurs when a job that was initiated
+            for an archive retrieval is completed (<a>InitiateJob</a>). The status of the completed
+            job can be "Succeeded" or "Failed". The notification sent to the SNS topic is the
+            same output as returned from <a>DescribeJob</a>. 
+            </para></li><li><para><b>InventoryRetrievalCompleted</b> This event occurs when a job that was initiated
+            for an inventory retrieval is completed (<a>InitiateJob</a>). The status of the completed
+            job can be "Succeeded" or "Failed". The notification sent to the SNS topic is the
+            same output as returned from <a>DescribeJob</a>. 
+            </para></li></ul><para>
+            An AWS account has full permission to perform all operations (actions). However, AWS
+            Identity and Access Management (IAM) users don't have any permissions by default.
+            You must grant them explicit permission to perform specific actions. For more information,
+            see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
+            Control Using AWS Identity and Access Management (IAM)</a>.
+            </para><para>
+            For conceptual information and underlying REST API, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
+            Vault Notifications in Amazon S3 Glacier</a> and <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html">Set
+            Vault Notification Configuration </a> in the <i>Amazon Glacier Developer Guide</i>.
+            
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.SetGLCVaultNotificationCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+            vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+            (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
+            the credentials used to sign the request. If you use an account ID, do not include
+            any hyphens ('-') in the ID.</para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.SetGLCVaultNotificationCmdlet.VaultName">
+            <summary>
+            <para>
+            <para>The name of the vault.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.SetGLCVaultNotificationCmdlet.VaultNotificationConfig">
+            <summary>
+            <para>
+            <para>Provides options for specifying notification configuration.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.SetGLCVaultNotificationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.SetVaultNotificationsResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.SetGLCVaultNotificationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the VaultName parameter.
+            The -PassThru parameter is deprecated, use -Select '^VaultName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.SetGLCVaultNotificationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.StartGLCJobCmdlet">
+            <summary>
+            This operation initiates a job of the specified type, which can be a select, an archival
+            retrieval, or a vault retrieval. For more information about using this operation,
+            see the documentation for the underlying REST API <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html">Initiate
+            a Job</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StartGLCJobCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>AccountId</code> value is the AWS account ID of the account that owns the
+            vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
+            (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
+            the credentials used to sign the request. If you use an account ID, do not include
+            any hyphens ('-') in the ID.</para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StartGLCJobCmdlet.ArchiveId">
+            <summary>
+            <para>
+            <para>The ID of the archive that you want to retrieve. This field is required only if <code>Type</code>
+            is set to <code>select</code> or <code>archive-retrieval</code>code&gt;. An error
+            occurs if you specify this request parameter for an inventory retrieval job request.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StartGLCJobCmdlet.JobDescription">
+            <summary>
+            <para>
+            <para>The optional description for the job. The description must be less than or equal to
+            1,024 bytes. The allowable characters are 7-bit ASCII without control codes-specifically,
+            ASCII values 32-126 decimal or 0x20-0x7E hexadecimal.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StartGLCJobCmdlet.OutputFormat">
+            <summary>
+            <para>
+            <para>When initiating a job to retrieve a vault inventory, you can optionally add this parameter
+            to your request to specify the output format. If you are initiating an inventory job
+            and do not specify a Format field, JSON is the default format. Valid values are "CSV"
+            and "JSON".</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StartGLCJobCmdlet.InventoryRetrieval">
+            <summary>
+            <para>
+            <para>Input parameters used for range inventory retrieval.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StartGLCJobCmdlet.OutputLocation">
+            <summary>
+            <para>
+            <para>Contains information about the location where the select job results are stored.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StartGLCJobCmdlet.RetrievalByteRange">
+            <summary>
+            <para>
+            <para>The byte range to retrieve for an archive retrieval. in the form "<i>StartByteValue</i>-<i>EndByteValue</i>"
+            If not specified, the whole archive is retrieved. If specified, the byte range must
+            be megabyte (1024*1024) aligned which means that <i>StartByteValue</i> must be divisible
+            by 1 MB and <i>EndByteValue</i> plus 1 must be divisible by 1 MB or be the end of
+            the archive specified as the archive byte size value minus 1. If RetrievalByteRange
+            is not megabyte aligned, this operation returns a 400 response. </para><para>An error occurs if you specify this field for an inventory retrieval job request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StartGLCJobCmdlet.SelectParameter">
+            <summary>
+            <para>
+            <para>Contains the parameters that define a job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StartGLCJobCmdlet.SNSTopic">
+            <summary>
+            <para>
+            <para>The Amazon SNS topic ARN to which Amazon S3 Glacier sends a notification when the
+            job is completed and the output is ready for you to download. The specified topic
+            publishes the notification to its subscribers. The SNS topic must exist.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StartGLCJobCmdlet.Tier">
+            <summary>
+            <para>
+            <para>The tier to use for a select or an archive retrieval job. Valid values are <code>Expedited</code>,
+            <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StartGLCJobCmdlet.JobType">
+            <summary>
+            <para>
+            <para>The job type. You can initiate a job to perform a select query on an archive, retrieve
+            an archive, or get an inventory of a vault. Valid values are "select", "archive-retrieval"
+            and "inventory-retrieval".</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StartGLCJobCmdlet.VaultName">
+            <summary>
+            <para>
+            <para>The name of the vault.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StartGLCJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.InitiateJobResponse).
+            Specifying the name of a property of type Amazon.Glacier.Model.InitiateJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StartGLCJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the VaultName parameter.
+            The -PassThru parameter is deprecated, use -Select '^VaultName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StartGLCJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.StartGLCVaultLockCmdlet">
+            <summary>
+            This operation initiates the vault locking process by doing the following:
+            
+             <ul><li><para>
+            Installing a vault lock policy on the specified vault.
+            </para></li><li><para>
+            Setting the lock state of vault lock to <code>InProgress</code>.
+            </para></li><li><para>
+            Returning a lock ID, which is used to complete the vault locking process.
+            </para></li></ul><para>
+            You can set one vault lock policy for each vault and this policy can be up to 20 KB
+            in size. For more information about vault lock policies, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html">Amazon
+            Glacier Access Control with Vault Lock Policies</a>. 
+            </para><para>
+            You must complete the vault locking process within 24 hours after the vault lock enters
+            the <code>InProgress</code> state. After the 24 hour window ends, the lock ID expires,
+            the vault automatically exits the <code>InProgress</code> state, and the vault lock
+            policy is removed from the vault. You call <a>CompleteVaultLock</a> to complete the
+            vault locking process by setting the state of the vault lock to <code>Locked</code>.
+            
+            </para><para>
+            After a vault lock is in the <code>Locked</code> state, you cannot initiate a new
+            vault lock for the vault.
+            </para><para>
+            You can abort the vault locking process by calling <a>AbortVaultLock</a>. You can
+            get the state of the vault lock by calling <a>GetVaultLock</a>. For more information
+            about the vault locking process, <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html">Amazon
+            Glacier Vault Lock</a>.
+            </para><para>
+            If this operation is called when the vault lock is in the <code>InProgress</code>
+            state, the operation returns an <code>AccessDeniedException</code> error. When the
+            vault lock is in the <code>InProgress</code> state you must call <a>AbortVaultLock</a>
+            before you can initiate a new vault lock policy. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StartGLCVaultLockCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>AccountId</code> value is the AWS account ID. This value must match the
+            AWS account ID associated with the credentials used to sign the request. You can either
+            specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which
+            case Amazon Glacier uses the AWS account ID associated with the credentials used to
+            sign the request. If you specify your account ID, do not include any hyphens ('-')
+            in the ID.</para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StartGLCVaultLockCmdlet.Policy">
+            <summary>
+            <para>
+            <para>The vault lock policy as a JSON string, which uses "\" as an escape character.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StartGLCVaultLockCmdlet.VaultName">
+            <summary>
+            <para>
+            <para>The name of the vault.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StartGLCVaultLockCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'LockId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.InitiateVaultLockResponse).
+            Specifying the name of a property of type Amazon.Glacier.Model.InitiateVaultLockResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StartGLCVaultLockCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the VaultName parameter.
+            The -PassThru parameter is deprecated, use -Select '^VaultName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StartGLCVaultLockCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GLC.StopGLCVaultLockCmdlet">
+            <summary>
+            This operation aborts the vault locking process if the vault lock is not in the <code>Locked</code>
+            state. If the vault lock is in the <code>Locked</code> state when this operation is
+            requested, the operation returns an <code>AccessDeniedException</code> error. Aborting
+            the vault locking process removes the vault lock policy from the specified vault.
+            
+            
+             
+            <para>
+            A vault lock is put into the <code>InProgress</code> state by calling <a>InitiateVaultLock</a>.
+            A vault lock is put into the <code>Locked</code> state by calling <a>CompleteVaultLock</a>.
+            You can get the state of a vault lock by calling <a>GetVaultLock</a>. For more information
+            about the vault locking process, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html">Amazon
+            Glacier Vault Lock</a>. For more information about vault lock policies, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html">Amazon
+            Glacier Access Control with Vault Lock Policies</a>. 
+            </para><para>
+            This operation is idempotent. You can successfully invoke this operation multiple
+            times, if the vault lock is in the <code>InProgress</code> state or if there is no
+            policy associated with the vault.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StopGLCVaultLockCmdlet.AccountId">
+            <summary>
+            <para>
+            <para>The <code>AccountId</code> value is the AWS account ID. This value must match the
+            AWS account ID associated with the credentials used to sign the request. You can either
+            specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which
+            case Amazon Glacier uses the AWS account ID associated with the credentials used to
+            sign the request. If you specify your account ID, do not include any hyphens ('-')
+            in the ID.</para>
+            </para>
+            <para>If a value for this parameter is not specified the cmdlet will use a default value of '<b>-</b>'.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StopGLCVaultLockCmdlet.VaultName">
+            <summary>
+            <para>
+            <para>The name of the vault.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StopGLCVaultLockCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Glacier.Model.AbortVaultLockResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StopGLCVaultLockCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the VaultName parameter.
+            The -PassThru parameter is deprecated, use -Select '^VaultName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GLC.StopGLCVaultLockCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

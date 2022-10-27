@@ -1,0 +1,1543 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.GreengrassV2</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.AddGGV2BatchClientDeviceWithCoreDeviceCmdlet">
+            <summary>
+            Associates a list of client devices with a core device. Use this API operation to
+            specify which client devices can discover a core device through cloud discovery. With
+            cloud discovery, client devices connect to IoT Greengrass to retrieve associated core
+            devices' connectivity information and certificates. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-cloud-discovery.html">Configure
+            cloud discovery</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
+            
+             <note><para>
+            Client devices are local IoT devices that connect to and communicate with an IoT Greengrass
+            core device over MQTT. You can connect client devices to a core device to sync MQTT
+            messages and data to Amazon Web Services IoT Core and interact with client devices
+            in Greengrass components. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interact-with-local-iot-devices.html">Interact
+            with local IoT devices</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.AddGGV2BatchClientDeviceWithCoreDeviceCmdlet.CoreDeviceThingName">
+            <summary>
+            <para>
+            <para>The name of the core device. This is also the name of the IoT thing.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.AddGGV2BatchClientDeviceWithCoreDeviceCmdlet.Entry">
+            <summary>
+            <para>
+            <para>The list of client devices to associate.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.AddGGV2BatchClientDeviceWithCoreDeviceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ErrorEntries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.BatchAssociateClientDeviceWithCoreDeviceResponse).
+            Specifying the name of a property of type Amazon.GreengrassV2.Model.BatchAssociateClientDeviceWithCoreDeviceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.AddGGV2BatchClientDeviceWithCoreDeviceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the CoreDeviceThingName parameter.
+            The -PassThru parameter is deprecated, use -Select '^CoreDeviceThingName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.AddGGV2BatchClientDeviceWithCoreDeviceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.AddGGV2ResourceTagCmdlet">
+            <summary>
+            Adds tags to an IoT Greengrass resource. If a tag already exists for the resource,
+            this operation updates the tag's value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.AddGGV2ResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+            of the resource to tag.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.AddGGV2ResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of key-value pairs that contain metadata for the resource. For more information,
+            see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+            your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.AddGGV2ResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.AddGGV2ResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.AddGGV2ResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.AddGGV2ServiceRoleToAccountCmdlet">
+            <summary>
+            Associates a Greengrass service role with IoT Greengrass for your Amazon Web Services
+            account in this Amazon Web Services Region. IoT Greengrass uses this role to verify
+            the identity of client devices and manage core device connectivity information. The
+            role must include the <a href="https://console.aws.amazon.com/iam/home#/policies/arn:awsiam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy">AWSGreengrassResourceAccessRolePolicy</a>
+            managed policy or a custom policy that defines equivalent permissions for the IoT
+            Greengrass features that you use. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-service-role.html">Greengrass
+            service role</a> in the <i>IoT Greengrass Version 2 Developer Guide</i>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.AddGGV2ServiceRoleToAccountCmdlet.RoleArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the service role to associate with IoT Greengrass
+            for your Amazon Web Services account in this Amazon Web Services Region.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.AddGGV2ServiceRoleToAccountCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AssociatedAt'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.AssociateServiceRoleToAccountResponse).
+            Specifying the name of a property of type Amazon.GreengrassV2.Model.AssociateServiceRoleToAccountResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.AddGGV2ServiceRoleToAccountCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RoleArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^RoleArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.AddGGV2ServiceRoleToAccountCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ClientDevicesAssociatedWithCoreDeviceListCmdlet">
+            <summary>
+            Retrieves a paginated list of client devices that are associated with a core device.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ClientDevicesAssociatedWithCoreDeviceListCmdlet.CoreDeviceThingName">
+            <summary>
+            <para>
+            <para>The name of the core device. This is also the name of the IoT thing.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ClientDevicesAssociatedWithCoreDeviceListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to be returned per paginated request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ClientDevicesAssociatedWithCoreDeviceListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to be used for the next set of paginated results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ClientDevicesAssociatedWithCoreDeviceListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AssociatedClientDevices'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.ListClientDevicesAssociatedWithCoreDeviceResponse).
+            Specifying the name of a property of type Amazon.GreengrassV2.Model.ListClientDevicesAssociatedWithCoreDeviceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ClientDevicesAssociatedWithCoreDeviceListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the CoreDeviceThingName parameter.
+            The -PassThru parameter is deprecated, use -Select '^CoreDeviceThingName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentCmdlet">
+            <summary>
+            Gets the recipe for a version of a component.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+            of the component version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentCmdlet.RecipeOutputFormat">
+            <summary>
+            <para>
+            <para>The format of the recipe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.GetComponentResponse).
+            Specifying the name of a property of type Amazon.GreengrassV2.Model.GetComponentResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentListCmdlet">
+            <summary>
+            Retrieves a paginated list of component summaries. This list includes components that
+            you have permission to view.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentListCmdlet.Scope">
+            <summary>
+            <para>
+            <para>The scope of the components to list.</para><para>Default: <code>PRIVATE</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to be returned per paginated request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to be used for the next set of paginated results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Components'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.ListComponentsResponse).
+            Specifying the name of a property of type Amazon.GreengrassV2.Model.ListComponentsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Scope parameter.
+            The -PassThru parameter is deprecated, use -Select '^Scope' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentMetadataCmdlet">
+            <summary>
+            Retrieves metadata for a version of a component.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentMetadataCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+            of the component version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentMetadataCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.DescribeComponentResponse).
+            Specifying the name of a property of type Amazon.GreengrassV2.Model.DescribeComponentResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentMetadataCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentVersionArtifactCmdlet">
+            <summary>
+            Gets the pre-signed URL to download a public or a Lambda component artifact. Core
+            devices call this operation to identify the URL that they can use to download an artifact
+            to install.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentVersionArtifactCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+            of the component version. Specify the ARN of a public or a Lambda component version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentVersionArtifactCmdlet.ArtifactName">
+            <summary>
+            <para>
+            <para>The name of the artifact.</para><para>You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a>
+            operation to download the component recipe, which includes the URI of the artifact.
+            The artifact name is the section of the URI after the scheme. For example, in the
+            artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentVersionArtifactCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'PreSignedUrl'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.GetComponentVersionArtifactResponse).
+            Specifying the name of a property of type Amazon.GreengrassV2.Model.GetComponentVersionArtifactResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentVersionArtifactCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentVersionListCmdlet">
+            <summary>
+            Retrieves a paginated list of all versions for a component. Greater versions are listed
+            first.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentVersionListCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+            of the component.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentVersionListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to be returned per paginated request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentVersionListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to be used for the next set of paginated results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentVersionListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ComponentVersions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.ListComponentVersionsResponse).
+            Specifying the name of a property of type Amazon.GreengrassV2.Model.ListComponentVersionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ComponentVersionListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ConnectivityInfoCmdlet">
+            <summary>
+            Retrieves connectivity information for a Greengrass core device.
+            
+             
+            <para>
+            Connectivity information includes endpoints and ports where client devices can connect
+            to an MQTT broker on the core device. When a client device calls the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-discover-api.html">IoT
+            Greengrass discovery API</a>, IoT Greengrass returns connectivity information for
+            all of the core devices where the client device can connect. For more information,
+            see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/connect-client-devices.html">Connect
+            client devices to core devices</a> in the <i>IoT Greengrass Version 2 Developer Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ConnectivityInfoCmdlet.ThingName">
+            <summary>
+            <para>
+            <para>The name of the core device. This is also the name of the IoT thing.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ConnectivityInfoCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.GetConnectivityInfoResponse).
+            Specifying the name of a property of type Amazon.GreengrassV2.Model.GetConnectivityInfoResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ConnectivityInfoCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ThingName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ThingName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2CoreDeviceCmdlet">
+            <summary>
+            Retrieves metadata for a Greengrass core device.
+            
+             <note><para>
+            IoT Greengrass relies on individual devices to send status updates to the Amazon Web
+            Services Cloud. If the IoT Greengrass Core software isn't running on the device, or
+            if device isn't connected to the Amazon Web Services Cloud, then the reported status
+            of that device might not reflect its current status. The status timestamp indicates
+            when the device status was last updated.
+            </para><para>
+            Core devices send status updates at the following times:
+            </para><ul><li><para>
+            When the IoT Greengrass Core software starts
+            </para></li><li><para>
+            When the core device receives a deployment from the Amazon Web Services Cloud
+            </para></li><li><para>
+            When the status of any component on the core device becomes <code>BROKEN</code></para></li><li><para>
+            At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular
+            interval that you can configure</a>, which defaults to 24 hours
+            </para></li><li><para>
+            For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment
+            and cloud deployment
+            </para></li></ul></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2CoreDeviceCmdlet.CoreDeviceThingName">
+            <summary>
+            <para>
+            <para>The name of the core device. This is also the name of the IoT thing.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2CoreDeviceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.GetCoreDeviceResponse).
+            Specifying the name of a property of type Amazon.GreengrassV2.Model.GetCoreDeviceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2CoreDeviceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the CoreDeviceThingName parameter.
+            The -PassThru parameter is deprecated, use -Select '^CoreDeviceThingName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2CoreDeviceListCmdlet">
+            <summary>
+            Retrieves a paginated list of Greengrass core devices.
+            
+             <note><para>
+            IoT Greengrass relies on individual devices to send status updates to the Amazon Web
+            Services Cloud. If the IoT Greengrass Core software isn't running on the device, or
+            if device isn't connected to the Amazon Web Services Cloud, then the reported status
+            of that device might not reflect its current status. The status timestamp indicates
+            when the device status was last updated.
+            </para><para>
+            Core devices send status updates at the following times:
+            </para><ul><li><para>
+            When the IoT Greengrass Core software starts
+            </para></li><li><para>
+            When the core device receives a deployment from the Amazon Web Services Cloud
+            </para></li><li><para>
+            When the status of any component on the core device becomes <code>BROKEN</code></para></li><li><para>
+            At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular
+            interval that you can configure</a>, which defaults to 24 hours
+            </para></li><li><para>
+            For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment
+            and cloud deployment
+            </para></li></ul></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2CoreDeviceListCmdlet.Status">
+            <summary>
+            <para>
+            <para>The core device status by which to filter. If you specify this parameter, the list
+            includes only core devices that have this status. Choose one of the following options:</para><ul><li><para><code>HEALTHY</code> – The IoT Greengrass Core software and all components run on
+            the core device without issue.</para></li><li><para><code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a
+            failed state on the core device.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2CoreDeviceListCmdlet.ThingGroupArn">
+            <summary>
+            <para>
+            <para>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+            of the IoT thing group by which to filter. If you specify this parameter, the list
+            includes only core devices that have successfully deployed a deployment that targets
+            the thing group. When you remove a core device from a thing group, the list continues
+            to include that core device.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2CoreDeviceListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to be returned per paginated request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2CoreDeviceListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to be used for the next set of paginated results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2CoreDeviceListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'CoreDevices'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.ListCoreDevicesResponse).
+            Specifying the name of a property of type Amazon.GreengrassV2.Model.ListCoreDevicesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2DeploymentCmdlet">
+            <summary>
+            Gets a deployment. Deployments define the components that run on Greengrass core devices.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2DeploymentCmdlet.DeploymentId">
+            <summary>
+            <para>
+            <para>The ID of the deployment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2DeploymentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.GetDeploymentResponse).
+            Specifying the name of a property of type Amazon.GreengrassV2.Model.GetDeploymentResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2DeploymentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DeploymentId parameter.
+            The -PassThru parameter is deprecated, use -Select '^DeploymentId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2DeploymentListCmdlet">
+            <summary>
+            Retrieves a paginated list of deployments.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2DeploymentListCmdlet.HistoryFilter">
+            <summary>
+            <para>
+            <para>The filter for the list of deployments. Choose one of the following options:</para><ul><li><para><code>ALL</code> – The list includes all deployments.</para></li><li><para><code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.</para></li></ul><para>Default: <code>LATEST_ONLY</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2DeploymentListCmdlet.TargetArn">
+            <summary>
+            <para>
+            <para>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+            of the target IoT thing or thing group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2DeploymentListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to be returned per paginated request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2DeploymentListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to be used for the next set of paginated results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2DeploymentListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Deployments'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.ListDeploymentsResponse).
+            Specifying the name of a property of type Amazon.GreengrassV2.Model.ListDeploymentsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2EffectiveDeploymentListCmdlet">
+            <summary>
+            Retrieves a paginated list of deployment jobs that IoT Greengrass sends to Greengrass
+            core devices.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2EffectiveDeploymentListCmdlet.CoreDeviceThingName">
+            <summary>
+            <para>
+            <para>The name of the core device. This is also the name of the IoT thing.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2EffectiveDeploymentListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to be returned per paginated request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2EffectiveDeploymentListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to be used for the next set of paginated results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2EffectiveDeploymentListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EffectiveDeployments'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.ListEffectiveDeploymentsResponse).
+            Specifying the name of a property of type Amazon.GreengrassV2.Model.ListEffectiveDeploymentsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2EffectiveDeploymentListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the CoreDeviceThingName parameter.
+            The -PassThru parameter is deprecated, use -Select '^CoreDeviceThingName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2InstalledComponentListCmdlet">
+            <summary>
+            Retrieves a paginated list of the components that a Greengrass core device runs. By
+            default, this list doesn't include components that are deployed as dependencies of
+            other components. To include dependencies in the response, set the <code>topologyFilter</code>
+            parameter to <code>ALL</code>.
+            
+             <note><para>
+            IoT Greengrass relies on individual devices to send status updates to the Amazon Web
+            Services Cloud. If the IoT Greengrass Core software isn't running on the device, or
+            if device isn't connected to the Amazon Web Services Cloud, then the reported status
+            of that device might not reflect its current status. The status timestamp indicates
+            when the device status was last updated.
+            </para><para>
+            Core devices send status updates at the following times:
+            </para><ul><li><para>
+            When the IoT Greengrass Core software starts
+            </para></li><li><para>
+            When the core device receives a deployment from the Amazon Web Services Cloud
+            </para></li><li><para>
+            When the status of any component on the core device becomes <code>BROKEN</code></para></li><li><para>
+            At a <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html#greengrass-nucleus-component-configuration-fss">regular
+            interval that you can configure</a>, which defaults to 24 hours
+            </para></li><li><para>
+            For IoT Greengrass Core v2.7.0, the core device sends status updates upon local deployment
+            and cloud deployment
+            </para></li></ul></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2InstalledComponentListCmdlet.CoreDeviceThingName">
+            <summary>
+            <para>
+            <para>The name of the core device. This is also the name of the IoT thing.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2InstalledComponentListCmdlet.TopologyFilter">
+            <summary>
+            <para>
+            <para>The filter for the list of components. Choose from the following options:</para><ul><li><para><code>ALL</code> – The list includes all components installed on the core device.</para></li><li><para><code>ROOT</code> – The list includes only <i>root</i> components, which are components
+            that you specify in a deployment. When you choose this option, the list doesn't include
+            components that the core device installs as dependencies of other components.</para></li></ul><para>Default: <code>ROOT</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2InstalledComponentListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to be returned per paginated request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2InstalledComponentListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to be used for the next set of paginated results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2InstalledComponentListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'InstalledComponents'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.ListInstalledComponentsResponse).
+            Specifying the name of a property of type Amazon.GreengrassV2.Model.ListInstalledComponentsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2InstalledComponentListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the CoreDeviceThingName parameter.
+            The -PassThru parameter is deprecated, use -Select '^CoreDeviceThingName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ResourceTagCmdlet">
+            <summary>
+            Retrieves the list of tags for an IoT Greengrass resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+            of the resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.GreengrassV2.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ServiceRoleForAccountCmdlet">
+            <summary>
+            Gets the service role associated with IoT Greengrass for your Amazon Web Services
+            account in this Amazon Web Services Region. IoT Greengrass uses this role to verify
+            the identity of client devices and manage core device connectivity information. For
+            more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-service-role.html">Greengrass
+            service role</a> in the <i>IoT Greengrass Version 2 Developer Guide</i>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.GetGGV2ServiceRoleForAccountCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.GetServiceRoleForAccountResponse).
+            Specifying the name of a property of type Amazon.GreengrassV2.Model.GetServiceRoleForAccountResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet">
+            <summary>
+            Creates a component. Components are software that run on Greengrass core devices.
+            After you develop and test a component on your core device, you can use this operation
+            to upload your component to IoT Greengrass. Then, you can deploy the component to
+            other core devices.
+            
+             
+            <para>
+            You can use this operation to do the following:
+            </para><ul><li><para><b>Create components from recipes</b></para><para>
+            Create a component from a recipe, which is a file that defines the component's metadata,
+            parameters, dependencies, lifecycle, artifacts, and platform capability. For more
+            information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/component-recipe-reference.html">IoT
+            Greengrass component recipe reference</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
+            </para><para>
+            To create a component from a recipe, specify <code>inlineRecipe</code> when you call
+            this operation.
+            </para></li><li><para><b>Create components from Lambda functions</b></para><para>
+            Create a component from an Lambda function that runs on IoT Greengrass. This creates
+            a recipe and artifacts from the Lambda function's deployment package. You can use
+            this operation to migrate Lambda functions from IoT Greengrass V1 to IoT Greengrass
+            V2.
+            </para><para>
+            This function only accepts Lambda functions that use the following runtimes:
+            </para><ul><li><para>
+            Python 2.7 – <code>python2.7</code></para></li><li><para>
+            Python 3.7 – <code>python3.7</code></para></li><li><para>
+            Python 3.8 – <code>python3.8</code></para></li><li><para>
+            Python 3.9 – <code>python3.9</code></para></li><li><para>
+            Java 8 – <code>java8</code></para></li><li><para>
+            Java 11 – <code>java11</code></para></li><li><para>
+            Node.js 10 – <code>nodejs10.x</code></para></li><li><para>
+            Node.js 12 – <code>nodejs12.x</code></para></li><li><para>
+            Node.js 14 – <code>nodejs14.x</code></para></li></ul><para>
+            To create a component from a Lambda function, specify <code>lambdaFunction</code>
+            when you call this operation.
+            </para><note><para>
+            IoT Greengrass currently supports Lambda functions on only Linux core devices.
+            </para></note></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet.LambdaFunction_ComponentDependency">
+            <summary>
+            <para>
+            <para>The component versions on which this Lambda function component depends.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet.LambdaFunction_ComponentName">
+            <summary>
+            <para>
+            <para>The name of the component.</para><para>Defaults to the name of the Lambda function.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet.LambdaFunction_ComponentPlatform">
+            <summary>
+            <para>
+            <para>The platforms that the component version supports.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet.LambdaFunction_ComponentVersion">
+            <summary>
+            <para>
+            <para>The version of the component.</para><para>Defaults to the version of the Lambda function as a semantic version. For example,
+            if your function version is <code>3</code>, the component version becomes <code>3.0.0</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet.ContainerParams_Device">
+            <summary>
+            <para>
+            <para>The list of system devices that the container can access.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet.ComponentLambdaParameters_EnvironmentVariable">
+            <summary>
+            <para>
+            <para>The map of environment variables that are available to the Lambda function when it
+            runs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet.ComponentLambdaParameters_EventSource">
+            <summary>
+            <para>
+            <para>The list of event sources to which to subscribe to receive work messages. The Lambda
+            function runs when it receives a message from an event source. You can subscribe this
+            function to local publish/subscribe messages and Amazon Web Services IoT Core MQTT
+            messages.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet.ComponentLambdaParameters_ExecArg">
+            <summary>
+            <para>
+            <para>The list of arguments to pass to the Lambda function when it runs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet.InlineRecipe">
+            <summary>
+            <para>
+            <para>The recipe to use to create the component. The recipe defines the component's metadata,
+            parameters, dependencies, lifecycle, artifacts, and platform compatibility.</para><para>You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</para>
+            </para>
+            <para>The cmdlet will automatically convert the supplied parameter of type string, string[], System.IO.FileInfo or System.IO.Stream to byte[] before supplying it to the service.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet.ComponentLambdaParameters_InputPayloadEncodingType">
+            <summary>
+            <para>
+            <para>The encoding type that the Lambda function supports.</para><para>Default: <code>json</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet.LinuxProcessParams_IsolationMode">
+            <summary>
+            <para>
+            <para>The isolation mode for the process that contains the Lambda function. The process
+            can run in an isolated runtime environment inside the IoT Greengrass container, or
+            as a regular process outside any container.</para><para>Default: <code>GreengrassContainer</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet.LambdaFunction_LambdaArn">
+            <summary>
+            <para>
+            <para>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+            of the Lambda function. The ARN must include the version of the function to import.
+            You can't use version aliases like <code>$LATEST</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet.ComponentLambdaParameters_MaxIdleTimeInSecond">
+            <summary>
+            <para>
+            <para>The maximum amount of time in seconds that a non-pinned Lambda function can idle before
+            the IoT Greengrass Core software stops its process.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet.ComponentLambdaParameters_MaxInstancesCount">
+            <summary>
+            <para>
+            <para>The maximum number of instances that a non-pinned Lambda function can run at the same
+            time.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet.ComponentLambdaParameters_MaxQueueSize">
+            <summary>
+            <para>
+            <para>The maximum size of the message queue for the Lambda function component. The IoT Greengrass
+            core stores messages in a FIFO (first-in-first-out) queue until it can run the Lambda
+            function to consume each message.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet.ContainerParams_MemorySizeInKB">
+            <summary>
+            <para>
+            <para>The memory size of the container, expressed in kilobytes.</para><para>Default: <code>16384</code> (16 MB)</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet.ContainerParams_MountROSysf">
+            <summary>
+            <para>
+            <para>Whether or not the container can read information from the device's <code>/sys</code>
+            folder.</para><para>Default: <code>false</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet.ComponentLambdaParameters_Pinned">
+            <summary>
+            <para>
+            <para>Whether or not the Lambda function is pinned, or long-lived.</para><ul><li><para>A pinned Lambda function starts when IoT Greengrass starts and keeps running in its
+            own container.</para></li><li><para>A non-pinned Lambda function starts only when it receives a work item and exists after
+            it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work
+            items, the IoT Greengrass Core software creates multiple instances of the function.</para></li></ul><para>Default: <code>true</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet.ComponentLambdaParameters_StatusTimeoutInSecond">
+            <summary>
+            <para>
+            <para>The interval in seconds at which a pinned (also known as long-lived) Lambda function
+            component sends status updates to the Lambda manager component.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of key-value pairs that contain metadata for the resource. For more information,
+            see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+            your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet.ComponentLambdaParameters_TimeoutInSecond">
+            <summary>
+            <para>
+            <para>The maximum amount of time in seconds that the Lambda function can process a work
+            item.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet.ContainerParams_Volume">
+            <summary>
+            <para>
+            <para>The list of volumes that the container can access.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>A unique, case-sensitive identifier that you can provide to ensure that the request
+            is idempotent. Idempotency means that the request is successfully processed only once,
+            even if you send the request multiple times. When a request succeeds, and you specify
+            the same client token for subsequent successful requests, the IoT Greengrass V2 service
+            returns the successful response that it caches from the previous request. IoT Greengrass
+            V2 caches successful responses for idempotent requests for up to 8 hours.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.CreateComponentVersionResponse).
+            Specifying the name of a property of type Amazon.GreengrassV2.Model.CreateComponentVersionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2ComponentVersionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2DeploymentCmdlet">
+            <summary>
+            Creates a continuous deployment for a target, which is a Greengrass core device or
+            group of core devices. When you add a new core device to a group of core devices that
+            has a deployment, IoT Greengrass deploys that group's deployment to the new device.
+            
+             
+            <para>
+            You can define one deployment for each target. When you create a new deployment for
+            a target that has an existing deployment, you replace the previous deployment. IoT
+            Greengrass applies the new deployment to the target devices.
+            </para><para>
+            Every deployment has a revision number that indicates how many deployment revisions
+            you define for a target. Use this operation to create a new revision of an existing
+            deployment.
+            </para><para>
+            For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create
+            deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2DeploymentCmdlet.ComponentUpdatePolicy_Action">
+            <summary>
+            <para>
+            <para>Whether or not to notify components and wait for components to become safe to update.
+            Choose from the following options:</para><ul><li><para><code>NOTIFY_COMPONENTS</code> – The deployment notifies each component before it
+            stops and updates that component. Components can use the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-subscribetocomponentupdates">SubscribeToComponentUpdates</a>
+            IPC operation to receive these notifications. Then, components can respond with the
+            <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-defercomponentupdate">DeferComponentUpdate</a>
+            IPC operation. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create
+            deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</para></li><li><para><code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify components or
+            wait for them to be safe to update.</para></li></ul><para>Default: <code>NOTIFY_COMPONENTS</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2DeploymentCmdlet.ExponentialRate_BaseRatePerMinute">
+            <summary>
+            <para>
+            <para>The minimum number of devices that receive a pending job notification, per minute,
+            when the job starts. This parameter defines the initial rollout rate of the job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2DeploymentCmdlet.Component">
+            <summary>
+            <para>
+            <para>The components to deploy. This is a dictionary, where each key is the name of a component,
+            and each key's value is the version and configuration to deploy for that component.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2DeploymentCmdlet.AbortConfig_CriteriaList">
+            <summary>
+            <para>
+            <para>The list of criteria that define when and how to cancel the configuration deployment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2DeploymentCmdlet.DeploymentName">
+            <summary>
+            <para>
+            <para>The name of the deployment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2DeploymentCmdlet.DeploymentPolicies_FailureHandlingPolicy">
+            <summary>
+            <para>
+            <para>The failure handling policy for the configuration deployment. This policy defines
+            what to do if the deployment fails.</para><para>Default: <code>ROLLBACK</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2DeploymentCmdlet.ExponentialRate_IncrementFactor">
+            <summary>
+            <para>
+            <para>The exponential factor to increase the rollout rate for the job.</para><para>This parameter supports up to one digit after the decimal (for example, you can specify
+            <code>1.5</code>, but not <code>1.55</code>).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2DeploymentCmdlet.TimeoutConfig_InProgressTimeoutInMinute">
+            <summary>
+            <para>
+            <para>The amount of time, in minutes, that devices have to complete the job. The timer starts
+            when the job status is set to <code>IN_PROGRESS</code>. If the job status doesn't
+            change to a terminal state before the time expires, then the job status is set to
+            <code>TIMED_OUT</code>.</para><para>The timeout interval must be between 1 minute and 7 days (10080 minutes).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2DeploymentCmdlet.JobExecutionsRolloutConfig_MaximumPerMinute">
+            <summary>
+            <para>
+            <para>The maximum number of devices that receive a pending job notification, per minute.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2DeploymentCmdlet.RateIncreaseCriteria_NumberOfNotifiedThing">
+            <summary>
+            <para>
+            <para>The number of devices to receive the job notification before the rollout rate increases.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2DeploymentCmdlet.RateIncreaseCriteria_NumberOfSucceededThing">
+            <summary>
+            <para>
+            <para>The number of devices to successfully run the configuration job before the rollout
+            rate increases.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2DeploymentCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of key-value pairs that contain metadata for the resource. For more information,
+            see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
+            your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2DeploymentCmdlet.TargetArn">
+            <summary>
+            <para>
+            <para>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+            of the target IoT thing or thing group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2DeploymentCmdlet.ComponentUpdatePolicy_TimeoutInSecond">
+            <summary>
+            <para>
+            <para>The amount of time in seconds that each component on a device has to report that it's
+            safe to update. If the component waits for longer than this timeout, then the deployment
+            proceeds on the device.</para><para>Default: <code>60</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2DeploymentCmdlet.ConfigurationValidationPolicy_TimeoutInSecond">
+            <summary>
+            <para>
+            <para>The amount of time in seconds that a component can validate its configuration updates.
+            If the validation time exceeds this timeout, then the deployment proceeds for the
+            device.</para><para>Default: <code>30</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2DeploymentCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>A unique, case-sensitive identifier that you can provide to ensure that the request
+            is idempotent. Idempotency means that the request is successfully processed only once,
+            even if you send the request multiple times. When a request succeeds, and you specify
+            the same client token for subsequent successful requests, the IoT Greengrass V2 service
+            returns the successful response that it caches from the previous request. IoT Greengrass
+            V2 caches successful responses for idempotent requests for up to 8 hours.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2DeploymentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.CreateDeploymentResponse).
+            Specifying the name of a property of type Amazon.GreengrassV2.Model.CreateDeploymentResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2DeploymentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TargetArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^TargetArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.NewGGV2DeploymentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2BatchClientDeviceFromCoreDeviceCmdlet">
+            <summary>
+            Disassociates a list of client devices from a core device. After you disassociate
+            a client device from a core device, the client device won't be able to use cloud discovery
+            to retrieve the core device's connectivity information and certificates.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2BatchClientDeviceFromCoreDeviceCmdlet.CoreDeviceThingName">
+            <summary>
+            <para>
+            <para>The name of the core device. This is also the name of the IoT thing.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2BatchClientDeviceFromCoreDeviceCmdlet.Entry">
+            <summary>
+            <para>
+            <para>The list of client devices to disassociate.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2BatchClientDeviceFromCoreDeviceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ErrorEntries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.BatchDisassociateClientDeviceFromCoreDeviceResponse).
+            Specifying the name of a property of type Amazon.GreengrassV2.Model.BatchDisassociateClientDeviceFromCoreDeviceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2BatchClientDeviceFromCoreDeviceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the CoreDeviceThingName parameter.
+            The -PassThru parameter is deprecated, use -Select '^CoreDeviceThingName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2BatchClientDeviceFromCoreDeviceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2ComponentCmdlet">
+            <summary>
+            Deletes a version of a component from IoT Greengrass.
+            
+             <note><para>
+            This operation deletes the component's recipe and artifacts. As a result, deployments
+            that refer to this component version will fail. If you have deployments that use this
+            component version, you can remove the component from the deployment or update the
+            deployment to use a valid version.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2ComponentCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+            of the component version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2ComponentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.DeleteComponentResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2ComponentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Arn parameter.
+            The -PassThru parameter is deprecated, use -Select '^Arn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2ComponentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2CoreDeviceCmdlet">
+            <summary>
+            Deletes a Greengrass core device, which is an IoT thing. This operation removes the
+            core device from the list of core devices. This operation doesn't delete the IoT thing.
+            For more information about how to delete the IoT thing, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteThing.html">DeleteThing</a>
+            in the <i>IoT API Reference</i>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2CoreDeviceCmdlet.CoreDeviceThingName">
+            <summary>
+            <para>
+            <para>The name of the core device. This is also the name of the IoT thing.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2CoreDeviceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.DeleteCoreDeviceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2CoreDeviceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the CoreDeviceThingName parameter.
+            The -PassThru parameter is deprecated, use -Select '^CoreDeviceThingName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2CoreDeviceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2DeploymentCmdlet">
+            <summary>
+            Deletes a deployment. To delete an active deployment, you must first cancel it. For
+            more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CancelDeployment.html">CancelDeployment</a>.
+            
+             
+            <para>
+            Deleting a deployment doesn't affect core devices that run that deployment, because
+            core devices store the deployment's configuration on the device. Additionally, core
+            devices can roll back to a previous deployment that has been deleted.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2DeploymentCmdlet.DeploymentId">
+            <summary>
+            <para>
+            <para>The ID of the deployment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2DeploymentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.DeleteDeploymentResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2DeploymentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DeploymentId parameter.
+            The -PassThru parameter is deprecated, use -Select '^DeploymentId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2DeploymentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2ResourceTagCmdlet">
+            <summary>
+            Removes a tag from an IoT Greengrass resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2ResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
+            of the resource to untag.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2ResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>A list of keys for tags to remove from the resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2ResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2ResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2ResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2ServiceRoleFromAccountCmdlet">
+            <summary>
+            Disassociates the Greengrass service role from IoT Greengrass for your Amazon Web
+            Services account in this Amazon Web Services Region. Without a service role, IoT Greengrass
+            can't verify the identity of client devices or manage core device connectivity information.
+            For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-service-role.html">Greengrass
+            service role</a> in the <i>IoT Greengrass Version 2 Developer Guide</i>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2ServiceRoleFromAccountCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'DisassociatedAt'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.DisassociateServiceRoleFromAccountResponse).
+            Specifying the name of a property of type Amazon.GreengrassV2.Model.DisassociateServiceRoleFromAccountResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.RemoveGGV2ServiceRoleFromAccountCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.ResolveGGV2ComponentCandidateCmdlet">
+            <summary>
+            Retrieves a list of components that meet the component, version, and platform requirements
+            of a deployment. Greengrass core devices call this operation when they receive a deployment
+            to identify the components to install.
+            
+             
+            <para>
+            This operation identifies components that meet all dependency requirements for a deployment.
+            If the requirements conflict, then this operation returns an error and the deployment
+            fails. For example, this occurs if component <code>A</code> requires version <code>&gt;2.0.0</code>
+            and component <code>B</code> requires version <code>&lt;2.0.0</code> of a component
+            dependency.
+            </para><para>
+            When you specify the component candidates to resolve, IoT Greengrass compares each
+            component's digest from the core device with the component's digest in the Amazon
+            Web Services Cloud. If the digests don't match, then IoT Greengrass specifies to use
+            the version from the Amazon Web Services Cloud.
+            </para><important><para>
+            To use this operation, you must use the data plane API endpoint and authenticate with
+            an IoT device certificate. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/greengrass.html">IoT
+            Greengrass endpoints and quotas</a>.
+            </para></important>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.ResolveGGV2ComponentCandidateCmdlet.Platform_Attribute">
+            <summary>
+            <para>
+            <para>A dictionary of attributes for the platform. The IoT Greengrass Core software defines
+            the <code>os</code> and <code>architecture</code> by default. You can specify additional
+            platform attributes for a core device when you deploy the Greengrass nucleus component.
+            For more information, see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass
+            nucleus component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.ResolveGGV2ComponentCandidateCmdlet.ComponentCandidate">
+            <summary>
+            <para>
+            <para>The list of components to resolve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.ResolveGGV2ComponentCandidateCmdlet.Platform_Name">
+            <summary>
+            <para>
+            <para>The friendly name of the platform. This name helps you identify the platform.</para><para>If you omit this parameter, IoT Greengrass creates a friendly name from the <code>os</code>
+            and <code>architecture</code> of the platform.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.ResolveGGV2ComponentCandidateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ResolvedComponentVersions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.ResolveComponentCandidatesResponse).
+            Specifying the name of a property of type Amazon.GreengrassV2.Model.ResolveComponentCandidatesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.ResolveGGV2ComponentCandidateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.StopGGV2DeploymentCmdlet">
+            <summary>
+            Cancels a deployment. This operation cancels the deployment for devices that haven't
+            yet received it. If a device already received the deployment, this operation doesn't
+            change anything for that device.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.StopGGV2DeploymentCmdlet.DeploymentId">
+            <summary>
+            <para>
+            <para>The ID of the deployment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.StopGGV2DeploymentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Message'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.CancelDeploymentResponse).
+            Specifying the name of a property of type Amazon.GreengrassV2.Model.CancelDeploymentResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.StopGGV2DeploymentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DeploymentId parameter.
+            The -PassThru parameter is deprecated, use -Select '^DeploymentId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.StopGGV2DeploymentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.GGV2.UpdateGGV2ConnectivityInfoCmdlet">
+            <summary>
+            Updates connectivity information for a Greengrass core device.
+            
+             
+            <para>
+            Connectivity information includes endpoints and ports where client devices can connect
+            to an MQTT broker on the core device. When a client device calls the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-discover-api.html">IoT
+            Greengrass discovery API</a>, IoT Greengrass returns connectivity information for
+            all of the core devices where the client device can connect. For more information,
+            see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/connect-client-devices.html">Connect
+            client devices to core devices</a> in the <i>IoT Greengrass Version 2 Developer Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.UpdateGGV2ConnectivityInfoCmdlet.ConnectivityInfo">
+            <summary>
+            <para>
+            <para>The connectivity information for the core device.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.UpdateGGV2ConnectivityInfoCmdlet.ThingName">
+            <summary>
+            <para>
+            <para>The name of the core device. This is also the name of the IoT thing.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.UpdateGGV2ConnectivityInfoCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.GreengrassV2.Model.UpdateConnectivityInfoResponse).
+            Specifying the name of a property of type Amazon.GreengrassV2.Model.UpdateConnectivityInfoResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.UpdateGGV2ConnectivityInfoCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ThingName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ThingName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.GGV2.UpdateGGV2ConnectivityInfoCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

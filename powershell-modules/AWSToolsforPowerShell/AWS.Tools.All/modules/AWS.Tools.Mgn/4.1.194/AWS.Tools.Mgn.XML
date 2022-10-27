@@ -1,0 +1,1594 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.Mgn</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.AddMGNResourceTagCmdlet">
+            <summary>
+            Adds or overwrites only the specified tags for the specified Application Migration
+            Service resource or resources. When you specify an existing tag key, the value is
+            overwritten with the new value. Each resource can have a maximum of 50 tags. Each
+            tag consists of a key and optional value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.AddMGNResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>Tag resource by ARN.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.AddMGNResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Tag resource by Tags.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.AddMGNResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.AddMGNResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.AddMGNResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.CompleteMGNCutoverCmdlet">
+            <summary>
+            Finalizes the cutover immediately for specific Source Servers. All AWS resources created
+            by Application Migration Service for enabling the replication of these source servers
+            will be terminated / deleted within 90 minutes. Launched Test or Cutover instances
+            will NOT be terminated. The AWS Replication Agent will receive a command to uninstall
+            itself (within 10 minutes). The following properties of the SourceServer will be changed
+            immediately: dataReplicationInfo.dataReplicationState will be changed to DISCONNECTED;
+            The SourceServer.lifeCycle.state will be changed to CUTOVER; The totalStorageBytes
+            property fo each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration
+            and dataReplicationInfo.lagDuration will be nullified.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.CompleteMGNCutoverCmdlet.SourceServerID">
+            <summary>
+            <para>
+            <para>Request to finalize Cutover by Source Server ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.CompleteMGNCutoverCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.FinalizeCutoverResponse).
+            Specifying the name of a property of type Amazon.Mgn.Model.FinalizeCutoverResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.CompleteMGNCutoverCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SourceServerID parameter.
+            The -PassThru parameter is deprecated, use -Select '^SourceServerID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.CompleteMGNCutoverCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.DisconnectMGNFromServiceCmdlet">
+            <summary>
+            Disconnects specific Source Servers from Application Migration Service. Data replication
+            is stopped immediately. All AWS resources created by Application Migration Service
+            for enabling the replication of these source servers will be terminated / deleted
+            within 90 minutes. Launched Test or Cutover instances will NOT be terminated. If the
+            agent on the source server has not been prevented from communicating with the Application
+            Migration Service service, then it will receive a command to uninstall itself (within
+            approximately 10 minutes). The following properties of the SourceServer will be changed
+            immediately: dataReplicationInfo.dataReplicationState will be set to DISCONNECTED;
+            The totalStorageBytes property for each of dataReplicationInfo.replicatedDisks will
+            be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration
+            will be nullified.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.DisconnectMGNFromServiceCmdlet.SourceServerID">
+            <summary>
+            <para>
+            <para>Request to disconnect Source Server from service by Server ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.DisconnectMGNFromServiceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.DisconnectFromServiceResponse).
+            Specifying the name of a property of type Amazon.Mgn.Model.DisconnectFromServiceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.DisconnectMGNFromServiceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SourceServerID parameter.
+            The -PassThru parameter is deprecated, use -Select '^SourceServerID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.DisconnectMGNFromServiceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.GetMGNJobCmdlet">
+            <summary>
+            Returns a list of Jobs. Use the JobsID and fromDate and toData filters to limit which
+            jobs are returned. The response is sorted by creationDataTime - latest date first.
+            Jobs are normally created by the StartTest, StartCutover, and TerminateTargetInstances
+            APIs. Jobs are also created by DiagnosticLaunch and TerminateDiagnosticInstances,
+            which are APIs available only to *Support* and only used in response to relevant support
+            tickets.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNJobCmdlet.Filters_FromDate">
+            <summary>
+            <para>
+            <para>Request to describe Job log filters by date.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNJobCmdlet.Filters_JobIDs">
+            <summary>
+            <para>
+            <para>Request to describe Job log filters by job ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNJobCmdlet.Filters_ToDate">
+            <summary>
+            <para>
+            <para>Request to describe job log items by last date.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNJobCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Request to describe job log items by max results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNJobCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Request to describe job log items by next token.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Items'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.DescribeJobsResponse).
+            Specifying the name of a property of type Amazon.Mgn.Model.DescribeJobsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.GetMGNJobLogItemCmdlet">
+            <summary>
+            Retrieves detailed job log items with paging.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNJobLogItemCmdlet.JobID">
+            <summary>
+            <para>
+            <para>Request to describe Job log job ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNJobLogItemCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Request to describe Job log item maximum results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNJobLogItemCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Request to describe Job log next token.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNJobLogItemCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Items'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.DescribeJobLogItemsResponse).
+            Specifying the name of a property of type Amazon.Mgn.Model.DescribeJobLogItemsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNJobLogItemCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobID parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.GetMGNLaunchConfigurationCmdlet">
+            <summary>
+            Lists all LaunchConfigurations available, filtered by Source Server IDs.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNLaunchConfigurationCmdlet.SourceServerID">
+            <summary>
+            <para>
+            <para>Request to get Launch Configuration information by Source Server ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNLaunchConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.GetLaunchConfigurationResponse).
+            Specifying the name of a property of type Amazon.Mgn.Model.GetLaunchConfigurationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNLaunchConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SourceServerID parameter.
+            The -PassThru parameter is deprecated, use -Select '^SourceServerID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.GetMGNLaunchConfigurationTemplateCmdlet">
+            <summary>
+            Creates a new ReplicationConfigurationTemplate.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNLaunchConfigurationTemplateCmdlet.LaunchConfigurationTemplateIDs">
+            <summary>
+            <para>
+            <para>Request to disconnect Source Server from service by Server ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNLaunchConfigurationTemplateCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Request to disconnect Source Server from service by Server ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNLaunchConfigurationTemplateCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Request to disconnect Source Server from service by Server ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNLaunchConfigurationTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Items'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.DescribeLaunchConfigurationTemplatesResponse).
+            Specifying the name of a property of type Amazon.Mgn.Model.DescribeLaunchConfigurationTemplatesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.GetMGNReplicationConfigurationCmdlet">
+            <summary>
+            Lists all ReplicationConfigurations, filtered by Source Server ID.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNReplicationConfigurationCmdlet.SourceServerID">
+            <summary>
+            <para>
+            <para>Request to get Replication Configuration by Source Server ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNReplicationConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.GetReplicationConfigurationResponse).
+            Specifying the name of a property of type Amazon.Mgn.Model.GetReplicationConfigurationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNReplicationConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SourceServerID parameter.
+            The -PassThru parameter is deprecated, use -Select '^SourceServerID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.GetMGNReplicationConfigurationTemplateCmdlet">
+            <summary>
+            Lists all ReplicationConfigurationTemplates, filtered by Source Server IDs.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNReplicationConfigurationTemplateCmdlet.ReplicationConfigurationTemplateIDs">
+            <summary>
+            <para>
+            <para>Request to describe Replication Configuration template by template IDs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNReplicationConfigurationTemplateCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Request to describe Replication Configuration template by max results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNReplicationConfigurationTemplateCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Request to describe Replication Configuration template by next token.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNReplicationConfigurationTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Items'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.DescribeReplicationConfigurationTemplatesResponse).
+            Specifying the name of a property of type Amazon.Mgn.Model.DescribeReplicationConfigurationTemplatesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.GetMGNResourceTagCmdlet">
+            <summary>
+            List all tags for your Application Migration Service resources.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>List tags for resource request by ARN.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.Mgn.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.GetMGNSourceServerCmdlet">
+            <summary>
+            Retrieves all SourceServers or multiple SourceServers by ID.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNSourceServerCmdlet.Filters_IsArchived">
+            <summary>
+            <para>
+            <para>Request to filter Source Servers list by archived.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNSourceServerCmdlet.Filters_LifeCycleState">
+            <summary>
+            <para>
+            <para>Request to filter Source Servers list by life cycle states.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNSourceServerCmdlet.Filters_ReplicationType">
+            <summary>
+            <para>
+            <para>Request to filter Source Servers list by replication type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNSourceServerCmdlet.Filters_SourceServerIDs">
+            <summary>
+            <para>
+            <para>Request to filter Source Servers list by Source Server ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNSourceServerCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Request to filter Source Servers list by maximum results.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNSourceServerCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Request to filter Source Servers list by next token.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNSourceServerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Items'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.DescribeSourceServersResponse).
+            Specifying the name of a property of type Amazon.Mgn.Model.DescribeSourceServersResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.GetMGNVcenterClientCmdlet">
+            <summary>
+            Returns a list of the installed vCenter clients.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNVcenterClientCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Maximum results to be returned in DescribeVcenterClients.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNVcenterClientCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Next pagination token to be provided for DescribeVcenterClients.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.GetMGNVcenterClientCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Items'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.DescribeVcenterClientsResponse).
+            Specifying the name of a property of type Amazon.Mgn.Model.DescribeVcenterClientsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.InitializeMGNServiceCmdlet">
+            <summary>
+            Initialize Application Migration Service.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.InitializeMGNServiceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.InitializeServiceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.InitializeMGNServiceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.NewMGNLaunchConfigurationTemplateCmdlet">
+            <summary>
+            Creates a new ReplicationConfigurationTemplate.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.NewMGNLaunchConfigurationTemplateCmdlet.PostLaunchActions_CloudWatchLogGroupName">
+            <summary>
+            <para>
+            <para>Server participating in Job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.NewMGNLaunchConfigurationTemplateCmdlet.PostLaunchActions_Deployment">
+            <summary>
+            <para>
+            <para>Server participating in Job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.NewMGNLaunchConfigurationTemplateCmdlet.PostLaunchActions_S3LogBucket">
+            <summary>
+            <para>
+            <para>Server participating in Job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.NewMGNLaunchConfigurationTemplateCmdlet.PostLaunchActions_S3OutputKeyPrefix">
+            <summary>
+            <para>
+            <para>Server participating in Job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.NewMGNLaunchConfigurationTemplateCmdlet.PostLaunchActions_SsmDocument">
+            <summary>
+            <para>
+            <para>Server participating in Job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.NewMGNLaunchConfigurationTemplateCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Request to associate the default Application Migration Service Security group with
+            the Replication Settings template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.NewMGNLaunchConfigurationTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.CreateLaunchConfigurationTemplateResponse).
+            Specifying the name of a property of type Amazon.Mgn.Model.CreateLaunchConfigurationTemplateResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.NewMGNLaunchConfigurationTemplateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.NewMGNReplicationConfigurationTemplateCmdlet">
+            <summary>
+            Creates a new ReplicationConfigurationTemplate.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.NewMGNReplicationConfigurationTemplateCmdlet.AssociateDefaultSecurityGroup">
+            <summary>
+            <para>
+            <para>Request to associate the default Application Migration Service Security group with
+            the Replication Settings template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.NewMGNReplicationConfigurationTemplateCmdlet.BandwidthThrottling">
+            <summary>
+            <para>
+            <para>Request to configure bandwidth throttling during Replication Settings template creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.NewMGNReplicationConfigurationTemplateCmdlet.CreatePublicIP">
+            <summary>
+            <para>
+            <para>Request to create Public IP during Replication Settings template creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.NewMGNReplicationConfigurationTemplateCmdlet.DataPlaneRouting">
+            <summary>
+            <para>
+            <para>Request to configure data plane routing during Replication Settings template creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.NewMGNReplicationConfigurationTemplateCmdlet.DefaultLargeStagingDiskType">
+            <summary>
+            <para>
+            <para>Request to configure the default large staging disk EBS volume type during Replication
+            Settings template creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.NewMGNReplicationConfigurationTemplateCmdlet.EbsEncryption">
+            <summary>
+            <para>
+            <para>Request to configure EBS encryption during Replication Settings template creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.NewMGNReplicationConfigurationTemplateCmdlet.EbsEncryptionKeyArn">
+            <summary>
+            <para>
+            <para>Request to configure an EBS encryption key during Replication Settings template creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.NewMGNReplicationConfigurationTemplateCmdlet.ReplicationServerInstanceType">
+            <summary>
+            <para>
+            <para>Request to configure the Replication Server instance type during Replication Settings
+            template creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.NewMGNReplicationConfigurationTemplateCmdlet.ReplicationServersSecurityGroupsIDs">
+            <summary>
+            <para>
+            <para>Request to configure the Replication Server Security group ID during Replication Settings
+            template creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.NewMGNReplicationConfigurationTemplateCmdlet.StagingAreaSubnetId">
+            <summary>
+            <para>
+            <para>Request to configure the Staging Area subnet ID during Replication Settings template
+            creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.NewMGNReplicationConfigurationTemplateCmdlet.StagingAreaTag">
+            <summary>
+            <para>
+            <para>Request to configure Staging Area tags during Replication Settings template creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.NewMGNReplicationConfigurationTemplateCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Request to configure tags during Replication Settings template creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.NewMGNReplicationConfigurationTemplateCmdlet.UseDedicatedReplicationServer">
+            <summary>
+            <para>
+            <para>Request to use Dedicated Replication Servers during Replication Settings template
+            creation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.NewMGNReplicationConfigurationTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.CreateReplicationConfigurationTemplateResponse).
+            Specifying the name of a property of type Amazon.Mgn.Model.CreateReplicationConfigurationTemplateResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.NewMGNReplicationConfigurationTemplateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNJobCmdlet">
+            <summary>
+            Deletes a single Job by ID.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNJobCmdlet.JobID">
+            <summary>
+            <para>
+            <para>Request to delete Job from service by Job ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.DeleteJobResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobID parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNLaunchConfigurationTemplateCmdlet">
+            <summary>
+            Creates a new ReplicationConfigurationTemplate.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNLaunchConfigurationTemplateCmdlet.LaunchConfigurationTemplateID">
+            <summary>
+            <para>
+            <para>ID of resource to be deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNLaunchConfigurationTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.DeleteLaunchConfigurationTemplateResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNLaunchConfigurationTemplateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LaunchConfigurationTemplateID parameter.
+            The -PassThru parameter is deprecated, use -Select '^LaunchConfigurationTemplateID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNLaunchConfigurationTemplateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNReplicationConfigurationTemplateCmdlet">
+            <summary>
+            Deletes a single Replication Configuration Template by ID
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNReplicationConfigurationTemplateCmdlet.ReplicationConfigurationTemplateID">
+            <summary>
+            <para>
+            <para>Request to delete Replication Configuration Template from service by Replication Configuration
+            Template ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNReplicationConfigurationTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.DeleteReplicationConfigurationTemplateResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNReplicationConfigurationTemplateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ReplicationConfigurationTemplateID parameter.
+            The -PassThru parameter is deprecated, use -Select '^ReplicationConfigurationTemplateID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNReplicationConfigurationTemplateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNResourceTagCmdlet">
+            <summary>
+            Deletes the specified set of tags from the specified set of Application Migration
+            Service resources.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>Untag resource by ARN.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>Untag resource by Keys.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNSourceServerCmdlet">
+            <summary>
+            Deletes a single source server by ID.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNSourceServerCmdlet.SourceServerID">
+            <summary>
+            <para>
+            <para>Request to delete Source Server from service by Server ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNSourceServerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.DeleteSourceServerResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNSourceServerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SourceServerID parameter.
+            The -PassThru parameter is deprecated, use -Select '^SourceServerID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNSourceServerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNTargetInstanceCmdlet">
+            <summary>
+            Starts a job that terminates specific launched EC2 Test and Cutover instances. This
+            command will not work for any Source Server with a lifecycle.state of TESTING, CUTTING_OVER,
+            or CUTOVER.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNTargetInstanceCmdlet.SourceServerIDs">
+            <summary>
+            <para>
+            <para>Terminate Target instance by Source Server IDs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNTargetInstanceCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Terminate Target instance by Tags.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNTargetInstanceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Job'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.TerminateTargetInstancesResponse).
+            Specifying the name of a property of type Amazon.Mgn.Model.TerminateTargetInstancesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNTargetInstanceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNVcenterClientCmdlet">
+            <summary>
+            Deletes a given vCenter client by ID.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNVcenterClientCmdlet.VcenterClientID">
+            <summary>
+            <para>
+            <para>ID of resource to be deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNVcenterClientCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.DeleteVcenterClientResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNVcenterClientCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the VcenterClientID parameter.
+            The -PassThru parameter is deprecated, use -Select '^VcenterClientID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.RemoveMGNVcenterClientCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.ResumeMGNDataReplicationCmdlet">
+            <summary>
+            Causes the data replication initiation sequence to begin immediately upon next Handshake
+            for specified SourceServer IDs, regardless of when the previous initiation started.
+            This command will not work if the SourceServer is not stalled or is in a DISCONNECTED
+            or STOPPED state.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.ResumeMGNDataReplicationCmdlet.SourceServerID">
+            <summary>
+            <para>
+            <para>Retry data replication for Source Server ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.ResumeMGNDataReplicationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.RetryDataReplicationResponse).
+            Specifying the name of a property of type Amazon.Mgn.Model.RetryDataReplicationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.ResumeMGNDataReplicationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SourceServerID parameter.
+            The -PassThru parameter is deprecated, use -Select '^SourceServerID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.ResumeMGNDataReplicationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.SetMGNAsArchivedCmdlet">
+            <summary>
+            Archives specific Source Servers by setting the SourceServer.isArchived property to
+            true for specified SourceServers by ID. This command only works for SourceServers
+            with a lifecycle. state which equals DISCONNECTED or CUTOVER.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.SetMGNAsArchivedCmdlet.SourceServerID">
+            <summary>
+            <para>
+            <para>Mark as archived by Source Server ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.SetMGNAsArchivedCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.MarkAsArchivedResponse).
+            Specifying the name of a property of type Amazon.Mgn.Model.MarkAsArchivedResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.SetMGNAsArchivedCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SourceServerID parameter.
+            The -PassThru parameter is deprecated, use -Select '^SourceServerID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.SetMGNAsArchivedCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.SetMGNServerLifeCycleStateCmdlet">
+            <summary>
+            Allows the user to set the SourceServer.LifeCycle.state property for specific Source
+            Server IDs to one of the following: READY_FOR_TEST or READY_FOR_CUTOVER. This command
+            only works if the Source Server is already launchable (dataReplicationInfo.lagDuration
+            is not null.)
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.SetMGNServerLifeCycleStateCmdlet.SourceServerID">
+            <summary>
+            <para>
+            <para>The request to change the source server migration lifecycle state by source server
+            ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.SetMGNServerLifeCycleStateCmdlet.LifeCycle_State">
+            <summary>
+            <para>
+            <para>The request to change the source server migration lifecycle state.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.SetMGNServerLifeCycleStateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.ChangeServerLifeCycleStateResponse).
+            Specifying the name of a property of type Amazon.Mgn.Model.ChangeServerLifeCycleStateResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.SetMGNServerLifeCycleStateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SourceServerID parameter.
+            The -PassThru parameter is deprecated, use -Select '^SourceServerID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.SetMGNServerLifeCycleStateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.StartMGNCutoverCmdlet">
+            <summary>
+            Launches a Cutover Instance for specific Source Servers. This command starts a LAUNCH
+            job whose initiatedBy property is StartCutover and changes the SourceServer.lifeCycle.state
+            property to CUTTING_OVER.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.StartMGNCutoverCmdlet.SourceServerIDs">
+            <summary>
+            <para>
+            <para>Start Cutover by Source Server IDs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.StartMGNCutoverCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Start Cutover by Tags.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.StartMGNCutoverCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Job'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.StartCutoverResponse).
+            Specifying the name of a property of type Amazon.Mgn.Model.StartCutoverResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.StartMGNCutoverCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.StartMGNReplicationCmdlet">
+            <summary>
+            Starts replication for SNAPSHOT_SHIPPING agents.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.StartMGNReplicationCmdlet.SourceServerID">
+            <summary>
+            <para>
+            <para>ID of source server on which to start replication.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.StartMGNReplicationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.StartReplicationResponse).
+            Specifying the name of a property of type Amazon.Mgn.Model.StartReplicationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.StartMGNReplicationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SourceServerID parameter.
+            The -PassThru parameter is deprecated, use -Select '^SourceServerID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.StartMGNReplicationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.StartMGNTestCmdlet">
+            <summary>
+            Launches a Test Instance for specific Source Servers. This command starts a LAUNCH
+            job whose initiatedBy property is StartTest and changes the SourceServer.lifeCycle.state
+            property to TESTING.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.StartMGNTestCmdlet.SourceServerIDs">
+            <summary>
+            <para>
+            <para>Start Test for Source Server IDs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.StartMGNTestCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Start Test by Tags.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.StartMGNTestCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Job'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.StartTestResponse).
+            Specifying the name of a property of type Amazon.Mgn.Model.StartTestResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.StartMGNTestCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationCmdlet">
+            <summary>
+            Updates multiple LaunchConfigurations by Source Server ID.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationCmdlet.BootMode">
+            <summary>
+            <para>
+            <para>Update Launch configuration boot mode request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationCmdlet.PostLaunchActions_CloudWatchLogGroupName">
+            <summary>
+            <para>
+            <para>Server participating in Job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationCmdlet.CopyPrivateIp">
+            <summary>
+            <para>
+            <para>Update Launch configuration copy Private IP request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationCmdlet.CopyTag">
+            <summary>
+            <para>
+            <para>Update Launch configuration copy Tags request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationCmdlet.PostLaunchActions_Deployment">
+            <summary>
+            <para>
+            <para>Server participating in Job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationCmdlet.LaunchDisposition">
+            <summary>
+            <para>
+            <para>Update Launch configuration launch disposition request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationCmdlet.Name">
+            <summary>
+            <para>
+            <para>Update Launch configuration name request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationCmdlet.Licensing_OsByol">
+            <summary>
+            <para>
+            <para>Configure BYOL OS licensing.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationCmdlet.PostLaunchActions_S3LogBucket">
+            <summary>
+            <para>
+            <para>Server participating in Job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationCmdlet.PostLaunchActions_S3OutputKeyPrefix">
+            <summary>
+            <para>
+            <para>Server participating in Job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationCmdlet.SourceServerID">
+            <summary>
+            <para>
+            <para>Update Launch configuration by Source Server ID request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationCmdlet.PostLaunchActions_SsmDocument">
+            <summary>
+            <para>
+            <para>Server participating in Job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationCmdlet.TargetInstanceTypeRightSizingMethod">
+            <summary>
+            <para>
+            <para>Update Launch configuration Target instance right sizing request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.UpdateLaunchConfigurationResponse).
+            Specifying the name of a property of type Amazon.Mgn.Model.UpdateLaunchConfigurationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SourceServerID parameter.
+            The -PassThru parameter is deprecated, use -Select '^SourceServerID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationTemplateCmdlet">
+            <summary>
+            Creates a new ReplicationConfigurationTemplate.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationTemplateCmdlet.PostLaunchActions_CloudWatchLogGroupName">
+            <summary>
+            <para>
+            <para>Server participating in Job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationTemplateCmdlet.PostLaunchActions_Deployment">
+            <summary>
+            <para>
+            <para>Server participating in Job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationTemplateCmdlet.LaunchConfigurationTemplateID">
+            <summary>
+            <para>
+            <para>Update Launch configuration Target instance right sizing request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationTemplateCmdlet.PostLaunchActions_S3LogBucket">
+            <summary>
+            <para>
+            <para>Server participating in Job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationTemplateCmdlet.PostLaunchActions_S3OutputKeyPrefix">
+            <summary>
+            <para>
+            <para>Server participating in Job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationTemplateCmdlet.PostLaunchActions_SsmDocument">
+            <summary>
+            <para>
+            <para>Server participating in Job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.UpdateLaunchConfigurationTemplateResponse).
+            Specifying the name of a property of type Amazon.Mgn.Model.UpdateLaunchConfigurationTemplateResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationTemplateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the LaunchConfigurationTemplateID parameter.
+            The -PassThru parameter is deprecated, use -Select '^LaunchConfigurationTemplateID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNLaunchConfigurationTemplateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationCmdlet">
+            <summary>
+            Allows you to update multiple ReplicationConfigurations by Source Server ID.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationCmdlet.AssociateDefaultSecurityGroup">
+            <summary>
+            <para>
+            <para>Update replication configuration associate default Application Migration Service Security
+            group request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationCmdlet.BandwidthThrottling">
+            <summary>
+            <para>
+            <para>Update replication configuration bandwidth throttling request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationCmdlet.CreatePublicIP">
+            <summary>
+            <para>
+            <para>Update replication configuration create Public IP request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationCmdlet.DataPlaneRouting">
+            <summary>
+            <para>
+            <para>Update replication configuration data plane routing request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationCmdlet.DefaultLargeStagingDiskType">
+            <summary>
+            <para>
+            <para>Update replication configuration use default large Staging Disk type request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationCmdlet.EbsEncryption">
+            <summary>
+            <para>
+            <para>Update replication configuration EBS encryption request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationCmdlet.EbsEncryptionKeyArn">
+            <summary>
+            <para>
+            <para>Update replication configuration EBS encryption key ARN request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationCmdlet.Name">
+            <summary>
+            <para>
+            <para>Update replication configuration name request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationCmdlet.ReplicatedDisk">
+            <summary>
+            <para>
+            <para>Update replication configuration replicated disks request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationCmdlet.ReplicationServerInstanceType">
+            <summary>
+            <para>
+            <para>Update replication configuration Replication Server instance type request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationCmdlet.ReplicationServersSecurityGroupsIDs">
+            <summary>
+            <para>
+            <para>Update replication configuration Replication Server Security Groups IDs request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationCmdlet.SourceServerID">
+            <summary>
+            <para>
+            <para>Update replication configuration Source Server ID request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationCmdlet.StagingAreaSubnetId">
+            <summary>
+            <para>
+            <para>Update replication configuration Staging Area subnet request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationCmdlet.StagingAreaTag">
+            <summary>
+            <para>
+            <para>Update replication configuration Staging Area Tags request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationCmdlet.UseDedicatedReplicationServer">
+            <summary>
+            <para>
+            <para>Update replication configuration use dedicated Replication Server request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.UpdateReplicationConfigurationResponse).
+            Specifying the name of a property of type Amazon.Mgn.Model.UpdateReplicationConfigurationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SourceServerID parameter.
+            The -PassThru parameter is deprecated, use -Select '^SourceServerID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationTemplateCmdlet">
+            <summary>
+            Updates multiple ReplicationConfigurationTemplates by ID.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationTemplateCmdlet.Arn">
+            <summary>
+            <para>
+            <para>Update replication configuration template ARN request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationTemplateCmdlet.AssociateDefaultSecurityGroup">
+            <summary>
+            <para>
+            <para>Update replication configuration template associate default Application Migration
+            Service Security group request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationTemplateCmdlet.BandwidthThrottling">
+            <summary>
+            <para>
+            <para>Update replication configuration template bandwidth throttling request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationTemplateCmdlet.CreatePublicIP">
+            <summary>
+            <para>
+            <para>Update replication configuration template create Public IP request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationTemplateCmdlet.DataPlaneRouting">
+            <summary>
+            <para>
+            <para>Update replication configuration template data plane routing request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationTemplateCmdlet.DefaultLargeStagingDiskType">
+            <summary>
+            <para>
+            <para>Update replication configuration template use default large Staging Disk type request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationTemplateCmdlet.EbsEncryption">
+            <summary>
+            <para>
+            <para>Update replication configuration template EBS encryption request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationTemplateCmdlet.EbsEncryptionKeyArn">
+            <summary>
+            <para>
+            <para>Update replication configuration template EBS encryption key ARN request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationTemplateCmdlet.ReplicationConfigurationTemplateID">
+            <summary>
+            <para>
+            <para>Update replication configuration template template ID request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationTemplateCmdlet.ReplicationServerInstanceType">
+            <summary>
+            <para>
+            <para>Update replication configuration template Replication Server instance type request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationTemplateCmdlet.ReplicationServersSecurityGroupsIDs">
+            <summary>
+            <para>
+            <para>Update replication configuration template Replication Server Security groups IDs request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationTemplateCmdlet.StagingAreaSubnetId">
+            <summary>
+            <para>
+            <para>Update replication configuration template Staging Area subnet ID request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationTemplateCmdlet.StagingAreaTag">
+            <summary>
+            <para>
+            <para>Update replication configuration template Staging Area Tags request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationTemplateCmdlet.UseDedicatedReplicationServer">
+            <summary>
+            <para>
+            <para>Update replication configuration template use dedicated Replication Server request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.UpdateReplicationConfigurationTemplateResponse).
+            Specifying the name of a property of type Amazon.Mgn.Model.UpdateReplicationConfigurationTemplateResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationTemplateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ReplicationConfigurationTemplateID parameter.
+            The -PassThru parameter is deprecated, use -Select '^ReplicationConfigurationTemplateID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNReplicationConfigurationTemplateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNSourceServerReplicationTypeCmdlet">
+            <summary>
+            Allows you to change between the AGENT_BASED replication type and the SNAPSHOT_SHIPPING
+            replication type.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNSourceServerReplicationTypeCmdlet.ReplicationType">
+            <summary>
+            <para>
+            <para>Replication type to which to update source server.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNSourceServerReplicationTypeCmdlet.SourceServerID">
+            <summary>
+            <para>
+            <para>ID of source server on which to update replication type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNSourceServerReplicationTypeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Mgn.Model.UpdateSourceServerReplicationTypeResponse).
+            Specifying the name of a property of type Amazon.Mgn.Model.UpdateSourceServerReplicationTypeResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNSourceServerReplicationTypeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SourceServerID parameter.
+            The -PassThru parameter is deprecated, use -Select '^SourceServerID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.MGN.UpdateMGNSourceServerReplicationTypeCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

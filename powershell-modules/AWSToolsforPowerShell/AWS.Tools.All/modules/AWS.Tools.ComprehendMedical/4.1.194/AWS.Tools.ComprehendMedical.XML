@@ -1,0 +1,1302 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.ComprehendMedical</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.FindCMPMICD10CMCmdlet">
+            <summary>
+            InferICD10CM detects medical conditions as entities listed in a patient record and
+            links those entities to normalized concept identifiers in the ICD-10-CM knowledge
+            base from the Centers for Disease Control. Amazon Comprehend Medical only detects
+            medical entities in English language texts.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.FindCMPMICD10CMCmdlet.Text">
+            <summary>
+            <para>
+            <para>The input text used for analysis. The input for InferICD10CM is a string from 1 to
+            10000 characters.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.FindCMPMICD10CMCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Entities'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.InferICD10CMResponse).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.InferICD10CMResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.FindCMPMICD10CMCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Text parameter.
+            The -PassThru parameter is deprecated, use -Select '^Text' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.FindCMPMMedicalEntityCmdlet">
+            <summary>
+            The <code>DetectEntities</code> operation is deprecated. You should use the <a>DetectEntitiesV2</a>
+            operation instead.
+            
+             
+            <para>
+             Inspects the clinical text for a variety of medical entities and returns specific
+            information about them such as entity category, location, and confidence score on
+            that information .
+            </para><br/><br/>This operation is deprecated.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.FindCMPMMedicalEntityCmdlet.Text">
+            <summary>
+            <para>
+            <para> A UTF-8 text string containing the clinical content being examined for entities.
+            Each string must contain fewer than 20,000 bytes of characters.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.FindCMPMMedicalEntityCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.DetectEntitiesResponse).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.DetectEntitiesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.FindCMPMMedicalEntityCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Text parameter.
+            The -PassThru parameter is deprecated, use -Select '^Text' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.FindCMPMMedicalEntityV2Cmdlet">
+            <summary>
+            Inspects the clinical text for a variety of medical entities and returns specific
+            information about them such as entity category, location, and confidence score on
+            that information. Amazon Comprehend Medical only detects medical entities in English
+            language texts.
+            
+             
+            <para>
+            The <code>DetectEntitiesV2</code> operation replaces the <a>DetectEntities</a> operation.
+            This new action uses a different model for determining the entities in your medical
+            text and changes the way that some entities are returned in the output. You should
+            use the <code>DetectEntitiesV2</code> operation in all new applications.
+            </para><para>
+            The <code>DetectEntitiesV2</code> operation returns the <code>Acuity</code> and <code>Direction</code>
+            entities as attributes instead of types. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.FindCMPMMedicalEntityV2Cmdlet.Text">
+            <summary>
+            <para>
+            <para>A UTF-8 string containing the clinical content being examined for entities. Each string
+            must contain fewer than 20,000 bytes of characters.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.FindCMPMMedicalEntityV2Cmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Entities'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.DetectEntitiesV2Response).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.DetectEntitiesV2Response will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.FindCMPMMedicalEntityV2Cmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Text parameter.
+            The -PassThru parameter is deprecated, use -Select '^Text' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.FindCMPMPersonalHealthInformationCmdlet">
+            <summary>
+            Inspects the clinical text for protected health information (PHI) entities and returns
+            the entity category, location, and confidence score for each entity. Amazon Comprehend
+            Medical only detects entities in English language texts.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.FindCMPMPersonalHealthInformationCmdlet.Text">
+            <summary>
+            <para>
+            <para> A UTF-8 text string containing the clinical content being examined for PHI entities.
+            Each string must contain fewer than 20,000 bytes of characters.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.FindCMPMPersonalHealthInformationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Entities'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.DetectPHIResponse).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.DetectPHIResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.FindCMPMPersonalHealthInformationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Text parameter.
+            The -PassThru parameter is deprecated, use -Select '^Text' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.FindCMPMRxNormCmdlet">
+            <summary>
+            InferRxNorm detects medications as entities listed in a patient record and links to
+            the normalized concept identifiers in the RxNorm database from the National Library
+            of Medicine. Amazon Comprehend Medical only detects medical entities in English language
+            texts.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.FindCMPMRxNormCmdlet.Text">
+            <summary>
+            <para>
+            <para>The input text used for analysis. The input for InferRxNorm is a string from 1 to
+            10000 characters.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.FindCMPMRxNormCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Entities'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.InferRxNormResponse).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.InferRxNormResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.FindCMPMRxNormCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Text parameter.
+            The -PassThru parameter is deprecated, use -Select '^Text' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.FindCMPMSNOMEDCTCmdlet">
+            <summary>
+            InferSNOMEDCT detects possible medical concepts as entities and links them to codes
+            from the Systematized Nomenclature of Medicine, Clinical Terms (SNOMED-CT) ontology
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.FindCMPMSNOMEDCTCmdlet.Text">
+            <summary>
+            <para>
+            <para> The input text to be analyzed using InferSNOMEDCT. The text should be a string with
+            1 to 10000 characters. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.FindCMPMSNOMEDCTCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.InferSNOMEDCTResponse).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.InferSNOMEDCTResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.FindCMPMSNOMEDCTCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Text parameter.
+            The -PassThru parameter is deprecated, use -Select '^Text' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMEntitiesDetectionV2JobCmdlet">
+            <summary>
+            Gets the properties associated with a medical entities detection job. Use this operation
+            to get the status of a detection job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMEntitiesDetectionV2JobCmdlet.JobId">
+            <summary>
+            <para>
+            <para>The identifier that Comprehend Medical; generated for the job. The <code>StartEntitiesDetectionV2Job</code>
+            operation returns this identifier in its response.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMEntitiesDetectionV2JobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ComprehendMedicalAsyncJobProperties'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.DescribeEntitiesDetectionV2JobResponse).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.DescribeEntitiesDetectionV2JobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMEntitiesDetectionV2JobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMEntitiesDetectionV2JobListCmdlet">
+            <summary>
+            Gets a list of medical entity detection jobs that you have submitted.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMEntitiesDetectionV2JobListCmdlet.Filter_JobName">
+            <summary>
+            <para>
+            <para>Filters on the name of the job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMEntitiesDetectionV2JobListCmdlet.Filter_JobStatus">
+            <summary>
+            <para>
+            <para>Filters the list of jobs based on job status. Returns only jobs with the specified
+            status.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMEntitiesDetectionV2JobListCmdlet.Filter_SubmitTimeAfter">
+            <summary>
+            <para>
+            <para>Filters the list of jobs based on the time that the job was submitted for processing.
+            Returns only jobs submitted after the specified time. Jobs are returned in descending
+            order, newest to oldest.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMEntitiesDetectionV2JobListCmdlet.Filter_SubmitTimeBefore">
+            <summary>
+            <para>
+            <para>Filters the list of jobs based on the time that the job was submitted for processing.
+            Returns only jobs submitted before the specified time. Jobs are returned in ascending
+            order, oldest to newest.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMEntitiesDetectionV2JobListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return in each page. The default is 100.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMEntitiesDetectionV2JobListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Identifies the next page of results to return.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMEntitiesDetectionV2JobListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ComprehendMedicalAsyncJobPropertiesList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.ListEntitiesDetectionV2JobsResponse).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.ListEntitiesDetectionV2JobsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMEntitiesDetectionV2JobListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Filter_JobName parameter.
+            The -PassThru parameter is deprecated, use -Select '^Filter_JobName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMICD10CMInferenceJobCmdlet">
+            <summary>
+            Gets the properties associated with an InferICD10CM job. Use this operation to get
+            the status of an inference job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMICD10CMInferenceJobCmdlet.JobId">
+            <summary>
+            <para>
+            <para>The identifier that Amazon Comprehend Medical generated for the job. <code>The StartICD10CMInferenceJob</code>
+            operation returns this identifier in its response.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMICD10CMInferenceJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ComprehendMedicalAsyncJobProperties'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.DescribeICD10CMInferenceJobResponse).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.DescribeICD10CMInferenceJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMICD10CMInferenceJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMICD10CMInferenceJobListCmdlet">
+            <summary>
+            Gets a list of InferICD10CM jobs that you have submitted.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMICD10CMInferenceJobListCmdlet.Filter_JobName">
+            <summary>
+            <para>
+            <para>Filters on the name of the job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMICD10CMInferenceJobListCmdlet.Filter_JobStatus">
+            <summary>
+            <para>
+            <para>Filters the list of jobs based on job status. Returns only jobs with the specified
+            status.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMICD10CMInferenceJobListCmdlet.Filter_SubmitTimeAfter">
+            <summary>
+            <para>
+            <para>Filters the list of jobs based on the time that the job was submitted for processing.
+            Returns only jobs submitted after the specified time. Jobs are returned in descending
+            order, newest to oldest.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMICD10CMInferenceJobListCmdlet.Filter_SubmitTimeBefore">
+            <summary>
+            <para>
+            <para>Filters the list of jobs based on the time that the job was submitted for processing.
+            Returns only jobs submitted before the specified time. Jobs are returned in ascending
+            order, oldest to newest.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMICD10CMInferenceJobListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return in each page. The default is 100.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMICD10CMInferenceJobListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Identifies the next page of results to return.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMICD10CMInferenceJobListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ComprehendMedicalAsyncJobPropertiesList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.ListICD10CMInferenceJobsResponse).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.ListICD10CMInferenceJobsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMPersonalHealthInformationDetectionJobCmdlet">
+            <summary>
+            Gets the properties associated with a protected health information (PHI) detection
+            job. Use this operation to get the status of a detection job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMPersonalHealthInformationDetectionJobCmdlet.JobId">
+            <summary>
+            <para>
+            <para>The identifier that Comprehend Medical; generated for the job. The <code>StartPHIDetectionJob</code>
+            operation returns this identifier in its response.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMPersonalHealthInformationDetectionJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ComprehendMedicalAsyncJobProperties'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.DescribePHIDetectionJobResponse).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.DescribePHIDetectionJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMPersonalHealthInformationDetectionJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMPersonalHealthInformationDetectionJobListCmdlet">
+            <summary>
+            Gets a list of protected health information (PHI) detection jobs that you have submitted.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMPersonalHealthInformationDetectionJobListCmdlet.Filter_JobName">
+            <summary>
+            <para>
+            <para>Filters on the name of the job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMPersonalHealthInformationDetectionJobListCmdlet.Filter_JobStatus">
+            <summary>
+            <para>
+            <para>Filters the list of jobs based on job status. Returns only jobs with the specified
+            status.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMPersonalHealthInformationDetectionJobListCmdlet.Filter_SubmitTimeAfter">
+            <summary>
+            <para>
+            <para>Filters the list of jobs based on the time that the job was submitted for processing.
+            Returns only jobs submitted after the specified time. Jobs are returned in descending
+            order, newest to oldest.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMPersonalHealthInformationDetectionJobListCmdlet.Filter_SubmitTimeBefore">
+            <summary>
+            <para>
+            <para>Filters the list of jobs based on the time that the job was submitted for processing.
+            Returns only jobs submitted before the specified time. Jobs are returned in ascending
+            order, oldest to newest.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMPersonalHealthInformationDetectionJobListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to return in each page. The default is 100.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMPersonalHealthInformationDetectionJobListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Identifies the next page of results to return.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMPersonalHealthInformationDetectionJobListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ComprehendMedicalAsyncJobPropertiesList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.ListPHIDetectionJobsResponse).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.ListPHIDetectionJobsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMPersonalHealthInformationDetectionJobListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Filter_JobName parameter.
+            The -PassThru parameter is deprecated, use -Select '^Filter_JobName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMRxNormInferenceJobCmdlet">
+            <summary>
+            Gets the properties associated with an InferRxNorm job. Use this operation to get
+            the status of an inference job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMRxNormInferenceJobCmdlet.JobId">
+            <summary>
+            <para>
+            <para>The identifier that Amazon Comprehend Medical generated for the job. The StartRxNormInferenceJob
+            operation returns this identifier in its response.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMRxNormInferenceJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ComprehendMedicalAsyncJobProperties'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.DescribeRxNormInferenceJobResponse).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.DescribeRxNormInferenceJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMRxNormInferenceJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMRxNormInferenceJobListCmdlet">
+            <summary>
+            Gets a list of InferRxNorm jobs that you have submitted.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMRxNormInferenceJobListCmdlet.Filter_JobName">
+            <summary>
+            <para>
+            <para>Filters on the name of the job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMRxNormInferenceJobListCmdlet.Filter_JobStatus">
+            <summary>
+            <para>
+            <para>Filters the list of jobs based on job status. Returns only jobs with the specified
+            status.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMRxNormInferenceJobListCmdlet.Filter_SubmitTimeAfter">
+            <summary>
+            <para>
+            <para>Filters the list of jobs based on the time that the job was submitted for processing.
+            Returns only jobs submitted after the specified time. Jobs are returned in descending
+            order, newest to oldest.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMRxNormInferenceJobListCmdlet.Filter_SubmitTimeBefore">
+            <summary>
+            <para>
+            <para>Filters the list of jobs based on the time that the job was submitted for processing.
+            Returns only jobs submitted before the specified time. Jobs are returned in ascending
+            order, oldest to newest.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMRxNormInferenceJobListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Identifies the next page of results to return.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMRxNormInferenceJobListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>Identifies the next page of results to return.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMRxNormInferenceJobListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ComprehendMedicalAsyncJobPropertiesList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.ListRxNormInferenceJobsResponse).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.ListRxNormInferenceJobsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMSNOMEDCTInferenceJobCmdlet">
+            <summary>
+            Gets the properties associated with an InferSNOMEDCT job. Use this operation to get
+            the status of an inference job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMSNOMEDCTInferenceJobCmdlet.JobId">
+            <summary>
+            <para>
+            <para> The identifier that Amazon Comprehend Medical generated for the job. The StartSNOMEDCTInferenceJob
+            operation returns this identifier in its response. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMSNOMEDCTInferenceJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ComprehendMedicalAsyncJobProperties'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.DescribeSNOMEDCTInferenceJobResponse).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.DescribeSNOMEDCTInferenceJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMSNOMEDCTInferenceJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMSNOMEDCTInferenceJobListCmdlet">
+            <summary>
+            Gets a list of InferSNOMEDCT jobs a user has submitted.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMSNOMEDCTInferenceJobListCmdlet.Filter_JobName">
+            <summary>
+            <para>
+            <para>Filters on the name of the job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMSNOMEDCTInferenceJobListCmdlet.Filter_JobStatus">
+            <summary>
+            <para>
+            <para>Filters the list of jobs based on job status. Returns only jobs with the specified
+            status.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMSNOMEDCTInferenceJobListCmdlet.Filter_SubmitTimeAfter">
+            <summary>
+            <para>
+            <para>Filters the list of jobs based on the time that the job was submitted for processing.
+            Returns only jobs submitted after the specified time. Jobs are returned in descending
+            order, newest to oldest.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMSNOMEDCTInferenceJobListCmdlet.Filter_SubmitTimeBefore">
+            <summary>
+            <para>
+            <para>Filters the list of jobs based on the time that the job was submitted for processing.
+            Returns only jobs submitted before the specified time. Jobs are returned in ascending
+            order, oldest to newest.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMSNOMEDCTInferenceJobListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para> The maximum number of results to return in each page. The default is 100. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMSNOMEDCTInferenceJobListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para> Identifies the next page of InferSNOMEDCT results to return. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.GetCMPMSNOMEDCTInferenceJobListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ComprehendMedicalAsyncJobPropertiesList'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.ListSNOMEDCTInferenceJobsResponse).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.ListSNOMEDCTInferenceJobsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMEntitiesDetectionV2JobCmdlet">
+            <summary>
+            Starts an asynchronous medical entity detection job for a collection of documents.
+            Use the <code>DescribeEntitiesDetectionV2Job</code> operation to track the status
+            of a job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMEntitiesDetectionV2JobCmdlet.ClientRequestToken">
+            <summary>
+            <para>
+            <para>A unique identifier for the request. If you don't set the client request token, Comprehend
+            Medical; generates one for you.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMEntitiesDetectionV2JobCmdlet.DataAccessRoleArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
+            that grants Comprehend Medical; read access to your input data. For more information,
+            see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
+            Role-Based Permissions Required for Asynchronous Operations</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMEntitiesDetectionV2JobCmdlet.JobName">
+            <summary>
+            <para>
+            <para>The identifier of the job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMEntitiesDetectionV2JobCmdlet.KMSKey">
+            <summary>
+            <para>
+            <para>An AWS Key Management Service key to encrypt your output files. If you do not specify
+            a key, the files are written in plain text.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMEntitiesDetectionV2JobCmdlet.LanguageCode">
+            <summary>
+            <para>
+            <para>The language of the input documents. All documents must be in the same language. Comprehend
+            Medical; processes files in US English (en).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMEntitiesDetectionV2JobCmdlet.InputDataConfig_S3Bucket">
+            <summary>
+            <para>
+            <para>The URI of the S3 bucket that contains the input data. The bucket must be in the same
+            region as the API endpoint that you are calling.</para><para>Each file in the document collection must be less than 40 KB. You can store a maximum
+            of 30 GB in the bucket.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMEntitiesDetectionV2JobCmdlet.OutputDataConfig_S3Bucket">
+            <summary>
+            <para>
+            <para>When you use the <code>OutputDataConfig</code> object with asynchronous operations,
+            you specify the Amazon S3 location where you want to write the output data. The URI
+            must be in the same region as the API endpoint that you are calling. The location
+            is used as the prefix for the actual location of the output.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMEntitiesDetectionV2JobCmdlet.InputDataConfig_S3Key">
+            <summary>
+            <para>
+            <para>The path to the input data files in the S3 bucket.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMEntitiesDetectionV2JobCmdlet.OutputDataConfig_S3Key">
+            <summary>
+            <para>
+            <para>The path to the output data files in the S3 bucket. Comprehend Medical; creates an
+            output directory using the job ID so that the output from one job does not overwrite
+            the output of another.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMEntitiesDetectionV2JobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'JobId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.StartEntitiesDetectionV2JobResponse).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.StartEntitiesDetectionV2JobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMEntitiesDetectionV2JobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMICD10CMInferenceJobCmdlet">
+            <summary>
+            Starts an asynchronous job to detect medical conditions and link them to the ICD-10-CM
+            ontology. Use the <code>DescribeICD10CMInferenceJob</code> operation to track the
+            status of a job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMICD10CMInferenceJobCmdlet.ClientRequestToken">
+            <summary>
+            <para>
+            <para>A unique identifier for the request. If you don't set the client request token, Comprehend
+            Medical; generates one.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMICD10CMInferenceJobCmdlet.DataAccessRoleArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
+            that grants Comprehend Medical; read access to your input data. For more information,
+            see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
+            Role-Based Permissions Required for Asynchronous Operations</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMICD10CMInferenceJobCmdlet.JobName">
+            <summary>
+            <para>
+            <para>The identifier of the job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMICD10CMInferenceJobCmdlet.KMSKey">
+            <summary>
+            <para>
+            <para>An AWS Key Management Service key to encrypt your output files. If you do not specify
+            a key, the files are written in plain text.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMICD10CMInferenceJobCmdlet.LanguageCode">
+            <summary>
+            <para>
+            <para>The language of the input documents. All documents must be in the same language.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMICD10CMInferenceJobCmdlet.InputDataConfig_S3Bucket">
+            <summary>
+            <para>
+            <para>The URI of the S3 bucket that contains the input data. The bucket must be in the same
+            region as the API endpoint that you are calling.</para><para>Each file in the document collection must be less than 40 KB. You can store a maximum
+            of 30 GB in the bucket.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMICD10CMInferenceJobCmdlet.OutputDataConfig_S3Bucket">
+            <summary>
+            <para>
+            <para>When you use the <code>OutputDataConfig</code> object with asynchronous operations,
+            you specify the Amazon S3 location where you want to write the output data. The URI
+            must be in the same region as the API endpoint that you are calling. The location
+            is used as the prefix for the actual location of the output.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMICD10CMInferenceJobCmdlet.InputDataConfig_S3Key">
+            <summary>
+            <para>
+            <para>The path to the input data files in the S3 bucket.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMICD10CMInferenceJobCmdlet.OutputDataConfig_S3Key">
+            <summary>
+            <para>
+            <para>The path to the output data files in the S3 bucket. Comprehend Medical; creates an
+            output directory using the job ID so that the output from one job does not overwrite
+            the output of another.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMICD10CMInferenceJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'JobId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.StartICD10CMInferenceJobResponse).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.StartICD10CMInferenceJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMICD10CMInferenceJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMPersonalHealthInformationDetectionJobCmdlet">
+            <summary>
+            Starts an asynchronous job to detect protected health information (PHI). Use the <code>DescribePHIDetectionJob</code>
+            operation to track the status of a job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMPersonalHealthInformationDetectionJobCmdlet.ClientRequestToken">
+            <summary>
+            <para>
+            <para>A unique identifier for the request. If you don't set the client request token, Comprehend
+            Medical; generates one.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMPersonalHealthInformationDetectionJobCmdlet.DataAccessRoleArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
+            that grants Comprehend Medical; read access to your input data. For more information,
+            see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
+            Role-Based Permissions Required for Asynchronous Operations</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMPersonalHealthInformationDetectionJobCmdlet.JobName">
+            <summary>
+            <para>
+            <para>The identifier of the job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMPersonalHealthInformationDetectionJobCmdlet.KMSKey">
+            <summary>
+            <para>
+            <para>An AWS Key Management Service key to encrypt your output files. If you do not specify
+            a key, the files are written in plain text.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMPersonalHealthInformationDetectionJobCmdlet.LanguageCode">
+            <summary>
+            <para>
+            <para>The language of the input documents. All documents must be in the same language.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMPersonalHealthInformationDetectionJobCmdlet.InputDataConfig_S3Bucket">
+            <summary>
+            <para>
+            <para>The URI of the S3 bucket that contains the input data. The bucket must be in the same
+            region as the API endpoint that you are calling.</para><para>Each file in the document collection must be less than 40 KB. You can store a maximum
+            of 30 GB in the bucket.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMPersonalHealthInformationDetectionJobCmdlet.OutputDataConfig_S3Bucket">
+            <summary>
+            <para>
+            <para>When you use the <code>OutputDataConfig</code> object with asynchronous operations,
+            you specify the Amazon S3 location where you want to write the output data. The URI
+            must be in the same region as the API endpoint that you are calling. The location
+            is used as the prefix for the actual location of the output.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMPersonalHealthInformationDetectionJobCmdlet.InputDataConfig_S3Key">
+            <summary>
+            <para>
+            <para>The path to the input data files in the S3 bucket.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMPersonalHealthInformationDetectionJobCmdlet.OutputDataConfig_S3Key">
+            <summary>
+            <para>
+            <para>The path to the output data files in the S3 bucket. Comprehend Medical; creates an
+            output directory using the job ID so that the output from one job does not overwrite
+            the output of another.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMPersonalHealthInformationDetectionJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'JobId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.StartPHIDetectionJobResponse).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.StartPHIDetectionJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMPersonalHealthInformationDetectionJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMRxNormInferenceJobCmdlet">
+            <summary>
+            Starts an asynchronous job to detect medication entities and link them to the RxNorm
+            ontology. Use the <code>DescribeRxNormInferenceJob</code> operation to track the status
+            of a job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMRxNormInferenceJobCmdlet.ClientRequestToken">
+            <summary>
+            <para>
+            <para>A unique identifier for the request. If you don't set the client request token, Comprehend
+            Medical; generates one.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMRxNormInferenceJobCmdlet.DataAccessRoleArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
+            that grants Comprehend Medical; read access to your input data. For more information,
+            see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med">
+            Role-Based Permissions Required for Asynchronous Operations</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMRxNormInferenceJobCmdlet.JobName">
+            <summary>
+            <para>
+            <para>The identifier of the job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMRxNormInferenceJobCmdlet.KMSKey">
+            <summary>
+            <para>
+            <para>An AWS Key Management Service key to encrypt your output files. If you do not specify
+            a key, the files are written in plain text.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMRxNormInferenceJobCmdlet.LanguageCode">
+            <summary>
+            <para>
+            <para>The language of the input documents. All documents must be in the same language.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMRxNormInferenceJobCmdlet.InputDataConfig_S3Bucket">
+            <summary>
+            <para>
+            <para>The URI of the S3 bucket that contains the input data. The bucket must be in the same
+            region as the API endpoint that you are calling.</para><para>Each file in the document collection must be less than 40 KB. You can store a maximum
+            of 30 GB in the bucket.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMRxNormInferenceJobCmdlet.OutputDataConfig_S3Bucket">
+            <summary>
+            <para>
+            <para>When you use the <code>OutputDataConfig</code> object with asynchronous operations,
+            you specify the Amazon S3 location where you want to write the output data. The URI
+            must be in the same region as the API endpoint that you are calling. The location
+            is used as the prefix for the actual location of the output.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMRxNormInferenceJobCmdlet.InputDataConfig_S3Key">
+            <summary>
+            <para>
+            <para>The path to the input data files in the S3 bucket.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMRxNormInferenceJobCmdlet.OutputDataConfig_S3Key">
+            <summary>
+            <para>
+            <para>The path to the output data files in the S3 bucket. Comprehend Medical; creates an
+            output directory using the job ID so that the output from one job does not overwrite
+            the output of another.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMRxNormInferenceJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'JobId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.StartRxNormInferenceJobResponse).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.StartRxNormInferenceJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMRxNormInferenceJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMSNOMEDCTInferenceJobCmdlet">
+            <summary>
+            Starts an asynchronous job to detect medical concepts and link them to the SNOMED-CT
+            ontology. Use the DescribeSNOMEDCTInferenceJob operation to track the status of a
+            job.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMSNOMEDCTInferenceJobCmdlet.ClientRequestToken">
+            <summary>
+            <para>
+            <para> A unique identifier for the request. If you don't set the client request token, Amazon
+            Comprehend Medical generates one. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMSNOMEDCTInferenceJobCmdlet.DataAccessRoleArn">
+            <summary>
+            <para>
+            <para> The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
+            that grants Amazon Comprehend Medical read access to your input data. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMSNOMEDCTInferenceJobCmdlet.JobName">
+            <summary>
+            <para>
+            <para> The user generated name the asynchronous InferSNOMEDCT job. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMSNOMEDCTInferenceJobCmdlet.KMSKey">
+            <summary>
+            <para>
+            <para> An AWS Key Management Service key used to encrypt your output files. If you do not
+            specify a key, the files are written in plain text. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMSNOMEDCTInferenceJobCmdlet.LanguageCode">
+            <summary>
+            <para>
+            <para> The language of the input documents. All documents must be in the same language.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMSNOMEDCTInferenceJobCmdlet.InputDataConfig_S3Bucket">
+            <summary>
+            <para>
+            <para>The URI of the S3 bucket that contains the input data. The bucket must be in the same
+            region as the API endpoint that you are calling.</para><para>Each file in the document collection must be less than 40 KB. You can store a maximum
+            of 30 GB in the bucket.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMSNOMEDCTInferenceJobCmdlet.OutputDataConfig_S3Bucket">
+            <summary>
+            <para>
+            <para>When you use the <code>OutputDataConfig</code> object with asynchronous operations,
+            you specify the Amazon S3 location where you want to write the output data. The URI
+            must be in the same region as the API endpoint that you are calling. The location
+            is used as the prefix for the actual location of the output.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMSNOMEDCTInferenceJobCmdlet.InputDataConfig_S3Key">
+            <summary>
+            <para>
+            <para>The path to the input data files in the S3 bucket.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMSNOMEDCTInferenceJobCmdlet.OutputDataConfig_S3Key">
+            <summary>
+            <para>
+            <para>The path to the output data files in the S3 bucket. Comprehend Medical; creates an
+            output directory using the job ID so that the output from one job does not overwrite
+            the output of another.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMSNOMEDCTInferenceJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'JobId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.StartSNOMEDCTInferenceJobResponse).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.StartSNOMEDCTInferenceJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StartCMPMSNOMEDCTInferenceJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.StopCMPMEntitiesDetectionV2JobCmdlet">
+            <summary>
+            Stops a medical entities detection job in progress.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StopCMPMEntitiesDetectionV2JobCmdlet.JobId">
+            <summary>
+            <para>
+            <para>The identifier of the medical entities job to stop.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StopCMPMEntitiesDetectionV2JobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'JobId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.StopEntitiesDetectionV2JobResponse).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.StopEntitiesDetectionV2JobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StopCMPMEntitiesDetectionV2JobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StopCMPMEntitiesDetectionV2JobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.StopCMPMICD10CMInferenceJobCmdlet">
+            <summary>
+            Stops an InferICD10CM inference job in progress.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StopCMPMICD10CMInferenceJobCmdlet.JobId">
+            <summary>
+            <para>
+            <para>The identifier of the job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StopCMPMICD10CMInferenceJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'JobId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.StopICD10CMInferenceJobResponse).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.StopICD10CMInferenceJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StopCMPMICD10CMInferenceJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StopCMPMICD10CMInferenceJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.StopCMPMPersonalHealthInformationDetectionJobCmdlet">
+            <summary>
+            Stops a protected health information (PHI) detection job in progress.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StopCMPMPersonalHealthInformationDetectionJobCmdlet.JobId">
+            <summary>
+            <para>
+            <para>The identifier of the PHI detection job to stop.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StopCMPMPersonalHealthInformationDetectionJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'JobId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.StopPHIDetectionJobResponse).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.StopPHIDetectionJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StopCMPMPersonalHealthInformationDetectionJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StopCMPMPersonalHealthInformationDetectionJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.StopCMPMRxNormInferenceJobCmdlet">
+            <summary>
+            Stops an InferRxNorm inference job in progress.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StopCMPMRxNormInferenceJobCmdlet.JobId">
+            <summary>
+            <para>
+            <para>The identifier of the job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StopCMPMRxNormInferenceJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'JobId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.StopRxNormInferenceJobResponse).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.StopRxNormInferenceJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StopCMPMRxNormInferenceJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StopCMPMRxNormInferenceJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CMPM.StopCMPMSNOMEDCTInferenceJobCmdlet">
+            <summary>
+            Stops an InferSNOMEDCT inference job in progress.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StopCMPMSNOMEDCTInferenceJobCmdlet.JobId">
+            <summary>
+            <para>
+            <para> The job id of the asynchronous InferSNOMEDCT job to be stopped. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StopCMPMSNOMEDCTInferenceJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'JobId'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.ComprehendMedical.Model.StopSNOMEDCTInferenceJobResponse).
+            Specifying the name of a property of type Amazon.ComprehendMedical.Model.StopSNOMEDCTInferenceJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StopCMPMSNOMEDCTInferenceJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobId parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CMPM.StopCMPMSNOMEDCTInferenceJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,1554 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.Drs</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.AddEDRSResourceTagCmdlet">
+            <summary>
+            Adds or overwrites only the specified tags for the specified Elastic Disaster Recovery
+            resource or resources. When you specify an existing tag key, the value is overwritten
+            with the new value. Each resource can have a maximum of 50 tags. Each tag consists
+            of a key and optional value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.AddEDRSResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>ARN of the resource for which tags are to be added or updated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.AddEDRSResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Array of tags to be added or updated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.AddEDRSResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.AddEDRSResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.AddEDRSResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.DisconnectEDRSRecoveryInstanceCmdlet">
+            <summary>
+            Disconnect a Recovery Instance from Elastic Disaster Recovery. Data replication is
+            stopped immediately. All AWS resources created by Elastic Disaster Recovery for enabling
+            the replication of the Recovery Instance will be terminated / deleted within 90 minutes.
+            If the agent on the Recovery Instance has not been prevented from communicating with
+            the Elastic Disaster Recovery service, then it will receive a command to uninstall
+            itself (within approximately 10 minutes). The following properties of the Recovery
+            Instance will be changed immediately: dataReplicationInfo.dataReplicationState will
+            be set to DISCONNECTED; The totalStorageBytes property for each of dataReplicationInfo.replicatedDisks
+            will be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration
+            will be nullified.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.DisconnectEDRSRecoveryInstanceCmdlet.RecoveryInstanceID">
+            <summary>
+            <para>
+            <para>The ID of the Recovery Instance to disconnect.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.DisconnectEDRSRecoveryInstanceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.DisconnectRecoveryInstanceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.DisconnectEDRSRecoveryInstanceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RecoveryInstanceID parameter.
+            The -PassThru parameter is deprecated, use -Select '^RecoveryInstanceID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.DisconnectEDRSRecoveryInstanceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.DisconnectEDRSSourceServerCmdlet">
+            <summary>
+            Disconnects a specific Source Server from Elastic Disaster Recovery. Data replication
+            is stopped immediately. All AWS resources created by Elastic Disaster Recovery for
+            enabling the replication of the Source Server will be terminated / deleted within
+            90 minutes. You cannot disconnect a Source Server if it has a Recovery Instance. If
+            the agent on the Source Server has not been prevented from communicating with the
+            Elastic Disaster Recovery service, then it will receive a command to uninstall itself
+            (within approximately 10 minutes). The following properties of the SourceServer will
+            be changed immediately: dataReplicationInfo.dataReplicationState will be set to DISCONNECTED;
+            The totalStorageBytes property for each of dataReplicationInfo.replicatedDisks will
+            be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration
+            will be nullified.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.DisconnectEDRSSourceServerCmdlet.SourceServerID">
+            <summary>
+            <para>
+            <para>The ID of the Source Server to disconnect.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.DisconnectEDRSSourceServerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.DisconnectSourceServerResponse).
+            Specifying the name of a property of type Amazon.Drs.Model.DisconnectSourceServerResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.DisconnectEDRSSourceServerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SourceServerID parameter.
+            The -PassThru parameter is deprecated, use -Select '^SourceServerID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.DisconnectEDRSSourceServerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSExtensibleSourceServerListCmdlet">
+            <summary>
+            Returns a list of source servers on a staging account that are extensible, which means
+            that: a. The source server is not already extended into this Account. b. The source
+            server on the Account we’re reading from is not an extension of another source server.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSExtensibleSourceServerListCmdlet.StagingAccountID">
+            <summary>
+            <para>
+            <para>The Id of the staging Account to retrieve extensible source servers from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSExtensibleSourceServerListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of extensible source servers to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSExtensibleSourceServerListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token of the next extensible source server to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSExtensibleSourceServerListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Items'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.ListExtensibleSourceServersResponse).
+            Specifying the name of a property of type Amazon.Drs.Model.ListExtensibleSourceServersResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSExtensibleSourceServerListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the StagingAccountID parameter.
+            The -PassThru parameter is deprecated, use -Select '^StagingAccountID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSFailbackReplicationConfigurationCmdlet">
+            <summary>
+            Lists all Failback ReplicationConfigurations, filtered by Recovery Instance ID.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSFailbackReplicationConfigurationCmdlet.RecoveryInstanceID">
+            <summary>
+            <para>
+            <para>The ID of the Recovery Instance whose failback replication configuration should be
+            returned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSFailbackReplicationConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.GetFailbackReplicationConfigurationResponse).
+            Specifying the name of a property of type Amazon.Drs.Model.GetFailbackReplicationConfigurationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSFailbackReplicationConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RecoveryInstanceID parameter.
+            The -PassThru parameter is deprecated, use -Select '^RecoveryInstanceID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSJobCmdlet">
+            <summary>
+            Returns a list of Jobs. Use the JobsID and fromDate and toDate filters to limit which
+            jobs are returned. The response is sorted by creationDataTime - latest date first.
+            Jobs are created by the StartRecovery, TerminateRecoveryInstances and StartFailbackLaunch
+            APIs. Jobs are also created by DiagnosticLaunch and TerminateDiagnosticInstances,
+            which are APIs available only to *Support* and only used in response to relevant support
+            tickets.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSJobCmdlet.Filters_FromDate">
+            <summary>
+            <para>
+            <para>The start date in a date range query.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSJobCmdlet.Filters_JobIDs">
+            <summary>
+            <para>
+            <para>An array of Job IDs that should be returned. An empty array means all jobs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSJobCmdlet.Filters_ToDate">
+            <summary>
+            <para>
+            <para>The end date in a date range query.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSJobCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Maximum number of Jobs to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSJobCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token of the next Job to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Items'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.DescribeJobsResponse).
+            Specifying the name of a property of type Amazon.Drs.Model.DescribeJobsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Filters_JobIDs parameter.
+            The -PassThru parameter is deprecated, use -Select '^Filters_JobIDs' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSJobLogItemCmdlet">
+            <summary>
+            Retrieves a detailed Job log with pagination.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSJobLogItemCmdlet.JobID">
+            <summary>
+            <para>
+            <para>The ID of the Job for which Job log items will be retrieved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSJobLogItemCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Maximum number of Job log items to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSJobLogItemCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token of the next Job log items to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSJobLogItemCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Items'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.DescribeJobLogItemsResponse).
+            Specifying the name of a property of type Amazon.Drs.Model.DescribeJobLogItemsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSJobLogItemCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobID parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSLaunchConfigurationCmdlet">
+            <summary>
+            Gets a LaunchConfiguration, filtered by Source Server IDs.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSLaunchConfigurationCmdlet.SourceServerID">
+            <summary>
+            <para>
+            <para>The ID of the Source Server that we want to retrieve a Launch Configuration for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSLaunchConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.GetLaunchConfigurationResponse).
+            Specifying the name of a property of type Amazon.Drs.Model.GetLaunchConfigurationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSLaunchConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SourceServerID parameter.
+            The -PassThru parameter is deprecated, use -Select '^SourceServerID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSRecoveryInstanceCmdlet">
+            <summary>
+            Lists all Recovery Instances or multiple Recovery Instances by ID.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSRecoveryInstanceCmdlet.Filters_RecoveryInstanceIDs">
+            <summary>
+            <para>
+            <para>An array of Recovery Instance IDs that should be returned. An empty array means all
+            Recovery Instances.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSRecoveryInstanceCmdlet.Filters_SourceServerIDs">
+            <summary>
+            <para>
+            <para>An array of Source Server IDs for which associated Recovery Instances should be returned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSRecoveryInstanceCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Maximum number of Recovery Instances to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSRecoveryInstanceCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token of the next Recovery Instance to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSRecoveryInstanceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Items'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.DescribeRecoveryInstancesResponse).
+            Specifying the name of a property of type Amazon.Drs.Model.DescribeRecoveryInstancesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSRecoverySnapshotCmdlet">
+            <summary>
+            Lists all Recovery Snapshots for a single Source Server.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSRecoverySnapshotCmdlet.Filters_FromDateTime">
+            <summary>
+            <para>
+            <para>The start date in a date range query.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSRecoverySnapshotCmdlet.Order">
+            <summary>
+            <para>
+            <para>The sorted ordering by which to return Recovery Snapshots.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSRecoverySnapshotCmdlet.SourceServerID">
+            <summary>
+            <para>
+            <para>Filter Recovery Snapshots by Source Server ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSRecoverySnapshotCmdlet.Filters_ToDateTime">
+            <summary>
+            <para>
+            <para>The end date in a date range query.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSRecoverySnapshotCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Maximum number of Recovery Snapshots to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSRecoverySnapshotCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token of the next Recovery Snapshot to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSRecoverySnapshotCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Items'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.DescribeRecoverySnapshotsResponse).
+            Specifying the name of a property of type Amazon.Drs.Model.DescribeRecoverySnapshotsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSRecoverySnapshotCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SourceServerID parameter.
+            The -PassThru parameter is deprecated, use -Select '^SourceServerID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSReplicationConfigurationCmdlet">
+            <summary>
+            Gets a ReplicationConfiguration, filtered by Source Server ID.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSReplicationConfigurationCmdlet.SourceServerID">
+            <summary>
+            <para>
+            <para>The ID of the Source Serve for this Replication Configuration.r</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSReplicationConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.GetReplicationConfigurationResponse).
+            Specifying the name of a property of type Amazon.Drs.Model.GetReplicationConfigurationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSReplicationConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SourceServerID parameter.
+            The -PassThru parameter is deprecated, use -Select '^SourceServerID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSReplicationConfigurationTemplateCmdlet">
+            <summary>
+            Lists all ReplicationConfigurationTemplates, filtered by Source Server IDs.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSReplicationConfigurationTemplateCmdlet.IsReplicationConfigurationTemplateIDsSet">
+            <summary>
+            <para>
+            This property is set to true if the property <seealso cref="P:Amazon.Drs.Model.DescribeReplicationConfigurationTemplatesRequest.ReplicationConfigurationTemplateIDs" />
+            is set; false otherwise.
+            This property can be used to determine if the related property
+            was returned by a service response or if the related property
+            should be sent to the service during a service call.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSReplicationConfigurationTemplateCmdlet.ReplicationConfigurationTemplateIDs">
+            <summary>
+            <para>
+            <para>The IDs of the Replication Configuration Templates to retrieve. An empty list means
+            all Replication Configuration Templates.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSReplicationConfigurationTemplateCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Maximum number of Replication Configuration Templates to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSReplicationConfigurationTemplateCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token of the next Replication Configuration Template to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSReplicationConfigurationTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Items'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.DescribeReplicationConfigurationTemplatesResponse).
+            Specifying the name of a property of type Amazon.Drs.Model.DescribeReplicationConfigurationTemplatesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSResourceTagCmdlet">
+            <summary>
+            List all tags for your Elastic Disaster Recovery resources.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The ARN of the resource whose tags should be returned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.Drs.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSSourceServerCmdlet">
+            <summary>
+            Lists all Source Servers or multiple Source Servers filtered by ID.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSSourceServerCmdlet.Filters_HardwareId">
+            <summary>
+            <para>
+            <para>An ID that describes the hardware of the Source Server. This is either an EC2 instance
+            id, a VMware uuid or a mac address.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSSourceServerCmdlet.Filters_SourceServerIDs">
+            <summary>
+            <para>
+            <para>An array of Source Servers IDs that should be returned. An empty array means all Source
+            Servers.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSSourceServerCmdlet.Filters_StagingAccountIDs">
+            <summary>
+            <para>
+            <para>An array of staging account IDs that extended source servers belong to. An empty array
+            means all source servers will be shown.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSSourceServerCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Maximum number of Source Servers to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSSourceServerCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token of the next Source Server to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSSourceServerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Items'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.DescribeSourceServersResponse).
+            Specifying the name of a property of type Amazon.Drs.Model.DescribeSourceServersResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSSourceServerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Filters_HardwareId parameter.
+            The -PassThru parameter is deprecated, use -Select '^Filters_HardwareId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSStagingAccountListCmdlet">
+            <summary>
+            Returns an array of staging accounts for existing extended source servers.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSStagingAccountListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of staging Accounts to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSStagingAccountListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token of the next staging Account to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.GetEDRSStagingAccountListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Accounts'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.ListStagingAccountsResponse).
+            Specifying the name of a property of type Amazon.Drs.Model.ListStagingAccountsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.InitializeEDRSServiceCmdlet">
+            <summary>
+            Initialize Elastic Disaster Recovery.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.InitializeEDRSServiceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.InitializeServiceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.InitializeEDRSServiceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.NewEDRSExtendedSourceServerCmdlet">
+            <summary>
+            Create an extended source server in the target Account based on the source server
+            in staging account.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.NewEDRSExtendedSourceServerCmdlet.SourceServerArn">
+            <summary>
+            <para>
+            <para>This defines the ARN of the source server in staging Account based on which you want
+            to create an extended source server.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.NewEDRSExtendedSourceServerCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of tags associated with the extended source server.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.NewEDRSExtendedSourceServerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SourceServer'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.CreateExtendedSourceServerResponse).
+            Specifying the name of a property of type Amazon.Drs.Model.CreateExtendedSourceServerResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.NewEDRSExtendedSourceServerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SourceServerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^SourceServerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.NewEDRSExtendedSourceServerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.NewEDRSReplicationConfigurationTemplateCmdlet">
+            <summary>
+            Creates a new ReplicationConfigurationTemplate.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.NewEDRSReplicationConfigurationTemplateCmdlet.AssociateDefaultSecurityGroup">
+            <summary>
+            <para>
+            <para>Whether to associate the default Elastic Disaster Recovery Security group with the
+            Replication Configuration Template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.NewEDRSReplicationConfigurationTemplateCmdlet.BandwidthThrottling">
+            <summary>
+            <para>
+            <para>Configure bandwidth throttling for the outbound data transfer rate of the Source Server
+            in Mbps.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.NewEDRSReplicationConfigurationTemplateCmdlet.CreatePublicIP">
+            <summary>
+            <para>
+            <para>Whether to create a Public IP for the Recovery Instance by default.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.NewEDRSReplicationConfigurationTemplateCmdlet.DataPlaneRouting">
+            <summary>
+            <para>
+            <para>The data plane routing mechanism that will be used for replication.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.NewEDRSReplicationConfigurationTemplateCmdlet.DefaultLargeStagingDiskType">
+            <summary>
+            <para>
+            <para>The Staging Disk EBS volume type to be used during replication.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.NewEDRSReplicationConfigurationTemplateCmdlet.EbsEncryption">
+            <summary>
+            <para>
+            <para>The type of EBS encryption to be used during replication.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.NewEDRSReplicationConfigurationTemplateCmdlet.EbsEncryptionKeyArn">
+            <summary>
+            <para>
+            <para>The ARN of the EBS encryption key to be used during replication.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.NewEDRSReplicationConfigurationTemplateCmdlet.PitPolicy">
+            <summary>
+            <para>
+            <para>The Point in time (PIT) policy to manage snapshots taken during replication.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.NewEDRSReplicationConfigurationTemplateCmdlet.ReplicationServerInstanceType">
+            <summary>
+            <para>
+            <para>The instance type to be used for the replication server.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.NewEDRSReplicationConfigurationTemplateCmdlet.ReplicationServersSecurityGroupsIDs">
+            <summary>
+            <para>
+            <para>The security group IDs that will be used by the replication server.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.NewEDRSReplicationConfigurationTemplateCmdlet.StagingAreaSubnetId">
+            <summary>
+            <para>
+            <para>The subnet to be used by the replication staging area.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.NewEDRSReplicationConfigurationTemplateCmdlet.StagingAreaTag">
+            <summary>
+            <para>
+            <para>A set of tags to be associated with all resources created in the replication staging
+            area: EC2 replication server, EBS volumes, EBS snapshots, etc.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.NewEDRSReplicationConfigurationTemplateCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A set of tags to be associated with the Replication Configuration Template resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.NewEDRSReplicationConfigurationTemplateCmdlet.UseDedicatedReplicationServer">
+            <summary>
+            <para>
+            <para>Whether to use a dedicated Replication Server in the replication staging area.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.NewEDRSReplicationConfigurationTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.CreateReplicationConfigurationTemplateResponse).
+            Specifying the name of a property of type Amazon.Drs.Model.CreateReplicationConfigurationTemplateResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.NewEDRSReplicationConfigurationTemplateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSJobCmdlet">
+            <summary>
+            Deletes a single Job by ID.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSJobCmdlet.JobID">
+            <summary>
+            <para>
+            <para>The ID of the Job to be deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.DeleteJobResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobID parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSRecoveryInstanceCmdlet">
+            <summary>
+            Deletes a single Recovery Instance by ID. This deletes the Recovery Instance resource
+            from Elastic Disaster Recovery. The Recovery Instance must be disconnected first in
+            order to delete it.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSRecoveryInstanceCmdlet.RecoveryInstanceID">
+            <summary>
+            <para>
+            <para>The ID of the Recovery Instance to be deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSRecoveryInstanceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.DeleteRecoveryInstanceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSRecoveryInstanceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RecoveryInstanceID parameter.
+            The -PassThru parameter is deprecated, use -Select '^RecoveryInstanceID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSRecoveryInstanceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSReplicationConfigurationTemplateCmdlet">
+            <summary>
+            Deletes a single Replication Configuration Template by ID
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSReplicationConfigurationTemplateCmdlet.ReplicationConfigurationTemplateID">
+            <summary>
+            <para>
+            <para>The ID of the Replication Configuration Template to be deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSReplicationConfigurationTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.DeleteReplicationConfigurationTemplateResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSReplicationConfigurationTemplateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ReplicationConfigurationTemplateID parameter.
+            The -PassThru parameter is deprecated, use -Select '^ReplicationConfigurationTemplateID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSReplicationConfigurationTemplateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSResourceTagCmdlet">
+            <summary>
+            Deletes the specified set of tags from the specified set of Elastic Disaster Recovery
+            resources.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>ARN of the resource for which tags are to be removed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>Array of tags to be removed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSSourceServerCmdlet">
+            <summary>
+            Deletes a single Source Server by ID. The Source Server must be disconnected first.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSSourceServerCmdlet.SourceServerID">
+            <summary>
+            <para>
+            <para>The ID of the Source Server to be deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSSourceServerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.DeleteSourceServerResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSSourceServerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SourceServerID parameter.
+            The -PassThru parameter is deprecated, use -Select '^SourceServerID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.RemoveEDRSSourceServerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.RestartEDRSDataReplicationCmdlet">
+            <summary>
+            Causes the data replication initiation sequence to begin immediately upon next Handshake
+            for the specified Source Server ID, regardless of when the previous initiation started.
+            This command will work only if the Source Server is stalled or is in a DISCONNECTED
+            or STOPPED state.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.RestartEDRSDataReplicationCmdlet.SourceServerID">
+            <summary>
+            <para>
+            <para>The ID of the Source Server whose data replication should be retried.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.RestartEDRSDataReplicationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.RetryDataReplicationResponse).
+            Specifying the name of a property of type Amazon.Drs.Model.RetryDataReplicationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.RestartEDRSDataReplicationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SourceServerID parameter.
+            The -PassThru parameter is deprecated, use -Select '^SourceServerID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.RestartEDRSDataReplicationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.StartEDRSFailbackLaunchCmdlet">
+            <summary>
+            Initiates a Job for launching the machine that is being failed back to from the specified
+            Recovery Instance. This will run conversion on the failback client and will reboot
+            your machine, thus completing the failback process.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.StartEDRSFailbackLaunchCmdlet.RecoveryInstanceIDs">
+            <summary>
+            <para>
+            <para>The IDs of the Recovery Instance whose failback launch we want to request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.StartEDRSFailbackLaunchCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags to be associated with the failback launch Job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.StartEDRSFailbackLaunchCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Job'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.StartFailbackLaunchResponse).
+            Specifying the name of a property of type Amazon.Drs.Model.StartFailbackLaunchResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.StartEDRSFailbackLaunchCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.StartEDRSRecoveryCmdlet">
+            <summary>
+            Launches Recovery Instances for the specified Source Servers. For each Source Server
+            you may choose a point in time snapshot to launch from, or use an on demand snapshot.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.StartEDRSRecoveryCmdlet.IsDrill">
+            <summary>
+            <para>
+            <para>Whether this Source Server Recovery operation is a drill or not.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.StartEDRSRecoveryCmdlet.SourceServer">
+            <summary>
+            <para>
+            <para>The Source Servers that we want to start a Recovery Job for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.StartEDRSRecoveryCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags to be associated with the Recovery Job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.StartEDRSRecoveryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Job'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.StartRecoveryResponse).
+            Specifying the name of a property of type Amazon.Drs.Model.StartRecoveryResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.StartEDRSRecoveryCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the IsDrill parameter.
+            The -PassThru parameter is deprecated, use -Select '^IsDrill' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.StartEDRSRecoveryCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.StopEDRSFailbackCmdlet">
+            <summary>
+            Stops the failback process for a specified Recovery Instance. This changes the Failback
+            State of the Recovery Instance back to FAILBACK_NOT_STARTED.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.StopEDRSFailbackCmdlet.RecoveryInstanceID">
+            <summary>
+            <para>
+            <para>The ID of the Recovery Instance we want to stop failback for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.StopEDRSFailbackCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.StopFailbackResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.StopEDRSFailbackCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RecoveryInstanceID parameter.
+            The -PassThru parameter is deprecated, use -Select '^RecoveryInstanceID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.StopEDRSFailbackCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.StopEDRSRecoveryInstanceCmdlet">
+            <summary>
+            Initiates a Job for terminating the EC2 resources associated with the specified Recovery
+            Instances, and then will delete the Recovery Instances from the Elastic Disaster Recovery
+            service.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.StopEDRSRecoveryInstanceCmdlet.RecoveryInstanceIDs">
+            <summary>
+            <para>
+            <para>The IDs of the Recovery Instances that should be terminated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.StopEDRSRecoveryInstanceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Job'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.TerminateRecoveryInstancesResponse).
+            Specifying the name of a property of type Amazon.Drs.Model.TerminateRecoveryInstancesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.StopEDRSRecoveryInstanceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSFailbackReplicationConfigurationCmdlet">
+            <summary>
+            Allows you to update the failback replication configuration of a Recovery Instance
+            by ID.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSFailbackReplicationConfigurationCmdlet.BandwidthThrottling">
+            <summary>
+            <para>
+            <para>Configure bandwidth throttling for the outbound data transfer rate of the Recovery
+            Instance in Mbps.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSFailbackReplicationConfigurationCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the Failback Replication Configuration.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSFailbackReplicationConfigurationCmdlet.RecoveryInstanceID">
+            <summary>
+            <para>
+            <para>The ID of the Recovery Instance.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSFailbackReplicationConfigurationCmdlet.UsePrivateIP">
+            <summary>
+            <para>
+            <para>Whether to use Private IP for the failback replication of the Recovery Instance.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSFailbackReplicationConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.UpdateFailbackReplicationConfigurationResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSFailbackReplicationConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RecoveryInstanceID parameter.
+            The -PassThru parameter is deprecated, use -Select '^RecoveryInstanceID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSFailbackReplicationConfigurationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSLaunchConfigurationCmdlet">
+            <summary>
+            Updates a LaunchConfiguration by Source Server ID.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSLaunchConfigurationCmdlet.CopyPrivateIp">
+            <summary>
+            <para>
+            <para>Whether we should copy the Private IP of the Source Server to the Recovery Instance.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSLaunchConfigurationCmdlet.CopyTag">
+            <summary>
+            <para>
+            <para>Whether we want to copy the tags of the Source Server to the EC2 machine of the Recovery
+            Instance.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSLaunchConfigurationCmdlet.LaunchDisposition">
+            <summary>
+            <para>
+            <para>The state of the Recovery Instance in EC2 after the recovery operation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSLaunchConfigurationCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the launch configuration.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSLaunchConfigurationCmdlet.Licensing_OsByol">
+            <summary>
+            <para>
+            <para>Whether to enable "Bring your own license" or not.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSLaunchConfigurationCmdlet.SourceServerID">
+            <summary>
+            <para>
+            <para>The ID of the Source Server that we want to retrieve a Launch Configuration for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSLaunchConfigurationCmdlet.TargetInstanceTypeRightSizingMethod">
+            <summary>
+            <para>
+            <para>Whether Elastic Disaster Recovery should try to automatically choose the instance
+            type that best matches the OS, CPU, and RAM of your Source Server.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSLaunchConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.UpdateLaunchConfigurationResponse).
+            Specifying the name of a property of type Amazon.Drs.Model.UpdateLaunchConfigurationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSLaunchConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SourceServerID parameter.
+            The -PassThru parameter is deprecated, use -Select '^SourceServerID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSLaunchConfigurationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationCmdlet">
+            <summary>
+            Allows you to update a ReplicationConfiguration by Source Server ID.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationCmdlet.AssociateDefaultSecurityGroup">
+            <summary>
+            <para>
+            <para>Whether to associate the default Elastic Disaster Recovery Security group with the
+            Replication Configuration.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationCmdlet.BandwidthThrottling">
+            <summary>
+            <para>
+            <para>Configure bandwidth throttling for the outbound data transfer rate of the Source Server
+            in Mbps.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationCmdlet.CreatePublicIP">
+            <summary>
+            <para>
+            <para>Whether to create a Public IP for the Recovery Instance by default.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationCmdlet.DataPlaneRouting">
+            <summary>
+            <para>
+            <para>The data plane routing mechanism that will be used for replication.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationCmdlet.DefaultLargeStagingDiskType">
+            <summary>
+            <para>
+            <para>The Staging Disk EBS volume type to be used during replication.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationCmdlet.EbsEncryption">
+            <summary>
+            <para>
+            <para>The type of EBS encryption to be used during replication.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationCmdlet.EbsEncryptionKeyArn">
+            <summary>
+            <para>
+            <para>The ARN of the EBS encryption key to be used during replication.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the Replication Configuration.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationCmdlet.PitPolicy">
+            <summary>
+            <para>
+            <para>The Point in time (PIT) policy to manage snapshots taken during replication.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationCmdlet.ReplicatedDisk">
+            <summary>
+            <para>
+            <para>The configuration of the disks of the Source Server to be replicated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationCmdlet.ReplicationServerInstanceType">
+            <summary>
+            <para>
+            <para>The instance type to be used for the replication server.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationCmdlet.ReplicationServersSecurityGroupsIDs">
+            <summary>
+            <para>
+            <para>The security group IDs that will be used by the replication server.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationCmdlet.SourceServerID">
+            <summary>
+            <para>
+            <para>The ID of the Source Server for this Replication Configuration.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationCmdlet.StagingAreaSubnetId">
+            <summary>
+            <para>
+            <para>The subnet to be used by the replication staging area.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationCmdlet.StagingAreaTag">
+            <summary>
+            <para>
+            <para>A set of tags to be associated with all resources created in the replication staging
+            area: EC2 replication server, EBS volumes, EBS snapshots, etc.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationCmdlet.UseDedicatedReplicationServer">
+            <summary>
+            <para>
+            <para>Whether to use a dedicated Replication Server in the replication staging area.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.UpdateReplicationConfigurationResponse).
+            Specifying the name of a property of type Amazon.Drs.Model.UpdateReplicationConfigurationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SourceServerID parameter.
+            The -PassThru parameter is deprecated, use -Select '^SourceServerID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationTemplateCmdlet">
+            <summary>
+            Updates a ReplicationConfigurationTemplate by ID.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationTemplateCmdlet.Arn">
+            <summary>
+            <para>
+            <para>The Replication Configuration Template ARN.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationTemplateCmdlet.AssociateDefaultSecurityGroup">
+            <summary>
+            <para>
+            <para>Whether to associate the default Elastic Disaster Recovery Security group with the
+            Replication Configuration Template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationTemplateCmdlet.BandwidthThrottling">
+            <summary>
+            <para>
+            <para>Configure bandwidth throttling for the outbound data transfer rate of the Source Server
+            in Mbps.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationTemplateCmdlet.CreatePublicIP">
+            <summary>
+            <para>
+            <para>Whether to create a Public IP for the Recovery Instance by default.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationTemplateCmdlet.DataPlaneRouting">
+            <summary>
+            <para>
+            <para>The data plane routing mechanism that will be used for replication.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationTemplateCmdlet.DefaultLargeStagingDiskType">
+            <summary>
+            <para>
+            <para>The Staging Disk EBS volume type to be used during replication.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationTemplateCmdlet.EbsEncryption">
+            <summary>
+            <para>
+            <para>The type of EBS encryption to be used during replication.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationTemplateCmdlet.EbsEncryptionKeyArn">
+            <summary>
+            <para>
+            <para>The ARN of the EBS encryption key to be used during replication.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationTemplateCmdlet.PitPolicy">
+            <summary>
+            <para>
+            <para>The Point in time (PIT) policy to manage snapshots taken during replication.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationTemplateCmdlet.ReplicationConfigurationTemplateID">
+            <summary>
+            <para>
+            <para>The Replication Configuration Template ID.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationTemplateCmdlet.ReplicationServerInstanceType">
+            <summary>
+            <para>
+            <para>The instance type to be used for the replication server.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationTemplateCmdlet.ReplicationServersSecurityGroupsIDs">
+            <summary>
+            <para>
+            <para>The security group IDs that will be used by the replication server.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationTemplateCmdlet.StagingAreaSubnetId">
+            <summary>
+            <para>
+            <para>The subnet to be used by the replication staging area.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationTemplateCmdlet.StagingAreaTag">
+            <summary>
+            <para>
+            <para>A set of tags to be associated with all resources created in the replication staging
+            area: EC2 replication server, EBS volumes, EBS snapshots, etc.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationTemplateCmdlet.UseDedicatedReplicationServer">
+            <summary>
+            <para>
+            <para>Whether to use a dedicated Replication Server in the replication staging area.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Drs.Model.UpdateReplicationConfigurationTemplateResponse).
+            Specifying the name of a property of type Amazon.Drs.Model.UpdateReplicationConfigurationTemplateResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationTemplateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ReplicationConfigurationTemplateID parameter.
+            The -PassThru parameter is deprecated, use -Select '^ReplicationConfigurationTemplateID' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.EDRS.UpdateEDRSReplicationConfigurationTemplateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

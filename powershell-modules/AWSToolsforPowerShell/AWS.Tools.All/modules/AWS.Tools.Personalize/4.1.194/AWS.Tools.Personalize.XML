@@ -1,0 +1,3016 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.Personalize</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.AddPERSResourceTagCmdlet">
+            <summary>
+            Add a list of tags to a resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.AddPERSResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The resource's Amazon Resource Name (ARN).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.AddPERSResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Tags to apply to the resource. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">Tagging
+            Personalize resources</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.AddPERSResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.AddPERSResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.AddPERSResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSAlgorithmCmdlet">
+            <summary>
+            Describes the given algorithm.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSAlgorithmCmdlet.AlgorithmArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the algorithm to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSAlgorithmCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Algorithm'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.DescribeAlgorithmResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.DescribeAlgorithmResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSAlgorithmCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AlgorithmArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AlgorithmArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSBatchInferenceJobCmdlet">
+            <summary>
+            Gets the properties of a batch inference job including name, Amazon Resource Name
+            (ARN), status, input and output configurations, and the ARN of the solution version
+            used to generate the recommendations.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSBatchInferenceJobCmdlet.BatchInferenceJobArn">
+            <summary>
+            <para>
+            <para>The ARN of the batch inference job to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSBatchInferenceJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'BatchInferenceJob'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.DescribeBatchInferenceJobResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.DescribeBatchInferenceJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSBatchInferenceJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BatchInferenceJobArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^BatchInferenceJobArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSBatchInferenceJobListCmdlet">
+            <summary>
+            Gets a list of the batch inference jobs that have been performed off of a solution
+            version.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSBatchInferenceJobListCmdlet.SolutionVersionArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the solution version from which the batch inference
+            jobs were created.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSBatchInferenceJobListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of batch inference job results to return in each page. The default
+            value is 100.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSBatchInferenceJobListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to request the next page of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSBatchInferenceJobListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'BatchInferenceJobs'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.ListBatchInferenceJobsResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.ListBatchInferenceJobsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSBatchInferenceJobListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SolutionVersionArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^SolutionVersionArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSBatchInferenceJobListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSBatchSegmentJobCmdlet">
+            <summary>
+            Gets the properties of a batch segment job including name, Amazon Resource Name (ARN),
+            status, input and output configurations, and the ARN of the solution version used
+            to generate segments.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSBatchSegmentJobCmdlet.BatchSegmentJobArn">
+            <summary>
+            <para>
+            <para>The ARN of the batch segment job to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSBatchSegmentJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'BatchSegmentJob'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.DescribeBatchSegmentJobResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.DescribeBatchSegmentJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSBatchSegmentJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the BatchSegmentJobArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^BatchSegmentJobArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSBatchSegmentJobListCmdlet">
+            <summary>
+            Gets a list of the batch segment jobs that have been performed off of a solution version
+            that you specify.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSBatchSegmentJobListCmdlet.SolutionVersionArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the solution version that the batch segment jobs
+            used to generate batch segments.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSBatchSegmentJobListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of batch segment job results to return in each page. The default
+            value is 100.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSBatchSegmentJobListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to request the next page of results.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSBatchSegmentJobListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'BatchSegmentJobs'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.ListBatchSegmentJobsResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.ListBatchSegmentJobsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSBatchSegmentJobListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SolutionVersionArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^SolutionVersionArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSBatchSegmentJobListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSCampaignCmdlet">
+            <summary>
+            Describes the given campaign, including its status.
+            
+             
+            <para>
+            A campaign can be in one of the following states:
+            </para><ul><li><para>
+            CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+            </para></li><li><para>
+            DELETE PENDING &gt; DELETE IN_PROGRESS
+            </para></li></ul><para>
+            When the <code>status</code> is <code>CREATE FAILED</code>, the response includes
+            the <code>failureReason</code> key, which describes why.
+            </para><para>
+            For more information on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSCampaignCmdlet.CampaignArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the campaign.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSCampaignCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Campaign'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.DescribeCampaignResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.DescribeCampaignResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSCampaignCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the CampaignArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^CampaignArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSCampaignListCmdlet">
+            <summary>
+            Returns a list of campaigns that use the given solution. When a solution is not specified,
+            all the campaigns associated with the account are listed. The response provides the
+            properties for each campaign, including the Amazon Resource Name (ARN). For more information
+            on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSCampaignListCmdlet.SolutionArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the solution to list the campaigns for. When a solution
+            is not specified, all the campaigns associated with the account are listed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSCampaignListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of campaigns to return.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSCampaignListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>A token returned from the previous call to <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a>
+            for getting the next set of campaigns (if they exist).</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSCampaignListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Campaigns'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.ListCampaignsResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.ListCampaignsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSCampaignListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SolutionArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^SolutionArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSCampaignListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetCmdlet">
+            <summary>
+            Describes the given dataset. For more information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetCmdlet.DatasetArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the dataset to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Dataset'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.DescribeDatasetResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.DescribeDatasetResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DatasetArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^DatasetArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetExportJobCmdlet">
+            <summary>
+            Describes the dataset export job created by <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetExportJob.html">CreateDatasetExportJob</a>,
+            including the export job status.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetExportJobCmdlet.DatasetExportJobArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the dataset export job to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetExportJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'DatasetExportJob'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.DescribeDatasetExportJobResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.DescribeDatasetExportJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetExportJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DatasetExportJobArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^DatasetExportJobArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetExportJobListCmdlet">
+            <summary>
+            Returns a list of dataset export jobs that use the given dataset. When a dataset is
+            not specified, all the dataset export jobs associated with the account are listed.
+            The response provides the properties for each dataset export job, including the Amazon
+            Resource Name (ARN). For more information on dataset export jobs, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetExportJob.html">CreateDatasetExportJob</a>.
+            For more information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetExportJobListCmdlet.DatasetArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the dataset to list the dataset export jobs for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetExportJobListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of dataset export jobs to return.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetExportJobListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>A token returned from the previous call to <code>ListDatasetExportJobs</code> for
+            getting the next set of dataset export jobs (if they exist).</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetExportJobListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'DatasetExportJobs'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.ListDatasetExportJobsResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.ListDatasetExportJobsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetExportJobListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DatasetArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^DatasetArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetExportJobListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetGroupCmdlet">
+            <summary>
+            Describes the given dataset group. For more information on dataset groups, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetGroupCmdlet.DatasetGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the dataset group to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'DatasetGroup'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.DescribeDatasetGroupResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.DescribeDatasetGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DatasetGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^DatasetGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetGroupListCmdlet">
+            <summary>
+            Returns a list of dataset groups. The response provides the properties for each dataset
+            group, including the Amazon Resource Name (ARN). For more information on dataset groups,
+            see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetGroupListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of dataset groups to return.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetGroupListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>A token returned from the previous call to <code>ListDatasetGroups</code> for getting
+            the next set of dataset groups (if they exist).</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetGroupListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'DatasetGroups'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.ListDatasetGroupsResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.ListDatasetGroupsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetGroupListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetImportJobCmdlet">
+            <summary>
+            Describes the dataset import job created by <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>,
+            including the import job status.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetImportJobCmdlet.DatasetImportJobArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the dataset import job to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetImportJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'DatasetImportJob'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.DescribeDatasetImportJobResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.DescribeDatasetImportJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetImportJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DatasetImportJobArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^DatasetImportJobArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetImportJobListCmdlet">
+            <summary>
+            Returns a list of dataset import jobs that use the given dataset. When a dataset is
+            not specified, all the dataset import jobs associated with the account are listed.
+            The response provides the properties for each dataset import job, including the Amazon
+            Resource Name (ARN). For more information on dataset import jobs, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>.
+            For more information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetImportJobListCmdlet.DatasetArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the dataset to list the dataset import jobs for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetImportJobListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of dataset import jobs to return.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetImportJobListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>A token returned from the previous call to <code>ListDatasetImportJobs</code> for
+            getting the next set of dataset import jobs (if they exist).</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetImportJobListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'DatasetImportJobs'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.ListDatasetImportJobsResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.ListDatasetImportJobsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetImportJobListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DatasetArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^DatasetArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetImportJobListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetListCmdlet">
+            <summary>
+            Returns the list of datasets contained in the given dataset group. The response provides
+            the properties for each dataset, including the Amazon Resource Name (ARN). For more
+            information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetListCmdlet.DatasetGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the dataset group that contains the datasets to
+            list.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of datasets to return.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>A token returned from the previous call to <code>ListDatasetImportJobs</code> for
+            getting the next set of dataset import jobs (if they exist).</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Datasets'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.ListDatasetsResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.ListDatasetsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DatasetGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^DatasetGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSDatasetListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSEventTrackerCmdlet">
+            <summary>
+            Describes an event tracker. The response includes the <code>trackingId</code> and
+            <code>status</code> of the event tracker. For more information on event trackers,
+            see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSEventTrackerCmdlet.EventTrackerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the event tracker to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSEventTrackerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EventTracker'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.DescribeEventTrackerResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.DescribeEventTrackerResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSEventTrackerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EventTrackerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^EventTrackerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSEventTrackerListCmdlet">
+            <summary>
+            Returns the list of event trackers associated with the account. The response provides
+            the properties for each event tracker, including the Amazon Resource Name (ARN) and
+            tracking ID. For more information on event trackers, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSEventTrackerListCmdlet.DatasetGroupArn">
+            <summary>
+            <para>
+            <para>The ARN of a dataset group used to filter the response.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSEventTrackerListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of event trackers to return.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSEventTrackerListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>A token returned from the previous call to <code>ListEventTrackers</code> for getting
+            the next set of event trackers (if they exist).</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSEventTrackerListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'EventTrackers'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.ListEventTrackersResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.ListEventTrackersResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSEventTrackerListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DatasetGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^DatasetGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSEventTrackerListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSFeatureTransformationCmdlet">
+            <summary>
+            Describes the given feature transformation.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSFeatureTransformationCmdlet.FeatureTransformationArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the feature transformation to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSFeatureTransformationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'FeatureTransformation'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.DescribeFeatureTransformationResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.DescribeFeatureTransformationResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSFeatureTransformationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FeatureTransformationArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^FeatureTransformationArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSFilterCmdlet">
+            <summary>
+            Describes a filter's properties.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSFilterCmdlet.FilterArn">
+            <summary>
+            <para>
+            <para>The ARN of the filter to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSFilterCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Filter'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.DescribeFilterResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.DescribeFilterResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSFilterCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FilterArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^FilterArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSFilterListCmdlet">
+            <summary>
+            Lists all filters that belong to a given dataset group.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSFilterListCmdlet.DatasetGroupArn">
+            <summary>
+            <para>
+            <para>The ARN of the dataset group that contains the filters.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSFilterListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of filters to return.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSFilterListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>A token returned from the previous call to <code>ListFilters</code> for getting the
+            next set of filters (if they exist).</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSFilterListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Filters'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.ListFiltersResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.ListFiltersResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSFilterListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DatasetGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^DatasetGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSFilterListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSRecipeCmdlet">
+            <summary>
+            Describes a recipe.
+            
+             
+            <para>
+            A recipe contains three items:
+            </para><ul><li><para>
+            An algorithm that trains a model.
+            </para></li><li><para>
+            Hyperparameters that govern the training.
+            </para></li><li><para>
+            Feature transformation information for modifying the input data before training.
+            </para></li></ul><para>
+            Amazon Personalize provides a set of predefined recipes. You specify a recipe when
+            you create a solution with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>
+            API. <code>CreateSolution</code> trains a model by using the algorithm in the specified
+            recipe and a training dataset. The solution, when deployed as a campaign, can provide
+            recommendations using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
+            API.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSRecipeCmdlet.RecipeArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the recipe to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSRecipeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Recipe'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.DescribeRecipeResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.DescribeRecipeResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSRecipeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RecipeArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^RecipeArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSRecipeListCmdlet">
+            <summary>
+            Returns a list of available recipes. The response provides the properties for each
+            recipe, including the recipe's Amazon Resource Name (ARN).<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSRecipeListCmdlet.Domain">
+            <summary>
+            <para>
+            <para> Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain
+            dataset group use cases) for this domain are included in the response. If you don't
+            specify a domain, all recipes are returned. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSRecipeListCmdlet.RecipeProvider">
+            <summary>
+            <para>
+            <para>The default is <code>SERVICE</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSRecipeListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of recipes to return.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSRecipeListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>A token returned from the previous call to <code>ListRecipes</code> for getting the
+            next set of recipes (if they exist).</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSRecipeListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Recipes'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.ListRecipesResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.ListRecipesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSRecipeListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RecipeProvider parameter.
+            The -PassThru parameter is deprecated, use -Select '^RecipeProvider' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSRecipeListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSRecommenderCmdlet">
+            <summary>
+            Describes the given recommender, including its status.
+            
+             
+            <para>
+            A recommender can be in one of the following states:
+            </para><ul><li><para>
+            CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+            </para></li><li><para>
+            STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS
+            &gt; ACTIVE
+            </para></li><li><para>
+            DELETE PENDING &gt; DELETE IN_PROGRESS
+            </para></li></ul><para>
+            When the <code>status</code> is <code>CREATE FAILED</code>, the response includes
+            the <code>failureReason</code> key, which describes why.
+            </para><para>
+            The <code>modelMetrics</code> key is null when the recommender is being created or
+            deleted.
+            </para><para>
+            For more information on recommenders, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html">CreateRecommender</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSRecommenderCmdlet.RecommenderArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the recommender to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSRecommenderCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Recommender'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.DescribeRecommenderResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.DescribeRecommenderResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSRecommenderCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RecommenderArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^RecommenderArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSRecommenderListCmdlet">
+            <summary>
+            Returns a list of recommenders in a given Domain dataset group. When a Domain dataset
+            group is not specified, all the recommenders associated with the account are listed.
+            The response provides the properties for each recommender, including the Amazon Resource
+            Name (ARN). For more information on recommenders, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html">CreateRecommender</a>.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSRecommenderListCmdlet.DatasetGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Domain dataset group to list the recommenders
+            for. When a Domain dataset group is not specified, all the recommenders associated
+            with the account are listed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSRecommenderListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of recommenders to return.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSRecommenderListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>A token returned from the previous call to <code>ListRecommenders</code> for getting
+            the next set of recommenders (if they exist).</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSRecommenderListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Recommenders'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.ListRecommendersResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.ListRecommendersResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSRecommenderListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DatasetGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^DatasetGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSRecommenderListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSResourceTagCmdlet">
+            <summary>
+            Get a list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+            attached to a resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The resource's Amazon Resource Name.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSSchemaCmdlet">
+            <summary>
+            Describes a schema. For more information on schemas, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html">CreateSchema</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSchemaCmdlet.SchemaArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the schema to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSchemaCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Schema'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.DescribeSchemaResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.DescribeSchemaResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSchemaCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SchemaArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^SchemaArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSSchemaListCmdlet">
+            <summary>
+            Returns the list of schemas associated with the account. The response provides the
+            properties for each schema, including the Amazon Resource Name (ARN). For more information
+            on schemas, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html">CreateSchema</a>.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSchemaListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of schemas to return.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSchemaListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>A token returned from the previous call to <code>ListSchemas</code> for getting the
+            next set of schemas (if they exist).</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSchemaListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Schemas'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.ListSchemasResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.ListSchemasResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSchemaListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionCmdlet">
+            <summary>
+            Describes a solution. For more information on solutions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionCmdlet.SolutionArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the solution to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Solution'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.DescribeSolutionResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.DescribeSolutionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SolutionArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^SolutionArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionListCmdlet">
+            <summary>
+            Returns a list of solutions that use the given dataset group. When a dataset group
+            is not specified, all the solutions associated with the account are listed. The response
+            provides the properties for each solution, including the Amazon Resource Name (ARN).
+            For more information on solutions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionListCmdlet.DatasetGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the dataset group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of solutions to return.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>A token returned from the previous call to <code>ListSolutions</code> for getting
+            the next set of solutions (if they exist).</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Solutions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.ListSolutionsResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.ListSolutionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DatasetGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^DatasetGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionMetricCmdlet">
+            <summary>
+            Gets the metrics for the specified solution version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionMetricCmdlet.SolutionVersionArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the solution version for which to get metrics.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionMetricCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.GetSolutionMetricsResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.GetSolutionMetricsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionMetricCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SolutionVersionArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^SolutionVersionArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionVersionCmdlet">
+            <summary>
+            Describes a specific version of a solution. For more information on solutions, see
+            <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionVersionCmdlet.SolutionVersionArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the solution version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SolutionVersion'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.DescribeSolutionVersionResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.DescribeSolutionVersionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionVersionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SolutionVersionArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^SolutionVersionArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionVersionListCmdlet">
+            <summary>
+            Returns a list of solution versions for the given solution. When a solution is not
+            specified, all the solution versions associated with the account are listed. The response
+            provides the properties for each solution version, including the Amazon Resource Name
+            (ARN).<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionVersionListCmdlet.SolutionArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the solution.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionVersionListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of solution versions to return.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionVersionListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>A token returned from the previous call to <code>ListSolutionVersions</code> for getting
+            the next set of solution versions (if they exist).</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionVersionListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SolutionVersions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.ListSolutionVersionsResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.ListSolutionVersionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionVersionListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SolutionArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^SolutionArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.GetPERSSolutionVersionListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchInferenceJobCmdlet">
+            <summary>
+            Creates a batch inference job. The operation can handle up to 50 million records and
+            the input file must be in JSON format. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/creating-batch-inference-job.html">Creating
+            a batch inference job</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchInferenceJobCmdlet.FilterArn">
+            <summary>
+            <para>
+            <para>The ARN of the filter to apply to the batch inference job. For more information on
+            using filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+            batch recommendations</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchInferenceJobCmdlet.BatchInferenceJobConfig_ItemExplorationConfig">
+            <summary>
+            <para>
+            <para>A string to string map specifying the exploration configuration hyperparameters, including
+            <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want
+            to use to configure the amount of item exploration Amazon Personalize uses when recommending
+            items. See <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchInferenceJobCmdlet.JobName">
+            <summary>
+            <para>
+            <para>The name of the batch inference job to create.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchInferenceJobCmdlet.S3DataSource_KmsKeyArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon
+            Personalize uses to encrypt or decrypt the input and output files.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchInferenceJobCmdlet.S3DataDestination_KmsKeyArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon
+            Personalize uses to encrypt or decrypt the input and output files.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchInferenceJobCmdlet.NumResult">
+            <summary>
+            <para>
+            <para>The number of recommendations to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchInferenceJobCmdlet.S3DataSource_Path">
+            <summary>
+            <para>
+            <para>The file path of the Amazon S3 bucket.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchInferenceJobCmdlet.S3DataDestination_Path">
+            <summary>
+            <para>
+            <para>The file path of the Amazon S3 bucket.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchInferenceJobCmdlet.RoleArn">
+            <summary>
+            <para>
+            <para>The ARN of the Amazon Identity and Access Management role that has permissions to
+            read and write to your input and output Amazon S3 buckets respectively.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchInferenceJobCmdlet.SolutionVersionArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the solution version that will be used to generate
+            the batch inference recommendations.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchInferenceJobCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+            to apply to the batch inference job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchInferenceJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'BatchInferenceJobArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.CreateBatchInferenceJobResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.CreateBatchInferenceJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchInferenceJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobName parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchInferenceJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchSegmentJobCmdlet">
+            <summary>
+            Creates a batch segment job. The operation can handle up to 50 million records and
+            the input file must be in JSON format. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recommendations-batch.html">Getting
+            batch recommendations and user segments</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchSegmentJobCmdlet.FilterArn">
+            <summary>
+            <para>
+            <para>The ARN of the filter to apply to the batch segment job. For more information on using
+            filters, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+            batch recommendations</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchSegmentJobCmdlet.JobName">
+            <summary>
+            <para>
+            <para>The name of the batch segment job to create.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchSegmentJobCmdlet.S3DataSource_KmsKeyArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon
+            Personalize uses to encrypt or decrypt the input and output files.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchSegmentJobCmdlet.S3DataDestination_KmsKeyArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon
+            Personalize uses to encrypt or decrypt the input and output files.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchSegmentJobCmdlet.NumResult">
+            <summary>
+            <para>
+            <para>The number of predicted users generated by the batch segment job for each line of
+            input data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchSegmentJobCmdlet.S3DataSource_Path">
+            <summary>
+            <para>
+            <para>The file path of the Amazon S3 bucket.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchSegmentJobCmdlet.S3DataDestination_Path">
+            <summary>
+            <para>
+            <para>The file path of the Amazon S3 bucket.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchSegmentJobCmdlet.RoleArn">
+            <summary>
+            <para>
+            <para>The ARN of the Amazon Identity and Access Management role that has permissions to
+            read and write to your input and output Amazon S3 buckets respectively.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchSegmentJobCmdlet.SolutionVersionArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the solution version you want the batch segment
+            job to use to generate batch segments.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchSegmentJobCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+            to apply to the batch segment job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchSegmentJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'BatchSegmentJobArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.CreateBatchSegmentJobResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.CreateBatchSegmentJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchSegmentJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobName parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSBatchSegmentJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.NewPERSCampaignCmdlet">
+            <summary>
+            Amazon.Personalize.IAmazonPersonalize.CreateCampaign
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSCampaignCmdlet.CampaignConfig_ItemExplorationConfig">
+            <summary>
+            <para>
+            <para>Specifies the exploration configuration hyperparameters, including <code>explorationWeight</code>
+            and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount
+            of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code>
+            data only if your solution uses the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
+            recipe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSCampaignCmdlet.MinProvisionedTPS">
+            <summary>
+            <para>
+            <para>Specifies the requested minimum provisioned transactions (recommendations) per second
+            that Amazon Personalize will support.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSCampaignCmdlet.Name">
+            <summary>
+            <para>
+            <para>A name for the new campaign. The campaign name must be unique within your account.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSCampaignCmdlet.SolutionVersionArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the solution version to deploy.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSCampaignCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+            to apply to the campaign.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSCampaignCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'CampaignArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.CreateCampaignResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.CreateCampaignResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSCampaignCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSCampaignCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetCmdlet">
+            <summary>
+            Amazon.Personalize.IAmazonPersonalize.CreateDataset
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetCmdlet.DatasetGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the dataset group to add the dataset to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetCmdlet.DatasetType">
+            <summary>
+            <para>
+            <para>The type of dataset.</para><para>One of the following (case insensitive) values:</para><ul><li><para>Interactions</para></li><li><para>Items</para></li><li><para>Users</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name for the dataset.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetCmdlet.SchemaArn">
+            <summary>
+            <para>
+            <para>The ARN of the schema to associate with the dataset. The schema defines the dataset
+            fields.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+            to apply to the dataset.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'DatasetArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.CreateDatasetResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.CreateDatasetResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetExportJobCmdlet">
+            <summary>
+            Creates a job that exports data from your dataset to an Amazon S3 bucket. To allow
+            Amazon Personalize to export the training data, you must specify an service-linked
+            IAM role that gives Amazon Personalize <code>PutObject</code> permissions for your
+            Amazon S3 bucket. For information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/export-data.html">Exporting
+            a dataset</a> in the Amazon Personalize developer guide. 
+            
+             
+            <para><b>Status</b></para><para>
+            A dataset export job can be in one of the following states:
+            </para><ul><li><para>
+            CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+            </para></li></ul><para>
+             To get the status of the export job, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetExportJob.html">DescribeDatasetExportJob</a>,
+            and specify the Amazon Resource Name (ARN) of the dataset export job. The dataset
+            export is complete when the status shows as ACTIVE. If the status shows as CREATE
+            FAILED, the response includes a <code>failureReason</code> key, which describes why
+            the job failed. 
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetExportJobCmdlet.DatasetArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the dataset that contains the data to export.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetExportJobCmdlet.IngestionMode">
+            <summary>
+            <para>
+            <para>The data to export, based on how you imported the data. You can choose to export only
+            <code>BULK</code> data that you imported using a dataset import job, only <code>PUT</code>
+            data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems
+            operations), or <code>ALL</code> for both types. The default value is <code>PUT</code>.
+            </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetExportJobCmdlet.JobName">
+            <summary>
+            <para>
+            <para>The name for the dataset export job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetExportJobCmdlet.S3DataDestination_KmsKeyArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon
+            Personalize uses to encrypt or decrypt the input and output files.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetExportJobCmdlet.S3DataDestination_Path">
+            <summary>
+            <para>
+            <para>The file path of the Amazon S3 bucket.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetExportJobCmdlet.RoleArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add
+            data to your output Amazon S3 bucket.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetExportJobCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+            to apply to the dataset export job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetExportJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'DatasetExportJobArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.CreateDatasetExportJobResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.CreateDatasetExportJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetExportJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DatasetArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^DatasetArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetExportJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetGroupCmdlet">
+            <summary>
+            Amazon.Personalize.IAmazonPersonalize.CreateDatasetGroup
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetGroupCmdlet.Domain">
+            <summary>
+            <para>
+            <para>The domain of the dataset group. Specify a domain to create a Domain dataset group.
+            The domain you specify determines the default schemas for datasets and the use cases
+            available for recommenders. If you don't specify a domain, you create a Custom dataset
+            group with solution versions that you deploy with a campaign. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetGroupCmdlet.KmsKeyArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of a Key Management Service (KMS) key used to encrypt
+            the datasets.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetGroupCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name for the new dataset group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetGroupCmdlet.RoleArn">
+            <summary>
+            <para>
+            <para>The ARN of the Identity and Access Management (IAM) role that has permissions to access
+            the Key Management Service (KMS) key. Supplying an IAM role is only valid when also
+            specifying a KMS key.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetGroupCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+            to apply to the dataset group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'DatasetGroupArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.CreateDatasetGroupResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.CreateDatasetGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetImportJobCmdlet">
+            <summary>
+            Amazon.Personalize.IAmazonPersonalize.CreateDatasetImportJob
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetImportJobCmdlet.DataSource_DataLocation">
+            <summary>
+            <para>
+            <para>The path to the Amazon S3 bucket where the data that you want to upload to your dataset
+            is stored. For example: </para><para><code>s3://bucket-name/folder-name/</code></para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetImportJobCmdlet.DatasetArn">
+            <summary>
+            <para>
+            <para>The ARN of the dataset that receives the imported data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetImportJobCmdlet.ImportMode">
+            <summary>
+            <para>
+            <para>Specify how to add the new records to an existing dataset. The default import mode
+            is <code>FULL</code>. If you haven't imported bulk records into the dataset previously,
+            you can only specify <code>FULL</code>.</para><ul><li><para>Specify <code>FULL</code> to overwrite all existing bulk data in your dataset. Data
+            you imported individually is not replaced.</para></li><li><para>Specify <code>INCREMENTAL</code> to append the new records to the existing data in
+            your dataset. Amazon Personalize replaces any record with the same ID with the new
+            one.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetImportJobCmdlet.JobName">
+            <summary>
+            <para>
+            <para>The name for the dataset import job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetImportJobCmdlet.RoleArn">
+            <summary>
+            <para>
+            <para>The ARN of the IAM role that has permissions to read from the Amazon S3 data source.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetImportJobCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+            to apply to the dataset import job.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetImportJobCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'DatasetImportJobArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.CreateDatasetImportJobResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.CreateDatasetImportJobResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetImportJobCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the JobName parameter.
+            The -PassThru parameter is deprecated, use -Select '^JobName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSDatasetImportJobCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.NewPERSEventTrackerCmdlet">
+            <summary>
+            Amazon.Personalize.IAmazonPersonalize.CreateEventTracker
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSEventTrackerCmdlet.DatasetGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSEventTrackerCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name for the event tracker.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSEventTrackerCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+            to apply to the event tracker.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSEventTrackerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.CreateEventTrackerResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.CreateEventTrackerResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSEventTrackerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSEventTrackerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.NewPERSFilterCmdlet">
+            <summary>
+            Creates a recommendation filter. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
+            recommendations and user segments</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSFilterCmdlet.DatasetGroupArn">
+            <summary>
+            <para>
+            <para>The ARN of the dataset group that the filter will belong to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSFilterCmdlet.FilterExpression">
+            <summary>
+            <para>
+            <para>The filter expression defines which items are included or excluded from recommendations.
+            Filter expression must follow specific format rules. For information about filter
+            expression structure and syntax, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter-expressions.html">Filter
+            expressions</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSFilterCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the filter to create.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSFilterCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+            to apply to the filter.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSFilterCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'FilterArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.CreateFilterResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.CreateFilterResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSFilterCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSFilterCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.NewPERSRecommenderCmdlet">
+            <summary>
+            Amazon.Personalize.IAmazonPersonalize.CreateRecommender
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSRecommenderCmdlet.DatasetGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the destination domain dataset group for the recommender.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSRecommenderCmdlet.RecommenderConfig_ItemExplorationConfig">
+            <summary>
+            <para>
+            <para>Specifies the exploration configuration hyperparameters, including <code>explorationWeight</code>
+            and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount
+            of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code>
+            data only if your recommenders generate personalized recommendations for a user (not
+            popular items or similar items).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSRecommenderCmdlet.RecommenderConfig_MinRecommendationRequestsPerSecond">
+            <summary>
+            <para>
+            <para>Specifies the requested minimum provisioned recommendation requests per second that
+            Amazon Personalize will support.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSRecommenderCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name of the recommender.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSRecommenderCmdlet.RecipeArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the recipe that the recommender will use. For a
+            recommender, a recipe is a Domain dataset group use case. Only Domain dataset group
+            use cases can be used to create a recommender. For information about use cases see
+            <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing
+            recommender use cases</a>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSRecommenderCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+            to apply to the recommender.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSRecommenderCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'RecommenderArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.CreateRecommenderResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.CreateRecommenderResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSRecommenderCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSRecommenderCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.NewPERSSchemaCmdlet">
+            <summary>
+            Amazon.Personalize.IAmazonPersonalize.CreateSchema
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSchemaCmdlet.Domain">
+            <summary>
+            <para>
+            <para>The domain for the schema. If you are creating a schema for a dataset in a Domain
+            dataset group, specify the domain you chose when you created the Domain dataset group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSchemaCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name for the schema.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSchemaCmdlet.Schema">
+            <summary>
+            <para>
+            <para>A schema in Avro JSON format.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSchemaCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SchemaArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.CreateSchemaResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.CreateSchemaResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSchemaCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Schema parameter.
+            The -PassThru parameter is deprecated, use -Select '^Schema' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSchemaCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet">
+            <summary>
+            Amazon.Personalize.IAmazonPersonalize.CreateSolution
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet.SolutionConfig_AlgorithmHyperParameter">
+            <summary>
+            <para>
+            <para>Lists the hyperparameter names and ranges.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet.AlgorithmHyperParameterRanges_CategoricalHyperParameterRange">
+            <summary>
+            <para>
+            <para>The categorical hyperparameters and their ranges.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet.AlgorithmHyperParameterRanges_ContinuousHyperParameterRange">
+            <summary>
+            <para>
+            <para>The continuous hyperparameters and their ranges.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet.DatasetGroupArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the dataset group that provides the training data.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet.EventType">
+            <summary>
+            <para>
+            <para>When your have multiple event types (using an <code>EVENT_TYPE</code> schema field),
+            this parameter specifies which event type (for example, 'click' or 'like') is used
+            for training the model.</para><para>If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions
+            for training with equal weight regardless of type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet.SolutionConfig_EventValueThreshold">
+            <summary>
+            <para>
+            <para>Only events with a value greater than or equal to this threshold are used for training
+            a model.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet.SolutionConfig_FeatureTransformationParameter">
+            <summary>
+            <para>
+            <para>Lists the feature transformation parameters.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet.AlgorithmHyperParameterRanges_IntegerHyperParameterRange">
+            <summary>
+            <para>
+            <para>The integer-valued hyperparameters and their ranges.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet.OptimizationObjective_ItemAttribute">
+            <summary>
+            <para>
+            <para>The numerical metadata column in an Items dataset related to the optimization objective.
+            For example, VIDEO_LENGTH (to maximize streaming minutes), or PRICE (to maximize revenue).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet.HpoResourceConfig_MaxNumberOfTrainingJob">
+            <summary>
+            <para>
+            <para>The maximum number of training jobs when you create a solution version. The maximum
+            value for <code>maxNumberOfTrainingJobs</code> is <code>40</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet.HpoResourceConfig_MaxParallelTrainingJob">
+            <summary>
+            <para>
+            <para>The maximum number of parallel training jobs when you create a solution version. The
+            maximum value for <code>maxParallelTrainingJobs</code> is <code>10</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet.AutoMLConfig_MetricName">
+            <summary>
+            <para>
+            <para>The metric to optimize.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet.HpoObjective_MetricName">
+            <summary>
+            <para>
+            <para>The name of the metric.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet.HpoObjective_MetricRegex">
+            <summary>
+            <para>
+            <para>A regular expression for finding the metric in the training job logs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name for the solution.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet.OptimizationObjective_ObjectiveSensitivity">
+            <summary>
+            <para>
+            <para>Specifies how Amazon Personalize balances the importance of your optimization objective
+            versus relevance.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet.PerformAutoML">
+            <summary>
+            <para>
+            <para>Whether to perform automated machine learning (AutoML). The default is <code>false</code>.
+            For this case, you must specify <code>recipeArn</code>.</para><para>When set to <code>true</code>, Amazon Personalize analyzes your training data and
+            selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case,
+            you must omit <code>recipeArn</code>. Amazon Personalize determines the optimal recipe
+            by running tests with different values for the hyperparameters. AutoML lengthens the
+            training process as compared to selecting a specific recipe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet.PerformHPO">
+            <summary>
+            <para>
+            <para>Whether to perform hyperparameter optimization (HPO) on the specified or selected
+            recipe. The default is <code>false</code>.</para><para>When performing AutoML, this parameter is always <code>true</code> and you should
+            not set it to <code>false</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet.RecipeArn">
+            <summary>
+            <para>
+            <para>The ARN of the recipe to use for model training. Only specified when <code>performAutoML</code>
+            is false.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet.AutoMLConfig_RecipeList">
+            <summary>
+            <para>
+            <para>The list of candidate recipes.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+            to apply to the solution.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet.HpoObjective_Type">
+            <summary>
+            <para>
+            <para>The type of the metric. Valid values are <code>Maximize</code> and <code>Minimize</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SolutionArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.CreateSolutionResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.CreateSolutionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionVersionCmdlet">
+            <summary>
+            Amazon.Personalize.IAmazonPersonalize.CreateSolutionVersion
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionVersionCmdlet.SolutionArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the solution containing the training configuration
+            information.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionVersionCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+            to apply to the solution version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionVersionCmdlet.TrainingMode">
+            <summary>
+            <para>
+            <para>The scope of training to be performed when creating the solution version. The <code>FULL</code>
+            option trains the solution version based on the entirety of the input solution's training
+            data, while the <code>UPDATE</code> option processes only the data that has changed
+            in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally
+            update your solution version instead of creating an entirely new one.</para><important><para>The <code>UPDATE</code> option can only be used when you already have an active solution
+            version created from the input solution using the <code>FULL</code> option and the
+            input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
+            recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+            recipe.</para></important>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionVersionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SolutionVersionArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.CreateSolutionVersionResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.CreateSolutionVersionResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionVersionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SolutionArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^SolutionArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.NewPERSSolutionVersionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.RemovePERSCampaignCmdlet">
+            <summary>
+            Removes a campaign by deleting the solution deployment. The solution that the campaign
+            is based on is not deleted and can be redeployed when needed. A deleted campaign can
+            no longer be specified in a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
+            request. For information on creating campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSCampaignCmdlet.CampaignArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the campaign to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSCampaignCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.DeleteCampaignResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSCampaignCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the CampaignArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^CampaignArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSCampaignCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.RemovePERSDatasetCmdlet">
+            <summary>
+            Deletes a dataset. You can't delete a dataset if an associated <code>DatasetImportJob</code>
+            or <code>SolutionVersion</code> is in the CREATE PENDING or IN PROGRESS state. For
+            more information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSDatasetCmdlet.DatasetArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the dataset to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSDatasetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.DeleteDatasetResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSDatasetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DatasetArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^DatasetArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSDatasetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.RemovePERSDatasetGroupCmdlet">
+            <summary>
+            Deletes a dataset group. Before you delete a dataset group, you must delete the following:
+            
+             <ul><li><para>
+            All associated event trackers.
+            </para></li><li><para>
+            All associated solutions.
+            </para></li><li><para>
+            All datasets in the dataset group.
+            </para></li></ul>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSDatasetGroupCmdlet.DatasetGroupArn">
+            <summary>
+            <para>
+            <para>The ARN of the dataset group to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSDatasetGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.DeleteDatasetGroupResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSDatasetGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the DatasetGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^DatasetGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSDatasetGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.RemovePERSEventTrackerCmdlet">
+            <summary>
+            Deletes the event tracker. Does not delete the event-interactions dataset from the
+            associated dataset group. For more information on event trackers, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSEventTrackerCmdlet.EventTrackerArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the event tracker to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSEventTrackerCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.DeleteEventTrackerResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSEventTrackerCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the EventTrackerArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^EventTrackerArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSEventTrackerCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.RemovePERSFilterCmdlet">
+            <summary>
+            Deletes a filter.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSFilterCmdlet.FilterArn">
+            <summary>
+            <para>
+            <para>The ARN of the filter to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSFilterCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.DeleteFilterResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSFilterCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FilterArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^FilterArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSFilterCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.RemovePERSRecommenderCmdlet">
+            <summary>
+            Deactivates and removes a recommender. A deleted recommender can no longer be specified
+            in a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
+            request.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSRecommenderCmdlet.RecommenderArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the recommender to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSRecommenderCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.DeleteRecommenderResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSRecommenderCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RecommenderArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^RecommenderArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSRecommenderCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.RemovePERSResourceTagCmdlet">
+            <summary>
+            Remove <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+            that are attached to a resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The resource's Amazon Resource Name (ARN).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>Keys to remove from the resource's tags.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.RemovePERSSchemaCmdlet">
+            <summary>
+            Deletes a schema. Before deleting a schema, you must delete all datasets referencing
+            the schema. For more information on schemas, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html">CreateSchema</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSSchemaCmdlet.SchemaArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the schema to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSSchemaCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.DeleteSchemaResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSSchemaCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SchemaArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^SchemaArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSSchemaCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.RemovePERSSolutionCmdlet">
+            <summary>
+            Deletes all versions of a solution and the <code>Solution</code> object itself. Before
+            deleting a solution, you must delete all campaigns based on the solution. To determine
+            what campaigns are using the solution, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a>
+            and supply the Amazon Resource Name (ARN) of the solution. You can't delete a solution
+            if an associated <code>SolutionVersion</code> is in the CREATE PENDING or IN PROGRESS
+            state. For more information on solutions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSSolutionCmdlet.SolutionArn">
+            <summary>
+            <para>
+            <para>The ARN of the solution to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSSolutionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.DeleteSolutionResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSSolutionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SolutionArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^SolutionArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.RemovePERSSolutionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.StartPERSRecommenderCmdlet">
+            <summary>
+            Starts a recommender that is INACTIVE. Starting a recommender does not create any
+            new models, but resumes billing and automatic retraining for the recommender.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.StartPERSRecommenderCmdlet.RecommenderArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the recommender to start.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.StartPERSRecommenderCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'RecommenderArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.StartRecommenderResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.StartRecommenderResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.StartPERSRecommenderCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RecommenderArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^RecommenderArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.StartPERSRecommenderCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.StopPERSRecommenderCmdlet">
+            <summary>
+            Stops a recommender that is ACTIVE. Stopping a recommender halts billing and automatic
+            retraining for the recommender.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.StopPERSRecommenderCmdlet.RecommenderArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the recommender to stop.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.StopPERSRecommenderCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'RecommenderArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.StopRecommenderResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.StopRecommenderResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.StopPERSRecommenderCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RecommenderArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^RecommenderArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.StopPERSRecommenderCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.StopPERSSolutionVersionCreationCmdlet">
+            <summary>
+            Stops creating a solution version that is in a state of CREATE_PENDING or CREATE IN_PROGRESS.
+            
+            
+             
+            <para>
+            Depending on the current state of the solution version, the solution version state
+            changes as follows:
+            </para><ul><li><para>
+            CREATE_PENDING &gt; CREATE_STOPPED
+            </para><para>
+            or
+            </para></li><li><para>
+            CREATE_IN_PROGRESS &gt; CREATE_STOPPING &gt; CREATE_STOPPED
+            </para></li></ul><para>
+            You are billed for all of the training completed up until you stop the solution version
+            creation. You cannot resume creating a solution version once it has been stopped.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.StopPERSSolutionVersionCreationCmdlet.SolutionVersionArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the solution version you want to stop creating.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.StopPERSSolutionVersionCreationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.StopSolutionVersionCreationResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.StopPERSSolutionVersionCreationCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SolutionVersionArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^SolutionVersionArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.StopPERSSolutionVersionCreationCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.UpdatePERSCampaignCmdlet">
+            <summary>
+            Updates a campaign by either deploying a new solution or changing the value of the
+            campaign's <code>minProvisionedTPS</code> parameter.
+            
+             
+            <para>
+            To update a campaign, the campaign status must be ACTIVE or CREATE FAILED. Check the
+            campaign status using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a>
+            operation.
+            </para><note><para>
+            You can still get recommendations from a campaign while an update is in progress.
+            The campaign will use the previous solution version and campaign configuration to
+            generate recommendations until the latest campaign update status is <code>Active</code>.
+            
+            </para></note><para>
+            For more information on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.UpdatePERSCampaignCmdlet.CampaignArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the campaign.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.UpdatePERSCampaignCmdlet.CampaignConfig_ItemExplorationConfig">
+            <summary>
+            <para>
+            <para>Specifies the exploration configuration hyperparameters, including <code>explorationWeight</code>
+            and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount
+            of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code>
+            data only if your solution uses the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
+            recipe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.UpdatePERSCampaignCmdlet.MinProvisionedTPS">
+            <summary>
+            <para>
+            <para>Specifies the requested minimum provisioned transactions (recommendations) per second
+            that Amazon Personalize will support.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.UpdatePERSCampaignCmdlet.SolutionVersionArn">
+            <summary>
+            <para>
+            <para>The ARN of a new solution version to deploy.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.UpdatePERSCampaignCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'CampaignArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.UpdateCampaignResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.UpdateCampaignResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.UpdatePERSCampaignCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the CampaignArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^CampaignArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.UpdatePERSCampaignCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.PERS.UpdatePERSRecommenderCmdlet">
+            <summary>
+            Updates the recommender to modify the recommender configuration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.UpdatePERSRecommenderCmdlet.RecommenderConfig_ItemExplorationConfig">
+            <summary>
+            <para>
+            <para>Specifies the exploration configuration hyperparameters, including <code>explorationWeight</code>
+            and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount
+            of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code>
+            data only if your recommenders generate personalized recommendations for a user (not
+            popular items or similar items).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.UpdatePERSRecommenderCmdlet.RecommenderConfig_MinRecommendationRequestsPerSecond">
+            <summary>
+            <para>
+            <para>Specifies the requested minimum provisioned recommendation requests per second that
+            Amazon Personalize will support.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.UpdatePERSRecommenderCmdlet.RecommenderArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the recommender to modify.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.UpdatePERSRecommenderCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'RecommenderArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Personalize.Model.UpdateRecommenderResponse).
+            Specifying the name of a property of type Amazon.Personalize.Model.UpdateRecommenderResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.UpdatePERSRecommenderCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RecommenderArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^RecommenderArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.PERS.UpdatePERSRecommenderCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

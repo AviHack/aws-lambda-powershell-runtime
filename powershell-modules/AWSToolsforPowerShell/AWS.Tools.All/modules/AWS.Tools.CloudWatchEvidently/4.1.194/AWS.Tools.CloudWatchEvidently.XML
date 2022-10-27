@@ -1,0 +1,2126 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.CloudWatchEvidently</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.AddCWEVDResourceTagCmdlet">
+            <summary>
+            Assigns one or more tags (key-value pairs) to the specified CloudWatch Evidently resource.
+            Projects, features, launches, and experiments can be tagged.
+            
+             
+            <para>
+            Tags can help you organize and categorize your resources. You can also use them to
+            scope user permissions by granting a user permission to access or change only resources
+            with certain tag values.
+            </para><para>
+            Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly
+            as strings of characters.
+            </para><para>
+            You can use the <code>TagResource</code> action with a resource that already has tags.
+            If you specify a new tag key for the resource, this tag is appended to the list of
+            tags associated with the alarm. If you specify a tag key that is already associated
+            with the resource, the new tag value that you specify replaces the previous value
+            for that tag.
+            </para><para>
+            You can associate as many as 50 tags with a resource.
+            </para><para>
+            For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+            Amazon Web Services resources</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.AddCWEVDResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The ARN of the CloudWatch Evidently resource that you're adding tags to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.AddCWEVDResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The list of key-value pairs to associate with the resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.AddCWEVDResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.TagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.AddCWEVDResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.AddCWEVDResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDExperimentCmdlet">
+            <summary>
+            Returns the details about one experiment. You must already know the experiment name.
+            To retrieve a list of experiments in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListExperiments.html">ListExperiments</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDExperimentCmdlet.Experiment">
+            <summary>
+            <para>
+            <para>The name of the experiment that you want to see the details of.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDExperimentCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project that contains the experiment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDExperimentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Experiment'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.GetExperimentResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.GetExperimentResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDExperimentListCmdlet">
+            <summary>
+            Returns configuration details about all the experiments in the specified project.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDExperimentListCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project to return the experiment list from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDExperimentListCmdlet.Status">
+            <summary>
+            <para>
+            <para>Use this optional parameter to limit the returned results to only the experiments
+            with the status that you specify here.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDExperimentListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDExperimentListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to use when requesting the next set of results. You received this token
+            from a previous <code>ListExperiments</code> operation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDExperimentListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Experiments'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.ListExperimentsResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.ListExperimentsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDExperimentListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Project parameter.
+            The -PassThru parameter is deprecated, use -Select '^Project' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDExperimentResultCmdlet">
+            <summary>
+            Retrieves the results of a running or completed experiment. No results are available
+            until there have been 100 events for each variation and at least 10 minutes have passed
+            since the start of the experiment. To increase the statistical power, Evidently performs
+            an additional offline p-value analysis at the end of the experiment. Offline p-value
+            analysis can detect statistical significance in some cases where the anytime p-values
+            used during the experiment do not find statistical significance.
+            
+             
+            <para>
+            Experiment results are available up to 63 days after the start of the experiment.
+            They are not available after that because of CloudWatch data retention policies.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDExperimentResultCmdlet.BaseStat">
+            <summary>
+            <para>
+            <para>The statistic used to calculate experiment results. Currently the only valid value
+            is <code>mean</code>, which uses the mean of the collected values as the statistic.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDExperimentResultCmdlet.EndTime">
+            <summary>
+            <para>
+            <para>The date and time that the experiment ended, if it is completed. This must be no longer
+            than 30 days after the experiment start time.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDExperimentResultCmdlet.Experiment">
+            <summary>
+            <para>
+            <para>The name of the experiment to retrieve the results of.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDExperimentResultCmdlet.MetricName">
+            <summary>
+            <para>
+            <para>The names of the experiment metrics that you want to see the results of.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDExperimentResultCmdlet.Period">
+            <summary>
+            <para>
+            <para>In seconds, the amount of time to aggregate results together. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDExperimentResultCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project that contains the experiment that you want to see the
+            results of.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDExperimentResultCmdlet.ReportName">
+            <summary>
+            <para>
+            <para>The names of the report types that you want to see. Currently, <code>BayesianInference</code>
+            is the only valid value.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDExperimentResultCmdlet.ResultStat">
+            <summary>
+            <para>
+            <para>The statistics that you want to see in the returned results.</para><ul><li><para><code>PValue</code> specifies to use p-values for the results. A p-value is used
+            in hypothesis testing to measure how often you are willing to make a mistake in rejecting
+            the null hypothesis. A general practice is to reject the null hypothesis and declare
+            that the results are statistically significant when the p-value is less than 0.05.</para></li><li><para><code>ConfidenceInterval</code> specifies a confidence interval for the results.
+            The confidence interval represents the range of values for the chosen metric that
+            is likely to contain the true difference between the <code>baseStat</code> of a variation
+            and the baseline. Evidently returns the 95% confidence interval. </para></li><li><para><code>TreatmentEffect</code> is the difference in the statistic specified by the
+            <code>baseStat</code> parameter between each variation and the default variation.
+            </para></li><li><para><code>BaseStat</code> returns the statistical values collected for the metric for
+            each variation. The statistic uses the same statistic specified in the <code>baseStat</code>
+            parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns
+            the mean of the values collected for each variation.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDExperimentResultCmdlet.StartTime">
+            <summary>
+            <para>
+            <para>The date and time that the experiment started.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDExperimentResultCmdlet.TreatmentName">
+            <summary>
+            <para>
+            <para>The names of the experiment treatments that you want to see the results for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDExperimentResultCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.GetExperimentResultsResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.GetExperimentResultsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDFeatureCmdlet">
+            <summary>
+            Returns the details about one feature. You must already know the feature name. To
+            retrieve a list of features in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListFeatures.html">ListFeatures</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDFeatureCmdlet.Feature">
+            <summary>
+            <para>
+            <para>The name of the feature that you want to retrieve information for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDFeatureCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project that contains the feature.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDFeatureCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Feature'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.GetFeatureResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.GetFeatureResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDFeatureEvaluationCmdlet">
+            <summary>
+            This operation assigns a feature variation to one given user session. You pass in
+            an <code>entityID</code> that represents the user. Evidently then checks the evaluation
+            rules and assigns the variation.
+            
+             
+            <para>
+            The first rules that are evaluated are the override rules. If the user's <code>entityID</code>
+            matches an override rule, the user is served the variation specified by that rule.
+            </para><pre><code> &lt;p&gt;If there is a current launch with this feature that uses segment
+            overrides, and if the user session's &lt;code&gt;evaluationContext&lt;/code&gt; matches
+            a segment rule defined in a segment override, the configuration in the segment overrides
+            is used. For more information about segments, see &lt;a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateSegment.html"&gt;CreateSegment&lt;/a&gt;
+            and &lt;a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html"&gt;Use
+            segments to focus your audience&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;If there is a launch
+            with no segment overrides, the user might be assigned to a variation in the launch.
+            The chance of this depends on the percentage of users that are allocated to that launch.
+            If the user is enrolled in the launch, the variation they are served depends on the
+            allocation of the various feature variations used for the launch.&lt;/p&gt; &lt;p&gt;If
+            the user is not assigned to a launch, and there is an ongoing experiment for this
+            feature, the user might be assigned to a variation in the experiment. The chance of
+            this depends on the percentage of users that are allocated to that experiment.&lt;/p&gt;
+            &lt;p&gt;If the experiment uses a segment, then only user sessions with &lt;code&gt;evaluationContext&lt;/code&gt;
+            values that match the segment rule are used in the experiment.&lt;/p&gt; &lt;p&gt;If
+            the user is enrolled in the experiment, the variation they are served depends on the
+            allocation of the various feature variations used for the experiment. &lt;/p&gt; &lt;p&gt;If
+            the user is not assigned to a launch or experiment, they are served the default variation.&lt;/p&gt;
+            </code></pre>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDFeatureEvaluationCmdlet.EntityId">
+            <summary>
+            <para>
+            <para>An internal ID that represents a unique user of the application. This <code>entityID</code>
+            is checked against any override rules assigned for this feature.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDFeatureEvaluationCmdlet.EvaluationContext">
+            <summary>
+            <para>
+            <para>A JSON object of attributes that you can optionally pass in as part of the evaluation
+            event sent to Evidently from the user session. Evidently can use this value to match
+            user sessions with defined audience segments. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use
+            segments to focus your audience</a>.</para><pre><code> &lt;p&gt;If you include this parameter, the value must be a JSON object.
+            A JSON array is not supported.&lt;/p&gt; </code></pre>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDFeatureEvaluationCmdlet.Feature">
+            <summary>
+            <para>
+            <para>The name of the feature being evaluated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDFeatureEvaluationCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project that contains this feature.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDFeatureEvaluationCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.EvaluateFeatureResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.EvaluateFeatureResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDFeatureEvaluationBatchCmdlet">
+            <summary>
+            This operation assigns feature variation to user sessions. For each user session,
+            you pass in an <code>entityID</code> that represents the user. Evidently then checks
+            the evaluation rules and assigns the variation.
+            
+             
+            <para>
+            The first rules that are evaluated are the override rules. If the user's <code>entityID</code>
+            matches an override rule, the user is served the variation specified by that rule.
+            </para><para>
+            Next, if there is a launch of the feature, the user might be assigned to a variation
+            in the launch. The chance of this depends on the percentage of users that are allocated
+            to that launch. If the user is enrolled in the launch, the variation they are served
+            depends on the allocation of the various feature variations used for the launch.
+            </para><para>
+            If the user is not assigned to a launch, and there is an ongoing experiment for this
+            feature, the user might be assigned to a variation in the experiment. The chance of
+            this depends on the percentage of users that are allocated to that experiment. If
+            the user is enrolled in the experiment, the variation they are served depends on the
+            allocation of the various feature variations used for the experiment. 
+            </para><para>
+            If the user is not assigned to a launch or experiment, they are served the default
+            variation.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDFeatureEvaluationBatchCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project that contains the feature being evaluated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDFeatureEvaluationBatchCmdlet.Request">
+            <summary>
+            <para>
+            <para>An array of structures, where each structure assigns a feature variation to one user
+            session.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDFeatureEvaluationBatchCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Results'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.BatchEvaluateFeatureResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.BatchEvaluateFeatureResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDFeatureListCmdlet">
+            <summary>
+            Returns configuration details about all the features in the specified project.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDFeatureListCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project to return the feature list from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDFeatureListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDFeatureListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to use when requesting the next set of results. You received this token
+            from a previous <code>ListFeatures</code> operation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDFeatureListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Features'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.ListFeaturesResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.ListFeaturesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDFeatureListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Project parameter.
+            The -PassThru parameter is deprecated, use -Select '^Project' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDLaunchCmdlet">
+            <summary>
+            Returns the details about one launch. You must already know the launch name. To retrieve
+            a list of launches in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListLaunches.html">ListLaunches</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDLaunchCmdlet.Launch">
+            <summary>
+            <para>
+            <para>The name of the launch that you want to see the details of.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDLaunchCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project that contains the launch.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDLaunchCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Launch'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.GetLaunchResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.GetLaunchResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDLaunchListCmdlet">
+            <summary>
+            Returns configuration details about all the launches in the specified project.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDLaunchListCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project to return the launch list from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDLaunchListCmdlet.Status">
+            <summary>
+            <para>
+            <para>Use this optional parameter to limit the returned results to only the launches with
+            the status that you specify here.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDLaunchListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDLaunchListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to use when requesting the next set of results. You received this token
+            from a previous <code>ListLaunches</code> operation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDLaunchListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Launches'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.ListLaunchesResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.ListLaunchesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDLaunchListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Project parameter.
+            The -PassThru parameter is deprecated, use -Select '^Project' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDProjectCmdlet">
+            <summary>
+            Returns the details about one launch. You must already know the project name. To retrieve
+            a list of projects in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListProjects.html">ListProjects</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDProjectCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project that you want to see the details of.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDProjectCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Project'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.GetProjectResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.GetProjectResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDProjectCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Project parameter.
+            The -PassThru parameter is deprecated, use -Select '^Project' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDProjectListCmdlet">
+            <summary>
+            Returns configuration details about all the projects in the current Region in your
+            account.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDProjectListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDProjectListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to use when requesting the next set of results. You received this token
+            from a previous <code>ListProjects</code> operation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDProjectListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Projects'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.ListProjectsResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.ListProjectsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDResourceTagCmdlet">
+            <summary>
+            Displays the tags associated with an Evidently resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The ARN of the resource that you want to see the tags of.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDSegmentCmdlet">
+            <summary>
+            Returns information about the specified segment. Specify the segment you want to view
+            by specifying its ARN.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDSegmentCmdlet.Segment">
+            <summary>
+            <para>
+            <para>The ARN of the segment to return information for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDSegmentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Segment'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.GetSegmentResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.GetSegmentResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDSegmentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Segment parameter.
+            The -PassThru parameter is deprecated, use -Select '^Segment' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDSegmentListCmdlet">
+            <summary>
+            Returns a list of audience segments that you have created in your account in this
+            Region.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDSegmentListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response. If you omit this, the default
+            of 50 is used.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDSegmentListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to use when requesting the next set of results. You received this token
+            from a previous <code>ListSegments</code> operation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDSegmentListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Segments'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.ListSegmentsResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.ListSegmentsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDSegmentReferenceListCmdlet">
+            <summary>
+            Use this operation to find which experiments or launches are using a specified segment.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDSegmentReferenceListCmdlet.Segment">
+            <summary>
+            <para>
+            <para>The ARN of the segment that you want to view information for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDSegmentReferenceListCmdlet.Type">
+            <summary>
+            <para>
+            <para>Specifies whether to return information about launches or experiments that use this
+            segment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDSegmentReferenceListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response. If you omit this, the default
+            of 50 is used.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDSegmentReferenceListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>The token to use when requesting the next set of results. You received this token
+            from a previous <code>ListSegmentReferences</code> operation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDSegmentReferenceListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ReferencedBy'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.ListSegmentReferencesResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.ListSegmentReferencesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.GetCWEVDSegmentReferenceListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Segment parameter.
+            The -PassThru parameter is deprecated, use -Select '^Segment' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDExperimentCmdlet">
+            <summary>
+            Creates an Evidently <i>experiment</i>. Before you create an experiment, you must
+            create the feature to use for the experiment.
+            
+             
+            <para>
+            An experiment helps you make feature design decisions based on evidence and data.
+            An experiment can test as many as five variations at once. Evidently collects experiment
+            data and analyzes it by statistical methods, and provides clear recommendations about
+            which variations perform better.
+            </para><para>
+            You can optionally specify a <code>segment</code> to have the experiment consider
+            only certain audience types in the experiment, such as using only user sessions from
+            a certain location or who use a certain internet browser.
+            </para><para>
+            Don't use this operation to update an existing experiment. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateExperiment.html">UpdateExperiment</a>.
+            
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDExperimentCmdlet.OnlineAbConfig_ControlTreatmentName">
+            <summary>
+            <para>
+            <para>The name of the variation that is to be the default variation that the other variations
+            are compared to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDExperimentCmdlet.Description">
+            <summary>
+            <para>
+            <para>An optional description of the experiment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDExperimentCmdlet.MetricGoal">
+            <summary>
+            <para>
+            <para>An array of structures that defines the metrics used for the experiment, and whether
+            a higher or lower value for each metric is the goal.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDExperimentCmdlet.Name">
+            <summary>
+            <para>
+            <para>A name for the new experiment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDExperimentCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project that you want to create the new experiment in.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDExperimentCmdlet.RandomizationSalt">
+            <summary>
+            <para>
+            <para>When Evidently assigns a particular user session to an experiment, it must use a randomization
+            ID to determine which variation the user session is served. This randomization ID
+            is a combination of the entity ID and <code>randomizationSalt</code>. If you omit
+            <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDExperimentCmdlet.SamplingRate">
+            <summary>
+            <para>
+            <para>The portion of the available audience that you want to allocate to this experiment,
+            in thousandths of a percent. The available audience is the total audience minus the
+            audience that you have allocated to overrides or current launches of this feature.</para><para>This is represented in thousandths of a percent. For example, specify 10,000 to allocate
+            10% of the available audience.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDExperimentCmdlet.Segment">
+            <summary>
+            <para>
+            <para>Specifies an audience <i>segment</i> to use in the experiment. When a segment is used
+            in an experiment, only user sessions that match the segment pattern are used in the
+            experiment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDExperimentCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Assigns one or more tags (key-value pairs) to the experiment.</para><para>Tags can help you organize and categorize your resources. You can also use them to
+            scope user permissions by granting a user permission to access or change only resources
+            with certain tag values.</para><para>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly
+            as strings of characters.</para><pre><code> &lt;p&gt;You can associate as many as 50 tags with an experiment.&lt;/p&gt;
+            &lt;p&gt;For more information, see &lt;a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"&gt;Tagging
+            Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code></pre>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDExperimentCmdlet.Treatment">
+            <summary>
+            <para>
+            <para>An array of structures that describe the configuration of each feature variation used
+            in the experiment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDExperimentCmdlet.OnlineAbConfig_TreatmentWeight">
+            <summary>
+            <para>
+            <para>A set of key-value pairs. The keys are variation names, and the values are the portion
+            of experiment traffic to be assigned to that variation. Specify the traffic portion
+            in thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment
+            traffic to that variation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDExperimentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Experiment'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.CreateExperimentResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.CreateExperimentResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDExperimentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Project parameter.
+            The -PassThru parameter is deprecated, use -Select '^Project' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDExperimentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDFeatureCmdlet">
+            <summary>
+            Creates an Evidently <i>feature</i> that you want to launch or test. You can define
+            up to five variations of a feature, and use these variations in your launches and
+            experiments. A feature must be created in a project. For information about creating
+            a project, see <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateProject.html">CreateProject</a>.
+            
+             
+            <para>
+            Don't use this operation to update an existing feature. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateFeature.html">UpdateFeature</a>.
+            
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDFeatureCmdlet.DefaultVariation">
+            <summary>
+            <para>
+            <para>The name of the variation to use as the default variation. The default variation is
+            served to users who are not allocated to any ongoing launches or experiments of this
+            feature.</para><para>This variation must also be listed in the <code>variations</code> structure.</para><para>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code>
+            structure is used as the default variation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDFeatureCmdlet.Description">
+            <summary>
+            <para>
+            <para>An optional description of the feature.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDFeatureCmdlet.EntityOverride">
+            <summary>
+            <para>
+            <para>Specify users that should always be served a specific variation of a feature. Each
+            user is specified by a key-value pair . For each key, specify a user by entering their
+            user ID, account ID, or some other identifier. For the value, specify the name of
+            the variation that they are to be served.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDFeatureCmdlet.EvaluationStrategy">
+            <summary>
+            <para>
+            <para>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any
+            ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the
+            default variation to all users instead.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDFeatureCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name for the new feature.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDFeatureCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project that is to contain the new feature.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDFeatureCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Assigns one or more tags (key-value pairs) to the feature.</para><para>Tags can help you organize and categorize your resources. You can also use them to
+            scope user permissions by granting a user permission to access or change only resources
+            with certain tag values.</para><para>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly
+            as strings of characters.</para><pre><code> &lt;p&gt;You can associate as many as 50 tags with a feature.&lt;/p&gt;
+            &lt;p&gt;For more information, see &lt;a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"&gt;Tagging
+            Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code></pre>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDFeatureCmdlet.Variation">
+            <summary>
+            <para>
+            <para>An array of structures that contain the configuration of the feature's different variations.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDFeatureCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Feature'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.CreateFeatureResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.CreateFeatureResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDFeatureCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Project parameter.
+            The -PassThru parameter is deprecated, use -Select '^Project' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDFeatureCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDLaunchCmdlet">
+            <summary>
+            Creates a <i>launch</i> of a given feature. Before you create a launch, you must create
+            the feature to use for the launch.
+            
+             
+            <para>
+            You can use a launch to safely validate new features by serving them to a specified
+            percentage of your users while you roll out the feature. You can monitor the performance
+            of the new feature to help you decide when to ramp up traffic to more users. This
+            helps you reduce risk and identify unintended consequences before you fully launch
+            the feature.
+            </para><para>
+            Don't use this operation to update an existing launch. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateLaunch.html">UpdateLaunch</a>.
+            
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDLaunchCmdlet.Description">
+            <summary>
+            <para>
+            <para>An optional description for the launch.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDLaunchCmdlet.Group">
+            <summary>
+            <para>
+            <para>An array of structures that contains the feature and variations that are to be used
+            for the launch.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDLaunchCmdlet.MetricMonitor">
+            <summary>
+            <para>
+            <para>An array of structures that define the metrics that will be used to monitor the launch
+            performance.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDLaunchCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name for the new launch.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDLaunchCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project that you want to create the launch in.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDLaunchCmdlet.RandomizationSalt">
+            <summary>
+            <para>
+            <para>When Evidently assigns a particular user session to a launch, it must use a randomization
+            ID to determine which variation the user session is served. This randomization ID
+            is a combination of the entity ID and <code>randomizationSalt</code>. If you omit
+            <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDLaunchCmdlet.ScheduledSplitsConfig_Step">
+            <summary>
+            <para>
+            <para>An array of structures that define the traffic allocation percentages among the feature
+            variations during each step of the launch. This also defines the start time of each
+            step.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDLaunchCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Assigns one or more tags (key-value pairs) to the launch.</para><para>Tags can help you organize and categorize your resources. You can also use them to
+            scope user permissions by granting a user permission to access or change only resources
+            with certain tag values.</para><para>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly
+            as strings of characters.</para><pre><code> &lt;p&gt;You can associate as many as 50 tags with a launch.&lt;/p&gt;
+            &lt;p&gt;For more information, see &lt;a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"&gt;Tagging
+            Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code></pre>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDLaunchCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Launch'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.CreateLaunchResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.CreateLaunchResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDLaunchCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Project parameter.
+            The -PassThru parameter is deprecated, use -Select '^Project' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDLaunchCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDProjectCmdlet">
+            <summary>
+            Creates a project, which is the logical object in Evidently that can contain features,
+            launches, and experiments. Use projects to group similar features together.
+            
+             
+            <para>
+            To update an existing project, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateProject.html">UpdateProject</a>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDProjectCmdlet.AppConfigResource_ApplicationId">
+            <summary>
+            <para>
+            <para>The ID of the AppConfig application to use for client-side evaluation. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDProjectCmdlet.S3Destination_Bucket">
+            <summary>
+            <para>
+            <para>The name of the bucket in which Evidently stores evaluation events.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDProjectCmdlet.Description">
+            <summary>
+            <para>
+            <para>An optional description of the project.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDProjectCmdlet.AppConfigResource_EnvironmentId">
+            <summary>
+            <para>
+            <para>The ID of the AppConfig environment to use for client-side evaluation. This must be
+            an environment that is within the application that you specify for <code>applicationId</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDProjectCmdlet.CloudWatchLogs_LogGroup">
+            <summary>
+            <para>
+            <para>The name of the log group where the project stores evaluation events.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDProjectCmdlet.Name">
+            <summary>
+            <para>
+            <para>The name for the project.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDProjectCmdlet.S3Destination_Prefix">
+            <summary>
+            <para>
+            <para>The bucket prefix in which Evidently stores evaluation events.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDProjectCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Assigns one or more tags (key-value pairs) to the project.</para><para>Tags can help you organize and categorize your resources. You can also use them to
+            scope user permissions by granting a user permission to access or change only resources
+            with certain tag values.</para><para>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly
+            as strings of characters.</para><pre><code> &lt;p&gt;You can associate as many as 50 tags with a project.&lt;/p&gt;
+            &lt;p&gt;For more information, see &lt;a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"&gt;Tagging
+            Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code></pre>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDProjectCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Project'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.CreateProjectResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.CreateProjectResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDProjectCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDProjectCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDSegmentCmdlet">
+            <summary>
+            Use this operation to define a <i>segment</i> of your audience. A segment is a portion
+            of your audience that share one or more characteristics. Examples could be Chrome
+            browser users, users in Europe, or Firefox browser users in Europe who also fit other
+            criteria that your application collects, such as age.
+            
+             
+            <para>
+            Using a segment in an experiment limits that experiment to evaluate only the users
+            who match the segment criteria. Using one or more segments in a launch allows you
+            to define different traffic splits for the different audience segments.
+            </para><pre><code> &lt;p&gt;For more information about segment pattern syntax, see &lt;a
+            href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html"&gt;
+            Segment rule pattern syntax&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;The pattern that you define
+            for a segment is matched against the value of &lt;code&gt;evaluationContext&lt;/code&gt;,
+            which is passed into Evidently in the &lt;a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html"&gt;EvaluateFeature&lt;/a&gt;
+            operation, when Evidently assigns a feature variation to a user.&lt;/p&gt; </code></pre>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDSegmentCmdlet.Description">
+            <summary>
+            <para>
+            <para>An optional description for this segment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDSegmentCmdlet.Name">
+            <summary>
+            <para>
+            <para>A name for the segment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDSegmentCmdlet.Pattern">
+            <summary>
+            <para>
+            <para>The pattern to use for the segment. For more information about pattern syntax, see
+            <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html">
+            Segment rule pattern syntax</a>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDSegmentCmdlet.Tag">
+            <summary>
+            <para>
+            <para>Assigns one or more tags (key-value pairs) to the segment.</para><para>Tags can help you organize and categorize your resources. You can also use them to
+            scope user permissions by granting a user permission to access or change only resources
+            with certain tag values.</para><para>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly
+            as strings of characters.</para><pre><code> &lt;p&gt;You can associate as many as 50 tags with a segment.&lt;/p&gt;
+            &lt;p&gt;For more information, see &lt;a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"&gt;Tagging
+            Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code></pre>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDSegmentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Segment'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.CreateSegmentResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.CreateSegmentResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDSegmentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Name parameter.
+            The -PassThru parameter is deprecated, use -Select '^Name' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.NewCWEVDSegmentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDExperimentCmdlet">
+            <summary>
+            Deletes an Evidently experiment. The feature used for the experiment is not deleted.
+            
+             
+            <para>
+            To stop an experiment without deleting it, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_StopExperiment.html">StopExperiment</a>.
+            
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDExperimentCmdlet.Experiment">
+            <summary>
+            <para>
+            <para>The name of the experiment to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDExperimentCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project that contains the experiment to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDExperimentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.DeleteExperimentResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDExperimentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDFeatureCmdlet">
+            <summary>
+            Deletes an Evidently feature.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDFeatureCmdlet.Feature">
+            <summary>
+            <para>
+            <para>The name of the feature to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDFeatureCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project that contains the feature to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDFeatureCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.DeleteFeatureResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDFeatureCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDLaunchCmdlet">
+            <summary>
+            Deletes an Evidently launch. The feature used for the launch is not deleted.
+            
+             
+            <para>
+            To stop a launch without deleting it, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_StopLaunch.html">StopLaunch</a>.
+            
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDLaunchCmdlet.Launch">
+            <summary>
+            <para>
+            <para>The name of the launch to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDLaunchCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project that contains the launch to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDLaunchCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.DeleteLaunchResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDLaunchCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDProjectCmdlet">
+            <summary>
+            Deletes an Evidently project. Before you can delete a project, you must delete all
+            the features that the project contains. To delete a feature, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_DeleteFeature.html">DeleteFeature</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDProjectCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDProjectCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.DeleteProjectResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDProjectCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Project parameter.
+            The -PassThru parameter is deprecated, use -Select '^Project' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDProjectCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDResourceTagCmdlet">
+            <summary>
+            Removes one or more tags from the specified resource.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The ARN of the CloudWatch Evidently resource that you're removing tags from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>The list of tag keys to remove from the resource.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.UntagResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDSegmentCmdlet">
+            <summary>
+            Deletes a segment. You can't delete a segment that is being used in a launch or experiment,
+            even if that launch or experiment is not currently running.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDSegmentCmdlet.Segment">
+            <summary>
+            <para>
+            <para>Specifies the segment to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDSegmentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.DeleteSegmentResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDSegmentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Segment parameter.
+            The -PassThru parameter is deprecated, use -Select '^Segment' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.RemoveCWEVDSegmentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.StartCWEVDExperimentCmdlet">
+            <summary>
+            Starts an existing experiment. To create an experiment, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateExperiment.html">CreateExperiment</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.StartCWEVDExperimentCmdlet.AnalysisCompleteTime">
+            <summary>
+            <para>
+            <para>The date and time to end the experiment. This must be no more than 30 days after the
+            experiment starts.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.StartCWEVDExperimentCmdlet.Experiment">
+            <summary>
+            <para>
+            <para>The name of the experiment to start.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.StartCWEVDExperimentCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project that contains the experiment to start.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.StartCWEVDExperimentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.StartExperimentResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.StartExperimentResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.StartCWEVDExperimentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.StartCWEVDLaunchCmdlet">
+            <summary>
+            Starts an existing launch. To create a launch, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateLaunch.html">CreateLaunch</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.StartCWEVDLaunchCmdlet.Launch">
+            <summary>
+            <para>
+            <para>The name of the launch to start.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.StartCWEVDLaunchCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project that contains the launch to start.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.StartCWEVDLaunchCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.StartLaunchResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.StartLaunchResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.StartCWEVDLaunchCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.StopCWEVDExperimentCmdlet">
+            <summary>
+            Stops an experiment that is currently running. If you stop an experiment, you can't
+            resume it or restart it.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.StopCWEVDExperimentCmdlet.DesiredState">
+            <summary>
+            <para>
+            <para>Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code>
+            after it stops.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.StopCWEVDExperimentCmdlet.Experiment">
+            <summary>
+            <para>
+            <para>The name of the experiment to stop.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.StopCWEVDExperimentCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project that contains the experiment to stop.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.StopCWEVDExperimentCmdlet.Reason">
+            <summary>
+            <para>
+            <para>A string that describes why you are stopping the experiment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.StopCWEVDExperimentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.StopExperimentResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.StopExperimentResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.StopCWEVDExperimentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.StopCWEVDLaunchCmdlet">
+            <summary>
+            Stops a launch that is currently running. After you stop a launch, you will not be
+            able to resume it or restart it. Also, it will not be evaluated as a rule for traffic
+            allocation, and the traffic that was allocated to the launch will instead be available
+            to the feature's experiment, if there is one. Otherwise, all traffic will be served
+            the default variation after the launch is stopped.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.StopCWEVDLaunchCmdlet.DesiredState">
+            <summary>
+            <para>
+            <para>Specify whether to consider the launch as <code>COMPLETED</code> or <code>CANCELLED</code>
+            after it stops.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.StopCWEVDLaunchCmdlet.Launch">
+            <summary>
+            <para>
+            <para>The name of the launch to stop.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.StopCWEVDLaunchCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project that contains the launch that you want to stop.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.StopCWEVDLaunchCmdlet.Reason">
+            <summary>
+            <para>
+            <para>A string that describes why you are stopping the launch.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.StopCWEVDLaunchCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.StopLaunchResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.StopLaunchResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.StopCWEVDLaunchCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.TestCWEVDSegmentPatternCmdlet">
+            <summary>
+            Use this operation to test a rules pattern that you plan to use to create an audience
+            segment. For more information about segments, see <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateSegment.html">CreateSegment</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.TestCWEVDSegmentPatternCmdlet.Pattern">
+            <summary>
+            <para>
+            <para>The pattern to test.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.TestCWEVDSegmentPatternCmdlet.Payload">
+            <summary>
+            <para>
+            <para>A sample <code>evaluationContext</code> JSON block to test against the specified pattern.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.TestCWEVDSegmentPatternCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Match'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.TestSegmentPatternResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.TestSegmentPatternResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.TestCWEVDSegmentPatternCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Pattern parameter.
+            The -PassThru parameter is deprecated, use -Select '^Pattern' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDExperimentCmdlet">
+            <summary>
+            Updates an Evidently experiment. 
+            
+             
+            <para>
+            Don't use this operation to update an experiment's tag. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>.
+            
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDExperimentCmdlet.OnlineAbConfig_ControlTreatmentName">
+            <summary>
+            <para>
+            <para>The name of the variation that is to be the default variation that the other variations
+            are compared to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDExperimentCmdlet.Description">
+            <summary>
+            <para>
+            <para>An optional description of the experiment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDExperimentCmdlet.Experiment">
+            <summary>
+            <para>
+            <para>The name of the experiment to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDExperimentCmdlet.MetricGoal">
+            <summary>
+            <para>
+            <para>An array of structures that defines the metrics used for the experiment, and whether
+            a higher or lower value for each metric is the goal.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDExperimentCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project that contains the experiment that you want to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDExperimentCmdlet.RandomizationSalt">
+            <summary>
+            <para>
+            <para>When Evidently assigns a particular user session to an experiment, it must use a randomization
+            ID to determine which variation the user session is served. This randomization ID
+            is a combination of the entity ID and <code>randomizationSalt</code>. If you omit
+            <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDExperimentCmdlet.RemoveSegment">
+            <summary>
+            <para>
+            <para>Removes a segment from being used in an experiment. You can't use this parameter if
+            the experiment is currently running.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDExperimentCmdlet.SamplingRate">
+            <summary>
+            <para>
+            <para>The portion of the available audience that you want to allocate to this experiment,
+            in thousandths of a percent. The available audience is the total audience minus the
+            audience that you have allocated to overrides or current launches of this feature.</para><para>This is represented in thousandths of a percent. For example, specify 20,000 to allocate
+            20% of the available audience.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDExperimentCmdlet.Segment">
+            <summary>
+            <para>
+            <para>Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment,
+            only user sessions that match the segment pattern are used in the experiment. You
+            can't use this parameter if the experiment is currently running.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDExperimentCmdlet.Treatment">
+            <summary>
+            <para>
+            <para>An array of structures that define the variations being tested in the experiment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDExperimentCmdlet.OnlineAbConfig_TreatmentWeight">
+            <summary>
+            <para>
+            <para>A set of key-value pairs. The keys are variation names, and the values are the portion
+            of experiment traffic to be assigned to that variation. Specify the traffic portion
+            in thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment
+            traffic to that variation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDExperimentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Experiment'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.UpdateExperimentResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.UpdateExperimentResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDExperimentCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDFeatureCmdlet">
+            <summary>
+            Updates an existing feature.
+            
+             
+            <para>
+            You can't use this operation to update the tags of an existing feature. Instead, use
+            <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>.
+            
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDFeatureCmdlet.AddOrUpdateVariation">
+            <summary>
+            <para>
+            <para>To update variation configurations for this feature, or add new ones, specify this
+            structure. In this array, include any variations that you want to add or update. If
+            the array includes a variation name that already exists for this feature, it is updated.
+            If it includes a new variation name, it is added as a new variation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDFeatureCmdlet.DefaultVariation">
+            <summary>
+            <para>
+            <para>The name of the variation to use as the default variation. The default variation is
+            served to users who are not allocated to any ongoing launches or experiments of this
+            feature.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDFeatureCmdlet.Description">
+            <summary>
+            <para>
+            <para>An optional description of the feature.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDFeatureCmdlet.EntityOverride">
+            <summary>
+            <para>
+            <para>Specified users that should always be served a specific variation of a feature. Each
+            user is specified by a key-value pair . For each key, specify a user by entering their
+            user ID, account ID, or some other identifier. For the value, specify the name of
+            the variation that they are to be served.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDFeatureCmdlet.EvaluationStrategy">
+            <summary>
+            <para>
+            <para>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any
+            ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the
+            default variation to all users instead.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDFeatureCmdlet.Feature">
+            <summary>
+            <para>
+            <para>The name of the feature to be updated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDFeatureCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project that contains the feature to be updated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDFeatureCmdlet.RemoveVariation">
+            <summary>
+            <para>
+            <para>Removes a variation from the feature. If the variation you specify doesn't exist,
+            then this makes no change and does not report an error.</para><para>This operation fails if you try to remove a variation that is part of an ongoing launch
+            or experiment.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDFeatureCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Feature'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.UpdateFeatureResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.UpdateFeatureResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDFeatureCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDLaunchCmdlet">
+            <summary>
+            Updates a launch of a given feature. 
+            
+             
+            <para>
+            Don't use this operation to update the tags of an existing launch. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>.
+            
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDLaunchCmdlet.Description">
+            <summary>
+            <para>
+            <para>An optional description for the launch.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDLaunchCmdlet.Group">
+            <summary>
+            <para>
+            <para>An array of structures that contains the feature and variations that are to be used
+            for the launch.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDLaunchCmdlet.Launch">
+            <summary>
+            <para>
+            <para>The name of the launch that is to be updated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDLaunchCmdlet.MetricMonitor">
+            <summary>
+            <para>
+            <para>An array of structures that define the metrics that will be used to monitor the launch
+            performance.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDLaunchCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project that contains the launch that you want to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDLaunchCmdlet.RandomizationSalt">
+            <summary>
+            <para>
+            <para>When Evidently assigns a particular user session to a launch, it must use a randomization
+            ID to determine which variation the user session is served. This randomization ID
+            is a combination of the entity ID and <code>randomizationSalt</code>. If you omit
+            <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDLaunchCmdlet.ScheduledSplitsConfig_Step">
+            <summary>
+            <para>
+            <para>An array of structures that define the traffic allocation percentages among the feature
+            variations during each step of the launch. This also defines the start time of each
+            step.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDLaunchCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Launch'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.UpdateLaunchResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.UpdateLaunchResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDLaunchCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDProjectCmdlet">
+            <summary>
+            Updates the description of an existing project.
+            
+             
+            <para>
+            To create a new project, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateProject.html">CreateProject</a>.
+            </para><para>
+            Don't use this operation to update the data storage options of a project. Instead,
+            use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateProjectDataDelivery.html">UpdateProjectDataDelivery</a>.
+            
+            </para><para>
+            Don't use this operation to update the tags of a project. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>.
+            
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDProjectCmdlet.AppConfigResource_ApplicationId">
+            <summary>
+            <para>
+            <para>The ID of the AppConfig application to use for client-side evaluation. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDProjectCmdlet.Description">
+            <summary>
+            <para>
+            <para>An optional description of the project.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDProjectCmdlet.AppConfigResource_EnvironmentId">
+            <summary>
+            <para>
+            <para>The ID of the AppConfig environment to use for client-side evaluation. This must be
+            an environment that is within the application that you specify for <code>applicationId</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDProjectCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDProjectCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Project'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.UpdateProjectResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.UpdateProjectResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDProjectCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Project parameter.
+            The -PassThru parameter is deprecated, use -Select '^Project' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDProjectCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDProjectDataDeliveryCmdlet">
+            <summary>
+            Updates the data storage options for this project. If you store evaluation events,
+            you an keep them and analyze them on your own. If you choose not to store evaluation
+            events, Evidently deletes them after using them to produce metrics and other experiment
+            results that you can view.
+            
+             
+            <para>
+            You can't specify both <code>cloudWatchLogs</code> and <code>s3Destination</code>
+            in the same operation.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDProjectDataDeliveryCmdlet.S3Destination_Bucket">
+            <summary>
+            <para>
+            <para>The name of the bucket in which Evidently stores evaluation events.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDProjectDataDeliveryCmdlet.CloudWatchLogs_LogGroup">
+            <summary>
+            <para>
+            <para>The name of the log group where the project stores evaluation events.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDProjectDataDeliveryCmdlet.S3Destination_Prefix">
+            <summary>
+            <para>
+            <para>The bucket prefix in which Evidently stores evaluation events.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDProjectDataDeliveryCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project that you want to modify the data storage options for.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDProjectDataDeliveryCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Project'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.UpdateProjectDataDeliveryResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.UpdateProjectDataDeliveryResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDProjectDataDeliveryCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Project parameter.
+            The -PassThru parameter is deprecated, use -Select '^Project' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.UpdateCWEVDProjectDataDeliveryCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CWEVD.WriteCWEVDProjectEventCmdlet">
+            <summary>
+            Sends performance events to Evidently. These events can be used to evaluate a launch
+            or an experiment.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.WriteCWEVDProjectEventCmdlet.Event">
+            <summary>
+            <para>
+            <para>An array of event structures that contain the performance data that is being sent
+            to Evidently.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.WriteCWEVDProjectEventCmdlet.Project">
+            <summary>
+            <para>
+            <para>The name or ARN of the project to write the events to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.WriteCWEVDProjectEventCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudWatchEvidently.Model.PutProjectEventsResponse).
+            Specifying the name of a property of type Amazon.CloudWatchEvidently.Model.PutProjectEventsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.WriteCWEVDProjectEventCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Project parameter.
+            The -PassThru parameter is deprecated, use -Select '^Project' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CWEVD.WriteCWEVDProjectEventCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

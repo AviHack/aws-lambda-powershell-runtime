@@ -1,0 +1,1804 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.Inspector</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.AddINSEventSubscriptionCmdlet">
+            <summary>
+            Enables the process of sending Amazon Simple Notification Service (SNS) notifications
+            about a specified event to a specified SNS topic.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.AddINSEventSubscriptionCmdlet.Event">
+            <summary>
+            <para>
+            <para>The event for which you want to receive SNS notifications.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.AddINSEventSubscriptionCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The ARN of the assessment template that is used during the event for which you want
+            to receive SNS notifications.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.AddINSEventSubscriptionCmdlet.TopicArn">
+            <summary>
+            <para>
+            <para>The ARN of the SNS topic to which the SNS notifications are sent.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.AddINSEventSubscriptionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.SubscribeToEventResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.AddINSEventSubscriptionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.AddINSFindingAttributeCmdlet">
+            <summary>
+            Assigns attributes (key and value pairs) to the findings that are specified by the
+            ARNs of the findings.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.AddINSFindingAttributeCmdlet.Attribute">
+            <summary>
+            <para>
+            <para>The array of attributes that you want to assign to specified findings.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.AddINSFindingAttributeCmdlet.FindingArn">
+            <summary>
+            <para>
+            <para>The ARNs that specify the findings that you want to assign attributes to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.AddINSFindingAttributeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'FailedItems'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.AddAttributesToFindingsResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.AddAttributesToFindingsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.AddINSFindingAttributeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FindingArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^FindingArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.AddINSFindingAttributeCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.GetINSAgentPreviewCmdlet">
+            <summary>
+            Previews the agents installed on the EC2 instances that are part of the specified
+            assessment target.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAgentPreviewCmdlet.PreviewAgentsArn">
+            <summary>
+            <para>
+            <para>The ARN of the assessment target whose agents you want to preview.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAgentPreviewCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>You can use this parameter to indicate the maximum number of items you want in the
+            response. The default value is 10. The maximum value is 500.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAgentPreviewCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>You can use this parameter when paginating results. Set the value of this parameter
+            to null on your first call to the <b>PreviewAgents</b> action. Subsequent calls to
+            the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b>
+            from the previous response to continue listing data.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAgentPreviewCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AgentPreviews'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.PreviewAgentsResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.PreviewAgentsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAgentPreviewCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the PreviewAgentsArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^PreviewAgentsArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAgentPreviewCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentReportCmdlet">
+            <summary>
+            Produces an assessment report that includes detailed and comprehensive results of
+            a specified assessment run.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentReportCmdlet.AssessmentRunArn">
+            <summary>
+            <para>
+            <para>The ARN that specifies the assessment run for which you want to generate a report.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentReportCmdlet.ReportFileFormat">
+            <summary>
+            <para>
+            <para>Specifies the file format (html or pdf) of the assessment report that you want to
+            generate.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentReportCmdlet.ReportType">
+            <summary>
+            <para>
+            <para>Specifies the type of the assessment report that you want to generate. There are two
+            types of assessment reports: a finding report and a full report. For more information,
+            see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment
+            Reports</a>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentReportCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.GetAssessmentReportResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.GetAssessmentReportResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentReportCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentRunArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentRunArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunCmdlet">
+            <summary>
+            Describes the assessment runs that are specified by the ARNs of the assessment runs.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunCmdlet.AssessmentRunArn">
+            <summary>
+            <para>
+            <para>The ARN that specifies the assessment run that you want to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.DescribeAssessmentRunsResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.DescribeAssessmentRunsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentRunArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentRunArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunAgentCmdlet">
+            <summary>
+            Lists the agents of the assessment runs that are specified by the ARNs of the assessment
+            runs.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunAgentCmdlet.Filter_AgentHealthCode">
+            <summary>
+            <para>
+            <para>The detailed health state of the agent. Values can be set to <b>IDLE</b>, <b>RUNNING</b>,
+            <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and <b>UNKNOWN</b>. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunAgentCmdlet.Filter_AgentHealth">
+            <summary>
+            <para>
+            <para>The current health state of the agent. Values can be set to <b>HEALTHY</b> or <b>UNHEALTHY</b>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunAgentCmdlet.AssessmentRunArn">
+            <summary>
+            <para>
+            <para>The ARN that specifies the assessment run whose agents you want to list.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunAgentCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>You can use this parameter to indicate the maximum number of items that you want in
+            the response. The default value is 10. The maximum value is 500.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunAgentCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>You can use this parameter when paginating results. Set the value of this parameter
+            to null on your first call to the <b>ListAssessmentRunAgents</b> action. Subsequent
+            calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b>
+            from the previous response to continue listing data.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunAgentCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AssessmentRunAgents'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.ListAssessmentRunAgentsResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.ListAssessmentRunAgentsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunAgentCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentRunArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentRunArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunAgentCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunListCmdlet">
+            <summary>
+            Lists the assessment runs that correspond to the assessment templates that are specified
+            by the ARNs of the assessment templates.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunListCmdlet.AssessmentTemplateArn">
+            <summary>
+            <para>
+            <para>The ARNs that specify the assessment templates whose assessment runs you want to list.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunListCmdlet.CompletionTimeRange_BeginDate">
+            <summary>
+            <para>
+            <para>The minimum value of the timestamp range.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunListCmdlet.StartTimeRange_BeginDate">
+            <summary>
+            <para>
+            <para>The minimum value of the timestamp range.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunListCmdlet.StateChangeTimeRange_BeginDate">
+            <summary>
+            <para>
+            <para>The minimum value of the timestamp range.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunListCmdlet.CompletionTimeRange_EndDate">
+            <summary>
+            <para>
+            <para>The maximum value of the timestamp range.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunListCmdlet.StartTimeRange_EndDate">
+            <summary>
+            <para>
+            <para>The maximum value of the timestamp range.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunListCmdlet.StateChangeTimeRange_EndDate">
+            <summary>
+            <para>
+            <para>The maximum value of the timestamp range.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunListCmdlet.DurationRange_MaxSecond">
+            <summary>
+            <para>
+            <para>The maximum value of the duration range. Must be less than or equal to 604800 seconds
+            (1 week).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunListCmdlet.DurationRange_MinSecond">
+            <summary>
+            <para>
+            <para>The minimum value of the duration range. Must be greater than zero.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunListCmdlet.Filter_NamePattern">
+            <summary>
+            <para>
+            <para>For a record to match a filter, an explicit value or a string containing a wildcard
+            that is specified for this data type property must match the value of the <b>assessmentRunName</b>
+            property of the <a>AssessmentRun</a> data type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunListCmdlet.Filter_RulesPackageArn">
+            <summary>
+            <para>
+            <para>For a record to match a filter, the value that is specified for this data type property
+            must be contained in the list of values of the <b>rulesPackages</b> property of the
+            <a>AssessmentRun</a> data type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunListCmdlet.Filter_State">
+            <summary>
+            <para>
+            <para>For a record to match a filter, one of the values specified for this data type property
+            must be the exact match of the value of the <b>assessmentRunState</b> property of
+            the <a>AssessmentRun</a> data type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>You can use this parameter to indicate the maximum number of items that you want in
+            the response. The default value is 10. The maximum value is 500.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>You can use this parameter when paginating results. Set the value of this parameter
+            to null on your first call to the <b>ListAssessmentRuns</b> action. Subsequent calls
+            to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b>
+            from the previous response to continue listing data.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AssessmentRunArns'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.ListAssessmentRunsResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.ListAssessmentRunsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentTemplateArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentTemplateArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentRunListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTargetCmdlet">
+            <summary>
+            Describes the assessment targets that are specified by the ARNs of the assessment
+            targets.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTargetCmdlet.AssessmentTargetArn">
+            <summary>
+            <para>
+            <para>The ARNs that specifies the assessment targets that you want to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTargetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.DescribeAssessmentTargetsResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.DescribeAssessmentTargetsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTargetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentTargetArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentTargetArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTargetListCmdlet">
+            <summary>
+            Lists the ARNs of the assessment targets within this AWS account. For more information
+            about assessment targets, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">Amazon
+            Inspector Assessment Targets</a>.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTargetListCmdlet.Filter_AssessmentTargetNamePattern">
+            <summary>
+            <para>
+            <para>For a record to match a filter, an explicit value or a string that contains a wildcard
+            that is specified for this data type property must match the value of the <b>assessmentTargetName</b>
+            property of the <a>AssessmentTarget</a> data type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTargetListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>You can use this parameter to indicate the maximum number of items you want in the
+            response. The default value is 10. The maximum value is 500.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTargetListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>You can use this parameter when paginating results. Set the value of this parameter
+            to null on your first call to the <b>ListAssessmentTargets</b> action. Subsequent
+            calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b>
+            from the previous response to continue listing data.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTargetListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AssessmentTargetArns'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.ListAssessmentTargetsResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.ListAssessmentTargetsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTargetListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Filter_AssessmentTargetNamePattern parameter.
+            The -PassThru parameter is deprecated, use -Select '^Filter_AssessmentTargetNamePattern' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTargetListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTemplateCmdlet">
+            <summary>
+            Describes the assessment templates that are specified by the ARNs of the assessment
+            templates.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTemplateCmdlet.AssessmentTemplateArn">
+            <summary>
+            <para>
+            The service has not provided documentation for this parameter; please refer to the service's API reference documentation for the latest available information.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.DescribeAssessmentTemplatesResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.DescribeAssessmentTemplatesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTemplateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentTemplateArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentTemplateArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTemplateListCmdlet">
+            <summary>
+            Lists the assessment templates that correspond to the assessment targets that are
+            specified by the ARNs of the assessment targets.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTemplateListCmdlet.AssessmentTargetArn">
+            <summary>
+            <para>
+            <para>A list of ARNs that specifies the assessment targets whose assessment templates you
+            want to list.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTemplateListCmdlet.DurationRange_MaxSecond">
+            <summary>
+            <para>
+            <para>The maximum value of the duration range. Must be less than or equal to 604800 seconds
+            (1 week).</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTemplateListCmdlet.DurationRange_MinSecond">
+            <summary>
+            <para>
+            <para>The minimum value of the duration range. Must be greater than zero.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTemplateListCmdlet.Filter_NamePattern">
+            <summary>
+            <para>
+            <para>For a record to match a filter, an explicit value or a string that contains a wildcard
+            that is specified for this data type property must match the value of the <b>assessmentTemplateName</b>
+            property of the <a>AssessmentTemplate</a> data type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTemplateListCmdlet.Filter_RulesPackageArn">
+            <summary>
+            <para>
+            <para>For a record to match a filter, the values that are specified for this data type property
+            must be contained in the list of values of the <b>rulesPackageArns</b> property of
+            the <a>AssessmentTemplate</a> data type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTemplateListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>You can use this parameter to indicate the maximum number of items you want in the
+            response. The default value is 10. The maximum value is 500.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTemplateListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>You can use this parameter when paginating results. Set the value of this parameter
+            to null on your first call to the <b>ListAssessmentTemplates</b> action. Subsequent
+            calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b>
+            from the previous response to continue listing data.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTemplateListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AssessmentTemplateArns'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.ListAssessmentTemplatesResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.ListAssessmentTemplatesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTemplateListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentTargetArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentTargetArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSAssessmentTemplateListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.GetINSCrossAccountAccessRoleCmdlet">
+            <summary>
+            Describes the IAM role that enables Amazon Inspector to access your AWS account.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSCrossAccountAccessRoleCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.DescribeCrossAccountAccessRoleResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.DescribeCrossAccountAccessRoleResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.GetINSEventSubscriptionCmdlet">
+            <summary>
+            Lists all the event subscriptions for the assessment template that is specified by
+            the ARN of the assessment template. For more information, see <a>SubscribeToEvent</a>
+            and <a>UnsubscribeFromEvent</a>.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSEventSubscriptionCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The ARN of the assessment template for which you want to list the existing event subscriptions.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSEventSubscriptionCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>You can use this parameter to indicate the maximum number of items you want in the
+            response. The default value is 10. The maximum value is 500.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSEventSubscriptionCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>You can use this parameter when paginating results. Set the value of this parameter
+            to null on your first call to the <b>ListEventSubscriptions</b> action. Subsequent
+            calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b>
+            from the previous response to continue listing data.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSEventSubscriptionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Subscriptions'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.ListEventSubscriptionsResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.ListEventSubscriptionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSEventSubscriptionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSEventSubscriptionCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.GetINSExclusionCmdlet">
+            <summary>
+            Describes the exclusions that are specified by the exclusions' ARNs.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSExclusionCmdlet.ExclusionArn">
+            <summary>
+            <para>
+            <para>The list of ARNs that specify the exclusions that you want to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSExclusionCmdlet.Locale">
+            <summary>
+            <para>
+            <para>The locale into which you want to translate the exclusion's title, description, and
+            recommendation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSExclusionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.DescribeExclusionsResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.DescribeExclusionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSExclusionCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ExclusionArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ExclusionArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.GetINSExclusionListCmdlet">
+            <summary>
+            List exclusions that are generated by the assessment run.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSExclusionListCmdlet.AssessmentRunArn">
+            <summary>
+            <para>
+            <para>The ARN of the assessment run that generated the exclusions that you want to list.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSExclusionListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>You can use this parameter to indicate the maximum number of items you want in the
+            response. The default value is 100. The maximum value is 500.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSExclusionListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>You can use this parameter when paginating results. Set the value of this parameter
+            to null on your first call to the ListExclusionsRequest action. Subsequent calls to
+            the action fill nextToken in the request with the value of nextToken from the previous
+            response to continue listing data.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSExclusionListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ExclusionArns'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.ListExclusionsResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.ListExclusionsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSExclusionListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentRunArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentRunArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSExclusionListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.GetINSExclusionsPreviewCmdlet">
+            <summary>
+            Retrieves the exclusions preview (a list of ExclusionPreview objects) specified by
+            the preview token. You can obtain the preview token by running the CreateExclusionsPreview
+            API.<br/><br/>In the AWS.Tools.Inspector module, this cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSExclusionsPreviewCmdlet.AssessmentTemplateArn">
+            <summary>
+            <para>
+            <para>The ARN that specifies the assessment template for which the exclusions preview was
+            requested.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSExclusionsPreviewCmdlet.Locale">
+            <summary>
+            <para>
+            <para>The locale into which you want to translate the exclusion's title, description, and
+            recommendation.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSExclusionsPreviewCmdlet.PreviewToken">
+            <summary>
+            <para>
+            <para>The unique identifier associated of the exclusions preview.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSExclusionsPreviewCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>You can use this parameter to indicate the maximum number of items you want in the
+            response. The default value is 100. The maximum value is 500.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSExclusionsPreviewCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>You can use this parameter when paginating results. Set the value of this parameter
+            to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls
+            to the action fill nextToken in the request with the value of nextToken from the previous
+            response to continue listing data.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In the AWS.Tools.Inspector module, this parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSExclusionsPreviewCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.GetExclusionsPreviewResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.GetExclusionsPreviewResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSExclusionsPreviewCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentTemplateArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentTemplateArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSExclusionsPreviewCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.GetINSFindingCmdlet">
+            <summary>
+            Describes the findings that are specified by the ARNs of the findings.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSFindingCmdlet.FindingArn">
+            <summary>
+            <para>
+            <para>The ARN that specifies the finding that you want to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSFindingCmdlet.Locale">
+            <summary>
+            <para>
+            <para>The locale into which you want to translate a finding description, recommendation,
+            and the short description that identifies the finding.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSFindingCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.DescribeFindingsResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.DescribeFindingsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSFindingCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the FindingArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^FindingArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.GetINSFindingListCmdlet">
+            <summary>
+            Lists findings that are generated by the assessment runs that are specified by the
+            ARNs of the assessment runs.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSFindingListCmdlet.Filter_AgentId">
+            <summary>
+            <para>
+            <para>For a record to match a filter, one of the values that is specified for this data
+            type property must be the exact match of the value of the <b>agentId</b> property
+            of the <a>Finding</a> data type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSFindingListCmdlet.AssessmentRunArn">
+            <summary>
+            <para>
+            <para>The ARNs of the assessment runs that generate the findings that you want to list.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSFindingListCmdlet.Filter_Attribute">
+            <summary>
+            <para>
+            <para>For a record to match a filter, the list of values that are specified for this data
+            type property must be contained in the list of values of the <b>attributes</b> property
+            of the <a>Finding</a> data type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSFindingListCmdlet.Filter_AutoScalingGroup">
+            <summary>
+            <para>
+            <para>For a record to match a filter, one of the values that is specified for this data
+            type property must be the exact match of the value of the <b>autoScalingGroup</b>
+            property of the <a>Finding</a> data type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSFindingListCmdlet.CreationTimeRange_BeginDate">
+            <summary>
+            <para>
+            <para>The minimum value of the timestamp range.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSFindingListCmdlet.CreationTimeRange_EndDate">
+            <summary>
+            <para>
+            <para>The maximum value of the timestamp range.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSFindingListCmdlet.Filter_RuleName">
+            <summary>
+            <para>
+            <para>For a record to match a filter, one of the values that is specified for this data
+            type property must be the exact match of the value of the <b>ruleName</b> property
+            of the <a>Finding</a> data type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSFindingListCmdlet.Filter_RulesPackageArn">
+            <summary>
+            <para>
+            <para>For a record to match a filter, one of the values that is specified for this data
+            type property must be the exact match of the value of the <b>rulesPackageArn</b> property
+            of the <a>Finding</a> data type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSFindingListCmdlet.Filter_Severity">
+            <summary>
+            <para>
+            <para>For a record to match a filter, one of the values that is specified for this data
+            type property must be the exact match of the value of the <b>severity</b> property
+            of the <a>Finding</a> data type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSFindingListCmdlet.Filter_UserAttribute">
+            <summary>
+            <para>
+            <para>For a record to match a filter, the value that is specified for this data type property
+            must be contained in the list of values of the <b>userAttributes</b> property of the
+            <a>Finding</a> data type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSFindingListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>You can use this parameter to indicate the maximum number of items you want in the
+            response. The default value is 10. The maximum value is 500.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSFindingListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>You can use this parameter when paginating results. Set the value of this parameter
+            to null on your first call to the <b>ListFindings</b> action. Subsequent calls to
+            the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b>
+            from the previous response to continue listing data.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSFindingListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'FindingArns'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.ListFindingsResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.ListFindingsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSFindingListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentRunArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentRunArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSFindingListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.GetINSResourceGroupCmdlet">
+            <summary>
+            Describes the resource groups that are specified by the ARNs of the resource groups.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSResourceGroupCmdlet.ResourceGroupArn">
+            <summary>
+            <para>
+            <para>The ARN that specifies the resource group that you want to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSResourceGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.DescribeResourceGroupsResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.DescribeResourceGroupsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSResourceGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.GetINSResourceTagListCmdlet">
+            <summary>
+            Lists all tags associated with an assessment template.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSResourceTagListCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The ARN that specifies the assessment template whose tags you want to list.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSResourceTagListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.ListTagsForResourceResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.ListTagsForResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSResourceTagListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.GetINSRulesPackageCmdlet">
+            <summary>
+            Describes the rules packages that are specified by the ARNs of the rules packages.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSRulesPackageCmdlet.Locale">
+            <summary>
+            <para>
+            <para>The locale that you want to translate a rules package description into.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSRulesPackageCmdlet.RulesPackageArn">
+            <summary>
+            <para>
+            <para>The ARN that specifies the rules package that you want to describe.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSRulesPackageCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.DescribeRulesPackagesResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.DescribeRulesPackagesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSRulesPackageCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RulesPackageArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^RulesPackageArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.GetINSRulesPackageListCmdlet">
+            <summary>
+            Lists all available Amazon Inspector rules packages.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSRulesPackageListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>You can use this parameter to indicate the maximum number of items you want in the
+            response. The default value is 10. The maximum value is 500.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSRulesPackageListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>You can use this parameter when paginating results. Set the value of this parameter
+            to null on your first call to the <b>ListRulesPackages</b> action. Subsequent calls
+            to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b>
+            from the previous response to continue listing data.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSRulesPackageListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'RulesPackageArns'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.ListRulesPackagesResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.ListRulesPackagesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSRulesPackageListCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.GetINSTelemetryMetadataCmdlet">
+            <summary>
+            Information about the data that is collected for the specified assessment run.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSTelemetryMetadataCmdlet.AssessmentRunArn">
+            <summary>
+            <para>
+            <para>The ARN that specifies the assessment run that has the telemetry data that you want
+            to obtain.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSTelemetryMetadataCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'TelemetryMetadata'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.GetTelemetryMetadataResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.GetTelemetryMetadataResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.GetINSTelemetryMetadataCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentRunArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentRunArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.NewINSAssessmentTargetCmdlet">
+            <summary>
+            Creates a new assessment target using the ARN of the resource group that is generated
+            by <a>CreateResourceGroup</a>. If resourceGroupArn is not specified, all EC2 instances
+            in the current AWS account and region are included in the assessment target. If the
+            <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html">service-linked
+            role</a> isn’t already registered, this action also creates and registers a service-linked
+            role to grant Amazon Inspector access to AWS Services needed to perform security assessments.
+            You can create up to 50 assessment targets per AWS account. You can run up to 500
+            concurrent agents per AWS account. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">
+            Amazon Inspector Assessment Targets</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.NewINSAssessmentTargetCmdlet.AssessmentTargetName">
+            <summary>
+            <para>
+            <para>The user-defined name that identifies the assessment target that you want to create.
+            The name must be unique within the AWS account.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.NewINSAssessmentTargetCmdlet.ResourceGroupArn">
+            <summary>
+            <para>
+            <para>The ARN that specifies the resource group that is used to create the assessment target.
+            If resourceGroupArn is not specified, all EC2 instances in the current AWS account
+            and region are included in the assessment target.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.NewINSAssessmentTargetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AssessmentTargetArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.CreateAssessmentTargetResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.CreateAssessmentTargetResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.NewINSAssessmentTargetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceGroupArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceGroupArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.NewINSAssessmentTargetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.NewINSAssessmentTemplateCmdlet">
+            <summary>
+            Creates an assessment template for the assessment target that is specified by the
+            ARN of the assessment target. If the <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html">service-linked
+            role</a> isn’t already registered, this action also creates and registers a service-linked
+            role to grant Amazon Inspector access to AWS Services needed to perform security assessments.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.NewINSAssessmentTemplateCmdlet.AssessmentTargetArn">
+            <summary>
+            <para>
+            <para>The ARN that specifies the assessment target for which you want to create the assessment
+            template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.NewINSAssessmentTemplateCmdlet.AssessmentTemplateName">
+            <summary>
+            <para>
+            <para>The user-defined name that identifies the assessment template that you want to create.
+            You can create several assessment templates for an assessment target. The names of
+            the assessment templates that correspond to a particular assessment target must be
+            unique.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.NewINSAssessmentTemplateCmdlet.DurationInSecond">
+            <summary>
+            <para>
+            <para>The duration of the assessment run in seconds.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.NewINSAssessmentTemplateCmdlet.RulesPackageArn">
+            <summary>
+            <para>
+            <para>The ARNs that specify the rules packages that you want to attach to the assessment
+            template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.NewINSAssessmentTemplateCmdlet.UserAttributesForFinding">
+            <summary>
+            <para>
+            <para>The user-defined attributes that are assigned to every finding that is generated by
+            the assessment run that uses this assessment template. An attribute is a key and value
+            pair (an <a>Attribute</a> object). Within an assessment template, each key must be
+            unique.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.NewINSAssessmentTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AssessmentTemplateArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.CreateAssessmentTemplateResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.CreateAssessmentTemplateResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.NewINSAssessmentTemplateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentTargetArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentTargetArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.NewINSAssessmentTemplateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.NewINSExclusionsPreviewCmdlet">
+            <summary>
+            Starts the generation of an exclusions preview for the specified assessment template.
+            The exclusions preview lists the potential exclusions (ExclusionPreview) that Inspector
+            can detect before it runs the assessment.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.NewINSExclusionsPreviewCmdlet.AssessmentTemplateArn">
+            <summary>
+            <para>
+            <para>The ARN that specifies the assessment template for which you want to create an exclusions
+            preview.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.NewINSExclusionsPreviewCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'PreviewToken'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.CreateExclusionsPreviewResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.CreateExclusionsPreviewResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.NewINSExclusionsPreviewCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentTemplateArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentTemplateArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.NewINSExclusionsPreviewCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.NewINSResourceGroupCmdlet">
+            <summary>
+            Creates a resource group using the specified set of tags (key and value pairs) that
+            are used to select the EC2 instances to be included in an Amazon Inspector assessment
+            target. The created resource group is then used to create an Amazon Inspector assessment
+            target. For more information, see <a>CreateAssessmentTarget</a>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.NewINSResourceGroupCmdlet.ResourceGroupTag">
+            <summary>
+            <para>
+            <para>A collection of keys and an array of possible values, '[{"key":"key1","values":["Value1","Value2"]},{"key":"Key2","values":["Value3"]}]'.</para><para>For example,'[{"key":"Name","values":["TestEC2Instance"]}]'.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.NewINSResourceGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ResourceGroupArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.CreateResourceGroupResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.CreateResourceGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.NewINSResourceGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceGroupTag parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceGroupTag' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.NewINSResourceGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.RegisterINSCrossAccountAccessRoleCmdlet">
+            <summary>
+            Registers the IAM role that grants Amazon Inspector access to AWS Services needed
+            to perform security assessments.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.RegisterINSCrossAccountAccessRoleCmdlet.RoleArn">
+            <summary>
+            <para>
+            <para>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed
+            to perform security assessments. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.RegisterINSCrossAccountAccessRoleCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.RegisterCrossAccountAccessRoleResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.RegisterINSCrossAccountAccessRoleCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RoleArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^RoleArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.RegisterINSCrossAccountAccessRoleCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.RemoveINSAssessmentRunCmdlet">
+            <summary>
+            Deletes the assessment run that is specified by the ARN of the assessment run.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.RemoveINSAssessmentRunCmdlet.AssessmentRunArn">
+            <summary>
+            <para>
+            <para>The ARN that specifies the assessment run that you want to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.RemoveINSAssessmentRunCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.DeleteAssessmentRunResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.RemoveINSAssessmentRunCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentRunArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentRunArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.RemoveINSAssessmentRunCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.RemoveINSAssessmentTargetCmdlet">
+            <summary>
+            Deletes the assessment target that is specified by the ARN of the assessment target.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.RemoveINSAssessmentTargetCmdlet.AssessmentTargetArn">
+            <summary>
+            <para>
+            <para>The ARN that specifies the assessment target that you want to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.RemoveINSAssessmentTargetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.DeleteAssessmentTargetResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.RemoveINSAssessmentTargetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentTargetArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentTargetArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.RemoveINSAssessmentTargetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.RemoveINSAssessmentTemplateCmdlet">
+            <summary>
+            Deletes the assessment template that is specified by the ARN of the assessment template.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.RemoveINSAssessmentTemplateCmdlet.AssessmentTemplateArn">
+            <summary>
+            <para>
+            <para>The ARN that specifies the assessment template that you want to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.RemoveINSAssessmentTemplateCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.DeleteAssessmentTemplateResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.RemoveINSAssessmentTemplateCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentTemplateArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentTemplateArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.RemoveINSAssessmentTemplateCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.RemoveINSEventSubscriptionCmdlet">
+            <summary>
+            Disables the process of sending Amazon Simple Notification Service (SNS) notifications
+            about a specified event to a specified SNS topic.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.RemoveINSEventSubscriptionCmdlet.Event">
+            <summary>
+            <para>
+            <para>The event for which you want to stop receiving SNS notifications.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.RemoveINSEventSubscriptionCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The ARN of the assessment template that is used during the event for which you want
+            to stop receiving SNS notifications.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.RemoveINSEventSubscriptionCmdlet.TopicArn">
+            <summary>
+            <para>
+            <para>The ARN of the SNS topic to which SNS notifications are sent.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.RemoveINSEventSubscriptionCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.UnsubscribeFromEventResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.RemoveINSEventSubscriptionCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.RemoveINSFindingAttributeCmdlet">
+            <summary>
+            Removes entire attributes (key and value pairs) from the findings that are specified
+            by the ARNs of the findings where an attribute with the specified key exists.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.RemoveINSFindingAttributeCmdlet.AttributeKey">
+            <summary>
+            <para>
+            <para>The array of attribute keys that you want to remove from specified findings.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.RemoveINSFindingAttributeCmdlet.FindingArn">
+            <summary>
+            <para>
+            <para>The ARNs that specify the findings that you want to remove attributes from.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.RemoveINSFindingAttributeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'FailedItems'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.RemoveAttributesFromFindingsResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.RemoveAttributesFromFindingsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.RemoveINSFindingAttributeCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.SetINSResourceTagCmdlet">
+            <summary>
+            Sets tags (key and value pairs) to the assessment template that is specified by the
+            ARN of the assessment template.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.SetINSResourceTagCmdlet.ResourceArn">
+            <summary>
+            <para>
+            <para>The ARN of the assessment template that you want to set tags to.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.SetINSResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A collection of key and value pairs that you want to set to the assessment template.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.SetINSResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.SetTagsForResourceResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.SetINSResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.SetINSResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.StartINSAssessmentRunCmdlet">
+            <summary>
+            Starts the assessment run specified by the ARN of the assessment template. For this
+            API to function properly, you must not exceed the limit of running up to 500 concurrent
+            agents per AWS account.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.StartINSAssessmentRunCmdlet.AssessmentRunName">
+            <summary>
+            <para>
+            <para>You can specify the name for the assessment run. The name must be unique for the assessment
+            template whose ARN is used to start the assessment run.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.StartINSAssessmentRunCmdlet.AssessmentTemplateArn">
+            <summary>
+            <para>
+            <para>The ARN of the assessment template of the assessment run that you want to start.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.StartINSAssessmentRunCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'AssessmentRunArn'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.StartAssessmentRunResponse).
+            Specifying the name of a property of type Amazon.Inspector.Model.StartAssessmentRunResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.StartINSAssessmentRunCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.StopINSAssessmentRunCmdlet">
+            <summary>
+            Stops the assessment run that is specified by the ARN of the assessment run.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.StopINSAssessmentRunCmdlet.AssessmentRunArn">
+            <summary>
+            <para>
+            <para>The ARN of the assessment run that you want to stop.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.StopINSAssessmentRunCmdlet.StopAction">
+            <summary>
+            <para>
+            <para>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION. START_EVALUATION
+            (the default value), stops the AWS agent from collecting data and begins the results
+            evaluation and the findings generation process. SKIP_EVALUATION cancels the assessment
+            run immediately, after which no findings are generated.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.StopINSAssessmentRunCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.StopAssessmentRunResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.StopINSAssessmentRunCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentRunArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentRunArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.StopINSAssessmentRunCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.INS.UpdateINSAssessmentTargetCmdlet">
+            <summary>
+            Updates the assessment target that is specified by the ARN of the assessment target.
+            
+             
+            <para>
+            If resourceGroupArn is not specified, all EC2 instances in the current AWS account
+            and region are included in the assessment target.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.UpdateINSAssessmentTargetCmdlet.AssessmentTargetArn">
+            <summary>
+            <para>
+            <para>The ARN of the assessment target that you want to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.UpdateINSAssessmentTargetCmdlet.AssessmentTargetName">
+            <summary>
+            <para>
+            <para>The name of the assessment target that you want to update.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.UpdateINSAssessmentTargetCmdlet.ResourceGroupArn">
+            <summary>
+            <para>
+            <para>The ARN of the resource group that is used to specify the new resource group to associate
+            with the assessment target.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.UpdateINSAssessmentTargetCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The cmdlet doesn't have a return value by default.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.Inspector.Model.UpdateAssessmentTargetResponse).
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.UpdateINSAssessmentTargetCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the AssessmentTargetArn parameter.
+            The -PassThru parameter is deprecated, use -Select '^AssessmentTargetArn' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.INS.UpdateINSAssessmentTargetCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

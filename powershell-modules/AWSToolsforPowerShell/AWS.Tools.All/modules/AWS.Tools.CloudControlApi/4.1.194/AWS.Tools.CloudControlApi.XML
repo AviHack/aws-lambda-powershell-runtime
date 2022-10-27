@@ -1,0 +1,576 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.CloudControlApi</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceCmdlet">
+            <summary>
+            Returns information about the current state of the specified resource. For details,
+            see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-read.html">Reading
+            a resource's current state</a>.
+            
+             
+            <para>
+            You can use this action to return information about an existing resource in your account
+            and Amazon Web Services Region, whether those resources were provisioned using Cloud
+            Control API.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceCmdlet.Identifier">
+            <summary>
+            <para>
+            <para>The identifier for the resource.</para><para>You can specify the primary identifier, or any secondary identifier defined for the
+            resource type in its resource schema. You can only specify one identifier. Primary
+            identifiers can be specified as a string or JSON; secondary identifiers must be specified
+            as JSON.</para><para>For compound primary identifiers (that is, one that consists of multiple resource
+            properties strung together), to specify the primary identifier as a string, list the
+            property values <i>in the order they are specified</i> in the primary identifier definition,
+            separated by <code>|</code>.</para><para>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying
+            resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceCmdlet.RoleArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for
+            Cloud Control API to use when performing this resource operation. The role specified
+            must have the permissions required for this operation. The necessary permissions for
+            each event handler are defined in the <code><a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a></code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
+            type definition schema</a>.</para><para>If you do not specify a role, Cloud Control API uses a temporary session created using
+            your Amazon Web Services user credentials.</para><para>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying
+            credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceCmdlet.TypeName">
+            <summary>
+            <para>
+            <para>The name of the resource type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceCmdlet.TypeVersionId">
+            <summary>
+            <para>
+            <para>For private resource types, the type version to use in this resource operation. If
+            you do not specify a resource version, CloudFormation uses the default version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudControlApi.Model.GetResourceResponse).
+            Specifying the name of a property of type Amazon.CloudControlApi.Model.GetResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Identifier parameter.
+            The -PassThru parameter is deprecated, use -Select '^Identifier' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceListCmdlet">
+            <summary>
+            Returns information about the specified resources. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-list.html">Discovering
+            resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.
+            
+             
+            <para>
+            You can use this action to return information about existing resources in your account
+            and Amazon Web Services Region, whether those resources were provisioned using Cloud
+            Control API.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceListCmdlet.ResourceModel">
+            <summary>
+            <para>
+            <para>The resource model to use to select the resources to return.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceListCmdlet.RoleArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for
+            Cloud Control API to use when performing this resource operation. The role specified
+            must have the permissions required for this operation. The necessary permissions for
+            each event handler are defined in the <code><a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a></code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
+            type definition schema</a>.</para><para>If you do not specify a role, Cloud Control API uses a temporary session created using
+            your Amazon Web Services user credentials.</para><para>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying
+            credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceListCmdlet.TypeName">
+            <summary>
+            <para>
+            <para>The name of the resource type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceListCmdlet.TypeVersionId">
+            <summary>
+            <para>
+            <para>For private resource types, the type version to use in this resource operation. If
+            you do not specify a resource version, CloudFormation uses the default version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>Reserved.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If the previous paginated request didn't return all of the remaining results, the
+            response object's <code>NextToken</code> parameter value is set to a token. To retrieve
+            the next set of results, call this action again and assign that token to the request
+            object's <code>NextToken</code> parameter. If there are no remaining results, the
+            previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is '*'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudControlApi.Model.ListResourcesResponse).
+            Specifying the name of a property of type Amazon.CloudControlApi.Model.ListResourcesResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceListCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TypeName parameter.
+            The -PassThru parameter is deprecated, use -Select '^TypeName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceRequestListCmdlet">
+            <summary>
+            Returns existing resource operation requests. This includes requests of all status
+            types. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html#resource-operations-manage-requests-list">Listing
+            active resource operation requests</a> in the <i>Amazon Web Services Cloud Control
+            API User Guide</i>.
+            
+             <note><para>
+            Resource operation requests expire after 7 days.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceRequestListCmdlet.ResourceRequestStatusFilter_Operation">
+            <summary>
+            <para>
+            <para>The operation types to include in the filter.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceRequestListCmdlet.ResourceRequestStatusFilter_OperationStatus">
+            <summary>
+            <para>
+            <para>The operation statuses to include in the filter.</para><ul><li><para><code>PENDING</code>: The operation has been requested, but not yet initiated.</para></li><li><para><code>IN_PROGRESS</code>: The operation is in progress.</para></li><li><para><code>SUCCESS</code>: The operation completed.</para></li><li><para><code>FAILED</code>: The operation failed.</para></li><li><para><code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</para></li><li><para><code>CANCEL_COMPLETE</code>: The operation has been canceled.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceRequestListCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to be returned with a single call. If the number of
+            available results exceeds this maximum, the response includes a <code>NextToken</code>
+            value that you can assign to the <code>NextToken</code> request parameter to get the
+            next set of results.</para><para>The default is <code>20</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceRequestListCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>If the previous paginated request didn't return all of the remaining results, the
+            response object's <code>NextToken</code> parameter value is set to a token. To retrieve
+            the next set of results, call this action again and assign that token to the request
+            object's <code>NextToken</code> parameter. If there are no remaining results, the
+            previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceRequestListCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ResourceRequestStatusSummaries'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudControlApi.Model.ListResourceRequestsResponse).
+            Specifying the name of a property of type Amazon.CloudControlApi.Model.ListResourceRequestsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceRequestStatusCmdlet">
+            <summary>
+            Returns the current status of a resource operation request. For more information,
+            see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html#resource-operations-manage-requests-track">Tracking
+            the progress of resource operation requests</a> in the <i>Amazon Web Services Cloud
+            Control API User Guide</i>.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceRequestStatusCmdlet.RequestToken">
+            <summary>
+            <para>
+            <para>A unique token used to track the progress of the resource operation request.</para><para>Request tokens are included in the <code>ProgressEvent</code> type returned by a resource
+            operation request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceRequestStatusCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ProgressEvent'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudControlApi.Model.GetResourceRequestStatusResponse).
+            Specifying the name of a property of type Amazon.CloudControlApi.Model.GetResourceRequestStatusResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.GetCCAResourceRequestStatusCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RequestToken parameter.
+            The -PassThru parameter is deprecated, use -Select '^RequestToken' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CCA.NewCCAResourceCmdlet">
+            <summary>
+            Creates the specified resource. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html">Creating
+            a resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.
+            
+             
+            <para>
+            After you have initiated a resource creation request, you can monitor the progress
+            of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a>
+            using the <code>RequestToken</code> of the <code>ProgressEvent</code> type returned
+            by <code>CreateResource</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.NewCCAResourceCmdlet.DesiredState">
+            <summary>
+            <para>
+            <para>Structured data format representing the desired state of the resource, consisting
+            of that resource's properties and their desired values.</para><note><para>Cloud Control API currently supports JSON as a structured data format.</para></note><pre><code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt;
+            &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A
+            local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt;
+            &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate"&gt;Composing
+            the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud
+            Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the
+            properties of a specific resource, refer to the related topic for the resource in
+            the &lt;a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"&gt;Resource
+            and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt;
+            </code></pre>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.NewCCAResourceCmdlet.RoleArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for
+            Cloud Control API to use when performing this resource operation. The role specified
+            must have the permissions required for this operation. The necessary permissions for
+            each event handler are defined in the <code><a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a></code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
+            type definition schema</a>.</para><para>If you do not specify a role, Cloud Control API uses a temporary session created using
+            your Amazon Web Services user credentials.</para><para>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying
+            credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.NewCCAResourceCmdlet.TypeName">
+            <summary>
+            <para>
+            <para>The name of the resource type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.NewCCAResourceCmdlet.TypeVersionId">
+            <summary>
+            <para>
+            <para>For private resource types, the type version to use in this resource operation. If
+            you do not specify a resource version, CloudFormation uses the default version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.NewCCAResourceCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>A unique identifier to ensure the idempotency of the resource request. As a best practice,
+            specify this token to ensure idempotency, so that Amazon Web Services Cloud Control
+            API can accurately distinguish between request retries and new resource requests.
+            You might retry a resource request to ensure that it was successfully received.</para><para>A client token is valid for 36 hours once used. After that, a resource request with
+            the same client token is treated as a new request.</para><para>If you do not specify a client token, one is generated for inclusion in the request.</para><para>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency">Ensuring
+            resource operation requests are unique</a> in the <i>Amazon Web Services Cloud Control
+            API User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.NewCCAResourceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ProgressEvent'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudControlApi.Model.CreateResourceResponse).
+            Specifying the name of a property of type Amazon.CloudControlApi.Model.CreateResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.NewCCAResourceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TypeName parameter.
+            The -PassThru parameter is deprecated, use -Select '^TypeName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.NewCCAResourceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CCA.RemoveCCAResourceCmdlet">
+            <summary>
+            Deletes the specified resource. For details, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-delete.html">Deleting
+            a resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.
+            
+             
+            <para>
+            After you have initiated a resource deletion request, you can monitor the progress
+            of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a>
+            using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by
+            <code>DeleteResource</code>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.RemoveCCAResourceCmdlet.Identifier">
+            <summary>
+            <para>
+            <para>The identifier for the resource.</para><para>You can specify the primary identifier, or any secondary identifier defined for the
+            resource type in its resource schema. You can only specify one identifier. Primary
+            identifiers can be specified as a string or JSON; secondary identifiers must be specified
+            as JSON.</para><para>For compound primary identifiers (that is, one that consists of multiple resource
+            properties strung together), to specify the primary identifier as a string, list the
+            property values <i>in the order they are specified</i> in the primary identifier definition,
+            separated by <code>|</code>.</para><para>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying
+            resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.RemoveCCAResourceCmdlet.RoleArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for
+            Cloud Control API to use when performing this resource operation. The role specified
+            must have the permissions required for this operation. The necessary permissions for
+            each event handler are defined in the <code><a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a></code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
+            type definition schema</a>.</para><para>If you do not specify a role, Cloud Control API uses a temporary session created using
+            your Amazon Web Services user credentials.</para><para>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying
+            credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.RemoveCCAResourceCmdlet.TypeName">
+            <summary>
+            <para>
+            <para>The name of the resource type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.RemoveCCAResourceCmdlet.TypeVersionId">
+            <summary>
+            <para>
+            <para>For private resource types, the type version to use in this resource operation. If
+            you do not specify a resource version, CloudFormation uses the default version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.RemoveCCAResourceCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>A unique identifier to ensure the idempotency of the resource request. As a best practice,
+            specify this token to ensure idempotency, so that Amazon Web Services Cloud Control
+            API can accurately distinguish between request retries and new resource requests.
+            You might retry a resource request to ensure that it was successfully received.</para><para>A client token is valid for 36 hours once used. After that, a resource request with
+            the same client token is treated as a new request.</para><para>If you do not specify a client token, one is generated for inclusion in the request.</para><para>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency">Ensuring
+            resource operation requests are unique</a> in the <i>Amazon Web Services Cloud Control
+            API User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.RemoveCCAResourceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ProgressEvent'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudControlApi.Model.DeleteResourceResponse).
+            Specifying the name of a property of type Amazon.CloudControlApi.Model.DeleteResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.RemoveCCAResourceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Identifier parameter.
+            The -PassThru parameter is deprecated, use -Select '^Identifier' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.RemoveCCAResourceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CCA.StopCCAResourceRequestCmdlet">
+            <summary>
+            Cancels the specified resource operation request. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html#resource-operations-manage-requests-cancel">Canceling
+            resource operation requests</a> in the <i>Amazon Web Services Cloud Control API User
+            Guide</i>.
+            
+             
+            <para>
+            Only resource operations requests with a status of <code>PENDING</code> or <code>IN_PROGRESS</code>
+            can be canceled.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.StopCCAResourceRequestCmdlet.RequestToken">
+            <summary>
+            <para>
+            <para>The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by
+            the resource operation request.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.StopCCAResourceRequestCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ProgressEvent'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudControlApi.Model.CancelResourceRequestResponse).
+            Specifying the name of a property of type Amazon.CloudControlApi.Model.CancelResourceRequestResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.StopCCAResourceRequestCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the RequestToken parameter.
+            The -PassThru parameter is deprecated, use -Select '^RequestToken' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.StopCCAResourceRequestCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.CCA.UpdateCCAResourceCmdlet">
+            <summary>
+            Updates the specified property values in the resource.
+            
+             
+            <para>
+            You specify your resource property updates as a list of patch operations contained
+            in a JSON patch document that adheres to the <a href="https://datatracker.ietf.org/doc/html/rfc6902"><i>RFC 6902 - JavaScript Object Notation (JSON) Patch</i></a> standard.
+            </para><para>
+            For details on how Cloud Control API performs resource update operations, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-update.html">Updating
+            a resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.
+            </para><para>
+            After you have initiated a resource update request, you can monitor the progress of
+            your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a>
+            using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by
+            <code>UpdateResource</code>.
+            </para><para>
+            For more information about the properties of a specific resource, refer to the related
+            topic for the resource in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Resource
+            and property types reference</a> in the <i>CloudFormation Users Guide</i>.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.UpdateCCAResourceCmdlet.Identifier">
+            <summary>
+            <para>
+            <para>The identifier for the resource.</para><para>You can specify the primary identifier, or any secondary identifier defined for the
+            resource type in its resource schema. You can only specify one identifier. Primary
+            identifiers can be specified as a string or JSON; secondary identifiers must be specified
+            as JSON.</para><para>For compound primary identifiers (that is, one that consists of multiple resource
+            properties strung together), to specify the primary identifier as a string, list the
+            property values <i>in the order they are specified</i> in the primary identifier definition,
+            separated by <code>|</code>.</para><para>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying
+            resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.UpdateCCAResourceCmdlet.PatchDocument">
+            <summary>
+            <para>
+            <para>A JavaScript Object Notation (JSON) document listing the patch operations that represent
+            the updates to apply to the current resource properties. For details, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-update.html#resource-operations-update-patch">Composing
+            the patch document</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.UpdateCCAResourceCmdlet.RoleArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for
+            Cloud Control API to use when performing this resource operation. The role specified
+            must have the permissions required for this operation. The necessary permissions for
+            each event handler are defined in the <code><a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a></code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
+            type definition schema</a>.</para><para>If you do not specify a role, Cloud Control API uses a temporary session created using
+            your Amazon Web Services user credentials.</para><para>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions">Specifying
+            credentials</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.UpdateCCAResourceCmdlet.TypeName">
+            <summary>
+            <para>
+            <para>The name of the resource type.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.UpdateCCAResourceCmdlet.TypeVersionId">
+            <summary>
+            <para>
+            <para>For private resource types, the type version to use in this resource operation. If
+            you do not specify a resource version, CloudFormation uses the default version.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.UpdateCCAResourceCmdlet.ClientToken">
+            <summary>
+            <para>
+            <para>A unique identifier to ensure the idempotency of the resource request. As a best practice,
+            specify this token to ensure idempotency, so that Amazon Web Services Cloud Control
+            API can accurately distinguish between request retries and new resource requests.
+            You might retry a resource request to ensure that it was successfully received.</para><para>A client token is valid for 36 hours once used. After that, a resource request with
+            the same client token is treated as a new request.</para><para>If you do not specify a client token, one is generated for inclusion in the request.</para><para>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency">Ensuring
+            resource operation requests are unique</a> in the <i>Amazon Web Services Cloud Control
+            API User Guide</i>.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.UpdateCCAResourceCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ProgressEvent'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.CloudControlApi.Model.UpdateResourceResponse).
+            Specifying the name of a property of type Amazon.CloudControlApi.Model.UpdateResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.UpdateCCAResourceCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the Identifier parameter.
+            The -PassThru parameter is deprecated, use -Select '^Identifier' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.CCA.UpdateCCAResourceCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>

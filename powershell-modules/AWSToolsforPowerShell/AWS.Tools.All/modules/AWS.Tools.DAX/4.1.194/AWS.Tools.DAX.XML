@@ -1,0 +1,1197 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AWS.Tools.DAX</name>
+    </assembly>
+    <members>
+        <member name="T:Amazon.PowerShell.Cmdlets.DAX.AddDAXResourceTagCmdlet">
+            <summary>
+            Associates a set of tags with a DAX resource. You can call <code>TagResource</code>
+            up to 5 times per second, per account.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.AddDAXResourceTagCmdlet.ResourceName">
+            <summary>
+            <para>
+            <para>The name of the DAX resource to which tags should be added.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.AddDAXResourceTagCmdlet.Tag">
+            <summary>
+            <para>
+            <para>The tags to be assigned to the DAX resource. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.AddDAXResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DAX.Model.TagResourceResponse).
+            Specifying the name of a property of type Amazon.DAX.Model.TagResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.AddDAXResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.AddDAXResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DAX.GetDAXClusterCmdlet">
+            <summary>
+            Returns information about all provisioned DAX clusters if no cluster identifier is
+            specified, or about a specific DAX cluster if a cluster identifier is supplied.
+            
+             
+            <para>
+            If the cluster is in the CREATING state, only cluster level information will be displayed
+            until all of the nodes are successfully provisioned.
+            </para><para>
+            If the cluster is in the DELETING state, only cluster level information will be displayed.
+            </para><para>
+            If nodes are currently being added to the DAX cluster, node endpoint information and
+            creation time for the additional nodes will not be displayed until they are completely
+            provisioned. When the DAX cluster state is <i>available</i>, the cluster is ready
+            for use.
+            </para><para>
+            If nodes are currently being removed from the DAX cluster, no endpoint information
+            for the removed nodes is displayed.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXClusterCmdlet.ClusterName">
+            <summary>
+            <para>
+            <para>The names of the DAX clusters being described.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXClusterCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response. If more results exist than
+            the specified <code>MaxResults</code> value, a token is included in the response so
+            that the remaining results can be retrieved.</para><para>The value for <code>MaxResults</code> must be between 20 and 100.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXClusterCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>An optional token returned from a prior request. Use this token for pagination of
+            results from this action. If this parameter is specified, the response includes only
+            results beyond the token, up to the value specified by <code>MaxResults</code>.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXClusterCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Clusters'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DAX.Model.DescribeClustersResponse).
+            Specifying the name of a property of type Amazon.DAX.Model.DescribeClustersResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXClusterCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXClusterCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DAX.GetDAXDefaultParameterCmdlet">
+            <summary>
+            Returns the default system parameter information for the DAX caching software.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXDefaultParameterCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response. If more results exist than
+            the specified <code>MaxResults</code> value, a token is included in the response so
+            that the remaining results can be retrieved.</para><para>The value for <code>MaxResults</code> must be between 20 and 100.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXDefaultParameterCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>An optional token returned from a prior request. Use this token for pagination of
+            results from this action. If this parameter is specified, the response includes only
+            results beyond the token, up to the value specified by <code>MaxResults</code>.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXDefaultParameterCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Parameters'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DAX.Model.DescribeDefaultParametersResponse).
+            Specifying the name of a property of type Amazon.DAX.Model.DescribeDefaultParametersResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXDefaultParameterCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DAX.GetDAXEventCmdlet">
+            <summary>
+            Returns events related to DAX clusters and parameter groups. You can obtain events
+            specific to a particular DAX cluster or parameter group by providing the name as a
+            parameter.
+            
+             
+            <para>
+            By default, only the events occurring within the last 24 hours are returned; however,
+            you can retrieve up to 14 days' worth of events if necessary.
+            </para><br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXEventCmdlet.Duration">
+            <summary>
+            <para>
+            <para>The number of minutes' worth of events to retrieve.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXEventCmdlet.EndTime">
+            <summary>
+            <para>
+            <para>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXEventCmdlet.SourceName">
+            <summary>
+            <para>
+            <para>The identifier of the event source for which events will be returned. If not specified,
+            then all sources are included in the response.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXEventCmdlet.SourceType">
+            <summary>
+            <para>
+            <para>The event source to retrieve events for. If no value is specified, all events are
+            returned.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXEventCmdlet.StartTime">
+            <summary>
+            <para>
+            <para>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXEventCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response. If more results exist than
+            the specified <code>MaxResults</code> value, a token is included in the response so
+            that the remaining results can be retrieved.</para><para>The value for <code>MaxResults</code> must be between 20 and 100.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXEventCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>An optional token returned from a prior request. Use this token for pagination of
+            results from this action. If this parameter is specified, the response includes only
+            results beyond the token, up to the value specified by <code>MaxResults</code>.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXEventCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Events'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DAX.Model.DescribeEventsResponse).
+            Specifying the name of a property of type Amazon.DAX.Model.DescribeEventsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXEventCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DAX.GetDAXParameterCmdlet">
+            <summary>
+            Returns the detailed parameter list for a particular parameter group.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXParameterCmdlet.ParameterGroupName">
+            <summary>
+            <para>
+            <para>The name of the parameter group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXParameterCmdlet.Source">
+            <summary>
+            <para>
+            <para>How the parameter is defined. For example, <code>system</code> denotes a system-defined
+            parameter.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXParameterCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response. If more results exist than
+            the specified <code>MaxResults</code> value, a token is included in the response so
+            that the remaining results can be retrieved.</para><para>The value for <code>MaxResults</code> must be between 20 and 100.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXParameterCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>An optional token returned from a prior request. Use this token for pagination of
+            results from this action. If this parameter is specified, the response includes only
+            results beyond the token, up to the value specified by <code>MaxResults</code>.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXParameterCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Parameters'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DAX.Model.DescribeParametersResponse).
+            Specifying the name of a property of type Amazon.DAX.Model.DescribeParametersResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXParameterCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ParameterGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ParameterGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXParameterCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DAX.GetDAXParameterGroupCmdlet">
+            <summary>
+            Returns a list of parameter group descriptions. If a parameter group name is specified,
+            the list will contain only the descriptions for that group.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXParameterGroupCmdlet.ParameterGroupName">
+            <summary>
+            <para>
+            <para>The names of the parameter groups.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXParameterGroupCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response. If more results exist than
+            the specified <code>MaxResults</code> value, a token is included in the response so
+            that the remaining results can be retrieved.</para><para>The value for <code>MaxResults</code> must be between 20 and 100.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXParameterGroupCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>An optional token returned from a prior request. Use this token for pagination of
+            results from this action. If this parameter is specified, the response includes only
+            results beyond the token, up to the value specified by <code>MaxResults</code>.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXParameterGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ParameterGroups'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DAX.Model.DescribeParameterGroupsResponse).
+            Specifying the name of a property of type Amazon.DAX.Model.DescribeParameterGroupsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXParameterGroupCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DAX.GetDAXResourceTagCmdlet">
+            <summary>
+            List all of the tags for a DAX cluster. You can call <code>ListTags</code> up to 10
+            times per second, per account.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXResourceTagCmdlet.ResourceName">
+            <summary>
+            <para>
+            <para>The name of the DAX resource to which the tags belong.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXResourceTagCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>An optional token returned from a prior request. Use this token for pagination of
+            results from this action. If this parameter is specified, the response includes only
+            results beyond the token.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DAX.Model.ListTagsResponse).
+            Specifying the name of a property of type Amazon.DAX.Model.ListTagsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ResourceName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ResourceName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXResourceTagCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DAX.GetDAXSubnetGroupCmdlet">
+            <summary>
+            Returns a list of subnet group descriptions. If a subnet group name is specified,
+            the list will contain only the description of that group.<br/><br/>This cmdlet automatically pages all available results to the pipeline - parameters related to iteration are only needed if you want to manually control the paginated output. To disable autopagination, use -NoAutoIteration.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXSubnetGroupCmdlet.SubnetGroupName">
+            <summary>
+            <para>
+            <para>The name of the subnet group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXSubnetGroupCmdlet.MaxResult">
+            <summary>
+            <para>
+            <para>The maximum number of results to include in the response. If more results exist than
+            the specified <code>MaxResults</code> value, a token is included in the response so
+            that the remaining results can be retrieved.</para><para>The value for <code>MaxResults</code> must be between 20 and 100.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> In AWSPowerShell and AWSPowerShell.NetCore this parameter is used to limit the total number of items returned by the cmdlet.
+            <br/>In AWS.Tools this parameter is simply passed to the service to specify how many items should be returned by each service call.
+            <br/>Pipe the output of this cmdlet into Select-Object -First to terminate retrieving data pages early and control the number of items returned.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXSubnetGroupCmdlet.NextToken">
+            <summary>
+            <para>
+            <para>An optional token returned from a prior request. Use this token for pagination of
+            results from this action. If this parameter is specified, the response includes only
+            results beyond the token, up to the value specified by <code>MaxResults</code>.</para>
+            </para>
+            <para>
+            <br/><b>Note:</b> This parameter is only used if you are manually controlling output pagination of the service API call.
+            <br/>In order to manually control output pagination, use '-NextToken $null' for the first call and '-NextToken $AWSHistory.LastServiceResponse.NextToken' for subsequent calls.
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXSubnetGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SubnetGroups'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DAX.Model.DescribeSubnetGroupsResponse).
+            Specifying the name of a property of type Amazon.DAX.Model.DescribeSubnetGroupsResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.GetDAXSubnetGroupCmdlet.NoAutoIteration">
+            <summary>
+            By default the cmdlet will auto-iterate and retrieve all results to the pipeline by performing multiple
+            service calls. If set, the cmdlet will retrieve only the next 'page' of results using the value of NextToken
+            as the start point.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DAX.NewDAXClusterCmdlet">
+            <summary>
+            Creates a DAX cluster. All nodes in the cluster run the same DAX caching software.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXClusterCmdlet.AvailabilityZone">
+            <summary>
+            <para>
+            <para>The Availability Zones (AZs) in which the cluster nodes will reside after the cluster
+            has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code>
+            parameter. If you omit this parameter, DAX will spread the nodes across Availability
+            Zones for the highest availability.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXClusterCmdlet.ClusterEndpointEncryptionType">
+            <summary>
+            <para>
+            <para>The type of encryption the cluster's endpoint should support. Values are:</para><ul><li><para><code>NONE</code> for no encryption</para></li><li><para><code>TLS</code> for Transport Layer Security</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXClusterCmdlet.ClusterName">
+            <summary>
+            <para>
+            <para>The cluster identifier. This parameter is stored as a lowercase string.</para><para><b>Constraints:</b></para><ul><li><para>A name must contain from 1 to 20 alphanumeric characters or hyphens.</para></li><li><para>The first character must be a letter.</para></li><li><para>A name cannot end with a hyphen or contain two consecutive hyphens.</para></li></ul>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXClusterCmdlet.Description">
+            <summary>
+            <para>
+            <para>A description of the cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXClusterCmdlet.SSESpecification_Enabled">
+            <summary>
+            <para>
+            <para>Indicates whether server-side encryption is enabled (true) or disabled (false) on
+            the cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXClusterCmdlet.IamRoleArn">
+            <summary>
+            <para>
+            <para>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will
+            assume this role and use the role's permissions to access DynamoDB on your behalf.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXClusterCmdlet.NodeType">
+            <summary>
+            <para>
+            <para>The compute and memory capacity of the nodes in the cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXClusterCmdlet.NotificationTopicArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will
+            be sent.</para><note><para>The Amazon SNS topic owner must be same as the DAX cluster owner.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXClusterCmdlet.ParameterGroupName">
+            <summary>
+            <para>
+            <para>The parameter group to be associated with the DAX cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXClusterCmdlet.PreferredMaintenanceWindow">
+            <summary>
+            <para>
+            <para>Specifies the weekly time range during which maintenance on the DAX cluster is performed.
+            It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC).
+            The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code>
+            are:</para><ul><li><para><code>sun</code></para></li><li><para><code>mon</code></para></li><li><para><code>tue</code></para></li><li><para><code>wed</code></para></li><li><para><code>thu</code></para></li><li><para><code>fri</code></para></li><li><para><code>sat</code></para></li></ul><para>Example: <code>sun:05:00-sun:09:00</code></para><note><para>If you don't specify a preferred maintenance window when you create or modify a cache
+            cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of
+            the week.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXClusterCmdlet.ReplicationFactor">
+            <summary>
+            <para>
+            <para>The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node
+            cluster, without any read replicas. For additional fault tolerance, you can create
+            a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code>
+            to a number between 3 (one primary and two read replicas) and 10 (one primary and
+            nine read replicas). <code>If the AvailabilityZones</code> parameter is provided,
+            its length must equal the <code>ReplicationFactor</code>.</para><note><para>AWS recommends that you have at least two read replicas per cluster.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXClusterCmdlet.SecurityGroupId">
+            <summary>
+            <para>
+            <para>A list of security group IDs to be assigned to each node in the DAX cluster. (Each
+            of the security group ID is system-generated.)</para><para>If this parameter is not specified, DAX assigns the default VPC security group to
+            each node.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXClusterCmdlet.SubnetGroupName">
+            <summary>
+            <para>
+            <para>The name of the subnet group to be used for the replication group.</para><important><para>DAX clusters can only run in an Amazon VPC environment. All of the subnets that you
+            specify in a subnet group must exist in the same VPC.</para></important>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXClusterCmdlet.Tag">
+            <summary>
+            <para>
+            <para>A set of tags to associate with the DAX cluster. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXClusterCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Cluster'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DAX.Model.CreateClusterResponse).
+            Specifying the name of a property of type Amazon.DAX.Model.CreateClusterResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXClusterCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXClusterCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DAX.NewDAXParameterGroupCmdlet">
+            <summary>
+            Creates a new parameter group. A parameter group is a collection of parameters that
+            you apply to all of the nodes in a DAX cluster.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXParameterGroupCmdlet.Description">
+            <summary>
+            <para>
+            <para>A description of the parameter group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXParameterGroupCmdlet.ParameterGroupName">
+            <summary>
+            <para>
+            <para>The name of the parameter group to apply to all of the clusters in this replication
+            group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXParameterGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ParameterGroup'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DAX.Model.CreateParameterGroupResponse).
+            Specifying the name of a property of type Amazon.DAX.Model.CreateParameterGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXParameterGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ParameterGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ParameterGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXParameterGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DAX.NewDAXSubnetGroupCmdlet">
+            <summary>
+            Creates a new subnet group.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXSubnetGroupCmdlet.Description">
+            <summary>
+            <para>
+            <para>A description for the subnet group</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXSubnetGroupCmdlet.SubnetGroupName">
+            <summary>
+            <para>
+            <para>A name for the subnet group. This value is stored as a lowercase string. </para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXSubnetGroupCmdlet.SubnetId">
+            <summary>
+            <para>
+            <para>A list of VPC subnet IDs for the subnet group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXSubnetGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SubnetGroup'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DAX.Model.CreateSubnetGroupResponse).
+            Specifying the name of a property of type Amazon.DAX.Model.CreateSubnetGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXSubnetGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SubnetGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^SubnetGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.NewDAXSubnetGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DAX.RemoveDAXClusterCmdlet">
+            <summary>
+            Deletes a previously provisioned DAX cluster. <i>DeleteCluster</i> deletes all associated
+            nodes, node endpoints and the DAX cluster itself. When you receive a successful response
+            from this action, DAX immediately begins deleting the cluster; you cannot cancel or
+            revert this action.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.RemoveDAXClusterCmdlet.ClusterName">
+            <summary>
+            <para>
+            <para>The name of the cluster to be deleted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.RemoveDAXClusterCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Cluster'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DAX.Model.DeleteClusterResponse).
+            Specifying the name of a property of type Amazon.DAX.Model.DeleteClusterResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.RemoveDAXClusterCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.RemoveDAXClusterCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DAX.RemoveDAXParameterGroupCmdlet">
+            <summary>
+            Deletes the specified parameter group. You cannot delete a parameter group if it is
+            associated with any DAX clusters.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.RemoveDAXParameterGroupCmdlet.ParameterGroupName">
+            <summary>
+            <para>
+            <para>The name of the parameter group to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.RemoveDAXParameterGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'DeletionMessage'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DAX.Model.DeleteParameterGroupResponse).
+            Specifying the name of a property of type Amazon.DAX.Model.DeleteParameterGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.RemoveDAXParameterGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ParameterGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ParameterGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.RemoveDAXParameterGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DAX.RemoveDAXResourceTagCmdlet">
+            <summary>
+            Removes the association of tags from a DAX resource. You can call <code>UntagResource</code>
+            up to 5 times per second, per account.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.RemoveDAXResourceTagCmdlet.ResourceName">
+            <summary>
+            <para>
+            <para>The name of the DAX resource from which the tags should be removed.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.RemoveDAXResourceTagCmdlet.TagKey">
+            <summary>
+            <para>
+            <para>A list of tag keys. If the DAX cluster has any tags with these keys, then the tags
+            are removed from the cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.RemoveDAXResourceTagCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Tags'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DAX.Model.UntagResourceResponse).
+            Specifying the name of a property of type Amazon.DAX.Model.UntagResourceResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.RemoveDAXResourceTagCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the TagKey parameter.
+            The -PassThru parameter is deprecated, use -Select '^TagKey' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.RemoveDAXResourceTagCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DAX.RemoveDAXSubnetGroupCmdlet">
+            <summary>
+            Deletes a subnet group.
+            
+             <note><para>
+            You cannot delete a subnet group if it is associated with any DAX clusters.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.RemoveDAXSubnetGroupCmdlet.SubnetGroupName">
+            <summary>
+            <para>
+            <para>The name of the subnet group to delete.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.RemoveDAXSubnetGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'DeletionMessage'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DAX.Model.DeleteSubnetGroupResponse).
+            Specifying the name of a property of type Amazon.DAX.Model.DeleteSubnetGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.RemoveDAXSubnetGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SubnetGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^SubnetGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.RemoveDAXSubnetGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DAX.RestartDAXNodeCmdlet">
+            <summary>
+            Reboots a single node of a DAX cluster. The reboot action takes place as soon as possible.
+            During the reboot, the node status is set to REBOOTING.
+            
+             <note><para><code>RebootNode</code> restarts the DAX engine process and does not remove the contents
+            of the cache. 
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.RestartDAXNodeCmdlet.ClusterName">
+            <summary>
+            <para>
+            <para>The name of the DAX cluster containing the node to be rebooted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.RestartDAXNodeCmdlet.NodeId">
+            <summary>
+            <para>
+            <para>The system-assigned ID of the node to be rebooted.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.RestartDAXNodeCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Cluster'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DAX.Model.RebootNodeResponse).
+            Specifying the name of a property of type Amazon.DAX.Model.RebootNodeResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.RestartDAXNodeCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the NodeId parameter.
+            The -PassThru parameter is deprecated, use -Select '^NodeId' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.RestartDAXNodeCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DAX.SetDAXReplicationFactorDecreaseCmdlet">
+            <summary>
+            Removes one or more nodes from a DAX cluster.
+            
+             <note><para>
+            You cannot use <code>DecreaseReplicationFactor</code> to remove the last node in a
+            DAX cluster. If you need to do this, use <code>DeleteCluster</code> instead.
+            </para></note>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.SetDAXReplicationFactorDecreaseCmdlet.AvailabilityZone">
+            <summary>
+            <para>
+            <para>The Availability Zone(s) from which to remove nodes.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.SetDAXReplicationFactorDecreaseCmdlet.ClusterName">
+            <summary>
+            <para>
+            <para>The name of the DAX cluster from which you want to remove nodes.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.SetDAXReplicationFactorDecreaseCmdlet.NewReplicationFactor">
+            <summary>
+            <para>
+            <para>The new number of nodes for the DAX cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.SetDAXReplicationFactorDecreaseCmdlet.NodeIdsToRemove">
+            <summary>
+            <para>
+            <para>The unique identifiers of the nodes to be removed from the cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.SetDAXReplicationFactorDecreaseCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Cluster'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DAX.Model.DecreaseReplicationFactorResponse).
+            Specifying the name of a property of type Amazon.DAX.Model.DecreaseReplicationFactorResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.SetDAXReplicationFactorDecreaseCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.SetDAXReplicationFactorDecreaseCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DAX.SetDAXReplicationFactorIncreaseCmdlet">
+            <summary>
+            Adds one or more nodes to a DAX cluster.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.SetDAXReplicationFactorIncreaseCmdlet.AvailabilityZone">
+            <summary>
+            <para>
+            <para>The Availability Zones (AZs) in which the cluster nodes will be created. All nodes
+            belonging to the cluster are placed in these Availability Zones. Use this parameter
+            if you want to distribute the nodes across multiple AZs.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.SetDAXReplicationFactorIncreaseCmdlet.ClusterName">
+            <summary>
+            <para>
+            <para>The name of the DAX cluster that will receive additional nodes.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.SetDAXReplicationFactorIncreaseCmdlet.NewReplicationFactor">
+            <summary>
+            <para>
+            <para>The new number of nodes for the DAX cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.SetDAXReplicationFactorIncreaseCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Cluster'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DAX.Model.IncreaseReplicationFactorResponse).
+            Specifying the name of a property of type Amazon.DAX.Model.IncreaseReplicationFactorResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.SetDAXReplicationFactorIncreaseCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.SetDAXReplicationFactorIncreaseCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DAX.UpdateDAXClusterCmdlet">
+            <summary>
+            Modifies the settings for a DAX cluster. You can use this action to change one or
+            more cluster configuration parameters by specifying the parameters and the new values.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.UpdateDAXClusterCmdlet.ClusterName">
+            <summary>
+            <para>
+            <para>The name of the DAX cluster to be modified.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.UpdateDAXClusterCmdlet.Description">
+            <summary>
+            <para>
+            <para>A description of the changes being made to the cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.UpdateDAXClusterCmdlet.NotificationTopicArn">
+            <summary>
+            <para>
+            <para>The Amazon Resource Name (ARN) that identifies the topic.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.UpdateDAXClusterCmdlet.NotificationTopicStatus">
+            <summary>
+            <para>
+            <para>The current state of the topic. A value of “active” means that notifications will
+            be sent to the topic. A value of “inactive” means that notifications will not be sent
+            to the topic.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.UpdateDAXClusterCmdlet.ParameterGroupName">
+            <summary>
+            <para>
+            <para>The name of a parameter group for this cluster.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.UpdateDAXClusterCmdlet.PreferredMaintenanceWindow">
+            <summary>
+            <para>
+            <para>A range of time when maintenance of DAX cluster software will be performed. For example:
+            <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30
+            minutes, and is performed automatically within the maintenance window.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.UpdateDAXClusterCmdlet.SecurityGroupId">
+            <summary>
+            <para>
+            <para>A list of user-specified security group IDs to be assigned to each node in the DAX
+            cluster. If this parameter is not specified, DAX assigns the default VPC security
+            group to each node.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.UpdateDAXClusterCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'Cluster'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DAX.Model.UpdateClusterResponse).
+            Specifying the name of a property of type Amazon.DAX.Model.UpdateClusterResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.UpdateDAXClusterCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ClusterName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ClusterName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.UpdateDAXClusterCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DAX.UpdateDAXParameterGroupCmdlet">
+            <summary>
+            Modifies the parameters of a parameter group. You can modify up to 20 parameters in
+            a single request by submitting a list parameter name and value pairs.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.UpdateDAXParameterGroupCmdlet.ParameterGroupName">
+            <summary>
+            <para>
+            <para>The name of the parameter group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.UpdateDAXParameterGroupCmdlet.ParameterNameValue">
+            <summary>
+            <para>
+            <para>An array of name-value pairs for the parameters in the group. Each element in the
+            array represents a single parameter.</para><note><para><code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported
+            parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring
+            TTL Settings</a>.</para></note>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.UpdateDAXParameterGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'ParameterGroup'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DAX.Model.UpdateParameterGroupResponse).
+            Specifying the name of a property of type Amazon.DAX.Model.UpdateParameterGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.UpdateDAXParameterGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the ParameterGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^ParameterGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.UpdateDAXParameterGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+        <member name="T:Amazon.PowerShell.Cmdlets.DAX.UpdateDAXSubnetGroupCmdlet">
+            <summary>
+            Modifies an existing subnet group.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.UpdateDAXSubnetGroupCmdlet.Description">
+            <summary>
+            <para>
+            <para>A description of the subnet group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.UpdateDAXSubnetGroupCmdlet.SubnetGroupName">
+            <summary>
+            <para>
+            <para>The name of the subnet group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.UpdateDAXSubnetGroupCmdlet.SubnetId">
+            <summary>
+            <para>
+            <para>A list of subnet IDs in the subnet group.</para>
+            </para>
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.UpdateDAXSubnetGroupCmdlet.Select">
+            <summary>
+            Use the -Select parameter to control the cmdlet output. The default value is 'SubnetGroup'.
+            Specifying -Select '*' will result in the cmdlet returning the whole service response (Amazon.DAX.Model.UpdateSubnetGroupResponse).
+            Specifying the name of a property of type Amazon.DAX.Model.UpdateSubnetGroupResponse will result in that property being returned.
+            Specifying -Select '^ParameterName' will result in the cmdlet returning the selected cmdlet parameter value.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.UpdateDAXSubnetGroupCmdlet.PassThru">
+            <summary>
+            Changes the cmdlet behavior to return the value passed to the SubnetGroupName parameter.
+            The -PassThru parameter is deprecated, use -Select '^SubnetGroupName' instead. This parameter will be removed in a future version.
+            </summary>
+        </member>
+        <member name="P:Amazon.PowerShell.Cmdlets.DAX.UpdateDAXSubnetGroupCmdlet.Force">
+            <summary>
+            This parameter overrides confirmation prompts to force 
+            the cmdlet to continue its operation. This parameter should always
+            be used with caution.
+            </summary>
+        </member>
+    </members>
+</doc>
